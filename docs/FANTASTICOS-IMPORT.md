@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This workflow converts the 21 horizontal, five-character source images in Google Drive into 105 standardized 1:1 portraits and reusable recoloring layers. It preserves the original character identity: BiRefNet removes the source background, then deterministic ImageMagick composition places the cutout on the standard canvas. It does not generatively redraw faces, hair, clothing, or accessories.
+This workflow converts the 21 horizontal, five-character source images in Google Drive into 105 deterministic first-pass portraits. Those crops are the checksum-locked identity and provenance reference for the production redraws; they are not the final production artwork. The current production system is documented in `FANTASTICOS-REDRAW.md`.
 
 ## Source contract
 
@@ -44,9 +44,9 @@ The importer:
 4. Composes it on a 1254 × 1254 `#DCE8F7` canvas at the reviewed framing.
 5. Stores `foreground.png`, `matte.png`, a matte-derived `person.png`, and complete provenance metadata.
 
-The operation is resumable. Current outputs with matching source provenance, model, and framing are skipped. Use `--id=fantasticos-001` for a single portrait or `--force` only when intentional regeneration is required.
+The operation is resumable. Current first-pass outputs with matching source provenance, model, and framing are skipped. Use `--id=fantasticos-001` for a single portrait or `--force` only when intentional regeneration is required. Do not run the importer over reviewed production redraws unless rebuilding the provenance stage on purpose.
 
-## Clean panel boundaries and generate garment masks
+## Legacy first-pass cleanup
 
 ```bash
 npm run fantasticos:clean -- --dry-run
@@ -56,7 +56,7 @@ npm run masks:generate -- --prefix=fantasticos-
 
 The cleanup removes only small disconnected alpha components that touch the original left or right panel boundary. It keeps the largest character component and does not alter connected hair, jewelry, or clothing. Always review the reported IDs before running it without `--dry-run`.
 
-Garment generation reuses the matte-derived person mask and requests only the semantic shirt layer. It tries `sweater`, `shirt`, and `upper clothing` in that order, with bounded retry handling for transient provider errors.
+For the current production redraws, regenerate mattes and garment masks using the commands in `FANTASTICOS-REDRAW.md`.
 
 ## Review and validate
 

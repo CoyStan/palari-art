@@ -14,11 +14,13 @@ After the original full-library review, the hard SAM person silhouettes were upg
 
 The original collection was reviewed as source/refined-cutout/matte contact sheets against a contrasting teal background. The review covered dreadlocks, dense ringlets, long curls, flyaways, buns, straight hair, short textured hair, and the hijab. No face, accessory, shoulder, or garment section was cut away. Foreground matte area ranged from 41.7% to 64.0%, consistent with the portrait framing; all mattes contained all 256 alpha levels.
 
-## Los 5 fantásticos expansion
+## Los 5 fantásticos expansion and v2 redraw
 
-The 21 horizontal Drive sources contained five characters each. All 105 panels were retained because checksum and visual comparison found no exact or confidently duplicate character image. Each panel was matted with BiRefNet and recomposed at 1254 × 1254 on `#DCE8F7`, using a consistent 760px foreground width, centered at x=247 and y=-80. This preserves the source character pixels instead of regenerating faces, hair, or clothing.
+The 21 horizontal Drive sources contained five characters each. All 105 panels were retained because checksum and visual comparison found no exact or confidently duplicate character image. The initial BiRefNet/ImageMagick pass established stable IDs and identity references, but its narrow source panels produced cropped shoulders and insufficient detail.
 
-The standardized portraits and cutouts were reviewed in three contact sheets. A deterministic connected-component pass removed eight small neighboring-panel fragments from six portraits (`fantasticos-022`, `034`, `035`, `045`, `102`, and `103`); a final dry run found no remaining border components. All 105 garment overlays then passed visual review. The `sweater` prompt succeeded for 102 portraits; `fantasticos-068`, `078`, and `083` required the `upper clothing` fallback.
+The production v2 set was therefore recreated with `gpt-image-2` as 105 identity-guided 1254 × 1254 portraits. Every result was compared side by side with its first-pass reference. The accepted set retains the character-defining face, age, skin tone, hair or head covering, facial hair, glasses, accessories, and clothing color while showing complete hair, neck, both shoulders, and upper chest in the Palari portrait style.
+
+The v2 portraits were reviewed in five old/new comparison sheets before application. Their replacement invalidated the first-pass pixel-aligned masks, so BiRefNet foreground mattes and SAM 3 garment masks were regenerated and reviewed against the new source checksums.
 
 ## Review evidence
 
@@ -44,10 +46,12 @@ These ranges are review aids, not automatic acceptance thresholds. Visual correc
 
 ## Cost note
 
-The expansion used 66 successful requests for the remaining 33 portraits. At the provider price recorded during the pilot on 2026-08-02, that corresponds to an estimated $0.33 for this expansion. The earlier pilot was estimated at approximately $0.09 because prompt discovery added unsuccessful calls, for an estimated project total of approximately $0.42.
+The original 38-avatar mask migration used 66 successful SAM 3 requests after the five-avatar pilot. At the provider price recorded during that pilot on 2026-08-02, those calls corresponded to an estimated $0.33; the pilot was estimated at approximately $0.09 because prompt discovery added unsuccessful calls.
+
+The Los 5 fantásticos v2 artwork was generated separately with OpenAI `gpt-image-2`. Rebuilding its editable layers used 105 BiRefNet v2 requests and 105 SAM 3 requests. Exact image-generation and mask costs are intentionally not estimated here because provider prices and account terms may differ.
 
 Provider pricing and terms can change. Confirm the current endpoint terms before any future regeneration.
 
 ## Reproduction
 
-`src/data/avatar-masks.json` is the complete registry. `npm run masks:generate` skips current outputs when the source checksum and model match. A generated mask remains `unreviewed` until a reviewer records approval with `npm run masks:review`; `npm run verify:masks` rejects missing or unreviewed entries. The grouped-source reproduction steps are in `FANTASTICOS-IMPORT.md`.
+`src/data/avatar-masks.json` is the complete registry. `npm run masks:generate` skips current outputs when the source checksum and model match. A generated mask remains `unreviewed` until a reviewer records approval with `npm run masks:review`; `npm run verify:masks` rejects missing or unreviewed entries. The grouped-source provenance steps are in `FANTASTICOS-IMPORT.md`; the production artwork workflow and exact prompt are in `FANTASTICOS-REDRAW.md`.

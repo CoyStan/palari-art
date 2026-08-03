@@ -16,6 +16,7 @@
     "verify:masks:generated": "node scripts/verify-avatar-masks.mjs --allow-unreviewed",
     "fantasticos:import": "node --env-file=.env.local scripts/import-fantasticos.mjs",
     "fantasticos:clean": "node scripts/clean-fantasticos-foregrounds.mjs",
+    "fantasticos:redraw:apply": "node scripts/apply-fantasticos-redraw.mjs",
     "masks:generate": "node --env-file=.env.local scripts/generate-avatar-masks.mjs",
     "masks:review": "node scripts/record-mask-review.mjs",
     "mattes:generate": "node --env-file=.env.local scripts/generate-foreground-mattes.mjs",

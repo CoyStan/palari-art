@@ -14,11 +14,11 @@ Every current source file is 1254 × 1254. The application normalizes the workin
 
 The folder name `standardized-4x4` is historical. Its assets are square portraits and appear in the app as the “Expanded set.” Do not interpret it as a four-column sprite sheet.
 
-The Los 5 fantásticos sources are 21 horizontal five-character images in the `palari-marketing` shared Drive. Their Drive file IDs and MD5 checksums are recorded in `src/data/fantasticos-sources.json`. The importer splits each source into five proportional panels, uses BiRefNet matting to preserve the original character identity, and places the cutout on the standard square canvas. See `docs/FANTASTICOS-IMPORT.md`.
+The Los 5 fantásticos identity references are 21 horizontal five-character images in the `palari-marketing` shared Drive. Their Drive file IDs and MD5 checksums are recorded in `src/data/fantasticos-sources.json`. The importer creates deterministic first-pass portraits for provenance and comparison. The current production portraits are identity-guided `gpt-image-2` redraws with complete shoulders and native 1254 × 1254 detail. See `docs/FANTASTICOS-IMPORT.md` and `docs/FANTASTICOS-REDRAW.md`.
 
 ## Source and derived artifacts
 
-Bundled files under `public/avatars/` are source portraits for this application. Preserve them unchanged when creating variants.
+Bundled files under `public/avatars/` are reviewed production portraits for this application. Preserve them unchanged when creating color variants.
 
 Examples of derived artifacts include:
 
@@ -28,7 +28,7 @@ Examples of derived artifacts include:
 - PNG or WebP files downloaded from the editor.
 - The generated `dist/` directory.
 
-Derived artifacts should not silently replace a source portrait. When a source genuinely needs revision, add a new version and make the registry change explicit.
+Derived artifacts should not silently replace a production portrait. When artwork genuinely needs revision, record its generation provenance and regenerate every pixel-aligned mask.
 
 ## Google Drive relationship
 

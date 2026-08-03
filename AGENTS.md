@@ -22,6 +22,7 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
 - `scripts/generate-avatar-masks.mjs` creates the SAM 3 person and garment masks.
 - `scripts/generate-foreground-mattes.mjs` creates the 2048px BiRefNet Matting foreground and 256-level alpha matte used for hair edges.
+- The 105 Los 5 fantásticos production portraits are identity-guided `gpt-image-2` redraws. The checksum-locked grouped Drive sources and first-pass crops remain the provenance reference; see `docs/FANTASTICOS-REDRAW.md`.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.
@@ -41,6 +42,7 @@ npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
 npm run fantasticos:import -- --source-dir=<downloaded-drive-folder>
 npm run fantasticos:clean # Remove only verified disconnected panel-neighbor fragments
+npm run fantasticos:redraw:apply -- --source-dir=<reviewed-redraw-folder>
 npm run masks:generate # Generate/resume fal.ai masks using .env.local
 npm run masks:review -- --id=<id> --reviewer=<name> --notes=<summary>
 npm run mattes:generate # Generate/resume refined BiRefNet foregrounds
@@ -71,11 +73,13 @@ Keep image-processing logic out of React components. Components should pass inpu
 ## Asset rules
 
 - Never overwrite a bundled source portrait merely to create a color variation.
+- A deliberate artwork revision may replace a bundled portrait only with explicit user direction, recorded generation provenance, and a complete mask regeneration/review.
 - Treat exported recolors, generated masks, and previews as derived files.
 - Keep collection filenames contiguous because `src/data/avatars.ts` currently builds paths from numeric ranges.
 - Do not rename or move a portrait without updating the registry and documentation.
 - Run `npm run verify:assets` after any asset change.
 - Follow `docs/FANTASTICOS-IMPORT.md` for the grouped Drive sources; do not split or frame them by eye.
+- Follow `docs/FANTASTICOS-REDRAW.md` before changing a Los 5 fantásticos production portrait or its generation prompt.
 - Do not upload to, delete from, or reorganize Google Drive unless the user explicitly asks. Local changes do not automatically update Drive.
 
 The full naming and review procedure is in `docs/ASSETS.md`.

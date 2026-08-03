@@ -2,13 +2,13 @@
   "version": 1,
   "avatarId": "fantasticos-068",
   "status": "reviewed",
-  "generatedAt": "2026-08-03T16:16:32.295Z",
+  "generatedAt": "2026-08-03T18:44:59.656Z",
   "provider": "fal.ai",
   "model": "fal-ai/sam-3/image",
   "reason": "Imported from the palari-marketing/Los 5 fantásticos group collection.",
   "source": {
     "file": "avatars/los-5-fantasticos/fantastico-068.png",
-    "sha256": "369c8e3582cf7bec0de3025e9d5aefe78cbde00d54a958f73acd4a9856ae670a",
+    "sha256": "5f6d8beff8ff45e4f62346aa658a03fed7bf0678928f0aedcc57a09690776be7",
     "width": 1254,
     "height": 1254
   },
@@ -17,11 +17,11 @@
       "file": "person.png",
       "width": 1254,
       "height": 1254,
-      "bytes": 46314,
-      "sha256": "4d0b0311ec11763cb3459bd88063c9a57ad73a439c9c32ad598cac1c93e3ea9d",
+      "bytes": 35323,
+      "sha256": "9ea80fb24ce359c6cbf441e721680c7a3e896f909ed94f4b181071a93f49a2cc",
       "prompt": "derived from refined foreground matte",
       "attempts": [],
-      "requestId": "019fc85f-740c-7ba3-802e-caa8f574e80f",
+      "requestId": "019fc8e8-a051-7861-873c-3809c1a46323",
       "score": 1,
       "box": [
         0,
@@ -33,99 +33,78 @@
     },
     "shirt": {
       "file": "shirt.png",
-      "prompt": "upper clothing",
+      "prompt": "sweater",
       "attempts": [
         {
           "prompt": "sweater",
-          "requestId": "019fc869-8a07-7272-ae11-a8ae725f2182",
-          "found": false
-        },
-        {
-          "prompt": "shirt",
-          "requestId": "019fc869-8e0b-74b3-86c5-3d4bbe3c1eb6",
-          "found": false
-        },
-        {
-          "prompt": "upper clothing",
-          "requestId": "019fc869-920c-79d1-a922-3ee46b969867",
+          "requestId": "019fc8f1-74a0-71f0-b074-55889c694e75",
           "found": true
         }
       ],
-      "requestId": "019fc869-920c-79d1-a922-3ee46b969867",
-      "score": 0.7393009662628174,
+      "requestId": "019fc8f1-74a0-71f0-b074-55889c694e75",
+      "score": 0.893901526927948,
       "box": [
-        0.5024305071149554,
-        0.9581559801858569,
-        0.5847553071521577,
-        0.08338795011005705
+        0.5102327589004759,
+        0.8321567111545138,
+        0.7653500087677486,
+        0.3341163756355407
       ],
       "width": 1254,
       "height": 1254,
-      "bytes": 2390,
-      "sha256": "9d99a09359a7c7252b174f70043fa2320b1efa2398c9b31874ffc6681e5e93fc"
+      "bytes": 4790,
+      "sha256": "7fa237c0accce097a2107f6b0ea3a3cedf52c06d356c061e5f321a4beb9255a3"
     }
   },
   "review": {
-    "reviewedAt": "2026-08-03T16:21:51.650Z",
+    "reviewedAt": "2026-08-03T18:50:56.598Z",
     "reviewer": "Codex",
     "outcome": "pass",
-    "notes": "Reviewed all 105 square portraits and garment overlays; faces, hair, headwear, jewelry, and skin remain protected while visible upper garments are covered."
+    "notes": "Reviewed all 105 garment overlays for the v2 redraws; visible upper garments are covered while faces, hair, skin, head coverings, jewelry, and accessories remain protected."
+  },
+  "sourceGeneration": {
+    "provider": "OpenAI",
+    "model": "gpt-image-2",
+    "mode": "built-in image generation",
+    "promptVersion": "fantasticos-redraw-v2",
+    "generatedAt": "2026-08-03T18:26:57.420Z",
+    "identityReference": "Previous fantastico-068 standardized portrait derived from the matching grouped Drive source panel.",
+    "styleReference": "Eight reviewed Palari standardized portraits assembled as a collection style board.",
+    "intent": "Identity-guided high-resolution redraw with complete hair, neck, both shoulders, and upper chest."
   },
   "foregroundMatte": {
     "status": "reviewed",
-    "generatedAt": "2026-08-03T16:05:31.185Z",
+    "generatedAt": "2026-08-03T18:35:20.486Z",
     "provider": "fal.ai",
     "model": "fal-ai/birefnet/v2",
     "variant": "Matting",
     "operatingResolution": "2048x2048",
     "refineForeground": true,
     "sourceOutput": "refined-transparent-image-and-alpha",
-    "requestId": "019fc85f-740c-7ba3-802e-caa8f574e80f",
+    "requestId": "019fc8e8-a051-7861-873c-3809c1a46323",
     "apiOutput": {
-      "width": 253,
-      "height": 843,
+      "width": 1254,
+      "height": 1254,
       "contentType": "image/png"
-    },
-    "framing": {
-      "outputSize": 1254,
-      "foregroundWidth": 760,
-      "foregroundX": 247,
-      "foregroundY": -80,
-      "backgroundColor": "#DCE8F7"
-    },
-    "provenance": {
-      "sharedDrive": "palari-marketing",
-      "sharedDriveId": "0ABSIED45ZSJEUk9PVA",
-      "folder": "Los 5 fantásticos ",
-      "groupFile": "1776177414223.png",
-      "groupDriveId": "1om4Dc_x2aNT04NwKFbJsa8WezUR45BJ1",
-      "groupMd5": "eb143d663c67316227faa0ec053058cd",
-      "position": 3,
-      "panel": {
-        "width": 253,
-        "height": 843,
-        "sha256": "cc51c92be148ade7952bac0a3c3edf35bd4815710fa1218c02124e17576db22a"
-      }
     },
     "cutout": {
       "file": "foreground.png",
       "width": 1254,
       "height": 1254,
-      "bytes": 806470,
-      "sha256": "cf02d4b1564c938080d4615a5022fd7874c83b8b9776f01d2ca86bb96cb524fc"
+      "bytes": 1382802,
+      "sha256": "28e9927572215b590b6568edf765b6b98be9308265a409aa79a237c658aeae73"
     },
     "matte": {
       "file": "matte.png",
       "width": 1254,
       "height": 1254,
-      "bytes": 46314,
-      "sha256": "4d0b0311ec11763cb3459bd88063c9a57ad73a439c9c32ad598cac1c93e3ea9d"
+      "bytes": 35323,
+      "sha256": "9ea80fb24ce359c6cbf441e721680c7a3e896f909ed94f4b181071a93f49a2cc"
     },
     "review": {
-      "reviewedAt": "2026-08-03T16:21:52.155Z",
+      "reviewedAt": "2026-08-03T18:50:55.441Z",
       "reviewer": "Codex",
       "outcome": "pass",
-      "notes": "Reviewed all 105 standardized portraits and refined cutouts; framing, curls, braids, flyaways, head coverings, accessories, and cleaned panel boundaries pass."
+      "notes": "Reviewed all 105 gpt-image-2 redraws on a contrasting teal background; complete shoulders, curls, braids, flyaways, facial hair, glasses, jewelry, and the hijab are preserved with clean soft edges."
     }
   }
 }

@@ -14,6 +14,7 @@ Last updated: 2026-08-03
 - Repeatable fal.ai SAM 3 and BiRefNet v2 batch preparation using an ignored server-side key.
 - All 143 bundled portraits wired to reviewed garment masks, refined RGBA foregrounds, and 256-level alpha mattes.
 - Reproducible import of the 21 five-character Drive source images with source IDs and checksums retained in the repository.
+- 105 identity-guided `gpt-image-2` Los 5 fantásticos production redraws with complete shoulders, upper chest, and native 1254 × 1254 detail.
 - Automated full-library checksum, dimension, metadata, and review validation.
 
 ## Known limitation

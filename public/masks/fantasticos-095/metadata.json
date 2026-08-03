@@ -2,13 +2,13 @@
   "version": 1,
   "avatarId": "fantasticos-095",
   "status": "reviewed",
-  "generatedAt": "2026-08-03T16:18:12.199Z",
+  "generatedAt": "2026-08-03T18:46:38.282Z",
   "provider": "fal.ai",
   "model": "fal-ai/sam-3/image",
   "reason": "Imported from the palari-marketing/Los 5 fantásticos group collection.",
   "source": {
     "file": "avatars/los-5-fantasticos/fantastico-095.png",
-    "sha256": "702d46bb8d662590437deb22a887b55a54bd4409b8015901d42c6ff6838b21f1",
+    "sha256": "b00dc5103bb9330005ddcde2dde6112542c5fa2f067fb9a85882a79740d75a7a",
     "width": 1254,
     "height": 1254
   },
@@ -17,11 +17,11 @@
       "file": "person.png",
       "width": 1254,
       "height": 1254,
-      "bytes": 68783,
-      "sha256": "b06b26f2bfd32dc62605b4b2c668ccff9a0ac04c9b84f2d4bc365d717bca0ace",
+      "bytes": 47415,
+      "sha256": "63b87b88a6ce10a90090fd5eb529e2c4e0dd7ed4f5f042dba6ad7f22f3e25b6a",
       "prompt": "derived from refined foreground matte",
       "attempts": [],
-      "requestId": "019fc860-18ed-7b32-9e9d-41b0fb3d7210",
+      "requestId": "019fc8eb-9580-7d72-8382-7724b209d572",
       "score": 1,
       "box": [
         0,
@@ -37,85 +37,74 @@
       "attempts": [
         {
           "prompt": "sweater",
-          "requestId": "019fc86b-1ab6-7ac0-b019-371a06314451",
+          "requestId": "019fc8f2-ffd7-7f82-8bfb-a4112b2ee438",
           "found": true
         }
       ],
-      "requestId": "019fc86b-1ab6-7ac0-b019-371a06314451",
-      "score": 0.8420121669769287,
+      "requestId": "019fc8f2-ffd7-7f82-8bfb-a4112b2ee438",
+      "score": 0.9256227612495422,
       "box": [
-        0.5341465359642392,
-        0.9416004968067956,
-        0.5369076804509239,
-        0.11584557427300347
+        0.5723615373883929,
+        0.8449279240199498,
+        0.8567592075892857,
+        0.30797171214270214
       ],
       "width": 1254,
       "height": 1254,
-      "bytes": 3001,
-      "sha256": "f66cc58d0efb62efeb4719441e8ab48ab617deeaf18c870603d6c41f3493fc55"
+      "bytes": 4723,
+      "sha256": "c0f0a1777d94b86f855f2e395385d4d2f39c638d8b75dc0ed2242cf4cf5b4974"
     }
   },
   "review": {
-    "reviewedAt": "2026-08-03T16:21:51.650Z",
+    "reviewedAt": "2026-08-03T18:50:56.598Z",
     "reviewer": "Codex",
     "outcome": "pass",
-    "notes": "Reviewed all 105 square portraits and garment overlays; faces, hair, headwear, jewelry, and skin remain protected while visible upper garments are covered."
+    "notes": "Reviewed all 105 garment overlays for the v2 redraws; visible upper garments are covered while faces, hair, skin, head coverings, jewelry, and accessories remain protected."
+  },
+  "sourceGeneration": {
+    "provider": "OpenAI",
+    "model": "gpt-image-2",
+    "mode": "built-in image generation",
+    "promptVersion": "fantasticos-redraw-v2",
+    "generatedAt": "2026-08-03T18:26:57.420Z",
+    "identityReference": "Previous fantastico-095 standardized portrait derived from the matching grouped Drive source panel.",
+    "styleReference": "Eight reviewed Palari standardized portraits assembled as a collection style board.",
+    "intent": "Identity-guided high-resolution redraw with complete hair, neck, both shoulders, and upper chest."
   },
   "foregroundMatte": {
     "status": "reviewed",
-    "generatedAt": "2026-08-03T16:06:12.903Z",
+    "generatedAt": "2026-08-03T18:38:34.500Z",
     "provider": "fal.ai",
     "model": "fal-ai/birefnet/v2",
     "variant": "Matting",
     "operatingResolution": "2048x2048",
     "refineForeground": true,
     "sourceOutput": "refined-transparent-image-and-alpha",
-    "requestId": "019fc860-18ed-7b32-9e9d-41b0fb3d7210",
+    "requestId": "019fc8eb-9580-7d72-8382-7724b209d572",
     "apiOutput": {
-      "width": 253,
-      "height": 843,
+      "width": 1254,
+      "height": 1254,
       "contentType": "image/png"
-    },
-    "framing": {
-      "outputSize": 1254,
-      "foregroundWidth": 760,
-      "foregroundX": 247,
-      "foregroundY": -80,
-      "backgroundColor": "#DCE8F7"
-    },
-    "provenance": {
-      "sharedDrive": "palari-marketing",
-      "sharedDriveId": "0ABSIED45ZSJEUk9PVA",
-      "folder": "Los 5 fantásticos ",
-      "groupFile": "1776178338169.png",
-      "groupDriveId": "1KlmY6JzP0Cu5cpqU3vpcPCTUfVg8KFQ1",
-      "groupMd5": "466aeeb0202e4d180078cce7a060b0e8",
-      "position": 5,
-      "panel": {
-        "width": 253,
-        "height": 843,
-        "sha256": "ba042b7e711e737e71e27a69cd7b52f21fadbf8c362f32a410f88d7fc63f74df"
-      }
     },
     "cutout": {
       "file": "foreground.png",
       "width": 1254,
       "height": 1254,
-      "bytes": 692377,
-      "sha256": "e6012311db19b98ce8c11bad3f1ac6da3eeefb7b19568ad8504885507075fb72"
+      "bytes": 1140540,
+      "sha256": "e63e3300de974be9be0b883b4503f80aaee1bfa84b5101efc07f0ddcd09b087f"
     },
     "matte": {
       "file": "matte.png",
       "width": 1254,
       "height": 1254,
-      "bytes": 68783,
-      "sha256": "b06b26f2bfd32dc62605b4b2c668ccff9a0ac04c9b84f2d4bc365d717bca0ace"
+      "bytes": 47415,
+      "sha256": "63b87b88a6ce10a90090fd5eb529e2c4e0dd7ed4f5f042dba6ad7f22f3e25b6a"
     },
     "review": {
-      "reviewedAt": "2026-08-03T16:21:52.155Z",
+      "reviewedAt": "2026-08-03T18:50:55.441Z",
       "reviewer": "Codex",
       "outcome": "pass",
-      "notes": "Reviewed all 105 standardized portraits and refined cutouts; framing, curls, braids, flyaways, head coverings, accessories, and cleaned panel boundaries pass."
+      "notes": "Reviewed all 105 gpt-image-2 redraws on a contrasting teal background; complete shoulders, curls, braids, flyaways, facial hair, glasses, jewelry, and the hijab are preserved with clean soft edges."
     }
   }
 }
