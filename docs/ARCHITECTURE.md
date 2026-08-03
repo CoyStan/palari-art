@@ -20,7 +20,7 @@ Bundled or uploaded image
   Canvas preview/export
 ```
 
-There is no application server, database, authentication layer, or persistent upload service. The browser makes no remote image-processing calls. `scripts/generate-mask-pilot.mjs` is an offline preparation tool and is the only fal.ai integration.
+There is no application server, database, authentication layer, or persistent upload service. The browser makes no remote image-processing calls. `scripts/generate-avatar-masks.mjs` is an offline preparation tool and is the only fal.ai integration.
 
 ## Runtime flow
 
@@ -37,7 +37,7 @@ Object URLs created from uploaded files exist only for the browser session. Uplo
 
 ### Stored semantic masks
 
-Five pilot portraits have a `person.png` and `shirt.png` under `public/masks/<avatar-id>/`. The renderer downsamples those masks to its 512 × 512 working resolution, inverts the person mask for the background, softens both boundaries, and clips the shirt mask to the person silhouette.
+All 38 bundled portraits have a reviewed `person.png` and `shirt.png` under `public/masks/<avatar-id>/`. The renderer downsamples those masks to its 512 × 512 working resolution, inverts the person mask for the background, softens both boundaries, and clips the shirt mask to the person silhouette.
 
 The source masks remain at the source portrait's 1254 × 1254 resolution. Keeping masks source-aligned makes checksums, replacements, and later higher-resolution exports unambiguous.
 
@@ -61,11 +61,11 @@ Prepared results are cached by source URL and tolerance values for the current b
 
 ## Why the current masks fail
 
-The detector understands color and connectivity, not anatomy. A stylized portrait can legitimately contain the same hue in hair, skin, a scarf, and a shirt. No tolerance value can reliably separate those regions in every image. Slider tuning may improve one edge while damaging another.
+The upload fallback understands color and connectivity, not anatomy. A stylized portrait can legitimately contain the same hue in hair, skin, a scarf, and a shirt. No tolerance value can reliably separate those regions in every image. Slider tuning may improve one edge while damaging another.
 
 This is a limitation of the technique, not only a matter of finding better constants. See `MASKING.md` for the replacement design.
 
-## Target mask architecture
+## Semantic mask architecture
 
 Semantic segmentation should be an asset-preparation step:
 
@@ -96,13 +96,13 @@ public/masks/<avatar-id>/
 - `person.png` is inverted by the renderer to obtain the editable background.
 - `metadata.json` records the source asset, provider/model, prompts, creation time, and review status.
 
-This contract is active for the five reviewed pilot portraits. The remaining portraits have no stored masks and use the heuristic fallback.
+This contract is active for all 38 reviewed bundled portraits. Temporary uploads use the heuristic fallback because no upload API route exists.
 
 ## Introducing an external API safely
 
 The browser must never receive the provider key. A future implementation needs one of these server-side boundaries:
 
-1. A batch preparation script for the 38 bundled portraits.
+1. The existing batch preparation script for bundled portraits.
 2. A small server endpoint for new user uploads.
 
 The server reads `FAL_KEY` from its environment, validates file type and size, submits the image, normalizes the returned mask, and returns only the result. Do not use a `VITE_`-prefixed secret because Vite exposes such variables to browser bundles.

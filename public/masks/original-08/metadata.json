@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "avatarId": "original-08",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T00:11:23.759Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Full-library semantic mask migration.",
+  "source": {
+    "file": "avatars/standardized-1x1/avatar-08.png",
+    "sha256": "46239680f61d76d64592a270f06586aee71270922bd4db6e12b9021b99487a27",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4f5-dfcf-7510-ba33-7a47df62a9b0",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f5-dfcf-7510-ba33-7a47df62a9b0",
+      "score": 0.9561924338340759,
+      "box": [
+        0.5126929775116935,
+        0.5347689636169918,
+        0.8692040292043535,
+        0.9270923024132138
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 9019,
+      "sha256": "939da04db7c7a3097868d67ed28d4437563f77228014466cc401a54576256619"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4f5-efe6-7ef0-8d5a-45cc5fcd887d",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f5-efe6-7ef0-8d5a-45cc5fcd887d",
+      "score": 0.9518638849258423,
+      "box": [
+        0.5126593869829935,
+        0.8666117229158916,
+        0.8688617660885766,
+        0.2640500749860491
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4380,
+      "sha256": "2986d917a99466b5f53ef5c8b2700505de51ec78253f79b518916eca0c1bccdf"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:20:28.440Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-library contact-sheet review passed; person and sweater masks preserve faces, hair, headwear, facial hair, glasses, jewelry, and skin. Confidence and boundary-containment outliers were inspected at higher resolution."
+  }
+}

@@ -6,9 +6,9 @@ The current application is a 1:1 avatar color studio. It lets a user select one 
 
 ## Repository status
 
-The interface and export flow work. Five difficult portraits now use reviewed fal.ai SAM 3 semantic masks; the other 33 portraits still use the prototype color detector. The prototype estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so it remains unreliable when a shirt resembles skin, hair, or a head covering.
+The interface and export flow work. All 38 bundled portraits use reviewed fal.ai SAM 3 semantic masks. Background and shirt recoloring remains local and deterministic in the browser; the API is used only by the offline asset-preparation script.
 
-The approved direction is to generate `person` and `sweater` masks through the fal.ai SAM 3 API once, save those masks with each bundled avatar, and continue doing all interactive recoloring locally. The five-avatar pilot validates this architecture. See [Masking strategy](docs/MASKING.md) and [Pilot results](docs/PILOT-RESULTS.md).
+Temporary user uploads still use the prototype color detector because there is no upload-segmentation service. That fallback estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so results can vary. See [Masking strategy](docs/MASKING.md) and [full-library results](docs/FULL-LIBRARY-RESULTS.md).
 
 ## What is included
 
@@ -21,8 +21,8 @@ The approved direction is to generate `person` and `sweater` masks through the f
 | Exports | 1024 × 1024 PNG and WebP |
 | Uploaded images | PNG, JPEG, or WebP for the current browser session |
 | Processing | Browser Canvas at runtime; fal.ai is used only by the preparation script |
-| Semantic pilot | 5 reviewed portraits use stored person and sweater masks |
-| Known limitation | The remaining 33 color-based masks are not consistently accurate |
+| Semantic masks | All 38 bundled portraits use reviewed person and sweater masks |
+| Known limitation | Temporary uploads still use color-estimated masks |
 
 ## Start the application
 
@@ -53,13 +53,13 @@ npm run check
 
 This verifies the avatar inventory, runs TypeScript checking, and creates a production build. For image-processing changes, also inspect several portraits visually; compilation cannot detect a bad mask.
 
-To generate or resume the five-avatar semantic-mask pilot, copy `.env.example` to `.env.local`, add `FAL_KEY`, and run:
+To generate or resume masks for the bundled library, copy `.env.example` to `.env.local`, add `FAL_KEY`, and run:
 
 ```bash
-npm run masks:pilot
+npm run masks:generate
 ```
 
-Existing masks with the same model and source checksum are skipped unless `-- --force` is added.
+Existing masks with the same model and source checksum are skipped unless `-- --force` is added. Limit a run with `-- --id=original-01`. Generated masks are not production-ready until they are visually reviewed and recorded with `npm run masks:review`.
 
 ## Repository map
 
@@ -69,12 +69,16 @@ palari-art/
 ├── docs/
 │   ├── ARCHITECTURE.md       Application structure and data flow
 │   ├── ASSETS.md             Portrait collections and asset conventions
-│   ├── MASKING.md            Current limitation and planned API masks
+│   ├── FULL-LIBRARY-RESULTS.md Complete SAM 3 collection evaluation
+│   ├── MASKING.md            Semantic mask workflow and upload fallback
 │   ├── PILOT-RESULTS.md       Five-avatar SAM 3 evaluation
 │   └── STATUS.md             Concise handoff and next milestones
 ├── public/avatars/           Bundled source portraits served unchanged
+├── public/masks/             Reviewed semantic layers and generation metadata
+├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
+├── src/data/avatar-masks.json Semantic mask registry
 ├── src/data/avatars.ts       Portrait registry
 ├── src/lib/color.ts          Color conversion and blending helpers
 ├── src/lib/recolor.ts        Current mask estimation and Canvas renderer
@@ -87,7 +91,7 @@ palari-art/
 - Read [Architecture](docs/ARCHITECTURE.md) before changing the renderer or introducing a server.
 - Read [Avatar assets](docs/ASSETS.md) before adding, renaming, replacing, or synchronizing portraits.
 - Read [Masking strategy](docs/MASKING.md) before working on segmentation or adding an API key.
-- Read [Pilot results](docs/PILOT-RESULTS.md) before changing prompts or expanding semantic masks.
+- Read [Full-library results](docs/FULL-LIBRARY-RESULTS.md) before changing prompts or regenerating semantic masks.
 - Update [Current status](docs/STATUS.md) whenever a milestone or technical boundary changes.
 
 ## Product boundaries

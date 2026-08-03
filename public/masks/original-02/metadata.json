@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "avatarId": "original-02",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T00:10:32.230Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Full-library semantic mask migration.",
+  "source": {
+    "file": "avatars/standardized-1x1/avatar-02.png",
+    "sha256": "a316c4e2647e8ec831bab81ed997a41485565c30dea736f640b3b3d3dc566068",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4f5-1870-72a3-8e58-25cf6664b640",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f5-1870-72a3-8e58-25cf6664b640",
+      "score": 0.9570035338401794,
+      "box": [
+        0.5148817811693464,
+        0.5392411247132316,
+        0.8919491616506425,
+        0.9190239073738219
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8351,
+      "sha256": "cc0e5a0ce9ad88c96e8db2bdefc822f6f768aff01a0446b9cfb0aaba1253a1b4"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4f5-2689-7ad0-bfd8-9d9616787b1d",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f5-2689-7ad0-bfd8-9d9616787b1d",
+      "score": 0.9436929821968079,
+      "box": [
+        0.5148031825111026,
+        0.8588258652460008,
+        0.8922410238356817,
+        0.27961258661179317
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4543,
+      "sha256": "acdec478c84b342760fd3a1d14376d7698f450c3c0e6802a59948232a8cf9a22"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:20:28.440Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-library contact-sheet review passed; person and sweater masks preserve faces, hair, headwear, facial hair, glasses, jewelry, and skin. Confidence and boundary-containment outliers were inspected at higher resolution."
+  }
+}

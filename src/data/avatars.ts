@@ -1,4 +1,4 @@
-import maskPilot from "./mask-pilot.json";
+import maskRegistry from "./avatar-masks.json";
 import type { AvatarMaskSources } from "../lib/recolor";
 
 export type AvatarCollection = "Original set" | "Expanded set" | "Uploads";
@@ -11,8 +11,8 @@ export type Avatar = {
   masks?: AvatarMaskSources;
 };
 
-const pilotMasks = new Map<string, AvatarMaskSources>(
-  maskPilot.avatars.map((avatar) => [
+const storedMasks = new Map<string, AvatarMaskSources>(
+  maskRegistry.avatars.map((avatar) => [
     avatar.id,
     {
       person: `/masks/${avatar.id}/person.png`,
@@ -29,7 +29,7 @@ const originalSet: Avatar[] = Array.from({ length: 10 }, (_, index) => {
     name: `Portrait ${number}`,
     src: `/avatars/standardized-1x1/avatar-${number}.png`,
     collection: "Original set",
-    masks: pilotMasks.get(id),
+    masks: storedMasks.get(id),
   };
 });
 
@@ -41,7 +41,7 @@ const expandedSet: Avatar[] = Array.from({ length: 28 }, (_, index) => {
     name: `Portrait ${number}`,
     src: `/avatars/standardized-4x4/avatar-4x4-${number}-v1.png`,
     collection: "Expanded set",
-    masks: pilotMasks.get(id),
+    masks: storedMasks.get(id),
   };
 });
 

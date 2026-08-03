@@ -8,37 +8,36 @@ Last updated: 2026-08-03
 - 38 bundled Palari portraits across two collections.
 - Temporary uploads for PNG, JPEG, and WebP.
 - Background and shirt color controls with presets.
-- Edge-tolerance controls for the current heuristic detector.
+- Edge-tolerance controls for temporary-upload fallback masks.
 - 1024 × 1024 PNG and WebP export.
 - Development access over Tailscale on port 4173.
 - Repeatable fal.ai SAM 3 batch preparation using an ignored server-side key.
-- Five reviewed semantic-mask pilot portraits wired into the editor.
-- Automated pilot checksum, dimension, metadata, and review validation.
+- All 38 bundled portraits wired to reviewed semantic person and sweater masks.
+- Automated full-library checksum, dimension, metadata, and review validation.
 
-## Known problem
+## Known limitation
 
-The remaining 33 portraits still derive masks from colors and connected pixels. They can select hair, skin, or accessories when those areas resemble the shirt or background. The five pilot portraits solve this with stored semantic masks, but the full-library migration is not complete.
+Temporary uploads still derive masks from colors and connected pixels. They can select hair, skin, or accessories when those areas resemble the shirt or background. Bundled portraits do not use this fallback.
 
 ## Approved direction
 
 - Keep background and shirt as the only editable layers.
 - Use fal.ai SAM 3 to generate `person` and `sweater` masks.
-- The five difficult stylized portraits passed mask and browser review.
+- The entire 38-avatar collection passed mask review; difficult cases also passed browser review.
 - Store approved masks and recolor locally afterward.
 - Keep the provider key on the server only.
 
 ## Next implementation steps
 
-1. Review the five pilot results with the user.
-2. Process the remaining 33 portraits only after pilot approval.
-3. Visually review every new mask before registering it.
-4. Remove the heuristic fallback only after all bundled portraits have reviewed masks.
-5. Decide separately whether uploads need remote segmentation and persistence.
+1. Keep source and stored-mask checksums synchronized when artwork changes.
+2. Visually review every new or regenerated mask before registering it.
+3. Decide separately whether uploads need remote segmentation and persistence.
+4. If uploads become remote, add disclosure, retention, size limits, caching, and rate limiting first.
 
 ## Explicitly not done
 
 - No interactive fal.ai API route exists; only the offline batch script is implemented.
-- The remaining 33 portraits do not yet have semantic masks.
+- Temporary uploads do not receive semantic masks.
 - No automatic Google Drive synchronization exists.
 - No production deployment or background service is configured here.
 - Hair recoloring is not planned.

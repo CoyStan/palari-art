@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "avatarId": "expanded-04",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T00:12:24.253Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Full-library semantic mask migration.",
+  "source": {
+    "file": "avatars/standardized-4x4/avatar-4x4-04-v1.png",
+    "sha256": "01dfba8f2968d82fa5c59f96a161ab1cfb032b19e5ff2b9b072cf23fd840dd97",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4f6-cc26-7e62-92a9-a6b68e83abae",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f6-cc26-7e62-92a9-a6b68e83abae",
+      "score": 0.9711993932723999,
+      "box": [
+        0.48793831443975844,
+        0.5369859839242602,
+        0.9775344128646548,
+        0.9215471555316259
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7666,
+      "sha256": "a1b883f05d7e3f40d4f8e249b6dc47dffae2f913471ac807fe5afed07c075f89"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4f6-dc0a-7930-808b-07e3dfc26864",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f6-dc0a-7930-808b-07e3dfc26864",
+      "score": 0.8991832137107849,
+      "box": [
+        0.48805165929453714,
+        0.8554769243512835,
+        0.9770652779511043,
+        0.2854054768880208
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4815,
+      "sha256": "872efd2abde0dbc6947834d22d0f6e69e8d2d284e85575951b24d4177c3cedb6"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:20:28.440Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-library contact-sheet review passed; person and sweater masks preserve faces, hair, headwear, facial hair, glasses, jewelry, and skin. Confidence and boundary-containment outliers were inspected at higher resolution."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "avatarId": "expanded-07",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T00:12:54.246Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Full-library semantic mask migration.",
+  "source": {
+    "file": "avatars/standardized-4x4/avatar-4x4-07-v1.png",
+    "sha256": "1b8feb65c98957b1e108b96afffe627b351d1da53a2be50ebd2b1a0a5d2f5509",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4f7-412c-7d50-b418-876714d22fa0",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f7-412c-7d50-b418-876714d22fa0",
+      "score": 0.9561762809753418,
+      "box": [
+        0.499687040135974,
+        0.5227972874565731,
+        0.9952304845764524,
+        0.9519222388191829
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7958,
+      "sha256": "4c735661779a667b6fec3026187c22bf7c6cdf6169ffd5846be67923b81df845"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4f7-50ef-7ca0-b703-90a728830278",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f7-50ef-7ca0-b703-90a728830278",
+      "score": 0.8917703032493591,
+      "box": [
+        0.4998610208904932,
+        0.8565035623217386,
+        0.9952474018884083,
+        0.2846085079132564
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 5028,
+      "sha256": "fea0e7135abba3181a5e7d3da0ff9e6812b3328a01f9f6df3857e4aa745e2342"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:20:28.440Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-library contact-sheet review passed; person and sweater masks preserve faces, hair, headwear, facial hair, glasses, jewelry, and skin. Confidence and boundary-containment outliers were inspected at higher resolution."
+  }
+}

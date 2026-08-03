@@ -12,8 +12,10 @@
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview --host 0.0.0.0",
     "verify:assets": "node scripts/verify-assets.mjs",
-    "verify:masks": "node scripts/verify-mask-pilot.mjs",
-    "masks:pilot": "node --env-file=.env.local scripts/generate-mask-pilot.mjs",
+    "verify:masks": "node scripts/verify-avatar-masks.mjs",
+    "verify:masks:generated": "node scripts/verify-avatar-masks.mjs --allow-unreviewed",
+    "masks:generate": "node --env-file=.env.local scripts/generate-avatar-masks.mjs",
+    "masks:review": "node scripts/record-mask-review.mjs",
     "check": "npm run verify:assets && npm run verify:masks && npm run build"
   },
   "dependencies": {

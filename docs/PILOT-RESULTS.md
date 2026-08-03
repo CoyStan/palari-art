@@ -6,7 +6,7 @@ Review date: 2026-08-03
 
 The five-avatar fal.ai SAM 3 pilot passed. Stored semantic masks produced substantially cleaner layer separation than the color heuristic, and the browser renderer successfully recolored backgrounds and sweaters while protecting faces, hair, a hijab, necklaces, and skin.
 
-These five portraits now use stored masks in the application. The other 33 portraits continue to use the heuristic fallback until a full-library run is approved and reviewed.
+These five portraits established the prompts and acceptance criteria later used for the complete collection. All 38 bundled portraits now use stored masks; see `FULL-LIBRARY-RESULTS.md` for the completed run.
 
 ## Test set
 
@@ -38,8 +38,8 @@ The text prompt `shirt` returned no mask on all five portraits. The fallback pro
 
 The final path needs two successful inferences per portrait: one for `person` and one for `sweater`. Prompt discovery and initial probing added unsuccessful calls during this pilot. At the provider's price reviewed on 2026-08-02, the pilot consumed approximately $0.09; a clean five-avatar rerun should cost approximately $0.05.
 
-Provider pricing and terms can change and must be checked before processing the remaining collection.
+Provider pricing and terms can change and must be checked before a future regeneration.
 
 ## Recommendation
 
-Proceed with the remaining 33 bundled avatars using `person` and `sweater`, while retaining the prompt ladder and requiring individual visual approval. Do not enable remote processing for user uploads until disclosure, retention, rate limiting, and server-route behavior are separately defined.
+The recommendation was completed: the remaining bundled avatars were processed with `person` and `sweater`, visually reviewed, and registered. Do not enable remote processing for user uploads until disclosure, retention, rate limiting, and server-route behavior are separately defined.

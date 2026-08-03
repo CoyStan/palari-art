@@ -3,7 +3,7 @@ import { access, mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { fal } from "@fal-ai/client";
-import pilot from "../src/data/mask-pilot.json" with { type: "json" };
+import maskRegistry from "../src/data/avatar-masks.json" with { type: "json" };
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicRoot = path.join(repositoryRoot, "public");
@@ -15,15 +15,15 @@ const prompts = {
 };
 
 if (!process.env.FAL_KEY) {
-  throw new Error("FAL_KEY is missing. Add it to .env.local and run through npm run masks:pilot.");
+  throw new Error("FAL_KEY is missing. Add it to .env.local and run npm run masks:generate.");
 }
 
 const selectedAvatars = requestedId
-  ? pilot.avatars.filter((avatar) => avatar.id === requestedId)
-  : pilot.avatars;
+  ? maskRegistry.avatars.filter((avatar) => avatar.id === requestedId)
+  : maskRegistry.avatars;
 
 if (selectedAvatars.length === 0) {
-  throw new Error(`Unknown pilot avatar id: ${requestedId}`);
+  throw new Error(`Unknown avatar id: ${requestedId}`);
 }
 
 async function exists(filePath) {
@@ -64,7 +64,7 @@ async function downloadMask(url, targetPath, label) {
 async function generateMask(imageUrl, promptCandidates, targetPath, label) {
   const attempts = [];
   for (const prompt of promptCandidates) {
-    const result = await fal.subscribe(pilot.model, {
+    const result = await fal.subscribe(maskRegistry.model, {
       input: {
         image_url: imageUrl,
         prompt,
@@ -110,7 +110,7 @@ for (const [index, avatar] of selectedAvatars.entries()) {
 
   if (!force && await exists(metadataPath) && await exists(personPath) && await exists(shirtPath)) {
     const existing = JSON.parse(await readFile(metadataPath, "utf8"));
-    if (existing.source?.sha256 === sourceHash && existing.model === pilot.model) {
+    if (existing.source?.sha256 === sourceHash && existing.model === maskRegistry.model) {
       console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: current masks already exist; skipping.`);
       continue;
     }
@@ -129,11 +129,11 @@ for (const [index, avatar] of selectedAvatars.entries()) {
   const metadata = {
     version: 1,
     avatarId: avatar.id,
-    status: "pilot-unreviewed",
+    status: "unreviewed",
     generatedAt: new Date().toISOString(),
-    provider: pilot.provider,
-    model: pilot.model,
-    reason: avatar.reason,
+    provider: maskRegistry.provider,
+    model: maskRegistry.model,
+    reason: avatar.reason ?? "Full-library semantic mask migration.",
     source: {
       file: avatar.source,
       sha256: sourceHash,
@@ -146,4 +146,4 @@ for (const [index, avatar] of selectedAvatars.entries()) {
   console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: saved masks and metadata.`);
 }
 
-console.log("Mask pilot generation complete. Review every result before changing its status.");
+console.log("Mask generation complete. Review every new result before approving it.");

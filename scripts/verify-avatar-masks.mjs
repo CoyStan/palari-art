@@ -2,11 +2,12 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import pilot from "../src/data/mask-pilot.json" with { type: "json" };
+import maskRegistry from "../src/data/avatar-masks.json" with { type: "json" };
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicRoot = path.join(repositoryRoot, "public");
 const expectedLayers = ["person", "shirt"];
+const allowUnreviewed = process.argv.includes("--allow-unreviewed");
 const problems = [];
 
 function sha256(buffer) {
@@ -21,10 +22,11 @@ function pngDimensions(buffer, label) {
   return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
 }
 
-const ids = pilot.avatars.map((avatar) => avatar.id);
-if (new Set(ids).size !== ids.length) problems.push("Pilot avatar IDs must be unique.");
+const ids = maskRegistry.avatars.map((avatar) => avatar.id);
+if (new Set(ids).size !== ids.length) problems.push("Avatar mask IDs must be unique.");
+if (ids.length !== 38) problems.push(`Expected 38 bundled avatars, found ${ids.length}.`);
 
-for (const avatar of pilot.avatars) {
+for (const avatar of maskRegistry.avatars) {
   try {
     const sourcePath = path.join(publicRoot, avatar.source);
     const sourceBuffer = await readFile(sourcePath);
@@ -33,8 +35,12 @@ for (const avatar of pilot.avatars) {
     const metadata = JSON.parse(await readFile(path.join(maskDirectory, "metadata.json"), "utf8"));
 
     if (metadata.avatarId !== avatar.id) problems.push(`${avatar.id}: metadata avatarId does not match.`);
-    if (metadata.model !== pilot.model) problems.push(`${avatar.id}: metadata model does not match config.`);
-    if (metadata.status !== "pilot-reviewed") problems.push(`${avatar.id}: pilot has not been reviewed.`);
+    if (metadata.provider !== maskRegistry.provider) problems.push(`${avatar.id}: metadata provider does not match config.`);
+    if (metadata.model !== maskRegistry.model) problems.push(`${avatar.id}: metadata model does not match config.`);
+    if (!allowUnreviewed && metadata.status !== "reviewed") problems.push(`${avatar.id}: masks have not been reviewed.`);
+    if (!allowUnreviewed && (metadata.review?.outcome !== "pass" || !metadata.review?.reviewedAt)) {
+      problems.push(`${avatar.id}: passing review metadata is missing.`);
+    }
     if (metadata.source?.file !== avatar.source) problems.push(`${avatar.id}: metadata source does not match.`);
     if (metadata.source?.sha256 !== sha256(sourceBuffer)) {
       problems.push(`${avatar.id}: source changed after masks were generated.`);
@@ -60,9 +66,10 @@ for (const avatar of pilot.avatars) {
 }
 
 if (problems.length > 0) {
-  console.error("Mask pilot verification failed:\n");
+  console.error("Avatar mask verification failed:\n");
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log(`Verified ${pilot.avatars.length} semantic mask pilot avatars.`);
+  const qualifier = allowUnreviewed ? "generated" : "reviewed";
+  console.log(`Verified ${maskRegistry.avatars.length} ${qualifier} semantic-mask avatars.`);
 }

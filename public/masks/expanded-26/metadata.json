@@ -1,7 +1,7 @@
 {
   "version": 1,
   "avatarId": "expanded-26",
-  "status": "pilot-reviewed",
+  "status": "reviewed",
   "generatedAt": "2026-08-02T23:50:04.077Z",
   "provider": "fal.ai",
   "model": "fal-ai/sam-3/image",

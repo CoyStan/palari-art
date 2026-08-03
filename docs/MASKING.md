@@ -2,7 +2,7 @@
 
 ## Decision summary
 
-The current color-based detector is suitable as a prototype fallback but not as the production mask source. The five-avatar pilot has validated this production design:
+The color-based detector remains a prototype fallback for temporary uploads. All bundled portraits now use this production design:
 
 1. Use an external semantic segmentation API to create masks.
 2. Review and store the masks once.
@@ -12,7 +12,7 @@ This preserves server resources and avoids paying for repeated AI calls while a 
 
 ## Current implementation
 
-`src/lib/recolor.ts` estimates background and shirt masks from pixel colors and connected regions. It does not identify a face, hair, clothing, or accessories semantically.
+`src/lib/recolor.ts` loads reviewed semantic masks for the 38 bundled portraits. When no stored masks are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
 
 Known failure conditions include:
 
@@ -33,7 +33,7 @@ Last reviewed on 2026-08-02, the provider listed the endpoint at $0.005 per requ
 
 Documentation: <https://fal.ai/models/fal-ai/sam-3/image>
 
-The key is expected as the server-only environment variable `FAL_KEY`. It is loaded from ignored `.env.local` by `npm run masks:pilot`; no key is stored in the repository or exposed to Vite.
+The key is expected as the server-only environment variable `FAL_KEY`. It is loaded from ignored `.env.local` by `npm run masks:generate`; no key is stored in the repository or exposed to Vite.
 
 ## Minimum mask set
 
@@ -46,11 +46,11 @@ Only two masks are needed for the current product:
 
 Hair and face do not require separate editable masks because they remain inside the protected person region and outside the shirt selection. Optional `hair` and `face` masks may be generated during evaluation to diagnose overlaps, but they are not required at runtime.
 
-The pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded with scores from 0.907 to 0.935. New runs therefore try `sweater` first and retain a fallback prompt ladder. At two successful requests per portrait, the 38 bundled avatars require 76 requests. At the last reviewed price, the one-time inference cost would be approximately $0.38 before retries.
+The pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded. The full-library run therefore tried `sweater` first; it succeeded on all remaining portraits without prompt fallback. Across all 38 avatars, person scores range from 0.934 to 0.972 and garment scores range from 0.863 to 0.954. At two successful requests per portrait, a clean full regeneration requires 76 requests.
 
-## Evaluation before integration
+## Evaluation and review
 
-The completed pilot covers five difficult portraits:
+The pilot established five difficult acceptance cases:
 
 1. Long dark hair covering the shoulders.
 2. Hair and shirt with similar colors.
@@ -58,7 +58,7 @@ The completed pilot covers five difficult portraits:
 4. A head covering or large accessory.
 5. Curly or flyaway hair against the background.
 
-Prompt attempts, request IDs, scores, boxes, checksums, and review results are kept in each `metadata.json`. See `PILOT-RESULTS.md` for the consolidated result.
+Prompt attempts, request IDs, scores, boxes, checksums, and review results are kept in each `metadata.json`. See `PILOT-RESULTS.md` for the initial evaluation and `FULL-LIBRARY-RESULTS.md` for the completed collection.
 
 Acceptance criteria:
 
@@ -81,12 +81,12 @@ If a mask is nearly correct, manual correction is preferable to repeated generat
 - Normalize masks to the proposed stored contract.
 - Produce a visual comparison for review.
 
-### Phase 2: Bundled library — pending approval
+### Phase 2: Bundled library — complete
 
-- Process and review all 38 portraits.
-- Add `public/masks/<avatar-id>/person.png`, `shirt.png`, and `metadata.json`.
-- Update the renderer to prefer stored masks.
-- Retain the heuristic detector temporarily as an explicit fallback.
+- Processed and reviewed all 38 portraits.
+- Added `public/masks/<avatar-id>/person.png`, `shirt.png`, and `metadata.json`.
+- Updated the renderer registry so every built-in portrait uses stored masks.
+- Retained the heuristic detector for temporary uploads.
 
 ### Phase 3: New uploads
 

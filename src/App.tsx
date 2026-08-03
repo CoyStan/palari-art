@@ -103,7 +103,7 @@ export function App() {
           </div>
           <div className="stage-caption">
             <span>1024 × 1024</span>
-            <span>{selected.masks ? "SAM 3 pilot masks" : "Color-estimated masks"}</span>
+            <span>{selected.masks ? "Reviewed semantic masks" : "Color-estimated masks"}</span>
           </div>
         </section>
 

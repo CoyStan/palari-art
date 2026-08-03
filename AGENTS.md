@@ -17,10 +17,10 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - All bundled sources are square 1254 × 1254 PNG files.
 - The editor renders and exports at 1024 × 1024.
 - The app is currently a browser-only Vite SPA. It has no backend.
-- Five pilot portraits use reviewed semantic masks under `public/masks/`.
-- `src/lib/recolor.ts` prefers stored masks and falls back to color/connectivity heuristics for the other 33 portraits.
-- Those heuristic masks are known to fail on some stylized portraits. Do not describe the full library as semantically masked yet.
-- `scripts/generate-mask-pilot.mjs` is the server-side fal.ai SAM 3 preparation path.
+- All 38 bundled portraits use reviewed semantic masks under `public/masks/`.
+- `src/data/avatar-masks.json` is the source of truth that attaches those masks to built-in portraits.
+- `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
+- `scripts/generate-avatar-masks.mjs` is the server-side fal.ai SAM 3 preparation path.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.
@@ -37,8 +37,9 @@ See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approve
 ```bash
 npm run dev            # Vite on 0.0.0.0:4173
 npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
-npm run verify:masks   # Check pilot sources, masks, checksums, metadata, and review state
-npm run masks:pilot    # Generate/resume the five fal.ai masks using .env.local
+npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
+npm run masks:generate # Generate/resume fal.ai masks using .env.local
+npm run masks:review -- --id=<id> --reviewer=<name> --notes=<summary>
 npm run typecheck      # TypeScript only
 npm run build          # TypeScript plus production build
 npm run check          # Canonical repository validation
@@ -81,7 +82,7 @@ The full naming and review procedure is in `docs/ASSETS.md`.
 - If uploads begin leaving the browser, update the “Runs locally” and “Processing never leaves this browser” interface copy in `src/App.tsx`; those claims must remain literally true.
 - Keep `FAL_KEY` server-side. Never create `VITE_FAL_KEY`, embed a key in JavaScript, commit a `.env` file, or send the secret to the browser.
 - Adding fal.ai requires a server-side route or separate batch script; the current Vite SPA cannot safely hold the key.
-- API-generated masks must be reviewed before they are registered in the app. The first five are recorded in `docs/PILOT-RESULTS.md`.
+- API-generated masks must be reviewed before they are registered in the app. The full collection review is recorded in `docs/FULL-LIBRARY-RESULTS.md`.
 - Store masks separately from originals and retain enough metadata to reproduce them.
 
 The proposed mask file contract and acceptance cases are in `docs/MASKING.md`.
