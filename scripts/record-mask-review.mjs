@@ -8,12 +8,13 @@ const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url))
 const publicRoot = path.join(repositoryRoot, "public");
 const reviewAll = process.argv.includes("--all");
 const requestedId = process.argv.find((argument) => argument.startsWith("--id="))?.slice(5);
+const requestedPrefix = process.argv.find((argument) => argument.startsWith("--prefix="))?.slice(9);
 const reviewer = process.argv.find((argument) => argument.startsWith("--reviewer="))?.slice(11);
 const notes = process.argv.find((argument) => argument.startsWith("--notes="))?.slice(8);
 const layer = process.argv.find((argument) => argument.startsWith("--layer="))?.slice(8) ?? "semantic";
 
-if ((!reviewAll && !requestedId) || (reviewAll && requestedId)) {
-  throw new Error("Choose exactly one review scope: --all or --id=<avatar-id>.");
+if ([reviewAll, Boolean(requestedId), Boolean(requestedPrefix)].filter(Boolean).length !== 1) {
+  throw new Error("Choose exactly one review scope: --all, --id=<avatar-id>, or --prefix=<id-prefix>.");
 }
 if (!reviewer || !notes) {
   throw new Error("A review requires --reviewer=<name> and --notes=<summary>.");
@@ -24,9 +25,11 @@ if (!new Set(["semantic", "foreground"]).has(layer)) {
 
 const selectedAvatars = requestedId
   ? maskRegistry.avatars.filter((avatar) => avatar.id === requestedId)
-  : maskRegistry.avatars;
+  : requestedPrefix
+    ? maskRegistry.avatars.filter((avatar) => avatar.id.startsWith(requestedPrefix))
+    : maskRegistry.avatars;
 
-if (selectedAvatars.length === 0) throw new Error(`Unknown avatar id: ${requestedId}`);
+if (selectedAvatars.length === 0) throw new Error(`No avatars matched ${requestedId ?? requestedPrefix}.`);
 
 function sha256(buffer) {
   return createHash("sha256").update(buffer).digest("hex");

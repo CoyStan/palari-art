@@ -9,6 +9,7 @@ const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url))
 const publicRoot = path.join(repositoryRoot, "public");
 const force = process.argv.includes("--force");
 const requestedId = process.argv.find((argument) => argument.startsWith("--id="))?.slice(5);
+const requestedPrefix = process.argv.find((argument) => argument.startsWith("--prefix="))?.slice(9);
 const prompts = {
   person: ["person"],
   shirt: ["sweater", "shirt", "upper clothing", "top"],
@@ -20,10 +21,12 @@ if (!process.env.FAL_KEY) {
 
 const selectedAvatars = requestedId
   ? maskRegistry.avatars.filter((avatar) => avatar.id === requestedId)
-  : maskRegistry.avatars;
+  : requestedPrefix
+    ? maskRegistry.avatars.filter((avatar) => avatar.id.startsWith(requestedPrefix))
+    : maskRegistry.avatars;
 
 if (selectedAvatars.length === 0) {
-  throw new Error(`Unknown avatar id: ${requestedId}`);
+  throw new Error(`No avatars matched ${requestedId ?? requestedPrefix}.`);
 }
 
 async function exists(filePath) {
@@ -33,6 +36,22 @@ async function exists(filePath) {
   } catch {
     return false;
   }
+}
+
+async function withRetry(label, operation, attempts = 4) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error;
+      if (attempt === attempts) break;
+      const delay = 750 * 2 ** (attempt - 1);
+      console.warn(`${label}: attempt ${attempt}/${attempts} failed; retrying in ${delay}ms.`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
+  throw lastError;
 }
 
 function sha256(buffer) {
@@ -64,18 +83,21 @@ async function downloadMask(url, targetPath, label) {
 async function generateMask(imageUrl, promptCandidates, targetPath, label) {
   const attempts = [];
   for (const prompt of promptCandidates) {
-    const result = await fal.subscribe(maskRegistry.model, {
-      input: {
-        image_url: imageUrl,
-        prompt,
-        apply_mask: false,
-        output_format: "png",
-        return_multiple_masks: false,
-        max_masks: 1,
-        include_scores: true,
-        include_boxes: true,
-      },
-    });
+    const result = await withRetry(
+      `${label} prompt ${prompt}`,
+      () => fal.subscribe(maskRegistry.model, {
+        input: {
+          image_url: imageUrl,
+          prompt,
+          apply_mask: false,
+          output_format: "png",
+          return_multiple_masks: false,
+          max_masks: 1,
+          include_scores: true,
+          include_boxes: true,
+        },
+      }),
+    );
     const mask = result.data?.masks?.[0];
     attempts.push({ prompt, requestId: result.requestId, found: Boolean(mask?.url) });
     if (!mask?.url) {
@@ -107,24 +129,44 @@ for (const [index, avatar] of selectedAvatars.entries()) {
   const sourceBuffer = await readFile(sourcePath);
   const sourceDimensions = assertPng(sourceBuffer, avatar.id);
   const sourceHash = sha256(sourceBuffer);
+  let existing = null;
 
-  if (!force && await exists(metadataPath) && await exists(personPath) && await exists(shirtPath)) {
-    const existing = JSON.parse(await readFile(metadataPath, "utf8"));
-    if (existing.source?.sha256 === sourceHash && existing.model === maskRegistry.model) {
+  if (await exists(metadataPath)) {
+    const candidate = JSON.parse(await readFile(metadataPath, "utf8"));
+    if (candidate.source?.sha256 === sourceHash && candidate.model === maskRegistry.model) {
+      existing = candidate;
+    }
+  }
+
+  const layerIsCurrent = async (layer, filePath) => {
+    if (force || !existing?.masks?.[layer] || !await exists(filePath)) return false;
+    const buffer = await readFile(filePath);
+    return existing.masks[layer].sha256 === sha256(buffer);
+  };
+  const personIsCurrent = await layerIsCurrent("person", personPath);
+  const shirtIsCurrent = await layerIsCurrent("shirt", shirtPath);
+
+  if (personIsCurrent && shirtIsCurrent) {
       console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: current masks already exist; skipping.`);
       continue;
-    }
   }
 
   await mkdir(outputDirectory, { recursive: true });
   console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: uploading source.`);
   const sourceFile = new File([sourceBuffer], path.basename(sourcePath), { type: "image/png" });
-  const imageUrl = await fal.storage.upload(sourceFile);
+  const imageUrl = await withRetry(
+    `${avatar.id} upload`,
+    () => fal.storage.upload(sourceFile),
+  );
 
-  console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: generating person mask.`);
-  const person = await generateMask(imageUrl, prompts.person, personPath, `${avatar.id} person`);
-  console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: generating shirt mask.`);
-  const shirt = await generateMask(imageUrl, prompts.shirt, shirtPath, `${avatar.id} shirt`);
+  const person = personIsCurrent
+    ? existing.masks.person
+    : await generateMask(imageUrl, prompts.person, personPath, `${avatar.id} person`);
+  console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: ${personIsCurrent ? "reusing person mask" : "generated person mask"}.`);
+  const shirt = shirtIsCurrent
+    ? existing.masks.shirt
+    : await generateMask(imageUrl, prompts.shirt, shirtPath, `${avatar.id} shirt`);
+  console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: ${shirtIsCurrent ? "reusing shirt mask" : "generated shirt mask"}.`);
 
   const metadata = {
     version: 1,
@@ -133,7 +175,7 @@ for (const [index, avatar] of selectedAvatars.entries()) {
     generatedAt: new Date().toISOString(),
     provider: maskRegistry.provider,
     model: maskRegistry.model,
-    reason: avatar.reason ?? "Full-library semantic mask migration.",
+    reason: avatar.reason ?? existing?.reason ?? "Full-library semantic mask migration.",
     source: {
       file: avatar.source,
       sha256: sourceHash,
@@ -141,6 +183,7 @@ for (const [index, avatar] of selectedAvatars.entries()) {
     },
     masks: { person, shirt },
     review: null,
+    ...(existing?.foregroundMatte ? { foregroundMatte: existing.foregroundMatte } : {}),
   };
   await writeFile(metadataPath, `${JSON.stringify(metadata, null, 2)}\n`);
   console.log(`[${index + 1}/${selectedAvatars.length}] ${avatar.id}: saved masks and metadata.`);

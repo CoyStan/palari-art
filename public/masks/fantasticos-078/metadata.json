@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "avatarId": "fantasticos-078",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T16:17:09.266Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Imported from the palari-marketing/Los 5 fantásticos group collection.",
+  "source": {
+    "file": "avatars/los-5-fantasticos/fantastico-078.png",
+    "sha256": "dff77838544165599dcf318f5d021135b2c07ffea39f078ed8328a92d7c0d585",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 49153,
+      "sha256": "2c4ca66a36923a0a8cacb7af7cb26038f193ad84b30b7210b5e61254c517b918",
+      "prompt": "derived from refined foreground matte",
+      "attempts": [],
+      "requestId": "019fc85f-b6b3-79c2-a290-c1a0f0268e0a",
+      "score": 1,
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "derivedFrom": "matte.png"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "upper clothing",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc86a-17db-7763-95aa-78e2e681f57e",
+          "found": false
+        },
+        {
+          "prompt": "shirt",
+          "requestId": "019fc86a-1e53-7f22-808e-a22fdf70531a",
+          "found": false
+        },
+        {
+          "prompt": "upper clothing",
+          "requestId": "019fc86a-225b-7cb2-bbc5-0d488c78fffd",
+          "found": true
+        }
+      ],
+      "requestId": "019fc86a-225b-7cb2-bbc5-0d488c78fffd",
+      "score": 0.9010184407234192,
+      "box": [
+        0.5037006726340642,
+        0.9619082799033513,
+        0.5715238934471494,
+        0.0756637936546689
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2262,
+      "sha256": "490ae9ed39cacd4ec10978a5ea3c72158ff8c71326b212236e541b4208f27b5b"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T16:21:51.650Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Reviewed all 105 square portraits and garment overlays; faces, hair, headwear, jewelry, and skin remain protected while visible upper garments are covered."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-03T16:05:48.133Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fc85f-b6b3-79c2-a290-c1a0f0268e0a",
+    "apiOutput": {
+      "width": 253,
+      "height": 843,
+      "contentType": "image/png"
+    },
+    "framing": {
+      "outputSize": 1254,
+      "foregroundWidth": 760,
+      "foregroundX": 247,
+      "foregroundY": -80,
+      "backgroundColor": "#DCE8F7"
+    },
+    "provenance": {
+      "sharedDrive": "palari-marketing",
+      "sharedDriveId": "0ABSIED45ZSJEUk9PVA",
+      "folder": "Los 5 fantásticos ",
+      "groupFile": "1776177937780.png",
+      "groupDriveId": "1NXdOyGJVh8-fWF9qs9h1d4GOabXQlh18",
+      "groupMd5": "5def1609e5d03878414733be430eb2f4",
+      "position": 3,
+      "panel": {
+        "width": 253,
+        "height": 843,
+        "sha256": "72c5b1074a61938a515fc421e579c5f3be8062c904abc2236a62d781c99ddc8a"
+      }
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 728502,
+      "sha256": "b58bce95ec0bdecd1b58b90b6099a0179ece598807c7327e54ea1882cbdff9a2"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 49153,
+      "sha256": "2c4ca66a36923a0a8cacb7af7cb26038f193ad84b30b7210b5e61254c517b918"
+    },
+    "review": {
+      "reviewedAt": "2026-08-03T16:21:52.155Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Reviewed all 105 standardized portraits and refined cutouts; framing, curls, braids, flyaways, head coverings, accessories, and cleaned panel boundaries pass."
+    }
+  }
+}

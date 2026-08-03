@@ -26,7 +26,7 @@ There is no application server, database, authentication layer, or persistent up
 
 1. `src/main.tsx` mounts the application.
 2. `src/App.tsx` owns the selected portrait, editable colors, mask tolerances, upload list, and export state.
-3. `src/data/avatars.ts` constructs the 38 built-in portrait records.
+3. `src/data/avatars.ts` constructs the 143 built-in portrait records.
 4. `AvatarCanvas` invokes `renderRecoloredAvatar` whenever the source or settings change.
 5. `src/lib/recolor.ts` loads stored semantic masks when registered, otherwise estimates fallback masks, then writes recolored pixels to the Canvas.
 6. The same Canvas is encoded as PNG or WebP for download.
@@ -37,7 +37,7 @@ Object URLs created from uploaded files exist only for the browser session. Uplo
 
 ### Stored semantic masks
 
-All 38 bundled portraits have reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` files under `public/masks/<avatar-id>/`. `foreground.png` is BiRefNet's refined transparent character; `matte.png` is its 256-level alpha edge; the SAM masks remain reproducible semantic references.
+All 143 bundled portraits have reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` files under `public/masks/<avatar-id>/`. `foreground.png` is BiRefNet's refined transparent character; `matte.png` is its 256-level alpha edge; the SAM masks remain reproducible semantic references.
 
 The renderer processes stored foregrounds, mattes, and garment masks at the full 1024 × 1024 Canvas resolution. It recolors the garment inside the refined foreground, then composites that foreground over the new background using the soft matte. This preserves narrow curls and flyaways without a blanket edge blur.
 
@@ -101,7 +101,7 @@ public/masks/<avatar-id>/
 - `matte.png` is inverted by the renderer to obtain the editable background.
 - `metadata.json` records the source asset, both provider/model pipelines, prompts, request IDs, checksums, creation times, and independent review states.
 
-This contract is active for all 38 reviewed bundled portraits. Temporary uploads use the heuristic fallback because no upload API route exists.
+This contract is active for all 143 reviewed bundled portraits. Temporary uploads use the heuristic fallback because no upload API route exists.
 
 ## Introducing an external API safely
 

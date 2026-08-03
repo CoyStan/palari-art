@@ -13,11 +13,11 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 
 ## Current truth
 
-- There are 38 bundled source portraits under `public/avatars/`.
+- There are 143 bundled source portraits under `public/avatars/`: 10 original, 28 expanded, and 105 Los 5 fantásticos portraits.
 - All bundled sources are square 1254 × 1254 PNG files.
 - The editor renders and exports at 1024 × 1024.
 - The app is currently a browser-only Vite SPA. It has no backend.
-- All 38 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
+- All 143 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
 - `src/data/avatar-masks.json` is the source of truth that attaches those masks to built-in portraits.
 - `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
 - `scripts/generate-avatar-masks.mjs` creates the SAM 3 person and garment masks.
@@ -39,6 +39,8 @@ See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approve
 npm run dev            # Vite on 0.0.0.0:4173
 npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
+npm run fantasticos:import -- --source-dir=<downloaded-drive-folder>
+npm run fantasticos:clean # Remove only verified disconnected panel-neighbor fragments
 npm run masks:generate # Generate/resume fal.ai masks using .env.local
 npm run masks:review -- --id=<id> --reviewer=<name> --notes=<summary>
 npm run mattes:generate # Generate/resume refined BiRefNet foregrounds
@@ -73,6 +75,7 @@ Keep image-processing logic out of React components. Components should pass inpu
 - Keep collection filenames contiguous because `src/data/avatars.ts` currently builds paths from numeric ranges.
 - Do not rename or move a portrait without updating the registry and documentation.
 - Run `npm run verify:assets` after any asset change.
+- Follow `docs/FANTASTICOS-IMPORT.md` for the grouped Drive sources; do not split or frame them by eye.
 - Do not upload to, delete from, or reorganize Google Drive unless the user explicitly asks. Local changes do not automatically update Drive.
 
 The full naming and review procedure is in `docs/ASSETS.md`.

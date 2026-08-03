@@ -2,16 +2,19 @@
 
 ## Inventory
 
-The repository currently includes 38 standardized square PNG portraits.
+The repository currently includes 143 standardized square PNG portraits.
 
 | Collection | Count | Application IDs | Files |
 | --- | ---: | --- | --- |
 | Original set | 10 | `original-01` through `original-10` | `public/avatars/standardized-1x1/avatar-01.png` through `avatar-10.png` |
 | Expanded set | 28 | `expanded-01` through `expanded-28` | `public/avatars/standardized-4x4/avatar-4x4-01-v1.png` through `avatar-4x4-28-v1.png` |
+| Los 5 fantásticos | 105 | `fantasticos-001` through `fantasticos-105` | `public/avatars/los-5-fantasticos/fantastico-001.png` through `fantastico-105.png` |
 
 Every current source file is 1254 × 1254. The application normalizes the working Canvas and downloaded output to 1024 × 1024.
 
 The folder name `standardized-4x4` is historical. Its assets are square portraits and appear in the app as the “Expanded set.” Do not interpret it as a four-column sprite sheet.
+
+The Los 5 fantásticos sources are 21 horizontal five-character images in the `palari-marketing` shared Drive. Their Drive file IDs and MD5 checksums are recorded in `src/data/fantasticos-sources.json`. The importer splits each source into five proportional panels, uses BiRefNet matting to preserve the original character identity, and places the cutout on the standard square canvas. See `docs/FANTASTICOS-IMPORT.md`.
 
 ## Source and derived artifacts
 
@@ -66,7 +69,7 @@ Any source-image change invalidates masks made from the previous pixels. Regener
 
 Reviewed layers live at `public/masks/<avatar-id>/` and contain `foreground.png`, `matte.png`, `person.png`, `shirt.png`, and `metadata.json`. The PNGs match their source portrait dimensions. Metadata records source and output checksums, provider requests, models, prompts, scores, and separate semantic-mask and foreground-matte review outcomes.
 
-All 38 mask IDs and their source files are defined once in `src/data/avatar-masks.json`. `src/data/avatars.ts` uses that manifest to attach masks to the matching portraits. Run `npm run verify:masks` after changing a source, mask, manifest entry, or metadata file.
+All 143 mask IDs and their source files are defined once in `src/data/avatar-masks.json`. `src/data/avatars.ts` uses that manifest to attach masks to the matching portraits. Run `npm run verify:masks` after changing a source, mask, manifest entry, or metadata file.
 
 ## Uploaded portraits
 

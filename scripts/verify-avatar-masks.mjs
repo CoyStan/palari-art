@@ -24,7 +24,7 @@ function pngDimensions(buffer, label) {
 
 const ids = maskRegistry.avatars.map((avatar) => avatar.id);
 if (new Set(ids).size !== ids.length) problems.push("Avatar mask IDs must be unique.");
-if (ids.length !== 38) problems.push(`Expected 38 bundled avatars, found ${ids.length}.`);
+if (ids.length !== 143) problems.push(`Expected 143 bundled avatars, found ${ids.length}.`);
 
 for (const avatar of maskRegistry.avatars) {
   try {

@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "avatarId": "fantasticos-003",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T16:12:48.358Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Imported from the palari-marketing/Los 5 fantásticos group collection.",
+  "source": {
+    "file": "avatars/los-5-fantasticos/fantastico-003.png",
+    "sha256": "4dfdd0da0c64fc0c729a339c98c7e10f37acd1d90a31ebdd6dc3035dc62f6ec7",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 48092,
+      "sha256": "09d9bc97f205715f69128edd58aeb41ddb8e63c99ea2960e2551c22890ef7acb",
+      "prompt": "derived from refined foreground matte",
+      "attempts": [],
+      "requestId": "019fc85d-eef6-7833-8066-793b697d46fc",
+      "score": 1,
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "derivedFrom": "matte.png"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc866-298b-7512-b09c-8c3ace4e4278",
+          "found": true
+        }
+      ],
+      "requestId": "019fc866-298b-7512-b09c-8c3ace4e4278",
+      "score": 0.5430475473403931,
+      "box": [
+        0.5030859084356398,
+        0.9712816268678696,
+        0.5773765927269345,
+        0.056967841254340276
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2148,
+      "sha256": "0e30239e7f8c778370bdc7cf0472aa034d5979e54dc6caa101890e875412ef6e"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T16:21:51.650Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Reviewed all 105 square portraits and garment overlays; faces, hair, headwear, jewelry, and skin remain protected while visible upper garments are covered."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-03T16:03:52.186Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fc85d-eef6-7833-8066-793b697d46fc",
+    "apiOutput": {
+      "width": 253,
+      "height": 843,
+      "contentType": "image/png"
+    },
+    "framing": {
+      "outputSize": 1254,
+      "foregroundWidth": 760,
+      "foregroundX": 247,
+      "foregroundY": -80,
+      "backgroundColor": "#DCE8F7"
+    },
+    "provenance": {
+      "sharedDrive": "palari-marketing",
+      "sharedDriveId": "0ABSIED45ZSJEUk9PVA",
+      "folder": "Los 5 fantásticos ",
+      "groupFile": "1776136270431.png",
+      "groupDriveId": "1wRi4kZ3J3K_T0Fbp4I05IRd0fiXnjg8I",
+      "groupMd5": "8452e8648e32f884c6661e541e02ad15",
+      "position": 3,
+      "panel": {
+        "width": 253,
+        "height": 843,
+        "sha256": "ef69cd03d82cca62866411946489de25762376d5b4f0380f1775933232ff8272"
+      }
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 804886,
+      "sha256": "10d3f2693bc4af8f5caed36e37eeadc63778e05316f634d0fddfb2577584d24f"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 48092,
+      "sha256": "09d9bc97f205715f69128edd58aeb41ddb8e63c99ea2960e2551c22890ef7acb"
+    },
+    "review": {
+      "reviewedAt": "2026-08-03T16:21:52.155Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Reviewed all 105 standardized portraits and refined cutouts; framing, curls, braids, flyaways, head coverings, accessories, and cleaned panel boundaries pass."
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "avatarId": "fantasticos-022",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T16:12:29.828Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Imported from the palari-marketing/Los 5 fantásticos group collection.",
+  "source": {
+    "file": "avatars/los-5-fantasticos/fantastico-022.png",
+    "sha256": "da1af214137d0cd5e10399966ba635ee30544d8ca27ecf026952fe4d55d57184",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 78240,
+      "sha256": "731483328a328c1b268e73c9f15df62141aa739a115e79e8cebdb864cc250b0a",
+      "prompt": "derived from refined foreground matte",
+      "attempts": [],
+      "requestId": "019fc85e-67e7-7d02-ba85-017b231fdaa1",
+      "score": 1,
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "derivedFrom": "matte.png"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc865-df00-7bf3-9adf-6bb095074fbe",
+          "found": true
+        }
+      ],
+      "requestId": "019fc865-df00-7bf3-9adf-6bb095074fbe",
+      "score": 0.9067787528038025,
+      "box": [
+        0.5125083469209217,
+        0.9151733337886749,
+        0.5800016796778119,
+        0.1669723874046689
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3484,
+      "sha256": "1eceb2fb069adcf0ed63ed5b3f50b2e15c934cbb126e3868cf4ffb823a01c100"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T16:21:51.650Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Reviewed all 105 square portraits and garment overlays; faces, hair, headwear, jewelry, and skin remain protected while visible upper garments are covered."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-03T16:04:22.617Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fc85e-67e7-7d02-ba85-017b231fdaa1",
+    "apiOutput": {
+      "width": 253,
+      "height": 843,
+      "contentType": "image/png"
+    },
+    "framing": {
+      "outputSize": 1254,
+      "foregroundWidth": 760,
+      "foregroundX": 247,
+      "foregroundY": -80,
+      "backgroundColor": "#DCE8F7"
+    },
+    "provenance": {
+      "sharedDrive": "palari-marketing",
+      "sharedDriveId": "0ABSIED45ZSJEUk9PVA",
+      "folder": "Los 5 fantásticos ",
+      "groupFile": "1776137269573.png",
+      "groupDriveId": "1Q2QBSMVU3vLkIrF29iaXIl28SQqPomvw",
+      "groupMd5": "649cee7645aced0ad5825c111e177a4e",
+      "position": 2,
+      "panel": {
+        "width": 253,
+        "height": 843,
+        "sha256": "64b0d024e095c67bed0d092ca5226c9d38dfd7dffa7a15b69b19b9fcddbb2d35"
+      }
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 775194,
+      "sha256": "93b6cac6acb67eb4b6e90eef383b6a6c167fef0a2c469bed06945577e9f96284"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 78240,
+      "sha256": "731483328a328c1b268e73c9f15df62141aa739a115e79e8cebdb864cc250b0a"
+    },
+    "review": {
+      "reviewedAt": "2026-08-03T16:21:52.155Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Reviewed all 105 standardized portraits and refined cutouts; framing, curls, braids, flyaways, head coverings, accessories, and cleaned panel boundaries pass."
+    },
+    "postprocessing": {
+      "method": "remove-disconnected-border-components",
+      "removed": [
+        {
+          "id": 4,
+          "x": 247,
+          "y": 495,
+          "width": 20,
+          "height": 368,
+          "area": 6197
+        },
+        {
+          "id": 7,
+          "x": 247,
+          "y": 865,
+          "width": 3,
+          "height": 10,
+          "area": 26
+        }
+      ]
+    }
+  }
+}

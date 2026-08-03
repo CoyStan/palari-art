@@ -5,14 +5,15 @@ Last updated: 2026-08-03
 ## Working now
 
 - React/Vite avatar color studio.
-- 38 bundled Palari portraits across two collections.
+- 143 bundled Palari portraits across three collections: 10 original, 28 expanded, and 105 Los 5 fantásticos.
 - Temporary uploads for PNG, JPEG, and WebP.
 - Background and shirt color controls with presets.
 - Edge-tolerance controls for temporary-upload fallback masks.
 - 1024 × 1024 PNG and WebP export.
 - Development access over Tailscale on port 4173.
 - Repeatable fal.ai SAM 3 and BiRefNet v2 batch preparation using an ignored server-side key.
-- All 38 bundled portraits wired to reviewed sweater masks, refined RGBA foregrounds, and 256-level alpha mattes.
+- All 143 bundled portraits wired to reviewed garment masks, refined RGBA foregrounds, and 256-level alpha mattes.
+- Reproducible import of the 21 five-character Drive source images with source IDs and checksums retained in the repository.
 - Automated full-library checksum, dimension, metadata, and review validation.
 
 ## Known limitation
@@ -23,7 +24,7 @@ Temporary uploads still derive masks from colors and connected pixels. They can 
 
 - Keep background and shirt as the only editable layers.
 - Use fal.ai SAM 3 for garment semantics and BiRefNet v2 Matting for high-fidelity foreground edges.
-- The entire 38-avatar collection passed mask review; difficult cases also passed browser review.
+- The entire 143-avatar collection passed mask and foreground review; difficult hair, jewelry, and head-covering cases also passed browser review.
 - Store approved masks and recolor locally afterward.
 - Keep the provider key on the server only.
 
@@ -38,6 +39,6 @@ Temporary uploads still derive masks from colors and connected pixels. They can 
 
 - No interactive fal.ai API route exists; only the offline batch script is implemented.
 - Temporary uploads do not receive semantic masks.
-- No automatic Google Drive synchronization exists.
+- No automatic Google Drive synchronization exists; Drive delivery is an explicit `rclone` operation after review.
 - No production deployment or background service is configured here.
 - Hair recoloring is not planned.

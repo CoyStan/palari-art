@@ -1,7 +1,7 @@
 import maskRegistry from "./avatar-masks.json";
 import type { AvatarMaskSources } from "../lib/recolor";
 
-export type AvatarCollection = "Original set" | "Expanded set" | "Uploads";
+export type AvatarCollection = "Original set" | "Expanded set" | "Los 5 fantásticos" | "Uploads";
 
 export type Avatar = {
   id: string;
@@ -46,4 +46,16 @@ const expandedSet: Avatar[] = Array.from({ length: 28 }, (_, index) => {
   };
 });
 
-export const avatars = [...originalSet, ...expandedSet];
+const fantasticosSet: Avatar[] = Array.from({ length: 105 }, (_, index) => {
+  const number = String(index + 1).padStart(3, "0");
+  const id = `fantasticos-${number}`;
+  return {
+    id,
+    name: `Fantástico ${number}`,
+    src: `/avatars/los-5-fantasticos/fantastico-${number}.png`,
+    collection: "Los 5 fantásticos",
+    masks: storedMasks.get(id),
+  };
+});
+
+export const avatars = [...originalSet, ...expandedSet, ...fantasticosSet];

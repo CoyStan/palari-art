@@ -12,7 +12,7 @@ This preserves server resources and avoids paying for repeated AI calls while a 
 
 ## Current implementation
 
-`src/lib/recolor.ts` loads a reviewed refined foreground, alpha matte, and garment mask for the 38 bundled portraits. When no stored layers are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
+`src/lib/recolor.ts` loads a reviewed refined foreground, alpha matte, and garment mask for the 143 bundled portraits. When no stored layers are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
 
 Known failure conditions include:
 
@@ -48,7 +48,9 @@ Only two masks are needed for the current product:
 
 Hair and face do not require separate editable masks. The BiRefNet matte preserves their edge coverage and the shirt mask excludes them. The runtime composites the refined foreground at 1024px, avoiding the previous 512px binary-mask blur.
 
-The pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded. The full-library run therefore tried `sweater` first; it succeeded on all remaining portraits without prompt fallback. Across all 38 avatars, person scores range from 0.934 to 0.972 and garment scores range from 0.863 to 0.954. At two successful requests per portrait, a clean full regeneration requires 76 requests.
+The original pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded. Across the original 38-avatar migration, person scores range from 0.934 to 0.972 and garment scores range from 0.863 to 0.954. That historical pipeline used two successful SAM requests per portrait.
+
+The 105 Los 5 fantásticos portraits already have a BiRefNet matte from their standardization step, so their hard `person.png` reference is derived from that reviewed matte instead of spending a second SAM request. Garment generation tries `sweater`, then `shirt`, then `upper clothing`; 102 portraits succeeded with `sweater`, while `fantasticos-068`, `fantasticos-078`, and `fantasticos-083` used the final fallback. A clean regeneration needs 105 BiRefNet requests and 105 successful garment-mask requests, plus any unsuccessful prompt attempts.
 
 ## Evaluation and review
 
@@ -85,10 +87,17 @@ If a mask is nearly correct, manual correction is preferable to repeated generat
 
 ### Phase 2: Bundled library — complete
 
-- Processed and reviewed all 38 portraits.
+- Processed and reviewed the original 38 portraits.
 - Added reviewed SAM layers plus BiRefNet `foreground.png` and `matte.png` for every avatar.
 - Updated the renderer registry so every built-in portrait uses stored masks.
 - Retained the heuristic detector for temporary uploads.
+
+### Phase 2b: Los 5 fantásticos import — complete
+
+- Split 21 source groups into 105 identity-preserving square portraits.
+- Generated and reviewed BiRefNet foregrounds and SAM garment masks.
+- Removed eight disconnected neighboring-panel fragments from six portraits using a deterministic boundary cleanup.
+- Registered all 105 portraits as a third collection.
 
 ### Phase 3: New uploads
 

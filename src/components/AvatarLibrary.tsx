@@ -9,7 +9,20 @@ type AvatarLibraryProps = {
   onUpload: (file: File) => void;
 };
 
-const collections: Array<"All" | AvatarCollection> = ["All", "Original set", "Expanded set", "Uploads"];
+const collections: Array<"All" | AvatarCollection> = [
+  "All",
+  "Original set",
+  "Expanded set",
+  "Los 5 fantásticos",
+  "Uploads",
+];
+
+function collectionLabel(collection: (typeof collections)[number]) {
+  if (collection === "Original set") return "Original";
+  if (collection === "Expanded set") return "Expanded";
+  if (collection === "Los 5 fantásticos") return "Fantásticos";
+  return collection;
+}
 
 export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: AvatarLibraryProps) {
   const [query, setQuery] = useState("");
@@ -74,7 +87,7 @@ export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: Avata
             onClick={() => setCollection(option)}
             type="button"
           >
-            {option === "Original set" ? "Original" : option === "Expanded set" ? "Expanded" : option}
+            {collectionLabel(option)}
           </button>
         ))}
       </div>
