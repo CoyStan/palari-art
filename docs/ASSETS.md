@@ -64,7 +64,7 @@ Any source-image change invalidates masks made from the previous pixels. Regener
 
 ## Semantic masks
 
-Reviewed masks live at `public/masks/<avatar-id>/` and contain `person.png`, `shirt.png`, and `metadata.json`. The PNGs match their source portrait dimensions, and metadata records source and mask checksums, provider requests, prompts, scores, and review outcome.
+Reviewed layers live at `public/masks/<avatar-id>/` and contain `foreground.png`, `matte.png`, `person.png`, `shirt.png`, and `metadata.json`. The PNGs match their source portrait dimensions. Metadata records source and output checksums, provider requests, models, prompts, scores, and separate semantic-mask and foreground-matte review outcomes.
 
 All 38 mask IDs and their source files are defined once in `src/data/avatar-masks.json`. `src/data/avatars.ts` uses that manifest to attach masks to the matching portraits. Run `npm run verify:masks` after changing a source, mask, manifest entry, or metadata file.
 

@@ -16,6 +16,8 @@
     "verify:masks:generated": "node scripts/verify-avatar-masks.mjs --allow-unreviewed",
     "masks:generate": "node --env-file=.env.local scripts/generate-avatar-masks.mjs",
     "masks:review": "node scripts/record-mask-review.mjs",
+    "mattes:generate": "node --env-file=.env.local scripts/generate-foreground-mattes.mjs",
+    "mattes:review": "node scripts/record-mask-review.mjs --layer=foreground",
     "check": "npm run verify:assets && npm run verify:masks && npm run build"
   },
   "dependencies": {

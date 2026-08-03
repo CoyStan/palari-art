@@ -10,12 +10,16 @@ const reviewAll = process.argv.includes("--all");
 const requestedId = process.argv.find((argument) => argument.startsWith("--id="))?.slice(5);
 const reviewer = process.argv.find((argument) => argument.startsWith("--reviewer="))?.slice(11);
 const notes = process.argv.find((argument) => argument.startsWith("--notes="))?.slice(8);
+const layer = process.argv.find((argument) => argument.startsWith("--layer="))?.slice(8) ?? "semantic";
 
 if ((!reviewAll && !requestedId) || (reviewAll && requestedId)) {
   throw new Error("Choose exactly one review scope: --all or --id=<avatar-id>.");
 }
 if (!reviewer || !notes) {
   throw new Error("A review requires --reviewer=<name> and --notes=<summary>.");
+}
+if (!new Set(["semantic", "foreground"]).has(layer)) {
+  throw new Error("Review layer must be semantic or foreground.");
 }
 
 const selectedAvatars = requestedId
@@ -42,12 +46,31 @@ for (const avatar of selectedAvatars) {
     throw new Error(`${avatar.id}: source asset changed after mask generation.`);
   }
 
-  metadata.status = "reviewed";
-  if (!metadata.review || metadata.review.outcome !== "pass") {
-    metadata.review = { reviewedAt, reviewer, outcome: "pass", notes };
+  if (layer === "foreground") {
+    const foreground = metadata.foregroundMatte;
+    if (
+      foreground?.model !== maskRegistry.matting.model
+      || foreground?.variant !== maskRegistry.matting.variant
+      || foreground?.operatingResolution !== maskRegistry.matting.operatingResolution
+    ) {
+      throw new Error(`${avatar.id}: foreground metadata does not match the registry.`);
+    }
+    for (const [kind, expectedFile] of [["cutout", "foreground.png"], ["matte", "matte.png"]]) {
+      const fileBuffer = await readFile(path.join(publicRoot, "masks", avatar.id, expectedFile));
+      if (foreground[kind]?.file !== expectedFile || foreground[kind]?.sha256 !== sha256(fileBuffer)) {
+        throw new Error(`${avatar.id}: ${expectedFile} does not match its metadata.`);
+      }
+    }
+    foreground.status = "reviewed";
+    foreground.review = { reviewedAt, reviewer, outcome: "pass", notes };
+  } else {
+    metadata.status = "reviewed";
+    if (!metadata.review || metadata.review.outcome !== "pass") {
+      metadata.review = { reviewedAt, reviewer, outcome: "pass", notes };
+    }
   }
   await writeFile(metadataPath, `${JSON.stringify(metadata, null, 2)}\n`);
-  console.log(`${avatar.id}: review recorded.`);
+  console.log(`${avatar.id}: ${layer} review recorded.`);
 }
 
-console.log(`Recorded passing review for ${selectedAvatars.length} avatar mask sets.`);
+console.log(`Recorded passing ${layer} review for ${selectedAvatars.length} avatar mask sets.`);

@@ -11,8 +11,8 @@ Last updated: 2026-08-03
 - Edge-tolerance controls for temporary-upload fallback masks.
 - 1024 × 1024 PNG and WebP export.
 - Development access over Tailscale on port 4173.
-- Repeatable fal.ai SAM 3 batch preparation using an ignored server-side key.
-- All 38 bundled portraits wired to reviewed semantic person and sweater masks.
+- Repeatable fal.ai SAM 3 and BiRefNet v2 batch preparation using an ignored server-side key.
+- All 38 bundled portraits wired to reviewed sweater masks, refined RGBA foregrounds, and 256-level alpha mattes.
 - Automated full-library checksum, dimension, metadata, and review validation.
 
 ## Known limitation
@@ -22,7 +22,7 @@ Temporary uploads still derive masks from colors and connected pixels. They can 
 ## Approved direction
 
 - Keep background and shirt as the only editable layers.
-- Use fal.ai SAM 3 to generate `person` and `sweater` masks.
+- Use fal.ai SAM 3 for garment semantics and BiRefNet v2 Matting for high-fidelity foreground edges.
 - The entire 38-avatar collection passed mask review; difficult cases also passed browser review.
 - Store approved masks and recolor locally afterward.
 - Keep the provider key on the server only.

@@ -4,9 +4,15 @@ Review date: 2026-08-03
 
 ## Outcome
 
-All 38 bundled Palari avatars passed the semantic-mask review and now use stored `person` and `shirt` masks in the editor. The completed collection contains 10 original portraits and 28 expanded portraits.
+All 38 bundled Palari avatars passed the semantic-mask and foreground-matte reviews. The editor uses a stored refined RGBA foreground, a soft alpha matte, and a shirt mask for each portrait. The completed collection contains 10 original portraits and 28 expanded portraits.
 
 The five pilot avatars were reused without new requests. The remaining 33 avatars completed with two successful fal.ai SAM 3 requests each: `person` for the foreground silhouette and `sweater` for the editable upper garment. No prompt fallback or regeneration was required.
+
+## Hair-edge refinement
+
+After full-library review, the hard SAM person silhouettes were upgraded with one BiRefNet v2 Matting request per avatar at 2048px operating resolution. All 38 requests completed successfully. Each result stores both the refined transparent character in `foreground.png` and its 256-level alpha in `matte.png` at the original 1254 × 1254 source dimensions.
+
+The full collection was reviewed as source/refined-cutout/matte contact sheets against a contrasting teal background. The review covered dreadlocks, dense ringlets, long curls, flyaways, buns, straight hair, short textured hair, and the hijab. No face, accessory, shoulder, or garment section was cut away. Foreground matte area ranged from 41.7% to 64.0%, consistent with the portrait framing; all mattes contained all 256 alpha levels.
 
 ## Review evidence
 
@@ -16,7 +22,7 @@ The five pilot avatars were reused without new requests. The remaining 33 avatar
 - Confirmed all mask PNGs are 1254 × 1254 and match their source dimensions.
 - Confirmed every source and mask checksum matches its `metadata.json`.
 - Confirmed all garment masks use the `sweater` prompt.
-- Confirmed raw garment/person boundary disagreement is at most 0.31% of pixels at 256 × 256 audit resolution. The renderer also clips the garment to the person silhouette.
+- Confirmed raw garment/person boundary disagreement is at most 0.31% of pixels at 256 × 256 audit resolution. The renderer composites the recolored garment inside the reviewed foreground matte.
 
 ## Quantitative range
 

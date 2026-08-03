@@ -60,6 +60,42 @@ for (const avatar of maskRegistry.avatars) {
         problems.push(`${avatar.id}/${layer}.png: prompt or score metadata is missing.`);
       }
     }
+
+    const foreground = metadata.foregroundMatte;
+    if (foreground?.provider !== maskRegistry.matting.provider) {
+      problems.push(`${avatar.id}: foreground provider does not match config.`);
+    }
+    if (foreground?.model !== maskRegistry.matting.model) {
+      problems.push(`${avatar.id}: foreground model does not match config.`);
+    }
+    if (foreground?.variant !== maskRegistry.matting.variant) {
+      problems.push(`${avatar.id}: foreground model variant does not match config.`);
+    }
+    if (foreground?.operatingResolution !== maskRegistry.matting.operatingResolution) {
+      problems.push(`${avatar.id}: foreground operating resolution does not match config.`);
+    }
+    if (!allowUnreviewed && foreground?.status !== "reviewed") {
+      problems.push(`${avatar.id}: foreground matte has not been reviewed.`);
+    }
+    if (!allowUnreviewed && (foreground?.review?.outcome !== "pass" || !foreground?.review?.reviewedAt)) {
+      problems.push(`${avatar.id}: passing foreground review metadata is missing.`);
+    }
+
+    for (const [kind, expectedFile] of [["cutout", "foreground.png"], ["matte", "matte.png"]]) {
+      const fileMetadata = foreground?.[kind];
+      const filePath = path.join(maskDirectory, expectedFile);
+      const fileBuffer = await readFile(filePath);
+      const dimensions = pngDimensions(fileBuffer, `${avatar.id}/${expectedFile}`);
+      if (fileMetadata?.file !== expectedFile) {
+        problems.push(`${avatar.id}/${expectedFile}: filename metadata does not match.`);
+      }
+      if (dimensions.width !== sourceDimensions.width || dimensions.height !== sourceDimensions.height) {
+        problems.push(`${avatar.id}/${expectedFile}: dimensions do not match its source.`);
+      }
+      if (fileMetadata?.sha256 !== sha256(fileBuffer)) {
+        problems.push(`${avatar.id}/${expectedFile}: checksum does not match metadata.`);
+      }
+    }
   } catch (error) {
     problems.push(`${avatar.id}: ${error instanceof Error ? error.message : String(error)}`);
   }

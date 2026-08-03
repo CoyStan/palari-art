@@ -12,7 +12,7 @@ This preserves server resources and avoids paying for repeated AI calls while a 
 
 ## Current implementation
 
-`src/lib/recolor.ts` loads reviewed semantic masks for the 38 bundled portraits. When no stored masks are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
+`src/lib/recolor.ts` loads a reviewed refined foreground, alpha matte, and garment mask for the 38 bundled portraits. When no stored layers are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
 
 Known failure conditions include:
 
@@ -35,16 +35,18 @@ Documentation: <https://fal.ai/models/fal-ai/sam-3/image>
 
 The key is expected as the server-only environment variable `FAL_KEY`. It is loaded from ignored `.env.local` by `npm run masks:generate`; no key is stored in the repository or exposed to Vite.
 
-## Minimum mask set
+## Stored layer set
 
 Only two masks are needed for the current product:
 
-| Prompt | Stored result | Use |
+| Source | Stored result | Use |
 | --- | --- | --- |
-| `person` | `person.png` | Invert to isolate the background |
-| `sweater` | `shirt.png` | Recolor the visible upper garment |
+| BiRefNet v2 Matting | `foreground.png` | Refined RGBA character colors at hair boundaries |
+| BiRefNet v2 Matting | `matte.png` | Soft 256-level foreground alpha; invert for the background |
+| SAM prompt `person` | `person.png` | Reproducible hard silhouette and audit reference |
+| SAM prompt `sweater` | `shirt.png` | Recolor the visible upper garment |
 
-Hair and face do not require separate editable masks because they remain inside the protected person region and outside the shirt selection. Optional `hair` and `face` masks may be generated during evaluation to diagnose overlaps, but they are not required at runtime.
+Hair and face do not require separate editable masks. The BiRefNet matte preserves their edge coverage and the shirt mask excludes them. The runtime composites the refined foreground at 1024px, avoiding the previous 512px binary-mask blur.
 
 The pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded. The full-library run therefore tried `sweater` first; it succeeded on all remaining portraits without prompt fallback. Across all 38 avatars, person scores range from 0.934 to 0.972 and garment scores range from 0.863 to 0.954. At two successful requests per portrait, a clean full regeneration requires 76 requests.
 
@@ -64,7 +66,7 @@ Acceptance criteria:
 
 - No visible face, neck, hair, or accessory is included in the shirt mask.
 - The complete visible garment, including shoulders and collar edges, is selected.
-- The person mask preserves fine hair edges without background halos.
+- The foreground matte preserves fine hair edges without background halos.
 - Mask boundaries remain stable when rendered at 1024 × 1024.
 - Recoloring preserves original shading and texture.
 - A reviewer explicitly marks the masks approved before they become defaults.
@@ -84,7 +86,7 @@ If a mask is nearly correct, manual correction is preferable to repeated generat
 ### Phase 2: Bundled library — complete
 
 - Processed and reviewed all 38 portraits.
-- Added `public/masks/<avatar-id>/person.png`, `shirt.png`, and `metadata.json`.
+- Added reviewed SAM layers plus BiRefNet `foreground.png` and `matte.png` for every avatar.
 - Updated the renderer registry so every built-in portrait uses stored masks.
 - Retained the heuristic detector for temporary uploads.
 

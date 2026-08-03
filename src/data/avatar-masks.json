@@ -2,6 +2,12 @@
   "version": 1,
   "provider": "fal.ai",
   "model": "fal-ai/sam-3/image",
+  "matting": {
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048"
+  },
   "avatars": [
     { "id": "original-01", "source": "avatars/standardized-1x1/avatar-01.png", "reason": "Head covering meets the face, background, and shirt at several boundaries." },
     { "id": "original-02", "source": "avatars/standardized-1x1/avatar-02.png" },

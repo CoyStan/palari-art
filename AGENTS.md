@@ -17,10 +17,11 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - All bundled sources are square 1254 × 1254 PNG files.
 - The editor renders and exports at 1024 × 1024.
 - The app is currently a browser-only Vite SPA. It has no backend.
-- All 38 bundled portraits use reviewed semantic masks under `public/masks/`.
+- All 38 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
 - `src/data/avatar-masks.json` is the source of truth that attaches those masks to built-in portraits.
 - `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
-- `scripts/generate-avatar-masks.mjs` is the server-side fal.ai SAM 3 preparation path.
+- `scripts/generate-avatar-masks.mjs` creates the SAM 3 person and garment masks.
+- `scripts/generate-foreground-mattes.mjs` creates the 2048px BiRefNet Matting foreground and 256-level alpha matte used for hair edges.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.
@@ -40,6 +41,8 @@ npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
 npm run masks:generate # Generate/resume fal.ai masks using .env.local
 npm run masks:review -- --id=<id> --reviewer=<name> --notes=<summary>
+npm run mattes:generate # Generate/resume refined BiRefNet foregrounds
+npm run mattes:review -- --id=<id> --reviewer=<name> --notes=<summary>
 npm run typecheck      # TypeScript only
 npm run build          # TypeScript plus production build
 npm run check          # Canonical repository validation
@@ -77,7 +80,7 @@ The full naming and review procedure is in `docs/ASSETS.md`.
 ## Masking and API rules
 
 - Do not call an AI API when a color slider moves. Generate a reusable mask once and recolor locally.
-- Bundled avatars should use precomputed masks in production.
+- Bundled avatars should use the precomputed refined foreground, alpha matte, and garment mask in production.
 - A future upload flow may request masks once per new source image and cache them; it is not implemented.
 - If uploads begin leaving the browser, update the “Runs locally” and “Processing never leaves this browser” interface copy in `src/App.tsx`; those claims must remain literally true.
 - Keep `FAL_KEY` server-side. Never create `VITE_FAL_KEY`, embed a key in JavaScript, commit a `.env` file, or send the secret to the browser.

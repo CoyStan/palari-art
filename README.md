@@ -6,7 +6,7 @@ The current application is a 1:1 avatar color studio. It lets a user select one 
 
 ## Repository status
 
-The interface and export flow work. All 38 bundled portraits use reviewed fal.ai SAM 3 semantic masks. Background and shirt recoloring remains local and deterministic in the browser; the API is used only by the offline asset-preparation script.
+The interface and export flow work. All 38 bundled portraits use reviewed fal.ai SAM 3 garment masks plus BiRefNet v2 foreground mattes. Background and shirt recoloring remains local and deterministic in the browser; APIs are used only by offline asset-preparation scripts.
 
 Temporary user uploads still use the prototype color detector because there is no upload-segmentation service. That fallback estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so results can vary. See [Masking strategy](docs/MASKING.md) and [full-library results](docs/FULL-LIBRARY-RESULTS.md).
 
@@ -21,7 +21,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | Exports | 1024 × 1024 PNG and WebP |
 | Uploaded images | PNG, JPEG, or WebP for the current browser session |
 | Processing | Browser Canvas at runtime; fal.ai is used only by the preparation script |
-| Semantic masks | All 38 bundled portraits use reviewed person and sweater masks |
+| Semantic layers | All 38 portraits use reviewed sweater masks, refined RGBA foregrounds, and 256-level alpha mattes |
 | Known limitation | Temporary uploads still use color-estimated masks |
 
 ## Start the application
@@ -57,9 +57,10 @@ To generate or resume masks for the bundled library, copy `.env.example` to `.en
 
 ```bash
 npm run masks:generate
+npm run mattes:generate
 ```
 
-Existing masks with the same model and source checksum are skipped unless `-- --force` is added. Limit a run with `-- --id=original-01`. Generated masks are not production-ready until they are visually reviewed and recorded with `npm run masks:review`.
+Existing outputs with the same model and source checksum are skipped unless `-- --force` is added. Limit either run with `-- --id=original-01`. Generated layers are not production-ready until they are visually reviewed and recorded with `npm run masks:review` or `npm run mattes:review`.
 
 ## Repository map
 
@@ -76,6 +77,7 @@ palari-art/
 ├── public/avatars/           Bundled source portraits served unchanged
 ├── public/masks/             Reviewed semantic layers and generation metadata
 ├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
+├── scripts/generate-foreground-mattes.mjs  Resumable BiRefNet matting batch
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
 ├── src/data/avatar-masks.json Semantic mask registry

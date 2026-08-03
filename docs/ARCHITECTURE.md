@@ -2,7 +2,7 @@
 
 ## System shape
 
-Palari Art is currently a single-page React application built by Vite. All interactive image processing happens inside the browser through Canvas APIs. A separate Node preparation script calls fal.ai to create reusable masks.
+Palari Art is currently a single-page React application built by Vite. All interactive image processing happens inside the browser through Canvas APIs. Separate Node preparation scripts call fal.ai to create reusable masks and foreground mattes.
 
 ```text
 Bundled or uploaded image
@@ -13,14 +13,14 @@ Bundled or uploaded image
           v
  src/lib/recolor.ts
   - prepare source
-  - load stored masks or estimate fallback masks
+  - load stored matte/cutout/mask or estimate fallbacks
   - recolor pixels
           |
           v
   Canvas preview/export
 ```
 
-There is no application server, database, authentication layer, or persistent upload service. The browser makes no remote image-processing calls. `scripts/generate-avatar-masks.mjs` is an offline preparation tool and is the only fal.ai integration.
+There is no application server, database, authentication layer, or persistent upload service. The browser makes no remote image-processing calls. `scripts/generate-avatar-masks.mjs` and `scripts/generate-foreground-mattes.mjs` are offline preparation tools and are the only fal.ai integrations.
 
 ## Runtime flow
 
@@ -37,7 +37,9 @@ Object URLs created from uploaded files exist only for the browser session. Uplo
 
 ### Stored semantic masks
 
-All 38 bundled portraits have a reviewed `person.png` and `shirt.png` under `public/masks/<avatar-id>/`. The renderer downsamples those masks to its 512 × 512 working resolution, inverts the person mask for the background, softens both boundaries, and clips the shirt mask to the person silhouette.
+All 38 bundled portraits have reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` files under `public/masks/<avatar-id>/`. `foreground.png` is BiRefNet's refined transparent character; `matte.png` is its 256-level alpha edge; the SAM masks remain reproducible semantic references.
+
+The renderer processes stored foregrounds, mattes, and garment masks at the full 1024 × 1024 Canvas resolution. It recolors the garment inside the refined foreground, then composites that foreground over the new background using the soft matte. This preserves narrow curls and flyaways without a blanket edge blur.
 
 The source masks remain at the source portrait's 1254 × 1254 resolution. Keeping masks source-aligned makes checksums, replacements, and later higher-resolution exports unambiguous.
 
@@ -71,8 +73,9 @@ Semantic segmentation should be an asset-preparation step:
 
 ```text
 Source portrait
-  |-- prompt: person ----------> person mask
-  |-- prompt: shirt -----------> shirt mask
+  |-- SAM prompt: person ------> person mask (audit/reference)
+  |-- SAM prompt: sweater -----> shirt mask
+  |-- BiRefNet Matting --------> refined foreground + alpha matte
   |
   `-- masks reviewed and stored with metadata
 
@@ -86,15 +89,17 @@ The stored contract is:
 
 ```text
 public/masks/<avatar-id>/
+├── foreground.png
+├── matte.png
 ├── person.png
 ├── shirt.png
 └── metadata.json
 ```
 
-- Masks are grayscale PNG files with exactly the same dimensions as their source portrait.
+- `foreground.png` is an RGBA PNG; the other layers are grayscale PNGs. Every file exactly matches its source portrait dimensions.
 - White means selected, black means protected, and gray is reserved for softened boundaries.
-- `person.png` is inverted by the renderer to obtain the editable background.
-- `metadata.json` records the source asset, provider/model, prompts, creation time, and review status.
+- `matte.png` is inverted by the renderer to obtain the editable background.
+- `metadata.json` records the source asset, both provider/model pipelines, prompts, request IDs, checksums, creation times, and independent review states.
 
 This contract is active for all 38 reviewed bundled portraits. Temporary uploads use the heuristic fallback because no upload API route exists.
 

@@ -31,7 +31,7 @@ The text prompt `shirt` returned no mask on all five portraits. The fallback pro
 - Changed garment colors and confirmed protected regions remained visually unchanged.
 - Confirmed all masks are valid 1254 × 1254 grayscale PNGs matching their source files.
 - Confirmed source and mask SHA-256 checksums match metadata.
-- Confirmed shirt masks are clipped to the person mask by the renderer. Raw boundary disagreement was below 0.2% of pixels for every pilot image.
+- Confirmed shirt masks stay inside the refined foreground during compositing. The earlier SAM person-mask boundary disagreement was below 0.2% of pixels for every pilot image.
 - Confirmed Vite rendered without framework overlays, warnings, or application console errors.
 
 ## Cost note

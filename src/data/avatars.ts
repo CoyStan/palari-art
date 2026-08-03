@@ -15,7 +15,8 @@ const storedMasks = new Map<string, AvatarMaskSources>(
   maskRegistry.avatars.map((avatar) => [
     avatar.id,
     {
-      person: `/masks/${avatar.id}/person.png`,
+      foreground: `/masks/${avatar.id}/foreground.png`,
+      matte: `/masks/${avatar.id}/matte.png`,
       shirt: `/masks/${avatar.id}/shirt.png`,
     },
   ]),

@@ -11,7 +11,6 @@ import {
 
 const OUTPUT_SIZE = 1024;
 const MASK_SIZE = 512;
-const MASK_SCALE = OUTPUT_SIZE / MASK_SIZE;
 
 export type DetectionSettings = {
   backgroundTolerance: number;
@@ -24,24 +23,37 @@ export type RecolorSettings = DetectionSettings & {
 };
 
 export type AvatarMaskSources = {
-  person: string;
+  foreground: string;
+  matte: string;
   shirt: string;
 };
 
 type PreparedImage = {
   source: ImageData;
+  foreground?: ImageData;
   backgroundMask: Uint8ClampedArray;
   shirtMask: Uint8ClampedArray;
+  maskSize: number;
   backgroundReferenceLightness: number;
   shirtReferenceLightness: number;
 };
 
 const imageCache = new Map<string, HTMLImageElement>();
 const preparedCache = new Map<string, PreparedImage>();
+const IMAGE_CACHE_LIMIT = 24;
+const PREPARED_CACHE_LIMIT = 6;
 
 function cacheKey(src: string, settings: DetectionSettings, masks?: AvatarMaskSources) {
-  if (masks) return `${src}|semantic|${masks.person}|${masks.shirt}`;
+  if (masks) return `${src}|matte|${masks.foreground}|${masks.matte}|${masks.shirt}`;
   return `${src}|${settings.backgroundTolerance}|${settings.shirtTolerance}`;
+}
+
+function rememberPrepared(key: string, prepared: PreparedImage) {
+  if (preparedCache.size >= PREPARED_CACHE_LIMIT) {
+    const oldest = preparedCache.keys().next().value;
+    if (oldest) preparedCache.delete(oldest);
+  }
+  preparedCache.set(key, prepared);
 }
 
 export async function loadImage(src: string) {
@@ -55,6 +67,10 @@ export async function loadImage(src: string) {
     image.src = src;
     if (image.complete && image.naturalWidth > 0) resolve();
   });
+  if (imageCache.size >= IMAGE_CACHE_LIMIT) {
+    const oldest = imageCache.keys().next().value;
+    if (oldest) imageCache.delete(oldest);
+  }
   imageCache.set(src, image);
   return image;
 }
@@ -63,7 +79,7 @@ function pixel(data: Uint8ClampedArray, offset: number): RGB {
   return { r: data[offset], g: data[offset + 1], b: data[offset + 2] };
 }
 
-async function loadMask(src: string, width: number, height: number) {
+async function loadImageData(src: string, width: number, height: number) {
   const image = await loadImage(src);
   const canvas = document.createElement("canvas");
   canvas.width = width;
@@ -73,7 +89,11 @@ async function loadMask(src: string, width: number, height: number) {
   context.imageSmoothingEnabled = true;
   context.imageSmoothingQuality = "high";
   context.drawImage(image, 0, 0, width, height);
-  const data = context.getImageData(0, 0, width, height).data;
+  return context.getImageData(0, 0, width, height);
+}
+
+async function loadMask(src: string, width: number, height: number) {
+  const data = (await loadImageData(src, width, height)).data;
   const mask = new Uint8ClampedArray(width * height);
   for (let index = 0; index < mask.length; index += 1) mask[index] = data[index * 4];
   return mask;
@@ -436,26 +456,30 @@ async function prepare(src: string, settings: DetectionSettings, masks?: AvatarM
   const maskSource = maskContext.getImageData(0, 0, MASK_SIZE, MASK_SIZE);
   const backgroundReference = averageCornerColor(maskSource.data, MASK_SIZE, MASK_SIZE);
   if (masks) {
-    const personMask = await loadMask(masks.person, MASK_SIZE, MASK_SIZE);
-    const rawShirtMask = await loadMask(masks.shirt, MASK_SIZE, MASK_SIZE);
-    const backgroundMask = new Uint8ClampedArray(personMask.length);
-    for (let index = 0; index < personMask.length; index += 1) {
-      backgroundMask[index] = 255 - personMask[index];
+    const [foreground, foregroundMatte, shirtMask] = await Promise.all([
+      loadImageData(masks.foreground, OUTPUT_SIZE, OUTPUT_SIZE),
+      loadMask(masks.matte, OUTPUT_SIZE, OUTPUT_SIZE),
+      loadMask(masks.shirt, OUTPUT_SIZE, OUTPUT_SIZE),
+    ]);
+    const backgroundMask = new Uint8ClampedArray(foregroundMatte.length);
+    for (let index = 0; index < foregroundMatte.length; index += 1) {
+      backgroundMask[index] = 255 - foregroundMatte[index];
     }
-    const shirtMask = blurMask(rawShirtMask, MASK_SIZE, MASK_SIZE, 1);
-    const prepared = {
+    const prepared: PreparedImage = {
       source,
-      backgroundMask: blurMask(backgroundMask, MASK_SIZE, MASK_SIZE, 1),
+      foreground,
+      backgroundMask,
       shirtMask,
+      maskSize: OUTPUT_SIZE,
       backgroundReferenceLightness: rgbToHsl(backgroundReference).l,
       shirtReferenceLightness: maskedMedianLightness(
-        maskSource.data,
+        source.data,
         shirtMask,
-        MASK_SIZE,
-        MASK_SIZE,
+        OUTPUT_SIZE,
+        OUTPUT_SIZE,
       ),
     };
-    preparedCache.set(key, prepared);
+    rememberPrepared(key, prepared);
     return prepared;
   }
 
@@ -480,14 +504,15 @@ async function prepare(src: string, settings: DetectionSettings, masks?: AvatarM
     shirtReference,
     settings.shirtTolerance,
   );
-  const prepared = {
+  const prepared: PreparedImage = {
     source,
     backgroundMask,
     shirtMask,
+    maskSize: MASK_SIZE,
     backgroundReferenceLightness: rgbToHsl(backgroundReference).l,
     shirtReferenceLightness: rgbToHsl(shirtReference).l,
   };
-  preparedCache.set(key, prepared);
+  rememberPrepared(key, prepared);
   return prepared;
 }
 
@@ -517,8 +542,46 @@ export async function renderRecoloredAvatar(
     const original = pixel(prepared.source.data, offset);
     const x = index % OUTPUT_SIZE;
     const y = Math.floor(index / OUTPUT_SIZE);
-    const maskIndex = Math.floor(y / MASK_SCALE) * MASK_SIZE + Math.floor(x / MASK_SCALE);
+    const maskScale = OUTPUT_SIZE / prepared.maskSize;
+    const maskIndex = Math.floor(y / maskScale) * prepared.maskSize + Math.floor(x / maskScale);
     const backgroundAmount = prepared.backgroundMask[maskIndex] / 255;
+
+    if (prepared.foreground) {
+      const originalLightness = (Math.max(original.r, original.g, original.b)
+        + Math.min(original.r, original.g, original.b)) / 510;
+      const lightnessShift = (
+        originalLightness - prepared.backgroundReferenceLightness
+      ) * 0.32;
+      const backgroundRgb = hslToRgb({
+        h: backgroundTargetHsl.h,
+        s: backgroundTargetHsl.s,
+        l: clamp(backgroundTargetHsl.l + lightnessShift),
+      });
+      const foregroundAmount = 1 - backgroundAmount;
+      const foregroundPixel = pixel(prepared.foreground.data, offset);
+      const shirtAmount = prepared.shirtMask[maskIndex] / 255;
+      let foregroundRgb = foregroundPixel;
+
+      if (shirtAmount > 0) {
+        const foregroundHsl = rgbToHsl(foregroundPixel);
+        const lightnessDelta = foregroundHsl.l - prepared.shirtReferenceLightness;
+        const recolored = hslToRgb({
+          h: shirtTarget.h,
+          s: clamp(shirtTarget.s * 0.9 + foregroundHsl.s * 0.1),
+          l: clamp(shirtTarget.l + lightnessDelta * 0.92),
+        });
+        foregroundRgb = {
+          r: mixChannel(foregroundPixel.r, recolored.r, shirtAmount),
+          g: mixChannel(foregroundPixel.g, recolored.g, shirtAmount),
+          b: mixChannel(foregroundPixel.b, recolored.b, shirtAmount),
+        };
+      }
+
+      output.data[offset] = mixChannel(backgroundRgb.r, foregroundRgb.r, foregroundAmount);
+      output.data[offset + 1] = mixChannel(backgroundRgb.g, foregroundRgb.g, foregroundAmount);
+      output.data[offset + 2] = mixChannel(backgroundRgb.b, foregroundRgb.b, foregroundAmount);
+      continue;
+    }
 
     if (backgroundAmount > 0) {
       const originalLightness = (Math.max(original.r, original.g, original.b)
