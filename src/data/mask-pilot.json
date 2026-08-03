@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "avatars": [
+    {
+      "id": "original-01",
+      "source": "avatars/standardized-1x1/avatar-01.png",
+      "reason": "Head covering meets the face, background, and shirt at several boundaries."
+    },
+    {
+      "id": "original-07",
+      "source": "avatars/standardized-1x1/avatar-07.png",
+      "reason": "Long wavy hair overlaps a shirt that is close to the background color."
+    },
+    {
+      "id": "expanded-10",
+      "source": "avatars/standardized-4x4/avatar-4x4-10-v1.png",
+      "reason": "Long vivid hair, layered necklaces, and a contrasting garment create complex edges."
+    },
+    {
+      "id": "expanded-26",
+      "source": "avatars/standardized-4x4/avatar-4x4-26-v1.png",
+      "reason": "Dense curls overlap a warm orange shirt close to the character's skin tones."
+    },
+    {
+      "id": "expanded-28",
+      "source": "avatars/standardized-4x4/avatar-4x4-28-v1.png",
+      "reason": "Red curls, a magenta shirt, and a pink background test similar adjacent hues."
+    }
+  ]
+}

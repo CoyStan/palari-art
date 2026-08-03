@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "avatarId": "expanded-10",
+  "status": "pilot-reviewed",
+  "generatedAt": "2026-08-02T23:49:50.540Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Long vivid hair, layered necklaces, and a contrasting garment create complex edges.",
+  "source": {
+    "file": "avatars/standardized-4x4/avatar-4x4-10-v1.png",
+    "sha256": "0dadf25b476592402d82adf43cebef8b0859eaef9e3702b9a26c0daeb1728193",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4e2-2770-7153-b254-bbe1e56dcba8",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e2-2770-7153-b254-bbe1e56dcba8",
+      "score": 0.9514526724815369,
+      "box": [
+        0.4816179313356914,
+        0.5275960044255332,
+        0.7711367152986073,
+        0.9423648894779266
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7640,
+      "sha256": "5020e29e711588dd8b23e362ffedadbb1efa1746af9f7472872888032261aab3"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "shirt",
+          "requestId": "019fc4e2-3170-70c0-a177-685b61320f1a",
+          "found": false
+        },
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4e2-37e9-7321-beae-6d08b73fb49a",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e2-37e9-7321-beae-6d08b73fb49a",
+      "score": 0.9163035750389099,
+      "box": [
+        0.4816153049468994,
+        0.8685225834922184,
+        0.7712554401821561,
+        0.2610139392671131
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 6173,
+      "sha256": "8913c4faab99e283de5ef19a3a78a4730722a5101ba5636198f7558ad550c348"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:00:33Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Mask and browser review confirmed that pink hair and layered necklaces are excluded from the sweater mask."
+  }
+}

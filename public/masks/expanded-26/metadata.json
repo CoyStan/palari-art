@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "avatarId": "expanded-26",
+  "status": "pilot-reviewed",
+  "generatedAt": "2026-08-02T23:50:04.077Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Dense curls overlap a warm orange shirt close to the character's skin tones.",
+  "source": {
+    "file": "avatars/standardized-4x4/avatar-4x4-26-v1.png",
+    "sha256": "d21f55af35afcbfcc54767b71dafc5005f3299c85cbb5f0c9689ba799ec12ccf",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4e2-4b22-79a0-b37a-eb03b789b3a9",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e2-4b22-79a0-b37a-eb03b789b3a9",
+      "score": 0.9526708722114563,
+      "box": [
+        0.5057562305813744,
+        0.5326608438340444,
+        0.8797345161437988,
+        0.9319016971285381
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8078,
+      "sha256": "839b67437bb52ce009d6abef8f1b3387a23a7d8e1fc2afcfaf4152a2718c682c"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "shirt",
+          "requestId": "019fc4e2-5a41-7cb2-8899-3fedb34b57a2",
+          "found": false
+        },
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4e2-6820-7212-a10b-31a7cdb5d3b3",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e2-6820-7212-a10b-31a7cdb5d3b3",
+      "score": 0.9188341498374939,
+      "box": [
+        0.5061205682300386,
+        0.8650065225268168,
+        0.8807081646389432,
+        0.26830255417596727
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4900,
+      "sha256": "338691a211f67807af3f0ee02cf5b9a1021839a2afb7467052b648479a1ea65d"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:00:33Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-resolution mask review confirmed that dense curls, face, and neck are protected from the warm sweater selection."
+  }
+}

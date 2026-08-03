@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "avatarId": "original-01",
+  "status": "pilot-reviewed",
+  "generatedAt": "2026-08-02T23:49:27.976Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Head covering meets the face, background, and shirt at several boundaries.",
+  "source": {
+    "file": "avatars/standardized-1x1/avatar-01.png",
+    "sha256": "0b33feffc8b8be9d24eed37fe7183bff6ee55d68322ad53bfa530dcafa9f56f7",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4e1-bf27-7062-bb2f-94323f69c86a",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e1-bf27-7062-bb2f-94323f69c86a",
+      "score": 0.9424098134040833,
+      "box": [
+        0.5013538532786899,
+        0.5566809063866025,
+        0.9441594945059882,
+        0.8847660791306269
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7170,
+      "sha256": "3d2deed60a1dd8ecb6c4f40e9b4a3b06fc078fed51037c8a110cec1305a3fb57"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "shirt",
+          "requestId": "019fc4e1-cfc8-7372-9d55-07bfbf8baf39",
+          "found": false
+        },
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4e1-db3d-7133-9149-a5ee894ac20d",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e1-db3d-7133-9149-a5ee894ac20d",
+      "score": 0.9066099524497986,
+      "box": [
+        0.5011936397779555,
+        0.8516526903424945,
+        0.9453277531124297,
+        0.29552877516973586
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4913,
+      "sha256": "2a136a09b484e76943328f15c0c9537d23b615570ad9aa5762fb486a4b2ba134"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:00:33Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Browser recolor and mask review confirmed that the background and sweater change while the face and hijab remain protected."
+  }
+}

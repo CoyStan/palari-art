@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "avatarId": "expanded-28",
+  "status": "pilot-reviewed",
+  "generatedAt": "2026-08-02T23:50:13.209Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Red curls, a magenta shirt, and a pink background test similar adjacent hues.",
+  "source": {
+    "file": "avatars/standardized-4x4/avatar-4x4-28-v1.png",
+    "sha256": "a4dc7710ada1b41ec4f27d7b5a1c359d1aa13e4ed258628a17a948663734dd7f",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4e2-8177-7e80-b0d5-4933fdbf38f5",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e2-8177-7e80-b0d5-4933fdbf38f5",
+      "score": 0.9609072208404541,
+      "box": [
+        0.5102493592670986,
+        0.5299494474653214,
+        0.8993461359114874,
+        0.939118608595833
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8468,
+      "sha256": "af32ca8cce9b661b2dc1a2ac9e165249217258561e034cd4d5a1f14b395001cb"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "shirt",
+          "requestId": "019fc4e2-8cd4-7ed3-b1ba-67e02d485cf5",
+          "found": false
+        },
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4e2-9355-7e92-bba2-18ed4d3c63d3",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4e2-9355-7e92-bba2-18ed4d3c63d3",
+      "score": 0.9157664179801941,
+      "box": [
+        0.5106867249049838,
+        0.879139885069832,
+        0.8989258985670786,
+        0.2399005587138827
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4319,
+      "sha256": "2a2c05c3125f5b5b2a1a691099486079aa7728ea783632cb02a6737eade5472e"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:00:33Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-resolution mask review confirmed clean separation between red curls, the magenta sweater, skin, and the pink background."
+  }
+}

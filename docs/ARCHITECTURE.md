@@ -1,0 +1,114 @@
+# Architecture
+
+## System shape
+
+Palari Art is currently a single-page React application built by Vite. All interactive image processing happens inside the browser through Canvas APIs. A separate Node preparation script calls fal.ai to create reusable masks.
+
+```text
+Bundled or uploaded image
+          |
+          v
+     AvatarCanvas
+          |
+          v
+ src/lib/recolor.ts
+  - prepare source
+  - load stored masks or estimate fallback masks
+  - recolor pixels
+          |
+          v
+  Canvas preview/export
+```
+
+There is no application server, database, authentication layer, or persistent upload service. The browser makes no remote image-processing calls. `scripts/generate-mask-pilot.mjs` is an offline preparation tool and is the only fal.ai integration.
+
+## Runtime flow
+
+1. `src/main.tsx` mounts the application.
+2. `src/App.tsx` owns the selected portrait, editable colors, mask tolerances, upload list, and export state.
+3. `src/data/avatars.ts` constructs the 38 built-in portrait records.
+4. `AvatarCanvas` invokes `renderRecoloredAvatar` whenever the source or settings change.
+5. `src/lib/recolor.ts` loads stored semantic masks when registered, otherwise estimates fallback masks, then writes recolored pixels to the Canvas.
+6. The same Canvas is encoded as PNG or WebP for download.
+
+Object URLs created from uploaded files exist only for the browser session. Uploads are not written to the server or added to the built-in library.
+
+## Current masking pipelines
+
+### Stored semantic masks
+
+Five pilot portraits have a `person.png` and `shirt.png` under `public/masks/<avatar-id>/`. The renderer downsamples those masks to its 512 × 512 working resolution, inverts the person mask for the background, softens both boundaries, and clips the shirt mask to the person silhouette.
+
+The source masks remain at the source portrait's 1254 × 1254 resolution. Keeping masks source-aligned makes checksums, replacements, and later higher-resolution exports unambiguous.
+
+### Heuristic fallback
+
+The renderer maintains a 1024 × 1024 source image and estimates masks at 512 × 512 for speed.
+
+### Background
+
+The background reference color is sampled from the top corners. A flood fill begins at the image edges and includes connected pixels within the configured color-distance tolerance. The result is softened before recoloring.
+
+### Shirt
+
+The shirt reference color is sampled from a bottom-center patch. Connected pixels within a guarded lower-body region are selected using hue, saturation, and lightness. Morphological passes remove narrow false connections or close small gaps.
+
+### Recoloring
+
+Target hue and saturation come from the user's color. Lightness differences from the original pixels are retained so that texture, shading, and fabric detail survive. The source alpha channel is preserved.
+
+Prepared results are cached by source URL and tolerance values for the current browser session.
+
+## Why the current masks fail
+
+The detector understands color and connectivity, not anatomy. A stylized portrait can legitimately contain the same hue in hair, skin, a scarf, and a shirt. No tolerance value can reliably separate those regions in every image. Slider tuning may improve one edge while damaging another.
+
+This is a limitation of the technique, not only a matter of finding better constants. See `MASKING.md` for the replacement design.
+
+## Target mask architecture
+
+Semantic segmentation should be an asset-preparation step:
+
+```text
+Source portrait
+  |-- prompt: person ----------> person mask
+  |-- prompt: shirt -----------> shirt mask
+  |
+  `-- masks reviewed and stored with metadata
+
+Source + stored masks + chosen colors
+  `-- browser-only deterministic recoloring
+```
+
+For bundled avatars, API inference happens once during preparation, not when an end user adjusts colors. For a newly uploaded portrait, a server route may generate and cache masks once.
+
+The stored contract is:
+
+```text
+public/masks/<avatar-id>/
+├── person.png
+├── shirt.png
+└── metadata.json
+```
+
+- Masks are grayscale PNG files with exactly the same dimensions as their source portrait.
+- White means selected, black means protected, and gray is reserved for softened boundaries.
+- `person.png` is inverted by the renderer to obtain the editable background.
+- `metadata.json` records the source asset, provider/model, prompts, creation time, and review status.
+
+This contract is active for the five reviewed pilot portraits. The remaining portraits have no stored masks and use the heuristic fallback.
+
+## Introducing an external API safely
+
+The browser must never receive the provider key. A future implementation needs one of these server-side boundaries:
+
+1. A batch preparation script for the 38 bundled portraits.
+2. A small server endpoint for new user uploads.
+
+The server reads `FAL_KEY` from its environment, validates file type and size, submits the image, normalizes the returned mask, and returns only the result. Do not use a `VITE_`-prefixed secret because Vite exposes such variables to browser bundles.
+
+Before adding a backend framework, keep the batch and interactive use cases separate. The bundled library can ship with static masks even if upload segmentation is postponed.
+
+## Build output
+
+`npm run build` writes the static application to `dist/`. The directory is generated and ignored by Git. It is not a source of truth and may be deleted and rebuilt safely.
