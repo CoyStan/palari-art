@@ -13,14 +13,20 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 
 ## Current truth
 
-- There are 38 bundled source portraits under `public/avatars/`.
+- There are 143 bundled source portraits under `public/avatars/`: 10 original, 28 expanded, and 105 Los 5 fantásticos portraits.
 - All bundled sources are square 1254 × 1254 PNG files.
 - The editor renders and exports at 1024 × 1024.
 - The app is currently a browser-only Vite SPA. It has no backend.
-- Five pilot portraits use reviewed semantic masks under `public/masks/`.
-- `src/lib/recolor.ts` prefers stored masks and falls back to color/connectivity heuristics for the other 33 portraits.
-- Those heuristic masks are known to fail on some stylized portraits. Do not describe the full library as semantically masked yet.
-- `scripts/generate-mask-pilot.mjs` is the server-side fal.ai SAM 3 preparation path.
+- All 143 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
+- `src/data/avatar-masks.json` is the source of truth that attaches those masks to built-in portraits.
+- `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
+- `scripts/generate-avatar-masks.mjs` creates the SAM 3 person and garment masks.
+- `scripts/generate-foreground-mattes.mjs` creates the 2048px BiRefNet Matting foreground and 256-level alpha matte used for hair edges.
+- The 105 Los 5 fantásticos production portraits are clean-render v3 `gpt-image-2` revisions of the identity-guided v2 redraws. The checksum-locked grouped Drive sources, first-pass crops, and v2 identity/composition targets remain the provenance chain; see `docs/FANTASTICOS-REDRAW.md`.
+- Masking for those 105 clean-render v3 portraits is already complete. Every current source checksum matches its reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` metadata. Do not rerun matting or segmentation unless a source portrait's pixels change; use `npm run verify:masks` to confirm this checkpoint.
+- The 105 regenerated portraits are delivered separately from the crops in the `palari-marketing` shared Drive at `Los 5 fantásticos /Palari Standardized Avatars 1x1/Clean Render Full - 105`. Drive is a delivery copy, not the repository source of truth.
+- The application presents all 143 portraits in one deterministic mixed grid. Collection labels remain internal provenance metadata and are not user-facing categories.
+- `src/data/avatar-attributes.json` records visual planning labels for all 143 portraits, and `docs/AVATAR-COVERAGE.md` summarizes gaps for future generation. These labels are not UI categories and must not be treated as demographic ground truth.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.
@@ -37,8 +43,15 @@ See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approve
 ```bash
 npm run dev            # Vite on 0.0.0.0:4173
 npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
-npm run verify:masks   # Check pilot sources, masks, checksums, metadata, and review state
-npm run masks:pilot    # Generate/resume the five fal.ai masks using .env.local
+npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
+npm run verify:attributes # Check the 143-record visual variation dataset
+npm run fantasticos:import -- --source-dir=<downloaded-drive-folder>
+npm run fantasticos:clean # Remove only verified disconnected panel-neighbor fragments
+npm run fantasticos:redraw:apply -- --source-dir=<reviewed-redraw-folder>
+npm run masks:generate # Generate/resume fal.ai masks using .env.local
+npm run masks:review -- --id=<id> --reviewer=<name> --notes=<summary>
+npm run mattes:generate # Generate/resume refined BiRefNet foregrounds
+npm run mattes:review -- --id=<id> --reviewer=<name> --notes=<summary>
 npm run typecheck      # TypeScript only
 npm run build          # TypeScript plus production build
 npm run check          # Canonical repository validation
@@ -65,10 +78,13 @@ Keep image-processing logic out of React components. Components should pass inpu
 ## Asset rules
 
 - Never overwrite a bundled source portrait merely to create a color variation.
+- A deliberate artwork revision may replace a bundled portrait only with explicit user direction, recorded generation provenance, and a complete mask regeneration/review.
 - Treat exported recolors, generated masks, and previews as derived files.
 - Keep collection filenames contiguous because `src/data/avatars.ts` currently builds paths from numeric ranges.
 - Do not rename or move a portrait without updating the registry and documentation.
 - Run `npm run verify:assets` after any asset change.
+- Follow `docs/FANTASTICOS-IMPORT.md` for the grouped Drive sources; do not split or frame them by eye.
+- Follow `docs/FANTASTICOS-REDRAW.md` before changing a Los 5 fantásticos production portrait or its generation prompt.
 - Do not upload to, delete from, or reorganize Google Drive unless the user explicitly asks. Local changes do not automatically update Drive.
 
 The full naming and review procedure is in `docs/ASSETS.md`.
@@ -76,12 +92,12 @@ The full naming and review procedure is in `docs/ASSETS.md`.
 ## Masking and API rules
 
 - Do not call an AI API when a color slider moves. Generate a reusable mask once and recolor locally.
-- Bundled avatars should use precomputed masks in production.
+- Bundled avatars should use the precomputed refined foreground, alpha matte, and garment mask in production.
 - A future upload flow may request masks once per new source image and cache them; it is not implemented.
 - If uploads begin leaving the browser, update the “Runs locally” and “Processing never leaves this browser” interface copy in `src/App.tsx`; those claims must remain literally true.
 - Keep `FAL_KEY` server-side. Never create `VITE_FAL_KEY`, embed a key in JavaScript, commit a `.env` file, or send the secret to the browser.
 - Adding fal.ai requires a server-side route or separate batch script; the current Vite SPA cannot safely hold the key.
-- API-generated masks must be reviewed before they are registered in the app. The first five are recorded in `docs/PILOT-RESULTS.md`.
+- API-generated masks must be reviewed before they are registered in the app. The full collection review is recorded in `docs/FULL-LIBRARY-RESULTS.md`.
 - Store masks separately from originals and retain enough metadata to reproduce them.
 
 The proposed mask file contract and acceptance cases are in `docs/MASKING.md`.

@@ -2,20 +2,23 @@
 
 ## Inventory
 
-The repository currently includes 38 standardized square PNG portraits.
+The repository currently includes 143 standardized square PNG portraits.
 
 | Collection | Count | Application IDs | Files |
 | --- | ---: | --- | --- |
 | Original set | 10 | `original-01` through `original-10` | `public/avatars/standardized-1x1/avatar-01.png` through `avatar-10.png` |
 | Expanded set | 28 | `expanded-01` through `expanded-28` | `public/avatars/standardized-4x4/avatar-4x4-01-v1.png` through `avatar-4x4-28-v1.png` |
+| Los 5 fantásticos | 105 | `fantasticos-001` through `fantasticos-105` | `public/avatars/los-5-fantasticos/fantastico-001.png` through `fantastico-105.png` |
 
 Every current source file is 1254 × 1254. The application normalizes the working Canvas and downloaded output to 1024 × 1024.
 
-The folder name `standardized-4x4` is historical. Its assets are square portraits and appear in the app as the “Expanded set.” Do not interpret it as a four-column sprite sheet.
+The folder name `standardized-4x4` is historical. Its assets are square portraits. The application presents all 143 portraits together in one deterministic mixed order; collection names remain internal provenance metadata only. Do not interpret the folder as a four-column sprite sheet.
+
+The Los 5 fantásticos identity references are 21 horizontal five-character images in the `palari-marketing` shared Drive. Their Drive file IDs and MD5 checksums are recorded in `src/data/fantasticos-sources.json`. The importer creates deterministic first-pass portraits for provenance and comparison. The current production portraits are clean-render v3 `gpt-image-2` revisions of the identity-guided v2 redraws, preserving complete shoulders and native 1254 × 1254 detail while removing grain and pixel-like microtexture. See `docs/FANTASTICOS-IMPORT.md` and `docs/FANTASTICOS-REDRAW.md`.
 
 ## Source and derived artifacts
 
-Bundled files under `public/avatars/` are source portraits for this application. Preserve them unchanged when creating variants.
+Bundled files under `public/avatars/` are reviewed production portraits for this application. Preserve them unchanged when creating color variants.
 
 Examples of derived artifacts include:
 
@@ -25,7 +28,7 @@ Examples of derived artifacts include:
 - PNG or WebP files downloaded from the editor.
 - The generated `dist/` directory.
 
-Derived artifacts should not silently replace a source portrait. When a source genuinely needs revision, add a new version and make the registry change explicit.
+Derived artifacts should not silently replace a production portrait. When artwork genuinely needs revision, record its generation provenance and regenerate every pixel-aligned mask.
 
 ## Google Drive relationship
 
@@ -64,9 +67,9 @@ Any source-image change invalidates masks made from the previous pixels. Regener
 
 ## Semantic masks
 
-Reviewed masks live at `public/masks/<avatar-id>/` and contain `person.png`, `shirt.png`, and `metadata.json`. The PNGs match their source portrait dimensions, and metadata records source and mask checksums, provider requests, prompts, scores, and review outcome.
+Reviewed layers live at `public/masks/<avatar-id>/` and contain `foreground.png`, `matte.png`, `person.png`, `shirt.png`, and `metadata.json`. The PNGs match their source portrait dimensions. Metadata records source and output checksums, provider requests, models, prompts, scores, and separate semantic-mask and foreground-matte review outcomes.
 
-The active pilot IDs are defined once in `src/data/mask-pilot.json`. `src/data/avatars.ts` uses that manifest to attach masks to the matching portraits. Run `npm run verify:masks` after changing a source, mask, manifest entry, or metadata file.
+All 143 mask IDs and their source files are defined once in `src/data/avatar-masks.json`. `src/data/avatars.ts` uses that manifest to attach masks to the matching portraits. Run `npm run verify:masks` after changing a source, mask, manifest entry, or metadata file.
 
 ## Uploaded portraits
 

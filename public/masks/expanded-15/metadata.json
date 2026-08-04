@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "avatarId": "expanded-15",
+  "status": "reviewed",
+  "generatedAt": "2026-08-03T00:14:20.766Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Full-library semantic mask migration.",
+  "source": {
+    "file": "avatars/standardized-4x4/avatar-4x4-15-v1.png",
+    "sha256": "868588c525ebe137bfa3127e9567f355c4caf45e85ebc790e1f0292686f2134b",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fc4f8-8ade-74c3-ba67-960f99d3e3a5",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f8-8ade-74c3-ba67-960f99d3e3a5",
+      "score": 0.9646010398864746,
+      "box": [
+        0.500441430343522,
+        0.5348820534963457,
+        0.9960306253698137,
+        0.9288397138080899
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8257,
+      "sha256": "fbe966c49d1c5923a61ada76119c0fdb55c7ef8e4add729b1f5026bfb782cc0d"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fc4f8-9f87-71e2-8b59-af6fe21955eb",
+          "found": true
+        }
+      ],
+      "requestId": "019fc4f8-9f87-71e2-8b59-af6fe21955eb",
+      "score": 0.9111635684967041,
+      "box": [
+        0.500306909756055,
+        0.8635504889109779,
+        0.9965074767195989,
+        0.27091065664140007
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4615,
+      "sha256": "23080bce9ffd20729035bf502b666222d86703dc4eb57dde79332049a6a4590d"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-03T00:20:28.440Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Full-library contact-sheet review passed; person and sweater masks preserve faces, hair, headwear, facial hair, glasses, jewelry, and skin. Confidence and boundary-containment outliers were inspected at higher resolution."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-03T02:18:02.268Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fc569-e09f-7450-8cad-82ab0eba760f",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1471929,
+      "sha256": "9fcf2d85cc35546dece6aa8803838a5c7d8fb24ded31493f21d46eee6ad88f12"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 53546,
+      "sha256": "41ffbc038324dd5835d4acd61b3d91de520467c5e903a5b5395676f84ca51c01"
+    },
+    "review": {
+      "reviewedAt": "2026-08-03T02:22:38.716Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Full-library source/refined-cutout/matte contact-sheet review passed. Fine curls, dreadlock tips, flyaways, long hair, buns, hijab, earrings, glasses, shoulders, and garments remain intact. All mattes contain 256 alpha levels and difficult-case cutout alpha matched the stored matte exactly."
+    }
+  }
+}

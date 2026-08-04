@@ -49,7 +49,7 @@ export const AvatarCanvas = forwardRef<HTMLCanvasElement, AvatarCanvasProps>(
         active = false;
         window.clearTimeout(timer);
       };
-    }, [masks?.person, masks?.shirt, onReadyChange, settings, src]);
+    }, [masks?.foreground, masks?.matte, masks?.shirt, onReadyChange, settings, src]);
 
     return (
       <div className="canvas-shell" aria-busy={loading}>

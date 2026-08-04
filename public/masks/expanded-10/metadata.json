@@ -1,7 +1,7 @@
 {
   "version": 1,
   "avatarId": "expanded-10",
-  "status": "pilot-reviewed",
+  "status": "reviewed",
   "generatedAt": "2026-08-02T23:49:50.540Z",
   "provider": "fal.ai",
   "model": "fal-ai/sam-3/image",
@@ -70,5 +70,41 @@
     "reviewer": "Codex",
     "outcome": "pass",
     "notes": "Mask and browser review confirmed that pink hair and layered necklaces are excluded from the sweater mask."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-03T02:17:35.867Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fc569-7944-7573-8173-94976d5c9608",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1538256,
+      "sha256": "831683e60924e79c09ae6b140e81b3494394a96799aa0ede1c09e0fb99f6af73"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 51865,
+      "sha256": "e96862766c9491d0101bb59736282d39b3c9b432ec2b9fb33165fff4b506bb4d"
+    },
+    "review": {
+      "reviewedAt": "2026-08-03T02:22:38.716Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Full-library source/refined-cutout/matte contact-sheet review passed. Fine curls, dreadlock tips, flyaways, long hair, buns, hijab, earrings, glasses, shoulders, and garments remain intact. All mattes contain 256 alpha levels and difficult-case cutout alpha matched the stored matte exactly."
+    }
   }
 }

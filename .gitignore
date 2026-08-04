@@ -10,3 +10,4 @@ npm-debug.log*
 vite.config.js
 vite.config.d.ts
 public/masks/**/*.tmp
+/tmp/

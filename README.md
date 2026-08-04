@@ -2,27 +2,28 @@
 
 Palari Art is the working repository for Palari's standardized character portraits and the browser-based tools used to prepare them for marketing and product use.
 
-The current application is a 1:1 avatar color studio. It lets a user select one of 38 bundled portraits, change the background and shirt colors, preview the result, and export a 1024 × 1024 PNG or WebP.
+The current application is a 1:1 avatar color studio. It presents 143 bundled portraits together in one stable mixed library, lets a user change the background and shirt colors, previews the result, and exports a 1024 × 1024 PNG or WebP.
 
 ## Repository status
 
-The interface and export flow work. Five difficult portraits now use reviewed fal.ai SAM 3 semantic masks; the other 33 portraits still use the prototype color detector. The prototype estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so it remains unreliable when a shirt resembles skin, hair, or a head covering.
+The interface and export flow work. All 143 bundled portraits use reviewed fal.ai SAM 3 garment masks plus BiRefNet v2 foreground mattes. The 105 Los 5 fantásticos portraits use the clean-render v3 artwork revision. Background and shirt recoloring remains local and deterministic in the browser; APIs are used only by offline asset-preparation scripts.
 
-The approved direction is to generate `person` and `sweater` masks through the fal.ai SAM 3 API once, save those masks with each bundled avatar, and continue doing all interactive recoloring locally. The five-avatar pilot validates this architecture. See [Masking strategy](docs/MASKING.md) and [Pilot results](docs/PILOT-RESULTS.md).
+Temporary user uploads still use the prototype color detector because there is no upload-segmentation service. That fallback estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so results can vary. See [Masking strategy](docs/MASKING.md) and [full-library results](docs/FULL-LIBRARY-RESULTS.md).
 
 ## What is included
 
 | Area | Current state |
 | --- | --- |
-| Bundled portraits | 38 standardized square PNGs |
-| Collections | 10 original portraits and 28 expanded portraits |
+| Bundled portraits | 143 standardized square PNGs |
+| Library | One mixed grid containing 10 original, 28 expanded, and 105 Los 5 fantásticos portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
 | Exports | 1024 × 1024 PNG and WebP |
 | Uploaded images | PNG, JPEG, or WebP for the current browser session |
 | Processing | Browser Canvas at runtime; fal.ai is used only by the preparation script |
-| Semantic pilot | 5 reviewed portraits use stored person and sweater masks |
-| Known limitation | The remaining 33 color-based masks are not consistently accurate |
+| Semantic layers | All 143 portraits use reviewed garment masks, refined RGBA foregrounds, and 256-level alpha mattes |
+| Variation planning | 143 visual-attribute records plus a documented coverage-gap analysis |
+| Known limitation | Temporary uploads still use color-estimated masks |
 
 ## Start the application
 
@@ -53,13 +54,16 @@ npm run check
 
 This verifies the avatar inventory, runs TypeScript checking, and creates a production build. For image-processing changes, also inspect several portraits visually; compilation cannot detect a bad mask.
 
-To generate or resume the five-avatar semantic-mask pilot, copy `.env.example` to `.env.local`, add `FAL_KEY`, and run:
+To generate or resume masks for the bundled library, copy `.env.example` to `.env.local`, add `FAL_KEY`, and run:
 
 ```bash
-npm run masks:pilot
+npm run masks:generate
+npm run mattes:generate
 ```
 
-Existing masks with the same model and source checksum are skipped unless `-- --force` is added.
+Existing outputs with the same model and source checksum are skipped unless `-- --force` is added. Limit either run with `-- --id=original-01`. Generated layers are not production-ready until they are visually reviewed and recorded with `npm run masks:review` or `npm run mattes:review`.
+
+The Los 5 fantásticos collection has a provenance-checked importer for its 21 five-character Drive sources and a separate identity-guided redraw workflow for the production portraits. See [Los 5 fantásticos import](docs/FANTASTICOS-IMPORT.md) and [redraw system](docs/FANTASTICOS-REDRAW.md) before refreshing that collection.
 
 ## Repository map
 
@@ -69,12 +73,24 @@ palari-art/
 ├── docs/
 │   ├── ARCHITECTURE.md       Application structure and data flow
 │   ├── ASSETS.md             Portrait collections and asset conventions
-│   ├── MASKING.md            Current limitation and planned API masks
+│   ├── AVATAR-COVERAGE.md    Visual-attribute distributions and generation gaps
+│   ├── FANTASTICOS-IMPORT.md Reproducible group-image import workflow
+│   ├── FANTASTICOS-REDRAW.md Identity-guided production redraw system
+│   ├── FULL-LIBRARY-RESULTS.md Complete SAM 3 collection evaluation
+│   ├── MASKING.md            Semantic mask workflow and upload fallback
 │   ├── PILOT-RESULTS.md       Five-avatar SAM 3 evaluation
 │   └── STATUS.md             Concise handoff and next milestones
-├── public/avatars/           Bundled source portraits served unchanged
+├── public/avatars/           Reviewed production portraits served by the editor
+├── public/masks/             Reviewed semantic layers and generation metadata
+├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
+├── scripts/generate-foreground-mattes.mjs  Resumable BiRefNet matting batch
+├── scripts/import-fantasticos.mjs Split, matte, and standardize the 105 new portraits
+├── scripts/apply-fantasticos-redraw.mjs Validate and apply 105 reviewed redraws
+├── scripts/clean-fantasticos-foregrounds.mjs Remove verified neighboring-panel fragments
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
+├── src/data/avatar-masks.json Semantic mask registry
+├── src/data/avatar-attributes.json Visual variation planning metadata
 ├── src/data/avatars.ts       Portrait registry
 ├── src/lib/color.ts          Color conversion and blending helpers
 ├── src/lib/recolor.ts        Current mask estimation and Canvas renderer
@@ -86,8 +102,11 @@ palari-art/
 - Read [AGENTS.md](AGENTS.md) before making an automated change.
 - Read [Architecture](docs/ARCHITECTURE.md) before changing the renderer or introducing a server.
 - Read [Avatar assets](docs/ASSETS.md) before adding, renaming, replacing, or synchronizing portraits.
+- Read [Los 5 fantásticos import](docs/FANTASTICOS-IMPORT.md) before regenerating that collection from Drive.
+- Read [Los 5 fantásticos redraw system](docs/FANTASTICOS-REDRAW.md) before regenerating its production artwork.
 - Read [Masking strategy](docs/MASKING.md) before working on segmentation or adding an API key.
-- Read [Pilot results](docs/PILOT-RESULTS.md) before changing prompts or expanding semantic masks.
+- Read [Full-library results](docs/FULL-LIBRARY-RESULTS.md) before changing prompts or regenerating semantic masks.
+- Read [Avatar variation coverage](docs/AVATAR-COVERAGE.md) before planning a new portrait generation batch.
 - Update [Current status](docs/STATUS.md) whenever a milestone or technical boundary changes.
 
 ## Product boundaries
@@ -95,6 +114,6 @@ palari-art/
 - Background and shirt color are the only user-editable properties currently in scope.
 - Hair recoloring is intentionally out of scope.
 - Recoloring should preserve the original character design; it must not regenerate facial features or clothing.
-- Bundled source portraits are immutable inputs. Derived masks and exported variants are separate artifacts.
+- Bundled production portraits are stable inputs to the recoloring runtime. Deliberate artwork revisions require explicit provenance plus regenerated and reviewed masks; ordinary color variants must never overwrite them.
 - Google Drive is used for sharing and delivery, but this repository does not currently synchronize with Drive automatically.
 - No public license is currently declared; treat the code and portrait assets as private Palari material.

@@ -18,6 +18,13 @@ const collections = [
       (_, index) => `avatar-4x4-${String(index + 1).padStart(2, "0")}-v1.png`,
     ),
   },
+  {
+    directory: "los-5-fantasticos",
+    expectedNames: Array.from(
+      { length: 105 },
+      (_, index) => `fantastico-${String(index + 1).padStart(3, "0")}.png`,
+    ),
+  },
 ];
 
 function pngDimensions(buffer, fileName) {
@@ -76,4 +83,3 @@ if (problems.length > 0) {
 } else {
   console.log(`Verified ${verified} square PNG avatar assets.`);
 }
-

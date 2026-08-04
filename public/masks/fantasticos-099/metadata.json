@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "avatarId": "fantasticos-099",
+  "status": "reviewed",
+  "generatedAt": "2026-08-04T02:17:12.438Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Imported from the palari-marketing/Los 5 fantásticos group collection.",
+  "source": {
+    "file": "avatars/los-5-fantasticos/fantastico-099.png",
+    "sha256": "b206f69057b91d4614da8405e8ac87516d14d64fbc6028ec00ee52c8adcd836a",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 52733,
+      "sha256": "ad89c27bab345c5bd42d05c9a826309e01706e8774c92ae0ebd8e830e4071b36",
+      "prompt": "derived from refined foreground matte",
+      "attempts": [],
+      "requestId": "019fca86-c406-7701-89b1-c04dc3e56073",
+      "score": 1,
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "derivedFrom": "matte.png"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fca8f-8250-7753-b349-47c8aff568f4",
+          "found": true
+        }
+      ],
+      "requestId": "019fca8f-8250-7753-b349-47c8aff568f4",
+      "score": 0.9198021292686462,
+      "box": [
+        0.572325070699056,
+        0.8353202456519717,
+        0.8535433875189887,
+        0.32659173390221974
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4771,
+      "sha256": "7b4221c6bce2315ee2a940ff9eef6a5de207579cd41f79e196f32bbd723fc23b"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-04T02:20:59.743Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Reviewed all 105 v3 source, shirt-mask, and tinted-overlay tiles plus low-confidence zooms; full garment coverage passes without face, neck, hair, accessory, or layered-clothing leakage."
+  },
+  "sourceGeneration": {
+    "provider": "OpenAI",
+    "model": "gpt-image-2",
+    "mode": "built-in image generation",
+    "promptVersion": "fantasticos-clean-v3",
+    "generatedAt": "2026-08-04T01:57:08.184Z",
+    "identityReference": "Previous production fantastico-099 portrait, used as the exact identity, design, color, and composition target.",
+    "finishReference": "/avatars/standardized-1x1/avatar-05.png",
+    "finishReferenceRole": "Full-resolution Palari rendering-quality reference only; its person, clothing, hairstyle, colors, and facial features were excluded from transfer.",
+    "intent": "Clean-render production revision that removes pixelation, grain, dithering, and noisy microtexture while preserving identity and composition."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-04T02:07:41.400Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fca86-c406-7701-89b1-c04dc3e56073",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1273996,
+      "sha256": "70d7f82e729655b24c2227f34b11cbdeb12d8ba6caa5679532a22c595927bc7d"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 52733,
+      "sha256": "ad89c27bab345c5bd42d05c9a826309e01706e8774c92ae0ebd8e830e4071b36"
+    },
+    "review": {
+      "reviewedAt": "2026-08-04T02:20:58.628Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Reviewed all 105 v3 source, refined-cutout, and alpha-matte tiles; difficult curls, braids, flyaways, long hair, jewelry, and head-covering edges pass."
+    }
+  }
+}

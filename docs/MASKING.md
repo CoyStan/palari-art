@@ -2,7 +2,7 @@
 
 ## Decision summary
 
-The current color-based detector is suitable as a prototype fallback but not as the production mask source. The five-avatar pilot has validated this production design:
+The color-based detector remains a prototype fallback for temporary uploads. All bundled portraits now use this production design:
 
 1. Use an external semantic segmentation API to create masks.
 2. Review and store the masks once.
@@ -12,7 +12,7 @@ This preserves server resources and avoids paying for repeated AI calls while a 
 
 ## Current implementation
 
-`src/lib/recolor.ts` estimates background and shirt masks from pixel colors and connected regions. It does not identify a face, hair, clothing, or accessories semantically.
+`src/lib/recolor.ts` loads a reviewed refined foreground, alpha matte, and garment mask for the 143 bundled portraits. When no stored layers are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
 
 Known failure conditions include:
 
@@ -25,32 +25,36 @@ Known failure conditions include:
 
 The tolerance controls are diagnostic aids. They cannot make a color-only detector reliable for all portraits.
 
-## Proposed provider
+## Batch providers
 
-The current candidate is fal.ai's `fal-ai/sam-3/image` endpoint. It accepts text prompts and returns segmentation masks without requiring a local GPU or installed model.
+The reviewed stored garment masks were generated with fal.ai's `fal-ai/sam-3/image` endpoint. It accepts text prompts and returns segmentation masks without requiring a local GPU or installed model. The refined foregrounds and mattes were generated with `fal-ai/birefnet/v2` Matting.
 
 Last reviewed on 2026-08-02, the provider listed the endpoint at $0.005 per request and allowed commercial use. Pricing and terms can change; verify them before a batch run.
 
 Documentation: <https://fal.ai/models/fal-ai/sam-3/image>
 
-The key is expected as the server-only environment variable `FAL_KEY`. It is loaded from ignored `.env.local` by `npm run masks:pilot`; no key is stored in the repository or exposed to Vite.
+The key is expected as the server-only environment variable `FAL_KEY`. It is loaded from ignored `.env.local` by `npm run masks:generate`; no key is stored in the repository or exposed to Vite.
 
-## Minimum mask set
+## Stored layer set
 
 Only two masks are needed for the current product:
 
-| Prompt | Stored result | Use |
+| Source | Stored result | Use |
 | --- | --- | --- |
-| `person` | `person.png` | Invert to isolate the background |
-| `sweater` | `shirt.png` | Recolor the visible upper garment |
+| BiRefNet v2 Matting | `foreground.png` | Refined RGBA character colors at hair boundaries |
+| BiRefNet v2 Matting | `matte.png` | Soft 256-level foreground alpha; invert for the background |
+| SAM prompt `person` | `person.png` | Reproducible hard silhouette and audit reference |
+| SAM prompt `sweater` | `shirt.png` | Recolor the visible upper garment |
 
-Hair and face do not require separate editable masks because they remain inside the protected person region and outside the shirt selection. Optional `hair` and `face` masks may be generated during evaluation to diagnose overlaps, but they are not required at runtime.
+Hair and face do not require separate editable masks. The BiRefNet matte preserves their edge coverage and the shirt mask excludes them. The runtime composites the refined foreground at 1024px, avoiding the previous 512px binary-mask blur.
 
-The pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded with scores from 0.907 to 0.935. New runs therefore try `sweater` first and retain a fallback prompt ladder. At two successful requests per portrait, the 38 bundled avatars require 76 requests. At the last reviewed price, the one-time inference cost would be approximately $0.38 before retries.
+The original pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded. Across the original 38-avatar migration, person scores range from 0.934 to 0.972 and garment scores range from 0.863 to 0.954. That historical pipeline used two successful SAM requests per portrait.
 
-## Evaluation before integration
+The 105 Los 5 fantásticos portraits have reviewed BiRefNet mattes, so their hard `person.png` references are derived from those mattes instead of spending a second SAM request. Garment generation tries `sweater`, then `shirt`, then `upper clothing`. After the clean-render v3 artwork revision on 2026-08-04, all 105 portraits succeeded on the first `sweater` attempt, with garment scores from 0.850 to 0.957. This batch is complete and must not be rerun while the source checksums remain current. If the artwork changes intentionally, a clean regeneration requires 105 BiRefNet requests and 105 successful garment-mask requests, plus any unsuccessful prompt attempts.
 
-The completed pilot covers five difficult portraits:
+## Evaluation and review
+
+The pilot established five difficult acceptance cases:
 
 1. Long dark hair covering the shoulders.
 2. Hair and shirt with similar colors.
@@ -58,13 +62,13 @@ The completed pilot covers five difficult portraits:
 4. A head covering or large accessory.
 5. Curly or flyaway hair against the background.
 
-Prompt attempts, request IDs, scores, boxes, checksums, and review results are kept in each `metadata.json`. See `PILOT-RESULTS.md` for the consolidated result.
+Prompt attempts, request IDs, scores, boxes, checksums, and review results are kept in each `metadata.json`. See `PILOT-RESULTS.md` for the initial evaluation and `FULL-LIBRARY-RESULTS.md` for the completed collection.
 
 Acceptance criteria:
 
 - No visible face, neck, hair, or accessory is included in the shirt mask.
 - The complete visible garment, including shoulders and collar edges, is selected.
-- The person mask preserves fine hair edges without background halos.
+- The foreground matte preserves fine hair edges without background halos.
 - Mask boundaries remain stable when rendered at 1024 × 1024.
 - Recoloring preserves original shading and texture.
 - A reviewer explicitly marks the masks approved before they become defaults.
@@ -81,12 +85,20 @@ If a mask is nearly correct, manual correction is preferable to repeated generat
 - Normalize masks to the proposed stored contract.
 - Produce a visual comparison for review.
 
-### Phase 2: Bundled library — pending approval
+### Phase 2: Bundled library — complete
 
-- Process and review all 38 portraits.
-- Add `public/masks/<avatar-id>/person.png`, `shirt.png`, and `metadata.json`.
-- Update the renderer to prefer stored masks.
-- Retain the heuristic detector temporarily as an explicit fallback.
+- Processed and reviewed the original 38 portraits.
+- Added reviewed SAM layers plus BiRefNet `foreground.png` and `matte.png` for every avatar.
+- Updated the renderer registry so every built-in portrait uses stored masks.
+- Retained the heuristic detector for temporary uploads.
+
+### Phase 2b: Los 5 fantásticos import and clean redraw — complete
+
+- Split 21 source groups into 105 identity-preserving square portraits.
+- Generated and reviewed BiRefNet foregrounds and SAM garment masks.
+- Removed eight disconnected neighboring-panel fragments from six portraits using a deterministic boundary cleanup.
+- Re-rendered all 105 portraits with the clean v3 production prompt and regenerated and reviewed their BiRefNet and SAM layers.
+- Registered all 105 portraits in the unified mixed library.
 
 ### Phase 3: New uploads
 
