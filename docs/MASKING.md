@@ -25,9 +25,9 @@ Known failure conditions include:
 
 The tolerance controls are diagnostic aids. They cannot make a color-only detector reliable for all portraits.
 
-## Proposed provider
+## Batch providers
 
-The current candidate is fal.ai's `fal-ai/sam-3/image` endpoint. It accepts text prompts and returns segmentation masks without requiring a local GPU or installed model.
+The reviewed stored garment masks were generated with fal.ai's `fal-ai/sam-3/image` endpoint. It accepts text prompts and returns segmentation masks without requiring a local GPU or installed model. The refined foregrounds and mattes were generated with `fal-ai/birefnet/v2` Matting.
 
 Last reviewed on 2026-08-02, the provider listed the endpoint at $0.005 per request and allowed commercial use. Pricing and terms can change; verify them before a batch run.
 
@@ -50,7 +50,7 @@ Hair and face do not require separate editable masks. The BiRefNet matte preserv
 
 The original pilot found that `shirt` returned no mask for all five portraits while `sweater` succeeded. Across the original 38-avatar migration, person scores range from 0.934 to 0.972 and garment scores range from 0.863 to 0.954. That historical pipeline used two successful SAM requests per portrait.
 
-The 105 Los 5 fantásticos portraits already have a BiRefNet matte from their standardization step, so their hard `person.png` reference is derived from that reviewed matte instead of spending a second SAM request. Garment generation tries `sweater`, then `shirt`, then `upper clothing`; 102 portraits succeeded with `sweater`, while `fantasticos-068`, `fantasticos-078`, and `fantasticos-083` used the final fallback. A clean regeneration needs 105 BiRefNet requests and 105 successful garment-mask requests, plus any unsuccessful prompt attempts.
+The 105 Los 5 fantásticos portraits have reviewed BiRefNet mattes, so their hard `person.png` references are derived from those mattes instead of spending a second SAM request. Garment generation tries `sweater`, then `shirt`, then `upper clothing`. After the clean-render v3 artwork revision on 2026-08-04, all 105 portraits succeeded on the first `sweater` attempt, with garment scores from 0.850 to 0.957. This batch is complete and must not be rerun while the source checksums remain current. If the artwork changes intentionally, a clean regeneration requires 105 BiRefNet requests and 105 successful garment-mask requests, plus any unsuccessful prompt attempts.
 
 ## Evaluation and review
 
@@ -92,12 +92,13 @@ If a mask is nearly correct, manual correction is preferable to repeated generat
 - Updated the renderer registry so every built-in portrait uses stored masks.
 - Retained the heuristic detector for temporary uploads.
 
-### Phase 2b: Los 5 fantásticos import — complete
+### Phase 2b: Los 5 fantásticos import and clean redraw — complete
 
 - Split 21 source groups into 105 identity-preserving square portraits.
 - Generated and reviewed BiRefNet foregrounds and SAM garment masks.
 - Removed eight disconnected neighboring-panel fragments from six portraits using a deterministic boundary cleanup.
-- Registered all 105 portraits as a third collection.
+- Re-rendered all 105 portraits with the clean v3 production prompt and regenerated and reviewed their BiRefNet and SAM layers.
+- Registered all 105 portraits in the unified mixed library.
 
 ### Phase 3: New uploads
 

@@ -86,7 +86,7 @@ export function App() {
           <div className="stage-toolbar">
             <div>
               <strong>{selected.name}</strong>
-              <span>{selected.collection}</span>
+              <span>Palari portrait</span>
             </div>
             <button className="secondary-button" onClick={() => setSettings(DEFAULTS)} type="button">
               <RotateCcw aria-hidden="true" size={15} /> Reset

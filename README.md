@@ -2,11 +2,11 @@
 
 Palari Art is the working repository for Palari's standardized character portraits and the browser-based tools used to prepare them for marketing and product use.
 
-The current application is a 1:1 avatar color studio. It lets a user select one of 143 bundled portraits, change the background and shirt colors, preview the result, and export a 1024 × 1024 PNG or WebP.
+The current application is a 1:1 avatar color studio. It presents 143 bundled portraits together in one stable mixed library, lets a user change the background and shirt colors, previews the result, and exports a 1024 × 1024 PNG or WebP.
 
 ## Repository status
 
-The interface and export flow work. All 143 bundled portraits use reviewed fal.ai SAM 3 garment masks plus BiRefNet v2 foreground mattes. Background and shirt recoloring remains local and deterministic in the browser; APIs are used only by offline asset-preparation scripts.
+The interface and export flow work. All 143 bundled portraits use reviewed fal.ai SAM 3 garment masks plus BiRefNet v2 foreground mattes. The 105 Los 5 fantásticos portraits use the clean-render v3 artwork revision. Background and shirt recoloring remains local and deterministic in the browser; APIs are used only by offline asset-preparation scripts.
 
 Temporary user uploads still use the prototype color detector because there is no upload-segmentation service. That fallback estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so results can vary. See [Masking strategy](docs/MASKING.md) and [full-library results](docs/FULL-LIBRARY-RESULTS.md).
 
@@ -15,13 +15,14 @@ Temporary user uploads still use the prototype color detector because there is n
 | Area | Current state |
 | --- | --- |
 | Bundled portraits | 143 standardized square PNGs |
-| Collections | 10 original, 28 expanded, and 105 Los 5 fantásticos portraits |
+| Library | One mixed grid containing 10 original, 28 expanded, and 105 Los 5 fantásticos portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
 | Exports | 1024 × 1024 PNG and WebP |
 | Uploaded images | PNG, JPEG, or WebP for the current browser session |
 | Processing | Browser Canvas at runtime; fal.ai is used only by the preparation script |
 | Semantic layers | All 143 portraits use reviewed garment masks, refined RGBA foregrounds, and 256-level alpha mattes |
+| Variation planning | 143 visual-attribute records plus a documented coverage-gap analysis |
 | Known limitation | Temporary uploads still use color-estimated masks |
 
 ## Start the application
@@ -72,6 +73,7 @@ palari-art/
 ├── docs/
 │   ├── ARCHITECTURE.md       Application structure and data flow
 │   ├── ASSETS.md             Portrait collections and asset conventions
+│   ├── AVATAR-COVERAGE.md    Visual-attribute distributions and generation gaps
 │   ├── FANTASTICOS-IMPORT.md Reproducible group-image import workflow
 │   ├── FANTASTICOS-REDRAW.md Identity-guided production redraw system
 │   ├── FULL-LIBRARY-RESULTS.md Complete SAM 3 collection evaluation
@@ -88,6 +90,7 @@ palari-art/
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
 ├── src/data/avatar-masks.json Semantic mask registry
+├── src/data/avatar-attributes.json Visual variation planning metadata
 ├── src/data/avatars.ts       Portrait registry
 ├── src/lib/color.ts          Color conversion and blending helpers
 ├── src/lib/recolor.ts        Current mask estimation and Canvas renderer
@@ -103,6 +106,7 @@ palari-art/
 - Read [Los 5 fantásticos redraw system](docs/FANTASTICOS-REDRAW.md) before regenerating its production artwork.
 - Read [Masking strategy](docs/MASKING.md) before working on segmentation or adding an API key.
 - Read [Full-library results](docs/FULL-LIBRARY-RESULTS.md) before changing prompts or regenerating semantic masks.
+- Read [Avatar variation coverage](docs/AVATAR-COVERAGE.md) before planning a new portrait generation batch.
 - Update [Current status](docs/STATUS.md) whenever a milestone or technical boundary changes.
 
 ## Product boundaries

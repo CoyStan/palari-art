@@ -1,6 +1,6 @@
 # Full-library semantic mask results
 
-Review date: 2026-08-03
+Review date: 2026-08-04
 
 ## Outcome
 
@@ -22,9 +22,18 @@ The production v2 set was therefore recreated with `gpt-image-2` as 105 identity
 
 The v2 portraits were reviewed in five old/new comparison sheets before application. Their replacement invalidated the first-pass pixel-aligned masks, so BiRefNet foreground mattes and SAM 3 garment masks were regenerated and reviewed against the new source checksums.
 
+## Los 5 fantásticos clean-render v3
+
+The v2 set retained visible pixelation, grain, and crosshatched microtexture because the generation workflow combined narrow identity panels or composite references with a texture-heavy prompt. The v3 pass used each accepted v2 portrait as the exact identity, design, color, and composition target, plus one full-resolution original Palari portrait as a finish-only reference. The prompt explicitly prohibited identity transfer from that finish reference and prohibited pixelation, grain, speckling, dithering, noisy pores, dirty gradients, and sharpening artifacts.
+
+Five representative pilots (`fantasticos-001`, `fantasticos-002`, `fantasticos-034`, `fantasticos-068`, and `fantasticos-083`) established the clean finish. The same workflow was then applied to all 105 portraits. Seven old/clean comparison sheets and full-resolution checks of difficult long-hair, curl, braid, bead, head-covering, and flyaway cases passed. The accepted v3 inventory is 105 contiguous 1254 × 1254 sRGB PNG files.
+
+Because every portrait changed pixels, all 105 BiRefNet foregrounds and SAM garment masks were regenerated. All garment masks succeeded on the first `sweater` prompt, with scores from 0.850 to 0.957. Seven five-layer audit sheets compared each source with its refined cutout, alpha matte, shirt mask, and tinted overlay. Additional zoom review covered the lowest-confidence and most structurally difficult portraits. All 105 foreground and semantic layers passed, and strict checksum verification again passes for all 143 bundled portraits.
+
 ## Review evidence
 
 - Reviewed source, foreground, matte, and garment-mask contact sheets for all 143 avatars.
+- Reviewed the v3 source/cutout/matte/shirt/overlay audit pages for all 105 changed portraits before recording approval.
 - Inspected hair, face, skin, hijab, beard, glasses, earrings, necklaces, collars, and overlapping shoulder hair.
 - Inspected the two lowest garment-confidence cases, `expanded-09` and `expanded-13`, at higher resolution; both passed.
 - Confirmed all mask PNGs are 1254 × 1254 and match their source dimensions.
@@ -48,7 +57,7 @@ These ranges are review aids, not automatic acceptance thresholds. Visual correc
 
 The original 38-avatar mask migration used 66 successful SAM 3 requests after the five-avatar pilot. At the provider price recorded during that pilot on 2026-08-02, those calls corresponded to an estimated $0.33; the pilot was estimated at approximately $0.09 because prompt discovery added unsuccessful calls.
 
-The Los 5 fantásticos v2 artwork was generated separately with OpenAI `gpt-image-2`. Rebuilding its editable layers used 105 BiRefNet v2 requests and 105 SAM 3 requests. Exact image-generation and mask costs are intentionally not estimated here because provider prices and account terms may differ.
+The Los 5 fantásticos v2 and clean-render v3 artwork were generated separately with OpenAI `gpt-image-2`. Each artwork replacement required 105 BiRefNet v2 requests and 105 successful SAM 3 garment requests to rebuild the editable layers. Exact image-generation and mask costs are intentionally not estimated here because provider prices and account terms may differ.
 
 Provider pricing and terms can change. Confirm the current endpoint terms before any future regeneration.
 

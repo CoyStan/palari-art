@@ -22,7 +22,11 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
 - `scripts/generate-avatar-masks.mjs` creates the SAM 3 person and garment masks.
 - `scripts/generate-foreground-mattes.mjs` creates the 2048px BiRefNet Matting foreground and 256-level alpha matte used for hair edges.
-- The 105 Los 5 fantásticos production portraits are identity-guided `gpt-image-2` redraws. The checksum-locked grouped Drive sources and first-pass crops remain the provenance reference; see `docs/FANTASTICOS-REDRAW.md`.
+- The 105 Los 5 fantásticos production portraits are clean-render v3 `gpt-image-2` revisions of the identity-guided v2 redraws. The checksum-locked grouped Drive sources, first-pass crops, and v2 identity/composition targets remain the provenance chain; see `docs/FANTASTICOS-REDRAW.md`.
+- Masking for those 105 clean-render v3 portraits is already complete. Every current source checksum matches its reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` metadata. Do not rerun matting or segmentation unless a source portrait's pixels change; use `npm run verify:masks` to confirm this checkpoint.
+- The 105 regenerated portraits are delivered separately from the crops in the `palari-marketing` shared Drive at `Los 5 fantásticos /Palari Standardized Avatars 1x1/Clean Render Full - 105`. Drive is a delivery copy, not the repository source of truth.
+- The application presents all 143 portraits in one deterministic mixed grid. Collection labels remain internal provenance metadata and are not user-facing categories.
+- `src/data/avatar-attributes.json` records visual planning labels for all 143 portraits, and `docs/AVATAR-COVERAGE.md` summarizes gaps for future generation. These labels are not UI categories and must not be treated as demographic ground truth.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.
@@ -40,6 +44,7 @@ See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approve
 npm run dev            # Vite on 0.0.0.0:4173
 npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
+npm run verify:attributes # Check the 143-record visual variation dataset
 npm run fantasticos:import -- --source-dir=<downloaded-drive-folder>
 npm run fantasticos:clean # Remove only verified disconnected panel-neighbor fragments
 npm run fantasticos:redraw:apply -- --source-dir=<reviewed-redraw-folder>

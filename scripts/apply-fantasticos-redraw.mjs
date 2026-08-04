@@ -18,6 +18,19 @@ const expectedNames = Array.from(
   { length: 105 },
   (_, index) => `fantastico-${String(index + 1).padStart(3, "0")}.png`,
 );
+const finishReferenceNumbers = [
+  2, 9, 7, 8, 9, 2, 6, 7, 7, 9, 2, 9, 10, 3, 7,
+  2, 9, 10, 3, 2, 2, 9, 7, 9, 8, 3, 2, 7, 4, 10,
+  9, 7, 3, 7, 2, 10, 9, 8, 4, 10, 10, 9, 10, 4, 10,
+  9, 10, 4, 2, 8, 2, 9, 4, 7, 10, 5, 10, 10, 9, 7,
+  4, 10, 2, 9, 7, 4, 2, 1, 3, 7, 4, 3, 9, 6, 9,
+  3, 7, 2, 9, 10, 10, 9, 2, 9, 10, 10, 10, 9, 3, 7,
+  5, 8, 9, 7, 5, 10, 7, 2, 5, 10, 4, 10, 2, 9, 7,
+];
+
+if (finishReferenceNumbers.length !== expectedNames.length) {
+  throw new Error("Every Fantástico redraw must have one recorded finish reference.");
+}
 
 function assertPng(buffer, label) {
   if (buffer.length < 24 || buffer.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a") {
@@ -54,14 +67,15 @@ for (const [index, name] of expectedNames.entries()) {
     provider: "OpenAI",
     model: "gpt-image-2",
     mode: "built-in image generation",
-    promptVersion: "fantasticos-redraw-v2",
+    promptVersion: "fantasticos-clean-v3",
     generatedAt,
-    identityReference: `Previous fantastico-${number} standardized portrait derived from the matching grouped Drive source panel.`,
-    styleReference: "Eight reviewed Palari standardized portraits assembled as a collection style board.",
-    intent: "Identity-guided high-resolution redraw with complete hair, neck, both shoulders, and upper chest.",
+    identityReference: `Previous production fantastico-${number} portrait, used as the exact identity, design, color, and composition target.`,
+    finishReference: `/avatars/standardized-1x1/avatar-${String(finishReferenceNumbers[index]).padStart(2, "0")}.png`,
+    finishReferenceRole: "Full-resolution Palari rendering-quality reference only; its person, clothing, hairstyle, colors, and facial features were excluded from transfer.",
+    intent: "Clean-render production revision that removes pixelation, grain, dithering, and noisy microtexture while preserving identity and composition.",
   };
   await writeFile(metadataPath, `${JSON.stringify(metadata, null, 2)}\n`);
   console.log(`[${index + 1}/105] Applied ${name}.`);
 }
 
-console.log("Applied all 105 Los 5 fantásticos redraws. Regenerate and review mattes and masks next.");
+console.log("Applied all 105 Los 5 fantásticos clean-render revisions. Regenerate and review mattes and masks next.");

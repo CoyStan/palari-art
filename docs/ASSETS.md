@@ -12,9 +12,9 @@ The repository currently includes 143 standardized square PNG portraits.
 
 Every current source file is 1254 × 1254. The application normalizes the working Canvas and downloaded output to 1024 × 1024.
 
-The folder name `standardized-4x4` is historical. Its assets are square portraits and appear in the app as the “Expanded set.” Do not interpret it as a four-column sprite sheet.
+The folder name `standardized-4x4` is historical. Its assets are square portraits. The application presents all 143 portraits together in one deterministic mixed order; collection names remain internal provenance metadata only. Do not interpret the folder as a four-column sprite sheet.
 
-The Los 5 fantásticos identity references are 21 horizontal five-character images in the `palari-marketing` shared Drive. Their Drive file IDs and MD5 checksums are recorded in `src/data/fantasticos-sources.json`. The importer creates deterministic first-pass portraits for provenance and comparison. The current production portraits are identity-guided `gpt-image-2` redraws with complete shoulders and native 1254 × 1254 detail. See `docs/FANTASTICOS-IMPORT.md` and `docs/FANTASTICOS-REDRAW.md`.
+The Los 5 fantásticos identity references are 21 horizontal five-character images in the `palari-marketing` shared Drive. Their Drive file IDs and MD5 checksums are recorded in `src/data/fantasticos-sources.json`. The importer creates deterministic first-pass portraits for provenance and comparison. The current production portraits are clean-render v3 `gpt-image-2` revisions of the identity-guided v2 redraws, preserving complete shoulders and native 1254 × 1254 detail while removing grain and pixel-like microtexture. See `docs/FANTASTICOS-IMPORT.md` and `docs/FANTASTICOS-REDRAW.md`.
 
 ## Source and derived artifacts
 
