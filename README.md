@@ -1,10 +1,64 @@
+<div align="center">
+
 # Palari Art
 
-Palari Art is the working repository for Palari's standardized character portraits and the browser-based tools used to prepare them for marketing and product use.
+### A reviewed portrait library and local-first color studio
 
-The current application is a 1:1 avatar color studio. It presents 156 active portraits from 157 bundled sources in one stable mixed library, lets a user change the background and shirt colors, previews the result, and exports a 1024 × 1024 PNG or WebP. Avatar 024 (`expanded-14`) is intentionally retired from the UI while its source and reviewed layers remain archived in the repository. The browser uses generated WebP files for the editor source and gallery thumbnails while the checksum-locked PNG masters remain unchanged.
+Change a character's background and shirt while preserving the face, hair, accessories, texture, lighting, and identity.
 
-On classic phone widths, the editor condenses into a single-screen composition: the preview occupies roughly 60% of the width, a two-column portrait rail occupies the right side, and only the background and shirt preset circles remain below. Full search, tuning, custom color, and export controls remain available on wider layouts.
+`157 source portraits` · `156 active characters` · `1024 × 1024 export` · `browser-only runtime`
+
+</div>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/readme/editor-mobile.webp">
+  <img src="docs/readme/editor-desktop.webp" alt="Palari Art editor showing Avatar 157 with a green shirt and blue background on desktop and mobile" width="100%">
+</picture>
+
+Palari Art is the source of truth for Palari's standardized character portraits, their reviewed semantic layers, and the browser tools used to recolor them safely. The editor presents one stable mixed library, previews changes instantly, and exports PNG or WebP without sending portrait data to a backend.
+
+## At a glance
+
+| Library | Editing | Delivery | Safety |
+| --- | --- | --- | --- |
+| 157 checksum-locked PNG masters | Background and shirt only | 1024px editor WebPs | Reviewed garment masks |
+| 156 active portraits | Nondestructive face-aware framing | 256px gallery thumbnails | Protected hair and neck |
+| Stable IDs; Avatar 024 archived | Local Canvas rendering | 1024 × 1024 PNG/WebP export | No runtime ML or API key |
+
+<p align="center">
+  <img src="public/avatars-web/thumbnail/coverage-expansion/avatar-coverage-004.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/los-5-fantasticos/fantastico-057.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/standardized-1x1/avatar-03.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/los-5-fantasticos/fantastico-079.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/standardized-4x4/avatar-4x4-13-v1.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/coverage-expansion/avatar-coverage-011.webp" alt="Palari portrait example" width="15%">
+</p>
+
+On classic phone widths, the interface becomes a single-screen composition: the preview uses roughly 60% of the width, a two-column portrait rail fills the right side, and compact background and shirt swatches sit below. Wider layouts expose search, precise color input, edge tuning, uploads, and export controls.
+
+## How it works
+
+```mermaid
+flowchart LR
+    subgraph P["Offline preparation"]
+        A["PNG portrait masters"] --> B["Segmentation + matting"]
+        B --> C["Visual review"]
+        C --> D["Checksum-linked masks"]
+        A --> E["WebP delivery assets"]
+        A --> F["Face-aware framing"]
+    end
+
+    subgraph R["Browser runtime"]
+        D --> G["Canvas renderer"]
+        E --> G
+        F --> G
+        H["Background + shirt colors"] --> G
+        G --> I["Live preview"]
+        G --> J["PNG / WebP export"]
+    end
+```
+
+The expensive image understanding happens once during controlled asset preparation. The shipped application performs deterministic pixel compositing in the browser, so moving a color control never triggers an AI request.
 
 ## Repository status
 
