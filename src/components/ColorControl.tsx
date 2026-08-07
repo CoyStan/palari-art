@@ -3,8 +3,13 @@ import { useId } from "react";
 type ColorControlProps = {
   label: string;
   value: string;
-  presets: string[];
+  presets: readonly ColorPreset[];
   onChange: (value: string) => void;
+};
+
+export type ColorPreset = {
+  label: string;
+  value: string;
 };
 
 export function ColorControl({ label, value, presets, onChange }: ColorControlProps) {
@@ -37,12 +42,12 @@ export function ColorControl({ label, value, presets, onChange }: ColorControlPr
       <div className="swatches" aria-label={`${label} presets`}>
         {presets.map((preset) => (
           <button
-            aria-label={`Use ${preset}`}
-            aria-pressed={preset.toLowerCase() === value.toLowerCase()}
+            aria-label={`Use ${preset.label} ${preset.value}`}
+            aria-pressed={preset.value.toLowerCase() === value.toLowerCase()}
             className="swatch"
-            key={preset}
-            onClick={() => onChange(preset)}
-            style={{ background: preset }}
+            key={preset.value}
+            onClick={() => onChange(preset.value)}
+            style={{ background: preset.value }}
             type="button"
           />
         ))}

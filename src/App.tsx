@@ -2,7 +2,7 @@ import { Download, ImageDown, RotateCcw, SlidersHorizontal } from "lucide-react"
 import { useCallback, useMemo, useRef, useState } from "react";
 import { AvatarCanvas } from "./components/AvatarCanvas";
 import { AvatarLibrary } from "./components/AvatarLibrary";
-import { ColorControl } from "./components/ColorControl";
+import { ColorControl, type ColorPreset } from "./components/ColorControl";
 import { avatars as builtInAvatars, type Avatar } from "./data/avatars";
 import { assetUrl } from "./lib/assets";
 import { canvasToBlob, type RecolorSettings } from "./lib/recolor";
@@ -14,8 +14,34 @@ const DEFAULTS: RecolorSettings = {
   shirtTolerance: 64,
 };
 
-const backgroundPresets = ["#F3E2D2", "#F4D9DE", "#DCCFF0", "#DCE8F7", "#DDEBDD", "#F2E1B8"];
-const shirtPresets = ["#E65B49", "#EC6D8D", "#9B56C7", "#2F6EE5", "#2E8B61", "#F1AF24"];
+const darkPresets = [
+  { label: "Brick", value: "#8F3A32" },
+  { label: "Wine", value: "#8D3F5A" },
+  { label: "Plum", value: "#5D3A7A" },
+  { label: "Navy", value: "#1D3557" },
+  { label: "Forest", value: "#24563F" },
+  { label: "Ochre", value: "#9A6818" },
+] as const satisfies readonly ColorPreset[];
+
+const backgroundPresets = [
+  { label: "Sand", value: "#F3E2D2" },
+  { label: "Blush", value: "#F4D9DE" },
+  { label: "Lilac", value: "#DCCFF0" },
+  { label: "Powder blue", value: "#DCE8F7" },
+  { label: "Sage", value: "#DDEBDD" },
+  { label: "Butter", value: "#F2E1B8" },
+  ...darkPresets,
+] as const satisfies readonly ColorPreset[];
+
+const shirtPresets = [
+  { label: "Coral", value: "#E65B49" },
+  { label: "Rose", value: "#EC6D8D" },
+  { label: "Orchid", value: "#9B56C7" },
+  { label: "Blue", value: "#2F6EE5" },
+  { label: "Emerald", value: "#2E8B61" },
+  { label: "Gold", value: "#F1AF24" },
+  ...darkPresets,
+] as const satisfies readonly ColorPreset[];
 
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);

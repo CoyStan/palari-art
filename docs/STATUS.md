@@ -21,7 +21,7 @@ Last updated: 2026-08-07
 - React/Vite avatar color studio.
 - 156 active Palari portraits presented in one deterministic mixed grid from 157 bundled sources. Avatar 024 (`expanded-14`) is intentionally excluded without renumbering the remaining portraits.
 - Temporary uploads for PNG, JPEG, and WebP.
-- Background and shirt color controls with presets.
+- Background and shirt color controls with 12 aligned hue presets each: six original colors and a darker row of brick, wine, plum, navy, forest, and ochre.
 - Edge-tolerance controls for temporary-upload fallback masks.
 - 1024 × 1024 PNG and WebP export.
 - Face-aware head-and-shoulders normalization for the gallery, Canvas preview, and export. The approved reference anchors face size/position while reviewed person bounds protect tall hair and head coverings.
@@ -70,7 +70,7 @@ Temporary uploads do not receive the reviewed hair-matting pipeline. Their masks
 - Temporary uploads do not receive automatic face-aware framing; only source-linked bundled portraits use reviewed framing metadata.
 - No automatic Google Drive synchronization exists; Drive delivery is an explicit `rclone` operation after review.
 - The 2026-08-04 clean-render revision is present in the documented shared-Drive delivery folder and separately in `Clean Render Full - 105`; an `rclone` checksum audit confirmed all 105 regenerated files match the repository, with the five-image pilot folder retained.
-- No production deployment or background service is configured here.
+- No backend or background service is configured; production is the static GitHub Pages deployment documented above.
 - Hair recoloring is not planned.
 
 ## Hair-matting rollout record
