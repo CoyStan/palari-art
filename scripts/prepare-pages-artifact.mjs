@@ -15,4 +15,4 @@ await Promise.all([
 ]);
 await writeFile(path.join(distRoot, ".nojekyll"), "");
 
-console.log("Prepared the GitHub Pages artifact with the editor, handbook WebPs, and handbook PDF.");
+console.log("Prepared the GitHub Pages artifact with the editor and text-free handbook gallery.");

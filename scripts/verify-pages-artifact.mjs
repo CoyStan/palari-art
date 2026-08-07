@@ -39,7 +39,7 @@ const pngFiles = files.filter((fileName) => fileName.toLowerCase().endsWith(".pn
 
 if (!files.includes("index.html")) problems.push("index.html is missing.");
 if (!files.includes("handbook/index.html")) problems.push("handbook/index.html is missing.");
-if (!files.includes("handbook/palari-character-design-handbook.pdf")) problems.push("handbook PDF is missing.");
+if (files.includes("handbook/palari-character-design-handbook.pdf")) problems.push("removed handbook PDF is still deployed.");
 if (!files.includes(".nojekyll")) problems.push(".nojekyll is missing.");
 if (!files.includes("avatars-web/manifest.json")) problems.push("avatar WebP manifest is missing.");
 if (!files.includes("masks-web/manifest.json")) problems.push("mask WebP manifest is missing.");
