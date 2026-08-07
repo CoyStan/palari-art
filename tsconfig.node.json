@@ -3,6 +3,7 @@
     "composite": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true

@@ -17,10 +17,12 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - All bundled sources are square 1254 × 1254 PNG files.
 - Every PNG master has a checksum-linked derived 1024px editor WebP and 256px gallery WebP under `public/avatars-web/`. The browser uses those delivery files; the PNG masters remain the source of truth. Run `npm run avatars:web:generate` after source changes and `npm run verify:web-assets` to validate all 314 outputs and their manifest.
 - Every reviewed runtime mask layer has a checksum-linked lossless WebP derivative under `public/masks-web/`. The browser uses those 1,395 pixel-identical delivery files; reviewed PNG masks under `public/masks/` remain the source of truth. Run `npm run masks:web:generate` after a reviewed mask changes and `npm run verify:web-masks` to validate coverage, lossless bitstreams, dimensions, checksums, and zero-difference generation records.
-- `npm run build:pages` creates a verified 216.7 MiB artifact at the `/palari-art/` base path containing 314 avatar WebPs and 1,395 runtime-mask WebPs with no PNG masters or audit layers.
+- `npm run build:pages` creates a verified 226.8 MiB artifact at the `/palari-art/` base path containing 314 avatar WebPs, 1,395 runtime-mask WebPs, and 40 handbook WebPs with no PNG masters or audit layers.
 - The editor renders and exports at 1024 × 1024.
 - All 157 bundled portraits have source-linked face-aware framing records in `src/data/avatar-framing.json`. The renderer applies one nondestructive scale/center transform to the portrait and every mask layer; do not pre-crop sources or transform layers independently.
-- The app is currently a browser-only Vite SPA. It has no backend.
+- The project is a browser-only static Vite site with an editor entry and a handbook entry. It has no backend.
+- The repository also publishes a separate static Vite entry at `/handbook/`: an 80-page English character-design handbook with 20 reviewed teaching plates and a downloadable print-production PDF. `src/handbook/content.ts` is its page source; `docs/HANDBOOK.md` is the production contract.
+- Handbook inclusion is individual-first: never add regional or demographic face presets, never map expressions to geography or ethnicity, and never infer ethnicity, nationality, religion, gender identity, or exact age from artwork. Cultural clothing and headwear require multiple precise references.
 - All 157 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
 - The 154 portraits with visible hair use reviewed SAM hair search masks and reviewed offline MediaPipe + ViTMatte + PyMatting hair foreground/alpha/underlay layers. Three portraits are explicitly exempt because they are bald or their hair is fully covered. `hairMattingCoverage: "all"` plus per-avatar `hairMatting: false` exemptions in `src/data/avatar-masks.json` is the registration checkpoint.
 - At runtime, reviewed `hair.png` is a hard preservation layer and reviewed `shirt.png` is the garment/neck authority. Fine hair matting may improve pixels outside the coarse hair mask, but it must never turn reviewed hair into garment/background; `shirt-refined.png` is retained as a generated audit layer and is not the production garment authority.
@@ -57,6 +59,9 @@ npm run verify:web-masks # Check all 1,395 lossless runtime-mask WebPs and their
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
 npm run verify:framing # Check 157 source-linked scale/center records and crop bounds
 npm run verify:attributes # Check the 157-record visual variation dataset
+npm run handbook:assets:generate # Regenerate full/compact WebPs for 20 source plates
+npm run handbook:pdf     # Export the 80-page PDF through Chromium/Playwright
+npm run verify:handbook  # Check content, provenance, WebPs, PDF, fonts, trim, and bleed
 npm run fantasticos:import -- --source-dir=<downloaded-drive-folder>
 npm run fantasticos:clean # Remove only verified disconnected panel-neighbor fragments
 npm run fantasticos:redraw:apply -- --source-dir=<reviewed-redraw-folder>
@@ -96,6 +101,8 @@ For remote browser access, use `http://<tailscale-ip>:4173`. Obtain the current 
 | Color math | `src/lib/color.ts` |
 | Detection, masking, recoloring, export | `src/lib/recolor.ts` |
 | Visual styling | `src/styles.css` |
+| Handbook reader and print source | `src/handbook/`, `docs/HANDBOOK.md` |
+| Handbook teaching masters and provenance | `docs/art-guide/assets/` |
 | Bundled portrait files | `public/avatars/` |
 
 Keep image-processing logic out of React components. Components should pass inputs to a library boundary and render state; they should not own per-pixel algorithms.

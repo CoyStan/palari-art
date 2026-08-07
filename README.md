@@ -8,7 +8,7 @@ Change a character's background and shirt while preserving the face, hair, acces
 
 `157 source portraits` · `156 active characters` · `1024 × 1024 export` · `browser-only runtime`
 
-[Open the live Palari Art editor](https://coystan.github.io/palari-art/)
+[Open the live editor](https://coystan.github.io/palari-art/) · [Read the character design handbook](https://coystan.github.io/palari-art/handbook/)
 
 </div>
 
@@ -18,6 +18,8 @@ Change a character's background and shirt while preserving the face, hair, acces
 </picture>
 
 Palari Art is the source of truth for Palari's standardized character portraits, their reviewed semantic layers, and the browser tools used to recolor them safely. The editor presents one stable mixed library, previews changes instantly, and exports PNG or WebP without sending portrait data to a backend.
+
+The repository also publishes an 80-page inclusive character-design handbook. Its 20 reviewed teaching plates, responsive reader, and print-production PDF explain how to create new Palari characters without turning regional or demographic assumptions into face presets.
 
 ## At a glance
 
@@ -74,7 +76,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | --- | --- |
 | Bundled portraits | 157 standardized square PNGs |
 | Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
-| Pages artifact | 216.7 MiB, 1,709 WebPs, no PNG masters or audit layers |
+| Pages artifact | 226.8 MiB, 1,749 WebPs, no PNG masters or audit layers |
 | Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
@@ -85,6 +87,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | Framing | All 157 portraits use source-linked face-aware scale/center metadata; originals and masks remain unchanged |
 | Variation planning | 157 visual-attribute records plus a documented coverage report |
 | Known limitation | Temporary uploads still use color-estimated masks |
+| Character handbook | 80 pages, 10 chapters, 20 reviewed teaching plates, responsive web reader, and downloadable PDF |
 
 ## Start the application
 
@@ -116,6 +119,14 @@ npm run check
 ```
 
 This verifies the avatar inventory, masks, face-aware framing metadata, attributes, TypeScript, and production build. For image-processing changes, also inspect several portraits visually; compilation cannot detect a bad mask or crop.
+
+Regenerate and verify the handbook after changing its source copy or teaching art:
+
+```bash
+npm run handbook:assets:generate
+npm run handbook:pdf
+npm run verify:handbook
+```
 
 Regenerate the derived WebP delivery files after changing any source portrait:
 
@@ -161,6 +172,7 @@ palari-art/
 │   ├── FANTASTICOS-IMPORT.md Reproducible group-image import workflow
 │   ├── FANTASTICOS-REDRAW.md Identity-guided production redraw system
 │   ├── FULL-LIBRARY-RESULTS.md Complete SAM 3 collection evaluation
+│   ├── HANDBOOK.md            Handbook editorial, asset, print, and publication contract
 │   ├── MASKING.md            Semantic mask workflow and upload fallback
 │   ├── DEPLOYMENT.md         GitHub Pages artifact and release workflow
 │   ├── PILOT-RESULTS.md       Five-avatar SAM 3 evaluation
@@ -169,6 +181,7 @@ palari-art/
 ├── public/avatars-web/       Generated 1024px WebP portraits and 256px thumbnails
 ├── public/masks/             Reviewed semantic layers and generation metadata
 ├── public/masks-web/         Pixel-identical lossless WebP runtime layers
+├── public/handbook/          Handbook WebPs, manifest, and downloadable PDF
 ├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
 ├── scripts/clean-shirt-mask-components.mjs Remove tiny disconnected SAM garment islands
 ├── scripts/generate-foreground-mattes.mjs  Resumable BiRefNet matting batch
@@ -181,6 +194,7 @@ palari-art/
 ├── scripts/clean-fantasticos-foregrounds.mjs Remove verified neighboring-panel fragments
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
+├── src/handbook/             Structured 80-page reader and print source
 ├── src/data/avatar-masks.json Semantic mask registry
 ├── src/data/avatar-framing.json Source-linked scale and center metadata
 ├── src/data/avatar-attributes.json Visual variation planning metadata
@@ -201,6 +215,7 @@ palari-art/
 - Read [Deployment](docs/DEPLOYMENT.md) before changing the Pages base path, workflow, or artifact contract.
 - Read [Full-library results](docs/FULL-LIBRARY-RESULTS.md) before changing prompts or regenerating semantic masks.
 - Read [Avatar variation coverage](docs/AVATAR-COVERAGE.md) before planning a new portrait generation batch.
+- Read [Character handbook](docs/HANDBOOK.md) before changing handbook content, plates, inclusion rules, or PDF production.
 - Update [Current status](docs/STATUS.md) whenever a milestone or technical boundary changes.
 
 ## Product boundaries
@@ -210,4 +225,4 @@ palari-art/
 - Recoloring should preserve the original character design; it must not regenerate facial features or clothing.
 - Bundled production portraits are stable inputs to the recoloring runtime. Deliberate artwork revisions require explicit provenance plus regenerated and reviewed masks; ordinary color variants must never overwrite them.
 - Google Drive is used for sharing and delivery, but this repository does not currently synchronize with Drive automatically.
-- No public license is currently declared; treat the code and portrait assets as private Palari material.
+- No public reuse license is declared. The handbook and artwork are explicitly all-rights-reserved Palari material.

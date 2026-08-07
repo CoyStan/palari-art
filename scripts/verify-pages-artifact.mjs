@@ -7,6 +7,7 @@ const distRoot = path.join(repositoryRoot, "dist");
 const maximumArtifactBytes = 450 * 1_048_576;
 const expectedWebAvatars = 314;
 const expectedWebMasks = 1_395;
+const expectedHandbookWebps = 40;
 
 async function walkFiles(directory, prefix = "") {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -33,21 +34,31 @@ try {
 
 const webAvatarFiles = files.filter((fileName) => /^avatars-web\/.+\.webp$/i.test(fileName));
 const webMaskFiles = files.filter((fileName) => /^masks-web\/.+\.webp$/i.test(fileName));
+const handbookWebpFiles = files.filter((fileName) => /^handbook\/assets\/(?:full|compact)\/.+\.webp$/i.test(fileName));
 const pngFiles = files.filter((fileName) => fileName.toLowerCase().endsWith(".png"));
 
 if (!files.includes("index.html")) problems.push("index.html is missing.");
+if (!files.includes("handbook/index.html")) problems.push("handbook/index.html is missing.");
+if (!files.includes("handbook/palari-character-design-handbook.pdf")) problems.push("handbook PDF is missing.");
 if (!files.includes(".nojekyll")) problems.push(".nojekyll is missing.");
 if (!files.includes("avatars-web/manifest.json")) problems.push("avatar WebP manifest is missing.");
 if (!files.includes("masks-web/manifest.json")) problems.push("mask WebP manifest is missing.");
+if (!files.includes("handbook/assets/manifest.json")) problems.push("handbook WebP manifest is missing.");
 if (webAvatarFiles.length !== expectedWebAvatars) {
   problems.push(`artifact has ${webAvatarFiles.length} avatar WebPs; expected ${expectedWebAvatars}.`);
 }
 if (webMaskFiles.length !== expectedWebMasks) {
   problems.push(`artifact has ${webMaskFiles.length} mask WebPs; expected ${expectedWebMasks}.`);
 }
+if (handbookWebpFiles.length !== expectedHandbookWebps) {
+  problems.push(`artifact has ${handbookWebpFiles.length} handbook WebPs; expected ${expectedHandbookWebps}.`);
+}
 if (pngFiles.length > 0) problems.push(`artifact unexpectedly contains PNG files: ${pngFiles.join(", ")}.`);
 if (files.some((fileName) => fileName.startsWith("avatars/") || fileName.startsWith("masks/"))) {
   problems.push("artifact contains master avatar or mask directories.");
+}
+if (files.some((fileName) => fileName.startsWith("docs/art-guide/") || fileName.startsWith("handbook/assets/source/"))) {
+  problems.push("artifact contains handbook source masters.");
 }
 
 let totalBytes = 0;
@@ -61,6 +72,10 @@ try {
   if (!indexHtml.includes('/palari-art/assets/')) {
     problems.push("index.html does not use the /palari-art/ GitHub Pages base path.");
   }
+  const handbookHtml = await readFile(path.join(distRoot, "handbook/index.html"), "utf8");
+  if (!handbookHtml.includes('/palari-art/assets/')) {
+    problems.push("handbook/index.html does not use the /palari-art/ GitHub Pages base path.");
+  }
 } catch (error) {
   problems.push(`index.html: ${error instanceof Error ? error.message : error}`);
 }
@@ -71,6 +86,6 @@ if (problems.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Verified ${(totalBytes / 1_048_576).toFixed(1)} MiB GitHub Pages artifact with ${webAvatarFiles.length} avatar and ${webMaskFiles.length} mask WebPs and no PNGs.`,
+    `Verified ${(totalBytes / 1_048_576).toFixed(1)} MiB GitHub Pages artifact with ${webAvatarFiles.length} avatar, ${webMaskFiles.length} mask, and ${handbookWebpFiles.length} handbook WebPs and no PNGs.`,
   );
 }

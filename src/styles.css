@@ -112,6 +112,23 @@ button { color: inherit; }
   font-weight: 650;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.handbook-nav-link {
+  color: #5f5a53;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.handbook-nav-link:hover { color: var(--ink); }
+.handbook-nav-link:focus-visible { outline: 3px solid rgba(51, 110, 232, .22); outline-offset: 3px; }
+
 .local-note > span {
   width: 7px;
   height: 7px;
@@ -423,7 +440,7 @@ summary:focus-visible {
   .topbar {
     position: relative;
     height: 48px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
     padding: 0 12px;
   }
 
