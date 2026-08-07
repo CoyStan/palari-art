@@ -1,4 +1,7 @@
 node_modules
+.venv-hair
+.playwright-cli
+output/playwright
 dist
 .DS_Store
 *.local

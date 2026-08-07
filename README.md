@@ -1,12 +1,70 @@
+<div align="center">
+
 # Palari Art
 
-Palari Art is the working repository for Palari's standardized character portraits and the browser-based tools used to prepare them for marketing and product use.
+### A reviewed portrait library and local-first color studio
 
-The current application is a 1:1 avatar color studio. It presents 143 bundled portraits together in one stable mixed library, lets a user change the background and shirt colors, previews the result, and exports a 1024 × 1024 PNG or WebP.
+Change a character's background and shirt while preserving the face, hair, accessories, texture, lighting, and identity.
+
+`157 source portraits` · `156 active characters` · `1024 × 1024 export` · `browser-only runtime`
+
+[Open the live Palari Art editor](https://coystan.github.io/palari-art/)
+
+</div>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/readme/editor-mobile.webp">
+  <img src="docs/readme/editor-desktop.webp" alt="Palari Art editor showing Avatar 157 with a green shirt and blue background on desktop and mobile" width="100%">
+</picture>
+
+Palari Art is the source of truth for Palari's standardized character portraits, their reviewed semantic layers, and the browser tools used to recolor them safely. The editor presents one stable mixed library, previews changes instantly, and exports PNG or WebP without sending portrait data to a backend.
+
+## At a glance
+
+| Library | Editing | Delivery | Safety |
+| --- | --- | --- | --- |
+| 157 checksum-locked PNG masters | Background and shirt only | 1024px editor WebPs | Reviewed garment masks |
+| 156 active portraits | Nondestructive face-aware framing | 256px gallery thumbnails | Protected hair and neck |
+| Stable IDs; Avatar 024 archived | Local Canvas rendering | 1024 × 1024 PNG/WebP export | No runtime ML or API key |
+
+<p align="center">
+  <img src="public/avatars-web/thumbnail/coverage-expansion/avatar-coverage-004.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/los-5-fantasticos/fantastico-057.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/standardized-1x1/avatar-03.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/los-5-fantasticos/fantastico-079.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/standardized-4x4/avatar-4x4-13-v1.webp" alt="Palari portrait example" width="15%">
+  <img src="public/avatars-web/thumbnail/coverage-expansion/avatar-coverage-011.webp" alt="Palari portrait example" width="15%">
+</p>
+
+On classic phone widths, the interface becomes a single-screen composition: the preview uses roughly 60% of the width, a two-column portrait rail fills the right side, and compact background and shirt swatches sit below. Wider layouts expose search, precise color input, edge tuning, uploads, and export controls.
+
+## How it works
+
+```mermaid
+flowchart LR
+    subgraph P["Offline preparation"]
+        A["PNG portrait masters"] --> B["Segmentation + matting"]
+        B --> C["Visual review"]
+        C --> D["Checksum-linked masks"]
+        A --> E["WebP delivery assets"]
+        A --> F["Face-aware framing"]
+    end
+
+    subgraph R["Browser runtime"]
+        D --> G["Canvas renderer"]
+        E --> G
+        F --> G
+        H["Background + shirt colors"] --> G
+        G --> I["Live preview"]
+        G --> J["PNG / WebP export"]
+    end
+```
+
+The expensive image understanding happens once during controlled asset preparation. The shipped application performs deterministic pixel compositing in the browser, so moving a color control never triggers an AI request.
 
 ## Repository status
 
-The interface and export flow work. All 143 bundled portraits use reviewed fal.ai SAM 3 garment masks plus BiRefNet v2 foreground mattes. The 105 Los 5 fantásticos portraits use the clean-render v3 artwork revision. Background and shirt recoloring remains local and deterministic in the browser; APIs are used only by offline asset-preparation scripts.
+The interface and export flow work. All 157 bundled portraits use reviewed fal.ai SAM 3 garment masks plus BiRefNet v2 foreground mattes and source-linked face-aware framing metadata. Reproducible FFmpeg/libwebp pipelines reduce the portrait delivery tier from 308.4 MiB to 11.0 MiB and the runtime mask tier from 322.8 MiB to 204.4 MiB with zero decoded pixel differences. Every PNG master remains unchanged. The 105 Los 5 fantásticos portraits use the clean-render v3 artwork revision, 12 purpose-generated portraits fill documented variation gaps, and two user-selected art-guide characters have high-resolution production remakes. Background and shirt recoloring remains local and deterministic in the browser; APIs are used only by offline asset-preparation scripts.
 
 Temporary user uploads still use the prototype color detector because there is no upload-segmentation service. That fallback estimates the background from the image corners and the shirt from colors near the bottom of the portrait, so results can vary. See [Masking strategy](docs/MASKING.md) and [full-library results](docs/FULL-LIBRARY-RESULTS.md).
 
@@ -14,15 +72,18 @@ Temporary user uploads still use the prototype color detector because there is n
 
 | Area | Current state |
 | --- | --- |
-| Bundled portraits | 143 standardized square PNGs |
-| Library | One mixed grid containing 10 original, 28 expanded, and 105 Los 5 fantásticos portraits |
+| Bundled portraits | 157 standardized square PNGs |
+| Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
+| Pages artifact | 216.7 MiB, 1,709 WebPs, no PNG masters or audit layers |
+| Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
 | Exports | 1024 × 1024 PNG and WebP |
 | Uploaded images | PNG, JPEG, or WebP for the current browser session |
 | Processing | Browser Canvas at runtime; fal.ai is used only by the preparation script |
-| Semantic layers | All 143 portraits use reviewed garment masks, refined RGBA foregrounds, and 256-level alpha mattes |
-| Variation planning | 143 visual-attribute records plus a documented coverage-gap analysis |
+| Semantic layers | 1,395 lossless runtime-mask WebPs derived from reviewed PNG authorities; 154 portraits have visible-hair layers and 3 are explicitly exempt |
+| Framing | All 157 portraits use source-linked face-aware scale/center metadata; originals and masks remain unchanged |
+| Variation planning | 157 visual-attribute records plus a documented coverage report |
 | Known limitation | Temporary uploads still use color-estimated masks |
 
 ## Start the application
@@ -31,6 +92,8 @@ Requirements:
 
 - Node.js 22.12 or newer
 - npm 10 or newer
+- FFmpeg with the `libwebp` encoder when regenerating web delivery assets (not required just to run the app)
+- ImageMagick `compare` when regenerating lossless runtime-mask WebPs
 
 Install the locked dependencies and start Vite:
 
@@ -52,7 +115,27 @@ The Tailnet address is an environment detail, not an application configuration. 
 npm run check
 ```
 
-This verifies the avatar inventory, runs TypeScript checking, and creates a production build. For image-processing changes, also inspect several portraits visually; compilation cannot detect a bad mask.
+This verifies the avatar inventory, masks, face-aware framing metadata, attributes, TypeScript, and production build. For image-processing changes, also inspect several portraits visually; compilation cannot detect a bad mask or crop.
+
+Regenerate the derived WebP delivery files after changing any source portrait:
+
+```bash
+npm run avatars:web:generate
+npm run verify:web-assets
+```
+
+Regenerate the pixel-identical runtime-mask WebPs after changing any reviewed runtime mask:
+
+```bash
+npm run masks:web:generate
+npm run verify:web-masks
+```
+
+Build the PNG-free GitHub Pages artifact with:
+
+```bash
+npm run build:pages
+```
 
 To generate or resume masks for the bundled library, copy `.env.example` to `.env.local`, add `FAL_KEY`, and run:
 
@@ -74,22 +157,32 @@ palari-art/
 │   ├── ARCHITECTURE.md       Application structure and data flow
 │   ├── ASSETS.md             Portrait collections and asset conventions
 │   ├── AVATAR-COVERAGE.md    Visual-attribute distributions and generation gaps
+│   ├── COVERAGE-EXPANSION.md Generation provenance for the 12 gap-filling portraits
 │   ├── FANTASTICOS-IMPORT.md Reproducible group-image import workflow
 │   ├── FANTASTICOS-REDRAW.md Identity-guided production redraw system
 │   ├── FULL-LIBRARY-RESULTS.md Complete SAM 3 collection evaluation
 │   ├── MASKING.md            Semantic mask workflow and upload fallback
+│   ├── DEPLOYMENT.md         GitHub Pages artifact and release workflow
 │   ├── PILOT-RESULTS.md       Five-avatar SAM 3 evaluation
 │   └── STATUS.md             Concise handoff and next milestones
-├── public/avatars/           Reviewed production portraits served by the editor
+├── public/avatars/           Checksum-locked 1254px PNG portrait masters
+├── public/avatars-web/       Generated 1024px WebP portraits and 256px thumbnails
 ├── public/masks/             Reviewed semantic layers and generation metadata
+├── public/masks-web/         Pixel-identical lossless WebP runtime layers
 ├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
+├── scripts/clean-shirt-mask-components.mjs Remove tiny disconnected SAM garment islands
 ├── scripts/generate-foreground-mattes.mjs  Resumable BiRefNet matting batch
+├── scripts/generate-avatar-framing.py Local face-aware framing metadata generator
+├── scripts/generate-web-avatar-assets.mjs Reproducible FFmpeg/libwebp delivery pipeline
+├── scripts/generate-web-mask-assets.mjs Lossless runtime-mask WebP pipeline
+├── scripts/prepare-pages-artifact.mjs PNG-free GitHub Pages packager
 ├── scripts/import-fantasticos.mjs Split, matte, and standardize the 105 new portraits
 ├── scripts/apply-fantasticos-redraw.mjs Validate and apply 105 reviewed redraws
 ├── scripts/clean-fantasticos-foregrounds.mjs Remove verified neighboring-panel fragments
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
 ├── src/data/avatar-masks.json Semantic mask registry
+├── src/data/avatar-framing.json Source-linked scale and center metadata
 ├── src/data/avatar-attributes.json Visual variation planning metadata
 ├── src/data/avatars.ts       Portrait registry
 ├── src/lib/color.ts          Color conversion and blending helpers
@@ -105,6 +198,7 @@ palari-art/
 - Read [Los 5 fantásticos import](docs/FANTASTICOS-IMPORT.md) before regenerating that collection from Drive.
 - Read [Los 5 fantásticos redraw system](docs/FANTASTICOS-REDRAW.md) before regenerating its production artwork.
 - Read [Masking strategy](docs/MASKING.md) before working on segmentation or adding an API key.
+- Read [Deployment](docs/DEPLOYMENT.md) before changing the Pages base path, workflow, or artifact contract.
 - Read [Full-library results](docs/FULL-LIBRARY-RESULTS.md) before changing prompts or regenerating semantic masks.
 - Read [Avatar variation coverage](docs/AVATAR-COVERAGE.md) before planning a new portrait generation batch.
 - Update [Current status](docs/STATUS.md) whenever a milestone or technical boundary changes.

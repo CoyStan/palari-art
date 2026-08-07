@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "avatarId": "coverage-011",
+  "status": "reviewed",
+  "generatedAt": "2026-08-05T19:19:33.683Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Coverage expansion: adult masculine presentation, red wavy hair, standalone mustache, and collared shirt.",
+  "source": {
+    "file": "avatars/coverage-expansion/avatar-coverage-011.png",
+    "sha256": "17128a6ab0fbe45f3f060a8ab3a6583eb56f933b36620d84cd5d7a19dbc4f561",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fd35b-e0d9-7040-bbd8-448af10fe010",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35b-e0d9-7040-bbd8-448af10fe010",
+      "score": 0.9633105993270874,
+      "box": [
+        0.5004069081374577,
+        0.5268076563638354,
+        0.9954826576369149,
+        0.942575076269725
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8186,
+      "sha256": "7fa0dbd6e755a063e71576eb903d21f75acd1cb700a5ac0c8c5d18d3c43798eb"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "shirt",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fd35b-f0a8-7963-b07c-74a8eaf932b4",
+          "found": false
+        },
+        {
+          "prompt": "shirt",
+          "requestId": "019fd35b-f99e-7d02-a266-ec5a9751c2d2",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35b-f99e-7d02-a266-ec5a9751c2d2",
+      "score": 0.8596585988998413,
+      "box": [
+        0.5008721046504521,
+        0.8161185431101966,
+        0.9959171996230171,
+        0.3642452784946987
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3108,
+      "sha256": "690c452dd176fc35f3d75232abfc58360513bdd0b02bcc68d56edb043f961bd2",
+      "cleanup": {
+        "method": "remove-small-disconnected-components",
+        "connectivity": 8,
+        "minimumArea": 1000,
+        "removed": [
+          {
+            "id": 2,
+            "area": 100
+          }
+        ],
+        "cleanedAt": "2026-08-05T19:41:02.782Z"
+      }
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-05T19:47:36.216Z",
+    "reviewer": "codex",
+    "outcome": "pass",
+    "notes": "Reviewed post-cleanup 12-avatar source/render sheet at contrasting colors. Garment masks preserve neck, face, hair, beard, headwear, and layered garment boundaries; tiny disconnected SAM islands were removed."
+  },
+  "sourceGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "promptVersion": "coverage-expansion-v1",
+    "styleReference": "avatars/standardized-1x1/avatar-04.png",
+    "brief": "Adult masculine presentation, very-light skin, red wavy hair, standalone mustache, collared shirt."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:19:33.684Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fd35d-d066-7331-93d3-b4674f5b5d4d",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1355755,
+      "sha256": "979b48f794bf6bf5f59b058ec3e9f0a9bbfbfb3baae1b287593881e5f965b0ae"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 43799,
+      "sha256": "408739284e92daafd9c2d70eac90dc26a08c8c5f3c8af6205656c0f562793593"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:29:23.415Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed 12-source contrasting-background contact sheet: refined foregrounds preserve hair, headwear, face, shoulders, and garment edges."
+    }
+  },
+  "hairLayer": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:22:43.446Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/sam-3/image",
+    "purpose": "Semantic search region for local, color-independent hair-edge decontamination.",
+    "mask": {
+      "file": "hair.png",
+      "prompt": "hair",
+      "requestId": "019fd360-c44b-7783-9c61-f4370e743be9",
+      "score": 0.9560571312904358,
+      "box": [
+        0.5038936100308857,
+        0.3165962393321688,
+        0.4907330407036675,
+        0.5208258628845215
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 5513,
+      "sha256": "62a20be689456b5898dde6cd40f9670bd5552cd198ce890267b4f330329d3f1f"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:29:23.823Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed nine source/overlay pairs: coarse masks cover visible hair while excluding face, neck, glasses, and garments."
+    }
+  },
+  "hairMatting": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:43:31.823981Z",
+    "sourceSha256": "17128a6ab0fbe45f3f060a8ab3a6583eb56f933b36620d84cd5d7a19dbc4f561",
+    "purpose": "Reusable hair alpha and decontaminated foreground for background/garment recoloring.",
+    "models": {
+      "semanticHair": {
+        "provider": "Google MediaPipe",
+        "model": "HairSegmenter",
+        "license": "Apache-2.0",
+        "sha256": "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84"
+      },
+      "matting": {
+        "provider": "HUST Vision Lab",
+        "model": "hustvl/vitmatte-small-composition-1k",
+        "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+        "license": "Apache-2.0"
+      },
+      "foregroundRecovery": {
+        "provider": "PyMatting",
+        "method": "estimate_foreground_ml",
+        "license": "MIT"
+      }
+    },
+    "parameters": {
+      "hairCoreProbability": 0.72,
+      "hairOuterProbability": 0.12,
+      "semanticSupportDilationPixels": 24,
+      "coreErosionPixels": 8,
+      "outerDilationPixels": 12,
+      "paletteClusters": 12,
+      "paletteHairMaxYRatio": 0.58,
+      "paletteFallbackMaskThreshold": 0.75,
+      "minimumPaletteSamples": 500,
+      "garmentAffinityMargin": 0.04,
+      "garmentAmbiguityMargin": -0.02,
+      "garmentPaletteDistance": 0.16,
+      "garmentEdgePaletteDistance": 0.24,
+      "garmentEdgeDilationPixels": 3,
+      "garmentDistancePixels": 180,
+      "conflictDilationPixels": 5,
+      "conflictSupportDilationPixels": 16,
+      "storageHaloPixels": 8
+    },
+    "layers": {
+      "region": {
+        "file": "hair-region.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 3911,
+        "sha256": "81ee6513583039da16889ff12199aa23b106864481e61ef394f46afc61627911"
+      },
+      "trimap": {
+        "file": "hair-trimap.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 6397,
+        "sha256": "b3315fb63bdcfa4e8f4f1f7fd552a744916c3c1584403a7428c1a704338c2c84"
+      },
+      "matte": {
+        "file": "hair-matte.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 38811,
+        "sha256": "0bc92612274d33d8bd9e66724d798aef581d8962734f2eab94d1ca2908cb1578"
+      },
+      "foreground": {
+        "file": "hair-foreground.png",
+        "mode": "RGBA",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 379507,
+        "sha256": "9fe579f5172a62c5039ac5fc0b1def3319bc73153ac7f4194e833fb8c9fda666"
+      },
+      "underlay": {
+        "file": "hair-underlay.png",
+        "mode": "RGB",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 156239,
+        "sha256": "2c4916b8d7c177f186745ebd9d836a8d6edaa682b188bc5ece46d94d172fef1a"
+      },
+      "underlayKind": {
+        "file": "hair-underlay-kind.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 4696,
+        "sha256": "c31df6d19516da209689ccd0134395686e19901d501651f5907392ca8fb07786"
+      },
+      "shirtRefined": {
+        "file": "shirt-refined.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 7591,
+        "sha256": "790c0fb24a5463c0573bde2938db1803f44e10c6408a3825e250a3d3167a9d83"
+      }
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:47:36.737Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed regenerated nine-avatar hair layers in the browser after shirt-mask cleanup. Red-versus-blue shirt differential changed zero pixels inside every reviewed hair mask; all canvases were 1024x1024."
+    }
+  }
+}

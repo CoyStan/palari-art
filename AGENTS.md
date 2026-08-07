@@ -13,20 +13,29 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 
 ## Current truth
 
-- There are 143 bundled source portraits under `public/avatars/`: 10 original, 28 expanded, and 105 Los 5 fantásticos portraits.
+- There are 157 bundled source portraits under `public/avatars/`: 10 original, 28 expanded, 105 Los 5 fantásticos, and 14 coverage-expansion portraits.
 - All bundled sources are square 1254 × 1254 PNG files.
+- Every PNG master has a checksum-linked derived 1024px editor WebP and 256px gallery WebP under `public/avatars-web/`. The browser uses those delivery files; the PNG masters remain the source of truth. Run `npm run avatars:web:generate` after source changes and `npm run verify:web-assets` to validate all 314 outputs and their manifest.
+- Every reviewed runtime mask layer has a checksum-linked lossless WebP derivative under `public/masks-web/`. The browser uses those 1,395 pixel-identical delivery files; reviewed PNG masks under `public/masks/` remain the source of truth. Run `npm run masks:web:generate` after a reviewed mask changes and `npm run verify:web-masks` to validate coverage, lossless bitstreams, dimensions, checksums, and zero-difference generation records.
+- `npm run build:pages` creates a verified 216.7 MiB artifact at the `/palari-art/` base path containing 314 avatar WebPs and 1,395 runtime-mask WebPs with no PNG masters or audit layers.
 - The editor renders and exports at 1024 × 1024.
+- All 157 bundled portraits have source-linked face-aware framing records in `src/data/avatar-framing.json`. The renderer applies one nondestructive scale/center transform to the portrait and every mask layer; do not pre-crop sources or transform layers independently.
 - The app is currently a browser-only Vite SPA. It has no backend.
-- All 143 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
+- All 157 bundled portraits use reviewed SAM 3 garment masks and BiRefNet v2 refined foreground mattes under `public/masks/`.
+- The 154 portraits with visible hair use reviewed SAM hair search masks and reviewed offline MediaPipe + ViTMatte + PyMatting hair foreground/alpha/underlay layers. Three portraits are explicitly exempt because they are bald or their hair is fully covered. `hairMattingCoverage: "all"` plus per-avatar `hairMatting: false` exemptions in `src/data/avatar-masks.json` is the registration checkpoint.
+- At runtime, reviewed `hair.png` is a hard preservation layer and reviewed `shirt.png` is the garment/neck authority. Fine hair matting may improve pixels outside the coarse hair mask, but it must never turn reviewed hair into garment/background; `shirt-refined.png` is retained as a generated audit layer and is not the production garment authority.
 - `src/data/avatar-masks.json` is the source of truth that attaches those masks to built-in portraits.
 - `src/lib/recolor.ts` falls back to color/connectivity heuristics only for temporary uploads or a missing mask registration.
 - `scripts/generate-avatar-masks.mjs` creates the SAM 3 person and garment masks.
 - `scripts/generate-foreground-mattes.mjs` creates the 2048px BiRefNet Matting foreground and 256-level alpha matte used for hair edges.
+- `scripts/generate-hair-masks.mjs` creates the paid SAM hair search masks with an optional `--max-new` request cap; `scripts/generate-hair-matting-layers.py` creates the remaining layers locally.
+- `scripts/generate-avatar-framing.py` creates free local MediaPipe framing metadata; `npm run verify:framing` checks complete coverage, safe crop bounds, and source checksums.
 - The 105 Los 5 fantásticos production portraits are clean-render v3 `gpt-image-2` revisions of the identity-guided v2 redraws. The checksum-locked grouped Drive sources, first-pass crops, and v2 identity/composition targets remain the provenance chain; see `docs/FANTASTICOS-REDRAW.md`.
 - Masking for those 105 clean-render v3 portraits is already complete. Every current source checksum matches its reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` metadata. Do not rerun matting or segmentation unless a source portrait's pixels change; use `npm run verify:masks` to confirm this checkpoint.
+- Full-library hair matting is also complete and reviewed. Do not rerun SAM hair segmentation or local hair refinement unless source pixels change; any regenerated layer must be visually reviewed before registration.
 - The 105 regenerated portraits are delivered separately from the crops in the `palari-marketing` shared Drive at `Los 5 fantásticos /Palari Standardized Avatars 1x1/Clean Render Full - 105`. Drive is a delivery copy, not the repository source of truth.
-- The application presents all 143 portraits in one deterministic mixed grid. Collection labels remain internal provenance metadata and are not user-facing categories.
-- `src/data/avatar-attributes.json` records visual planning labels for all 143 portraits, and `docs/AVATAR-COVERAGE.md` summarizes gaps for future generation. These labels are not UI categories and must not be treated as demographic ground truth.
+- The application presents 156 active portraits from 157 bundled sources in one deterministic mixed grid. Avatar 024 (`expanded-14`) is explicitly retired in `src/data/avatars.ts`; keep its source and aligned artifacts archived so later IDs remain stable. Collection labels remain internal provenance metadata and are not user-facing categories.
+- `src/data/avatar-attributes.json` records visual planning labels for all 157 portraits, and `docs/AVATAR-COVERAGE.md` summarizes the current distribution. These labels are not UI categories and must not be treated as demographic ground truth.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.
@@ -43,8 +52,11 @@ See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approve
 ```bash
 npm run dev            # Vite on 0.0.0.0:4173
 npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
+npm run verify:web-assets # Check all full WebPs, thumbnails, checksums, dimensions, and size records
+npm run verify:web-masks # Check all 1,395 lossless runtime-mask WebPs and their manifest
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
-npm run verify:attributes # Check the 143-record visual variation dataset
+npm run verify:framing # Check 157 source-linked scale/center records and crop bounds
+npm run verify:attributes # Check the 157-record visual variation dataset
 npm run fantasticos:import -- --source-dir=<downloaded-drive-folder>
 npm run fantasticos:clean # Remove only verified disconnected panel-neighbor fragments
 npm run fantasticos:redraw:apply -- --source-dir=<reviewed-redraw-folder>
@@ -52,6 +64,14 @@ npm run masks:generate # Generate/resume fal.ai masks using .env.local
 npm run masks:review -- --id=<id> --reviewer=<name> --notes=<summary>
 npm run mattes:generate # Generate/resume refined BiRefNet foregrounds
 npm run mattes:review -- --id=<id> --reviewer=<name> --notes=<summary>
+npm run hair:generate -- --all --max-new=<approved-cap>
+npm run hair:review -- --id=all --reviewer=<name> --notes=<summary>
+npm run hair:mattes:generate -- --all
+npm run hair:mattes:review -- --id=all --reviewer=<name> --notes=<summary>
+npm run framing:generate # Regenerate all framing records locally after installing its Python requirements
+npm run avatars:web:generate # Regenerate/resume 1024px and thumbnail WebP delivery assets
+npm run masks:web:generate # Regenerate/resume pixel-identical lossless mask WebPs
+npm run build:pages    # Build and verify the slim /palari-art/ GitHub Pages artifact
 npm run typecheck      # TypeScript only
 npm run build          # TypeScript plus production build
 npm run check          # Canonical repository validation
@@ -68,6 +88,11 @@ For remote browser access, use `http://<tailscale-ip>:4173`. Obtain the current 
 | Portrait selection and uploads | `src/components/AvatarLibrary.tsx` |
 | Color controls | `src/components/ColorControl.tsx` |
 | Built-in portrait registry | `src/data/avatars.ts` |
+| Face-aware framing metadata | `src/data/avatar-framing.json` |
+| Framing generation and verification | `scripts/generate-avatar-framing.py`, `scripts/verify-avatar-framing.mjs` |
+| Web asset generation and verification | `scripts/generate-web-avatar-assets.mjs`, `scripts/verify-web-avatar-assets.mjs` |
+| Runtime mask delivery | `scripts/generate-web-mask-assets.mjs`, `scripts/verify-web-mask-assets.mjs` |
+| GitHub Pages packaging | `scripts/prepare-pages-artifact.mjs`, `scripts/verify-pages-artifact.mjs` |
 | Color math | `src/lib/color.ts` |
 | Detection, masking, recoloring, export | `src/lib/recolor.ts` |
 | Visual styling | `src/styles.css` |
@@ -78,8 +103,11 @@ Keep image-processing logic out of React components. Components should pass inpu
 ## Asset rules
 
 - Never overwrite a bundled source portrait merely to create a color variation.
+- Never crop a bundled source to standardize composition. Store a reviewed framing transform and apply it identically to the source and every aligned layer.
 - A deliberate artwork revision may replace a bundled portrait only with explicit user direction, recorded generation provenance, and a complete mask regeneration/review.
 - Treat exported recolors, generated masks, and previews as derived files.
+- Treat `public/avatars-web/` as reproducible delivery output. Never use its lossy WebPs as mask-generation or provenance sources.
+- Treat `public/masks-web/` as reproducible lossless delivery output. Never edit it directly or use it instead of reviewed PNG masks for provenance, review, or future mask generation.
 - Keep collection filenames contiguous because `src/data/avatars.ts` currently builds paths from numeric ranges.
 - Do not rename or move a portrait without updating the registry and documentation.
 - Run `npm run verify:assets` after any asset change.

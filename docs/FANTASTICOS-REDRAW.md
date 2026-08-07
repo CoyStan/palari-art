@@ -60,7 +60,7 @@ The apply script records the exact full-resolution finish-reference file for eve
 
 ## 2026-08-04 production run
 
-The clean-render pilot used IDs 001, 002, 034, 068, and 083. After approval, the same prompt and finish-reference method were applied to all 105 portraits. Seven side-by-side v2/v3 review sheets and full-resolution difficult-case checks passed before application. After application, all 105 BiRefNet foregrounds and SAM garment masks were regenerated; seven source/cutout/matte/shirt/overlay audit sheets plus low-confidence zoom checks passed before review metadata was recorded. The strict 143-avatar mask verifier passes against the new checksums.
+The clean-render pilot used IDs 001, 002, 034, 068, and 083. After approval, the same prompt and finish-reference method were applied to all 105 portraits. Seven side-by-side v2/v3 review sheets and full-resolution difficult-case checks passed before application. After application, all 105 BiRefNet foregrounds and SAM garment masks were regenerated; seven source/cutout/matte/shirt/overlay audit sheets plus low-confidence zoom checks passed before review metadata was recorded. That 143-avatar checkpoint passed strict verification, and the current 157-avatar verifier retains the same checksum contract.
 
 ## Review and application
 

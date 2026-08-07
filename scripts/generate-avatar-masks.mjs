@@ -183,7 +183,11 @@ for (const [index, avatar] of selectedAvatars.entries()) {
     },
     masks: { person, shirt },
     review: null,
-    ...(existing?.sourceGeneration ? { sourceGeneration: existing.sourceGeneration } : {}),
+    ...(
+      avatar.sourceGeneration || existing?.sourceGeneration
+        ? { sourceGeneration: avatar.sourceGeneration ?? existing.sourceGeneration }
+        : {}
+    ),
     ...(existing?.foregroundMatte ? { foregroundMatte: existing.foregroundMatte } : {}),
   };
   await writeFile(metadataPath, `${JSON.stringify(metadata, null, 2)}\n`);

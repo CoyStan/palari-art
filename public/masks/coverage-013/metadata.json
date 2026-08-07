@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "avatarId": "coverage-013",
+  "status": "reviewed",
+  "generatedAt": "2026-08-06T04:01:31.047Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Art-guide character remake: young masculine presentation with voluminous wavy hair and layered hoodie.",
+  "source": {
+    "file": "avatars/coverage-expansion/avatar-coverage-013.png",
+    "sha256": "9d21b08e154d4068dee0282bba01797ce7662cf57e823d53c3fd2a5441558c35",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fd539-c36e-70d2-8cfb-c9f4b78c71a5",
+          "found": true
+        }
+      ],
+      "requestId": "019fd539-c36e-70d2-8cfb-c9f4b78c71a5",
+      "score": 0.9551429748535156,
+      "box": [
+        0.5436857238648429,
+        0.5225124434819297,
+        0.9115731526934912,
+        0.9541757220313662
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 9000,
+      "sha256": "76ec1a0476535b16d26b0455391e3de65da959cb74088ff9149692ac3e5c8832"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fd53a-04bb-7033-b7d1-de88ed061fb5",
+          "found": true
+        }
+      ],
+      "requestId": "019fd53a-04bb-7033-b7d1-de88ed061fb5",
+      "score": 0.7362194061279297,
+      "box": [
+        0.543995702077472,
+        0.8144134339832124,
+        0.912953187548925,
+        0.3693280295720176
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3732,
+      "sha256": "e3a9af1f97b35e6c0ca7e4200419e718e6f968e00cc5254cdb70cf3afe734be0",
+      "cleanup": {
+        "method": "remove-small-disconnected-components",
+        "connectivity": 8,
+        "minimumArea": 1000,
+        "removed": [
+          {
+            "id": 7,
+            "area": 45
+          },
+          {
+            "id": 3,
+            "area": 30
+          },
+          {
+            "id": 6,
+            "area": 22
+          }
+        ],
+        "cleanedAt": "2026-08-06T04:02:59.696Z"
+      }
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-06T04:03:33.720Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Person and cleaned hoodie masks visually inspected; face, neck, inner shirt, hair, and drawstrings remain protected."
+  },
+  "sourceGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "promptVersion": "art-guide-character-remake-v1",
+    "identityReference": "docs/art-guide/references/avatar-156-157-identity-reference.png",
+    "styleReference": "avatars/standardized-1x1/avatar-04.png",
+    "brief": "Preserve the top art-guide character: warm tan skin, tousled dark wavy hair, gentle smile, blue-gray hoodie over a light crew-neck shirt."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-06T04:01:31.048Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fd53b-b0ed-70e0-8ef3-0dfeb0e90118",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1466683,
+      "sha256": "1d0cf1b0a98d621c249f5f6a5c510af855d133c62b20ca587f9959e0fe4205f8"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 73924,
+      "sha256": "d162b10c0ab1d333f281922146ab3b78267950e8613c41b5d0f0d613de598571"
+    },
+    "review": {
+      "reviewedAt": "2026-08-06T04:03:34.113Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "BiRefNet foreground and alpha visually inspected on checkerboard; fine wavy hair edges and full shoulders are preserved."
+    }
+  },
+  "hairLayer": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-06T04:03:50.664Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/sam-3/image",
+    "purpose": "Semantic search region for local, color-independent hair-edge decontamination.",
+    "mask": {
+      "file": "hair.png",
+      "prompt": "hair",
+      "requestId": "019fd53d-d7f6-70a1-af20-a00576a547f7",
+      "score": 0.9668712019920349,
+      "box": [
+        0.5214583987281436,
+        0.33831046308789936,
+        0.5715428912450397,
+        0.5874050496116517
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7285,
+      "sha256": "2f103c1c2c1602b75b6c1a4c65a2dc2e5e00d809a453628ee13d36e3f4fc392d"
+    },
+    "review": {
+      "reviewedAt": "2026-08-06T04:04:31.114Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Coarse SAM search mask visually inspected; it covers the complete tousled wavy hairstyle without face, ears, neck, or hoodie."
+    }
+  },
+  "hairMatting": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-06T04:05:11.061992Z",
+    "sourceSha256": "9d21b08e154d4068dee0282bba01797ce7662cf57e823d53c3fd2a5441558c35",
+    "purpose": "Reusable hair alpha and decontaminated foreground for background/garment recoloring.",
+    "models": {
+      "semanticHair": {
+        "provider": "Google MediaPipe",
+        "model": "HairSegmenter",
+        "license": "Apache-2.0",
+        "sha256": "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84"
+      },
+      "matting": {
+        "provider": "HUST Vision Lab",
+        "model": "hustvl/vitmatte-small-composition-1k",
+        "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+        "license": "Apache-2.0"
+      },
+      "foregroundRecovery": {
+        "provider": "PyMatting",
+        "method": "estimate_foreground_ml",
+        "license": "MIT"
+      }
+    },
+    "parameters": {
+      "hairCoreProbability": 0.72,
+      "hairOuterProbability": 0.12,
+      "semanticSupportDilationPixels": 24,
+      "coreErosionPixels": 8,
+      "outerDilationPixels": 12,
+      "paletteClusters": 12,
+      "paletteHairMaxYRatio": 0.58,
+      "paletteFallbackMaskThreshold": 0.75,
+      "minimumPaletteSamples": 500,
+      "garmentAffinityMargin": 0.04,
+      "garmentAmbiguityMargin": -0.02,
+      "garmentPaletteDistance": 0.16,
+      "garmentEdgePaletteDistance": 0.24,
+      "garmentEdgeDilationPixels": 3,
+      "garmentDistancePixels": 180,
+      "conflictDilationPixels": 5,
+      "conflictSupportDilationPixels": 16,
+      "storageHaloPixels": 8
+    },
+    "layers": {
+      "region": {
+        "file": "hair-region.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 4713,
+        "sha256": "78a497cd2b63ffbd1d00dbbcb568184b6c0a0b1835365164c1e9954ed37d57b3"
+      },
+      "trimap": {
+        "file": "hair-trimap.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 7442,
+        "sha256": "00e9c9552b5bdc358a1f52b1d5c3330430336307fc45522fd0eeba8c8d953a3e"
+      },
+      "matte": {
+        "file": "hair-matte.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 52835,
+        "sha256": "6318e538d4e4e3ba87a67186874e9a8aa95fddc49145857e230d34494c6b1a43"
+      },
+      "foreground": {
+        "file": "hair-foreground.png",
+        "mode": "RGBA",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 456576,
+        "sha256": "454da92e4f0e35c5aa15fa451712a5388137a088680ae89edf976f11b7a36a90"
+      },
+      "underlay": {
+        "file": "hair-underlay.png",
+        "mode": "RGB",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 211472,
+        "sha256": "c510a546a459ae5913edf61a94503b18f4a94bcdaf9c57bcda277d34d094ce3a"
+      },
+      "underlayKind": {
+        "file": "hair-underlay-kind.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 6370,
+        "sha256": "f8f89b94a4b9d721abbc0384c778dd9653e6dd4602fdc25d845057881894f938"
+      },
+      "shirtRefined": {
+        "file": "shirt-refined.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 14892,
+        "sha256": "20395112ed514158437a92a7f3ee930dc1e06fb6a6225c54efb77ee721c067fa"
+      }
+    },
+    "review": {
+      "reviewedAt": "2026-08-06T04:10:56.393Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Local MediaPipe, ViTMatte, and PyMatting layers inspected with yellow background and green hoodie in the browser; hair, face, ears, neck, inner shirt, drawstrings, texture, and 1024px export remain correct."
+    }
+  }
+}

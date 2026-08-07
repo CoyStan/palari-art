@@ -4,6 +4,7 @@ import { AvatarCanvas } from "./components/AvatarCanvas";
 import { AvatarLibrary } from "./components/AvatarLibrary";
 import { ColorControl } from "./components/ColorControl";
 import { avatars as builtInAvatars, type Avatar } from "./data/avatars";
+import { assetUrl } from "./lib/assets";
 import { canvasToBlob, type RecolorSettings } from "./lib/recolor";
 
 const DEFAULTS: RecolorSettings = {
@@ -14,7 +15,7 @@ const DEFAULTS: RecolorSettings = {
 };
 
 const backgroundPresets = ["#F3E2D2", "#F4D9DE", "#DCCFF0", "#DCE8F7", "#DDEBDD", "#F2E1B8"];
-const shirtPresets = ["#2F6EE5", "#E65B49", "#F1AF24", "#2E8B61", "#9B56C7", "#EC6D8D"];
+const shirtPresets = ["#E65B49", "#EC6D8D", "#9B56C7", "#2F6EE5", "#2E8B61", "#F1AF24"];
 
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
@@ -66,7 +67,7 @@ export function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="wordmark" href="/" aria-label="Palari Art home">
+        <a className="wordmark" href={assetUrl("/")} aria-label="Palari Art home">
           <span className="mark" aria-hidden="true"><i /><i /><i /></span>
           <span>Palari Art</span>
         </a>
@@ -95,9 +96,10 @@ export function App() {
           <div className="stage-center">
             <AvatarCanvas
               ref={canvasRef}
-              src={selected.src}
+              src={selected.webSrc ?? selected.src}
               settings={settings}
               masks={selected.masks}
+              framing={selected.framing}
               onReadyChange={handleReadyChange}
             />
           </div>

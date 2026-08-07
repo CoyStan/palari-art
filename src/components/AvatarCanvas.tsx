@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import { LoaderCircle } from "lucide-react";
 import {
   renderRecoloredAvatar,
+  type AvatarFraming,
   type AvatarMaskSources,
   type RecolorSettings,
 } from "../lib/recolor";
@@ -10,11 +11,12 @@ type AvatarCanvasProps = {
   src: string;
   settings: RecolorSettings;
   masks?: AvatarMaskSources;
+  framing?: AvatarFraming;
   onReadyChange: (ready: boolean) => void;
 };
 
 export const AvatarCanvas = forwardRef<HTMLCanvasElement, AvatarCanvasProps>(
-  function AvatarCanvas({ src, settings, masks, onReadyChange }, forwardedRef) {
+  function AvatarCanvas({ src, settings, masks, framing, onReadyChange }, forwardedRef) {
     const localRef = useRef<HTMLCanvasElement | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -31,7 +33,7 @@ export const AvatarCanvas = forwardRef<HTMLCanvasElement, AvatarCanvasProps>(
       timer = window.setTimeout(() => {
         const canvas = localRef.current;
         if (!canvas) return;
-        renderRecoloredAvatar(canvas, src, settings, masks)
+        renderRecoloredAvatar(canvas, src, settings, masks, framing)
           .then(() => {
             if (!active) return;
             setLoading(false);
@@ -49,7 +51,17 @@ export const AvatarCanvas = forwardRef<HTMLCanvasElement, AvatarCanvasProps>(
         active = false;
         window.clearTimeout(timer);
       };
-    }, [masks?.foreground, masks?.matte, masks?.shirt, onReadyChange, settings, src]);
+    }, [
+      framing?.centerX,
+      framing?.centerY,
+      framing?.scale,
+      masks?.foreground,
+      masks?.matte,
+      masks?.shirt,
+      onReadyChange,
+      settings,
+      src,
+    ]);
 
     return (
       <div className="canvas-shell" aria-busy={loading}>

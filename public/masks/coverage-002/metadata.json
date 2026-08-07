@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "avatarId": "coverage-002",
+  "status": "reviewed",
+  "generatedAt": "2026-08-05T19:18:37.895Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Coverage expansion: older-adult feminine presentation with brown skin and short gray coily hair.",
+  "source": {
+    "file": "avatars/coverage-expansion/avatar-coverage-002.png",
+    "sha256": "9a28bfaada5abaf39bc2d0f83128b181e196838ffc5455f824e517a5fe9906c2",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fd35a-b57a-7dc0-b887-f53e6ea65412",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35a-b57a-7dc0-b887-f53e6ea65412",
+      "score": 0.9602164626121521,
+      "box": [
+        0.5244939554305303,
+        0.539924076625279,
+        0.8644738045949785,
+        0.9197146703326513
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8003,
+      "sha256": "9e17a592e4170b88763f422823989f7165a0d654cca36d54113f98fc11f32989"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "upper clothing",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fd35a-be31-7f80-aaee-537637e58313",
+          "found": false
+        },
+        {
+          "prompt": "shirt",
+          "requestId": "019fd35a-c9a7-7cc0-99f6-bd902bfdff4a",
+          "found": false
+        },
+        {
+          "prompt": "upper clothing",
+          "requestId": "019fd35a-d2a0-7761-9b2c-f47206e1939b",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35a-d2a0-7761-9b2c-f47206e1939b",
+      "score": 0.984150767326355,
+      "box": [
+        0.5246492643204946,
+        0.8638823675730872,
+        0.8652948803371854,
+        0.2711493476988777
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4842,
+      "sha256": "a6d951079814ee03c0ed89e4d24203e38fa019430fe4c85da3e26baa4421262e"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-05T19:29:23.110Z",
+    "reviewer": "codex",
+    "outcome": "pass",
+    "notes": "Reviewed 12-source contact sheet: garment masks follow visible upper garments and exclude face, neck, hair, headwear, beard, and glasses."
+  },
+  "sourceGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "promptVersion": "coverage-expansion-v1",
+    "styleReference": "avatars/standardized-1x1/avatar-04.png",
+    "brief": "Older-adult feminine presentation, brown skin, short gray coily hair, jewel-tone V-neck blouse."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:18:37.895Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fd35c-face-73f3-b74b-81f0b8c09871",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1262933,
+      "sha256": "884922392b911692826149bbf9a930af2976c04a50d3ad872ce35862de55f3fc"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 58743,
+      "sha256": "eca24022bce7e1e37cb6e5d2510ff87d9293aa059da6a629023eefcce869f83c"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:29:23.415Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed 12-source contrasting-background contact sheet: refined foregrounds preserve hair, headwear, face, shoulders, and garment edges."
+    }
+  },
+  "hairLayer": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:21:14.826Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/sam-3/image",
+    "purpose": "Semantic search region for local, color-independent hair-edge decontamination.",
+    "mask": {
+      "file": "hair.png",
+      "prompt": "hair",
+      "requestId": "019fd35f-6151-7e32-93bf-bc070ba5b738",
+      "score": 0.9645408391952515,
+      "box": [
+        0.5148445311046782,
+        0.2839087001861088,
+        0.5278116256471664,
+        0.4086853360372876
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 5150,
+      "sha256": "8bb1d2421d239b41ebb87a31d0235abe5b10b0eb7430732ad282c3f0ad46f6dd"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:29:23.774Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed nine source/overlay pairs: coarse masks cover visible hair while excluding face, neck, glasses, and garments."
+    }
+  },
+  "hairMatting": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:41:39.263170Z",
+    "sourceSha256": "9a28bfaada5abaf39bc2d0f83128b181e196838ffc5455f824e517a5fe9906c2",
+    "purpose": "Reusable hair alpha and decontaminated foreground for background/garment recoloring.",
+    "models": {
+      "semanticHair": {
+        "provider": "Google MediaPipe",
+        "model": "HairSegmenter",
+        "license": "Apache-2.0",
+        "sha256": "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84"
+      },
+      "matting": {
+        "provider": "HUST Vision Lab",
+        "model": "hustvl/vitmatte-small-composition-1k",
+        "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+        "license": "Apache-2.0"
+      },
+      "foregroundRecovery": {
+        "provider": "PyMatting",
+        "method": "estimate_foreground_ml",
+        "license": "MIT"
+      }
+    },
+    "parameters": {
+      "hairCoreProbability": 0.72,
+      "hairOuterProbability": 0.12,
+      "semanticSupportDilationPixels": 24,
+      "coreErosionPixels": 8,
+      "outerDilationPixels": 12,
+      "paletteClusters": 12,
+      "paletteHairMaxYRatio": 0.58,
+      "paletteFallbackMaskThreshold": 0.75,
+      "minimumPaletteSamples": 500,
+      "garmentAffinityMargin": 0.04,
+      "garmentAmbiguityMargin": -0.02,
+      "garmentPaletteDistance": 0.16,
+      "garmentEdgePaletteDistance": 0.24,
+      "garmentEdgeDilationPixels": 3,
+      "garmentDistancePixels": 180,
+      "conflictDilationPixels": 5,
+      "conflictSupportDilationPixels": 16,
+      "storageHaloPixels": 8
+    },
+    "layers": {
+      "region": {
+        "file": "hair-region.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 4076,
+        "sha256": "ad2c380240dd8cd8150bb556f269585255a311bdf915b08b4c1985eaa5323663"
+      },
+      "trimap": {
+        "file": "hair-trimap.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 6107,
+        "sha256": "bfd60355ad1c65fd9f4ec2382985146744e2840f0773e38705ce72d423687530"
+      },
+      "matte": {
+        "file": "hair-matte.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 35159,
+        "sha256": "d84c749f95d272059db3e8e5d3e36744c9e52fee9bb1dab286800c136c47aad7"
+      },
+      "foreground": {
+        "file": "hair-foreground.png",
+        "mode": "RGBA",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 510547,
+        "sha256": "0cc569659126224ce4237064a926c34c242e5a920c3d96bf8d27a17f1601c40f"
+      },
+      "underlay": {
+        "file": "hair-underlay.png",
+        "mode": "RGB",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 166549,
+        "sha256": "d10ca3ef7e07b6885b1bda22ed140a18f1a60bde65eb129a13d9481b5a36cf26"
+      },
+      "underlayKind": {
+        "file": "hair-underlay-kind.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 5732,
+        "sha256": "1264604cd567953d4abac7d3e8b55d0c9d01d20116fe840597f67c6e5a0b60f5"
+      },
+      "shirtRefined": {
+        "file": "shirt-refined.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 6489,
+        "sha256": "8c0d09571598515b4f183e38fb374e6694a1ee83034da3192684033c66a548f7"
+      }
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:47:36.620Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed regenerated nine-avatar hair layers in the browser after shirt-mask cleanup. Red-versus-blue shirt differential changed zero pixels inside every reviewed hair mask; all canvases were 1024x1024."
+    }
+  }
+}

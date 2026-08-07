@@ -1,5 +1,5 @@
 import { Search, Upload } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Avatar } from "../data/avatars";
 
 type AvatarLibraryProps = {
@@ -8,6 +8,17 @@ type AvatarLibraryProps = {
   onSelect: (avatar: Avatar) => void;
   onUpload: (file: File) => void;
 };
+
+function framingStyle(avatar: Avatar): CSSProperties | undefined {
+  if (!avatar.framing) return undefined;
+  const { scale, centerX, centerY } = avatar.framing;
+  return {
+    width: `${scale * 100}%`,
+    height: `${scale * 100}%`,
+    left: `${(0.5 - centerX * scale) * 100}%`,
+    top: `${(0.5 - centerY * scale) * 100}%`,
+  };
+}
 
 export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: AvatarLibraryProps) {
   const [query, setQuery] = useState("");
@@ -67,7 +78,13 @@ export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: Avata
             onClick={() => onSelect(avatar)}
             type="button"
           >
-            <img alt="" loading="lazy" src={avatar.src} />
+            <img
+              alt=""
+              decoding="async"
+              loading="lazy"
+              src={avatar.thumbnailSrc ?? avatar.webSrc ?? avatar.src}
+              style={framingStyle(avatar)}
+            />
             <span>{avatar.name.replace("Avatar ", "")}</span>
           </button>
         ))}

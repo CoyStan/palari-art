@@ -24,7 +24,7 @@ function pngDimensions(buffer, label) {
 
 const ids = maskRegistry.avatars.map((avatar) => avatar.id);
 if (new Set(ids).size !== ids.length) problems.push("Avatar mask IDs must be unique.");
-if (ids.length !== 143) problems.push(`Expected 143 bundled avatars, found ${ids.length}.`);
+if (ids.length !== 157) problems.push(`Expected 157 bundled avatars, found ${ids.length}.`);
 
 for (const avatar of maskRegistry.avatars) {
   try {
@@ -94,6 +94,113 @@ for (const avatar of maskRegistry.avatars) {
       }
       if (fileMetadata?.sha256 !== sha256(fileBuffer)) {
         problems.push(`${avatar.id}/${expectedFile}: checksum does not match metadata.`);
+      }
+    }
+
+    const hasHairLayer = avatar.hairMatting !== false && (avatar.hairPilot
+      || metadata.hairLayer
+      || maskRegistry.hairMattingCoverage === "all");
+    if (hasHairLayer) {
+      const hair = metadata.hairLayer;
+      const hairPath = path.join(maskDirectory, "hair.png");
+      const hairBuffer = await readFile(hairPath);
+      const dimensions = pngDimensions(hairBuffer, `${avatar.id}/hair.png`);
+      if (hair?.provider !== maskRegistry.provider || hair?.model !== maskRegistry.model) {
+        problems.push(`${avatar.id}: hair-layer provider or model does not match config.`);
+      }
+      if (!allowUnreviewed && hair?.status !== "reviewed") {
+        problems.push(`${avatar.id}: hair layer has not been reviewed.`);
+      }
+      if (!allowUnreviewed && (hair?.review?.outcome !== "pass" || !hair?.review?.reviewedAt)) {
+        problems.push(`${avatar.id}: passing hair-layer review metadata is missing.`);
+      }
+      if (hair?.mask?.file !== "hair.png") {
+        problems.push(`${avatar.id}/hair.png: filename metadata does not match.`);
+      }
+      if (dimensions.width !== sourceDimensions.width || dimensions.height !== sourceDimensions.height) {
+        problems.push(`${avatar.id}/hair.png: dimensions do not match its source.`);
+      }
+      if (hair?.mask?.sha256 !== sha256(hairBuffer)) {
+        problems.push(`${avatar.id}/hair.png: checksum does not match metadata.`);
+      }
+      if (hair?.mask?.prompt !== "hair" || !Number.isFinite(hair?.mask?.score)) {
+        problems.push(`${avatar.id}/hair.png: prompt or score metadata is missing.`);
+      }
+    }
+
+    const hasHairMatting = avatar.hairMatting !== false && (avatar.hairPilot
+      || metadata.hairMatting
+      || maskRegistry.hairMattingCoverage === "all");
+    if (hasHairMatting) {
+      const hairMatting = metadata.hairMatting;
+      if (hairMatting?.sourceSha256 !== sha256(sourceBuffer)) {
+        problems.push(`${avatar.id}: hair-matting source checksum does not match.`);
+      }
+      if (hairMatting?.models?.semanticHair?.model !== "HairSegmenter") {
+        problems.push(`${avatar.id}: MediaPipe hair model metadata is missing.`);
+      }
+      if (
+        hairMatting?.models?.semanticHair?.sha256
+        !== "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84"
+      ) {
+        problems.push(`${avatar.id}: pinned MediaPipe hair model checksum is missing.`);
+      }
+      if (hairMatting?.models?.semanticHair?.license !== "Apache-2.0") {
+        problems.push(`${avatar.id}: MediaPipe hair model license metadata is missing.`);
+      }
+      if (hairMatting?.models?.matting?.model !== "hustvl/vitmatte-small-composition-1k") {
+        problems.push(`${avatar.id}: ViTMatte model metadata is missing.`);
+      }
+      if (
+        hairMatting?.models?.matting?.revision
+        !== "6a58ad7646403c1df626fbd746900aec7361ea1d"
+      ) {
+        problems.push(`${avatar.id}: pinned ViTMatte revision metadata is missing.`);
+      }
+      if (hairMatting?.models?.matting?.license !== "Apache-2.0") {
+        problems.push(`${avatar.id}: ViTMatte license metadata is missing.`);
+      }
+      if (
+        hairMatting?.models?.foregroundRecovery?.method !== "estimate_foreground_ml"
+        || hairMatting?.models?.foregroundRecovery?.license !== "MIT"
+      ) {
+        problems.push(`${avatar.id}: PyMatting method or license metadata is missing.`);
+      }
+      if (!allowUnreviewed && hairMatting?.status !== "reviewed") {
+        problems.push(`${avatar.id}: hair-matting layers have not been reviewed.`);
+      }
+      if (
+        !allowUnreviewed
+        && (hairMatting?.review?.outcome !== "pass" || !hairMatting?.review?.reviewedAt)
+      ) {
+        problems.push(`${avatar.id}: passing hair-matting review metadata is missing.`);
+      }
+      const expectedHairMattingLayers = {
+        region: "hair-region.png",
+        trimap: "hair-trimap.png",
+        matte: "hair-matte.png",
+        foreground: "hair-foreground.png",
+        underlay: "hair-underlay.png",
+        underlayKind: "hair-underlay-kind.png",
+        shirtRefined: "shirt-refined.png",
+      };
+      for (const [key, expectedFile] of Object.entries(expectedHairMattingLayers)) {
+        const layerMetadata = hairMatting?.layers?.[key];
+        const layerPath = path.join(maskDirectory, expectedFile);
+        const layerBuffer = await readFile(layerPath);
+        const layerDimensions = pngDimensions(layerBuffer, `${avatar.id}/${expectedFile}`);
+        if (layerMetadata?.file !== expectedFile) {
+          problems.push(`${avatar.id}/${expectedFile}: hair-matting filename metadata does not match.`);
+        }
+        if (
+          layerDimensions.width !== sourceDimensions.width
+          || layerDimensions.height !== sourceDimensions.height
+        ) {
+          problems.push(`${avatar.id}/${expectedFile}: dimensions do not match its source.`);
+        }
+        if (layerMetadata?.sha256 !== sha256(layerBuffer)) {
+          problems.push(`${avatar.id}/${expectedFile}: checksum does not match metadata.`);
+        }
       }
     }
   } catch (error) {

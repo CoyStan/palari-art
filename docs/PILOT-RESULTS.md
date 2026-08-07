@@ -6,7 +6,7 @@ Review date: 2026-08-03
 
 The five-avatar fal.ai SAM 3 pilot passed. Stored semantic masks produced substantially cleaner layer separation than the color heuristic, and the browser renderer successfully recolored backgrounds and sweaters while protecting faces, hair, a hijab, necklaces, and skin.
 
-These five portraits established the prompts and acceptance criteria later used for the original 38-avatar collection. The same stored-layer contract is now active across all 143 bundled portraits; see `FULL-LIBRARY-RESULTS.md` for the completed runs.
+These five portraits established the prompts and acceptance criteria later used for the original 38-avatar collection. The same stored foreground/garment contract is now active across all 157 bundled portraits, with hair layers on the 154 visible-hair portraits; see `FULL-LIBRARY-RESULTS.md` for the completed runs.
 
 ## Test set
 
