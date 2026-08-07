@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "avatarId": "coverage-007",
+  "status": "reviewed",
+  "generatedAt": "2026-08-05T19:19:08.696Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Coverage expansion: adult feminine presentation with patterned hijab, glasses, and layered garment.",
+  "source": {
+    "file": "avatars/coverage-expansion/avatar-coverage-007.png",
+    "sha256": "522f1acfe6fd9f394f25d86e005437bbc3f7bba421ea090f196c28ba054d162a",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fd35b-7ce4-7073-944e-fb3814313583",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35b-7ce4-7073-944e-fb3814313583",
+      "score": 0.9461885094642639,
+      "box": [
+        0.5122177089963641,
+        0.5459624358585903,
+        0.9396591981252035,
+        0.9053046892559717
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7289,
+      "sha256": "d3ec5f559f78103126562d5b159dd45d1deaffaebf7b6f7c7dce1cac29bc3a98"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fd35b-8c87-7162-8e35-59b7afb0be26",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35b-8c87-7162-8e35-59b7afb0be26",
+      "score": 0.7716044783592224,
+      "box": [
+        0.512241972817315,
+        0.843474100506495,
+        0.9401800897386339,
+        0.3095678299192398
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2584,
+      "sha256": "e1b9e837ed280e82e7e9dfe1bfc236d30c281f7aaa4771cbeb84c81120bbe1fa",
+      "cleanup": {
+        "method": "remove-small-disconnected-components",
+        "connectivity": 8,
+        "minimumArea": 1000,
+        "removed": [
+          {
+            "id": 4,
+            "area": 21
+          },
+          {
+            "id": 16,
+            "area": 14
+          },
+          {
+            "id": 17,
+            "area": 8
+          },
+          {
+            "id": 3,
+            "area": 2
+          }
+        ],
+        "cleanedAt": "2026-08-05T19:40:59.263Z"
+      }
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-05T19:47:36.216Z",
+    "reviewer": "codex",
+    "outcome": "pass",
+    "notes": "Reviewed post-cleanup 12-avatar source/render sheet at contrasting colors. Garment masks preserve neck, face, hair, beard, headwear, and layered garment boundaries; tiny disconnected SAM islands were removed."
+  },
+  "sourceGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "promptVersion": "coverage-expansion-v1",
+    "styleReference": "avatars/standardized-1x1/avatar-04.png",
+    "brief": "Adult feminine presentation, medium skin, patterned hijab, glasses, layered garment."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:19:08.696Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fd35d-7315-7772-b2cc-77afc3ae3f8a",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1550440,
+      "sha256": "e0c65d087ebaa5500ed6c0f0845a79e1edd51558a11e8caedd5fe20e85def670"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 28633,
+      "sha256": "ef0df308f43018918c52a148cd916bca293407e005a243bb45c1f4227ca271a6"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:29:23.415Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed 12-source contrasting-background contact sheet: refined foregrounds preserve hair, headwear, face, shoulders, and garment edges."
+    }
+  }
+}

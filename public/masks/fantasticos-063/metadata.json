@@ -107,5 +107,145 @@
       "outcome": "pass",
       "notes": "Reviewed all 105 v3 source, refined-cutout, and alpha-matte tiles; difficult curls, braids, flyaways, long hair, jewelry, and head-covering edges pass."
     }
+  },
+  "hairLayer": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T01:55:52.332Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/sam-3/image",
+    "purpose": "Semantic search region for local, color-independent hair-edge decontamination.",
+    "mask": {
+      "file": "hair.png",
+      "prompt": "hair",
+      "requestId": "019fcfa2-55af-7a81-a322-c931b7397044",
+      "score": 0.9640719294548035,
+      "box": [
+        0.517538721599276,
+        0.4140833029671321,
+        0.4725518302311973,
+        0.6190803694346595
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7797,
+      "sha256": "9416e1b83e10e18ed6624c1f5a51c33a2c90233a26b959ea5a80f3f22e0e8435"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T02:01:21.282Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Reviewed six full-library source/overlay sheets covering all 143 portraits. Hair silhouettes cover short cuts, long waves, curls, buns, braids, flyaways, facial-hair-adjacent cuts, and decorated styles without face, skin, garment, jewelry, glasses, bead, scarf, or headwrap leakage. The hijab portrait correctly limits the mask to the small visible forehead hair band; coarse masks are search regions only, not final alpha mattes."
+    }
+  },
+  "hairMatting": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T02:26:55.515295Z",
+    "sourceSha256": "1a9bc16b111d3520b4ad5d4bd7cebc0a9b1e34e94b607ad648daffebcc7b9078",
+    "purpose": "Reusable hair alpha and decontaminated foreground for background/garment recoloring.",
+    "models": {
+      "semanticHair": {
+        "provider": "Google MediaPipe",
+        "model": "HairSegmenter",
+        "license": "Apache-2.0",
+        "sha256": "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84"
+      },
+      "matting": {
+        "provider": "HUST Vision Lab",
+        "model": "hustvl/vitmatte-small-composition-1k",
+        "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+        "license": "Apache-2.0"
+      },
+      "foregroundRecovery": {
+        "provider": "PyMatting",
+        "method": "estimate_foreground_ml",
+        "license": "MIT"
+      }
+    },
+    "parameters": {
+      "hairCoreProbability": 0.72,
+      "hairOuterProbability": 0.12,
+      "semanticSupportDilationPixels": 24,
+      "coreErosionPixels": 8,
+      "outerDilationPixels": 12,
+      "paletteClusters": 12,
+      "garmentAffinityMargin": 0.04,
+      "garmentAmbiguityMargin": -0.02,
+      "garmentPaletteDistance": 0.16,
+      "garmentEdgePaletteDistance": 0.24,
+      "garmentEdgeDilationPixels": 3,
+      "garmentDistancePixels": 180,
+      "conflictDilationPixels": 5,
+      "conflictSupportDilationPixels": 16,
+      "storageHaloPixels": 8,
+      "paletteHairMaxYRatio": 0.58,
+      "paletteFallbackMaskThreshold": 0.75,
+      "minimumPaletteSamples": 500
+    },
+    "layers": {
+      "region": {
+        "file": "hair-region.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 8285,
+        "sha256": "405c8f046e324b4e46c3e2c5d1e45fde04d2f236f94c98958955d874158e718d"
+      },
+      "trimap": {
+        "file": "hair-trimap.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 10296,
+        "sha256": "9a643a74caff8cd4d19d64e0e34b5996323da7b6841c12b640d940743bd63c92"
+      },
+      "matte": {
+        "file": "hair-matte.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 75507,
+        "sha256": "c55c384cc52586b33417de8319f4fe9a4feb8cebad5a4f7f909a7f78f2dd9d72"
+      },
+      "foreground": {
+        "file": "hair-foreground.png",
+        "mode": "RGBA",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 450188,
+        "sha256": "cd3a47e9dd73ee079777962089187f5fbbea7b73b4b71f34ef1fc140beed7989"
+      },
+      "underlay": {
+        "file": "hair-underlay.png",
+        "mode": "RGB",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 300609,
+        "sha256": "2d5e8bcf264f5f2214b9488f4d22a44e4b5e8fe0e3b71beec1c8ece63b459fbe"
+      },
+      "underlayKind": {
+        "file": "hair-underlay-kind.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 6635,
+        "sha256": "77aff37e43f60fed0143a17cce0d4f85cca89b991583b3b2609d9e30ebae99d7"
+      },
+      "shirtRefined": {
+        "file": "shirt-refined.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 19045,
+        "sha256": "8c2d2740eb2a1345cd213ac7edd598357c59f072a285615fabaefa8992100624"
+      }
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T02:52:10.269Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Reviewed six full-library 143-avatar browser-render contact sheets at #F6D54A background and #26B469 garment, with all canvases confirmed 1024x1024. Inspected exact 1024 PNG export for Avatar 061 light hair over turtleneck plus hijab, locs, braids, curls, flyaways, long dark hair, and five pilot cases. Hair remains foreground; target garment appears only through matte openings; face, skin, accessories, and head coverings remain protected."
+    }
   }
 }

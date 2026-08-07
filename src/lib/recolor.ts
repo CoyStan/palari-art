@@ -26,11 +26,35 @@ export type AvatarMaskSources = {
   foreground: string;
   matte: string;
   shirt: string;
+  hairMatting?: {
+    coarse: string;
+    region: string;
+    matte: string;
+    foreground: string;
+    underlay: string;
+    underlayKind: string;
+  };
+};
+
+export type AvatarFraming = {
+  scale: number;
+  centerX: number;
+  centerY: number;
+};
+
+type HairMatting = {
+  coarse: Uint8ClampedArray;
+  region: Uint8ClampedArray;
+  matte: Uint8ClampedArray;
+  foreground: ImageData;
+  underlay: ImageData;
+  underlayKind: Uint8ClampedArray;
 };
 
 type PreparedImage = {
   source: ImageData;
   foreground?: ImageData;
+  hairMatting?: HairMatting;
   backgroundMask: Uint8ClampedArray;
   shirtMask: Uint8ClampedArray;
   maskSize: number;
@@ -43,9 +67,26 @@ const preparedCache = new Map<string, PreparedImage>();
 const IMAGE_CACHE_LIMIT = 24;
 const PREPARED_CACHE_LIMIT = 6;
 
-function cacheKey(src: string, settings: DetectionSettings, masks?: AvatarMaskSources) {
-  if (masks) return `${src}|matte|${masks.foreground}|${masks.matte}|${masks.shirt}`;
-  return `${src}|${settings.backgroundTolerance}|${settings.shirtTolerance}`;
+function framingKey(framing?: AvatarFraming) {
+  return framing
+    ? `${framing.scale}|${framing.centerX}|${framing.centerY}`
+    : "unframed";
+}
+
+function cacheKey(
+  src: string,
+  settings: DetectionSettings,
+  masks?: AvatarMaskSources,
+  framing?: AvatarFraming,
+) {
+  if (masks) {
+    const hair = masks.hairMatting;
+    const hairKey = hair
+      ? `${hair.coarse}|${hair.region}|${hair.matte}|${hair.foreground}|${hair.underlay}|${hair.underlayKind}`
+      : "no-hair-matting";
+    return `${src}|matte|${masks.foreground}|${masks.matte}|${masks.shirt}|${hairKey}|${framingKey(framing)}`;
+  }
+  return `${src}|${settings.backgroundTolerance}|${settings.shirtTolerance}|${framingKey(framing)}`;
 }
 
 function rememberPrepared(key: string, prepared: PreparedImage) {
@@ -79,7 +120,40 @@ function pixel(data: Uint8ClampedArray, offset: number): RGB {
   return { r: data[offset], g: data[offset + 1], b: data[offset + 2] };
 }
 
-async function loadImageData(src: string, width: number, height: number) {
+function drawFramedImage(
+  context: CanvasRenderingContext2D,
+  image: HTMLImageElement,
+  width: number,
+  height: number,
+  framing?: AvatarFraming,
+) {
+  if (!framing) {
+    context.drawImage(image, 0, 0, width, height);
+    return;
+  }
+
+  const sourceSide = Math.min(image.naturalWidth, image.naturalHeight) / framing.scale;
+  const sourceX = framing.centerX * image.naturalWidth - sourceSide / 2;
+  const sourceY = framing.centerY * image.naturalHeight - sourceSide / 2;
+  context.drawImage(
+    image,
+    sourceX,
+    sourceY,
+    sourceSide,
+    sourceSide,
+    0,
+    0,
+    width,
+    height,
+  );
+}
+
+async function loadImageData(
+  src: string,
+  width: number,
+  height: number,
+  framing?: AvatarFraming,
+) {
   const image = await loadImage(src);
   const canvas = document.createElement("canvas");
   canvas.width = width;
@@ -88,12 +162,17 @@ async function loadImageData(src: string, width: number, height: number) {
   if (!context) throw new Error("Canvas is unavailable in this browser.");
   context.imageSmoothingEnabled = true;
   context.imageSmoothingQuality = "high";
-  context.drawImage(image, 0, 0, width, height);
+  drawFramedImage(context, image, width, height, framing);
   return context.getImageData(0, 0, width, height);
 }
 
-async function loadMask(src: string, width: number, height: number) {
-  const data = (await loadImageData(src, width, height)).data;
+async function loadMask(
+  src: string,
+  width: number,
+  height: number,
+  framing?: AvatarFraming,
+) {
+  const data = (await loadImageData(src, width, height, framing)).data;
   const mask = new Uint8ClampedArray(width * height);
   for (let index = 0; index < mask.length; index += 1) mask[index] = data[index * 4];
   return mask;
@@ -209,6 +288,44 @@ function openMask(mask: Uint8ClampedArray, width: number, height: number, radius
 function closeMask(mask: Uint8ClampedArray, width: number, height: number, radius: number) {
   const dilated = morphologyPass(mask, width, height, radius, "max");
   return morphologyPass(dilated, width, height, radius, "min");
+}
+
+function extendGarmentToForegroundSilhouette(
+  shirtMask: Uint8ClampedArray,
+  foregroundMatte: Uint8ClampedArray,
+  coarseHairMask: Uint8ClampedArray | undefined,
+  width: number,
+  height: number,
+) {
+  const edgeReach = 2;
+  const exterior = new Uint8ClampedArray(foregroundMatte.length);
+  for (let index = 0; index < exterior.length; index += 1) {
+    exterior[index] = foregroundMatte[index] < 128 ? 255 : 0;
+  }
+  for (let x = 0; x < width; x += 1) {
+    exterior[x] = 255;
+    exterior[(height - 1) * width + x] = 255;
+  }
+  for (let y = 0; y < height; y += 1) {
+    exterior[y * width] = 255;
+    exterior[y * width + width - 1] = 255;
+  }
+
+  const silhouetteBand = morphologyPass(exterior, width, height, edgeReach, "max");
+  const expandedShirt = morphologyPass(shirtMask, width, height, edgeReach, "max");
+  const refined = new Uint8ClampedArray(shirtMask);
+
+  for (let index = 0; index < refined.length; index += 1) {
+    if (
+      foregroundMatte[index] > 0
+      && silhouetteBand[index] > 0
+      && expandedShirt[index] >= 128
+      && (!coarseHairMask || coarseHairMask[index] < 32)
+    ) {
+      refined[index] = Math.max(refined[index], expandedShirt[index]);
+    }
+  }
+  return refined;
 }
 
 function detectBackground(
@@ -433,8 +550,13 @@ function detectShirt(
   return blurMask(protectedMask, width, height, 1);
 }
 
-async function prepare(src: string, settings: DetectionSettings, masks?: AvatarMaskSources) {
-  const key = cacheKey(src, settings, masks);
+async function prepare(
+  src: string,
+  settings: DetectionSettings,
+  masks?: AvatarMaskSources,
+  framing?: AvatarFraming,
+) {
+  const key = cacheKey(src, settings, masks, framing);
   const existing = preparedCache.get(key);
   if (existing) return existing;
 
@@ -444,7 +566,7 @@ async function prepare(src: string, settings: DetectionSettings, masks?: AvatarM
   sourceCanvas.height = OUTPUT_SIZE;
   const context = sourceCanvas.getContext("2d", { willReadFrequently: true });
   if (!context) throw new Error("Canvas is unavailable in this browser.");
-  context.drawImage(image, 0, 0, OUTPUT_SIZE, OUTPUT_SIZE);
+  drawFramedImage(context, image, OUTPUT_SIZE, OUTPUT_SIZE, framing);
   const source = context.getImageData(0, 0, OUTPUT_SIZE, OUTPUT_SIZE);
 
   const maskCanvas = document.createElement("canvas");
@@ -452,15 +574,33 @@ async function prepare(src: string, settings: DetectionSettings, masks?: AvatarM
   maskCanvas.height = MASK_SIZE;
   const maskContext = maskCanvas.getContext("2d", { willReadFrequently: true });
   if (!maskContext) throw new Error("Canvas is unavailable in this browser.");
-  maskContext.drawImage(image, 0, 0, MASK_SIZE, MASK_SIZE);
+  drawFramedImage(maskContext, image, MASK_SIZE, MASK_SIZE, framing);
   const maskSource = maskContext.getImageData(0, 0, MASK_SIZE, MASK_SIZE);
   const backgroundReference = averageCornerColor(maskSource.data, MASK_SIZE, MASK_SIZE);
   if (masks) {
-    const [foreground, foregroundMatte, shirtMask] = await Promise.all([
-      loadImageData(masks.foreground, OUTPUT_SIZE, OUTPUT_SIZE),
-      loadMask(masks.matte, OUTPUT_SIZE, OUTPUT_SIZE),
-      loadMask(masks.shirt, OUTPUT_SIZE, OUTPUT_SIZE),
+    const hairMattingPromise = masks.hairMatting
+      ? Promise.all([
+          loadMask(masks.hairMatting.coarse, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+          loadMask(masks.hairMatting.region, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+          loadMask(masks.hairMatting.matte, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+          loadImageData(masks.hairMatting.foreground, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+          loadImageData(masks.hairMatting.underlay, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+          loadMask(masks.hairMatting.underlayKind, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+        ])
+      : Promise.resolve(undefined);
+    const [foreground, foregroundMatte, storedShirtMask, hairLayers] = await Promise.all([
+      loadImageData(masks.foreground, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+      loadMask(masks.matte, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+      loadMask(masks.shirt, OUTPUT_SIZE, OUTPUT_SIZE, framing),
+      hairMattingPromise,
     ]);
+    const shirtMask = extendGarmentToForegroundSilhouette(
+      storedShirtMask,
+      foregroundMatte,
+      hairLayers?.[0],
+      OUTPUT_SIZE,
+      OUTPUT_SIZE,
+    );
     const backgroundMask = new Uint8ClampedArray(foregroundMatte.length);
     for (let index = 0; index < foregroundMatte.length; index += 1) {
       backgroundMask[index] = 255 - foregroundMatte[index];
@@ -468,6 +608,16 @@ async function prepare(src: string, settings: DetectionSettings, masks?: AvatarM
     const prepared: PreparedImage = {
       source,
       foreground,
+      hairMatting: hairLayers
+        ? {
+            coarse: hairLayers[0],
+            region: hairLayers[1],
+            matte: hairLayers[2],
+            foreground: hairLayers[3],
+            underlay: hairLayers[4],
+            underlayKind: hairLayers[5],
+          }
+        : undefined,
       backgroundMask,
       shirtMask,
       maskSize: OUTPUT_SIZE,
@@ -521,8 +671,9 @@ export async function renderRecoloredAvatar(
   src: string,
   settings: RecolorSettings,
   masks?: AvatarMaskSources,
+  framing?: AvatarFraming,
 ) {
-  const prepared = await prepare(src, settings, masks);
+  const prepared = await prepare(src, settings, masks, framing);
   canvas.width = OUTPUT_SIZE;
   canvas.height = OUTPUT_SIZE;
   const context = canvas.getContext("2d");
@@ -577,9 +728,81 @@ export async function renderRecoloredAvatar(
         };
       }
 
-      output.data[offset] = mixChannel(backgroundRgb.r, foregroundRgb.r, foregroundAmount);
-      output.data[offset + 1] = mixChannel(backgroundRgb.g, foregroundRgb.g, foregroundAmount);
-      output.data[offset + 2] = mixChannel(backgroundRgb.b, foregroundRgb.b, foregroundAmount);
+      let compositedRgb = {
+        r: mixChannel(backgroundRgb.r, foregroundRgb.r, foregroundAmount),
+        g: mixChannel(backgroundRgb.g, foregroundRgb.g, foregroundAmount),
+        b: mixChannel(backgroundRgb.b, foregroundRgb.b, foregroundAmount),
+      };
+
+      if (prepared.hairMatting) {
+        const coarseHair = prepared.hairMatting.coarse[index] / 255;
+        const hairAlpha = prepared.hairMatting.matte[index] / 255;
+        const hairRegion = prepared.hairMatting.region[index] / 255;
+        const coarseHairSupport = clamp(coarseHair / 0.2);
+        const hairZone = Math.max(hairRegion, hairAlpha) * coarseHairSupport;
+        if (hairZone > 0) {
+          const cleanHair = pixel(prepared.hairMatting.foreground.data, offset);
+          const originalUnderlay = pixel(prepared.hairMatting.underlay.data, offset);
+          const underlayKind = prepared.hairMatting.underlayKind[index];
+          let newUnderlay = originalUnderlay;
+
+          if (underlayKind >= 192) {
+            if (shirtAmount > 0) {
+              const underlayHsl = rgbToHsl(originalUnderlay);
+              const lightnessDelta = underlayHsl.l - prepared.shirtReferenceLightness;
+              const recoloredUnderlay = hslToRgb({
+                h: shirtTarget.h,
+                s: clamp(shirtTarget.s * 0.9 + underlayHsl.s * 0.1),
+                l: clamp(shirtTarget.l + lightnessDelta * 0.92),
+              });
+              newUnderlay = {
+                r: mixChannel(originalUnderlay.r, recoloredUnderlay.r, shirtAmount),
+                g: mixChannel(originalUnderlay.g, recoloredUnderlay.g, shirtAmount),
+                b: mixChannel(originalUnderlay.b, recoloredUnderlay.b, shirtAmount),
+              };
+            }
+          } else if (underlayKind >= 64) {
+            const underlayLightness = (
+              Math.max(originalUnderlay.r, originalUnderlay.g, originalUnderlay.b)
+              + Math.min(originalUnderlay.r, originalUnderlay.g, originalUnderlay.b)
+            ) / 510;
+            newUnderlay = hslToRgb({
+              h: backgroundTargetHsl.h,
+              s: backgroundTargetHsl.s,
+              l: clamp(
+                backgroundTargetHsl.l
+                  + (underlayLightness - prepared.backgroundReferenceLightness) * 0.32,
+              ),
+            });
+          }
+
+          const hairComposite = {
+            r: mixChannel(newUnderlay.r, cleanHair.r, hairAlpha),
+            g: mixChannel(newUnderlay.g, cleanHair.g, hairAlpha),
+            b: mixChannel(newUnderlay.b, cleanHair.b, hairAlpha),
+          };
+          compositedRgb = {
+            r: mixChannel(compositedRgb.r, hairComposite.r, hairZone),
+            g: mixChannel(compositedRgb.g, hairComposite.g, hairZone),
+            b: mixChannel(compositedRgb.b, hairComposite.b, hairZone),
+          };
+
+          // The reviewed SAM mask is the hard semantic authority for hair. The
+          // fine matte may improve strand edges, but it may never reinterpret a
+          // reviewed hair pixel as garment or background.
+          if (coarseHairSupport > 0) {
+            compositedRgb = {
+              r: mixChannel(compositedRgb.r, original.r, coarseHairSupport),
+              g: mixChannel(compositedRgb.g, original.g, coarseHairSupport),
+              b: mixChannel(compositedRgb.b, original.b, coarseHairSupport),
+            };
+          }
+        }
+      }
+
+      output.data[offset] = compositedRgb.r;
+      output.data[offset + 1] = compositedRgb.g;
+      output.data[offset + 2] = compositedRgb.b;
       continue;
     }
 

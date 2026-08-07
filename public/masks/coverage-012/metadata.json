@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "avatarId": "coverage-012",
+  "status": "reviewed",
+  "generatedAt": "2026-08-05T19:19:39.665Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Coverage expansion: adult masculine presentation with turban, beard, glasses, and cardigan.",
+  "source": {
+    "file": "avatars/coverage-expansion/avatar-coverage-012.png",
+    "sha256": "2ac9c55013b0ee3f6c90e88fc7d569a351c47d59c468bb556fa42e341a98402b",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fd35c-09a5-7672-8001-fc91cbf90c19",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35c-09a5-7672-8001-fc91cbf90c19",
+      "score": 0.9607349038124084,
+      "box": [
+        0.5160706270308721,
+        0.5314871375522916,
+        0.9670595971364824,
+        0.9373080124930729
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 8218,
+      "sha256": "c8aaf2d8e77f573fe22f440802865a77d88306dd4c3cb76af83b5ffb96935162"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "sweater",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fd35c-0f2d-7192-80e2-f8d51f43794f",
+          "found": true
+        }
+      ],
+      "requestId": "019fd35c-0f2d-7192-80e2-f8d51f43794f",
+      "score": 0.9054218530654907,
+      "box": [
+        0.516616183613974,
+        0.8024696773952908,
+        0.9685307495177738,
+        0.39283407302129836
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 5736,
+      "sha256": "d7311b1cfc473cc040abcf8a83ac80becea130873f58e3518d96e9ff1f3cada4"
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-05T19:29:23.110Z",
+    "reviewer": "codex",
+    "outcome": "pass",
+    "notes": "Reviewed 12-source contact sheet: garment masks follow visible upper garments and exclude face, neck, hair, headwear, beard, and glasses."
+  },
+  "sourceGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "promptVersion": "coverage-expansion-v1",
+    "styleReference": "avatars/standardized-1x1/avatar-04.png",
+    "brief": "Adult masculine presentation, medium skin, turban, full beard, glasses, cardigan."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-05T19:19:39.665Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fd35d-ec58-7741-9e62-19ebdf5a3704",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1497782,
+      "sha256": "e02df61602f3852bd9b63010dd22559f1c0793c4120745202e4ea681bf687dd7"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 56968,
+      "sha256": "586935618f662abbc33956a4057c830af8e4d5be9fd700247086d451b1565d29"
+    },
+    "review": {
+      "reviewedAt": "2026-08-05T19:29:23.415Z",
+      "reviewer": "codex",
+      "outcome": "pass",
+      "notes": "Reviewed 12-source contrasting-background contact sheet: refined foregrounds preserve hair, headwear, face, shoulders, and garment edges."
+    }
+  }
+}

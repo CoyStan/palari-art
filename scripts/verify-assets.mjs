@@ -25,6 +25,13 @@ const collections = [
       (_, index) => `fantastico-${String(index + 1).padStart(3, "0")}.png`,
     ),
   },
+  {
+    directory: "coverage-expansion",
+    expectedNames: Array.from(
+      { length: 14 },
+      (_, index) => `avatar-coverage-${String(index + 1).padStart(3, "0")}.png`,
+    ),
+  },
 ];
 
 function pngDimensions(buffer, fileName) {

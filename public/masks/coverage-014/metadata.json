@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "avatarId": "coverage-014",
+  "status": "reviewed",
+  "generatedAt": "2026-08-06T04:01:37.815Z",
+  "provider": "fal.ai",
+  "model": "fal-ai/sam-3/image",
+  "reason": "Art-guide character remake: young feminine presentation with long half-up wavy hair, hoops, necklace, and patterned blouse.",
+  "source": {
+    "file": "avatars/coverage-expansion/avatar-coverage-014.png",
+    "sha256": "698652fe92b6a7f9c58d6ea8a01f1ef064858cc760111633167ea4add9c803f3",
+    "width": 1254,
+    "height": 1254
+  },
+  "masks": {
+    "person": {
+      "file": "person.png",
+      "prompt": "person",
+      "attempts": [
+        {
+          "prompt": "person",
+          "requestId": "019fd53a-75ef-7201-931b-ffcb4de1e29f",
+          "found": true
+        }
+      ],
+      "requestId": "019fd53a-75ef-7201-931b-ffcb4de1e29f",
+      "score": 0.9625490307807922,
+      "box": [
+        0.5341040974571591,
+        0.5403118776896644,
+        0.7675200416928246,
+        0.9194382485889253
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 7750,
+      "sha256": "86a158d2b8e49d3b1d182c69b7fa0578effeb431be0a9ffb151092d16d4f157b"
+    },
+    "shirt": {
+      "file": "shirt.png",
+      "prompt": "shirt",
+      "attempts": [
+        {
+          "prompt": "sweater",
+          "requestId": "019fd53a-bbab-7312-892a-72cfeb1404a5",
+          "found": false
+        },
+        {
+          "prompt": "shirt",
+          "requestId": "019fd53b-00cc-77f2-9c7d-b399fb697d20",
+          "found": true
+        }
+      ],
+      "requestId": "019fd53b-00cc-77f2-9c7d-b399fb697d20",
+      "score": 0.9050486087799072,
+      "box": [
+        0.5349888120378766,
+        0.82989501953125,
+        0.7665306272960845,
+        0.3398420545789931
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3360,
+      "sha256": "43fdc18c3c395315a0804163d29c041305cab1714fdf963146afca690e1dfb64",
+      "cleanup": {
+        "method": "remove-small-disconnected-components",
+        "connectivity": 8,
+        "minimumArea": 1000,
+        "removed": [
+          {
+            "id": 3,
+            "area": 137
+          }
+        ],
+        "cleanedAt": "2026-08-06T04:03:01.275Z"
+      }
+    }
+  },
+  "review": {
+    "reviewedAt": "2026-08-06T04:03:34.543Z",
+    "reviewer": "Codex",
+    "outcome": "pass",
+    "notes": "Person and cleaned blouse masks visually inspected; face, neck, jewelry, and overlapping long hair remain protected."
+  },
+  "sourceGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "promptVersion": "art-guide-character-remake-v1",
+    "identityReference": "docs/art-guide/references/avatar-156-157-identity-reference.png",
+    "styleReference": "avatars/standardized-1x1/avatar-04.png",
+    "brief": "Preserve the bottom art-guide character: warm tan skin and freckles, long half-up dark wavy hair with high bun, gold hoops, beaded necklace, and terracotta patterned collared blouse."
+  },
+  "foregroundMatte": {
+    "status": "reviewed",
+    "generatedAt": "2026-08-06T04:01:37.815Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/birefnet/v2",
+    "variant": "Matting",
+    "operatingResolution": "2048x2048",
+    "refineForeground": true,
+    "sourceOutput": "refined-transparent-image-and-alpha",
+    "requestId": "019fd53b-cd61-7e51-8333-f305cecd1ba0",
+    "apiOutput": {
+      "width": 1254,
+      "height": 1254,
+      "contentType": "image/png"
+    },
+    "cutout": {
+      "file": "foreground.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1483495,
+      "sha256": "e9223ca448e2ee38e6c2035d2161125bbf3bd1965bd50cc95c687ec88b08eee4"
+    },
+    "matte": {
+      "file": "matte.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 93874,
+      "sha256": "8d6c93afe61eee1c277ce5cd7a523ebea05b5571f5eb317abeb6a1e439880c2e"
+    },
+    "review": {
+      "reviewedAt": "2026-08-06T04:03:34.955Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "BiRefNet foreground and alpha visually inspected on checkerboard; bun, long hair, flyaways, jewelry, and shoulders are preserved."
+    }
+  },
+  "hairLayer": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-06T04:03:57.942Z",
+    "provider": "fal.ai",
+    "model": "fal-ai/sam-3/image",
+    "purpose": "Semantic search region for local, color-independent hair-edge decontamination.",
+    "mask": {
+      "file": "hair.png",
+      "prompt": "hair",
+      "requestId": "019fd53d-f17a-70b0-ae0e-2eaf69df2e8d",
+      "score": 0.9625468254089355,
+      "box": [
+        0.5203496388026646,
+        0.540602858104403,
+        0.7342754848419674,
+        0.9203452307080465
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 11313,
+      "sha256": "7c1575425a06b744f0d9d807a644e447bff1cd54184068dee0f06e2bc7dbb56e"
+    },
+    "review": {
+      "reviewedAt": "2026-08-06T04:04:31.494Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Coarse SAM search mask visually inspected; it covers the complete bun, bangs, long waves, and flyaways while excluding face, jewelry, neck, and blouse."
+    }
+  },
+  "hairMatting": {
+    "version": 1,
+    "status": "reviewed",
+    "generatedAt": "2026-08-06T04:05:40.805815Z",
+    "sourceSha256": "698652fe92b6a7f9c58d6ea8a01f1ef064858cc760111633167ea4add9c803f3",
+    "purpose": "Reusable hair alpha and decontaminated foreground for background/garment recoloring.",
+    "models": {
+      "semanticHair": {
+        "provider": "Google MediaPipe",
+        "model": "HairSegmenter",
+        "license": "Apache-2.0",
+        "sha256": "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84"
+      },
+      "matting": {
+        "provider": "HUST Vision Lab",
+        "model": "hustvl/vitmatte-small-composition-1k",
+        "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+        "license": "Apache-2.0"
+      },
+      "foregroundRecovery": {
+        "provider": "PyMatting",
+        "method": "estimate_foreground_ml",
+        "license": "MIT"
+      }
+    },
+    "parameters": {
+      "hairCoreProbability": 0.72,
+      "hairOuterProbability": 0.12,
+      "semanticSupportDilationPixels": 24,
+      "coreErosionPixels": 8,
+      "outerDilationPixels": 12,
+      "paletteClusters": 12,
+      "paletteHairMaxYRatio": 0.58,
+      "paletteFallbackMaskThreshold": 0.75,
+      "minimumPaletteSamples": 500,
+      "garmentAffinityMargin": 0.04,
+      "garmentAmbiguityMargin": -0.02,
+      "garmentPaletteDistance": 0.16,
+      "garmentEdgePaletteDistance": 0.24,
+      "garmentEdgeDilationPixels": 3,
+      "garmentDistancePixels": 180,
+      "conflictDilationPixels": 5,
+      "conflictSupportDilationPixels": 16,
+      "storageHaloPixels": 8
+    },
+    "layers": {
+      "region": {
+        "file": "hair-region.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 8535,
+        "sha256": "0c6557a18b1294fd268e590b0567d0fd0b1f47e8844c103bec4e99c754353d3f"
+      },
+      "trimap": {
+        "file": "hair-trimap.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 13766,
+        "sha256": "eaa30a4f5a115a845f08895e01dc25cf716254486beb695c427e63e4f79dad3d"
+      },
+      "matte": {
+        "file": "hair-matte.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 103329,
+        "sha256": "06593b79a817384edc573fc0fa62f90564ee7f7c14d7799504c370b71503c3db"
+      },
+      "foreground": {
+        "file": "hair-foreground.png",
+        "mode": "RGBA",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 814240,
+        "sha256": "978889030316d98405377baea02368b581a7a9729c35470de864914a6709dca2"
+      },
+      "underlay": {
+        "file": "hair-underlay.png",
+        "mode": "RGB",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 409664,
+        "sha256": "ebaae2836edc018a408a408f62f3c469b75f865ca95ed9d01d9cc8d042f683b8"
+      },
+      "underlayKind": {
+        "file": "hair-underlay-kind.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 11501,
+        "sha256": "1ac2d8c6e8dd70d13ea4854109007b90aa800f3a8010f0564ccb0a2f14c0a9b1"
+      },
+      "shirtRefined": {
+        "file": "shirt-refined.png",
+        "mode": "L",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 15041,
+        "sha256": "e8bd7055d114958c928a5df8293ee15eead9da3bfddf7289f7b5512cb867c28d"
+      }
+    },
+    "review": {
+      "reviewedAt": "2026-08-06T04:10:56.815Z",
+      "reviewer": "Codex",
+      "outcome": "pass",
+      "notes": "Local MediaPipe, ViTMatte, and PyMatting layers inspected with yellow background and green blouse in the browser; bun, bangs, long waves, flyaways, face, neck, hoops, necklace, and texture remain correct."
+    }
+  }
+}

@@ -1,0 +1,2843 @@
+{
+  "version": 1,
+  "method": "MediaPipe BlazeFace short-range plus reviewed person/shirt safety bounds",
+  "model": {
+    "url": "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/latest/blaze_face_short_range.tflite",
+    "sha256": "b4578f35940bf5a1a655214a1cce5cab13eba73c1297cd78e1a04c2380b0152f"
+  },
+  "target": {
+    "faceHeight": 0.3662,
+    "faceCenterX": 0.5,
+    "faceCenterY": 0.4653,
+    "minimumHeadMargin": 0.035,
+    "maximumScale": 1.38
+  },
+  "avatars": [
+    {
+      "id": "original-01",
+      "sourceSha256": "0b33feffc8b8be9d24eed37fe7183bff6ee55d68322ad53bfa530dcafa9f56f7",
+      "scale": 1.10921,
+      "centerX": 0.51356,
+      "centerY": 0.4946,
+      "audit": {
+        "detectorConfidence": 0.95321,
+        "faceBox": [
+          0.34848,
+          0.29825,
+          0.33014,
+          0.33014
+        ],
+        "subjectTop": 0.11483,
+        "shirtTop": 0.70574
+      }
+    },
+    {
+      "id": "original-02",
+      "sourceSha256": "a316c4e2647e8ec831bab81ed997a41485565c30dea736f640b3b3d3dc566068",
+      "scale": 1.05567,
+      "centerX": 0.50199,
+      "centerY": 0.52102,
+      "audit": {
+        "detectorConfidence": 0.90828,
+        "faceBox": [
+          0.32855,
+          0.33971,
+          0.34689,
+          0.34689
+        ],
+        "subjectTop": 0.08054,
+        "shirtTop": 0.7201
+      }
+    },
+    {
+      "id": "original-03",
+      "sourceSha256": "3857617ce4cdc368d25726b072e6060df17034e1a80afd08f86a158059fd4748",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.85816,
+        "faceBox": [
+          0.33254,
+          0.31898,
+          0.37161,
+          0.37161
+        ],
+        "subjectTop": 0.08214,
+        "shirtTop": 0.69777
+      }
+    },
+    {
+      "id": "original-04",
+      "sourceSha256": "71643dc048e5296d3ca60b3bc2796f4a0d546870bf721ba92c22e8d4145c031d",
+      "scale": 1.06546,
+      "centerX": 0.5299,
+      "centerY": 0.509,
+      "audit": {
+        "detectorConfidence": 0.89414,
+        "faceBox": [
+          0.35805,
+          0.32855,
+          0.3437,
+          0.3437
+        ],
+        "subjectTop": 0.07257,
+        "shirtTop": 0.7193
+      }
+    },
+    {
+      "id": "original-05",
+      "sourceSha256": "d38cc1dc6f3566d950b18c63e053c611941f464bae88ec34f6c9d69f93be3492",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.91308,
+        "faceBox": [
+          0.33014,
+          0.30144,
+          0.36922,
+          0.36922
+        ],
+        "subjectTop": 0.05104,
+        "shirtTop": 0.69219
+      }
+    },
+    {
+      "id": "original-06",
+      "sourceSha256": "911ec2495aa53aa2fba1851bed56b9e2c5a205c4bf9dea4bc6973780caace5e2",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.92522,
+        "faceBox": [
+          0.32456,
+          0.3134,
+          0.39952,
+          0.39952
+        ],
+        "subjectTop": 0.05742,
+        "shirtTop": 0.74003
+      }
+    },
+    {
+      "id": "original-07",
+      "sourceSha256": "3b110452ed1e4a70c1708ffc891b05cb29e3bc6e5141ca74894e8b22bdacd5b7",
+      "scale": 1.16257,
+      "centerX": 0.50997,
+      "centerY": 0.45739,
+      "audit": {
+        "detectorConfidence": 0.94232,
+        "faceBox": [
+          0.35247,
+          0.36204,
+          0.31499,
+          0.31499
+        ],
+        "subjectTop": 0.05742,
+        "shirtTop": 0.73923
+      }
+    },
+    {
+      "id": "original-08",
+      "sourceSha256": "46239680f61d76d64592a270f06586aee71270922bd4db6e12b9021b99487a27",
+      "scale": 1.00705,
+      "centerX": 0.5035,
+      "centerY": 0.5035,
+      "audit": {
+        "detectorConfidence": 0.87244,
+        "faceBox": [
+          0.33014,
+          0.33892,
+          0.36364,
+          0.36364
+        ],
+        "subjectTop": 0.07177,
+        "shirtTop": 0.73604
+      }
+    },
+    {
+      "id": "original-09",
+      "sourceSha256": "4538c824caac2056f6615f3491e6667dfb89210741fd5d6656cb4c07be1eeec8",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.91045,
+        "faceBox": [
+          0.29825,
+          0.2799,
+          0.40271,
+          0.40271
+        ],
+        "subjectTop": 0.04944,
+        "shirtTop": 0.68581
+      }
+    },
+    {
+      "id": "original-10",
+      "sourceSha256": "51d57afe6ce643eb066c55c8ffec9f8f174c242eeee9df8a46490e931f8ce2e2",
+      "scale": 1.23114,
+      "centerX": 0.52671,
+      "centerY": 0.49253,
+      "audit": {
+        "detectorConfidence": 0.96458,
+        "faceBox": [
+          0.37799,
+          0.32775,
+          0.29745,
+          0.29745
+        ],
+        "subjectTop": 0.11483,
+        "shirtTop": 0.66587
+      }
+    },
+    {
+      "id": "expanded-01",
+      "sourceSha256": "2061bccab12c34d6623c39d8396867369c8ea968ef2e262c532e39c8c1d6ac30",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.88005,
+        "faceBox": [
+          0.33413,
+          0.30941,
+          0.38198,
+          0.38198
+        ],
+        "subjectTop": 0.09011,
+        "shirtTop": 0.76475
+      }
+    },
+    {
+      "id": "expanded-02",
+      "sourceSha256": "2c18e4614f3de0b24e75b909ca05c0ae1365ddcaff7b53be1254ef7514105a89",
+      "scale": 1.00047,
+      "centerX": 0.50023,
+      "centerY": 0.50023,
+      "audit": {
+        "detectorConfidence": 0.90953,
+        "faceBox": [
+          0.33413,
+          0.29346,
+          0.36603,
+          0.36603
+        ],
+        "subjectTop": 0.04147,
+        "shirtTop": 0.72089
+      }
+    },
+    {
+      "id": "expanded-03",
+      "sourceSha256": "3af294947891b659b4feb91928e030a4ddd33a1c67ec9a8fd87b5813d5453136",
+      "scale": 1.01596,
+      "centerX": 0.50786,
+      "centerY": 0.49428,
+      "audit": {
+        "detectorConfidence": 0.95775,
+        "faceBox": [
+          0.33892,
+          0.2799,
+          0.36045,
+          0.36045
+        ],
+        "subjectTop": 0.04944,
+        "shirtTop": 0.69537
+      }
+    },
+    {
+      "id": "expanded-04",
+      "sourceSha256": "01dfba8f2968d82fa5c59f96a161ab1cfb032b19e5ff2b9b072cf23fd840dd97",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.9066,
+        "faceBox": [
+          0.31738,
+          0.29107,
+          0.40431,
+          0.40431
+        ],
+        "subjectTop": 0.07735,
+        "shirtTop": 0.71531
+      }
+    },
+    {
+      "id": "expanded-05",
+      "sourceSha256": "c1a425f57087caff5a73736eaf0dbf1a7e2290614ffa0e2858a3726e0d3df99c",
+      "scale": 1.00047,
+      "centerX": 0.50023,
+      "centerY": 0.49999,
+      "audit": {
+        "detectorConfidence": 0.9634,
+        "faceBox": [
+          0.3437,
+          0.2823,
+          0.36603,
+          0.36603
+        ],
+        "subjectTop": 0.06619,
+        "shirtTop": 0.72089
+      }
+    },
+    {
+      "id": "expanded-06",
+      "sourceSha256": "1b379dc1bdbde59434fbabb1d62dcfa0b09e55eb84ca7ef72097c46365edf60f",
+      "scale": 1.01821,
+      "centerX": 0.50894,
+      "centerY": 0.50134,
+      "audit": {
+        "detectorConfidence": 0.92155,
+        "faceBox": [
+          0.33174,
+          0.34769,
+          0.35965,
+          0.35965
+        ],
+        "subjectTop": 0.04466,
+        "shirtTop": 0.75758
+      }
+    },
+    {
+      "id": "expanded-07",
+      "sourceSha256": "1b8feb65c98957b1e108b96afffe627b351d1da53a2be50ebd2b1a0a5d2f5509",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.92883,
+        "faceBox": [
+          0.29904,
+          0.30463,
+          0.42903,
+          0.42903
+        ],
+        "subjectTop": 0.04944,
+        "shirtTop": 0.71531
+      }
+    },
+    {
+      "id": "expanded-08",
+      "sourceSha256": "dd4b7190a01de16f82a675cbf3e4e6c744ebbe5713bc6c552614203f6b23f2cb",
+      "scale": 1.00705,
+      "centerX": 0.5035,
+      "centerY": 0.5035,
+      "audit": {
+        "detectorConfidence": 0.96089,
+        "faceBox": [
+          0.32616,
+          0.29027,
+          0.36364,
+          0.36364
+        ],
+        "subjectTop": 0.06539,
+        "shirtTop": 0.71691
+      }
+    },
+    {
+      "id": "expanded-09",
+      "sourceSha256": "db1020b70fcb6029363a77e7aee0a07f9a93a6a113f348a1829d72f24d4fa472",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.95234,
+        "faceBox": [
+          0.3118,
+          0.26555,
+          0.39952,
+          0.39952
+        ],
+        "subjectTop": 0.05582,
+        "shirtTop": 0.69537
+      }
+    },
+    {
+      "id": "expanded-10",
+      "sourceSha256": "0dadf25b476592402d82adf43cebef8b0859eaef9e3702b9a26c0daeb1728193",
+      "scale": 1.05324,
+      "centerX": 0.52472,
+      "centerY": 0.48191,
+      "audit": {
+        "detectorConfidence": 0.9522,
+        "faceBox": [
+          0.35088,
+          0.27512,
+          0.34769,
+          0.34769
+        ],
+        "subjectTop": 0.05742,
+        "shirtTop": 0.74003
+      }
+    },
+    {
+      "id": "expanded-11",
+      "sourceSha256": "625e9de28d4fdcca2089234238b5d7cd60fe7825c95ebc935ded8e1e0f21ac38",
+      "scale": 1.10388,
+      "centerX": 0.49681,
+      "centerY": 0.46749,
+      "audit": {
+        "detectorConfidence": 0.9395,
+        "faceBox": [
+          0.33094,
+          0.35088,
+          0.33174,
+          0.33174
+        ],
+        "subjectTop": 0.04625,
+        "shirtTop": 0.70893
+      }
+    },
+    {
+      "id": "expanded-12",
+      "sourceSha256": "7c6ed737e8ba124a42f904b2ac418f5b08bc638f84e94384bf2970f2328001d0",
+      "scale": 1.03427,
+      "centerX": 0.51657,
+      "centerY": 0.48343,
+      "audit": {
+        "detectorConfidence": 0.90636,
+        "faceBox": [
+          0.34609,
+          0.34131,
+          0.35407,
+          0.35407
+        ],
+        "subjectTop": 0.02871,
+        "shirtTop": 0.77113
+      }
+    },
+    {
+      "id": "expanded-13",
+      "sourceSha256": "24503cc1a62ce6aa8e9c4bf1ca4b576041cb00217089f8a609cd31908ed78a73",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.87414,
+        "faceBox": [
+          0.28868,
+          0.2823,
+          0.43301,
+          0.43301
+        ],
+        "subjectTop": 0.07177,
+        "shirtTop": 0.71451
+      }
+    },
+    {
+      "id": "expanded-14",
+      "sourceSha256": "4231bdb2090a592480074c3dd1ae2754c2a51f5190cf90ae3382a3604f148f28",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.9532,
+        "faceBox": [
+          0.31659,
+          0.32935,
+          0.4051,
+          0.4051
+        ],
+        "subjectTop": 0.04944,
+        "shirtTop": 0.7807
+      }
+    },
+    {
+      "id": "expanded-15",
+      "sourceSha256": "868588c525ebe137bfa3127e9567f355c4caf45e85ebc790e1f0292686f2134b",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.85371,
+        "faceBox": [
+          0.30463,
+          0.29825,
+          0.40989,
+          0.40989
+        ],
+        "subjectTop": 0.07337,
+        "shirtTop": 0.72887
+      }
+    },
+    {
+      "id": "expanded-16",
+      "sourceSha256": "3f748f400617d8cb6f459fb3a65b0b3ba5b72ed93e03fd148c862d39bae85e8d",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.90456,
+        "faceBox": [
+          0.32616,
+          0.29904,
+          0.37241,
+          0.37241
+        ],
+        "subjectTop": 0.07257,
+        "shirtTop": 0.70255
+      }
+    },
+    {
+      "id": "expanded-17",
+      "sourceSha256": "e8217353d383439c395b679e175f21e916a4afcf7adbfd48c3bf82acfeccf89a",
+      "scale": 1.04844,
+      "centerX": 0.5231,
+      "centerY": 0.49615,
+      "audit": {
+        "detectorConfidence": 0.92237,
+        "faceBox": [
+          0.34848,
+          0.31818,
+          0.34928,
+          0.34928
+        ],
+        "subjectTop": 0.05263,
+        "shirtTop": 0.68182
+      }
+    },
+    {
+      "id": "expanded-18",
+      "sourceSha256": "e39d470af8ffd7d27368858874f135ef1a9bb6a211cd3799f81d27ebe634917e",
+      "scale": 1.0366,
+      "centerX": 0.51236,
+      "centerY": 0.49081,
+      "audit": {
+        "detectorConfidence": 0.96315,
+        "faceBox": [
+          0.33573,
+          0.2807,
+          0.35327,
+          0.35327
+        ],
+        "subjectTop": 0.07337,
+        "shirtTop": 0.79266
+      }
+    },
+    {
+      "id": "expanded-19",
+      "sourceSha256": "b7f54b2157df7d073b37bde8dbfc3da2273c1e34edbea2aaf00c8612af493be2",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.91975,
+        "faceBox": [
+          0.30542,
+          0.28788,
+          0.36683,
+          0.36683
+        ],
+        "subjectTop": 0.04864,
+        "shirtTop": 0.68979
+      }
+    },
+    {
+      "id": "expanded-20",
+      "sourceSha256": "b00e7b18a3010ddc195bc2024578d8e52394c443d3674cce416f058734f88796",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.81578,
+        "faceBox": [
+          0.30941,
+          0.30383,
+          0.39155,
+          0.39155
+        ],
+        "subjectTop": 0.05183,
+        "shirtTop": 0.69936
+      }
+    },
+    {
+      "id": "expanded-21",
+      "sourceSha256": "cb92d9a2422590cc55810eb0c4757900c10b9c07bc91e27e6acc24e315989be2",
+      "scale": 1.02275,
+      "centerX": 0.50279,
+      "centerY": 0.48888,
+      "audit": {
+        "detectorConfidence": 0.93634,
+        "faceBox": [
+          0.32376,
+          0.35726,
+          0.35805,
+          0.35805
+        ],
+        "subjectTop": 0.00399,
+        "shirtTop": 0.77352
+      }
+    },
+    {
+      "id": "expanded-22",
+      "sourceSha256": "3c7aa172337a7eff60ddf2f8aaafe4c7da2cc16fc51dc5e3b12caf445ab39987",
+      "scale": 1.01149,
+      "centerX": 0.50159,
+      "centerY": 0.4956,
+      "audit": {
+        "detectorConfidence": 0.93153,
+        "faceBox": [
+          0.32057,
+          0.37241,
+          0.36204,
+          0.36204
+        ],
+        "subjectTop": 0.03589,
+        "shirtTop": 0.75518
+      }
+    },
+    {
+      "id": "expanded-23",
+      "sourceSha256": "72962561387e418119dd482763ae88a1ec4b01ea90d43c626f8ef64381d6f1ef",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.88626,
+        "faceBox": [
+          0.33014,
+          0.33014,
+          0.36842,
+          0.36842
+        ],
+        "subjectTop": 0.0327,
+        "shirtTop": 0.70494
+      }
+    },
+    {
+      "id": "expanded-24",
+      "sourceSha256": "42328a821e729f5bd96f619071288d77642e09f8b6ee7c1278e53127688899f5",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.93332,
+        "faceBox": [
+          0.28868,
+          0.2815,
+          0.40431,
+          0.40431
+        ],
+        "subjectTop": 0.06619,
+        "shirtTop": 0.68979
+      }
+    },
+    {
+      "id": "expanded-25",
+      "sourceSha256": "0c5e5c1c7acb49f08137461dd294daf7b0a9c2cce864722f541eaf4d039c1569",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.85374,
+        "faceBox": [
+          0.30702,
+          0.28549,
+          0.39474,
+          0.39474
+        ],
+        "subjectTop": 0.04067,
+        "shirtTop": 0.69059
+      }
+    },
+    {
+      "id": "expanded-26",
+      "sourceSha256": "d21f55af35afcbfcc54767b71dafc5005f3299c85cbb5f0c9689ba799ec12ccf",
+      "scale": 1.00926,
+      "centerX": 0.50439,
+      "centerY": 0.50459,
+      "audit": {
+        "detectorConfidence": 0.87927,
+        "faceBox": [
+          0.32297,
+          0.31898,
+          0.36284,
+          0.36284
+        ],
+        "subjectTop": 0.06858,
+        "shirtTop": 0.73445
+      }
+    },
+    {
+      "id": "expanded-27",
+      "sourceSha256": "7bf32e42c1384cbdcb6f7a1305226ffb3acb26d79ad83d8ec8aac1c17f4fc92d",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.97734,
+        "faceBox": [
+          0.33333,
+          0.33333,
+          0.38517,
+          0.38517
+        ],
+        "subjectTop": 0.07257,
+        "shirtTop": 0.77671
+      }
+    },
+    {
+      "id": "expanded-28",
+      "sourceSha256": "a4dc7710ada1b41ec4f27d7b5a1c359d1aa13e4ed258628a17a948663734dd7f",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.87813,
+        "faceBox": [
+          0.33014,
+          0.31499,
+          0.37799,
+          0.37799
+        ],
+        "subjectTop": 0.0614,
+        "shirtTop": 0.76077
+      }
+    },
+    {
+      "id": "fantasticos-001",
+      "sourceSha256": "dd85d27ff3cfce4019695666304ca653f807abb70ed95751f99f646496d11890",
+      "scale": 1.16257,
+      "centerX": 0.52273,
+      "centerY": 0.46377,
+      "audit": {
+        "detectorConfidence": 0.97227,
+        "faceBox": [
+          0.36523,
+          0.28549,
+          0.31499,
+          0.31499
+        ],
+        "subjectTop": 0.0638,
+        "shirtTop": 0.66108
+      }
+    },
+    {
+      "id": "fantasticos-002",
+      "sourceSha256": "9412abba20b7ab9e619ca54d945c306be771627862a3795ea026a881e05e7a4e",
+      "scale": 1.06794,
+      "centerX": 0.52871,
+      "centerY": 0.48465,
+      "audit": {
+        "detectorConfidence": 0.95714,
+        "faceBox": [
+          0.35726,
+          0.2807,
+          0.3429,
+          0.3429
+        ],
+        "subjectTop": 0.09888,
+        "shirtTop": 0.61404
+      }
+    },
+    {
+      "id": "fantasticos-003",
+      "sourceSha256": "3c10f2db1d1f442c701771ecf7db30683d9600a4a41469ff7a28b0e12723c55b",
+      "scale": 1.28272,
+      "centerX": 0.50957,
+      "centerY": 0.45847,
+      "audit": {
+        "detectorConfidence": 0.95023,
+        "faceBox": [
+          0.36683,
+          0.28868,
+          0.28549,
+          0.28549
+        ],
+        "subjectTop": 0.12041,
+        "shirtTop": 0.689
+      }
+    },
+    {
+      "id": "fantasticos-004",
+      "sourceSha256": "8e4e876321d2599f9371029ddb554ff92f18efa9e1b26c3c48070192e318805a",
+      "scale": 1.15671,
+      "centerX": 0.52273,
+      "centerY": 0.47457,
+      "audit": {
+        "detectorConfidence": 0.96258,
+        "faceBox": [
+          0.36443,
+          0.36603,
+          0.31659,
+          0.31659
+        ],
+        "subjectTop": 0.07257,
+        "shirtTop": 0.64274
+      }
+    },
+    {
+      "id": "fantasticos-005",
+      "sourceSha256": "1695ade2830c45789ab1342134518788cc86d462ddc36c3b3860bd8d819f9992",
+      "scale": 1.06054,
+      "centerX": 0.51236,
+      "centerY": 0.47171,
+      "audit": {
+        "detectorConfidence": 0.94592,
+        "faceBox": [
+          0.33971,
+          0.26635,
+          0.3453,
+          0.3453
+        ],
+        "subjectTop": 0.07257,
+        "shirtTop": 0.55821
+      }
+    },
+    {
+      "id": "fantasticos-006",
+      "sourceSha256": "924ea0b33b9d9ca4306ec854e5530c9d6ac3d2982da1f961517be355ece20366",
+      "scale": 1.18968,
+      "centerX": 0.53429,
+      "centerY": 0.4738,
+      "audit": {
+        "detectorConfidence": 0.9807,
+        "faceBox": [
+          0.38038,
+          0.30463,
+          0.30781,
+          0.30781
+        ],
+        "subjectTop": 0.08293,
+        "shirtTop": 0.65789
+      }
+    },
+    {
+      "id": "fantasticos-007",
+      "sourceSha256": "f884cb852a2417077d93db531fb3565bc50a520b8b42314ed7e0b82271390007",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.93471,
+        "faceBox": [
+          0.34609,
+          0.31021,
+          0.37719,
+          0.37719
+        ],
+        "subjectTop": 0.08134,
+        "shirtTop": 0.69139
+      }
+    },
+    {
+      "id": "fantasticos-008",
+      "sourceSha256": "7c1344c9eda31b9f29f23b4c082179e8b7879ca1043ab57005b672b25c7b418d",
+      "scale": 1.18354,
+      "centerX": 0.50877,
+      "centerY": 0.45276,
+      "audit": {
+        "detectorConfidence": 0.96047,
+        "faceBox": [
+          0.35407,
+          0.26874,
+          0.30941,
+          0.30941
+        ],
+        "subjectTop": 0.10128,
+        "shirtTop": 0.68182
+      }
+    },
+    {
+      "id": "fantasticos-009",
+      "sourceSha256": "f3110393b6fdefef32dfe22151d6e5765c9a536fce6ffa3ea662c746b06168c4",
+      "scale": 1.19587,
+      "centerX": 0.50718,
+      "centerY": 0.47656,
+      "audit": {
+        "detectorConfidence": 0.94508,
+        "faceBox": [
+          0.35407,
+          0.35247,
+          0.30622,
+          0.30622
+        ],
+        "subjectTop": 0.08772,
+        "shirtTop": 0.62121
+      }
+    },
+    {
+      "id": "fantasticos-010",
+      "sourceSha256": "f6c5dd4aa8b7f48fffb64746ae4e7761c9ecadd547c4832a32fb73ea39df9c96",
+      "scale": 1.09598,
+      "centerX": 0.48923,
+      "centerY": 0.4571,
+      "audit": {
+        "detectorConfidence": 0.91936,
+        "faceBox": [
+          0.32217,
+          0.25837,
+          0.33413,
+          0.33413
+        ],
+        "subjectTop": 0.08054,
+        "shirtTop": 0.55662
+      }
+    },
+    {
+      "id": "fantasticos-011",
+      "sourceSha256": "197120844402af092ae83fd176eb8cdfff210ff24e0b0c1aa7c883cf965c12c3",
+      "scale": 1.16849,
+      "centerX": 0.53708,
+      "centerY": 0.49046,
+      "audit": {
+        "detectorConfidence": 0.97416,
+        "faceBox": [
+          0.38038,
+          0.32217,
+          0.3134,
+          0.3134
+        ],
+        "subjectTop": 0.0925,
+        "shirtTop": 0.68262
+      }
+    },
+    {
+      "id": "fantasticos-012",
+      "sourceSha256": "3b984797ccbb3583901e979a133df4cfc4a7af33d126c015c533141e2f296966",
+      "scale": 1.0581,
+      "centerX": 0.51595,
+      "centerY": 0.48335,
+      "audit": {
+        "detectorConfidence": 0.94299,
+        "faceBox": [
+          0.3429,
+          0.27751,
+          0.34609,
+          0.34609
+        ],
+        "subjectTop": 0.07337,
+        "shirtTop": 0.64274
+      }
+    },
+    {
+      "id": "fantasticos-013",
+      "sourceSha256": "c9c076b6238ff72a673cd920596100199c8c5ca162b4743e885cf8413078d02d",
+      "scale": 1.28632,
+      "centerX": 0.51635,
+      "centerY": 0.49548,
+      "audit": {
+        "detectorConfidence": 0.95557,
+        "faceBox": [
+          0.374,
+          0.32616,
+          0.28469,
+          0.28469
+        ],
+        "subjectTop": 0.15869,
+        "shirtTop": 0.6874
+      }
+    },
+    {
+      "id": "fantasticos-014",
+      "sourceSha256": "0b9c06b1b30e5a844631565a69638bb7b3bce877e75cdf1cbf2b949ca8e96a37",
+      "scale": 1.22785,
+      "centerX": 0.52392,
+      "centerY": 0.43453,
+      "audit": {
+        "detectorConfidence": 0.95454,
+        "faceBox": [
+          0.3748,
+          0.2815,
+          0.29825,
+          0.29825
+        ],
+        "subjectTop": 0.05582,
+        "shirtTop": 0.60128
+      }
+    },
+    {
+      "id": "fantasticos-015",
+      "sourceSha256": "3abf59c8ca736bc9f1e7941b0b1df1c7df5e510b115999000597ea4bd413bb5b",
+      "scale": 1.21485,
+      "centerX": 0.49442,
+      "centerY": 0.45373,
+      "audit": {
+        "detectorConfidence": 0.97077,
+        "faceBox": [
+          0.3437,
+          0.32775,
+          0.30144,
+          0.30144
+        ],
+        "subjectTop": 0.07097,
+        "shirtTop": 0.68022
+      }
+    },
+    {
+      "id": "fantasticos-016",
+      "sourceSha256": "e5461bc70c31ae0139157c7a37020076656552d1d1f125348b063a16d04f752b",
+      "scale": 1.20213,
+      "centerX": 0.52871,
+      "centerY": 0.45539,
+      "audit": {
+        "detectorConfidence": 0.97701,
+        "faceBox": [
+          0.3764,
+          0.30781,
+          0.30463,
+          0.30463
+        ],
+        "subjectTop": 0.06858,
+        "shirtTop": 0.66667
+      }
+    },
+    {
+      "id": "fantasticos-017",
+      "sourceSha256": "743a6534f231c0a1f587f6827352a3d6e09df796b49d4f7a1a871659625c7564",
+      "scale": 1.13107,
+      "centerX": 0.52711,
+      "centerY": 0.51632,
+      "audit": {
+        "detectorConfidence": 0.92804,
+        "faceBox": [
+          0.36523,
+          0.32376,
+          0.32376,
+          0.32376
+        ],
+        "subjectTop": 0.11005,
+        "shirtTop": 0.6571
+      }
+    },
+    {
+      "id": "fantasticos-018",
+      "sourceSha256": "300b1eeed86fd86c7f833382403eff313c0731096cd1190b4d2565fba18b1e92",
+      "scale": 1.13386,
+      "centerX": 0.52273,
+      "centerY": 0.51776,
+      "audit": {
+        "detectorConfidence": 0.92272,
+        "faceBox": [
+          0.36124,
+          0.32935,
+          0.32297,
+          0.32297
+        ],
+        "subjectTop": 0.10766,
+        "shirtTop": 0.72727
+      }
+    },
+    {
+      "id": "fantasticos-019",
+      "sourceSha256": "fa5a4ca5064ef542e53e0cb2f8c40338d03025a852816c31a8f97ae65b5fdda5",
+      "scale": 1.16849,
+      "centerX": 0.51954,
+      "centerY": 0.49205,
+      "audit": {
+        "detectorConfidence": 0.95571,
+        "faceBox": [
+          0.36284,
+          0.32935,
+          0.3134,
+          0.3134
+        ],
+        "subjectTop": 0.0941,
+        "shirtTop": 0.65789
+      }
+    },
+    {
+      "id": "fantasticos-020",
+      "sourceSha256": "17d27e0a5a50f4aaa834c677c0e9cdee48770edb2209bb25f0a496814513c06c",
+      "scale": 1.30459,
+      "centerX": 0.50399,
+      "centerY": 0.43458,
+      "audit": {
+        "detectorConfidence": 0.96978,
+        "faceBox": [
+          0.36364,
+          0.35646,
+          0.2807,
+          0.2807
+        ],
+        "subjectTop": 0.07815,
+        "shirtTop": 0.70654
+      }
+    },
+    {
+      "id": "fantasticos-021",
+      "sourceSha256": "3d559039cd46a54194ba283085db9e40eac9c760a3b5d6ee57cd489192d0b17f",
+      "scale": 1.20529,
+      "centerX": 0.51555,
+      "centerY": 0.47591,
+      "audit": {
+        "detectorConfidence": 0.97176,
+        "faceBox": [
+          0.36364,
+          0.30702,
+          0.30383,
+          0.30383
+        ],
+        "subjectTop": 0.09011,
+        "shirtTop": 0.66667
+      }
+    },
+    {
+      "id": "fantasticos-022",
+      "sourceSha256": "af7e0611a51c2807d4d9e7f2116e81cc2727a159ac317d30d618a35d7c027d05",
+      "scale": 1.01372,
+      "centerX": 0.50677,
+      "centerY": 0.49323,
+      "audit": {
+        "detectorConfidence": 0.9473,
+        "faceBox": [
+          0.3437,
+          0.27831,
+          0.36124,
+          0.36124
+        ],
+        "subjectTop": 0.06539,
+        "shirtTop": 0.65391
+      }
+    },
+    {
+      "id": "fantasticos-023",
+      "sourceSha256": "6fc016c36a6a6b9b0ce4e1b9d8f18eeb354a2c097c029954bd4903ac203d817d",
+      "scale": 1.24112,
+      "centerX": 0.52153,
+      "centerY": 0.50324,
+      "audit": {
+        "detectorConfidence": 0.94632,
+        "faceBox": [
+          0.374,
+          0.32775,
+          0.29506,
+          0.29506
+        ],
+        "subjectTop": 0.13557,
+        "shirtTop": 0.59809
+      }
+    },
+    {
+      "id": "fantasticos-024",
+      "sourceSha256": "7a1ed53d94b7d70ef959d4e55de805130d067eda72d25f7bdb3924116e6c0d6f",
+      "scale": 1.1805,
+      "centerX": 0.50997,
+      "centerY": 0.45802,
+      "audit": {
+        "detectorConfidence": 0.94353,
+        "faceBox": [
+          0.35486,
+          0.27352,
+          0.31021,
+          0.31021
+        ],
+        "subjectTop": 0.09171,
+        "shirtTop": 0.60845
+      }
+    },
+    {
+      "id": "fantasticos-025",
+      "sourceSha256": "ab3e0e4eb97deb0dab4d0410e58d3a4a66e0ef35cb3c926535b3d921b4463a70",
+      "scale": 1.26158,
+      "centerX": 0.51595,
+      "centerY": 0.44993,
+      "audit": {
+        "detectorConfidence": 0.96461,
+        "faceBox": [
+          0.37081,
+          0.31499,
+          0.29027,
+          0.29027
+        ],
+        "subjectTop": 0.08134,
+        "shirtTop": 0.66108
+      }
+    },
+    {
+      "id": "fantasticos-026",
+      "sourceSha256": "4d15757bcd7aa5245f3852ac727a36b0f4d4e58db067b7778bbc0c0c7a72f065",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.99104,
+        "faceBox": [
+          0.35327,
+          0.24801,
+          0.36762,
+          0.36762
+        ],
+        "subjectTop": 0.08373,
+        "shirtTop": 0.63557
+      }
+    },
+    {
+      "id": "fantasticos-027",
+      "sourceSha256": "edde4e41504f7731539e299d9e84bf5f207b646b27091db04cafcf5d58d09e43",
+      "scale": 1.30089,
+      "centerX": 0.52911,
+      "centerY": 0.42683,
+      "audit": {
+        "detectorConfidence": 0.96869,
+        "faceBox": [
+          0.38836,
+          0.30383,
+          0.2815,
+          0.2815
+        ],
+        "subjectTop": 0.06938,
+        "shirtTop": 0.63477
+      }
+    },
+    {
+      "id": "fantasticos-028",
+      "sourceSha256": "d56cd3c7c2c8136819582f0442cbd4a74b4879452dcb4472e57be27e8718d05b",
+      "scale": 1.09077,
+      "centerX": 0.51555,
+      "centerY": 0.51227,
+      "audit": {
+        "detectorConfidence": 0.92982,
+        "faceBox": [
+          0.34769,
+          0.3126,
+          0.33573,
+          0.33573
+        ],
+        "subjectTop": 0.10526,
+        "shirtTop": 0.69617
+      }
+    },
+    {
+      "id": "fantasticos-029",
+      "sourceSha256": "d2452025ad1ced8da0dd9aebf1fdccb09597a435cdce236756cf99a346eed620",
+      "scale": 1.16257,
+      "centerX": 0.51037,
+      "centerY": 0.47682,
+      "audit": {
+        "detectorConfidence": 0.97332,
+        "faceBox": [
+          0.35247,
+          0.28947,
+          0.31579,
+          0.31499
+        ],
+        "subjectTop": 0.09888,
+        "shirtTop": 0.62919
+      }
+    },
+    {
+      "id": "fantasticos-030",
+      "sourceSha256": "34d5a070192cebaa091c287a29c1a29af23b4423794533626f00b24c1503a24f",
+      "scale": 1.22785,
+      "centerX": 0.50239,
+      "centerY": 0.45888,
+      "audit": {
+        "detectorConfidence": 0.93938,
+        "faceBox": [
+          0.35327,
+          0.2815,
+          0.29825,
+          0.29825
+        ],
+        "subjectTop": 0.10766,
+        "shirtTop": 0.64992
+      }
+    },
+    {
+      "id": "fantasticos-031",
+      "sourceSha256": "a9f9f2802c68dc7039c2d08ed14bf69cb291fa6fc5fd17cc417122922d2b4379",
+      "scale": 1.0413,
+      "centerX": 0.51156,
+      "centerY": 0.48827,
+      "audit": {
+        "detectorConfidence": 0.94197,
+        "faceBox": [
+          0.33573,
+          0.27911,
+          0.35167,
+          0.35167
+        ],
+        "subjectTop": 0.09888,
+        "shirtTop": 0.6555
+      }
+    },
+    {
+      "id": "fantasticos-032",
+      "sourceSha256": "77fddde064fd1f95f1a0012c5aedd7d9538eac6696726cb2ed6877ccf3fea412",
+      "scale": 1.19277,
+      "centerX": 0.53788,
+      "centerY": 0.47287,
+      "audit": {
+        "detectorConfidence": 0.95131,
+        "faceBox": [
+          0.38437,
+          0.29027,
+          0.30702,
+          0.30702
+        ],
+        "subjectTop": 0.0941,
+        "shirtTop": 0.65949
+      }
+    },
+    {
+      "id": "fantasticos-033",
+      "sourceSha256": "883ac681e378186902a09a3ec1c83e6cd86d841961d8c0ed6d14071c08593972",
+      "scale": 1.08305,
+      "centerX": 0.52552,
+      "centerY": 0.50094,
+      "audit": {
+        "detectorConfidence": 0.96171,
+        "faceBox": [
+          0.35646,
+          0.29984,
+          0.33812,
+          0.33812
+        ],
+        "subjectTop": 0.13716,
+        "shirtTop": 0.57974
+      }
+    },
+    {
+      "id": "fantasticos-034",
+      "sourceSha256": "5c7b0dc673a5b3a16de646324f6e8b180c47bde190d9003e78b38143f4913eb0",
+      "scale": 1.1866,
+      "centerX": 0.51954,
+      "centerY": 0.47003,
+      "audit": {
+        "detectorConfidence": 0.95038,
+        "faceBox": [
+          0.36523,
+          0.33254,
+          0.30861,
+          0.30861
+        ],
+        "subjectTop": 0.07815,
+        "shirtTop": 0.67624
+      }
+    },
+    {
+      "id": "fantasticos-035",
+      "sourceSha256": "3efcc9c4c10002ea61c7d267a2db7973c3819a6bb41e3ea5f787b16a98c00b3a",
+      "scale": 1.38,
+      "centerX": 0.49123,
+      "centerY": 0.45897,
+      "audit": {
+        "detectorConfidence": 0.90281,
+        "faceBox": [
+          0.36523,
+          0.32775,
+          0.25199,
+          0.25199
+        ],
+        "subjectTop": 0.12201,
+        "shirtTop": 0.63317
+      }
+    },
+    {
+      "id": "fantasticos-036",
+      "sourceSha256": "f82e5e8f8e024385e26946317cb024e09e990b154267771610e7136cde18edaf",
+      "scale": 1.38,
+      "centerX": 0.53628,
+      "centerY": 0.45138,
+      "audit": {
+        "detectorConfidence": 0.94548,
+        "faceBox": [
+          0.40909,
+          0.29904,
+          0.25439,
+          0.25439
+        ],
+        "subjectTop": 0.14115,
+        "shirtTop": 0.60048
+      }
+    },
+    {
+      "id": "fantasticos-037",
+      "sourceSha256": "95433ec7fbb1daab3a364b5ade0c8f60a7120936d513867be18f3360db5b480a",
+      "scale": 1.1805,
+      "centerX": 0.52751,
+      "centerY": 0.48753,
+      "audit": {
+        "detectorConfidence": 0.96686,
+        "faceBox": [
+          0.37241,
+          0.30303,
+          0.31021,
+          0.31021
+        ],
+        "subjectTop": 0.12919,
+        "shirtTop": 0.62679
+      }
+    },
+    {
+      "id": "fantasticos-038",
+      "sourceSha256": "4c0f348eba11bc8da86f4ec6bd89a3698cba681c69a24bba4c635ca427ac0f94",
+      "scale": 1.11731,
+      "centerX": 0.50758,
+      "centerY": 0.45844,
+      "audit": {
+        "detectorConfidence": 0.96937,
+        "faceBox": [
+          0.3437,
+          0.40909,
+          0.32775,
+          0.32775
+        ],
+        "subjectTop": 0.04226,
+        "shirtTop": 0.77512
+      }
+    },
+    {
+      "id": "fantasticos-039",
+      "sourceSha256": "d90969cd8b0e54d4609bb2d12abf05350e0e9463e25c168bab7fde8e27b63ae3",
+      "scale": 1.13949,
+      "centerX": 0.52273,
+      "centerY": 0.52208,
+      "audit": {
+        "detectorConfidence": 0.95224,
+        "faceBox": [
+          0.36204,
+          0.33094,
+          0.32137,
+          0.32137
+        ],
+        "subjectTop": 0.1252,
+        "shirtTop": 0.68262
+      }
+    },
+    {
+      "id": "fantasticos-040",
+      "sourceSha256": "9ea61febd3702d1950c0d432b45add3fb2ae212860b42ecc68be4f5d04065cc4",
+      "scale": 1.10921,
+      "centerX": 0.52871,
+      "centerY": 0.51932,
+      "audit": {
+        "detectorConfidence": 0.91086,
+        "faceBox": [
+          0.36364,
+          0.32297,
+          0.33014,
+          0.33014
+        ],
+        "subjectTop": 0.11324,
+        "shirtTop": 0.70574
+      }
+    },
+    {
+      "id": "fantasticos-041",
+      "sourceSha256": "a195f05e93c4bf3d47b6ab95442e36c1e175fd4b62040b9577c2d151ada4c081",
+      "scale": 1.14233,
+      "centerX": 0.53668,
+      "centerY": 0.4913,
+      "audit": {
+        "detectorConfidence": 0.94584,
+        "faceBox": [
+          0.3764,
+          0.30064,
+          0.32057,
+          0.32057
+        ],
+        "subjectTop": 0.08453,
+        "shirtTop": 0.67464
+      }
+    },
+    {
+      "id": "fantasticos-042",
+      "sourceSha256": "edbe3e664fe194f537c1604aecc71645a536bdcb48fcc9a7f9c98efd75f44f4a",
+      "scale": 1.0413,
+      "centerX": 0.51983,
+      "centerY": 0.48508,
+      "audit": {
+        "detectorConfidence": 0.94522,
+        "faceBox": [
+          0.34928,
+          0.27592,
+          0.35167,
+          0.35167
+        ],
+        "subjectTop": 0.08852,
+        "shirtTop": 0.65789
+      }
+    },
+    {
+      "id": "fantasticos-043",
+      "sourceSha256": "a77471d7796c3d4a9b6fc8d2d837d5099946c4a001a49be18de7073a1de60e1d",
+      "scale": 1.24448,
+      "centerX": 0.51156,
+      "centerY": 0.50675,
+      "audit": {
+        "detectorConfidence": 0.97767,
+        "faceBox": [
+          0.36443,
+          0.33174,
+          0.29426,
+          0.29426
+        ],
+        "subjectTop": 0.15072,
+        "shirtTop": 0.59091
+      }
+    },
+    {
+      "id": "fantasticos-044",
+      "sourceSha256": "606cad15e9756db22f4dd7a36b6f45df349bc58b0a03f75a058aa0cebaea9e2b",
+      "scale": 1.1866,
+      "centerX": 0.51715,
+      "centerY": 0.47861,
+      "audit": {
+        "detectorConfidence": 0.97349,
+        "faceBox": [
+          0.36284,
+          0.29506,
+          0.30861,
+          0.30861
+        ],
+        "subjectTop": 0.09809,
+        "shirtTop": 0.62998
+      }
+    },
+    {
+      "id": "fantasticos-045",
+      "sourceSha256": "a1afb09ae6b27d205f06d2e1d84b7fd78618389ba2a7fcfa6dbc51574e1e4cb8",
+      "scale": 1.25127,
+      "centerX": 0.52193,
+      "centerY": 0.45158,
+      "audit": {
+        "detectorConfidence": 0.95683,
+        "faceBox": [
+          0.3756,
+          0.27751,
+          0.29266,
+          0.29266
+        ],
+        "subjectTop": 0.10367,
+        "shirtTop": 0.6252
+      }
+    },
+    {
+      "id": "fantasticos-046",
+      "sourceSha256": "cf4896bbbffe01d460825c03ad59b3666ac54da0399821502d17887d8941f0ad",
+      "scale": 1.23445,
+      "centerX": 0.52392,
+      "centerY": 0.47309,
+      "audit": {
+        "detectorConfidence": 0.97646,
+        "faceBox": [
+          0.3756,
+          0.29665,
+          0.29665,
+          0.29665
+        ],
+        "subjectTop": 0.11483,
+        "shirtTop": 0.62281
+      }
+    },
+    {
+      "id": "fantasticos-047",
+      "sourceSha256": "65512e08222df09ff4a5b6c32ca247f160b5831b5d2b8d05a3428d00716098c4",
+      "scale": 1.31958,
+      "centerX": 0.50399,
+      "centerY": 0.42741,
+      "audit": {
+        "detectorConfidence": 0.96417,
+        "faceBox": [
+          0.36523,
+          0.26236,
+          0.27751,
+          0.27751
+        ],
+        "subjectTop": 0.09809,
+        "shirtTop": 0.60287
+      }
+    },
+    {
+      "id": "fantasticos-048",
+      "sourceSha256": "a1bfe8169d806920f1ab23509081e0a061d09ace168e516cac478d2d79d8ed39",
+      "scale": 1.0986,
+      "centerX": 0.51276,
+      "centerY": 0.49331,
+      "audit": {
+        "detectorConfidence": 0.96141,
+        "faceBox": [
+          0.34609,
+          0.29506,
+          0.33333,
+          0.33333
+        ],
+        "subjectTop": 0.10048,
+        "shirtTop": 0.63955
+      }
+    },
+    {
+      "id": "fantasticos-049",
+      "sourceSha256": "371615b45bb9b8c950963f86e3e5addf72bd0dc66b5d394b889649766151b260",
+      "scale": 1.30089,
+      "centerX": 0.52273,
+      "centerY": 0.43616,
+      "audit": {
+        "detectorConfidence": 0.96596,
+        "faceBox": [
+          0.38198,
+          0.26874,
+          0.2815,
+          0.2815
+        ],
+        "subjectTop": 0.08931,
+        "shirtTop": 0.60048
+      }
+    },
+    {
+      "id": "fantasticos-050",
+      "sourceSha256": "765ebdf2ff0f92772474d6e0fc4073ea2a0462dde3cdaf00df04f6d002c50679",
+      "scale": 1.34667,
+      "centerX": 0.51396,
+      "centerY": 0.41148,
+      "audit": {
+        "detectorConfidence": 0.95834,
+        "faceBox": [
+          0.37799,
+          0.30861,
+          0.27193,
+          0.27193
+        ],
+        "subjectTop": 0.06619,
+        "shirtTop": 0.54625
+      }
+    },
+    {
+      "id": "fantasticos-051",
+      "sourceSha256": "befc7f4fcbb371de26f915c020eba7f99bce85a83f99ccc1a54082e71addf54b",
+      "scale": 1.13107,
+      "centerX": 0.53589,
+      "centerY": 0.46609,
+      "audit": {
+        "detectorConfidence": 0.95863,
+        "faceBox": [
+          0.374,
+          0.27352,
+          0.32376,
+          0.32376
+        ],
+        "subjectTop": 0.08453,
+        "shirtTop": 0.64992
+      }
+    },
+    {
+      "id": "fantasticos-052",
+      "sourceSha256": "4eb54b554362bd3a92400ab0394d6e59a90a266706a6cfa68cdf056b13eab764",
+      "scale": 1.01821,
+      "centerX": 0.50894,
+      "centerY": 0.50894,
+      "audit": {
+        "detectorConfidence": 0.97756,
+        "faceBox": [
+          0.36204,
+          0.30781,
+          0.35965,
+          0.35965
+        ],
+        "subjectTop": 0.10207,
+        "shirtTop": 0.68581
+      }
+    },
+    {
+      "id": "fantasticos-053",
+      "sourceSha256": "279c45e6289c3ad03b818d075a37aad0388113a845469fd589b7c52a18362e14",
+      "scale": 1.25812,
+      "centerX": 0.51874,
+      "centerY": 0.44265,
+      "audit": {
+        "detectorConfidence": 0.96731,
+        "faceBox": [
+          0.37321,
+          0.26954,
+          0.29107,
+          0.29107
+        ],
+        "subjectTop": 0.10367,
+        "shirtTop": 0.58692
+      }
+    },
+    {
+      "id": "fantasticos-054",
+      "sourceSha256": "6e17dba008bc90f647292279b5792d45db895bb4b130140b9e7ef752d1f99549",
+      "scale": 1.36671,
+      "centerX": 0.51515,
+      "centerY": 0.4273,
+      "audit": {
+        "detectorConfidence": 0.95473,
+        "faceBox": [
+          0.38118,
+          0.26794,
+          0.26794,
+          0.26794
+        ],
+        "subjectTop": 0.11005,
+        "shirtTop": 0.58692
+      }
+    },
+    {
+      "id": "fantasticos-055",
+      "sourceSha256": "0caf62535257f46662fff1b4076d7844d877c990f301e0e83a17b0362dbd8eab",
+      "scale": 1.18354,
+      "centerX": 0.52153,
+      "centerY": 0.49583,
+      "audit": {
+        "detectorConfidence": 0.95082,
+        "faceBox": [
+          0.36683,
+          0.3118,
+          0.30941,
+          0.30941
+        ],
+        "subjectTop": 0.12679,
+        "shirtTop": 0.57974
+      }
+    },
+    {
+      "id": "fantasticos-056",
+      "sourceSha256": "40b39faad5de1c00b2d2c436964564a80e80c9cf4963d17f1fbcc3aaa06d203f",
+      "scale": 1.1805,
+      "centerX": 0.51635,
+      "centerY": 0.53983,
+      "audit": {
+        "detectorConfidence": 0.96225,
+        "faceBox": [
+          0.36124,
+          0.35646,
+          0.31021,
+          0.31021
+        ],
+        "subjectTop": 0.14593,
+        "shirtTop": 0.6866
+      }
+    },
+    {
+      "id": "fantasticos-057",
+      "sourceSha256": "35747d258154172f4881e792a9d6c4eab2fce77b9163ef388352a760d87cb103",
+      "scale": 1.19899,
+      "centerX": 0.51715,
+      "centerY": 0.47751,
+      "audit": {
+        "detectorConfidence": 0.94315,
+        "faceBox": [
+          0.36443,
+          0.29585,
+          0.30542,
+          0.30542
+        ],
+        "subjectTop": 0.09649,
+        "shirtTop": 0.67384
+      }
+    },
+    {
+      "id": "fantasticos-058",
+      "sourceSha256": "01d5ab59a8b2a9523da16eb2f72b8872fa6807b763b6ca996dd365d366743f03",
+      "scale": 1.17147,
+      "centerX": 0.51276,
+      "centerY": 0.50061,
+      "audit": {
+        "detectorConfidence": 0.94795,
+        "faceBox": [
+          0.35646,
+          0.32616,
+          0.3126,
+          0.3126
+        ],
+        "subjectTop": 0.10367,
+        "shirtTop": 0.70574
+      }
+    },
+    {
+      "id": "fantasticos-059",
+      "sourceSha256": "090eab767771a7fc7e561fd70fc6b3d6988882ed7fadb0f50f6e49f4118179d2",
+      "scale": 1.22785,
+      "centerX": 0.51595,
+      "centerY": 0.47164,
+      "audit": {
+        "detectorConfidence": 0.96915,
+        "faceBox": [
+          0.36683,
+          0.29426,
+          0.29825,
+          0.29825
+        ],
+        "subjectTop": 0.10447,
+        "shirtTop": 0.60925
+      }
+    },
+    {
+      "id": "fantasticos-060",
+      "sourceSha256": "bb14e25a2617aa6ca2f8095a949298abfb0490abee33f58f5c7e03a73dbbc7d4",
+      "scale": 1.14517,
+      "centerX": 0.50837,
+      "centerY": 0.48604,
+      "audit": {
+        "detectorConfidence": 0.95508,
+        "faceBox": [
+          0.34848,
+          0.29585,
+          0.31978,
+          0.31978
+        ],
+        "subjectTop": 0.08293,
+        "shirtTop": 0.5949
+      }
+    },
+    {
+      "id": "fantasticos-061",
+      "sourceSha256": "5324bccf37799842c22ed3db643fb7f5007f6db01d3f17d83fbd925cfee9868e",
+      "scale": 1.15381,
+      "centerX": 0.52871,
+      "centerY": 0.46309,
+      "audit": {
+        "detectorConfidence": 0.96607,
+        "faceBox": [
+          0.37002,
+          0.27432,
+          0.31738,
+          0.31738
+        ],
+        "subjectTop": 0.07815,
+        "shirtTop": 0.62201
+      }
+    },
+    {
+      "id": "fantasticos-062",
+      "sourceSha256": "37043953c5a2779cd957a840e3329f2239a1b37dfd0894fc08a7294a8623c595",
+      "scale": 1.15381,
+      "centerX": 0.53509,
+      "centerY": 0.47904,
+      "audit": {
+        "detectorConfidence": 0.94725,
+        "faceBox": [
+          0.3764,
+          0.29027,
+          0.31738,
+          0.31738
+        ],
+        "subjectTop": 0.09171,
+        "shirtTop": 0.66108
+      }
+    },
+    {
+      "id": "fantasticos-063",
+      "sourceSha256": "1a9bc16b111d3520b4ad5d4bd7cebc0a9b1e34e94b607ad648daffebcc7b9078",
+      "scale": 1.13107,
+      "centerX": 0.52951,
+      "centerY": 0.48522,
+      "audit": {
+        "detectorConfidence": 0.96413,
+        "faceBox": [
+          0.36762,
+          0.29266,
+          0.32376,
+          0.32376
+        ],
+        "subjectTop": 0.10447,
+        "shirtTop": 0.57097
+      }
+    },
+    {
+      "id": "fantasticos-064",
+      "sourceSha256": "21618d13c0e689395f3d99fd0d61a4a126b0131aaf4592a5910ea19f81baa6b6",
+      "scale": 1.22785,
+      "centerX": 0.51675,
+      "centerY": 0.45846,
+      "audit": {
+        "detectorConfidence": 0.95666,
+        "faceBox": [
+          0.36762,
+          0.30383,
+          0.29825,
+          0.29825
+        ],
+        "subjectTop": 0.07974,
+        "shirtTop": 0.63158
+      }
+    },
+    {
+      "id": "fantasticos-065",
+      "sourceSha256": "787a339be94982a6199558a2b56643b366b41989ab4dca37b95f65978eaa796a",
+      "scale": 1.23778,
+      "centerX": 0.51236,
+      "centerY": 0.48856,
+      "audit": {
+        "detectorConfidence": 0.93172,
+        "faceBox": [
+          0.36443,
+          0.3126,
+          0.29585,
+          0.29585
+        ],
+        "subjectTop": 0.12919,
+        "shirtTop": 0.64593
+      }
+    },
+    {
+      "id": "fantasticos-066",
+      "sourceSha256": "31e5cc683a47e8570ecd61d89f5a4aca83f16a349b38210246f0e2494377cbb5",
+      "scale": 1.14804,
+      "centerX": 0.52632,
+      "centerY": 0.49994,
+      "audit": {
+        "detectorConfidence": 0.96761,
+        "faceBox": [
+          0.36683,
+          0.3453,
+          0.31898,
+          0.31898
+        ],
+        "subjectTop": 0.0949,
+        "shirtTop": 0.70016
+      }
+    },
+    {
+      "id": "fantasticos-067",
+      "sourceSha256": "549d77f84cd81dec6323f0a019d68f8399a60fff1cd8f5994ebcf80b9f5e9bc8",
+      "scale": 1.19277,
+      "centerX": 0.52671,
+      "centerY": 0.45373,
+      "audit": {
+        "detectorConfidence": 0.96888,
+        "faceBox": [
+          0.37321,
+          0.27113,
+          0.30702,
+          0.30702
+        ],
+        "subjectTop": 0.10048,
+        "shirtTop": 0.63876
+      }
+    },
+    {
+      "id": "fantasticos-068",
+      "sourceSha256": "9decd9e4feda29d81d64919c2b2011313456d3de3b530279c5830e94af8f6a55",
+      "scale": 1.15381,
+      "centerX": 0.51515,
+      "centerY": 0.45432,
+      "audit": {
+        "detectorConfidence": 0.95683,
+        "faceBox": [
+          0.35646,
+          0.26555,
+          0.31738,
+          0.31738
+        ],
+        "subjectTop": 0.11643,
+        "shirtTop": 0.66108
+      }
+    },
+    {
+      "id": "fantasticos-069",
+      "sourceSha256": "1937c20b0b989e782c92c66b6c680ac15709df62ff28e422f67590d562073ea6",
+      "scale": 1.22132,
+      "centerX": 0.50718,
+      "centerY": 0.45729,
+      "audit": {
+        "detectorConfidence": 0.94948,
+        "faceBox": [
+          0.35726,
+          0.28549,
+          0.29984,
+          0.29984
+        ],
+        "subjectTop": 0.07656,
+        "shirtTop": 0.58453
+      }
+    },
+    {
+      "id": "fantasticos-070",
+      "sourceSha256": "23fd1aada0f4c117efcb32823a2d3cf316ea2de9c3d034b0d59aeb50d3b3e81c",
+      "scale": 1.1805,
+      "centerX": 0.51874,
+      "centerY": 0.50906,
+      "audit": {
+        "detectorConfidence": 0.94564,
+        "faceBox": [
+          0.36364,
+          0.32456,
+          0.31021,
+          0.31021
+        ],
+        "subjectTop": 0.11802,
+        "shirtTop": 0.69537
+      }
+    },
+    {
+      "id": "fantasticos-071",
+      "sourceSha256": "91db5abdab123942779c0769bfda25d2f59b223db34f532f2a4c222f72262edd",
+      "scale": 1.21165,
+      "centerX": 0.51874,
+      "centerY": 0.44757,
+      "audit": {
+        "detectorConfidence": 0.97925,
+        "faceBox": [
+          0.36762,
+          0.29825,
+          0.30223,
+          0.30223
+        ],
+        "subjectTop": 0.0638,
+        "shirtTop": 0.63397
+      }
+    },
+    {
+      "id": "fantasticos-072",
+      "sourceSha256": "e364213c9ef53e3a13dfb7cebfbcdbbfb46c714da03dd0ce094586887f3b3bd7",
+      "scale": 1.19277,
+      "centerX": 0.51555,
+      "centerY": 0.46011,
+      "audit": {
+        "detectorConfidence": 0.95175,
+        "faceBox": [
+          0.36204,
+          0.27751,
+          0.30702,
+          0.30702
+        ],
+        "subjectTop": 0.08612,
+        "shirtTop": 0.60287
+      }
+    },
+    {
+      "id": "fantasticos-073",
+      "sourceSha256": "588c21e6dd7e75776289344f72fd4fe57c142736eedb298f20fa6eb3a6ff55a2",
+      "scale": 1.15963,
+      "centerX": 0.52233,
+      "centerY": 0.48527,
+      "audit": {
+        "detectorConfidence": 0.96889,
+        "faceBox": [
+          0.36443,
+          0.29745,
+          0.31579,
+          0.31579
+        ],
+        "subjectTop": 0.10447,
+        "shirtTop": 0.62041
+      }
+    },
+    {
+      "id": "fantasticos-074",
+      "sourceSha256": "7640e16e7e7022fc1902d3f62e3716aae656f5c24f2a789d60c61aab02708a1b",
+      "scale": 1.04605,
+      "centerX": 0.50917,
+      "centerY": 0.52201,
+      "audit": {
+        "detectorConfidence": 0.89722,
+        "faceBox": [
+          0.33413,
+          0.34051,
+          0.35008,
+          0.35008
+        ],
+        "subjectTop": 0.0941,
+        "shirtTop": 0.69059
+      }
+    },
+    {
+      "id": "fantasticos-075",
+      "sourceSha256": "73ef586402a011038699d4804fb856c374648a708c771ae51d8037b3c09ba211",
+      "scale": 1.13107,
+      "centerX": 0.50718,
+      "centerY": 0.48522,
+      "audit": {
+        "detectorConfidence": 0.96477,
+        "faceBox": [
+          0.3453,
+          0.29266,
+          0.32376,
+          0.32376
+        ],
+        "subjectTop": 0.10447,
+        "shirtTop": 0.62919
+      }
+    },
+    {
+      "id": "fantasticos-076",
+      "sourceSha256": "8f96d7349bc0393bcb35fae26156840cf44b3efb5852859d8b6ae732ad67f96d",
+      "scale": 1.21165,
+      "centerX": 0.5299,
+      "centerY": 0.45315,
+      "audit": {
+        "detectorConfidence": 0.97319,
+        "faceBox": [
+          0.37879,
+          0.29984,
+          0.30223,
+          0.30223
+        ],
+        "subjectTop": 0.06938,
+        "shirtTop": 0.62919
+      }
+    },
+    {
+      "id": "fantasticos-077",
+      "sourceSha256": "b8a4c0634da33cddcf9f6abad98fe2f1788e2b704647d23abc4529c389a93141",
+      "scale": 1.16257,
+      "centerX": 0.52193,
+      "centerY": 0.46326,
+      "audit": {
+        "detectorConfidence": 0.94481,
+        "faceBox": [
+          0.36443,
+          0.27592,
+          0.31499,
+          0.31499
+        ],
+        "subjectTop": 0.07257,
+        "shirtTop": 0.6555
+      }
+    },
+    {
+      "id": "fantasticos-078",
+      "sourceSha256": "f0362603439f28aa02739cc9d9d98815dd84ba1716d6d2f7db52c86cc2982853",
+      "scale": 1.23778,
+      "centerX": 0.50997,
+      "centerY": 0.45507,
+      "audit": {
+        "detectorConfidence": 0.96508,
+        "faceBox": [
+          0.36204,
+          0.27911,
+          0.29585,
+          0.29585
+        ],
+        "subjectTop": 0.11962,
+        "shirtTop": 0.64195
+      }
+    },
+    {
+      "id": "fantasticos-079",
+      "sourceSha256": "6af9f5b62f6758b4541381a7d79d441fa2364842b5b9cef50d0458b1ec514004",
+      "scale": 1.17446,
+      "centerX": 0.50359,
+      "centerY": 0.4821,
+      "audit": {
+        "detectorConfidence": 0.95051,
+        "faceBox": [
+          0.34769,
+          0.29665,
+          0.3118,
+          0.3118
+        ],
+        "subjectTop": 0.0933,
+        "shirtTop": 0.626
+      }
+    },
+    {
+      "id": "fantasticos-080",
+      "sourceSha256": "c5d9192fc914f958a44515e9bdb1ecabea1986fc6f88c52db07c2a2ce697e241",
+      "scale": 1.1866,
+      "centerX": 0.52033,
+      "centerY": 0.49376,
+      "audit": {
+        "detectorConfidence": 0.94882,
+        "faceBox": [
+          0.36603,
+          0.31021,
+          0.30861,
+          0.30861
+        ],
+        "subjectTop": 0.11722,
+        "shirtTop": 0.66507
+      }
+    },
+    {
+      "id": "fantasticos-081",
+      "sourceSha256": "1282dd2e579175c698ed95ca04ff0d607b3788b8d85f93ac84b44c5ce9d9087c",
+      "scale": 1.14517,
+      "centerX": 0.52592,
+      "centerY": 0.49083,
+      "audit": {
+        "detectorConfidence": 0.97252,
+        "faceBox": [
+          0.36603,
+          0.30064,
+          0.31978,
+          0.31978
+        ],
+        "subjectTop": 0.11164,
+        "shirtTop": 0.67145
+      }
+    },
+    {
+      "id": "fantasticos-082",
+      "sourceSha256": "f3cf3cdc49c28e4faebd9a6f8952b5a1e101f99b5f876ae4df55d58e8cee6615",
+      "scale": 1.19587,
+      "centerX": 0.53509,
+      "centerY": 0.49792,
+      "audit": {
+        "detectorConfidence": 0.95924,
+        "faceBox": [
+          0.38198,
+          0.31579,
+          0.30622,
+          0.30622
+        ],
+        "subjectTop": 0.13158,
+        "shirtTop": 0.64195
+      }
+    },
+    {
+      "id": "fantasticos-083",
+      "sourceSha256": "67a0f467bb6e0c97c2b08f06de40ed219465ca58921e18cd19591ddd35cdbc2c",
+      "scale": 1.31958,
+      "centerX": 0.50239,
+      "centerY": 0.4617,
+      "audit": {
+        "detectorConfidence": 0.95029,
+        "faceBox": [
+          0.36364,
+          0.29665,
+          0.27751,
+          0.27751
+        ],
+        "subjectTop": 0.12679,
+        "shirtTop": 0.63955
+      }
+    },
+    {
+      "id": "fantasticos-084",
+      "sourceSha256": "f3d78b97bf1522580c84fddf3754da107b6f18179247f8cd98f701aac3039940",
+      "scale": 1.17446,
+      "centerX": 0.50758,
+      "centerY": 0.49087,
+      "audit": {
+        "detectorConfidence": 0.96052,
+        "faceBox": [
+          0.35167,
+          0.30542,
+          0.3118,
+          0.3118
+        ],
+        "subjectTop": 0.10526,
+        "shirtTop": 0.63796
+      }
+    },
+    {
+      "id": "fantasticos-085",
+      "sourceSha256": "6348de4081c4b0cd42d951b64f500faf019f8f058bba4c10db56dab8964cbbc2",
+      "scale": 1.08051,
+      "centerX": 0.52592,
+      "centerY": 0.48626,
+      "audit": {
+        "detectorConfidence": 0.96382,
+        "faceBox": [
+          0.35646,
+          0.28469,
+          0.33892,
+          0.33892
+        ],
+        "subjectTop": 0.08214,
+        "shirtTop": 0.67943
+      }
+    },
+    {
+      "id": "fantasticos-086",
+      "sourceSha256": "c80df2113f217955912f0cf43c14c4b5e3f8e261ffb79f4f6ff3269a375e09ac",
+      "scale": 1.07797,
+      "centerX": 0.5303,
+      "centerY": 0.48674,
+      "audit": {
+        "detectorConfidence": 0.97493,
+        "faceBox": [
+          0.36045,
+          0.28469,
+          0.33971,
+          0.33971
+        ],
+        "subjectTop": 0.08931,
+        "shirtTop": 0.68182
+      }
+    },
+    {
+      "id": "fantasticos-087",
+      "sourceSha256": "c52c1630bb73b2144db63612cf941f4372826ac236cf3a2efb51c44dafec57c8",
+      "scale": 1.36266,
+      "centerX": 0.53628,
+      "centerY": 0.40823,
+      "audit": {
+        "detectorConfidence": 0.95394,
+        "faceBox": [
+          0.40191,
+          0.32695,
+          0.26874,
+          0.26874
+        ],
+        "subjectTop": 0.06699,
+        "shirtTop": 0.62998
+      }
+    },
+    {
+      "id": "fantasticos-088",
+      "sourceSha256": "61a3386499fb99925b4beb36b6a4b6628b738abfcd7ba7dccf1f199cbdb6c3c4",
+      "scale": 1.17747,
+      "centerX": 0.51116,
+      "centerY": 0.47546,
+      "audit": {
+        "detectorConfidence": 0.96383,
+        "faceBox": [
+          0.35566,
+          0.30303,
+          0.311,
+          0.311
+        ],
+        "subjectTop": 0.08054,
+        "shirtTop": 0.62121
+      }
+    },
+    {
+      "id": "fantasticos-089",
+      "sourceSha256": "09966a5255ec2a4d3d14fce3a36eb01ad7a16aadfe11074a014ea6854c948811",
+      "scale": 1.2756,
+      "centerX": 0.50638,
+      "centerY": 0.41637,
+      "audit": {
+        "detectorConfidence": 0.93646,
+        "faceBox": [
+          0.36284,
+          0.28309,
+          0.28708,
+          0.28708
+        ],
+        "subjectTop": 0.05183,
+        "shirtTop": 0.57576
+      }
+    },
+    {
+      "id": "fantasticos-090",
+      "sourceSha256": "eb7c710f41aafd4480bde96998d3f452b7112d768660eb672fddb91f6cdbd523",
+      "scale": 1.01149,
+      "centerX": 0.50568,
+      "centerY": 0.50568,
+      "audit": {
+        "detectorConfidence": 0.89797,
+        "faceBox": [
+          0.33573,
+          0.33413,
+          0.36204,
+          0.36204
+        ],
+        "subjectTop": 0.12121,
+        "shirtTop": 0.74242
+      }
+    },
+    {
+      "id": "fantasticos-091",
+      "sourceSha256": "5eb46a72fba4c3a09494b14d892556f66dd7f50a53032beebca4c3a89fd87a09",
+      "scale": 1.12277,
+      "centerX": 0.52512,
+      "centerY": 0.47389,
+      "audit": {
+        "detectorConfidence": 0.94649,
+        "faceBox": [
+          0.36204,
+          0.2799,
+          0.32616,
+          0.32616
+        ],
+        "subjectTop": 0.09091,
+        "shirtTop": 0.64274
+      }
+    },
+    {
+      "id": "fantasticos-092",
+      "sourceSha256": "73c012bd322379a914b69df238078f92677cb18d48d67262c434ffc811143bd7",
+      "scale": 1.13667,
+      "centerX": 0.52552,
+      "centerY": 0.47209,
+      "audit": {
+        "detectorConfidence": 0.96473,
+        "faceBox": [
+          0.36443,
+          0.37241,
+          0.32217,
+          0.32217
+        ],
+        "subjectTop": 0.063,
+        "shirtTop": 0.74801
+      }
+    },
+    {
+      "id": "fantasticos-093",
+      "sourceSha256": "754e29b8f6b3bc814115ecceadce6b7000721d52a1372cd4139eee0e24eae09c",
+      "scale": 1.14517,
+      "centerX": 0.51874,
+      "centerY": 0.46371,
+      "audit": {
+        "detectorConfidence": 0.93433,
+        "faceBox": [
+          0.35885,
+          0.27352,
+          0.31978,
+          0.31978
+        ],
+        "subjectTop": 0.0933,
+        "shirtTop": 0.5949
+      }
+    },
+    {
+      "id": "fantasticos-094",
+      "sourceSha256": "29994446021fe675240d03561d38275deb07aa04e8c3689bfe696e341393d7aa",
+      "scale": 1.23445,
+      "centerX": 0.51994,
+      "centerY": 0.46352,
+      "audit": {
+        "detectorConfidence": 0.96604,
+        "faceBox": [
+          0.37161,
+          0.28708,
+          0.29665,
+          0.29665
+        ],
+        "subjectTop": 0.12201,
+        "shirtTop": 0.63716
+      }
+    },
+    {
+      "id": "fantasticos-095",
+      "sourceSha256": "e94f5b9dbd3b16f32b9aae66db19478d0b4d3a9152c667e237a34427761b092b",
+      "scale": 1.0986,
+      "centerX": 0.52233,
+      "centerY": 0.53318,
+      "audit": {
+        "detectorConfidence": 0.9421,
+        "faceBox": [
+          0.35566,
+          0.33493,
+          0.33333,
+          0.33333
+        ],
+        "subjectTop": 0.12281,
+        "shirtTop": 0.69856
+      }
+    },
+    {
+      "id": "fantasticos-096",
+      "sourceSha256": "fcb83def11296863cf60900a503e39188b7302c4738e3282ab6635f387bb7ea0",
+      "scale": 1.12004,
+      "centerX": 0.53589,
+      "centerY": 0.50467,
+      "audit": {
+        "detectorConfidence": 0.97287,
+        "faceBox": [
+          0.37241,
+          0.31021,
+          0.32695,
+          0.32695
+        ],
+        "subjectTop": 0.13317,
+        "shirtTop": 0.67464
+      }
+    },
+    {
+      "id": "fantasticos-097",
+      "sourceSha256": "913b1288d465727c070d352090e3907ad819ccf7db0ab87bd8d8bec9c0b24336",
+      "scale": 1.18354,
+      "centerX": 0.52313,
+      "centerY": 0.49177,
+      "audit": {
+        "detectorConfidence": 0.95603,
+        "faceBox": [
+          0.36842,
+          0.32217,
+          0.30941,
+          0.30941
+        ],
+        "subjectTop": 0.09888,
+        "shirtTop": 0.58054
+      }
+    },
+    {
+      "id": "fantasticos-098",
+      "sourceSha256": "366529022da5643e318766efae1cb66ddb33408bbe25a92cd8455bf7d3b7251f",
+      "scale": 1.21808,
+      "centerX": 0.50359,
+      "centerY": 0.43199,
+      "audit": {
+        "detectorConfidence": 0.96665,
+        "faceBox": [
+          0.35327,
+          0.35167,
+          0.30064,
+          0.30064
+        ],
+        "subjectTop": 0.05024,
+        "shirtTop": 0.69537
+      }
+    },
+    {
+      "id": "fantasticos-099",
+      "sourceSha256": "b206f69057b91d4614da8405e8ac87516d14d64fbc6028ec00ee52c8adcd836a",
+      "scale": 1.10921,
+      "centerX": 0.51914,
+      "centerY": 0.50534,
+      "audit": {
+        "detectorConfidence": 0.90468,
+        "faceBox": [
+          0.35407,
+          0.3118,
+          0.33014,
+          0.33014
+        ],
+        "subjectTop": 0.08612,
+        "shirtTop": 0.67384
+      }
+    },
+    {
+      "id": "fantasticos-100",
+      "sourceSha256": "6e4b0de74954065a0055438183135c4cf206f371c357ce633d29ea795037909c",
+      "scale": 1.15671,
+      "centerX": 0.51555,
+      "centerY": 0.45863,
+      "audit": {
+        "detectorConfidence": 0.93536,
+        "faceBox": [
+          0.35726,
+          0.27033,
+          0.31659,
+          0.31659
+        ],
+        "subjectTop": 0.09091,
+        "shirtTop": 0.65391
+      }
+    },
+    {
+      "id": "fantasticos-101",
+      "sourceSha256": "fe456867cdebc0ba8ab5f46a2a12c5f511668bc72d8fe7c4e12e1b7b59e13ee1",
+      "scale": 1.13949,
+      "centerX": 0.54266,
+      "centerY": 0.51892,
+      "audit": {
+        "detectorConfidence": 0.96759,
+        "faceBox": [
+          0.38198,
+          0.33014,
+          0.32137,
+          0.32137
+        ],
+        "subjectTop": 0.11085,
+        "shirtTop": 0.6571
+      }
+    },
+    {
+      "id": "fantasticos-102",
+      "sourceSha256": "d81f5c7eb13b7111fba6e1e3ea73272aa984bd421763d5f9106a7d519f736eb7",
+      "scale": 1.23445,
+      "centerX": 0.52153,
+      "centerY": 0.48824,
+      "audit": {
+        "detectorConfidence": 0.94954,
+        "faceBox": [
+          0.37321,
+          0.3118,
+          0.29665,
+          0.29665
+        ],
+        "subjectTop": 0.13876,
+        "shirtTop": 0.65072
+      }
+    },
+    {
+      "id": "fantasticos-103",
+      "sourceSha256": "7a3177152aff91e2da266514af51fa3bf7f02ca44845bf0b977feea01ee4bafc",
+      "scale": 1.13667,
+      "centerX": 0.50239,
+      "centerY": 0.51857,
+      "audit": {
+        "detectorConfidence": 0.95491,
+        "faceBox": [
+          0.34131,
+          0.32695,
+          0.32217,
+          0.32217
+        ],
+        "subjectTop": 0.11962,
+        "shirtTop": 0.6874
+      }
+    },
+    {
+      "id": "fantasticos-104",
+      "sourceSha256": "a79326c756788f228e362819127ee071a94ff527d467d8367a4a3d2b9bdefe09",
+      "scale": 1.27206,
+      "centerX": 0.48923,
+      "centerY": 0.4256,
+      "audit": {
+        "detectorConfidence": 0.94601,
+        "faceBox": [
+          0.3453,
+          0.25439,
+          0.28788,
+          0.28788
+        ],
+        "subjectTop": 0.08692,
+        "shirtTop": 0.54785
+      }
+    },
+    {
+      "id": "fantasticos-105",
+      "sourceSha256": "6d618628cff6096b85d68197f00f5c3727245c4b39705c8b686b2a3b9b5229f3",
+      "scale": 1.14804,
+      "centerX": 0.49123,
+      "centerY": 0.5374,
+      "audit": {
+        "detectorConfidence": 0.95139,
+        "faceBox": [
+          0.33174,
+          0.34769,
+          0.31898,
+          0.31898
+        ],
+        "subjectTop": 0.14115,
+        "shirtTop": 0.71372
+      }
+    },
+    {
+      "id": "coverage-001",
+      "sourceSha256": "80f512577e32dc5070a4bc7bb03b12c5d28c53dd6859a8cf6ca75119d5f1b804",
+      "scale": 1.0,
+      "centerX": 0.5,
+      "centerY": 0.5,
+      "audit": {
+        "detectorConfidence": 0.91699,
+        "faceBox": [
+          0.32376,
+          0.2504,
+          0.3748,
+          0.3748
+        ],
+        "subjectTop": 0.0925,
+        "shirtTop": 0.58054
+      }
+    },
+    {
+      "id": "coverage-002",
+      "sourceSha256": "9a28bfaada5abaf39bc2d0f83128b181e196838ffc5455f824e517a5fe9906c2",
+      "scale": 1.07544,
+      "centerX": 0.5307,
+      "centerY": 0.51372,
+      "audit": {
+        "detectorConfidence": 0.92769,
+        "faceBox": [
+          0.36045,
+          0.35088,
+          0.34051,
+          0.34051
+        ],
+        "subjectTop": 0.08134,
+        "shirtTop": 0.73046
+      }
+    },
+    {
+      "id": "coverage-003",
+      "sourceSha256": "ff029a917be57e849a6d24dd409e6aa76c1fe62a4c16ec7906cd1b36132bf890",
+      "scale": 1.07043,
+      "centerX": 0.52671,
+      "centerY": 0.51415,
+      "audit": {
+        "detectorConfidence": 0.93747,
+        "faceBox": [
+          0.35566,
+          0.3429,
+          0.34211,
+          0.34211
+        ],
+        "subjectTop": 0.07974,
+        "shirtTop": 0.66348
+      }
+    },
+    {
+      "id": "coverage-004",
+      "sourceSha256": "b92ed71fa2c5ea78e52a2e44575c549dd55260a83939ff1e09e3468ab253191a",
+      "scale": 1.05324,
+      "centerX": 0.51276,
+      "centerY": 0.49307,
+      "audit": {
+        "detectorConfidence": 0.96855,
+        "faceBox": [
+          0.33892,
+          0.28628,
+          0.34769,
+          0.34769
+        ],
+        "subjectTop": 0.09729,
+        "shirtTop": 0.61085
+      }
+    },
+    {
+      "id": "coverage-005",
+      "sourceSha256": "b0f0e1eb8590a64b74cdf8f5f256abf735dbb03d731d83204f4dd68e6f71643e",
+      "scale": 1.0581,
+      "centerX": 0.50877,
+      "centerY": 0.48734,
+      "audit": {
+        "detectorConfidence": 0.94252,
+        "faceBox": [
+          0.33573,
+          0.2815,
+          0.34609,
+          0.34609
+        ],
+        "subjectTop": 0.13955,
+        "shirtTop": 0.626
+      }
+    },
+    {
+      "id": "coverage-006",
+      "sourceSha256": "1ad4401a182b260b73da7f262dd3a77b6869b7620c56206753aec21a5a463ff8",
+      "scale": 1.0986,
+      "centerX": 0.52552,
+      "centerY": 0.49012,
+      "audit": {
+        "detectorConfidence": 0.95889,
+        "faceBox": [
+          0.35885,
+          0.29187,
+          0.33333,
+          0.33333
+        ],
+        "subjectTop": 0.07018,
+        "shirtTop": 0.67783
+      }
+    },
+    {
+      "id": "coverage-007",
+      "sourceSha256": "522f1acfe6fd9f394f25d86e005437bbc3f7bba421ea090f196c28ba054d162a",
+      "scale": 1.02963,
+      "centerX": 0.51439,
+      "centerY": 0.49463,
+      "audit": {
+        "detectorConfidence": 0.94364,
+        "faceBox": [
+          0.33892,
+          0.28309,
+          0.35566,
+          0.35566
+        ],
+        "subjectTop": 0.0941,
+        "shirtTop": 0.68979
+      }
+    },
+    {
+      "id": "coverage-008",
+      "sourceSha256": "dab77e5f1974d932b16cf0c27ed0cd7358040590ac7587c775b1e69715c4cbf5",
+      "scale": 1.19899,
+      "centerX": 0.50678,
+      "centerY": 0.45199,
+      "audit": {
+        "detectorConfidence": 0.97197,
+        "faceBox": [
+          0.35407,
+          0.27033,
+          0.30542,
+          0.30542
+        ],
+        "subjectTop": 0.13477,
+        "shirtTop": 0.54545
+      }
+    },
+    {
+      "id": "coverage-009",
+      "sourceSha256": "2e04cf96ce15ac2340fb97ce183c78d524054b63dc6e61d5384fb239bef4e1f4",
+      "scale": 1.12553,
+      "centerX": 0.51834,
+      "centerY": 0.4897,
+      "audit": {
+        "detectorConfidence": 0.96369,
+        "faceBox": [
+          0.35566,
+          0.36523,
+          0.32536,
+          0.32536
+        ],
+        "subjectTop": 0.07656,
+        "shirtTop": 0.74641
+      }
+    },
+    {
+      "id": "coverage-010",
+      "sourceSha256": "5383e23ab8e4f2a48938c0d6117099c876564408eedec4a878086318c94b32e5",
+      "scale": 1.08305,
+      "centerX": 0.5303,
+      "centerY": 0.49615,
+      "audit": {
+        "detectorConfidence": 0.95242,
+        "faceBox": [
+          0.36124,
+          0.29506,
+          0.33812,
+          0.33812
+        ],
+        "subjectTop": 0.10287,
+        "shirtTop": 0.69139
+      }
+    },
+    {
+      "id": "coverage-011",
+      "sourceSha256": "17128a6ab0fbe45f3f060a8ab3a6583eb56f933b36620d84cd5d7a19dbc4f561",
+      "scale": 1.04844,
+      "centerX": 0.5231,
+      "centerY": 0.50173,
+      "audit": {
+        "detectorConfidence": 0.91215,
+        "faceBox": [
+          0.35008,
+          0.30463,
+          0.34928,
+          0.34928
+        ],
+        "subjectTop": 0.05821,
+        "shirtTop": 0.63876
+      }
+    },
+    {
+      "id": "coverage-012",
+      "sourceSha256": "2ac9c55013b0ee3f6c90e88fc7d569a351c47d59c468bb556fa42e341a98402b",
+      "scale": 1.00705,
+      "centerX": 0.5035,
+      "centerY": 0.5035,
+      "audit": {
+        "detectorConfidence": 0.88961,
+        "faceBox": [
+          0.33971,
+          0.30542,
+          0.36364,
+          0.36364
+        ],
+        "subjectTop": 0.06539,
+        "shirtTop": 0.60686
+      }
+    },
+    {
+      "id": "coverage-013",
+      "sourceSha256": "9d21b08e154d4068dee0282bba01797ce7662cf57e823d53c3fd2a5441558c35",
+      "scale": 1.03194,
+      "centerX": 0.51548,
+      "centerY": 0.49845,
+      "audit": {
+        "detectorConfidence": 0.93182,
+        "faceBox": [
+          0.35486,
+          0.31499,
+          0.35486,
+          0.35486
+        ],
+        "subjectTop": 0.04785,
+        "shirtTop": 0.63078
+      }
+    },
+    {
+      "id": "coverage-014",
+      "sourceSha256": "698652fe92b6a7f9c58d6ea8a01f1ef064858cc760111633167ea4add9c803f3",
+      "scale": 1.17747,
+      "centerX": 0.52711,
+      "centerY": 0.47625,
+      "audit": {
+        "detectorConfidence": 0.94258,
+        "faceBox": [
+          0.37161,
+          0.34051,
+          0.311,
+          0.311
+        ],
+        "subjectTop": 0.08134,
+        "shirtTop": 0.66108
+      }
+    }
+  ]
+}

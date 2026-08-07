@@ -11,7 +11,7 @@ const allowed = {
   presentation: ["masculine", "feminine", "androgynous"],
   apparentAge: ["teen", "young_adult", "adult", "middle_aged", "older_adult"],
   skinTone: ["very_light", "light", "medium", "tan", "brown", "dark"],
-  hairColor: ["black", "dark_brown", "brown", "light_brown", "blonde", "red", "gray", "white", "pink", "multicolor", "covered"],
+  hairColor: ["none", "black", "dark_brown", "brown", "light_brown", "blonde", "red", "gray", "white", "pink", "multicolor", "covered"],
   hairTexture: ["straight", "wavy", "curly", "coily", "locs", "braids", "shaved", "bald", "covered"],
   hairLength: ["bald", "very_short", "short", "medium", "long", "covered"],
   facialHair: ["none", "stubble", "mustache", "goatee", "short_beard", "full_beard"],
@@ -36,12 +36,16 @@ function expectedRecord(index) {
     const number = String(labelNumber - 10).padStart(2, "0");
     return { avatarId: `expanded-${number}`, source: `/avatars/standardized-4x4/avatar-4x4-${number}-v1.png` };
   }
-  const number = String(labelNumber - 38).padStart(3, "0");
-  return { avatarId: `fantasticos-${number}`, source: `/avatars/los-5-fantasticos/fantastico-${number}.png` };
+  if (labelNumber <= 143) {
+    const number = String(labelNumber - 38).padStart(3, "0");
+    return { avatarId: `fantasticos-${number}`, source: `/avatars/los-5-fantasticos/fantastico-${number}.png` };
+  }
+  const number = String(labelNumber - 143).padStart(3, "0");
+  return { avatarId: `coverage-${number}`, source: `/avatars/coverage-expansion/avatar-coverage-${number}.png` };
 }
 
-if (!Array.isArray(attributes) || attributes.length !== 143) {
-  problems.push(`Expected 143 attribute records, found ${Array.isArray(attributes) ? attributes.length : "non-array data"}.`);
+if (!Array.isArray(attributes) || attributes.length !== 157) {
+  problems.push(`Expected 157 attribute records, found ${Array.isArray(attributes) ? attributes.length : "non-array data"}.`);
 }
 
 const labels = new Set();
