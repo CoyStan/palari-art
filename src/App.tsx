@@ -98,7 +98,7 @@ export function App() {
         </a>
         <p>Color studio for character portraits</p>
         <div className="topbar-actions">
-          <a className="handbook-nav-link" href={assetUrl("/handbook/")}>Handbook</a>
+          <a className="handbook-nav-link" href={assetUrl("/handbook/")}>Gallery</a>
           <div className="local-note"><span aria-hidden="true" /> Runs locally</div>
         </div>
       </header>

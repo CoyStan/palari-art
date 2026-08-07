@@ -18,13 +18,13 @@ That command:
 
 1. Builds Vite with the `/palari-art/` base path and without automatically copying `public/`.
 2. Copies only `public/avatars-web/` and `public/masks-web/` into `dist/`.
-3. Copies `public/handbook/`, containing optimized WebPs, its manifest, and the 80-page PDF.
+3. Copies `public/handbook/`, containing optimized gallery WebPs and their manifest.
 4. Adds `.nojekyll`.
-5. Verifies complete portrait, mask, and handbook WebP coverage, all manifests, both HTML entries, the PDF, the absence of PNG files, the base path, and a 450 MiB artifact ceiling.
+5. Verifies complete portrait, mask, and gallery WebP coverage, all manifests, both HTML entries, the absence of a PDF or PNG files, the base path, and a 450 MiB artifact ceiling.
 
 The checksum-locked portrait PNG masters, reviewed mask PNG masters, metadata, and audit-only layers remain in the repository but are never included in the Pages artifact.
 
-The handbook's lossless plate masters and approved visual concepts also remain repository-only under `docs/art-guide/`; Pages receives only derived WebPs and the PDF.
+The gallery's lossless plate masters and approved visual concepts remain repository-only under `docs/art-guide/`; Pages receives only derived WebPs.
 
 ## Automatic deployment
 
@@ -54,11 +54,10 @@ npm run masks:web:generate
 npm run verify:web-masks
 ```
 
-After handbook copy or plate art changes:
+After gallery plate art changes:
 
 ```bash
 npm run handbook:assets:generate
-npm run handbook:pdf
 npm run verify:handbook
 ```
 

@@ -22,7 +22,6 @@
     "verify:attributes": "node scripts/verify-avatar-attributes.mjs",
     "handbook:assets:generate": "node scripts/generate-handbook-assets.mjs",
     "verify:handbook-assets": "node scripts/verify-handbook-assets.mjs",
-    "handbook:pdf": "node scripts/export-handbook-pdf.mjs",
     "verify:handbook": "node scripts/verify-handbook-assets.mjs && node scripts/verify-handbook.mjs",
     "fantasticos:import": "node --env-file=.env.local scripts/import-fantasticos.mjs",
     "fantasticos:clean": "node scripts/clean-fantasticos-foregrounds.mjs",
@@ -42,8 +41,6 @@
     "check": "npm run verify:assets && npm run verify:web-assets && npm run verify:masks && npm run verify:web-masks && npm run verify:framing && npm run verify:attributes && npm run verify:handbook && npm run build"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.3.0",
-    "@fontsource/newsreader": "^5.3.0",
     "lucide-react": "0.468.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -54,8 +51,6 @@
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
     "@vitejs/plugin-react": "6.0.5",
-    "pdf-lib": "^1.17.1",
-    "playwright-core": "^1.62.1",
     "typescript": "7.0.2",
     "vite": "8.2.0"
   }
