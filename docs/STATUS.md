@@ -21,7 +21,7 @@ Last updated: 2026-08-07
 - React/Vite avatar color studio.
 - 156 active Palari portraits presented in one deterministic mixed grid from 157 bundled sources. Avatar 024 (`expanded-14`) is intentionally excluded without renumbering the remaining portraits.
 - Temporary uploads for PNG, JPEG, and WebP.
-- Background and shirt color controls with 12 aligned hue presets each: six original colors and a darker row of brick, wine, plum, navy, forest, and ochre.
+- Background controls keep the six original pastel presets. Shirt controls add a darker aligned row of brick, wine, plum, navy, forest, and ochre beneath the six original colors.
 - Edge-tolerance controls for temporary-upload fallback masks.
 - 1024 × 1024 PNG and WebP export.
 - Face-aware head-and-shoulders normalization for the gallery, Canvas preview, and export. The approved reference anchors face size/position while reviewed person bounds protect tall hair and head coverings.

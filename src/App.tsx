@@ -14,7 +14,7 @@ const DEFAULTS: RecolorSettings = {
   shirtTolerance: 64,
 };
 
-const darkPresets = [
+const darkShirtPresets = [
   { label: "Brick", value: "#8F3A32" },
   { label: "Wine", value: "#8D3F5A" },
   { label: "Plum", value: "#5D3A7A" },
@@ -30,7 +30,6 @@ const backgroundPresets = [
   { label: "Powder blue", value: "#DCE8F7" },
   { label: "Sage", value: "#DDEBDD" },
   { label: "Butter", value: "#F2E1B8" },
-  ...darkPresets,
 ] as const satisfies readonly ColorPreset[];
 
 const shirtPresets = [
@@ -40,7 +39,7 @@ const shirtPresets = [
   { label: "Blue", value: "#2F6EE5" },
   { label: "Emerald", value: "#2E8B61" },
   { label: "Gold", value: "#F1AF24" },
-  ...darkPresets,
+  ...darkShirtPresets,
 ] as const satisfies readonly ColorPreset[];
 
 function downloadBlob(blob: Blob, filename: string) {
