@@ -28,7 +28,7 @@ Last updated: 2026-08-07
 - 1024 × 1024 PNG and WebP export.
 - Face-aware head-and-shoulders normalization for the gallery, Canvas preview, and export. The approved reference anchors face size/position while reviewed person bounds protect tall hair and head coverings.
 - Development access over Tailscale on port 4173.
-- Compact phone layout: a roughly 60% preview sits beside a two-column portrait rail, with circle-only background and shirt presets directly below; wider layouts retain the complete control set.
+- Compact phone layout: the roughly 60% preview and circle-only background/shirt presets form one left column, while the two-column portrait rail spans the full right side for substantially more visible choices; wider layouts retain the complete control set.
 - Reproducible FFmpeg/libwebp generation and Node-only verification for 157 full WebP editor assets plus 157 lightweight gallery thumbnails.
 - Reproducible lossless FFmpeg/libwebp generation and Node-only verification for 1,395 pixel-identical runtime-mask WebPs.
 - A GitHub Pages workflow and PNG-free artifact contract for the `/palari-art/` project URL.
