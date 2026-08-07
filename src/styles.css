@@ -602,11 +602,12 @@ summary:focus-visible {
   .workspace {
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, 64%) minmax(0, 36%);
-    grid-template-rows: min(72vw, 300px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 40% 15% 45%;
     grid-template-areas:
-      "stage library"
-      "inspector library";
+      "stage"
+      "inspector"
+      "library";
     align-content: stretch;
     overflow: hidden;
     overscroll-behavior: contain;
@@ -617,7 +618,7 @@ summary:focus-visible {
     min-height: 0;
     grid-template-rows: auto minmax(0, 1fr);
     padding: 6px 8px;
-    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
 
   .stage-toolbar { min-height: 18px; align-items: center; }
@@ -625,26 +626,31 @@ summary:focus-visible {
   .stage-toolbar span,
   .stage-toolbar .secondary-button,
   .stage-caption { display: none; }
-  .stage-center { min-height: 0; padding: 3px 0 0; }
+  .stage-center { min-height: 0; padding: 3px 0 0; overflow: hidden; }
   .canvas-shell {
-    width: 100%;
-    max-width: none;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 14px;
     box-shadow: 0 8px 24px rgba(50, 45, 36, 0.1);
   }
 
   .library-panel {
     grid-area: library;
-    height: 100%;
     min-height: 0;
-    padding: 7px 6px 6px;
+    display: grid;
+    grid-template-columns: auto minmax(140px, 220px);
+    grid-template-rows: 34px minmax(0, 1fr);
+    gap: 5px 10px;
+    padding: 6px 8px 7px;
     border: 0;
     overflow: hidden;
   }
 
   .library-panel .panel-heading {
-    min-height: 17px;
-    margin-bottom: 5px;
+    min-height: 34px;
+    margin: 0;
   }
   .library-panel .panel-heading h2 { font-size: 11px; }
   .library-panel .panel-heading p,
@@ -657,7 +663,7 @@ summary:focus-visible {
     grid-template-columns: auto auto auto;
     justify-content: center;
     gap: 5px;
-    margin: 0 2px 5px;
+    margin: 0;
     padding: 0 6px;
     font-size: 10px;
   }
@@ -691,35 +697,37 @@ summary:focus-visible {
   .feature-filter-footer .primary-button { min-height: 44px; padding: 0 8px; }
 
   .avatar-grid {
+    grid-column: 1 / -1;
+    grid-row: 2;
     min-height: 0;
-    flex: 1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 4px;
     max-height: none;
-    padding: 2px 3px 3px;
+    padding: 1px 2px 3px;
     overscroll-behavior: contain;
   }
-  .avatar-tile { border-radius: 8px; }
+  .empty-library { grid-column: 1 / -1; grid-row: 2; align-self: start; }
+  .avatar-tile { border-radius: 7px; }
   .avatar-tile span {
-    right: 3px;
-    bottom: 3px;
-    min-width: 18px;
-    height: 18px;
-    padding: 0 3px;
-    border-radius: 5px;
-    font-size: 8px;
+    right: 2px;
+    bottom: 2px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 2px;
+    border-radius: 4px;
+    font-size: 7px;
   }
 
   .inspector {
     grid-area: inspector;
     min-height: 0;
-    display: block;
-    padding: 8px 8px 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 8px;
+    padding: 5px 8px;
     border: 0;
-    border-top: 1px solid var(--line);
-    border-right: 1px solid var(--line);
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
   }
   .inspector-heading,
   .edge-controls,
@@ -727,26 +735,27 @@ summary:focus-visible {
 
   .color-fieldset {
     min-width: 0;
-    padding: 7px 0 9px;
-    border-bottom: 1px solid var(--line);
+    min-height: 0;
+    padding: 0;
+    border: 0;
   }
-  .color-fieldset:last-of-type { border-bottom: 0; }
   .color-fieldset legend {
-    margin-bottom: 6px;
-    font-size: 11px;
+    margin-bottom: 4px;
+    font-size: 10px;
   }
   .color-input-row { display: none; }
   .swatches {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
     justify-items: center;
-    row-gap: 8px;
+    row-gap: 4px;
     column-gap: 0;
     margin-top: 0;
   }
+  .color-fieldset:first-of-type .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .color-fieldset:last-of-type .swatches { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .swatch {
-    width: clamp(30px, 8vw, 32px);
-    height: clamp(30px, 8vw, 32px);
+    width: clamp(28px, 8vw, 32px);
+    height: clamp(28px, 8vw, 32px);
   }
 }
 
