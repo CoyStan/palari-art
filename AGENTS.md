@@ -37,7 +37,7 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - Full-library hair matting is also complete and reviewed. Do not rerun SAM hair segmentation or local hair refinement unless source pixels change; any regenerated layer must be visually reviewed before registration.
 - The 105 regenerated portraits are delivered separately from the crops in the `palari-marketing` shared Drive at `Los 5 fantásticos /Palari Standardized Avatars 1x1/Clean Render Full - 105`. Drive is a delivery copy, not the repository source of truth.
 - The application presents 156 active portraits from 157 bundled sources in one deterministic mixed grid. Avatar 024 (`expanded-14`) is explicitly retired in `src/data/avatars.ts`; keep its source and aligned artifacts archived so later IDs remain stable. Collection labels remain internal provenance metadata and are not user-facing categories.
-- `src/data/avatar-attributes.json` records visual planning labels for all 157 portraits, and `docs/AVATAR-COVERAGE.md` summarizes the current distribution. These labels are not UI categories and must not be treated as demographic ground truth.
+- `src/data/avatar-attributes.json` records visual planning labels for all 157 portraits, and `docs/AVATAR-COVERAGE.md` summarizes the current distribution. The picker exposes only additive filters for observable features such as hair, accessories, apparent-age band, skin-tone band, and garment style. `presentation` remains internal and must never appear as a feminine/masculine filter; no label may be treated as demographic ground truth.
 - Hair recoloring is not part of the requested product scope.
 
 See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approved direction.

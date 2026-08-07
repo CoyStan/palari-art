@@ -1,6 +1,14 @@
 import { Search, Upload } from "lucide-react";
 import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Avatar } from "../data/avatars";
+import {
+  avatarFeatureGroups,
+  avatarFeatureOptionCountKey,
+  matchesAvatarFeatures,
+  type AvatarFeatureKey,
+  type AvatarFeatureSelection,
+} from "../data/avatar-features";
+import { AvatarFeatureFilters } from "./AvatarFeatureFilters";
 
 type AvatarLibraryProps = {
   avatars: Avatar[];
@@ -20,21 +28,70 @@ function framingStyle(avatar: Avatar): CSSProperties | undefined {
   };
 }
 
+function matchesAvatarQuery(avatar: Avatar, normalizedQuery: string) {
+  return normalizedQuery.length === 0 || avatar.name.toLowerCase().includes(normalizedQuery);
+}
+
 export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: AvatarLibraryProps) {
   const [query, setQuery] = useState("");
+  const [featureSelection, setFeatureSelection] = useState<AvatarFeatureSelection>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const normalizedQuery = query.trim().toLowerCase();
   const visible = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-    if (normalizedQuery.length === 0) return avatars;
-    return avatars.filter((avatar) => avatar.name.toLowerCase().includes(normalizedQuery));
-  }, [avatars, query]);
+    return avatars.filter(
+      (avatar) => matchesAvatarQuery(avatar, normalizedQuery)
+        && matchesAvatarFeatures(avatar.features, featureSelection),
+    );
+  }, [avatars, featureSelection, normalizedQuery]);
+  const optionCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const group of avatarFeatureGroups) {
+      for (const [value] of group.options) {
+        let count = 0;
+        for (const avatar of avatars) {
+          if (
+            matchesAvatarQuery(avatar, normalizedQuery)
+            && matchesAvatarFeatures(avatar.features, featureSelection, group.key)
+            && avatar.features?.[group.key] === value
+          ) {
+            count += 1;
+          }
+        }
+        counts.set(avatarFeatureOptionCountKey(group.key, value), count);
+      }
+    }
+    return counts;
+  }, [avatars, featureSelection, normalizedQuery]);
+  const hasDiscoveryFilters = normalizedQuery.length > 0
+    || Object.values(featureSelection).some((values) => values && values.length > 0);
+
+  const toggleFeature = (key: AvatarFeatureKey, value: string) => {
+    setFeatureSelection((current) => {
+      const values = current[key] ?? [];
+      const nextValues = values.includes(value)
+        ? values.filter((selectedValue) => selectedValue !== value)
+        : [...values, value];
+      const next = { ...current };
+      if (nextValues.length === 0) {
+        delete next[key];
+      } else {
+        next[key] = nextValues;
+      }
+      return next;
+    });
+  };
+
+  const clearDiscoveryFilters = () => {
+    setQuery("");
+    setFeatureSelection({});
+  };
 
   return (
     <aside className="library-panel" aria-label="Avatar library">
       <div className="panel-heading">
         <div>
           <h2>Library</h2>
-          <p>{avatars.length} portraits</p>
+          <p aria-live="polite">{hasDiscoveryFilters ? `${visible.length} of ${avatars.length} portraits` : `${avatars.length} portraits`}</p>
         </div>
         <button
           className="icon-button"
@@ -68,6 +125,14 @@ export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: Avata
         />
       </label>
 
+      <AvatarFeatureFilters
+        selection={featureSelection}
+        matchCount={visible.length}
+        optionCounts={optionCounts}
+        onToggle={toggleFeature}
+        onClear={() => setFeatureSelection({})}
+      />
+
       <div className="avatar-grid">
         {visible.map((avatar) => (
           <button
@@ -89,7 +154,12 @@ export function AvatarLibrary({ avatars, selectedId, onSelect, onUpload }: Avata
           </button>
         ))}
       </div>
-      {visible.length === 0 ? <p className="empty-library">No portraits match your search.</p> : null}
+      {visible.length === 0 ? (
+        <div className="empty-library" role="status">
+          <p>No portraits match those features.</p>
+          <button className="secondary-button" onClick={clearDiscoveryFilters} type="button">Clear filters</button>
+        </div>
+      ) : null}
     </aside>
   );
 }
