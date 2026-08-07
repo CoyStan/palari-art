@@ -2,6 +2,7 @@ import maskRegistry from "./avatar-masks.json";
 import framingRegistry from "./avatar-framing.json";
 import type { AvatarFraming, AvatarMaskSources } from "../lib/recolor";
 import { assetUrl } from "../lib/assets";
+import { avatarFeaturesById, type AvatarFeatures } from "./avatar-features";
 
 export type AvatarCollection = "Original set" | "Expanded set" | "Los 5 fantásticos" | "Coverage expansion" | "Uploads";
 
@@ -14,6 +15,7 @@ export type Avatar = {
   collection: AvatarCollection;
   masks?: AvatarMaskSources;
   framing?: AvatarFraming;
+  features?: AvatarFeatures;
 };
 
 function webAssetPath(src: string, tier: "full" | "thumbnail") {
@@ -74,6 +76,7 @@ const originalSet: Avatar[] = Array.from({ length: 10 }, (_, index) => {
     collection: "Original set",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
+    features: avatarFeaturesById.get(id),
   };
 });
 
@@ -90,6 +93,7 @@ const expandedSet: Avatar[] = Array.from({ length: 28 }, (_, index) => {
     collection: "Expanded set",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
+    features: avatarFeaturesById.get(id),
   };
 });
 
@@ -106,6 +110,7 @@ const fantasticosSet: Avatar[] = Array.from({ length: 105 }, (_, index) => {
     collection: "Los 5 fantásticos",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
+    features: avatarFeaturesById.get(id),
   };
 });
 
@@ -122,6 +127,7 @@ const coverageExpansion: Avatar[] = Array.from({ length: 14 }, (_, index) => {
     collection: "Coverage expansion",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
+    features: avatarFeaturesById.get(id),
   };
 });
 

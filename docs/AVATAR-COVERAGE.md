@@ -4,7 +4,7 @@ Review date: 2026-08-06
 
 ## Purpose
 
-`src/data/avatar-attributes.json` is a planning dataset for all 157 bundled portraits. It describes visible design variation so future generation batches can target real gaps instead of producing more of the dominant combinations. It is deliberately separate from the avatar picker: the application still presents one mixed, uncategorized library.
+`src/data/avatar-attributes.json` is a planning dataset for all 157 bundled portraits. It describes visible design variation so future generation batches can target real gaps instead of producing more of the dominant combinations. The application still presents one mixed library, with optional additive filters for observable features such as hair, accessories, apparent-age band, skin-tone band, and garment style. The `presentation` field remains internal and is never exposed as a feminine/masculine picker filter.
 
 The original 143 portraits were classified with one shared taxonomy and separately audited. The 12 purpose-generated coverage portraits were then labeled from their approved visual briefs and checked against the rendered artwork. Two user-selected art-guide characters were subsequently rebuilt and labeled as Avatar 156 and Avatar 157. The current inventory contains 157 unique labels and IDs; 141 records are high confidence and 16 are medium confidence with an explanatory note.
 
