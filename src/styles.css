@@ -603,7 +603,7 @@ summary:focus-visible {
     min-height: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: 40% 15% 45%;
+    grid-template-rows: 40% 20% 40%;
     grid-template-areas:
       "stage"
       "inspector"
@@ -722,8 +722,9 @@ summary:focus-visible {
     grid-area: inspector;
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: 4px;
     padding: 5px 8px;
     border: 0;
     border-bottom: 1px solid var(--line);
@@ -740,8 +741,9 @@ summary:focus-visible {
     border: 0;
   }
   .color-fieldset legend {
-    margin-bottom: 4px;
-    font-size: 10px;
+    margin-bottom: 3px;
+    font-size: 9px;
+    line-height: 1;
   }
   .color-input-row { display: none; }
   .swatches {
@@ -751,8 +753,7 @@ summary:focus-visible {
     column-gap: 0;
     margin-top: 0;
   }
-  .color-fieldset:first-of-type .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .color-fieldset:last-of-type .swatches { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .color-fieldset .swatches { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .swatch {
     width: clamp(28px, 8vw, 32px);
     height: clamp(28px, 8vw, 32px);
