@@ -1,8 +1,7 @@
-import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { PDFDocument } from "pdf-lib";
+import { PDFDict, PDFDocument, PDFName } from "pdf-lib";
 
 const repositoryRoot = fileURLToPath(new URL("../", import.meta.url));
 const contentPath = path.join(repositoryRoot, "src/handbook/content.ts");
@@ -51,14 +50,24 @@ for (const [index, page] of pdf.getPages().entries()) {
   }
 }
 
-const fontResult = spawnSync("pdffonts", [pdfPath], { encoding: "utf8" });
-if (fontResult.status !== 0) problems.push(`pdffonts failed: ${fontResult.stderr.trim()}`);
-else {
-  const fontOutput = fontResult.stdout;
-  if (!/Newsreader/i.test(fontOutput)) problems.push("PDF does not contain Newsreader.");
-  if (!/Inter/i.test(fontOutput)) problems.push("PDF does not contain Inter.");
-  const fontRows = fontOutput.split("\n").filter((line) => /^\S+\s+/.test(line) && !line.startsWith("name") && !line.startsWith("---"));
-  if (fontRows.some((line) => /\sno\s+(?:yes|no)\s+\d+\s+\d+\s*$/.test(line))) problems.push("PDF contains an unembedded font.");
+const fontDictionaries = pdf.context.enumerateIndirectObjects()
+  .map(([, object]) => object)
+  .filter((object) => object instanceof PDFDict && object.get(PDFName.of("Type"))?.toString() === "/Font");
+const fontNames = fontDictionaries
+  .map((font) => font.get(PDFName.of("BaseFont"))?.toString() ?? "")
+  .join("\n");
+if (!/Newsreader/i.test(fontNames)) problems.push("PDF does not contain Newsreader.");
+if (!/Inter/i.test(fontNames)) problems.push("PDF does not contain Inter.");
+
+for (const font of fontDictionaries) {
+  if (font.get(PDFName.of("Subtype"))?.toString() === "/Type0") continue;
+  const descriptorReference = font.get(PDFName.of("FontDescriptor"));
+  const descriptor = descriptorReference ? pdf.context.lookup(descriptorReference) : undefined;
+  const embedded = descriptor instanceof PDFDict && ["FontFile", "FontFile2", "FontFile3"]
+    .some((key) => descriptor.has(PDFName.of(key)));
+  if (!embedded) {
+    problems.push(`PDF font ${font.get(PDFName.of("BaseFont"))?.toString() ?? "unknown"} is not embedded.`);
+  }
 }
 
 if (problems.length) {
