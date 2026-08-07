@@ -8,7 +8,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 1. Portrait DNA
 
-![Palari portrait construction](plates/01-portrait-dna.png)
+![Palari portrait construction](assets/source/01-portrait-dna.png)
 
 - Work at eye level in a square frame.
 - Construct the skull before hair or headwear. Keep the cranium generous and the jaw softly designed rather than sharply realistic.
@@ -19,7 +19,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 2. Eyes and brows
 
-![Palari eye and brow studies](plates/02-eyes-and-brows.png)
+![Palari eye and brow studies](assets/source/02-eyes-and-brows.png)
 
 - Eyes carry most of the emotional read. They are warm and slightly enlarged, but remain attached to believable lids and sockets.
 - Weight the upper lid more than the lower lid. Keep the lower edge soft.
@@ -30,7 +30,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 3. Noses and mouths
 
-![Palari nose and mouth studies](plates/03-noses-and-mouths.png)
+![Palari nose and mouth studies](assets/source/03-noses-and-mouths.png)
 
 - Model the nose with a bridge plane, soft tip, nostril shape, and restrained underside shadow.
 - Preserve genuine variety in bridge width, tip shape, projection, and nostril rhythm.
@@ -41,7 +41,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 4. Hair language
 
-![Palari hair construction](plates/04-hair-language.png)
+![Palari hair construction](assets/source/04-hair-language.png)
 
 - Design hair from large to small: silhouette, primary masses, secondary clumps, then a few selective strands.
 - Preserve the skull underneath. Volume should grow from a believable crown and hairline.
@@ -52,7 +52,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 5. Headwear, facial hair, and accessories
 
-![Palari headwear and accessory studies](plates/05-headwear-accessories.png)
+![Palari headwear and accessory studies](assets/source/05-headwear-accessories.png)
 
 - Headwear follows the skull and has understandable fabric tension, folds, and weight.
 - Treat hijabs, turbans, and headbands as designed forms with respectful specificity, not generic symbols.
@@ -62,7 +62,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 6. Face shape, age, and variety
 
-![Palari face and age studies](plates/06-faces-age-and-variety.png)
+![Palari face and age studies](assets/source/06-faces-age-variety.png)
 
 - Variety begins with cranial width, jaw rhythm, cheek volume, feature spacing, and silhouette, not surface color alone.
 - Express age with proportion, eyelid weight, soft plane changes, smile lines, posture, and hair character.
@@ -72,7 +72,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 7. Garments and shoulders
 
-![Palari garment studies](plates/07-garments-and-shoulders.png)
+![Palari garment studies](assets/source/07-garments-shoulders.png)
 
 - The garment forms the lower compositional base. Its neckline must clearly separate from neck, hair, beard, and headwear.
 - Keep both shoulders complete and use a believable shoulder slope.
@@ -82,7 +82,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 8. Light, color, and materials
 
-![Palari lighting and material studies](plates/08-light-color-materials.png)
+![Palari lighting and material studies](assets/source/08-light-color-materials.png)
 
 - Start with clean local colors and large value groups.
 - Use a soft warm key, gentle fill, and controlled highlights. The face should feel dimensional without cinematic drama.
@@ -92,7 +92,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 9. Expression, composition, and final polish
 
-![Palari expression and polish studies](plates/09-expression-composition-polish.png)
+![Palari expression and polish studies](assets/source/09-expression-composition-polish.png)
 
 - Favor friendly natural expressions over extreme cartoon acting.
 - Make asymmetry subtle but present: brow height, smile corner, hair flow, and shoulder position.
@@ -102,7 +102,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 10. Profile and rotation
 
-![Palari head rotation studies](plates/10-profile-and-rotation.png)
+![Palari head rotation studies](assets/source/10-profile-rotation.png)
 
 - Preserve one character's skull, feature spacing, hairline, jaw, ears, and neck through front, three-quarter, profile, and back views.
 - Track the brow, eye, nose base, mouth, and chin on shared horizontal guides rather than redrawing each angle independently.
@@ -111,7 +111,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 11. Facial planes and sculpt construction
 
-![Palari facial planes and sculpt construction](plates/11-facial-planes-and-sculpt.png)
+![Palari facial planes and sculpt construction](assets/source/11-facial-planes-sculpt.png)
 
 - Build from a simple cranium, muzzle, jaw, neck cylinder, and ear placement before softening the planes.
 - Let brow, cheek, nose, mouth barrel, and chin interlock. The style is simplified, not flat.
@@ -120,7 +120,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 12. Expression transitions
 
-![Palari expression transition studies](plates/12-expression-transitions.png)
+![Palari expression transition studies](assets/source/12-expression-transitions.png)
 
 - Treat expressions as coordinated changes across brows, lids, gaze, cheeks, nostrils, mouth corners, and jaw.
 - Move from neutral to the final expression through believable intermediate poses.
@@ -129,7 +129,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 13. Hair detail and edge architecture
 
-![Palari hair detail and edge studies](plates/13-hair-edge-architecture.png)
+![Palari hair detail and edge studies](assets/source/13-hair-edge-architecture.png)
 
 - Separate the hairstyle into silhouette, primary masses, overlapping clumps, and a small number of edge strands.
 - Vary the edge language by hair structure: ribbons, waves, curls, coils, braids, locs, or controlled flyaways.
@@ -138,7 +138,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 14. Palette and background harmony
 
-![Palari palette and background harmony](plates/14-palette-background-harmony.png)
+![Palari palette and background harmony](assets/source/14-palette-background-harmony.png)
 
 - Choose skin, hair, garment, accessory, and background colors as a five-part value system.
 - Preserve clear boundaries even when garment and hair hues are related.
@@ -147,7 +147,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 15. Headwear folds and fabric mechanics
 
-![Palari headwear fold and fabric studies](plates/15-headwear-fabric-mechanics.png)
+![Palari headwear fold and fabric studies](assets/source/15-headwear-fabric-mechanics.png)
 
 - Start from the skull and define anchor points, tension directions, compression, overlap, thickness, and gravity.
 - Distinguish wrapped, draped, knitted, woven, and elastic materials through structure before texture.
@@ -156,7 +156,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 16. 3D orthographic turnaround
 
-![Palari 3D orthographic turnaround](plates/16-3d-orthographic-turnaround.png)
+![Palari 3D orthographic turnaround](assets/source/16-3d-orthographic-turnaround.png)
 
 - Approve a neutral front, three-quarter, profile, and back turnaround before starting a production model.
 - Keep camera height, scale, head tilt, shoulder width, and feature landmarks consistent across views.
@@ -165,7 +165,7 @@ The goal is consistency without sameness. A Palari should belong to the same vis
 
 ## 17. 3D sculpt, materials, and rig language
 
-![Palari 3D sculpt and material studies](plates/17-3d-sculpt-materials-rig.png)
+![Palari 3D sculpt and material studies](assets/source/17-3d-sculpt-materials-rig.png)
 
 - Establish the character first as a clean neutral clay sculpt, then add production-friendly surface flow and separate hair, eyes, garment, and accessories.
 - Use restrained stylized materials: soft skin response, grouped hair sheen, readable fabric roughness, clear lenses, and small metal highlights.

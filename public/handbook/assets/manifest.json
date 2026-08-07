@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "recipeVersion": 1,
+  "generatedAt": "2026-08-07T16:45:21.386Z",
+  "generator": {
+    "name": "ffmpeg/libwebp",
+    "version": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "resizeFilter": "lanczos",
+    "pixelFormat": "yuv420p"
+  },
+  "tiers": {
+    "full": {
+      "maxWidth": 1280,
+      "quality": 84
+    },
+    "compact": {
+      "maxWidth": 640,
+      "quality": 76
+    }
+  },
+  "plates": [
+    {
+      "id": 1,
+      "slug": "portrait-dna",
+      "title": "Portrait DNA and silhouette",
+      "alt": "Palari portrait construction study with front and profile views, construction guides, and a progression from simple head planes to a finished portrait.",
+      "source": {
+        "path": "docs/art-guide/assets/source/01-portrait-dna.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2375175,
+        "sha256": "302f4b95b48fc651e0993e91e1c67f6bdbcbbef5ae18c402088bfddfe51c95bd"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/portrait-dna.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 163220,
+          "sha256": "e36f875b97cef76ad1f04e3649b84b53d8a51b6c47fff0bb027416f22c74509c"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/portrait-dna.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 37650,
+          "sha256": "cb174ea2117e7069b6f46c25b8b63e16d8655da53368b0fbf9bb978826583fba"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "slug": "eyes-and-brows",
+      "title": "Eye, eyelid, and brow construction",
+      "alt": "A comparative Palari eye and eyebrow study showing lid structures, spacing, brow rhythms, gaze, and varied faces.",
+      "source": {
+        "path": "docs/art-guide/assets/source/02-eyes-and-brows.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2394641,
+        "sha256": "436da453da200a7d05880867a207dfaf45538afb979f473a89459d0ec49c9e20"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/eyes-and-brows.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 178318,
+          "sha256": "1cb0941db26b57d6f7bebae9b31eb55369179a0540f07c44ec0139e2d119b9c3"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/eyes-and-brows.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 45584,
+          "sha256": "67dfbcf3e6166845d3c3fdd27bf335cdbfc17fc4f97945eb1a577aa3ee24d84c"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "slug": "noses-and-mouths",
+      "title": "Nose and mouth mechanics",
+      "alt": "Palari studies of varied noses, lips, smiles, facial hair, and age-related mouth and nose construction.",
+      "source": {
+        "path": "docs/art-guide/assets/source/03-noses-and-mouths.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2169004,
+        "sha256": "41fef4850f4036a6c88d3163396f8de1ea9c7e91534cc558d093270f851912e5"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/noses-and-mouths.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 120866,
+          "sha256": "2c2a54c9ea0a640ea03d736ea0e44d29fc48088ffb5020748a3412afc263eff0"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/noses-and-mouths.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 32272,
+          "sha256": "a33ec387e4a7a43c6fea7d0e4d272feca7014b66b7fd0df32dfa800b20b7bb1d"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "slug": "hair-language",
+      "title": "Hair architecture and texture",
+      "alt": "A broad Palari hair study showing silhouettes, construction stages, edge details, curls, waves, braids, locs, and varied hairstyles.",
+      "source": {
+        "path": "docs/art-guide/assets/source/04-hair-language.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2622655,
+        "sha256": "818bdac140158990ced036622a79b9003c1e338456f1760c7a90287a54dece15"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/hair-language.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 222504,
+          "sha256": "880b7e5fb7fc0aba90bd5360c98e678778ff129b3d758917ec2800161dc0383c"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/hair-language.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 56134,
+          "sha256": "e0e333a9de4eea834a99c97f305a9af5fc2a77c9ec1016fb4524d2ad40745d62"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "slug": "headwear-accessories",
+      "title": "Headwear, facial hair, and accessories",
+      "alt": "Palari headwear, glasses, jewelry, and facial-hair construction studies with varied original characters.",
+      "source": {
+        "path": "docs/art-guide/assets/source/05-headwear-accessories.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2544425,
+        "sha256": "e923257298404d6218b7d36ffe52256fba7e9e713bb911e8047221ab6388be01"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/headwear-accessories.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 210898,
+          "sha256": "16a0e445ab80e279e4074ebe35edae551bde64a50e4fdfa087e889c5a82154dd"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/headwear-accessories.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 54512,
+          "sha256": "9e0b0ae74488585094f2f3d744c5a0beccc30709530615e3b227efc761ffb0f5"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "slug": "faces-age-variety",
+      "title": "Face shape, age, and variation",
+      "alt": "Many distinct Palari faces and graphite constructions demonstrating age, jaw, cheek, eye, nose, and silhouette variation.",
+      "source": {
+        "path": "docs/art-guide/assets/source/06-faces-age-variety.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2621901,
+        "sha256": "987de8b11f2a86331067c9d5d944bf92afa6d2d2b640f33e615a883c6c707792"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/faces-age-variety.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 224110,
+          "sha256": "7226c1c7a6cb6fe5f3459e21760e76a06103867cc04e5fc1b492c4a4fd8de55a"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/faces-age-variety.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 54982,
+          "sha256": "09330a2f3112a5cb74b3a8458d35cc57ee7a0deecbe88f758902f022767c678c"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "slug": "garments-shoulders",
+      "title": "Garments, shoulders, and boundaries",
+      "alt": "Palari neckline, collar, shoulder, garment, and hair-overlap studies for clean portrait construction.",
+      "source": {
+        "path": "docs/art-guide/assets/source/07-garments-shoulders.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2541128,
+        "sha256": "acc4abbfc228b440c92d472437c894a585e969cee7c013583e50c62a98422529"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/garments-shoulders.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 214138,
+          "sha256": "ff327476c42443482fc843dc4f2cd3b69749e6f9216b94da17f7ccbbd216d93f"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/garments-shoulders.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 47404,
+          "sha256": "5f21705ba22759f18e968642803ea29582fa9bd885ca7138114323a43822e83f"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "slug": "light-color-materials",
+      "title": "Light, color, and materials",
+      "alt": "A Palari rendering progression with material swatches for skin, fabric, hair, glass, metal, and headwear.",
+      "source": {
+        "path": "docs/art-guide/assets/source/08-light-color-materials.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2297009,
+        "sha256": "3c6ff65063e67bce9a9a2674a19c1a0698aff6f58534473f43efc465d2d602cf"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/light-color-materials.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 174138,
+          "sha256": "461864d6c6116dc8ed871c1bea50f3c239c87420fc68d2b97e17a2057d7eb00e"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/light-color-materials.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 44888,
+          "sha256": "3d26ffde532fd21cdf1a2b45d8dcdb368affb7156e6cf4439a7859b50d2d8476"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "slug": "expression-composition-polish",
+      "title": "Expression, composition, and polish",
+      "alt": "One Palari character demonstrating varied natural expressions, composition checks, and polish comparisons.",
+      "source": {
+        "path": "docs/art-guide/assets/source/09-expression-composition-polish.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2424978,
+        "sha256": "4fd88f31f6b3bf0706b9cb4f26bc95bbfe97e0091664a91c9dfa3cc3ad21ab0b"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/expression-composition-polish.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 197580,
+          "sha256": "94787d4138094c4a8fc8af8282d0869a6e71337f573ac6d95794885a53064eb4"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/expression-composition-polish.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 51782,
+          "sha256": "27f3c3beeaff8d9d3596c583372abf138ac2b1ee2de3f49190c1cd09bbdac50b"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "slug": "profile-rotation",
+      "title": "Profile and rotation",
+      "alt": "A Palari character turnaround from front to back with head-construction guides and upward and downward views.",
+      "source": {
+        "path": "docs/art-guide/assets/source/10-profile-rotation.png",
+        "width": 1717,
+        "height": 916,
+        "bytes": 2503073,
+        "sha256": "c9778c49470f812aac71d74dc6f4f851cb84e6b582892dcd20dd55aad2a0ab36"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/profile-rotation.webp",
+          "width": 1278,
+          "height": 682,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 112610,
+          "sha256": "797a79761063e41ecda6afb72a28b67434a31a7a4ed392645b73e0a5ae22655a"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/profile-rotation.webp",
+          "width": 640,
+          "height": 341,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 23148,
+          "sha256": "f0efd9bf942bc177d07851603909839b9f8cd50abd81cd8544d7ad490639ddb4"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "slug": "facial-planes-sculpt",
+      "title": "Facial planes and sculpt construction",
+      "alt": "Neutral-clay Palari sculpt studies showing facial planes, component parts, material spheres, and expression shapes.",
+      "source": {
+        "path": "docs/art-guide/assets/source/11-facial-planes-sculpt.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2294831,
+        "sha256": "98581d0435fbe201c0a893c1077cfeeefa364374c36113b00030d5e5862d29a2"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/facial-planes-sculpt.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 138888,
+          "sha256": "5df2921f485288bc61918f5804684a081de9234ff61705e2ea2e85ff587665d8"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/facial-planes-sculpt.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 31284,
+          "sha256": "10676f7a7fdd07379b651c015f0eea5d9eb6808167dff93976a389a3089e88ec"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "slug": "expression-transitions",
+      "title": "Expression transitions",
+      "alt": "One Palari identity moving through coordinated expressions with detailed studies of eyes and mouths.",
+      "source": {
+        "path": "docs/art-guide/assets/source/12-expression-transitions.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2519101,
+        "sha256": "0c29254fed972a78e4719fc58fd5287c43d34ef4bf8aa3161f9171e1df87472b"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/expression-transitions.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 199188,
+          "sha256": "e08967e7befd4d3b821f388197b305280288df956bee987e51a799a29c57be51"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/expression-transitions.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 48348,
+          "sha256": "6ef1d581e3a958edbb3856c5f5cb52ff6c61a796be3a94e04cb606004d9ef62f"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "slug": "hair-edge-architecture",
+      "title": "Hair detail and edge architecture",
+      "alt": "Palari hair silhouettes and progressive edge-detail studies across straight, wavy, curly, coily, braided, loc, and covered hair.",
+      "source": {
+        "path": "docs/art-guide/assets/source/13-hair-edge-architecture.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2459476,
+        "sha256": "cacaf2953ec4ef4d621b86deff07e988ed614db41725901d7d18e2e19d9a6827"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/hair-edge-architecture.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 223206,
+          "sha256": "8d251cfb79926988d685a7b59b3b3c8fca090c88c3b73838aaec5136b30f4b90"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/hair-edge-architecture.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 58592,
+          "sha256": "9e3333e9c2fbb2849ba8891460f484f7f01c9f895253b2851ac32d62cceaf7e5"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "slug": "palette-background-harmony",
+      "title": "Palette and background harmony",
+      "alt": "Six Palari palette studies and one character tested against several value and background systems.",
+      "source": {
+        "path": "docs/art-guide/assets/source/14-palette-background-harmony.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2378309,
+        "sha256": "3ebd6dbb4613913af1adf57a85a042bfbb92e35c8ca29a96b4ce0d168a8e4c61"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/palette-background-harmony.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 164878,
+          "sha256": "8b5a0611a429032fc8e5af020169d5f928b6bf25070af2a49d173a8a39227e77"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/palette-background-harmony.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 43446,
+          "sha256": "4420cee4e2e64f9329b182462c852717050cabbe188c364908311420aae14c2f"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "slug": "headwear-fabric-mechanics",
+      "title": "Headwear folds and fabric mechanics",
+      "alt": "Respectful Palari headwear studies showing folds, wrap direction, anchor points, fabric texture, and head construction.",
+      "source": {
+        "path": "docs/art-guide/assets/source/15-headwear-fabric-mechanics.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2690399,
+        "sha256": "ef85a02a0035558bb79c7d6853e5376f2825497b4bfe2ec5622827591cb15d68"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/headwear-fabric-mechanics.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 235912,
+          "sha256": "6fe96365a09fdeab329fd52b2c96b0d4d224c91e0f0fcb89fe443e5bb1e3b41a"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/headwear-fabric-mechanics.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 57582,
+          "sha256": "242354cdaaf782b0fdaa5843f1d41ff2dacb3c6abd8a30afd7ed596fd66d71c9"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "slug": "3d-orthographic-turnaround",
+      "title": "3D orthographic turnaround",
+      "alt": "A neutral Palari bust shown consistently from front, three-quarter, profile, rear three-quarter, and back views.",
+      "source": {
+        "path": "docs/art-guide/assets/source/16-3d-orthographic-turnaround.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 1588484,
+        "sha256": "d89afa78c0ac9653c482ce7437a9f60fc40ca4ee88a3c42cf8e3a59b4ba48b88"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/3d-orthographic-turnaround.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 94186,
+          "sha256": "18adbef76a014e8e6f5d49ad597041e1142a5067ab068c447a11742d73fe90a0"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/3d-orthographic-turnaround.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 19076,
+          "sha256": "84a8c79f7f25e492c95867230683dcaafe62b63e3fa3217e1b54583f2164af44"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "slug": "3d-sculpt-materials-rig",
+      "title": "3D sculpt, materials, and rig language",
+      "alt": "A neutral-clay Palari head with component parts, facial deformation studies, material spheres, and a final color render.",
+      "source": {
+        "path": "docs/art-guide/assets/source/17-3d-sculpt-materials-rig.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2294496,
+        "sha256": "495d8750155b5ce42b9e727b3176154f761e9d848b54da5a944e9e85a2b8361d"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/3d-sculpt-materials-rig.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 143998,
+          "sha256": "3d9c506ba6121c4d2988ecc5adef72276cec1272b396ea601d94749886834cb7"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/3d-sculpt-materials-rig.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 37310,
+          "sha256": "98fcfb6fbe302dcbc90002d0396ea042bb9c650a848a0e234a498e746e3d3a46"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "slug": "people-not-presets",
+      "title": "People, not presets",
+      "alt": "Six structurally distinct original Palari individuals paired with neutral construction busts.",
+      "source": {
+        "path": "docs/art-guide/assets/source/18-people-not-presets.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2476808,
+        "sha256": "8d972ef3eb8b7d9949955263f2e803b15dbe5234d43e9a1c09e8ab01d13b5ae3"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/people-not-presets.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 160966,
+          "sha256": "c93c1cdd01d638206beb50237c6a7b05c94289c4a6d7b57fa3bf4eed2d4e6882"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/people-not-presets.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 34674,
+          "sha256": "c002f06ca85512ba677a1d494c0c4f55f98d9e0051484977e29eff2158945996"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "slug": "shared-emotion",
+      "title": "Shared emotion, individual anatomy",
+      "alt": "Four distinct Palari individuals each moving from neutral to a gentle smile while retaining identity.",
+      "source": {
+        "path": "docs/art-guide/assets/source/19-shared-emotion.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2452794,
+        "sha256": "3a00eabb7d7158ee938a45c3819a49f9d1b0455a70eeb28ef65f45f2b5de4232"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/shared-emotion.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 169324,
+          "sha256": "e4fc2d6406c5291a6e12a853bd536d6dda337632070324e8166fc7ae69fc08bd"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/shared-emotion.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 42674,
+          "sha256": "4117f22f59f070fb09999104884b462b8bfe6bbb0b9d447db1197d495433cce9"
+        }
+      }
+    },
+    {
+      "id": 20,
+      "slug": "mask-recolor-qa",
+      "title": "Masks, recoloring, and final QA",
+      "alt": "One curly-haired Palari portrait with four safe background and garment color variations plus monochrome protection-region studies.",
+      "source": {
+        "path": "docs/art-guide/assets/source/20-mask-recolor-qa.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2436007,
+        "sha256": "f288d7aa4f3789d57bc8c38ff0ecf2510c30a2399f2409bb7e93b56c8ee920b2"
+      },
+      "outputs": {
+        "full": {
+          "path": "public/handbook/assets/full/mask-recolor-qa.webp",
+          "width": 1280,
+          "height": 1280,
+          "maxWidth": 1280,
+          "quality": 84,
+          "bytes": 190508,
+          "sha256": "2c45136db5a9ecc198c8e3d5c41ab44455cbeff8ba2d227177c46e691f6bd538"
+        },
+        "compact": {
+          "path": "public/handbook/assets/compact/mask-recolor-qa.webp",
+          "width": 640,
+          "height": 640,
+          "maxWidth": 640,
+          "quality": 76,
+          "bytes": 43376,
+          "sha256": "58ad50a5096702ffc37095dc494a2c7a8935603092f3528365ef81a8422d8ead"
+        }
+      }
+    }
+  ]
+}

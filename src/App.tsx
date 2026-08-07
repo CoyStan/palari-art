@@ -97,7 +97,10 @@ export function App() {
           <span>Palari Art</span>
         </a>
         <p>Color studio for character portraits</p>
-        <div className="local-note"><span aria-hidden="true" /> Runs locally</div>
+        <div className="topbar-actions">
+          <a className="handbook-nav-link" href={assetUrl("/handbook/")}>Handbook</a>
+          <div className="local-note"><span aria-hidden="true" /> Runs locally</div>
+        </div>
       </header>
 
       <main className="workspace">

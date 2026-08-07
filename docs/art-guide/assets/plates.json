@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "generationModel": "OpenAI built-in image generation",
+  "sharedReferences": [
+    "public/avatars/standardized-1x1/avatar-04.png",
+    "public/avatars/standardized-4x4/avatar-4x4-10-v1.png",
+    "public/avatars/coverage-expansion/avatar-coverage-002.png",
+    "public/avatars/coverage-expansion/avatar-coverage-012.png"
+  ],
+  "sharedConstraints": "Use the supplied portraits only for the warm polished Palari 3D finish. Create original teaching characters; do not copy identities, garments, hairstyles, or accessories. Avoid stereotypes, regional face types, photorealism, logos, and watermarks.",
+  "plates": [
+    {
+      "id": 1,
+      "slug": "portrait-dna",
+      "title": "Portrait DNA and silhouette",
+      "source": "docs/art-guide/assets/source/01-portrait-dna.png",
+      "alt": "Palari portrait construction study with front and profile views, construction guides, and a progression from simple head planes to a finished portrait.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a visual-development plate explaining the Palari square portrait, skull, face, neck, shoulders, profile, and construction progression on warm cream paper.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 2,
+      "slug": "eyes-and-brows",
+      "title": "Eye, eyelid, and brow construction",
+      "source": "docs/art-guide/assets/source/02-eyes-and-brows.png",
+      "alt": "A comparative Palari eye and eyebrow study showing lid structures, spacing, brow rhythms, gaze, and varied faces.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create an artist-facing Palari eye and brow study covering lids, sockets, gaze, catchlights, spacing, and varied individual construction.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 3,
+      "slug": "noses-and-mouths",
+      "title": "Nose and mouth mechanics",
+      "source": "docs/art-guide/assets/source/03-noses-and-mouths.png",
+      "alt": "Palari studies of varied noses, lips, smiles, facial hair, and age-related mouth and nose construction.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create a Palari visual guide to varied nose bridges, tips, nostrils, lips, smiles, teeth grouping, facial hair, and age.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 4,
+      "slug": "hair-language",
+      "title": "Hair architecture and texture",
+      "source": "docs/art-guide/assets/source/04-hair-language.png",
+      "alt": "A broad Palari hair study showing silhouettes, construction stages, edge details, curls, waves, braids, locs, and varied hairstyles.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create a comprehensive Palari hair construction plate from skull and silhouette through primary masses, secondary clumps, and selective strands.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 5,
+      "slug": "headwear-accessories",
+      "title": "Headwear, facial hair, and accessories",
+      "source": "docs/art-guide/assets/source/05-headwear-accessories.png",
+      "alt": "Palari headwear, glasses, jewelry, and facial-hair construction studies with varied original characters.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create respectful Palari construction studies for headwear, glasses, earrings, necklaces, beards, and mustaches.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 6,
+      "slug": "faces-age-variety",
+      "title": "Face shape, age, and variation",
+      "source": "docs/art-guide/assets/source/06-faces-age-variety.png",
+      "alt": "Many distinct Palari faces and graphite constructions demonstrating age, jaw, cheek, eye, nose, and silhouette variation.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create a Palari face variation sheet using distinct skulls, jaws, cheeks, feature spacing, ages, and silhouettes rather than one default face.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 7,
+      "slug": "garments-shoulders",
+      "title": "Garments, shoulders, and boundaries",
+      "source": "docs/art-guide/assets/source/07-garments-shoulders.png",
+      "alt": "Palari neckline, collar, shoulder, garment, and hair-overlap studies for clean portrait construction.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create Palari garment and shoulder studies showing complete shoulders, neckline authority, fabric thickness, folds, layering, and hair overlap.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 8,
+      "slug": "light-color-materials",
+      "title": "Light, color, and materials",
+      "source": "docs/art-guide/assets/source/08-light-color-materials.png",
+      "alt": "A Palari rendering progression with material swatches for skin, fabric, hair, glass, metal, and headwear.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create a Palari lighting and material plate showing the path from flat color to soft studio render and distinct skin, fabric, hair, glass, and metal response.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 9,
+      "slug": "expression-composition-polish",
+      "title": "Expression, composition, and polish",
+      "source": "docs/art-guide/assets/source/09-expression-composition-polish.png",
+      "alt": "One Palari character demonstrating varied natural expressions, composition checks, and polish comparisons.",
+      "generatedOn": "2026-08-05",
+      "prompt": "Create a Palari expression and final-polish plate with natural acting, subtle asymmetry, silhouette checks, and works-versus-avoid examples.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 10,
+      "slug": "profile-rotation",
+      "title": "Profile and rotation",
+      "source": "docs/art-guide/assets/source/10-profile-rotation.png",
+      "alt": "A Palari character turnaround from front to back with head-construction guides and upward and downward views.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a Palari front, three-quarter, profile, rear, up, and down head-rotation plate with consistent identity and guides.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 11,
+      "slug": "facial-planes-sculpt",
+      "title": "Facial planes and sculpt construction",
+      "source": "docs/art-guide/assets/source/11-facial-planes-sculpt.png",
+      "alt": "Neutral-clay Palari sculpt studies showing facial planes, component parts, material spheres, and expression shapes.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a neutral-clay Palari facial-plane and sculpt-construction reference with part separation, surface flow, and a compact expression set.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 12,
+      "slug": "expression-transitions",
+      "title": "Expression transitions",
+      "source": "docs/art-guide/assets/source/12-expression-transitions.png",
+      "alt": "One Palari identity moving through coordinated expressions with detailed studies of eyes and mouths.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a Palari expression-transition plate preserving identity while lids, brows, cheeks, nostrils, mouth, and jaw move together.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 13,
+      "slug": "hair-edge-architecture",
+      "title": "Hair detail and edge architecture",
+      "source": "docs/art-guide/assets/source/13-hair-edge-architecture.png",
+      "alt": "Palari hair silhouettes and progressive edge-detail studies across straight, wavy, curly, coily, braided, loc, and covered hair.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a Palari hair edge-architecture plate with silhouette, primary masses, overlapping clumps, selective strands, and controlled flyaways.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 14,
+      "slug": "palette-background-harmony",
+      "title": "Palette and background harmony",
+      "source": "docs/art-guide/assets/source/14-palette-background-harmony.png",
+      "alt": "Six Palari palette studies and one character tested against several value and background systems.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a Palari five-part palette and background-harmony plate preserving boundaries across light, mid-value, warm, and cool settings.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 15,
+      "slug": "headwear-fabric-mechanics",
+      "title": "Headwear folds and fabric mechanics",
+      "source": "docs/art-guide/assets/source/15-headwear-fabric-mechanics.png",
+      "alt": "Respectful Palari headwear studies showing folds, wrap direction, anchor points, fabric texture, and head construction.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create respectful Palari headwear studies showing the skull, anchor points, tension, compression, overlap, thickness, gravity, and material differences.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 16,
+      "slug": "3d-orthographic-turnaround",
+      "title": "3D orthographic turnaround",
+      "source": "docs/art-guide/assets/source/16-3d-orthographic-turnaround.png",
+      "alt": "A neutral Palari bust shown consistently from front, three-quarter, profile, rear three-quarter, and back views.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a production-oriented Palari orthographic bust turnaround with locked camera height, scale, head tilt, shoulders, hair volume, and landmarks.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 17,
+      "slug": "3d-sculpt-materials-rig",
+      "title": "3D sculpt, materials, and rig language",
+      "source": "docs/art-guide/assets/source/17-3d-sculpt-materials-rig.png",
+      "alt": "A neutral-clay Palari head with component parts, facial deformation studies, material spheres, and a final color render.",
+      "generatedOn": "2026-08-06",
+      "prompt": "Create a Palari 3D production plate covering neutral sculpt, separate parts, materials, facial deformation flow, and a compact rig expression set.",
+      "review": "recovered-and-reviewed"
+    },
+    {
+      "id": 18,
+      "slug": "people-not-presets",
+      "title": "People, not presets",
+      "source": "docs/art-guide/assets/source/18-people-not-presets.png",
+      "alt": "Six structurally distinct original Palari individuals paired with neutral construction busts.",
+      "generatedOn": "2026-08-07",
+      "prompt": "Create a text-free board of six original Palari individuals with distinct eyelids, spacing, brows, noses, cheeks, jaws, ages, skin tones, and hair, each paired with a neutral construction bust. Show individual variation without regions or demographic types.",
+      "review": "reviewed"
+    },
+    {
+      "id": 19,
+      "slug": "shared-emotion",
+      "title": "Shared emotion, individual anatomy",
+      "source": "docs/art-guide/assets/source/19-shared-emotion.png",
+      "alt": "Four distinct Palari individuals each moving from neutral to a gentle smile while retaining identity.",
+      "generatedOn": "2026-08-07",
+      "prompt": "Create a text-free four-row expression study. Each distinct Palari individual moves from neutral through softening to gentle smile while identity, anatomy, age, hair, skin, clothing, camera, and lighting remain locked.",
+      "review": "reviewed"
+    },
+    {
+      "id": 20,
+      "slug": "mask-recolor-qa",
+      "title": "Masks, recoloring, and final QA",
+      "source": "docs/art-guide/assets/source/20-mask-recolor-qa.png",
+      "alt": "One curly-haired Palari portrait with four safe background and garment color variations plus monochrome protection-region studies.",
+      "generatedOn": "2026-08-07",
+      "prompt": "Create a text-free safe-recolor QA board with one complex curly-haired Palari identity, four variants changing only background and upper garment, and simple monochrome studies for foreground, hair, neck and skin, and garment regions.",
+      "review": "reviewed"
+    }
+  ]
+}

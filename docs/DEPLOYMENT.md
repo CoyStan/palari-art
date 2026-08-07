@@ -18,10 +18,13 @@ That command:
 
 1. Builds Vite with the `/palari-art/` base path and without automatically copying `public/`.
 2. Copies only `public/avatars-web/` and `public/masks-web/` into `dist/`.
-3. Adds `.nojekyll`.
-4. Verifies complete portrait and mask WebP coverage, both manifests, the absence of PNG files, the base path, and a 450 MiB artifact ceiling.
+3. Copies `public/handbook/`, containing optimized WebPs, its manifest, and the 80-page PDF.
+4. Adds `.nojekyll`.
+5. Verifies complete portrait, mask, and handbook WebP coverage, all manifests, both HTML entries, the PDF, the absence of PNG files, the base path, and a 450 MiB artifact ceiling.
 
 The checksum-locked portrait PNG masters, reviewed mask PNG masters, metadata, and audit-only layers remain in the repository but are never included in the Pages artifact.
+
+The handbook's lossless plate masters and approved visual concepts also remain repository-only under `docs/art-guide/`; Pages receives only derived WebPs and the PDF.
 
 ## Automatic deployment
 
@@ -49,6 +52,14 @@ After a reviewed runtime mask PNG changes:
 ```bash
 npm run masks:web:generate
 npm run verify:web-masks
+```
+
+After handbook copy or plate art changes:
+
+```bash
+npm run handbook:assets:generate
+npm run handbook:pdf
+npm run verify:handbook
 ```
 
 The mask generator requires FFmpeg with `libwebp` plus ImageMagick's `compare` command. Generation uses lossless WebP and rejects any output with a nonzero absolute pixel difference.

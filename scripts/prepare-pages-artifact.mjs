@@ -11,7 +11,8 @@ await mkdir(distRoot, { recursive: true });
 await Promise.all([
   cp(path.join(publicRoot, "avatars-web"), path.join(distRoot, "avatars-web"), { recursive: true }),
   cp(path.join(publicRoot, "masks-web"), path.join(distRoot, "masks-web"), { recursive: true }),
+  cp(path.join(publicRoot, "handbook"), path.join(distRoot, "handbook"), { recursive: true }),
 ]);
 await writeFile(path.join(distRoot, ".nojekyll"), "");
 
-console.log("Prepared the GitHub Pages artifact from browser-only WebP delivery assets.");
+console.log("Prepared the GitHub Pages artifact with the editor, handbook WebPs, and handbook PDF.");
