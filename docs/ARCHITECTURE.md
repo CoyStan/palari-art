@@ -29,7 +29,7 @@ There is no application server, database, authentication layer, or persistent up
 2. `src/App.tsx` owns the selected portrait, editable colors, mask tolerances, upload list, and export state.
 3. `src/data/avatars.ts` constructs the 157 source-linked portrait records, attaches `src/data/avatar-framing.json` metadata and generated WebP paths, and excludes the explicitly retired Avatar 024 (`expanded-14`) from the 156-item active library after deterministic mixing.
 4. The library requests 256px WebP thumbnails; `AvatarCanvas` requests the selected portrait's 1024px WebP and invokes `renderRecoloredAvatar` whenever the source, framing, or settings change.
-5. `src/lib/recolor.ts` applies the same framing transform to the source and every registered layer, loads stored semantic masks when registered, otherwise estimates fallback masks, then writes recolored pixels to the Canvas.
+5. `src/lib/recolor.ts` applies the same framing transform to the source and every registered lossless WebP layer, otherwise estimates fallback masks, then writes recolored pixels to the Canvas.
 6. The same Canvas is encoded as PNG or WebP for download.
 
 Object URLs created from uploaded files exist only for the browser session. Uploads are not written to the server or added to the built-in library.
@@ -38,7 +38,13 @@ Object URLs created from uploaded files exist only for the browser session. Uplo
 
 `scripts/generate-web-avatar-assets.mjs` creates full editor WebPs and gallery thumbnails from every PNG master without modifying the masters. `public/avatars-web/manifest.json` checksum-links each tier to its source. `scripts/verify-web-avatar-assets.mjs` validates coverage, paths, hashes, dimensions, quality records, and size ceilings without requiring FFmpeg at verification time.
 
-The full WebP tier is 1024 × 1024 because that is the renderer and export resolution. The gallery tier is 256 × 256 because tiles are displayed much smaller. Both retain the source's normalized coordinate system, so `avatar-framing.json` applies identically. Reviewed foregrounds and semantic masks remain PNGs and continue to provide the production pixel and alpha authority during recoloring.
+The full WebP tier is 1024 × 1024 because that is the renderer and export resolution. The gallery tier is 256 × 256 because tiles are displayed much smaller. Both retain the source's normalized coordinate system, so `avatar-framing.json` applies identically.
+
+`scripts/generate-web-mask-assets.mjs` creates pixel-identical lossless WebPs for the registered runtime mask subset and records every PNG/output checksum plus an ImageMagick absolute-error result of zero in `public/masks-web/manifest.json`. `scripts/verify-web-mask-assets.mjs` validates all 1,395 expected outputs without requiring FFmpeg or ImageMagick. The PNGs under `public/masks/` remain the review and provenance authority; only their derived WebPs are loaded by the browser.
+
+The GitHub Pages build uses Vite's `/palari-art/` base path with `publicDir` disabled. `scripts/prepare-pages-artifact.mjs` then copies only `public/avatars-web/` and `public/masks-web/` into `dist/`. Verification rejects master/audit PNGs, missing manifests, incomplete WebP coverage, or an unexpectedly large artifact.
+
+The current Pages artifact is 216.7 MiB and contains 314 avatar WebPs plus 1,395 runtime-mask WebPs. It contains no PNGs.
 
 ## Face-aware framing
 
@@ -52,7 +58,7 @@ Run `npm run verify:framing` after any source or framing change. A source checks
 
 ### Stored semantic masks
 
-All 157 bundled portraits have reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` files under `public/masks/<avatar-id>/`. `foreground.png` is BiRefNet's refined transparent character; `matte.png` is its 256-level alpha edge; the SAM masks remain reproducible semantic references.
+All 157 bundled portraits have reviewed `foreground.png`, `matte.png`, `person.png`, and `shirt.png` files under `public/masks/<avatar-id>/`. `foreground.png` is BiRefNet's refined transparent character; `matte.png` is its 256-level alpha edge; the SAM masks remain reproducible semantic references. Browser delivery uses checksum-linked lossless WebP copies of the runtime subset without changing decoded pixels.
 
 The 154 portraits with visible hair also have a reviewed SAM `hair.png` search mask and seven local hair-matting/refined-shirt layers. The bald portrait and two fully covered-hair portraits are explicit exceptions. At runtime, `hair.png` is a hard preservation layer: fine alpha and recovered underlay may improve strand edges outside it but cannot reinterpret reviewed hair as garment or background. The reviewed `shirt.png` is the garment and neckline authority; `shirt-refined.png` remains a reproducible audit derivative rather than the production recolor mask. A 24-pixel reviewed-SAM neighborhood constrains MediaPipe components, protecting scarves and head coverings from semantic expansion.
 

@@ -25,6 +25,12 @@ Run `npm run avatars:web:generate` after a source portrait changes, then run `np
 
 Do not replace the PNG masters, mask sources, or source-checksum metadata with these lossy delivery files. Framing remains normalized, so the same scale/center record applies to the master, editor WebP, thumbnail, and every mask layer.
 
+Reviewed mask PNGs have a separate browser-delivery tier under `public/masks-web/`. It contains lossless WebP copies only for the nine possible runtime layers: `foreground`, `matte`, `shirt`, and the six registered hair layers. `manifest.json` links every output to its reviewed PNG by path, dimensions, byte count, and SHA-256 checksum, and records the zero-pixel-difference comparison performed during generation. Audit-only layers such as `person.png`, `hair-trimap.png`, and `shirt-refined.png` are deliberately excluded.
+
+Run `npm run masks:web:generate` after any reviewed runtime PNG changes, then run `npm run verify:web-masks`. Do not edit `public/masks-web/` directly and never use the derived WebPs as segmentation, matting, review, or provenance inputs.
+
+The current 1,395-file runtime mask tier is 204.4 MiB versus 322.8 MiB for the corresponding PNGs, a 36.7% reduction with zero differing decoded pixels.
+
 The application also normalizes composition without changing these source files. `src/data/avatar-framing.json` contains source-checksum-linked scale and center values for all 157 portraits. The same transform is applied to the portrait and every mask layer, preserving exact alignment.
 
 The folder name `standardized-4x4` is historical. Its assets are square portraits. The application presents 156 active portraits together in one deterministic mixed order; collection names remain internal provenance metadata only. Avatar 024 (`expanded-14`) is intentionally retired from the UI, but its source and every aligned/reviewed artifact remain archived to preserve provenance and stable IDs. Do not interpret the folder as a four-column sprite sheet.
@@ -91,6 +97,8 @@ It also invalidates that avatar's framing checksum. Regenerate framing with `npm
 Reviewed layers live at `public/masks/<avatar-id>/`. Every directory contains the base `foreground.png`, `matte.png`, `person.png`, `shirt.png`, and `metadata.json`. The 154 portraits with visible hair also contain reviewed `hair.png`, `hair-region.png`, `hair-trimap.png`, `hair-matte.png`, `hair-foreground.png`, `hair-underlay.png`, `hair-underlay-kind.png`, and `shirt-refined.png`. The bald portrait and two fully covered-hair portraits are explicitly exempt. The PNGs match their source portrait dimensions. Metadata records source and output checksums, provider requests, pinned local models, prompts, scores, parameters, cleanup provenance, and separate review outcomes.
 
 All 157 mask IDs and their source files are defined once in `src/data/avatar-masks.json`; `hairMattingCoverage: "all"` registers the reviewed hair layer contract, with explicit `hairMatting: false` exemptions where hair is absent or fully covered. `src/data/avatars.ts` uses that manifest to attach masks to the matching portraits. Run `npm run verify:masks` after changing a source, mask, manifest entry, or metadata file.
+
+The browser resolves those registered PNG layer names to lossless `public/masks-web/` delivery URLs. The source and delivery dimensions remain identical, so framing applies without any independent transform.
 
 ## Uploaded portraits
 

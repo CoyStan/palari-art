@@ -9,10 +9,13 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 4173",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --mode pages && node scripts/prepare-pages-artifact.mjs && node scripts/verify-pages-artifact.mjs",
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview --host 0.0.0.0",
     "verify:assets": "node scripts/verify-assets.mjs",
     "verify:web-assets": "node scripts/verify-web-avatar-assets.mjs",
+    "verify:web-masks": "node scripts/verify-web-mask-assets.mjs",
+    "verify:pages": "node scripts/verify-pages-artifact.mjs",
     "verify:masks": "node scripts/verify-avatar-masks.mjs",
     "verify:framing": "node scripts/verify-avatar-framing.mjs",
     "verify:masks:generated": "node scripts/verify-avatar-masks.mjs --allow-unreviewed",
@@ -31,7 +34,8 @@
     "hair:mattes:review": "node scripts/record-hair-matting-review.mjs",
     "framing:generate": "python3 scripts/generate-avatar-framing.py --all",
     "avatars:web:generate": "node scripts/generate-web-avatar-assets.mjs",
-    "check": "npm run verify:assets && npm run verify:web-assets && npm run verify:masks && npm run verify:framing && npm run verify:attributes && npm run build"
+    "masks:web:generate": "node scripts/generate-web-mask-assets.mjs",
+    "check": "npm run verify:assets && npm run verify:web-assets && npm run verify:masks && npm run verify:web-masks && npm run verify:framing && npm run verify:attributes && npm run build"
   },
   "dependencies": {
     "lucide-react": "0.468.0",

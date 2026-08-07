@@ -12,7 +12,7 @@ This preserves server resources and avoids paying for repeated AI calls while a 
 
 ## Current implementation
 
-`src/lib/recolor.ts` loads a reviewed refined foreground, alpha matte, and garment mask for all 157 bundled portraits, plus a coarse hair mask for the 154 portraits with visible hair. Reviewed `shirt.png` is the garment and neckline authority, and reviewed `hair.png` is a hard preservation layer. When no stored layers are registered, as with temporary uploads, it estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
+`src/lib/recolor.ts` loads lossless WebP delivery copies of the reviewed refined foreground, alpha matte, and garment mask for all 157 bundled portraits, plus the registered hair layers for the 154 portraits with visible hair. Reviewed `shirt.png` remains the garment and neckline authority, and reviewed `hair.png` remains a hard preservation layer. The WebPs decode to the same pixels and do not replace those reviewed PNG authorities. When no stored layers are registered, as with temporary uploads, the renderer estimates background and shirt masks from pixel colors and connected regions. That fallback does not identify a face, hair, clothing, or accessories semantically.
 
 For stored masks, the renderer extends the garment by at most two pixels only where it meets the external BiRefNet foreground silhouette or canvas boundary, and refuses that extension inside reviewed hair. This covers antialiased source-garment fringes without dilating the mask around internal necklines, skin, scarves, hair, or layered clothing.
 
@@ -47,6 +47,8 @@ The production library normally uses these stored layers:
 | BiRefNet v2 Matting | `matte.png` | Soft 256-level foreground alpha; invert for the background |
 | SAM prompt `person` | `person.png` | Reproducible hard silhouette and audit reference |
 | SAM prompt `sweater` | `shirt.png` | Recolor the visible upper garment |
+
+The PNG files above are the review and provenance contract. `npm run masks:web:generate` creates the browser contract under `public/masks-web/` using FFmpeg/libwebp lossless mode and verifies every new output with an ImageMagick absolute-error comparison. `npm run verify:web-masks` then validates source/output checksums, dimensions, lossless bitstreams, complete registry coverage, and the recorded zero-pixel-difference result.
 
 ### Hair-edge matting
 

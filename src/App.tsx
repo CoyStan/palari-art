@@ -4,6 +4,7 @@ import { AvatarCanvas } from "./components/AvatarCanvas";
 import { AvatarLibrary } from "./components/AvatarLibrary";
 import { ColorControl } from "./components/ColorControl";
 import { avatars as builtInAvatars, type Avatar } from "./data/avatars";
+import { assetUrl } from "./lib/assets";
 import { canvasToBlob, type RecolorSettings } from "./lib/recolor";
 
 const DEFAULTS: RecolorSettings = {
@@ -66,7 +67,7 @@ export function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="wordmark" href="/" aria-label="Palari Art home">
+        <a className="wordmark" href={assetUrl("/")} aria-label="Palari Art home">
           <span className="mark" aria-hidden="true"><i /><i /><i /></span>
           <span>Palari Art</span>
         </a>

@@ -1,6 +1,7 @@
 import maskRegistry from "./avatar-masks.json";
 import framingRegistry from "./avatar-framing.json";
 import type { AvatarFraming, AvatarMaskSources } from "../lib/recolor";
+import { assetUrl } from "../lib/assets";
 
 export type AvatarCollection = "Original set" | "Expanded set" | "Los 5 fantásticos" | "Coverage expansion" | "Uploads";
 
@@ -40,18 +41,18 @@ const storedMasks = new Map<string, AvatarMaskSources>(
       const useHairMatting = !hairMattingDisabled
         && (maskRegistry.hairMattingCoverage === "all" || avatar.hairPilot);
       return {
-        foreground: `/masks/${avatar.id}/foreground.png`,
-        matte: `/masks/${avatar.id}/matte.png`,
-        shirt: `/masks/${avatar.id}/shirt.png`,
+        foreground: assetUrl(`/masks-web/${avatar.id}/foreground.webp`),
+        matte: assetUrl(`/masks-web/${avatar.id}/matte.webp`),
+        shirt: assetUrl(`/masks-web/${avatar.id}/shirt.webp`),
         ...(useHairMatting
           ? {
               hairMatting: {
-                coarse: `/masks/${avatar.id}/hair.png`,
-                region: `/masks/${avatar.id}/hair-region.png`,
-                matte: `/masks/${avatar.id}/hair-matte.png`,
-                foreground: `/masks/${avatar.id}/hair-foreground.png`,
-                underlay: `/masks/${avatar.id}/hair-underlay.png`,
-                underlayKind: `/masks/${avatar.id}/hair-underlay-kind.png`,
+                coarse: assetUrl(`/masks-web/${avatar.id}/hair.webp`),
+                region: assetUrl(`/masks-web/${avatar.id}/hair-region.webp`),
+                matte: assetUrl(`/masks-web/${avatar.id}/hair-matte.webp`),
+                foreground: assetUrl(`/masks-web/${avatar.id}/hair-foreground.webp`),
+                underlay: assetUrl(`/masks-web/${avatar.id}/hair-underlay.webp`),
+                underlayKind: assetUrl(`/masks-web/${avatar.id}/hair-underlay-kind.webp`),
               },
             }
           : {}),
@@ -67,9 +68,9 @@ const originalSet: Avatar[] = Array.from({ length: 10 }, (_, index) => {
   return {
     id,
     name: `Avatar ${String(index + 1).padStart(3, "0")}`,
-    src,
-    webSrc: webAssetPath(src, "full"),
-    thumbnailSrc: webAssetPath(src, "thumbnail"),
+    src: assetUrl(src),
+    webSrc: assetUrl(webAssetPath(src, "full")),
+    thumbnailSrc: assetUrl(webAssetPath(src, "thumbnail")),
     collection: "Original set",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
@@ -83,9 +84,9 @@ const expandedSet: Avatar[] = Array.from({ length: 28 }, (_, index) => {
   return {
     id,
     name: `Avatar ${String(index + 11).padStart(3, "0")}`,
-    src,
-    webSrc: webAssetPath(src, "full"),
-    thumbnailSrc: webAssetPath(src, "thumbnail"),
+    src: assetUrl(src),
+    webSrc: assetUrl(webAssetPath(src, "full")),
+    thumbnailSrc: assetUrl(webAssetPath(src, "thumbnail")),
     collection: "Expanded set",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
@@ -99,9 +100,9 @@ const fantasticosSet: Avatar[] = Array.from({ length: 105 }, (_, index) => {
   return {
     id,
     name: `Avatar ${String(index + 39).padStart(3, "0")}`,
-    src,
-    webSrc: webAssetPath(src, "full"),
-    thumbnailSrc: webAssetPath(src, "thumbnail"),
+    src: assetUrl(src),
+    webSrc: assetUrl(webAssetPath(src, "full")),
+    thumbnailSrc: assetUrl(webAssetPath(src, "thumbnail")),
     collection: "Los 5 fantásticos",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),
@@ -115,9 +116,9 @@ const coverageExpansion: Avatar[] = Array.from({ length: 14 }, (_, index) => {
   return {
     id,
     name: `Avatar ${String(index + 144).padStart(3, "0")}`,
-    src,
-    webSrc: webAssetPath(src, "full"),
-    thumbnailSrc: webAssetPath(src, "thumbnail"),
+    src: assetUrl(src),
+    webSrc: assetUrl(webAssetPath(src, "full")),
+    thumbnailSrc: assetUrl(webAssetPath(src, "thumbnail")),
     collection: "Coverage expansion",
     masks: storedMasks.get(id),
     framing: storedFraming.get(id),

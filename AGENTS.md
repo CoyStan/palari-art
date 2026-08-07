@@ -16,6 +16,8 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - There are 157 bundled source portraits under `public/avatars/`: 10 original, 28 expanded, 105 Los 5 fantásticos, and 14 coverage-expansion portraits.
 - All bundled sources are square 1254 × 1254 PNG files.
 - Every PNG master has a checksum-linked derived 1024px editor WebP and 256px gallery WebP under `public/avatars-web/`. The browser uses those delivery files; the PNG masters remain the source of truth. Run `npm run avatars:web:generate` after source changes and `npm run verify:web-assets` to validate all 314 outputs and their manifest.
+- Every reviewed runtime mask layer has a checksum-linked lossless WebP derivative under `public/masks-web/`. The browser uses those 1,395 pixel-identical delivery files; reviewed PNG masks under `public/masks/` remain the source of truth. Run `npm run masks:web:generate` after a reviewed mask changes and `npm run verify:web-masks` to validate coverage, lossless bitstreams, dimensions, checksums, and zero-difference generation records.
+- `npm run build:pages` creates a verified 216.7 MiB artifact at the `/palari-art/` base path containing 314 avatar WebPs and 1,395 runtime-mask WebPs with no PNG masters or audit layers.
 - The editor renders and exports at 1024 × 1024.
 - All 157 bundled portraits have source-linked face-aware framing records in `src/data/avatar-framing.json`. The renderer applies one nondestructive scale/center transform to the portrait and every mask layer; do not pre-crop sources or transform layers independently.
 - The app is currently a browser-only Vite SPA. It has no backend.
@@ -51,6 +53,7 @@ See `docs/STATUS.md` for the short handoff and `docs/MASKING.md` for the approve
 npm run dev            # Vite on 0.0.0.0:4173
 npm run verify:assets  # Check filenames, counts, PNG format, and dimensions
 npm run verify:web-assets # Check all full WebPs, thumbnails, checksums, dimensions, and size records
+npm run verify:web-masks # Check all 1,395 lossless runtime-mask WebPs and their manifest
 npm run verify:masks   # Check all sources, masks, checksums, metadata, and review state
 npm run verify:framing # Check 157 source-linked scale/center records and crop bounds
 npm run verify:attributes # Check the 157-record visual variation dataset
@@ -67,6 +70,8 @@ npm run hair:mattes:generate -- --all
 npm run hair:mattes:review -- --id=all --reviewer=<name> --notes=<summary>
 npm run framing:generate # Regenerate all framing records locally after installing its Python requirements
 npm run avatars:web:generate # Regenerate/resume 1024px and thumbnail WebP delivery assets
+npm run masks:web:generate # Regenerate/resume pixel-identical lossless mask WebPs
+npm run build:pages    # Build and verify the slim /palari-art/ GitHub Pages artifact
 npm run typecheck      # TypeScript only
 npm run build          # TypeScript plus production build
 npm run check          # Canonical repository validation
@@ -86,6 +91,8 @@ For remote browser access, use `http://<tailscale-ip>:4173`. Obtain the current 
 | Face-aware framing metadata | `src/data/avatar-framing.json` |
 | Framing generation and verification | `scripts/generate-avatar-framing.py`, `scripts/verify-avatar-framing.mjs` |
 | Web asset generation and verification | `scripts/generate-web-avatar-assets.mjs`, `scripts/verify-web-avatar-assets.mjs` |
+| Runtime mask delivery | `scripts/generate-web-mask-assets.mjs`, `scripts/verify-web-mask-assets.mjs` |
+| GitHub Pages packaging | `scripts/prepare-pages-artifact.mjs`, `scripts/verify-pages-artifact.mjs` |
 | Color math | `src/lib/color.ts` |
 | Detection, masking, recoloring, export | `src/lib/recolor.ts` |
 | Visual styling | `src/styles.css` |
@@ -100,6 +107,7 @@ Keep image-processing logic out of React components. Components should pass inpu
 - A deliberate artwork revision may replace a bundled portrait only with explicit user direction, recorded generation provenance, and a complete mask regeneration/review.
 - Treat exported recolors, generated masks, and previews as derived files.
 - Treat `public/avatars-web/` as reproducible delivery output. Never use its lossy WebPs as mask-generation or provenance sources.
+- Treat `public/masks-web/` as reproducible lossless delivery output. Never edit it directly or use it instead of reviewed PNG masks for provenance, review, or future mask generation.
 - Keep collection filenames contiguous because `src/data/avatars.ts` currently builds paths from numeric ranges.
 - Do not rename or move a portrait without updating the registry and documentation.
 - Run `npm run verify:assets` after any asset change.
