@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-08",
+  "generator": "OpenAI built-in image generation",
+  "model": null,
+  "modelNote": "The built-in generation path did not expose an exact model identifier.",
+  "grammarBefore": "0.1.0",
+  "grammarAfter": "0.2.0",
+  "referenceImages": [
+    "docs/palari-v2/finalist-01-column-forest.png",
+    "docs/palari-v2/finalist-04-arch-burgundy.png",
+    "docs/palari-v2/finalist-05-crescent-violet.png",
+    "docs/palari-v2/finalist-07-column-mineral-red.png",
+    "docs/palari-v2/finalist-11-arch-ultramarine.png"
+  ],
+  "candidates": [
+    {
+      "id": "A01",
+      "silhouette": "column",
+      "crown": "split_petal",
+      "opening": "narrow_channel",
+      "pose": "gentle_greeting",
+      "expression": "curious",
+      "material": "stone",
+      "characteristicColor": "teal",
+      "output": "docs/palari-v2/audit-01/a01-column-stone-teal.png",
+      "sha256": "9cb335e482e5180a33773a6980a7c3a33bb7c01ae069106a20f3ef21eb1ea200",
+      "review": "pass"
+    },
+    {
+      "id": "A02",
+      "silhouette": "arch",
+      "crown": "broad_overhang",
+      "opening": "leaf",
+      "pose": "arms_folded",
+      "expression": "quietly_confident",
+      "material": "charcoal",
+      "characteristicColor": "amber",
+      "output": "docs/palari-v2/audit-01/a02-arch-charcoal-amber.png",
+      "sha256": "c84a0044d245488033546c5dd66b9dafc6d6b8a52b51f95210b2792d95132081",
+      "review": "pass"
+    },
+    {
+      "id": "A03",
+      "silhouette": "crescent",
+      "crown": "asymmetric_sweep",
+      "opening": "side_reveal",
+      "pose": "one_arm_resting",
+      "expression": "serene",
+      "material": "porcelain",
+      "characteristicColor": "coral",
+      "output": "docs/palari-v2/audit-01/a03-crescent-porcelain-coral.png",
+      "sha256": "df6154b27e19c07fed3d996d8e1365233ea3726ae4b03dd6c2353ff7878bea62",
+      "review": "reject_vessel_cavity"
+    },
+    {
+      "id": "A04",
+      "silhouette": "pod",
+      "crown": "continuous_dome",
+      "opening": "circular_aperture",
+      "pose": "thoughtful_tip",
+      "expression": "thoughtful",
+      "material": "ivory",
+      "characteristicColor": "violet",
+      "output": "docs/palari-v2/audit-01/a04-pod-ivory-violet.png",
+      "sha256": "2b2dd3038b749b2928e5c72efe768b98b7b7542a24cc34e60e09283b4970ff02",
+      "review": "reject_chibi_and_face_aperture"
+    },
+    {
+      "id": "A05",
+      "silhouette": "bell",
+      "crown": "soft_hood",
+      "opening": "vertical_oval",
+      "pose": "soft_embrace",
+      "expression": "attentive",
+      "material": "charcoal",
+      "characteristicColor": "forest",
+      "output": "docs/palari-v2/audit-01/a05-bell-charcoal-forest.png",
+      "sha256": "8108ee06aeae05b691ae87021468169a461cfe48ece191bbdf9c7cbc6d121106",
+      "review": "pass"
+    },
+    {
+      "id": "A06",
+      "silhouette": "stack",
+      "crown": "integrated_dome",
+      "opening": "layered_reveal",
+      "pose": "gentle_greeting",
+      "expression": "gently_amused",
+      "material": "stone",
+      "characteristicColor": "burgundy",
+      "output": "docs/palari-v2/audit-01/a06-stack-stone-burgundy.png",
+      "sha256": "ae74e22cf46857538d1bfbebd5d4d1b2bc964bf32baa61a03fd82da859f22f78",
+      "review": "reject_selected_variable_fidelity"
+    },
+    {
+      "id": "A07",
+      "silhouette": "column",
+      "crown": "soft_hood",
+      "opening": "vertical_oval",
+      "pose": "arms_resting",
+      "expression": "serene",
+      "material": "porcelain",
+      "characteristicColor": "ultramarine",
+      "output": "docs/palari-v2/audit-01/a07-column-porcelain-ultramarine.png",
+      "sha256": "c323943df4ffb51c37bc6f7ce201963416d7e5f7198e2b1357a38621590d67df",
+      "review": "pass_similarity_warning"
+    },
+    {
+      "id": "A08",
+      "silhouette": "arch",
+      "crown": "integrated_dome",
+      "opening": "layered_reveal",
+      "pose": "soft_embrace",
+      "expression": "attentive",
+      "material": "ivory",
+      "characteristicColor": "mineral_red",
+      "output": "docs/palari-v2/audit-01/a08-arch-ivory-mineral-red.png",
+      "sha256": "79cff9ca58e8a3a7ef5c5c1be8347e22a1d669eaa46366b396f4115a21e0552f",
+      "review": "pass"
+    }
+  ]
+}
