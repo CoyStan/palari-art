@@ -1,6 +1,13 @@
 # Current status
 
-Last updated: 2026-08-07
+Last updated: 2026-08-08
+
+## Palari V2 exploration
+
+- `docs/PALARI-V2.md` defines an exploratory ceramic character direction based on the meaning **Personal Artificial Intelligence**.
+- V2 proposes a shared ceramic material color plus one characteristic inner-intelligence color, with expressive eyes, fingerless arms, and no conventional legs.
+- The first controlled 12-study example sheet is stored at `docs/palari-v2/exploration-sheet-01.png`; the next step is finalist selection and individual material-color studies before refining the reusable prompt grammar.
+- V2 is not registered in the application and does not replace or modify the current V1 portraits, masks, editor, or deployment contract.
 
 ## Exact handoff checkpoint
 
