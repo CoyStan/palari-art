@@ -165,6 +165,59 @@ The first controlled contact sheet was generated on 2026-08-08 using the user-pr
 
 The initial visual review favors studies 01, 04, 05, 07, and 11. Studies 02, 06, and 09 demonstrate a useful failure mode: a simple horizontal open rim can make a Palari read as a bowl or cup. Finalists should prefer protective overhangs, shaped crowns, or integrated architectural openings.
 
+## Individual finalist studies
+
+Five 1254 × 1254 RGB PNG studies were generated on 2026-08-08 from exploration-sheet cells 01, 04, 05, 07, and 11. Each uses the contact sheet as an identity and style reference while resolving the selected figure as a standalone square render.
+
+| Study | File | SHA-256 |
+| ---: | --- | --- |
+| 01 | `docs/palari-v2/finalist-01-column-forest.png` | `dc1e897732593b132d91c588ebfa0f62b8ec6334e2f131af4ad2743839100e1c` |
+| 04 | `docs/palari-v2/finalist-04-arch-burgundy.png` | `85d633a95d5998aa8844c4b9f64b8a0ed9ab8dfc0ac025eb0ab71d68e3d2256c` |
+| 05 | `docs/palari-v2/finalist-05-crescent-violet.png` | `553ad7fc490ed662c359ed5994ba6191b12d062706cb64b22d65ab51927cff83` |
+| 07 | `docs/palari-v2/finalist-07-column-mineral-red.png` | `a6932ada5d2bc65f9034d5b2b7cb03011a3cca23fd015fb69dfe02078de27dc6` |
+| 11 | `docs/palari-v2/finalist-11-arch-ultramarine.png` | `b2586668372d925c52a2294c2b4ce7ef28579f2017f2a196bb5087c40757a038` |
+
+![Study 01 column with forest interior](palari-v2/finalist-01-column-forest.png)
+
+![Study 04 protective arch with burgundy interior](palari-v2/finalist-04-arch-burgundy.png)
+
+![Study 05 crescent with violet interior](palari-v2/finalist-05-crescent-violet.png)
+
+![Study 07 split column with mineral-red interior](palari-v2/finalist-07-column-mineral-red.png)
+
+![Study 11 sweeping arch with ultramarine interior](palari-v2/finalist-11-arch-ultramarine.png)
+
+These remain exploratory rather than production-approved. The individual pass confirms the strength of the shell-and-interior concept, but also shows that generation can drift in eye construction and six-dot geometry even under a shared prompt. Study 11 currently provides the best combined reference for protective architecture, fingerless gesture, inner-color readability, and emotional presence. It is the fixed-shape candidate for the first four-material comparison.
+
+## Four-material comparison
+
+![Study 11 in porcelain, ivory, stone, and charcoal](palari-v2/material-study-11-ultramarine.png)
+
+The Study 11 comparison was generated on 2026-08-08 with the geometry, ultramarine characteristic color, pose, environment, and lighting held as constant as possible.
+
+- Source: `docs/palari-v2/material-study-11-ultramarine.png`
+- Dimensions: 1254 × 1254 RGB PNG
+- SHA-256: `37a1379b1914e4ef82583e9afaa5d01fbb0518de4920d46a312c8ef1376bcc43`
+- Panel order: porcelain, ivory, stone, charcoal
+- Review state: exploratory; material system passes the first visual comparison
+
+All four exterior families preserve the ceramic reading and keep the ultramarine interior legible. Charcoal requires broad soft highlights and visible microtexture rather than a flat near-black fill. Porcelain and ivory are intentionally close; their eventual interface swatches and names must make the cool-neutral versus warm-cream distinction clear.
+
+The comparison also produced a more distinctive six-aperture arrangement than a literal two-by-three grille: four larger corner apertures with two smaller apertures centered vertically. This remains provisional, but it should be tested as the **Palari seed mark** because it reads more like an identity glyph and less like ventilation.
+
+The reusable controlled-random prompt system is defined in `docs/palari-v2/PROMPT-GRAMMAR.md` and its machine-readable vocabulary lives in `docs/palari-v2/shape-grammar.json`.
+
+## Controlled-random audit 01
+
+The first eight-candidate grammar audit is recorded in `docs/palari-v2/audit-01/AUDIT.md`. Five candidates passed the initial rule review, while three intentional edge cases exposed actionable grammar weaknesses:
+
+- Crescent must use a closed sweep with no upward-facing cavity.
+- Pod requires an explicit adult collectible proportion and must keep circular openings below the face.
+- Stack must show two visibly offset interlocking exterior masses; a family-consistent hooded figure is still a variable-fidelity failure.
+- A new candidate must differ structurally from retained references. Recoloring an existing silhouette is not enough.
+
+The audit also stabilized the six-aperture Palari seed mark and confirmed that characteristic colors remain readable on stone and charcoal materials. These findings are incorporated into shape grammar version 0.2.0.
+
 ## Provisional prompt architecture
 
 The prompt should be assembled from stable blocks. This prevents random generation from drifting away from the species.

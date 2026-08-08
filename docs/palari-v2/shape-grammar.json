@@ -1,0 +1,155 @@
+{
+  "version": "0.2.0",
+  "status": "exploratory",
+  "identity": {
+    "name": "Palari",
+    "meaning": "Personal Artificial Intelligence",
+    "concept": "A small ceramic vessel whose single colored interior reveals its unique intelligence."
+  },
+  "invariants": {
+    "characterCount": 1,
+    "characteristicColorCount": 1,
+    "dominantOpeningCount": 1,
+    "maximumSupportingOpenings": 1,
+    "eyeConstruction": "calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights",
+    "arms": "curved ceramic tubes ending in seamless rounded tips with no hand anatomy",
+    "base": "stable continuous ceramic base with no conventional legs or feet",
+    "surface": "clean tactile fine stoneware with a matte-to-satin glaze and subtle handmade microtexture",
+    "signature": "the Palari seed mark: four larger circular apertures at the corners of a compact rectangle with two smaller apertures centered vertically",
+    "proportionGuard": "overall body height must remain at least 2.4 times the visible face height; never use chibi or baby-like head-to-body proportions"
+  },
+  "materials": [
+    {
+      "id": "porcelain",
+      "label": "Porcelain",
+      "uiSwatch": "#E9E6DF",
+      "prompt": "soft cool-neutral off-white porcelain, never pure digital white"
+    },
+    {
+      "id": "ivory",
+      "label": "Ivory",
+      "uiSwatch": "#D8C9AF",
+      "prompt": "warm creamy ivory ceramic"
+    },
+    {
+      "id": "stone",
+      "label": "Stone",
+      "uiSwatch": "#8D8A82",
+      "prompt": "balanced warm medium-grey stoneware, clearly grey rather than brown"
+    },
+    {
+      "id": "charcoal",
+      "label": "Charcoal",
+      "uiSwatch": "#292A2A",
+      "prompt": "near-black charcoal ceramic with broad readable highlights and visible microtexture"
+    }
+  ],
+  "characteristicColors": [
+    { "id": "forest", "label": "Forest", "uiSwatch": "#174D38", "prompt": "deep forest green" },
+    { "id": "ultramarine", "label": "Ultramarine", "uiSwatch": "#164A7A", "prompt": "deep ultramarine blue" },
+    { "id": "burgundy", "label": "Burgundy", "uiSwatch": "#6E202C", "prompt": "deep burgundy" },
+    { "id": "amber", "label": "Amber", "uiSwatch": "#C17A0B", "prompt": "warm amber" },
+    { "id": "violet", "label": "Violet", "uiSwatch": "#594077", "prompt": "deep mineral violet" },
+    { "id": "teal", "label": "Teal", "uiSwatch": "#146B68", "prompt": "deep ceramic teal" },
+    { "id": "coral", "label": "Coral", "uiSwatch": "#B94F48", "prompt": "muted deep coral" },
+    { "id": "mineral_red", "label": "Mineral red", "uiSwatch": "#7D2821", "prompt": "deep mineral red" }
+  ],
+  "expressions": [
+    "serene",
+    "curious",
+    "attentive",
+    "thoughtful",
+    "gently_amused",
+    "quietly_confident"
+  ],
+  "silhouettes": [
+    {
+      "id": "column",
+      "prompt": "tall slender column with a subtly flared stable base",
+      "crowns": ["soft_hood", "split_petal", "integrated_dome"],
+      "openings": ["narrow_channel", "vertical_oval"],
+      "poses": ["arms_resting", "gentle_greeting", "one_arm_resting"]
+    },
+    {
+      "id": "arch",
+      "prompt": "protective enclosing arch formed from one continuous ceramic shell",
+      "crowns": ["soft_hood", "broad_overhang", "integrated_dome"],
+      "openings": ["leaf", "narrow_channel", "layered_reveal"],
+      "poses": ["soft_embrace", "arms_folded", "arms_resting"]
+    },
+    {
+      "id": "crescent",
+      "prompt": "slender asymmetric crescent with a finished architectural sweep",
+      "crowns": ["closed_asymmetric_sweep", "soft_overhang"],
+      "openings": ["side_reveal", "narrow_channel"],
+      "poses": ["one_arm_resting", "arms_folded", "arms_resting"]
+    },
+    {
+      "id": "pod",
+      "prompt": "grounded pod with one continuous rounded ceramic body, an adult collectible proportion, and body height at least 2.4 times visible face height",
+      "crowns": ["continuous_dome", "integrated_dome"],
+      "openings": ["vertical_oval", "low_circular_aperture", "leaf"],
+      "poses": ["thoughtful_tip", "gentle_greeting", "arms_resting"]
+    },
+    {
+      "id": "bell",
+      "prompt": "balanced bell silhouette with a softly flared base and integrated head",
+      "crowns": ["soft_hood", "integrated_dome", "split_petal"],
+      "openings": ["vertical_oval", "leaf", "layered_reveal"],
+      "poses": ["arms_resting", "soft_embrace", "one_arm_resting"]
+    },
+    {
+      "id": "stack",
+      "prompt": "two visibly offset interlocking ceramic masses with one clear overlap seam, distinct centers, and a single continuous stable base",
+      "crowns": ["split_petal", "soft_hood"],
+      "openings": ["circular_aperture", "vertical_oval", "layered_reveal"],
+      "poses": ["arms_resting", "gentle_greeting", "soft_embrace"]
+    }
+  ],
+  "crowns": {
+    "soft_hood": "protective soft hood grown from the ceramic body",
+    "broad_overhang": "broad asymmetrical protective overhang framing the face",
+    "split_petal": "restrained split-petal crown with smooth finished edges",
+    "integrated_dome": "continuous integrated ceramic dome",
+    "continuous_dome": "simple closed dome with no open top",
+    "closed_asymmetric_sweep": "closed asymmetric upward sweep with a continuous exterior cap; no upward-facing cavity or open rim",
+    "soft_overhang": "small directional overhang integrated into the anatomy"
+  },
+  "openings": {
+    "narrow_channel": "one long narrow recessed channel",
+    "vertical_oval": "one deliberate vertical oval aperture",
+    "leaf": "one asymmetric leaf-shaped opening",
+    "side_reveal": "one controlled side reveal following the silhouette",
+    "layered_reveal": "one opening created by two overlapping shell masses",
+    "low_circular_aperture": "one deeply recessed circular aperture entirely below the face, separated from it by a continuous ceramic bridge"
+  },
+  "poses": {
+    "arms_resting": "both rounded arms resting close to the body",
+    "gentle_greeting": "one curved arm raised in greeting, ending in one seamless oval tip",
+    "one_arm_resting": "one arm resting along the opening and the other close to the body",
+    "soft_embrace": "both rounded arms softly embracing the opening",
+    "arms_folded": "both rounded arms crossed calmly around the opening",
+    "thoughtful_tip": "one rounded arm tip near the face in thought"
+  },
+  "presentation": {
+    "camera": "eye-level three-quarter product portrait with minimal lens distortion",
+    "framing": "square composition, full figure visible, centered, occupying about 76 percent of image height",
+    "environment": "warm minimalist plaster alcove studio with a matte limestone floor",
+    "lighting": "soft diffused daylight from upper left with a gentle contact shadow"
+  },
+  "forbidden": [
+    "simple horizontal bowl or cup rim",
+    "fingers, thumbs, palms, fingernails, or realistic hands",
+    "conventional legs, knees, feet, toes, or shoes",
+    "human skin, hair, clothing, jewelry, or demographic costume shorthand",
+    "multiple characteristic colors, rainbow effects, or neon glow",
+    "robot joints, screens, wires, exposed machinery, or appliance details",
+    "random holes or more than one dominant opening",
+    "cracks, chips, broken rims, dirt, or antique distressing",
+    "cups, mugs, vases, planters, lamps, speakers, or household appliances",
+    "generic mascot smiles, chibi proportions, horror, or vacant doll eyes",
+    "an upward-facing cavity on a crescent or a circular aperture surrounding the face",
+    "a stack silhouette without two visibly offset interlocking exterior masses",
+    "text, labels, numbers, logos, or watermarks"
+  ]
+}
