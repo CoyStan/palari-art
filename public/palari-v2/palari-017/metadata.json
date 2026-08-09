@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "avatarId": "palari-017",
+  "sourceInput": "public/palari-v2/palari-017/source.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "characteristicHueDegrees": 35.0,
+  "expectedCharacteristicColor": "#C17A0B",
+  "algorithm": {
+    "name": "hsv-characteristic-separation",
+    "detectionHueOverrideDegrees": null,
+    "hueRadiusDegrees": 20,
+    "saturationRamp": [
+      0.38,
+      0.6
+    ],
+    "componentSeed": {
+      "hueAmountMinimum": 0.72,
+      "saturationMinimum": 0.45,
+      "colorEnergyMinimum": 0.12,
+      "valueMinimum": 0.32,
+      "minimumPixels": 4,
+      "minimumComponentRatio": 0.04,
+      "smallAccentSaturationMinimum": 0.32,
+      "smallAccentColorEnergyMinimum": 0.1,
+      "smallAccentComponentRange": [
+        8,
+        10000
+      ],
+      "componentMeanEnergyFloor": 0.08,
+      "componentRelativeEnergyFloor": 0.45
+    },
+    "saturationSensitive": true,
+    "characteristicMaskFloor": 0.25,
+    "deepCharacteristicUsesRetainedHue": false,
+    "deepCharacteristicClosingSize": null,
+    "deepCharacteristicRelaxedExpansion": false,
+    "deepCharacteristicRelaxedHueRadiusDegrees": null,
+    "deepCharacteristicRelaxedSaturationMinimum": null,
+    "deepCharacteristicRelaxedValueMinimum": null,
+    "deepCharacteristicRelaxedLargeComponentMinimum": null,
+    "deepCharacteristicRelaxedMeanSaturationMinimum": null,
+    "deepCharacteristicFillHoles": false,
+    "deepAccentHueRadiusDegrees": null,
+    "deepSeedAccentRegion": null,
+    "deepSeedAccentSaturationMinimum": null,
+    "deepSeedAccentValueRange": null,
+    "deepSeedAccentComponentRange": null,
+    "valueRamp": [
+      0.035,
+      0.155
+    ],
+    "characteristicBlurRadius": 0.55,
+    "materialBlurRadius": 0.45
+  },
+  "checksums": {
+    "source": "19862ab585ee86ace61fbabec64f2c16f2b1f7c723eaa99334995f5f879a3710",
+    "foreground": "71f0241d4c5827f8f80f4e0f7fc72a5e8520b0720f5d22a890fa37f0a9ced37a",
+    "material": "21a461dbb41921a9ddb5b045ea5c361414d16f52a9c34d79e9f0cb41bdf041e5",
+    "characteristic": "9be2f3163ede0c00ae6fa41b19bee9897fc412c70879f09f7f84616c60c14203"
+  },
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "Reviewed source isolation and characteristic coverage in the V2 editor."
+  }
+}

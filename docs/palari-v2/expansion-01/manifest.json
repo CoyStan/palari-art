@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-09",
+  "model": "gpt-image-2",
+  "generationPath": "Codex built-in image generation",
+  "selection": "The five-character lineup in references/91781.png defines the inclusion set; the six contact sheets are supporting structure references.",
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "Five standalone 1254px renders preserve the selected lineup identities, use one characteristic hue, retain clear material/characteristic separation, and remove contact-sheet dividers and neighboring figures."
+  },
+  "isolation": {
+    "method": "The accepted studio render was regenerated without identity or geometry changes on a flat magenta background, then converted to RGBA with the imagegen remove_chroma_key helper using border auto-key, soft matte, thresholds 12/220, and despill.",
+    "reason": "Chroma isolation preserves pale ceramic limbs and shell edges that overlap the warm plaster background in the studio renders.",
+    "productionAuthority": "public/palari-v2/<id>/source.png"
+  },
+  "references": [
+    { "file": "references/91781.png", "role": "selected five-character lineup", "sha256": "91f3d11d4fbca9482140abd75dc55e71bc6f1bf806e6514c315ba0977ddf3a84" },
+    { "file": "references/91819.png", "role": "forest exploration sheet", "sha256": "371f9682048b21a2422c6aad025d14c229253cc9e559fe58683baa422303e887" },
+    { "file": "references/91808.png", "role": "forest supporting exploration sheet", "sha256": "230273c26b181301d306ee10e81f52c12d2187ef5303701c448f411632d0304c" },
+    { "file": "references/91809.png", "role": "burgundy exploration sheet", "sha256": "54e2a0be64a7fe0e44ac02709458335f8ebe00cea5154e5b622a8376c167120d" },
+    { "file": "references/91807.png", "role": "ultramarine exploration sheet", "sha256": "f4114cfefa7bf3d0f56860e72ee887cf1e7aaf89c1b94d49870ff34dc4898972" },
+    { "file": "references/91806.png", "role": "amber exploration sheet", "sha256": "a4390e31cf0b451238cde69e7db55a7af20aaa6f1a0343a660f47615cbf8799e" },
+    { "file": "references/91818.png", "role": "amber supporting exploration sheet", "sha256": "670395e12bf9e10ac91904feacce888b49d8f70823e04e6d5d3b5bee6fb0ea2c" }
+  ],
+  "sharedPrompt": "Create one centered full-figure Palari as a premium photoreal ceramic product render in the warm plaster studio. Preserve the selected lineup identity and supporting sheet structure. Use warm ivory exterior and exactly one characteristic hue, inset half-lidded eyes, smooth fingerless tubular arms, a continuous stable base, six seed apertures, clean maskable regions, complete square framing, and no text, duplicates, dividers, conventional limbs, machinery, cracks, grain, or pixelation.",
+  "avatars": [
+    {
+      "id": "palari-013",
+      "name": "Palari 013",
+      "source": "docs/palari-v2/expansion-01/generated/palari-013-canopy-forest.png",
+      "silhouette": "column",
+      "baseMaterial": "ivory",
+      "baseCharacteristic": "forest",
+      "identityPrompt": "Tall slender forest-green ribbed inner vessel with a layered asymmetric mushroom-canopy crown, narrow front opening, calm eyes, and restrained folded arms.",
+      "referenceImages": ["docs/palari-v2/expansion-01/references/91781.png", "docs/palari-v2/expansion-01/references/91819.png", "docs/palari-v2/expansion-01/references/91808.png"],
+      "sha256": "a3e67194b851962d708d83bc671d83f7a89c592795c3c714753e386316c7f2c9",
+      "chromaSource": "docs/palari-v2/expansion-01/chroma/palari-013-canopy-forest.png",
+      "chromaSha256": "41c7abb73155d05566119b97357395c7424617cbebb68515345329276dbbde03",
+      "productionSha256": "c587dcb625eca87018896e78c4e1dfbc5971e0e3d3090b00078d6efa57f30ce1"
+    },
+    {
+      "id": "palari-014",
+      "name": "Palari 014",
+      "source": "docs/palari-v2/expansion-01/generated/palari-014-fin-burgundy.png",
+      "silhouette": "column",
+      "baseMaterial": "ivory",
+      "baseCharacteristic": "burgundy",
+      "identityPrompt": "Elegant tapered burgundy figure with a rounded asymmetric head, swept-back vertical fin, long recessed front panel, and restrained arms resting together.",
+      "referenceImages": ["docs/palari-v2/expansion-01/references/91781.png", "docs/palari-v2/expansion-01/references/91809.png"],
+      "sha256": "87349516a2b0a4207b3f4fce65f07b228fa20b66d73aea9ed5b52084beb154b4",
+      "chromaSource": "docs/palari-v2/expansion-01/chroma/palari-014-fin-burgundy.png",
+      "chromaSha256": "272b1b75921c2a1a6d1cb62e32ded6e97a13f115165b1e1284a44b3771d9e582",
+      "productionSha256": "6b4fa1204969fa2cc1c148acade1a007ecae7280f71fd4732674759bbe382ef0"
+    },
+    {
+      "id": "palari-015",
+      "name": "Palari 015",
+      "source": "docs/palari-v2/expansion-01/generated/palari-015-ring-violet.png",
+      "silhouette": "bell",
+      "baseMaterial": "ivory",
+      "baseCharacteristic": "violet",
+      "identityPrompt": "Broad central guardian with an asymmetric ring head, violet neck, large recessed circular abdomen, arms posed at the sides, and an integrated two-lobed arch base.",
+      "referenceImages": ["docs/palari-v2/expansion-01/references/91781.png"],
+      "sha256": "e26042e9ee7882a19b424d048956195160bb095b96440be87dd3a5632490655b",
+      "chromaSource": "docs/palari-v2/expansion-01/chroma/palari-015-ring-violet.png",
+      "chromaSha256": "e9c5cf5e29e52c3f701962dbf5e115b37cf7a88a7a757ab967f4eaf561bacaad",
+      "productionSha256": "03ceed1d33b5fbbd09f62d7a1fa03ef5c6c064a48dd9830e11f4d79eefc17575"
+    },
+    {
+      "id": "palari-016",
+      "name": "Palari 016",
+      "source": "docs/palari-v2/expansion-01/generated/palari-016-crest-ultramarine.png",
+      "silhouette": "crescent",
+      "baseMaterial": "ivory",
+      "baseCharacteristic": "ultramarine",
+      "identityPrompt": "Very tall contemplative profile with an elongated horizontal head, one readable side eye, rounded rear crest, long ultramarine side channel, and folded arms.",
+      "referenceImages": ["docs/palari-v2/expansion-01/references/91781.png", "docs/palari-v2/expansion-01/references/91807.png"],
+      "sha256": "0eeca03558f1ddfd08e85b2a439153ef279770c21a69e9049151c60af734b4d4",
+      "chromaSource": "docs/palari-v2/expansion-01/chroma/palari-016-crest-ultramarine.png",
+      "chromaSha256": "e5bdb208ff3d1592eb3ec207868c95407d0b9feb960658daf07cf72105f399d8",
+      "productionSha256": "c0ae7f8d3195c525deae201f829b780a5576f84a377ab9d504c39773965da116"
+    },
+    {
+      "id": "palari-017",
+      "name": "Palari 017",
+      "source": "docs/palari-v2/expansion-01/generated/palari-017-cup-amber.png",
+      "silhouette": "column",
+      "baseMaterial": "ivory",
+      "baseCharacteristic": "amber",
+      "identityPrompt": "Shorter cup-head vessel with amber crown interior, large observant eyes, ribbed chest reveal, lower round aperture framed by smooth folded arms, and a slim side channel.",
+      "referenceImages": ["docs/palari-v2/expansion-01/references/91781.png", "docs/palari-v2/expansion-01/references/91806.png", "docs/palari-v2/expansion-01/references/91818.png"],
+      "sha256": "abed0ab7b06f3ad9e46edc3b80f85b738d6ea730ccc785cf5eea87d42c8479b0",
+      "chromaSource": "docs/palari-v2/expansion-01/chroma/palari-017-cup-amber.png",
+      "chromaSha256": "93922c2901bd835e3f99d99efa301f459da7e6e0d2e3405679de4c0ff437b626",
+      "productionSha256": "19862ab585ee86ace61fbabec64f2c16f2b1f7c723eaa99334995f5f879a3710"
+    }
+  ]
+}

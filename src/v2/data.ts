@@ -50,4 +50,9 @@ export const v2Avatars: PalariV2Avatar[] = [
   avatar("palari-010", "Stack"),
   avatar("palari-011", "Stack"),
   avatar("palari-012", "Bell"),
+  avatar("palari-013", "Canopy"),
+  avatar("palari-014", "Fin"),
+  avatar("palari-015", "Ring"),
+  avatar("palari-016", "Crest"),
+  avatar("palari-017", "Cup"),
 ];

@@ -69,6 +69,9 @@ def generate_masks(
     output_directory: Path,
     avatar_id: str,
     expected_color: str | None,
+    detection_hue_degrees: float | None,
+    relaxed_characteristic: bool,
+    closing_size: int,
     review_status: str,
     reviewer: str | None,
     review_notes: str | None,
@@ -76,12 +79,17 @@ def generate_masks(
     image = Image.open(source).convert("RGBA")
     alpha, hue, saturation, value = rgba_to_hsv(image)
     expected_hsv = hex_hsv(expected_color) if expected_color else None
+    detection_hue = (
+        detection_hue_degrees / 360
+        if detection_hue_degrees is not None
+        else expected_hsv[0] if expected_hsv else None
+    )
     hue_center = dominant_characteristic_hue(
         alpha,
         hue,
         saturation,
         value,
-        expected_hsv[0] if expected_hsv else None,
+        detection_hue,
     )
     foreground = image.getchannel("A")
     bright_characteristic = bool(expected_hsv and expected_hsv[2] > 0.65)
@@ -127,15 +135,56 @@ def generate_masks(
         characteristic_amount = np.clip((characteristic_amount - mask_floor) / (1 - mask_floor), 0, 1)
     else:
         deep_region = retained[components] & candidate
+        if relaxed_characteristic:
+            relaxed_hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
+            relaxed_region = (
+                (alpha > 0.2)
+                & (relaxed_hue_distance < 55 / 360)
+                & (saturation > 0.07)
+                & (value > 0.005)
+            )
+            relaxed_components, relaxed_count = ndimage.label(
+                relaxed_region,
+                structure=np.ones((3, 3), dtype=np.uint8),
+            )
+            relaxed_sizes = np.bincount(
+                relaxed_components.ravel(),
+                minlength=relaxed_count + 1,
+            )
+            relaxed_seed_counts = np.bincount(
+                relaxed_components[deep_region].ravel(),
+                minlength=relaxed_count + 1,
+            )
+            relaxed_saturation_sums = np.bincount(
+                relaxed_components[relaxed_region].ravel(),
+                weights=saturation[relaxed_region].ravel(),
+                minlength=relaxed_count + 1,
+            )
+            relaxed_mean_saturation = np.divide(
+                relaxed_saturation_sums,
+                relaxed_sizes,
+                out=np.zeros(relaxed_saturation_sums.shape, dtype=np.float64),
+                where=relaxed_sizes > 0,
+            )
+            relaxed_retained = (relaxed_seed_counts > 0) | (
+                (relaxed_sizes >= 64) & (relaxed_mean_saturation >= 0.10)
+            )
+            relaxed_retained[0] = False
+            deep_region = relaxed_retained[relaxed_components]
         deep_region = ndimage.binary_closing(
             deep_region,
-            structure=np.ones((11, 11), dtype=np.uint8),
+            structure=np.ones((closing_size, closing_size), dtype=np.uint8),
         )
+        deep_region = ndimage.binary_fill_holes(deep_region)
         y_grid, x_grid = np.indices(alpha.shape)
         central_band = (x_grid > image.width * 0.28) & (x_grid < image.width * 0.72)
         accent_band = central_band & ((y_grid < image.height * 0.50) | (y_grid > image.height * 0.62))
         wide_hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
-        use_wide_accents = bool(expected_hsv and 200 / 360 <= expected_hsv[0] <= 330 / 360)
+        use_wide_accents = bool(
+            detection_hue_degrees is None
+            and expected_hsv
+            and 200 / 360 <= expected_hsv[0] <= 330 / 360
+        )
         wide_accents = use_wide_accents & accent_band & (alpha > 0.2) & (wide_hue_distance < 60 / 360) & (saturation > 0.20) & (value > 0.03)
         wide_components, wide_count = ndimage.label(wide_accents, structure=np.ones((3, 3), dtype=np.uint8))
         wide_sizes = np.bincount(wide_components.ravel(), minlength=wide_count + 1)
@@ -153,6 +202,34 @@ def generate_masks(
         wide_retained = (wide_sizes >= 8) & (wide_sizes <= 6000) & (wide_mean_energy >= 0.04)
         wide_retained[0] = False
         deep_region |= wide_retained[wide_components]
+        # The six lower-front signature dots can be materially darker than the
+        # large characteristic insert after relighting. Recover only compact,
+        # saturated components in their constrained design region so the mask
+        # does not absorb warm ceramic shading elsewhere on the body.
+        seed_accent_band = (
+            (x_grid > image.width * 0.40)
+            & (x_grid < image.width * 0.60)
+            & (y_grid > image.height * 0.64)
+            & (y_grid < image.height * 0.76)
+        )
+        seed_accents = (
+            seed_accent_band
+            & (alpha > 0.2)
+            & (saturation > 0.10)
+            & (value > 0.02)
+            & (value < 0.62)
+        )
+        seed_components, seed_component_count = ndimage.label(
+            seed_accents,
+            structure=np.ones((3, 3), dtype=np.uint8),
+        )
+        seed_sizes = np.bincount(
+            seed_components.ravel(),
+            minlength=seed_component_count + 1,
+        )
+        seed_retained = (seed_sizes >= 30) & (seed_sizes <= 800)
+        seed_retained[0] = False
+        deep_region |= seed_retained[seed_components]
         characteristic_amount = alpha * deep_region
     characteristic = Image.fromarray(np.rint(characteristic_amount * 255).astype(np.uint8), "L")
     material = Image.fromarray(np.rint(alpha * (1 - characteristic_amount) * 255).astype(np.uint8), "L")
@@ -182,6 +259,7 @@ def generate_masks(
         "expectedCharacteristicColor": expected_color,
         "algorithm": {
             "name": "hsv-characteristic-separation",
+            "detectionHueOverrideDegrees": detection_hue_degrees,
             "hueRadiusDegrees": hue_radius_degrees,
             "saturationRamp": [saturation_minimum, saturation_minimum + saturation_span],
             "componentSeed": {
@@ -200,8 +278,19 @@ def generate_masks(
             "saturationSensitive": saturation_sensitive,
             "characteristicMaskFloor": mask_floor if saturation_sensitive else None,
             "deepCharacteristicUsesRetainedHue": not saturation_sensitive,
-            "deepCharacteristicClosingSize": 11 if not saturation_sensitive else None,
+            "deepCharacteristicClosingSize": closing_size if not saturation_sensitive else None,
+            "deepCharacteristicRelaxedExpansion": relaxed_characteristic if not saturation_sensitive else False,
+            "deepCharacteristicRelaxedHueRadiusDegrees": 55 if not saturation_sensitive and relaxed_characteristic else None,
+            "deepCharacteristicRelaxedSaturationMinimum": 0.07 if not saturation_sensitive and relaxed_characteristic else None,
+            "deepCharacteristicRelaxedValueMinimum": 0.005 if not saturation_sensitive and relaxed_characteristic else None,
+            "deepCharacteristicRelaxedLargeComponentMinimum": 64 if not saturation_sensitive and relaxed_characteristic else None,
+            "deepCharacteristicRelaxedMeanSaturationMinimum": 0.10 if not saturation_sensitive and relaxed_characteristic else None,
+            "deepCharacteristicFillHoles": not saturation_sensitive,
             "deepAccentHueRadiusDegrees": 60 if not saturation_sensitive and use_wide_accents else None,
+            "deepSeedAccentRegion": [0.40, 0.64, 0.60, 0.76] if not saturation_sensitive else None,
+            "deepSeedAccentSaturationMinimum": 0.10 if not saturation_sensitive else None,
+            "deepSeedAccentValueRange": [0.02, 0.62] if not saturation_sensitive else None,
+            "deepSeedAccentComponentRange": [30, 800] if not saturation_sensitive else None,
             "valueRamp": [0.035, 0.155],
             "characteristicBlurRadius": 0.55,
             "materialBlurRadius": 0.45,
@@ -224,6 +313,9 @@ def main() -> None:
     parser.add_argument("--out-dir", required=True, type=Path)
     parser.add_argument("--id", required=True)
     parser.add_argument("--expected-color")
+    parser.add_argument("--detection-hue-degrees", type=float)
+    parser.add_argument("--relaxed-characteristic", action="store_true")
+    parser.add_argument("--closing-size", type=int, default=11)
     parser.add_argument("--review-status", choices=("unreviewed", "pass", "fail"), default="unreviewed")
     parser.add_argument("--reviewer")
     parser.add_argument("--review-notes")
@@ -233,6 +325,9 @@ def main() -> None:
         arguments.out_dir,
         arguments.id,
         arguments.expected_color,
+        arguments.detection_hue_degrees,
+        arguments.relaxed_characteristic,
+        arguments.closing_size,
         arguments.review_status,
         arguments.reviewer,
         arguments.review_notes,
