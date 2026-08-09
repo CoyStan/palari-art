@@ -50,6 +50,7 @@ if (collection.visualGrammar !== grammar.version || collection.avatars.length !=
 if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 41) problems.push("V2 WebP manifest is incomplete.");
 
 const characteristicById = new Map(grammar.characteristicColors.map((color) => [color.id, color.uiSwatch.toUpperCase()]));
+const materialById = new Map(grammar.materials.map((material) => [material.id, material.uiSwatch.toUpperCase()]));
 const expectedIds = collection.avatars.map((_, index) => `palari-${String(index + 1).padStart(3, "0")}`);
 const actualDirectories = (await readdir(path.join(repositoryRoot, "public/palari-v2"), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
@@ -63,8 +64,19 @@ for (const [index, avatar] of collection.avatars.entries()) {
   try { metadata = JSON.parse(await readFile(path.join(directory, "metadata.json"), "utf8")); }
   catch (error) { problems.push(`${avatar.id}: unreadable metadata (${error.message}).`); continue; }
   if (metadata.avatarId !== avatar.id || metadata.review?.status !== "pass") problems.push(`${avatar.id}: metadata is not reviewed/pass.`);
+  if (
+    metadata.version !== 3
+    || metadata.algorithm?.name !== "deterministic-source-color-key"
+    || metadata.algorithm?.independentColorKeys !== true
+    || metadata.algorithm?.ambiguousPixelsRemainSource !== true
+  ) {
+    problems.push(`${avatar.id}: masks must use independent deterministic source-color keys with ambiguous pixels preserved.`);
+  }
   if (metadata.expectedCharacteristicColor?.toUpperCase() !== characteristicById.get(avatar.baseCharacteristic)) {
     problems.push(`${avatar.id}: expected characteristic color does not match the collection.`);
+  }
+  if (metadata.expectedMaterialColor?.toUpperCase() !== materialById.get(avatar.baseMaterial)) {
+    problems.push(`${avatar.id}: expected material color does not match the collection.`);
   }
   for (const [layer, colorType] of Object.entries({ source: 6, foreground: 0, material: 0, characteristic: 0 })) {
     const fileName = `${layer}.png`;
@@ -96,5 +108,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log(`Verified frozen grammar 1.0, ${collection.avatars.length} reviewed V2 masters, ${collection.avatars.length * 3} delivery WebPs, runtime registration, dimensions, and checksums.`);
+  console.log(`Verified frozen grammar 1.0, ${collection.avatars.length} reviewed V2 masters, independent deterministic color-key masks, ${collection.avatars.length * 3} delivery WebPs, runtime registration, dimensions, and checksums.`);
 }

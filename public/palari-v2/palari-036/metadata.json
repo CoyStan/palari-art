@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "avatarId": "palari-036",
   "sourceInput": "public/palari-v2/palari-036/source.png",
   "dimensions": [
@@ -8,64 +8,41 @@
   ],
   "characteristicHueDegrees": 41.0,
   "expectedCharacteristicColor": "#C17A0B",
+  "expectedMaterialColor": "#D8C9AF",
   "algorithm": {
-    "name": "hsv-characteristic-separation",
+    "name": "deterministic-source-color-key",
     "detectionHueOverrideDegrees": null,
     "hueRadiusDegrees": 20,
-    "saturationRamp": [
-      0.5,
-      0.7
-    ],
-    "strictCharacteristic": true,
-    "candidateSaturationMinimum": 0.38,
+    "candidateSaturationMinimum": 0.6,
+    "candidateColorEnergyMinimum": 0.25,
     "componentSeed": {
-      "hueAmountMinimum": 0.72,
-      "saturationMinimum": 0.6,
-      "colorEnergyMinimum": 0.12,
-      "valueMinimum": 0.32,
-      "minimumPixels": 4,
-      "minimumComponentRatio": 0.04,
-      "smallAccentSaturationMinimum": 0.45,
-      "smallAccentColorEnergyMinimum": 0.1,
-      "smallAccentComponentRange": [
-        8,
-        10000
-      ],
-      "componentMeanEnergyFloor": 0.08,
-      "componentRelativeEnergyFloor": 0.45
+      "hueRadiusDegrees": 14.4,
+      "saturationMinimum": 0.75,
+      "colorEnergyMinimum": 0.35,
+      "minimumPixels": 2
     },
-    "saturationSensitive": true,
-    "characteristicMaskFloor": 0.3,
-    "deepCharacteristicUsesRetainedHue": false,
-    "deepCharacteristicClosingSize": null,
-    "deepCharacteristicRelaxedExpansion": false,
-    "deepCharacteristicRelaxedHueRadiusDegrees": null,
-    "deepCharacteristicRelaxedSaturationMinimum": null,
-    "deepCharacteristicRelaxedValueMinimum": null,
-    "deepCharacteristicRelaxedLargeComponentMinimum": null,
-    "deepCharacteristicRelaxedMeanSaturationMinimum": null,
-    "deepCharacteristicFillHoles": false,
-    "deepAccentHueRadiusDegrees": null,
-    "deepSeedAccentRegion": null,
-    "deepSeedAccentSaturationMinimum": null,
-    "deepSeedAccentValueRange": null,
-    "deepSeedAccentComponentRange": null,
-    "valueRamp": [
-      0.035,
-      0.155
-    ],
+    "warmCharacteristic": true,
+    "amberCharacteristic": true,
+    "candidateValueMinimum": 0.02,
+    "relaxedColorKey": false,
     "characteristicBlurRadius": 0.55,
-    "materialBlurRadius": 0.45
+    "materialColorKey": {
+      "rule": "light-neutral",
+      "expectedValue": 0.8471
+    },
+    "materialBlurRadius": 0.55,
+    "independentColorKeys": true,
+    "ambiguousPixelsRemainSource": true
   },
   "checksums": {
     "source": "6ec91061d6064d34331991c972e0f69a5815327173e2c359d249aa3f303f040e",
     "foreground": "09491287a0d040be5d89d43b0a9de27fd26f35b11f4d4b13ba335c69bfe921eb",
-    "material": "de08a989fab59685f4aa9e27c5d28773c08db0ef2dcb90f791feadf082080f2a",
-    "characteristic": "6952da868e1663f5f3388d91f7075552cafea42f916319dea2576dac1382ac3d"
+    "material": "6791832b870d3bb55be3fb3c021850671abe120b1b47703a489801015e6ea9e4",
+    "characteristic": "7400e96ceb22d2edfbb14f1f70a939f02bf5b516c94428a40032275bd07687d6"
   },
   "review": {
     "status": "pass",
     "reviewer": "Codex",
-    "notes": "Reviewed standalone alpha, material coverage, characteristic coverage, signature dots, and porcelain/coral/dusk rendering in the V2 editor."
+    "notes": "Reviewed independent deterministic source-color key contact sheet and browser recolors; material and characteristic regions remain separated while ambiguous shading stays source-authored."
   }
 }

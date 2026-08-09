@@ -69,10 +69,9 @@ def generate_masks(
     output_directory: Path,
     avatar_id: str,
     expected_color: str | None,
+    expected_material: str | None,
     detection_hue_degrees: float | None,
-    relaxed_characteristic: bool,
-    strict_characteristic: bool,
-    closing_size: int,
+    relaxed_color_key: bool,
     review_status: str,
     reviewer: str | None,
     review_notes: str | None,
@@ -80,6 +79,7 @@ def generate_masks(
     image = Image.open(source).convert("RGBA")
     alpha, hue, saturation, value = rgba_to_hsv(image)
     expected_hsv = hex_hsv(expected_color) if expected_color else None
+    expected_material_hsv = hex_hsv(expected_material) if expected_material else None
     detection_hue = (
         detection_hue_degrees / 360
         if detection_hue_degrees is not None
@@ -93,154 +93,126 @@ def generate_masks(
         detection_hue,
     )
     foreground = image.getchannel("A")
-    bright_characteristic = bool(expected_hsv and expected_hsv[2] > 0.65)
-    warm_characteristic = bool(expected_hsv and (expected_hsv[0] < 50 / 360 or expected_hsv[0] > 330 / 360))
-    saturation_sensitive = bright_characteristic or warm_characteristic
-    hue_radius_degrees = 20 if saturation_sensitive else 32
-    hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
-    hue_amount = np.clip(1 - hue_distance / (hue_radius_degrees / 360), 0, 1)
-    saturation_minimum = 0.50 if saturation_sensitive and strict_characteristic else 0.38 if saturation_sensitive else 0.12
-    saturation_span = 0.20 if saturation_sensitive and strict_characteristic else 0.22 if saturation_sensitive else 0.38
-    saturation_amount = np.clip((saturation - saturation_minimum) / saturation_span, 0, 1)
-    value_amount = np.clip((value - 0.035) / 0.12, 0, 1)
-    candidate_saturation_minimum = 0.38 if saturation_sensitive and strict_characteristic else 0.25
-    candidate = (alpha > 0.2) & (hue_amount > 0.2) & (saturation > candidate_saturation_minimum) & (value > 0.035)
-    color_energy = saturation * value
-    seed_value_minimum = 0.32 if bright_characteristic else 0.06
-    component_seed_ratio = 0.04 if bright_characteristic else 0.01
-    seed_saturation_minimum = 0.60 if saturation_sensitive and strict_characteristic else 0.45
-    accent_saturation_minimum = 0.45 if saturation_sensitive and strict_characteristic else 0.32
-    seed = candidate & (hue_amount > 0.72) & (saturation > seed_saturation_minimum) & (color_energy > 0.12) & (value > seed_value_minimum)
-    accent_seed = candidate & (hue_amount > 0.20) & (saturation > accent_saturation_minimum) & (color_energy > 0.10) & (value > seed_value_minimum)
-    components, component_count = ndimage.label(candidate, structure=np.ones((3, 3), dtype=np.uint8))
-    sizes = np.bincount(components.ravel(), minlength=component_count + 1)
-    seed_counts = np.bincount(components[seed].ravel(), minlength=component_count + 1)
-    accent_seed_counts = np.bincount(components[accent_seed].ravel(), minlength=component_count + 1)
-    energy_sums = np.bincount(
-        components[candidate].ravel(),
-        weights=color_energy[candidate].ravel(),
-        minlength=component_count + 1,
+    warm_characteristic = bool(
+        expected_hsv
+        and (expected_hsv[0] < 55 / 360 or expected_hsv[0] > 330 / 360)
     )
-    mean_energy = np.divide(energy_sums, sizes, out=np.zeros_like(energy_sums), where=sizes > 0)
-    best_component_energy = mean_energy[1:].max(initial=0)
-    energy_floor = 0.08 if saturation_sensitive else 0.04
-    relative_energy_floor = 0.45 if saturation_sensitive else 0.20
-    energy_quality = mean_energy >= max(energy_floor, best_component_energy * relative_energy_floor)
-    minimum_seed_counts = np.maximum(4, np.ceil(sizes * component_seed_ratio))
-    retained = ((seed_counts >= minimum_seed_counts) | (
-        (sizes >= 8) & (sizes <= 10000) & (accent_seed_counts >= 2)
-    )) & energy_quality
-    retained[0] = False
-    mask_floor = None
-    use_wide_accents = False
-    if saturation_sensitive:
-        characteristic_amount = alpha * hue_amount * saturation_amount * value_amount * retained[components]
-        mask_floor = 0.30 if strict_characteristic else 0.25 if bright_characteristic else 0.10
-        characteristic_amount = np.clip((characteristic_amount - mask_floor) / (1 - mask_floor), 0, 1)
+    amber_characteristic = bool(
+        expected_hsv
+        and 20 / 360 <= expected_hsv[0] <= 55 / 360
+        and expected_hsv[1] >= 0.70
+    )
+    hue_radius_degrees = 20 if warm_characteristic else 32
+    hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
+    if amber_characteristic and relaxed_color_key:
+        candidate_saturation_minimum = 0.46
+        seed_saturation_minimum = 0.70
+        candidate_color_energy_minimum = 0.08
+        seed_color_energy_minimum = 0.20
+    elif amber_characteristic:
+        candidate_saturation_minimum = 0.60
+        seed_saturation_minimum = 0.75
+        candidate_color_energy_minimum = 0.25
+        seed_color_energy_minimum = 0.35
     else:
-        deep_region = retained[components] & candidate
-        if relaxed_characteristic:
-            relaxed_hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
-            relaxed_region = (
-                (alpha > 0.2)
-                & (relaxed_hue_distance < 55 / 360)
-                & (saturation > 0.07)
-                & (value > 0.005)
-            )
-            relaxed_components, relaxed_count = ndimage.label(
-                relaxed_region,
-                structure=np.ones((3, 3), dtype=np.uint8),
-            )
-            relaxed_sizes = np.bincount(
-                relaxed_components.ravel(),
-                minlength=relaxed_count + 1,
-            )
-            relaxed_seed_counts = np.bincount(
-                relaxed_components[deep_region].ravel(),
-                minlength=relaxed_count + 1,
-            )
-            relaxed_saturation_sums = np.bincount(
-                relaxed_components[relaxed_region].ravel(),
-                weights=saturation[relaxed_region].ravel(),
-                minlength=relaxed_count + 1,
-            )
-            relaxed_mean_saturation = np.divide(
-                relaxed_saturation_sums,
-                relaxed_sizes,
-                out=np.zeros(relaxed_saturation_sums.shape, dtype=np.float64),
-                where=relaxed_sizes > 0,
-            )
-            relaxed_retained = (relaxed_seed_counts > 0) | (
-                (relaxed_sizes >= 64) & (relaxed_mean_saturation >= 0.10)
-            )
-            relaxed_retained[0] = False
-            deep_region = relaxed_retained[relaxed_components]
-        deep_region = ndimage.binary_closing(
-            deep_region,
-            structure=np.ones((closing_size, closing_size), dtype=np.uint8),
-        )
-        deep_region = ndimage.binary_fill_holes(deep_region)
-        y_grid, x_grid = np.indices(alpha.shape)
-        central_band = (x_grid > image.width * 0.28) & (x_grid < image.width * 0.72)
-        accent_band = central_band & ((y_grid < image.height * 0.50) | (y_grid > image.height * 0.62))
-        wide_hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
-        use_wide_accents = bool(
-            detection_hue_degrees is None
-            and expected_hsv
-            and 200 / 360 <= expected_hsv[0] <= 330 / 360
-        )
-        wide_accents = use_wide_accents & accent_band & (alpha > 0.2) & (wide_hue_distance < 60 / 360) & (saturation > 0.20) & (value > 0.03)
-        wide_components, wide_count = ndimage.label(wide_accents, structure=np.ones((3, 3), dtype=np.uint8))
-        wide_sizes = np.bincount(wide_components.ravel(), minlength=wide_count + 1)
-        wide_energy_sums = np.bincount(
-            wide_components[wide_accents].ravel(),
-            weights=color_energy[wide_accents].ravel(),
-            minlength=wide_count + 1,
-        )
-        wide_mean_energy = np.divide(
-            wide_energy_sums,
-            wide_sizes,
-            out=np.zeros(wide_energy_sums.shape, dtype=np.float64),
-            where=wide_sizes > 0,
-        )
-        wide_retained = (wide_sizes >= 8) & (wide_sizes <= 6000) & (wide_mean_energy >= 0.04)
-        wide_retained[0] = False
-        deep_region |= wide_retained[wide_components]
-        # The six lower-front signature dots can be materially darker than the
-        # large characteristic insert after relighting. Recover only compact,
-        # saturated components in their constrained design region so the mask
-        # does not absorb warm ceramic shading elsewhere on the body.
-        seed_accent_band = (
-            (x_grid > image.width * 0.40)
-            & (x_grid < image.width * 0.60)
-            & (y_grid > image.height * 0.64)
-            & (y_grid < image.height * 0.76)
-        )
-        seed_accents = (
-            seed_accent_band
-            & (alpha > 0.2)
-            & (saturation > 0.10)
-            & (value > 0.02)
-            & (value < 0.62)
-        )
-        seed_components, seed_component_count = ndimage.label(
-            seed_accents,
-            structure=np.ones((3, 3), dtype=np.uint8),
-        )
-        seed_sizes = np.bincount(
-            seed_components.ravel(),
-            minlength=seed_component_count + 1,
-        )
-        seed_retained = (seed_sizes >= 30) & (seed_sizes <= 800)
-        seed_retained[0] = False
-        deep_region |= seed_retained[seed_components]
-        characteristic_amount = alpha * deep_region
-    characteristic = Image.fromarray(np.rint(characteristic_amount * 255).astype(np.uint8), "L")
-    material = Image.fromarray(np.rint(alpha * (1 - characteristic_amount) * 255).astype(np.uint8), "L")
+        candidate_saturation_minimum = 0.25
+        seed_saturation_minimum = 0.45
+        candidate_color_energy_minimum = 0.04
+        seed_color_energy_minimum = 0.08
+    candidate = (
+        (alpha > 0.02)
+        & (hue_distance < hue_radius_degrees / 360)
+        & (saturation >= candidate_saturation_minimum)
+        & (value > 0.02)
+        & ((saturation * value) >= candidate_color_energy_minimum)
+    )
+    seed = (
+        candidate
+        & (hue_distance < (hue_radius_degrees * 0.72) / 360)
+        & (saturation >= seed_saturation_minimum)
+        & ((saturation * value) >= seed_color_energy_minimum)
+    )
 
-    # A subpixel blur avoids seams when the two recolored regions meet.
-    characteristic = characteristic.filter(ImageFilter.GaussianBlur(radius=0.55))
-    material = material.filter(ImageFilter.GaussianBlur(radius=0.45))
+    # A characteristic region is simply a connected patch of the expected
+    # source color that contains at least two strong color-key pixels. This is
+    # deliberately not semantic segmentation: no body-position rules, shape
+    # guesses, or learned model are involved.
+    components, component_count = ndimage.label(candidate, structure=np.ones((3, 3), dtype=np.uint8))
+    component_sizes = np.bincount(components.ravel(), minlength=component_count + 1)
+    seed_counts = np.bincount(components[seed].ravel(), minlength=component_count + 1)
+    retained = seed_counts >= 2
+    if relaxed_color_key:
+        retained |= component_sizes >= 20
+    retained[0] = False
+    characteristic_region = retained[components] & candidate
+    characteristic_amount = alpha * characteristic_region
+
+    # Material is a second, independent source-color key. Pixels that are too
+    # ambiguous to belong confidently to either palette remain untouched; a
+    # shadow in the colored interior must never become ceramic merely because
+    # it missed the characteristic key.
+    material_value = expected_material_hsv[2] if expected_material_hsv else 0.85
+    if material_value >= 0.70:
+        if amber_characteristic:
+            material_region = (
+                (alpha > 0.02)
+                & (value >= 0.30)
+                & (saturation <= candidate_saturation_minimum)
+            )
+        else:
+            material_region = (alpha > 0.02) & (value >= 0.30)
+            material_region &= (saturation < 0.12) | (
+                (saturation <= 0.75)
+                & (hue_distance > (hue_radius_degrees * 0.65) / 360)
+            )
+        material_rule = "light-neutral"
+    elif material_value <= 0.30:
+        material_region = (
+            (alpha > 0.02)
+            & (saturation <= 0.24)
+            & (value <= 0.68)
+        )
+        material_rule = "dark-neutral"
+    else:
+        material_region = (
+            (alpha > 0.02)
+            & (saturation <= 0.32)
+            & (value >= 0.10)
+        )
+        material_rule = "mid-neutral"
+    material_region &= ~characteristic_region
+    material_amount = alpha * material_region
+
+    # Soften only spatial boundaries. If the two edge ramps overlap, normalize
+    # them back to the foreground alpha rather than allowing double tinting.
+    characteristic = Image.fromarray(
+        np.rint(characteristic_amount * 255).astype(np.uint8),
+        "L",
+    ).filter(ImageFilter.GaussianBlur(radius=0.55))
+    material = Image.fromarray(
+        np.rint(material_amount * 255).astype(np.uint8),
+        "L",
+    ).filter(ImageFilter.GaussianBlur(radius=0.55))
+    characteristic_array = np.minimum(
+        np.asarray(characteristic, dtype=np.float32) / 255,
+        alpha,
+    )
+    material_array = np.minimum(
+        np.asarray(material, dtype=np.float32) / 255,
+        alpha,
+    )
+    combined = characteristic_array + material_array
+    overlap = combined > alpha
+    characteristic_array[overlap] *= alpha[overlap] / combined[overlap]
+    material_array[overlap] *= alpha[overlap] / combined[overlap]
+    characteristic = Image.fromarray(
+        np.rint(characteristic_array * 255).astype(np.uint8),
+        "L",
+    )
+    material = Image.fromarray(
+        np.rint(material_array * 255).astype(np.uint8),
+        "L",
+    )
 
     output_directory.mkdir(parents=True, exist_ok=True)
     paths = {
@@ -249,57 +221,45 @@ def generate_masks(
         "material": output_directory / "material.png",
         "characteristic": output_directory / "characteristic.png",
     }
-    image.save(paths["source"], optimize=True)
+    if source.resolve() != paths["source"].resolve():
+        image.save(paths["source"], optimize=True)
     foreground.save(paths["foreground"], optimize=True)
     material.save(paths["material"], optimize=True)
     characteristic.save(paths["characteristic"], optimize=True)
 
     metadata = {
-        "version": 1,
+        "version": 3,
         "avatarId": avatar_id,
         "sourceInput": str(source),
         "dimensions": [image.width, image.height],
         "characteristicHueDegrees": round(hue_center * 360, 3),
         "expectedCharacteristicColor": expected_color,
+        "expectedMaterialColor": expected_material,
         "algorithm": {
-            "name": "hsv-characteristic-separation",
+            "name": "deterministic-source-color-key",
             "detectionHueOverrideDegrees": detection_hue_degrees,
             "hueRadiusDegrees": hue_radius_degrees,
-            "saturationRamp": [saturation_minimum, saturation_minimum + saturation_span],
-            "strictCharacteristic": strict_characteristic,
             "candidateSaturationMinimum": candidate_saturation_minimum,
+            "candidateColorEnergyMinimum": candidate_color_energy_minimum,
             "componentSeed": {
-                "hueAmountMinimum": 0.72,
+                "hueRadiusDegrees": round(hue_radius_degrees * 0.72, 3),
                 "saturationMinimum": seed_saturation_minimum,
-                "colorEnergyMinimum": 0.12,
-                "valueMinimum": seed_value_minimum,
-                "minimumPixels": 4,
-                "minimumComponentRatio": component_seed_ratio,
-                "smallAccentSaturationMinimum": accent_saturation_minimum,
-                "smallAccentColorEnergyMinimum": 0.10,
-                "smallAccentComponentRange": [8, 10000],
-                "componentMeanEnergyFloor": energy_floor,
-                "componentRelativeEnergyFloor": relative_energy_floor,
+                "colorEnergyMinimum": seed_color_energy_minimum,
+                "minimumPixels": 2,
+                "relaxedComponentMinimumPixels": 20 if relaxed_color_key else None,
             },
-            "saturationSensitive": saturation_sensitive,
-            "characteristicMaskFloor": mask_floor if saturation_sensitive else None,
-            "deepCharacteristicUsesRetainedHue": not saturation_sensitive,
-            "deepCharacteristicClosingSize": closing_size if not saturation_sensitive else None,
-            "deepCharacteristicRelaxedExpansion": relaxed_characteristic if not saturation_sensitive else False,
-            "deepCharacteristicRelaxedHueRadiusDegrees": 55 if not saturation_sensitive and relaxed_characteristic else None,
-            "deepCharacteristicRelaxedSaturationMinimum": 0.07 if not saturation_sensitive and relaxed_characteristic else None,
-            "deepCharacteristicRelaxedValueMinimum": 0.005 if not saturation_sensitive and relaxed_characteristic else None,
-            "deepCharacteristicRelaxedLargeComponentMinimum": 64 if not saturation_sensitive and relaxed_characteristic else None,
-            "deepCharacteristicRelaxedMeanSaturationMinimum": 0.10 if not saturation_sensitive and relaxed_characteristic else None,
-            "deepCharacteristicFillHoles": not saturation_sensitive,
-            "deepAccentHueRadiusDegrees": 60 if not saturation_sensitive and use_wide_accents else None,
-            "deepSeedAccentRegion": [0.40, 0.64, 0.60, 0.76] if not saturation_sensitive else None,
-            "deepSeedAccentSaturationMinimum": 0.10 if not saturation_sensitive else None,
-            "deepSeedAccentValueRange": [0.02, 0.62] if not saturation_sensitive else None,
-            "deepSeedAccentComponentRange": [30, 800] if not saturation_sensitive else None,
-            "valueRamp": [0.035, 0.155],
+            "warmCharacteristic": warm_characteristic,
+            "amberCharacteristic": amber_characteristic,
+            "candidateValueMinimum": 0.02,
+            "relaxedColorKey": relaxed_color_key,
             "characteristicBlurRadius": 0.55,
-            "materialBlurRadius": 0.45,
+            "materialColorKey": {
+                "rule": material_rule,
+                "expectedValue": round(material_value, 4),
+            },
+            "materialBlurRadius": 0.55,
+            "independentColorKeys": True,
+            "ambiguousPixelsRemainSource": True,
         },
         "checksums": {name: sha256(path) for name, path in paths.items()},
         "review": {
@@ -319,10 +279,9 @@ def main() -> None:
     parser.add_argument("--out-dir", required=True, type=Path)
     parser.add_argument("--id", required=True)
     parser.add_argument("--expected-color")
+    parser.add_argument("--expected-material")
     parser.add_argument("--detection-hue-degrees", type=float)
-    parser.add_argument("--relaxed-characteristic", action="store_true")
-    parser.add_argument("--strict-characteristic", action="store_true")
-    parser.add_argument("--closing-size", type=int, default=11)
+    parser.add_argument("--relaxed-color-key", action="store_true")
     parser.add_argument("--review-status", choices=("unreviewed", "pass", "fail"), default="unreviewed")
     parser.add_argument("--reviewer")
     parser.add_argument("--review-notes")
@@ -332,10 +291,9 @@ def main() -> None:
         arguments.out_dir,
         arguments.id,
         arguments.expected_color,
+        arguments.expected_material,
         arguments.detection_hue_degrees,
-        arguments.relaxed_characteristic,
-        arguments.strict_characteristic,
-        arguments.closing_size,
+        arguments.relaxed_color_key,
         arguments.review_status,
         arguments.reviewer,
         arguments.review_notes,
