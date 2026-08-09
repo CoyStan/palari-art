@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "avatarId": "palari-023",
+  "sourceInput": "public/palari-v2/palari-023/source.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "characteristicHueDegrees": 5.0,
+  "expectedCharacteristicColor": "#6E202C",
+  "algorithm": {
+    "name": "hsv-characteristic-separation",
+    "detectionHueOverrideDegrees": null,
+    "hueRadiusDegrees": 20,
+    "saturationRamp": [
+      0.38,
+      0.6
+    ],
+    "strictCharacteristic": false,
+    "candidateSaturationMinimum": 0.25,
+    "componentSeed": {
+      "hueAmountMinimum": 0.72,
+      "saturationMinimum": 0.45,
+      "colorEnergyMinimum": 0.12,
+      "valueMinimum": 0.06,
+      "minimumPixels": 4,
+      "minimumComponentRatio": 0.01,
+      "smallAccentSaturationMinimum": 0.32,
+      "smallAccentColorEnergyMinimum": 0.1,
+      "smallAccentComponentRange": [
+        8,
+        10000
+      ],
+      "componentMeanEnergyFloor": 0.08,
+      "componentRelativeEnergyFloor": 0.45
+    },
+    "saturationSensitive": true,
+    "characteristicMaskFloor": 0.1,
+    "deepCharacteristicUsesRetainedHue": false,
+    "deepCharacteristicClosingSize": null,
+    "deepCharacteristicRelaxedExpansion": false,
+    "deepCharacteristicRelaxedHueRadiusDegrees": null,
+    "deepCharacteristicRelaxedSaturationMinimum": null,
+    "deepCharacteristicRelaxedValueMinimum": null,
+    "deepCharacteristicRelaxedLargeComponentMinimum": null,
+    "deepCharacteristicRelaxedMeanSaturationMinimum": null,
+    "deepCharacteristicFillHoles": false,
+    "deepAccentHueRadiusDegrees": null,
+    "deepSeedAccentRegion": null,
+    "deepSeedAccentSaturationMinimum": null,
+    "deepSeedAccentValueRange": null,
+    "deepSeedAccentComponentRange": null,
+    "valueRamp": [
+      0.035,
+      0.155
+    ],
+    "characteristicBlurRadius": 0.55,
+    "materialBlurRadius": 0.45
+  },
+  "checksums": {
+    "source": "828904ffc1c8929687b52e8c4b355ce4ad79929cb7f7eee5d86c68aea103f2c8",
+    "foreground": "66355217165182827a06000572f7b9c13b23a2eb0fdc63c8ddcddc7acc0139d0",
+    "material": "6b70a1477b49ac038bf8581acce0c51bda74f22938cb56fb6a486af2192b0889",
+    "characteristic": "81d8e7386fba5996b2ac3cd0cd2199c89fb6a7731e4d860fb9b71408b5ead441"
+  },
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "Reviewed standalone alpha, material coverage, characteristic coverage, signature dots, and porcelain/coral/dusk rendering in the V2 editor."
+  }
+}

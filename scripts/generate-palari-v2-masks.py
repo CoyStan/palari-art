@@ -71,6 +71,7 @@ def generate_masks(
     expected_color: str | None,
     detection_hue_degrees: float | None,
     relaxed_characteristic: bool,
+    strict_characteristic: bool,
     closing_size: int,
     review_status: str,
     reviewer: str | None,
@@ -98,16 +99,19 @@ def generate_masks(
     hue_radius_degrees = 20 if saturation_sensitive else 32
     hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
     hue_amount = np.clip(1 - hue_distance / (hue_radius_degrees / 360), 0, 1)
-    saturation_minimum = 0.38 if saturation_sensitive else 0.12
-    saturation_span = 0.22 if saturation_sensitive else 0.38
+    saturation_minimum = 0.50 if saturation_sensitive and strict_characteristic else 0.38 if saturation_sensitive else 0.12
+    saturation_span = 0.20 if saturation_sensitive and strict_characteristic else 0.22 if saturation_sensitive else 0.38
     saturation_amount = np.clip((saturation - saturation_minimum) / saturation_span, 0, 1)
     value_amount = np.clip((value - 0.035) / 0.12, 0, 1)
-    candidate = (alpha > 0.2) & (hue_amount > 0.2) & (saturation > 0.25) & (value > 0.035)
+    candidate_saturation_minimum = 0.38 if saturation_sensitive and strict_characteristic else 0.25
+    candidate = (alpha > 0.2) & (hue_amount > 0.2) & (saturation > candidate_saturation_minimum) & (value > 0.035)
     color_energy = saturation * value
     seed_value_minimum = 0.32 if bright_characteristic else 0.06
     component_seed_ratio = 0.04 if bright_characteristic else 0.01
-    seed = candidate & (hue_amount > 0.72) & (saturation > 0.45) & (color_energy > 0.12) & (value > seed_value_minimum)
-    accent_seed = candidate & (hue_amount > 0.20) & (saturation > 0.32) & (color_energy > 0.10) & (value > seed_value_minimum)
+    seed_saturation_minimum = 0.60 if saturation_sensitive and strict_characteristic else 0.45
+    accent_saturation_minimum = 0.45 if saturation_sensitive and strict_characteristic else 0.32
+    seed = candidate & (hue_amount > 0.72) & (saturation > seed_saturation_minimum) & (color_energy > 0.12) & (value > seed_value_minimum)
+    accent_seed = candidate & (hue_amount > 0.20) & (saturation > accent_saturation_minimum) & (color_energy > 0.10) & (value > seed_value_minimum)
     components, component_count = ndimage.label(candidate, structure=np.ones((3, 3), dtype=np.uint8))
     sizes = np.bincount(components.ravel(), minlength=component_count + 1)
     seed_counts = np.bincount(components[seed].ravel(), minlength=component_count + 1)
@@ -131,7 +135,7 @@ def generate_masks(
     use_wide_accents = False
     if saturation_sensitive:
         characteristic_amount = alpha * hue_amount * saturation_amount * value_amount * retained[components]
-        mask_floor = 0.25 if bright_characteristic else 0.10
+        mask_floor = 0.30 if strict_characteristic else 0.25 if bright_characteristic else 0.10
         characteristic_amount = np.clip((characteristic_amount - mask_floor) / (1 - mask_floor), 0, 1)
     else:
         deep_region = retained[components] & candidate
@@ -262,14 +266,16 @@ def generate_masks(
             "detectionHueOverrideDegrees": detection_hue_degrees,
             "hueRadiusDegrees": hue_radius_degrees,
             "saturationRamp": [saturation_minimum, saturation_minimum + saturation_span],
+            "strictCharacteristic": strict_characteristic,
+            "candidateSaturationMinimum": candidate_saturation_minimum,
             "componentSeed": {
                 "hueAmountMinimum": 0.72,
-                "saturationMinimum": 0.45,
+                "saturationMinimum": seed_saturation_minimum,
                 "colorEnergyMinimum": 0.12,
                 "valueMinimum": seed_value_minimum,
                 "minimumPixels": 4,
                 "minimumComponentRatio": component_seed_ratio,
-                "smallAccentSaturationMinimum": 0.32,
+                "smallAccentSaturationMinimum": accent_saturation_minimum,
                 "smallAccentColorEnergyMinimum": 0.10,
                 "smallAccentComponentRange": [8, 10000],
                 "componentMeanEnergyFloor": energy_floor,
@@ -315,6 +321,7 @@ def main() -> None:
     parser.add_argument("--expected-color")
     parser.add_argument("--detection-hue-degrees", type=float)
     parser.add_argument("--relaxed-characteristic", action="store_true")
+    parser.add_argument("--strict-characteristic", action="store_true")
     parser.add_argument("--closing-size", type=int, default=11)
     parser.add_argument("--review-status", choices=("unreviewed", "pass", "fail"), default="unreviewed")
     parser.add_argument("--reviewer")
@@ -327,6 +334,7 @@ def main() -> None:
         arguments.expected_color,
         arguments.detection_hue_degrees,
         arguments.relaxed_characteristic,
+        arguments.strict_characteristic,
         arguments.closing_size,
         arguments.review_status,
         arguments.reviewer,

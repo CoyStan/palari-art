@@ -1,7 +1,7 @@
 {
   "version": 1,
   "visualGrammar": "1.0.0",
-  "status": "reviewed-production-v2",
+  "status": "reviewed-production-v3",
   "productionRoot": "public/palari-v2",
   "deliveryRoot": "public/palari-v2-web",
   "avatars": [
@@ -21,6 +21,30 @@
     { "id": "palari-014", "name": "Palari 014", "source": "docs/palari-v2/expansion-01/generated/palari-014-fin-burgundy.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
     { "id": "palari-015", "name": "Palari 015", "source": "docs/palari-v2/expansion-01/generated/palari-015-ring-violet.png", "silhouette": "bell", "baseMaterial": "ivory", "baseCharacteristic": "violet" },
     { "id": "palari-016", "name": "Palari 016", "source": "docs/palari-v2/expansion-01/generated/palari-016-crest-ultramarine.png", "silhouette": "crescent", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
-    { "id": "palari-017", "name": "Palari 017", "source": "docs/palari-v2/expansion-01/generated/palari-017-cup-amber.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" }
+    { "id": "palari-017", "name": "Palari 017", "source": "docs/palari-v2/expansion-01/generated/palari-017-cup-amber.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-018", "name": "Palari 018", "source": "docs/palari-v2/expansion-02/chroma/palari-018.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-019", "name": "Palari 019", "source": "docs/palari-v2/expansion-02/chroma/palari-019.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-020", "name": "Palari 020", "source": "docs/palari-v2/expansion-02/chroma/palari-020.png", "silhouette": "arch", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-021", "name": "Palari 021", "source": "docs/palari-v2/expansion-02/chroma/palari-021.png", "silhouette": "stack", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-022", "name": "Palari 022", "source": "docs/palari-v2/expansion-02/chroma/palari-022.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
+    { "id": "palari-023", "name": "Palari 023", "source": "docs/palari-v2/expansion-02/chroma/palari-023.png", "silhouette": "crescent", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
+    { "id": "palari-024", "name": "Palari 024", "source": "docs/palari-v2/expansion-02/chroma/palari-024.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
+    { "id": "palari-025", "name": "Palari 025", "source": "docs/palari-v2/expansion-02/chroma/palari-025.png", "silhouette": "bell", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
+    { "id": "palari-026", "name": "Palari 026", "source": "docs/palari-v2/expansion-02/chroma/palari-026.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-027", "name": "Palari 027", "source": "docs/palari-v2/expansion-02/chroma/palari-027.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-028", "name": "Palari 028", "source": "docs/palari-v2/expansion-02/chroma/palari-028.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-029", "name": "Palari 029", "source": "docs/palari-v2/expansion-02/chroma/palari-029.png", "silhouette": "crescent", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-030", "name": "Palari 030", "source": "docs/palari-v2/expansion-02/chroma/palari-030.png", "silhouette": "arch", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-031", "name": "Palari 031", "source": "docs/palari-v2/expansion-02/chroma/palari-031.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-032", "name": "Palari 032", "source": "docs/palari-v2/expansion-02/chroma/palari-032.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-033", "name": "Palari 033", "source": "docs/palari-v2/expansion-02/chroma/palari-033.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-034", "name": "Palari 034", "source": "docs/palari-v2/expansion-02/chroma/palari-034.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-035", "name": "Palari 035", "source": "docs/palari-v2/expansion-02/chroma/palari-035.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-036", "name": "Palari 036", "source": "docs/palari-v2/expansion-02/chroma/palari-036.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-037", "name": "Palari 037", "source": "docs/palari-v2/expansion-02/chroma/palari-037.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-038", "name": "Palari 038", "source": "docs/palari-v2/expansion-02/chroma/palari-038.png", "silhouette": "bell", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-039", "name": "Palari 039", "source": "docs/palari-v2/expansion-02/chroma/palari-039.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-040", "name": "Palari 040", "source": "docs/palari-v2/expansion-02/chroma/palari-040.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
+    { "id": "palari-041", "name": "Palari 041", "source": "docs/palari-v2/expansion-02/chroma/palari-041.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" }
   ]
 }

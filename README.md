@@ -21,7 +21,7 @@ Palari Art is the source of truth for Palari's standardized character portraits,
 
 The repository also publishes a text-free responsive gallery of 20 reviewed Palari teaching plates. The source art and its provenance remain in the repository; only optimized WebPs are deployed.
 
-Palari V2 is a separate ceramic-character system: 17 reviewed figures with selectable ceramic material, one characteristic inner-intelligence color, background, and local 1024px PNG export. It is available at `/v2/` and does not alter the portrait editor.
+Palari V2 is a separate ceramic-character system: 41 reviewed figures with selectable ceramic material, one characteristic inner-intelligence color, background, and local 1024px PNG export. It is available at `/v2/` and does not alter the portrait editor.
 
 ## At a glance
 
@@ -78,7 +78,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | --- | --- |
 | Bundled portraits | 157 standardized square PNGs |
 | Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
-| Pages artifact | 223.0 MiB, 1,800 WebPs, no PNG masters, PDF, or audit layers |
+| Pages artifact | 225.4 MiB, 1,872 WebPs, no PNG masters, PDF, or audit layers |
 | Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
@@ -90,7 +90,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | Variation planning | 157 visual-attribute records plus a documented coverage report |
 | Known limitation | Temporary uploads still use color-estimated masks |
 | Art gallery | 20 reviewed teaching plates in a text-free responsive gallery; no PDF |
-| Ceramic V2 | 17 reviewed figures, 51 WebP delivery assets, material/characteristic/background controls, PNG export |
+| Ceramic V2 | 41 reviewed figures, 123 WebP delivery assets, material/characteristic/background controls, PNG export |
 
 ## Start the application
 

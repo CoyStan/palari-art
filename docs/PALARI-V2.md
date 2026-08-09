@@ -1,6 +1,6 @@
 # Palari V2 ceramic character system
 
-Status: visual grammar 1.0 frozen; 17 reviewed production figures available in the separate V2 editor.
+Status: visual grammar 1.0 frozen; 41 reviewed production figures available in the separate V2 editor.
 
 ![First 12-study Palari V2 ceramic exploration](palari-v2/exploration-sheet-01.png)
 
@@ -256,20 +256,20 @@ A candidate should not enter the production library merely because it is attract
 
 ## Production collection and editor
 
-The production collection contains 17 reviewed figures. The first 12 came from the two controlled audits; IDs 013–017 are high-quality standalone regenerations of the five figures selected in the user-provided lineup. `docs/palari-v2/collection.json` links each stable ID to its accepted concept, silhouette, source material, and source characteristic color.
+The production collection contains 41 reviewed figures. The first 12 came from the two controlled audits; IDs 013–017 are high-quality standalone regenerations of the five figures in the user-provided lineup. IDs 018–041 regenerate all 24 cells from the six supplied four-up sheets as separate figures, including visually related variants rather than discarding them as duplicates. `docs/palari-v2/collection.json` links each stable ID to its accepted concept, silhouette, source material, and source characteristic color.
 
-The expansion preserves all seven supplied images, generation prompts, reference assignments, checksums, and intermediate studio/chroma renders in `docs/palari-v2/expansion-01/`. The lineup defines the five included identities; the six four-up sheets provide supporting structure references. A flat chroma-background generation pass allowed the pale ceramic limbs and shells to be isolated cleanly without erasing them against the warm plaster studio.
+The first expansion preserves all seven supplied images, generation prompts, reference assignments, checksums, and intermediate studio/chroma renders in `docs/palari-v2/expansion-01/`. The corrective second expansion in `docs/palari-v2/expansion-02/` records the reproducible 24-cell crop map, one identity prompt and chroma render per cell, and full browser review. Flat chroma-background generation allows pale ceramic limbs and shells to be isolated cleanly without erasing them against the warm plaster studio.
 
 Each production figure has a 1254 × 1254 transparent RGBA master plus reviewed foreground, material, and characteristic masks under `public/palari-v2/<id>/`. The characteristic mask includes the dominant inner-intelligence surface, iris accents, and the visible Palari seed mark. `metadata.json` records source and layer checksums, the expected characteristic color, the deterministic separation recipe, and review state.
 
-The browser loads 51 derived WebPs from `public/palari-v2-web/`: one compact transparent source plus two lossless masks per figure. Their manifest checksum-links every delivery file to its PNG authority. Run:
+The browser loads 123 derived WebPs from `public/palari-v2-web/`: one compact transparent source plus two lossless masks per figure. Their manifest checksum-links every delivery file to its PNG authority. Run:
 
 ```bash
 npm run palari-v2:web:generate
 npm run verify:palari-v2
 ```
 
-The separate React editor is mounted at `/v2/`. It offers 17 shapes, four ceramic materials, eight characteristic colors, four backgrounds, and 1024 × 1024 PNG export. Recoloring is deterministic and browser-only; it preserves the source luminance, surface texture, shading, pose, eyes, and silhouette. The original portrait editor remains at `/` and uses its independent background-and-shirt renderer.
+The separate React editor is mounted at `/v2/`. It offers 41 shapes, four ceramic materials, eight characteristic colors, four backgrounds, and 1024 × 1024 PNG export. Recoloring is deterministic and browser-only; it preserves the source luminance, surface texture, shading, pose, eyes, and silhouette. The original portrait editor remains at `/` and uses its independent background-and-shirt renderer.
 
 The complete source, mask, delivery, and browser-review contract is recorded in `docs/palari-v2/TECHNICAL.md`.
 
