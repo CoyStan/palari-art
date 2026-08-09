@@ -1,7 +1,7 @@
 {
   "version": 1,
   "visualGrammar": "1.0.0",
-  "status": "reviewed-production-v1",
+  "status": "reviewed-production-v2",
   "productionRoot": "public/palari-v2",
   "deliveryRoot": "public/palari-v2-web",
   "avatars": [
@@ -16,6 +16,11 @@
     { "id": "palari-009", "name": "Palari 009", "source": "docs/palari-v2/audit-02/b04-pod-charcoal-amber.png", "silhouette": "pod", "baseMaterial": "charcoal", "baseCharacteristic": "amber" },
     { "id": "palari-010", "name": "Palari 010", "source": "docs/palari-v2/audit-02/b05-stack-ivory-burgundy.png", "silhouette": "stack", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
     { "id": "palari-011", "name": "Palari 011", "source": "docs/palari-v2/audit-02/b06-stack-stone-forest.png", "silhouette": "stack", "baseMaterial": "stone", "baseCharacteristic": "forest" },
-    { "id": "palari-012", "name": "Palari 012", "source": "docs/palari-v2/audit-02/b07-twist-porcelain-ultramarine.png", "silhouette": "bell", "baseMaterial": "porcelain", "baseCharacteristic": "ultramarine" }
+    { "id": "palari-012", "name": "Palari 012", "source": "docs/palari-v2/audit-02/b07-twist-porcelain-ultramarine.png", "silhouette": "bell", "baseMaterial": "porcelain", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-013", "name": "Palari 013", "source": "docs/palari-v2/expansion-01/generated/palari-013-canopy-forest.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
+    { "id": "palari-014", "name": "Palari 014", "source": "docs/palari-v2/expansion-01/generated/palari-014-fin-burgundy.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
+    { "id": "palari-015", "name": "Palari 015", "source": "docs/palari-v2/expansion-01/generated/palari-015-ring-violet.png", "silhouette": "bell", "baseMaterial": "ivory", "baseCharacteristic": "violet" },
+    { "id": "palari-016", "name": "Palari 016", "source": "docs/palari-v2/expansion-01/generated/palari-016-crest-ultramarine.png", "silhouette": "crescent", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-017", "name": "Palari 017", "source": "docs/palari-v2/expansion-01/generated/palari-017-cup-amber.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "avatarId": "palari-015",
+  "sourceInput": "public/palari-v2/palari-015/source.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "characteristicHueDegrees": 341.0,
+  "expectedCharacteristicColor": "#594077",
+  "algorithm": {
+    "name": "hsv-characteristic-separation",
+    "detectionHueOverrideDegrees": 337.0,
+    "hueRadiusDegrees": 32,
+    "saturationRamp": [
+      0.12,
+      0.5
+    ],
+    "componentSeed": {
+      "hueAmountMinimum": 0.72,
+      "saturationMinimum": 0.45,
+      "colorEnergyMinimum": 0.12,
+      "valueMinimum": 0.06,
+      "minimumPixels": 4,
+      "minimumComponentRatio": 0.01,
+      "smallAccentSaturationMinimum": 0.32,
+      "smallAccentColorEnergyMinimum": 0.1,
+      "smallAccentComponentRange": [
+        8,
+        10000
+      ],
+      "componentMeanEnergyFloor": 0.04,
+      "componentRelativeEnergyFloor": 0.2
+    },
+    "saturationSensitive": false,
+    "characteristicMaskFloor": null,
+    "deepCharacteristicUsesRetainedHue": true,
+    "deepCharacteristicClosingSize": 61,
+    "deepCharacteristicRelaxedExpansion": false,
+    "deepCharacteristicRelaxedHueRadiusDegrees": null,
+    "deepCharacteristicRelaxedSaturationMinimum": null,
+    "deepCharacteristicRelaxedValueMinimum": null,
+    "deepCharacteristicRelaxedLargeComponentMinimum": null,
+    "deepCharacteristicRelaxedMeanSaturationMinimum": null,
+    "deepCharacteristicFillHoles": true,
+    "deepAccentHueRadiusDegrees": null,
+    "deepSeedAccentRegion": [
+      0.4,
+      0.64,
+      0.6,
+      0.76
+    ],
+    "deepSeedAccentSaturationMinimum": 0.1,
+    "deepSeedAccentValueRange": [
+      0.02,
+      0.62
+    ],
+    "deepSeedAccentComponentRange": [
+      30,
+      800
+    ],
+    "valueRamp": [
+      0.035,
+      0.155
+    ],
+    "characteristicBlurRadius": 0.55,
+    "materialBlurRadius": 0.45
+  },
+  "checksums": {
+    "source": "03ceed1d33b5fbbd09f62d7a1fa03ef5c6c064a48dd9830e11f4d79eefc17575",
+    "foreground": "ffb8aa27908d77613db6aeacf33f0dc3a299a6eb03581904b2ef6362c2a760f4",
+    "material": "53e80b44da6877c547d6f43bfd15126c3d3002f578584579cacb7fa7685f6236",
+    "characteristic": "386e13bccea714fcddb20ae15cd8ac297ef6b18092422d508d55e9cee2cf44cd"
+  },
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "Reviewed source isolation and characteristic coverage in the V2 editor; detection hue follows the regenerated plum render."
+  }
+}

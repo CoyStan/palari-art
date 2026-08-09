@@ -34,7 +34,7 @@ There is no application server, database, authentication layer, or persistent up
 
 ## Palari V2 runtime
 
-`src/v2/main.tsx` mounts the separate ceramic editor. `src/v2/data.ts` registers 12 reviewed figures and the frozen material, characteristic-color, and background palettes. `src/lib/recolor-v2.ts` loads one transparent source plus lossless material and characteristic masks, caches their pixel data, transfers the selected colors while retaining source luminance, and composites the result over the selected background. The export Canvas is always 1024 × 1024.
+`src/v2/main.tsx` mounts the separate ceramic editor. `src/v2/data.ts` registers 17 reviewed figures and the frozen material, characteristic-color, and background palettes. `src/lib/recolor-v2.ts` loads one transparent source plus lossless material and characteristic masks, caches their pixel data, transfers the selected colors while retaining source luminance, and composites the result over the selected background. The export Canvas is always 1024 × 1024.
 
 The PNG authorities and review metadata live under `public/palari-v2/`. The browser loads the checksum-linked WebP tier under `public/palari-v2-web/`. V2 has no uploads, runtime model inference, backend, or relationship to V1 portrait masks.
 
@@ -50,7 +50,7 @@ The full WebP tier is 1024 × 1024 because that is the renderer and export resol
 
 The GitHub Pages build uses Vite's `/palari-art/` base path with `publicDir` disabled. `scripts/prepare-pages-artifact.mjs` then copies the V1 WebP tiers, handbook WebPs, and `public/palari-v2-web/` into `dist/`. Verification rejects master/audit PNGs, missing manifests, incomplete WebP coverage, or an unexpectedly large artifact.
 
-The current Pages artifact is 222.6 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, and 36 V2 WebPs. It contains no PNG or PDF files.
+The current Pages artifact is 223.0 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, and 51 V2 WebPs. It contains no PNG or PDF files.
 
 ## Face-aware framing
 

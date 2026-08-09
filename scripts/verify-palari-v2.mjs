@@ -46,14 +46,14 @@ function webpDimensions(buffer, fileName) {
 }
 
 if (grammar.version !== "1.0.0" || grammar.status !== "frozen-v1") problems.push("visual grammar must be frozen at 1.0.0.");
-if (collection.visualGrammar !== grammar.version || collection.avatars.length !== 12) problems.push("collection must contain 12 grammar-1.0 avatars.");
-if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 12) problems.push("V2 WebP manifest is incomplete.");
+if (collection.visualGrammar !== grammar.version || collection.avatars.length !== 17) problems.push("collection must contain 17 grammar-1.0 avatars.");
+if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 17) problems.push("V2 WebP manifest is incomplete.");
 
 const characteristicById = new Map(grammar.characteristicColors.map((color) => [color.id, color.uiSwatch.toUpperCase()]));
 const expectedIds = collection.avatars.map((_, index) => `palari-${String(index + 1).padStart(3, "0")}`);
 const actualDirectories = (await readdir(path.join(repositoryRoot, "public/palari-v2"), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
-if (JSON.stringify(actualDirectories) !== JSON.stringify(expectedIds)) problems.push("production V2 directory IDs are not exactly palari-001 through palari-012.");
+if (JSON.stringify(actualDirectories) !== JSON.stringify(expectedIds)) problems.push(`production V2 directory IDs are not exactly palari-001 through palari-${String(collection.avatars.length).padStart(3, "0")}.`);
 
 for (const [index, avatar] of collection.avatars.entries()) {
   if (avatar.id !== expectedIds[index]) problems.push(`${avatar.id}: collection IDs are not contiguous.`);
@@ -96,5 +96,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log("Verified frozen grammar 1.0, 12 reviewed V2 masters, 36 delivery WebPs, runtime registration, dimensions, and checksums.");
+  console.log(`Verified frozen grammar 1.0, ${collection.avatars.length} reviewed V2 masters, ${collection.avatars.length * 3} delivery WebPs, runtime registration, dimensions, and checksums.`);
 }
