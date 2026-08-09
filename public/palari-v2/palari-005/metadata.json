@@ -6,43 +6,52 @@
     1254,
     1254
   ],
-  "characteristicHueDegrees": 5.0,
-  "expectedCharacteristicColor": "#7D2821",
-  "expectedMaterialColor": "#D8C9AF",
+  "characteristicHueDegrees": 195.0,
+  "expectedCharacteristicColor": "#164A7A",
+  "expectedMaterialColor": "#E9E6DF",
   "algorithm": {
     "name": "deterministic-source-color-key",
     "detectionHueOverrideDegrees": null,
-    "hueRadiusDegrees": 20,
-    "candidateSaturationMinimum": 0.25,
-    "candidateColorEnergyMinimum": 0.04,
+    "hueRadiusDegrees": 32,
+    "candidateSaturationMinimum": 0.12,
+    "candidateColorEnergyMinimum": 0.02,
     "componentSeed": {
-      "hueRadiusDegrees": 14.4,
-      "saturationMinimum": 0.45,
-      "colorEnergyMinimum": 0.08,
-      "minimumPixels": 2
+      "hueRadiusDegrees": 23.04,
+      "saturationMinimum": 0.22,
+      "colorEnergyMinimum": 0.04,
+      "minimumPixels": 2,
+      "relaxedComponentMinimumPixels": null
     },
-    "warmCharacteristic": true,
+    "warmCharacteristic": false,
     "amberCharacteristic": false,
     "candidateValueMinimum": 0.02,
     "relaxedColorKey": false,
+    "mutedCharacteristic": true,
+    "mutedColorKey": {
+      "rule": "blue-over-neutral",
+      "candidateBlueOverRedMinimum": 0,
+      "candidateBlueOverGreenMinimum": -0.025,
+      "seedBlueOverRedMinimum": 0.04,
+      "seedBlueOverGreenMinimum": -0.005
+    },
     "characteristicBlurRadius": 0.55,
     "materialColorKey": {
       "rule": "light-neutral",
-      "expectedValue": 0.8471
+      "expectedValue": 0.9137
     },
     "materialBlurRadius": 0.55,
     "independentColorKeys": true,
     "ambiguousPixelsRemainSource": true
   },
   "checksums": {
-    "source": "23339f04eac034ffe1a5ceca7f19b0062fd36a5d41a846c42169e9896a815ebb",
-    "foreground": "ae1facde6af6829cdd08ff32341ec7343187ae96efeae3eb2288cdab2a85cddb",
-    "material": "ee79e62879f75eed9e90b8d7ebc3da01bf2d772c7a94e30b6771be5c7caffbd6",
-    "characteristic": "dafd0fcbe175469fd4b72c704a4c9efe54889f87cd9cf95e157df1f7d1cdf085"
+    "source": "85bf67b34c56a949dd1a28c6fe6b98942451f76b863f4ad53c44ed4dca80ab20",
+    "foreground": "0877844d284dee736975c759d20f41dbe7c256d678caceba0194be9a55c0b126",
+    "material": "f5d6337fc27896e09acc392128f4de8dd8532ea6de525f4f05c29e011fa4c3df",
+    "characteristic": "fe33c21c9cda7da4dc129768b911742809040f12f1e5ee0813590ae09183e452"
   },
   "review": {
     "status": "pass",
     "reviewer": "Codex",
-    "notes": "Reviewed independent deterministic source-color key contact sheet and browser recolors; material and characteristic regions remain separated while ambiguous shading stays source-authored."
+    "notes": "Reviewed neutral editing master, deterministic blue-over-neutral masks, alpha edges, Original mode, and extreme browser recolors on desktop and mobile."
   }
 }
