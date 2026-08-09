@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "avatarId": "palari-008",
+  "sourceInput": "public/palari-v2/palari-008/source.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "characteristicHueDegrees": 177.0,
+  "expectedCharacteristicColor": "#146B68",
+  "algorithm": {
+    "name": "hsv-characteristic-separation",
+    "hueRadiusDegrees": 32,
+    "saturationRamp": [
+      0.12,
+      0.5
+    ],
+    "componentSeed": {
+      "hueAmountMinimum": 0.72,
+      "saturationMinimum": 0.45,
+      "colorEnergyMinimum": 0.12,
+      "valueMinimum": 0.06,
+      "minimumPixels": 4,
+      "minimumComponentRatio": 0.01,
+      "smallAccentSaturationMinimum": 0.32,
+      "smallAccentColorEnergyMinimum": 0.1,
+      "smallAccentComponentRange": [
+        8,
+        10000
+      ],
+      "componentMeanEnergyFloor": 0.04,
+      "componentRelativeEnergyFloor": 0.2
+    },
+    "saturationSensitive": false,
+    "characteristicMaskFloor": null,
+    "deepCharacteristicUsesRetainedHue": true,
+    "deepCharacteristicClosingSize": 11,
+    "deepAccentHueRadiusDegrees": null,
+    "valueRamp": [
+      0.035,
+      0.155
+    ],
+    "characteristicBlurRadius": 0.55,
+    "materialBlurRadius": 0.45
+  },
+  "checksums": {
+    "source": "e13a3fe4e8f0fbd2677b5948dc89d377967564b1c693811187bfcfd85ec1fa0a",
+    "foreground": "b71a6efac445919e91b37499b538de23744412065d43c3043f36f1eb46ef7731",
+    "material": "798996f34ae7075a2a1c766a305893b8ecb8439cc61341f0257ff0e27f099171",
+    "characteristic": "6b0cb9f3b9993d0f67721cd82202b1f71537cd45aea551ff396ae1ea75999969"
+  },
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "Isolation and masks reviewed as a contact sheet; hard cross-material recolors checked in the browser."
+  }
+}

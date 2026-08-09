@@ -38,7 +38,9 @@
     "framing:generate": "python3 scripts/generate-avatar-framing.py --all",
     "avatars:web:generate": "node scripts/generate-web-avatar-assets.mjs",
     "masks:web:generate": "node scripts/generate-web-mask-assets.mjs",
-    "check": "npm run verify:assets && npm run verify:web-assets && npm run verify:masks && npm run verify:web-masks && npm run verify:framing && npm run verify:attributes && npm run verify:handbook && npm run build"
+    "palari-v2:web:generate": "node scripts/generate-palari-v2-web-assets.mjs",
+    "verify:palari-v2": "node scripts/verify-palari-v2.mjs",
+    "check": "npm run verify:assets && npm run verify:web-assets && npm run verify:masks && npm run verify:web-masks && npm run verify:framing && npm run verify:attributes && npm run verify:handbook && npm run verify:palari-v2 && npm run build"
   },
   "dependencies": {
     "lucide-react": "0.468.0",

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-08",
+  "generator": "OpenAI built-in image generation",
+  "model": null,
+  "modelNote": "The built-in generation path did not expose an exact model identifier.",
+  "grammarBefore": "0.2.0",
+  "grammarAfter": "1.0.0",
+  "candidates": [
+    { "id": "B01", "output": "docs/palari-v2/audit-02/b01-crescent-ivory-violet.png", "sha256": "295c5fd55516212ad8f44509a0aa9ccb988d2f396624edcfd02a531e1a555a9b", "review": "pass" },
+    { "id": "B02", "output": "docs/palari-v2/audit-02/b02-crescent-stone-coral.png", "sha256": "856996a52e748614792d2db86bd99ac12170c954956b325d9850918cf05fa06c", "review": "pass" },
+    { "id": "B03", "output": "docs/palari-v2/audit-02/b03-pod-porcelain-teal.png", "sha256": "c6603c78682f2cb76794c88c351e53f056f8b16e3039c49efb5301dbe11fac10", "review": "pass" },
+    { "id": "B04", "output": "docs/palari-v2/audit-02/b04-pod-charcoal-amber.png", "sha256": "6d360f63ad74140b6cac1452d1ea93ffb1a6391cd60a967862a3243e60445458", "review": "pass_with_note" },
+    { "id": "B05", "output": "docs/palari-v2/audit-02/b05-stack-ivory-burgundy.png", "sha256": "9c0df6ed59ce9b1831740f7112936a1fba7f5a19a52376aa427dd05f218381c5", "review": "pass" },
+    { "id": "B06", "output": "docs/palari-v2/audit-02/b06-stack-stone-forest.png", "sha256": "2534e50d063c12a91df80064091cb2bb203e4e8baa6c93294c4da3750bf93042", "review": "pass" },
+    { "id": "B07", "output": "docs/palari-v2/audit-02/b07-twist-porcelain-ultramarine.png", "sha256": "ccc801300a442a2b35a459ff25c42f99bda6f3fdcde971a0bce4814a566d5d7d", "review": "pass_with_note" },
+    { "id": "B08", "output": "docs/palari-v2/audit-02/b08-arch-charcoal-mineral-red.png", "sha256": "c98a31ee83e112c091b25c5f8fb9e793b5939a9b8fe16ede0b8703b8e1ac5e66", "review": "reject_novelty_fidelity" }
+  ]
+}

@@ -1,6 +1,6 @@
 # Palari V2 controlled-random prompt grammar
 
-Status: provisional exploration grammar. It generates design candidates, not production-approved assets.
+Status: visual grammar 1.0. It generates review candidates; generated outputs still require individual approval before production registration.
 
 The source vocabulary is `shape-grammar.json`. A randomizer must choose compatible values from that file and retain the selected values, prompt, reference image, model, creation date, and output checksum with every candidate.
 
