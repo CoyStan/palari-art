@@ -22,7 +22,9 @@ Both keyed regions are solid rather than texture-weighted; source luminance pres
 
 ## Browser renderer
 
-`src/lib/recolor-v2.ts` loads the source and both masks once, caches their pixels, and transfers selected material and characteristic colors while retaining source-relative luminance. It composites the transparent figure over a chosen background at 1024 × 1024. No request leaves the browser when a swatch changes or an image is exported.
+For customized renders, `src/lib/recolor-v2.ts` loads the source and both masks once, caches their pixels, and transfers selected material and characteristic colors while retaining source-relative luminance. It composites the transparent figure over a chosen background at 1024 × 1024. No request leaves the browser when a swatch changes or an image is exported.
+
+The editor's **Original** toggle takes a separate source-only render path. It draws the transparent delivery source without reading either prepared mask, applying a recolor, or adding a background. Selecting any finish swatch returns to the customized render; exporting while Original is active preserves the source transparency.
 
 ## Delivery and review
 

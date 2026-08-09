@@ -24,10 +24,15 @@ export function V2Canvas({ avatar, options, canvasRef }: V2CanvasProps) {
 
   return (
     <div className="v2-stage" aria-busy={status === "loading"}>
-      <canvas ref={canvasRef} aria-label={`${avatar.name} preview`} />
+      <canvas
+        ref={canvasRef}
+        aria-label={`${avatar.name} ${options.mode === "original" ? "original source" : "customized"} preview`}
+      />
       {status !== "ready" && (
         <div className="v2-stage-status" role="status">
-          {status === "error" ? "Preview unavailable" : "Preparing ceramic…"}
+          {status === "error"
+            ? "Preview unavailable"
+            : options.mode === "original" ? "Preparing original…" : "Preparing ceramic…"}
         </div>
       )}
     </div>

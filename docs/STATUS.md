@@ -8,7 +8,7 @@ Last updated: 2026-08-09
 - V2 proposes a shared ceramic material color plus one characteristic inner-intelligence color, with expressive eyes, fingerless arms, and no conventional legs.
 - Two controlled grammar audits are complete, and the corrected family contract is frozen as visual grammar 1.0.
 - Forty-one accepted figures have reviewed 1254px transparent masters and deterministic source-color-keyed material/characteristic masks under `public/palari-v2/`, plus 123 checksum-linked delivery WebPs under `public/palari-v2-web/`. The V2 mask pipeline uses no learned model or semantic inference. Its two independent keys leave ambiguous shadow and highlight pixels unchanged instead of assigning them to the wrong layer. IDs 013–017 are standalone regenerations from the five-character lineup. IDs 018–041 separately regenerate every cell in the six supplied four-up sheets, so all 24 sheet designs are represented without deduplication; the complete crop, prompt, chroma, and review record is retained under `docs/palari-v2/expansion-02/`.
-- The separate browser-only V2 editor is available at `/v2/` with shape, ceramic material, characteristic color, background, and 1024px PNG export controls. V1 remains unchanged at `/`.
+- The separate browser-only V2 editor is available at `/v2/` with shape, ceramic material, characteristic color, background, source-only Original view, and 1024px PNG export controls. Original view bypasses both masks and preserves source transparency. V1 remains unchanged at `/`.
 - `npm run verify:palari-v2` validates the frozen grammar, collection, source/mask dimensions, checksums, review state, WebP manifest, and runtime registration.
 
 ## Exact handoff checkpoint
