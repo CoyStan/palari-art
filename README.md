@@ -8,7 +8,7 @@ Change a character's background and shirt while preserving the face, hair, acces
 
 `157 source portraits` · `156 active characters` · `1024 × 1024 export` · `browser-only runtime`
 
-[Open the live editor](https://coystan.github.io/palari-art/) · [View the art gallery](https://coystan.github.io/palari-art/handbook/)
+[Open the portrait editor](https://coystan.github.io/palari-art/) · [Create a ceramic Palari](https://coystan.github.io/palari-art/v2/) · [View the art gallery](https://coystan.github.io/palari-art/handbook/)
 
 </div>
 
@@ -20,6 +20,8 @@ Change a character's background and shirt while preserving the face, hair, acces
 Palari Art is the source of truth for Palari's standardized character portraits, their reviewed semantic layers, and the browser tools used to recolor them safely. The editor presents one stable mixed library, previews changes instantly, and exports PNG or WebP without sending portrait data to a backend.
 
 The repository also publishes a text-free responsive gallery of 20 reviewed Palari teaching plates. The source art and its provenance remain in the repository; only optimized WebPs are deployed.
+
+Palari V2 is a separate ceramic-character system: 12 reviewed figures with selectable ceramic material, one characteristic inner-intelligence color, background, and local 1024px PNG export. It is available at `/v2/` and does not alter the portrait editor.
 
 ## At a glance
 
@@ -76,7 +78,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | --- | --- |
 | Bundled portraits | 157 standardized square PNGs |
 | Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
-| Pages artifact | 220.9 MiB, 1,749 WebPs, no PNG masters, PDF, or audit layers |
+| Pages artifact | 222.6 MiB, 1,785 WebPs, no PNG masters, PDF, or audit layers |
 | Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
@@ -88,6 +90,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | Variation planning | 157 visual-attribute records plus a documented coverage report |
 | Known limitation | Temporary uploads still use color-estimated masks |
 | Art gallery | 20 reviewed teaching plates in a text-free responsive gallery; no PDF |
+| Ceramic V2 | 12 reviewed figures, 36 WebP delivery assets, material/characteristic/background controls, PNG export |
 
 ## Start the application
 
@@ -141,6 +144,13 @@ npm run masks:web:generate
 npm run verify:web-masks
 ```
 
+Regenerate and verify the ceramic V2 delivery tier after changing a V2 source or mask:
+
+```bash
+npm run palari-v2:web:generate
+npm run verify:palari-v2
+```
+
 Build the PNG-free GitHub Pages artifact with:
 
 ```bash
@@ -181,6 +191,8 @@ palari-art/
 ├── public/masks/             Reviewed semantic layers and generation metadata
 ├── public/masks-web/         Pixel-identical lossless WebP runtime layers
 ├── public/handbook/          Gallery WebPs and checksum manifest
+├── public/palari-v2/         Reviewed ceramic masters, masks, and metadata
+├── public/palari-v2-web/     Checksum-linked V2 runtime WebPs
 ├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
 ├── scripts/clean-shirt-mask-components.mjs Remove tiny disconnected SAM garment islands
 ├── scripts/generate-foreground-mattes.mjs  Resumable BiRefNet matting batch
@@ -194,6 +206,7 @@ palari-art/
 ├── scripts/verify-assets.mjs Asset inventory and dimension validation
 ├── src/components/           React interface components
 ├── src/handbook/             Text-free responsive teaching-art gallery
+├── src/v2/                   Separate ceramic character editor
 ├── src/data/avatar-masks.json Semantic mask registry
 ├── src/data/avatar-framing.json Source-linked scale and center metadata
 ├── src/data/avatar-attributes.json Visual variation planning metadata

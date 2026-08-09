@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0",
-  "status": "exploratory",
+  "version": "1.0.0",
+  "status": "frozen-v1",
   "identity": {
     "name": "Palari",
     "meaning": "Personal Artificial Intelligence",
@@ -102,7 +102,7 @@
       "id": "stack",
       "prompt": "two visibly offset interlocking ceramic masses with one clear overlap seam, distinct centers, and a single continuous stable base",
       "crowns": ["split_petal", "soft_hood"],
-      "openings": ["circular_aperture", "vertical_oval", "layered_reveal"],
+      "openings": ["low_circular_aperture", "vertical_oval", "layered_reveal"],
       "poses": ["arms_resting", "gentle_greeting", "soft_embrace"]
     }
   ],

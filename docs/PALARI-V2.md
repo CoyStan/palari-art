@@ -1,6 +1,6 @@
 # Palari V2 ceramic character system
 
-Status: exploratory design direction; not yet part of the production editor or portrait library.
+Status: visual grammar 1.0 frozen; 12 reviewed production figures available in the separate V2 editor.
 
 ![First 12-study Palari V2 ceramic exploration](palari-v2/exploration-sheet-01.png)
 
@@ -218,6 +218,12 @@ The first eight-candidate grammar audit is recorded in `docs/palari-v2/audit-01/
 
 The audit also stabilized the six-aperture Palari seed mark and confirmed that characteristic colors remain readable on stone and charcoal materials. These findings are incorporated into shape grammar version 0.2.0.
 
+## Focused audit 02 and grammar freeze
+
+The focused correction audit is recorded in `docs/palari-v2/audit-02/AUDIT.md`. Seven of eight candidates pass. Closed crescents no longer read as open vessels, pods preserve adult collectible proportions, and the two Stack candidates visibly use offset interlocking masses.
+
+The 12 accepted Audit 01 and Audit 02 figures form the initial collection defined in `docs/palari-v2/collection.json`. Audit 02 provides enough evidence to freeze the family contract as visual grammar 1.0. Generated characters still require individual review; the freeze applies to the rules, not automatic approval of every output.
+
 ## Provisional prompt architecture
 
 The prompt should be assembled from stable blocks. This prevents random generation from drifting away from the species.
@@ -248,17 +254,23 @@ Each candidate should be judged independently on these questions:
 
 A candidate should not enter the production library merely because it is attractive. It must strengthen the shared character system.
 
-## Development sequence
+## Production collection and editor
 
-1. Approve or revise this conceptual contract.
-2. Create the controlled 12-study exploration batch and retain prompts, model details, references, dates, and source files.
-3. Select three to five strongest figures and document why they work.
-4. Refine the invariants, exclusions, and random variation grammar from those results.
-5. Generate a small consistency test: multiple shapes, all four material colors, and repeated characteristic colors.
-6. Decide how V2 coexists with or replaces the current human portrait library.
-7. Design a V2 asset and mask contract before changing the editor. The likely editable layers are material color, characteristic color, and background—not the current background-and-shirt model.
-8. Only after the visual system passes review, implement a separate V2 editor path without overwriting or invalidating the current production portraits.
+The first production collection contains 12 reviewed figures selected from the two controlled audits. `docs/palari-v2/collection.json` links each stable ID to its accepted concept, silhouette, source material, and source characteristic color.
+
+Each production figure has a 1254 × 1254 transparent RGBA master plus reviewed foreground, material, and characteristic masks under `public/palari-v2/<id>/`. The characteristic mask includes the dominant inner-intelligence surface, iris accents, and the visible Palari seed mark. `metadata.json` records source and layer checksums, the expected characteristic color, the deterministic separation recipe, and review state.
+
+The browser loads 36 derived WebPs from `public/palari-v2-web/`: one compact transparent source plus two lossless masks per figure. Their manifest checksum-links every delivery file to its PNG authority. Run:
+
+```bash
+npm run palari-v2:web:generate
+npm run verify:palari-v2
+```
+
+The separate React editor is mounted at `/v2/`. It offers 12 shapes, four ceramic materials, eight characteristic colors, four backgrounds, and 1024 × 1024 PNG export. Recoloring is deterministic and browser-only; it preserves the source luminance, surface texture, shading, pose, eyes, and silhouette. The original portrait editor remains at `/` and uses its independent background-and-shirt renderer.
+
+The complete source, mask, delivery, and browser-review contract is recorded in `docs/palari-v2/TECHNICAL.md`.
 
 ## Current boundary
 
-Palari V2 is currently a design exploration. Existing V1 portraits, masks, framing records, deployment assets, and editor behavior remain authoritative and unchanged.
+V2 does not replace, rename, or modify V1 portraits, masks, framing, editor behavior, or uploads. New V2 figures must pass the frozen grammar, receive an isolated master and reviewed two-layer masks, regenerate their WebP delivery files, and pass `npm run verify:palari-v2` before runtime registration.

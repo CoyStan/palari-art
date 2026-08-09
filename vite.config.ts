@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
         input: {
           editor: path.join(repositoryRoot, "index.html"),
           handbook: path.join(repositoryRoot, "handbook/index.html"),
+          v2: path.join(repositoryRoot, "v2/index.html"),
         },
       },
     },

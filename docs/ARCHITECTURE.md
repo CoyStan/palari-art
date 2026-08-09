@@ -2,7 +2,7 @@
 
 ## System shape
 
-Palari Art is currently a single-page React application built by Vite. All interactive image processing happens inside the browser through Canvas APIs. Separate Node preparation scripts call fal.ai to create reusable masks and foreground mattes.
+Palari Art is a static multi-entry React application built by Vite. The V1 portrait editor lives at `/`, the ceramic V2 editor at `/v2/`, and the teaching-art gallery at `/handbook/`. All interactive image processing happens inside the browser through Canvas APIs. Separate preparation scripts create reusable assets and masks.
 
 ```text
 Bundled or uploaded image
@@ -32,6 +32,12 @@ There is no application server, database, authentication layer, or persistent up
 5. `src/lib/recolor.ts` applies the same framing transform to the source and every registered lossless WebP layer, otherwise estimates fallback masks, then writes recolored pixels to the Canvas.
 6. The same Canvas is encoded as PNG or WebP for download.
 
+## Palari V2 runtime
+
+`src/v2/main.tsx` mounts the separate ceramic editor. `src/v2/data.ts` registers 12 reviewed figures and the frozen material, characteristic-color, and background palettes. `src/lib/recolor-v2.ts` loads one transparent source plus lossless material and characteristic masks, caches their pixel data, transfers the selected colors while retaining source luminance, and composites the result over the selected background. The export Canvas is always 1024 × 1024.
+
+The PNG authorities and review metadata live under `public/palari-v2/`. The browser loads the checksum-linked WebP tier under `public/palari-v2-web/`. V2 has no uploads, runtime model inference, backend, or relationship to V1 portrait masks.
+
 Object URLs created from uploaded files exist only for the browser session. Uploads are not written to the server or added to the built-in library.
 
 ## Web asset delivery
@@ -42,9 +48,9 @@ The full WebP tier is 1024 × 1024 because that is the renderer and export resol
 
 `scripts/generate-web-mask-assets.mjs` creates pixel-identical lossless WebPs for the registered runtime mask subset and records every PNG/output checksum plus an ImageMagick absolute-error result of zero in `public/masks-web/manifest.json`. `scripts/verify-web-mask-assets.mjs` validates all 1,395 expected outputs without requiring FFmpeg or ImageMagick. The PNGs under `public/masks/` remain the review and provenance authority; only their derived WebPs are loaded by the browser.
 
-The GitHub Pages build uses Vite's `/palari-art/` base path with `publicDir` disabled. `scripts/prepare-pages-artifact.mjs` then copies only `public/avatars-web/` and `public/masks-web/` into `dist/`. Verification rejects master/audit PNGs, missing manifests, incomplete WebP coverage, or an unexpectedly large artifact.
+The GitHub Pages build uses Vite's `/palari-art/` base path with `publicDir` disabled. `scripts/prepare-pages-artifact.mjs` then copies the V1 WebP tiers, handbook WebPs, and `public/palari-v2-web/` into `dist/`. Verification rejects master/audit PNGs, missing manifests, incomplete WebP coverage, or an unexpectedly large artifact.
 
-The current Pages artifact is 220.9 MiB and contains 314 avatar WebPs, 1,395 runtime-mask WebPs, and 40 gallery WebPs. It contains no PNG or PDF files.
+The current Pages artifact is 222.6 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, and 36 V2 WebPs. It contains no PNG or PDF files.
 
 ## Face-aware framing
 
