@@ -46,8 +46,8 @@ function webpDimensions(buffer, fileName) {
 }
 
 if (grammar.version !== "1.0.0" || grammar.status !== "frozen-v1") problems.push("visual grammar must be frozen at 1.0.0.");
-if (collection.visualGrammar !== grammar.version || collection.avatars.length !== 17) problems.push("collection must contain 17 grammar-1.0 avatars.");
-if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 17) problems.push("V2 WebP manifest is incomplete.");
+if (collection.visualGrammar !== grammar.version || collection.avatars.length !== 41) problems.push("collection must contain 41 grammar-1.0 avatars.");
+if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 41) problems.push("V2 WebP manifest is incomplete.");
 
 const characteristicById = new Map(grammar.characteristicColors.map((color) => [color.id, color.uiSwatch.toUpperCase()]));
 const expectedIds = collection.avatars.map((_, index) => `palari-${String(index + 1).padStart(3, "0")}`);

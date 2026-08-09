@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-09",
+  "model": "gpt-image-2",
+  "generationPath": "Codex built-in image generation",
+  "scope": "Every one of the 24 cells in the six supplied four-up sheets is regenerated as an individual production figure. No cell is deduplicated against the five lineup-derived figures in expansion-01.",
+  "cropRecipe": {
+    "sourceRoot": "docs/palari-v2/expansion-01/references",
+    "sourceDimensions": [1254, 1254],
+    "cropDimensions": [620, 620],
+    "offsets": {
+      "tl": [0, 0],
+      "tr": [634, 0],
+      "bl": [0, 634],
+      "br": [634, 634]
+    }
+  },
+  "sharedPrompt": "Recreate the exact single ceramic character in the reference as a high-resolution standalone full-body product render. Preserve identity, silhouette, proportions, pose, eye placement, openings, arm gesture, and six-dot signature. Use warm ivory exterior and exactly one supplied characteristic color. Center the complete figure with generous padding on a perfectly uniform flat #FF00FF chroma-key background. No floor, cast shadow, scenery, extra figure, divider, text, watermark, redesign, conventional legs, fingers, machinery, cracks, grain, or pixelation.",
+  "isolation": {
+    "method": "remove_chroma_key.py with border auto-key, soft matte, thresholds 12/220, and despill",
+    "productionAuthority": "public/palari-v2/<id>/source.png"
+  },
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "All 24 chroma renders passed contact-sheet identity and framing review. Every production alpha and recolor layer was then reviewed in the WebP-backed V2 editor with porcelain material, coral characteristic color, and dusk background."
+  },
+  "avatars": [
+    { "id": "palari-018", "sheet": "91819", "position": "tl", "reference": "references/91819-tl.png", "characteristic": "forest", "identity": "broad asymmetric canopy with crossed arms", "chroma": "chroma/palari-018.png" },
+    { "id": "palari-019", "sheet": "91819", "position": "tr", "reference": "references/91819-tr.png", "characteristic": "forest", "identity": "hooded pod clasping its hands", "chroma": "chroma/palari-019.png" },
+    { "id": "palari-020", "sheet": "91819", "position": "bl", "reference": "references/91819-bl.png", "characteristic": "forest", "identity": "doorway shell with recessed eye", "chroma": "chroma/palari-020.png" },
+    { "id": "palari-021", "sheet": "91819", "position": "br", "reference": "references/91819-br.png", "characteristic": "forest", "identity": "three-tier body with presenting arm", "chroma": "chroma/palari-021.png" },
+    { "id": "palari-022", "sheet": "91809", "position": "tl", "reference": "references/91809-tl.png", "characteristic": "burgundy", "identity": "slender fin-backed column", "chroma": "chroma/palari-022.png" },
+    { "id": "palari-023", "sheet": "91809", "position": "tr", "reference": "references/91809-tr.png", "characteristic": "burgundy", "identity": "crescent-horn sweep", "chroma": "chroma/palari-023.png" },
+    { "id": "palari-024", "sheet": "91809", "position": "bl", "reference": "references/91809-bl.png", "characteristic": "burgundy", "identity": "diagonal sash and teardrop inset", "chroma": "chroma/palari-024.png" },
+    { "id": "palari-025", "sheet": "91809", "position": "br", "reference": "references/91809-br.png", "characteristic": "burgundy", "identity": "tall funnel-headed column", "chroma": "chroma/palari-025.png" },
+    { "id": "palari-026", "sheet": "91807", "position": "tl", "reference": "references/91807-tl.png", "characteristic": "ultramarine", "identity": "tilted cup and blue teardrop", "chroma": "chroma/palari-026.png" },
+    { "id": "palari-027", "sheet": "91807", "position": "tr", "reference": "references/91807-tr.png", "characteristic": "ultramarine", "identity": "profile with rear crest", "chroma": "chroma/palari-027.png" },
+    { "id": "palari-028", "sheet": "91807", "position": "bl", "reference": "references/91807-bl.png", "characteristic": "ultramarine", "identity": "wide head and round abdomen disc", "chroma": "chroma/palari-028.png" },
+    { "id": "palari-029", "sheet": "91807", "position": "br", "reference": "references/91807-br.png", "characteristic": "ultramarine", "identity": "curved side-channel vessel", "chroma": "chroma/palari-029.png" },
+    { "id": "palari-030", "sheet": "91808", "position": "tl", "reference": "references/91808-tl.png", "characteristic": "forest", "identity": "overlapping cloak under low hood", "chroma": "chroma/palari-030.png" },
+    { "id": "palari-031", "sheet": "91808", "position": "tr", "reference": "references/91808-tr.png", "characteristic": "forest", "identity": "single-eye hood with front hands", "chroma": "chroma/palari-031.png", "generationNote": "The final chroma precursor uses a pure-blue key to eliminate magenta color spill found during browser QA." },
+    { "id": "palari-032", "sheet": "91808", "position": "bl", "reference": "references/91808-bl.png", "characteristic": "forest", "identity": "tall chalice-headed column", "chroma": "chroma/palari-032.png" },
+    { "id": "palari-033", "sheet": "91808", "position": "br", "reference": "references/91808-br.png", "characteristic": "forest", "identity": "sideways hooded cocoon", "chroma": "chroma/palari-033.png" },
+    { "id": "palari-034", "sheet": "91806", "position": "tl", "reference": "references/91806-tl.png", "characteristic": "amber", "identity": "round bowl body with circular inset", "chroma": "chroma/palari-034.png" },
+    { "id": "palari-035", "sheet": "91806", "position": "tr", "reference": "references/91806-tr.png", "characteristic": "amber", "identity": "jagged crown with loop arms", "chroma": "chroma/palari-035.png" },
+    { "id": "palari-036", "sheet": "91806", "position": "bl", "reference": "references/91806-bl.png", "characteristic": "amber", "identity": "tilted bowl pod with side inset", "chroma": "chroma/palari-036.png" },
+    { "id": "palari-037", "sheet": "91806", "position": "br", "reference": "references/91806-br.png", "characteristic": "amber", "identity": "long oval aperture column", "chroma": "chroma/palari-037.png" },
+    { "id": "palari-038", "sheet": "91818", "position": "tl", "reference": "references/91818-tl.png", "characteristic": "amber", "identity": "wide thinking bowl", "chroma": "chroma/palari-038.png" },
+    { "id": "palari-039", "sheet": "91818", "position": "tr", "reference": "references/91818-tr.png", "characteristic": "amber", "identity": "crown-headed herald", "chroma": "chroma/palari-039.png", "generationNote": "A text-only identity reconstruction was used after the benign reference repeatedly triggered an image-generation output false positive." },
+    { "id": "palari-040", "sheet": "91818", "position": "bl", "reference": "references/91818-bl.png", "characteristic": "amber", "identity": "round sash pod", "chroma": "chroma/palari-040.png" },
+    { "id": "palari-041", "sheet": "91818", "position": "br", "reference": "references/91818-br.png", "characteristic": "amber", "identity": "tall teardrop thinker", "chroma": "chroma/palari-041.png" }
+  ]
+}
