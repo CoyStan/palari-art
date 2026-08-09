@@ -39,12 +39,23 @@ def rgba_to_hsv(image: Image.Image):
     hue[green_max] = (blue[green_max] - red[green_max]) / difference[green_max] + 2
     hue[blue_max] = (red[blue_max] - green[blue_max]) / difference[blue_max] + 4
     hue = (hue / 6) % 1
-    return rgba[..., 3], hue, saturation, maximum
+    return rgba[..., 3], rgb, hue, saturation, maximum
 
 
-def dominant_characteristic_hue(alpha, hue, saturation, value, expected_hue: float | None) -> float:
+def dominant_characteristic_hue(
+    alpha,
+    hue,
+    saturation,
+    value,
+    expected_hue: float | None,
+    saturation_minimum: float,
+) -> float:
     bins = np.zeros(180, dtype=np.float64)
-    eligible = (alpha >= 192 / 255) & (saturation >= 0.55) & (value >= 0.08)
+    eligible = (
+        (alpha >= 192 / 255)
+        & (saturation >= saturation_minimum)
+        & (value >= 0.08)
+    )
     indices = (hue[eligible] * len(bins)).astype(np.int32) % len(bins)
     weights = saturation[eligible] * value[eligible]
     np.add.at(bins, indices, weights)
@@ -72,12 +83,13 @@ def generate_masks(
     expected_material: str | None,
     detection_hue_degrees: float | None,
     relaxed_color_key: bool,
+    muted_characteristic: bool,
     review_status: str,
     reviewer: str | None,
     review_notes: str | None,
 ) -> None:
     image = Image.open(source).convert("RGBA")
-    alpha, hue, saturation, value = rgba_to_hsv(image)
+    alpha, rgb, hue, saturation, value = rgba_to_hsv(image)
     expected_hsv = hex_hsv(expected_color) if expected_color else None
     expected_material_hsv = hex_hsv(expected_material) if expected_material else None
     detection_hue = (
@@ -91,6 +103,7 @@ def generate_masks(
         saturation,
         value,
         detection_hue,
+        0.18 if muted_characteristic else 0.55,
     )
     foreground = image.getchannel("A")
     warm_characteristic = bool(
@@ -104,7 +117,12 @@ def generate_masks(
     )
     hue_radius_degrees = 20 if warm_characteristic else 32
     hue_distance = np.minimum(np.abs(hue - hue_center), 1 - np.abs(hue - hue_center))
-    if amber_characteristic and relaxed_color_key:
+    if muted_characteristic:
+        candidate_saturation_minimum = 0.12
+        seed_saturation_minimum = 0.22
+        candidate_color_energy_minimum = 0.02
+        seed_color_energy_minimum = 0.04
+    elif amber_characteristic and relaxed_color_key:
         candidate_saturation_minimum = 0.46
         seed_saturation_minimum = 0.70
         candidate_color_energy_minimum = 0.08
@@ -119,19 +137,35 @@ def generate_masks(
         seed_saturation_minimum = 0.45
         candidate_color_energy_minimum = 0.04
         seed_color_energy_minimum = 0.08
-    candidate = (
-        (alpha > 0.02)
-        & (hue_distance < hue_radius_degrees / 360)
-        & (saturation >= candidate_saturation_minimum)
-        & (value > 0.02)
-        & ((saturation * value) >= candidate_color_energy_minimum)
-    )
-    seed = (
-        candidate
-        & (hue_distance < (hue_radius_degrees * 0.72) / 360)
-        & (saturation >= seed_saturation_minimum)
-        & ((saturation * value) >= seed_color_energy_minimum)
-    )
+    if muted_characteristic:
+        blue_over_red = rgb[..., 2] - rgb[..., 0]
+        blue_over_green = rgb[..., 2] - rgb[..., 1]
+        candidate = (
+            (alpha > 0.02)
+            & (value > 0.02)
+            & (blue_over_red > 0)
+            & (blue_over_green > -0.025)
+        )
+        seed = (
+            candidate
+            & (blue_over_red >= 0.04)
+            & (blue_over_green >= -0.005)
+            & (saturation >= 0.08)
+        )
+    else:
+        candidate = (
+            (alpha > 0.02)
+            & (hue_distance < hue_radius_degrees / 360)
+            & (saturation >= candidate_saturation_minimum)
+            & (value > 0.02)
+            & ((saturation * value) >= candidate_color_energy_minimum)
+        )
+        seed = (
+            candidate
+            & (hue_distance < (hue_radius_degrees * 0.72) / 360)
+            & (saturation >= seed_saturation_minimum)
+            & ((saturation * value) >= seed_color_energy_minimum)
+        )
 
     # A characteristic region is simply a connected patch of the expected
     # source color that contains at least two strong color-key pixels. This is
@@ -252,6 +286,18 @@ def generate_masks(
             "amberCharacteristic": amber_characteristic,
             "candidateValueMinimum": 0.02,
             "relaxedColorKey": relaxed_color_key,
+            "mutedCharacteristic": muted_characteristic,
+            "mutedColorKey": (
+                {
+                    "rule": "blue-over-neutral",
+                    "candidateBlueOverRedMinimum": 0,
+                    "candidateBlueOverGreenMinimum": -0.025,
+                    "seedBlueOverRedMinimum": 0.04,
+                    "seedBlueOverGreenMinimum": -0.005,
+                }
+                if muted_characteristic
+                else None
+            ),
             "characteristicBlurRadius": 0.55,
             "materialColorKey": {
                 "rule": material_rule,
@@ -282,6 +328,7 @@ def main() -> None:
     parser.add_argument("--expected-material")
     parser.add_argument("--detection-hue-degrees", type=float)
     parser.add_argument("--relaxed-color-key", action="store_true")
+    parser.add_argument("--muted-characteristic", action="store_true")
     parser.add_argument("--review-status", choices=("unreviewed", "pass", "fail"), default="unreviewed")
     parser.add_argument("--reviewer")
     parser.add_argument("--review-notes")
@@ -294,6 +341,7 @@ def main() -> None:
         arguments.expected_material,
         arguments.detection_hue_degrees,
         arguments.relaxed_color_key,
+        arguments.muted_characteristic,
         arguments.review_status,
         arguments.reviewer,
         arguments.review_notes,

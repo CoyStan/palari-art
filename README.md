@@ -78,7 +78,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | --- | --- |
 | Bundled portraits | 157 standardized square PNGs |
 | Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
-| Pages artifact | 224.6 MiB, 1,872 WebPs, no PNG masters, PDF, or audit layers |
+| Pages artifact | 224.5 MiB, 1,872 WebPs, no PNG masters, PDF, or audit layers |
 | Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |

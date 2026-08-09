@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-09",
+  "purpose": "Neutral editing-master pilot addressing baked-in saturation, crushed characteristic shadows, warm ceramic casts, and glossy highlights.",
+  "generator": {
+    "tool": "OpenAI built-in image_gen",
+    "mode": "precise-object-edit",
+    "backgroundRemoval": {
+      "tool": "/home/quetza/.codex/skills/.system/imagegen/scripts/remove_chroma_key.py",
+      "autoKey": "border",
+      "softMatte": true,
+      "transparentThreshold": 12,
+      "opaqueThreshold": 220,
+      "despill": true
+    }
+  },
+  "sharedPrompt": "Re-render the exact input character as a cleaner, premium high-resolution editing master. Change only its color treatment, ceramic finish, and lighting. Preserve the exact silhouette, proportions, head shape and angle, face identity, eye placement and expression, arm pose, openings, ribbing, seams, six seed marks, camera angle, centering, scale, and generous square padding. Use neutral off-white satin ceramic approximately #D7D3CA with fine restrained texture and no yellow cast or glossy plastic reflections. Recolor every existing characteristic region, matching iris accents, and all six seed marks to one muted medium blue-grey approximately #527886. Lift crushed shadows into a useful mid-range while retaining gentle form shading and rib detail. Use broad soft diffuse studio light, low-to-moderate contrast, no clipped highlights, near-black shadows, or hard rim light. Render against a perfectly flat solid #FF00FF chroma-key background with no floor, horizon, architecture, shadow, gradient, texture, reflection, or lighting variation. Keep the full character visible in the same square framing. Do not redesign, drift the pose or expression, add or remove parts, blur, oversharpen, add halos, text, watermark, or shadows.",
+  "avatars": [
+    {
+      "id": "palari-005",
+      "subject": "hooded arch figure with crossed rounded arms and long ribbed inner cavity",
+      "previousSourceSha256": "23339f04eac034ffe1a5ceca7f19b0062fd36a5d41a846c42169e9896a815ebb",
+      "chromaPath": "docs/palari-v2/neutral-pilot/chroma/palari-005.png",
+      "chromaSha256": "7dcc69479d30e412b7bad36819ef6805a3d2f24845c5604199d94240abb336d6",
+      "isolatedPath": "docs/palari-v2/neutral-pilot/isolated/palari-005.png",
+      "isolatedSha256": "85bf67b34c56a949dd1a28c6fe6b98942451f76b863f4ad53c44ed4dca80ab20"
+    },
+    {
+      "id": "palari-028",
+      "subject": "wide asymmetric head, narrow neck, short arms, and large circular abdomen disc",
+      "previousSourceSha256": "c677b07a936b5ebf1f79daaa8e8702eaed933d4f8fc8af37766bafe8ea470dc3",
+      "chromaPath": "docs/palari-v2/neutral-pilot/chroma/palari-028.png",
+      "chromaSha256": "d910a5e49f515d693e78b3c372d8a03653a6df04c405207ff01fdd00cdd07035",
+      "isolatedPath": "docs/palari-v2/neutral-pilot/isolated/palari-028.png",
+      "isolatedSha256": "980196b5d30d2d225def20e331b302b08074fb97416abbfef40ee6e6a364795b"
+    },
+    {
+      "id": "palari-041",
+      "subject": "tall teardrop figure with one hand at the cheek, one hand at the hip, long oval inner cavity, and open crown",
+      "previousSourceSha256": "aab317a368b7c9280720e40b0478d4b8d1b2cee44883a2b51efabae1070a34d2",
+      "chromaPath": "docs/palari-v2/neutral-pilot/chroma/palari-041.png",
+      "chromaSha256": "72967dee79b5cf813abb230e9697c17aded496718facb1c84c980997028c4555",
+      "isolatedPath": "docs/palari-v2/neutral-pilot/isolated/palari-041.png",
+      "isolatedSha256": "74e56819cc5f693c41e7421288b4ab5993ddd6a8f692c5d1d1f5c30cee960a8d"
+    }
+  ]
+}

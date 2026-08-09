@@ -9,7 +9,7 @@
     { "id": "palari-002", "name": "Palari 002", "source": "docs/palari-v2/audit-01/a02-arch-charcoal-amber.png", "silhouette": "arch", "baseMaterial": "charcoal", "baseCharacteristic": "amber" },
     { "id": "palari-003", "name": "Palari 003", "source": "docs/palari-v2/audit-01/a05-bell-charcoal-forest.png", "silhouette": "bell", "baseMaterial": "charcoal", "baseCharacteristic": "forest" },
     { "id": "palari-004", "name": "Palari 004", "source": "docs/palari-v2/audit-01/a07-column-porcelain-ultramarine.png", "silhouette": "column", "baseMaterial": "porcelain", "baseCharacteristic": "ultramarine" },
-    { "id": "palari-005", "name": "Palari 005", "source": "docs/palari-v2/audit-01/a08-arch-ivory-mineral-red.png", "silhouette": "arch", "baseMaterial": "ivory", "baseCharacteristic": "mineral_red" },
+    { "id": "palari-005", "name": "Palari 005", "source": "docs/palari-v2/neutral-pilot/chroma/palari-005.png", "silhouette": "arch", "baseMaterial": "porcelain", "baseCharacteristic": "ultramarine" },
     { "id": "palari-006", "name": "Palari 006", "source": "docs/palari-v2/audit-02/b01-crescent-ivory-violet.png", "silhouette": "crescent", "baseMaterial": "ivory", "baseCharacteristic": "violet" },
     { "id": "palari-007", "name": "Palari 007", "source": "docs/palari-v2/audit-02/b02-crescent-stone-coral.png", "silhouette": "crescent", "baseMaterial": "stone", "baseCharacteristic": "coral" },
     { "id": "palari-008", "name": "Palari 008", "source": "docs/palari-v2/audit-02/b03-pod-porcelain-teal.png", "silhouette": "pod", "baseMaterial": "porcelain", "baseCharacteristic": "teal" },
@@ -32,7 +32,7 @@
     { "id": "palari-025", "name": "Palari 025", "source": "docs/palari-v2/expansion-02/chroma/palari-025.png", "silhouette": "bell", "baseMaterial": "ivory", "baseCharacteristic": "burgundy" },
     { "id": "palari-026", "name": "Palari 026", "source": "docs/palari-v2/expansion-02/chroma/palari-026.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
     { "id": "palari-027", "name": "Palari 027", "source": "docs/palari-v2/expansion-02/chroma/palari-027.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
-    { "id": "palari-028", "name": "Palari 028", "source": "docs/palari-v2/expansion-02/chroma/palari-028.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
+    { "id": "palari-028", "name": "Palari 028", "source": "docs/palari-v2/neutral-pilot/chroma/palari-028.png", "silhouette": "column", "baseMaterial": "porcelain", "baseCharacteristic": "ultramarine" },
     { "id": "palari-029", "name": "Palari 029", "source": "docs/palari-v2/expansion-02/chroma/palari-029.png", "silhouette": "crescent", "baseMaterial": "ivory", "baseCharacteristic": "ultramarine" },
     { "id": "palari-030", "name": "Palari 030", "source": "docs/palari-v2/expansion-02/chroma/palari-030.png", "silhouette": "arch", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
     { "id": "palari-031", "name": "Palari 031", "source": "docs/palari-v2/expansion-02/chroma/palari-031.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "forest" },
@@ -45,6 +45,6 @@
     { "id": "palari-038", "name": "Palari 038", "source": "docs/palari-v2/expansion-02/chroma/palari-038.png", "silhouette": "bell", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
     { "id": "palari-039", "name": "Palari 039", "source": "docs/palari-v2/expansion-02/chroma/palari-039.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
     { "id": "palari-040", "name": "Palari 040", "source": "docs/palari-v2/expansion-02/chroma/palari-040.png", "silhouette": "pod", "baseMaterial": "ivory", "baseCharacteristic": "amber" },
-    { "id": "palari-041", "name": "Palari 041", "source": "docs/palari-v2/expansion-02/chroma/palari-041.png", "silhouette": "column", "baseMaterial": "ivory", "baseCharacteristic": "amber" }
+    { "id": "palari-041", "name": "Palari 041", "source": "docs/palari-v2/neutral-pilot/chroma/palari-041.png", "silhouette": "column", "baseMaterial": "porcelain", "baseCharacteristic": "ultramarine" }
   ]
 }

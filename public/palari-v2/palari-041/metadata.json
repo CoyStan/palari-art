@@ -6,44 +6,52 @@
     1254,
     1254
   ],
-  "characteristicHueDegrees": 35.0,
-  "expectedCharacteristicColor": "#C17A0B",
-  "expectedMaterialColor": "#D8C9AF",
+  "characteristicHueDegrees": 197.0,
+  "expectedCharacteristicColor": "#164A7A",
+  "expectedMaterialColor": "#E9E6DF",
   "algorithm": {
     "name": "deterministic-source-color-key",
     "detectionHueOverrideDegrees": null,
-    "hueRadiusDegrees": 20,
-    "candidateSaturationMinimum": 0.46,
-    "candidateColorEnergyMinimum": 0.08,
+    "hueRadiusDegrees": 32,
+    "candidateSaturationMinimum": 0.12,
+    "candidateColorEnergyMinimum": 0.02,
     "componentSeed": {
-      "hueRadiusDegrees": 14.4,
-      "saturationMinimum": 0.7,
-      "colorEnergyMinimum": 0.2,
+      "hueRadiusDegrees": 23.04,
+      "saturationMinimum": 0.22,
+      "colorEnergyMinimum": 0.04,
       "minimumPixels": 2,
-      "relaxedComponentMinimumPixels": 20
+      "relaxedComponentMinimumPixels": null
     },
-    "warmCharacteristic": true,
-    "amberCharacteristic": true,
+    "warmCharacteristic": false,
+    "amberCharacteristic": false,
     "candidateValueMinimum": 0.02,
-    "relaxedColorKey": true,
+    "relaxedColorKey": false,
+    "mutedCharacteristic": true,
+    "mutedColorKey": {
+      "rule": "blue-over-neutral",
+      "candidateBlueOverRedMinimum": 0,
+      "candidateBlueOverGreenMinimum": -0.025,
+      "seedBlueOverRedMinimum": 0.04,
+      "seedBlueOverGreenMinimum": -0.005
+    },
     "characteristicBlurRadius": 0.55,
     "materialColorKey": {
       "rule": "light-neutral",
-      "expectedValue": 0.8471
+      "expectedValue": 0.9137
     },
     "materialBlurRadius": 0.55,
     "independentColorKeys": true,
     "ambiguousPixelsRemainSource": true
   },
   "checksums": {
-    "source": "aab317a368b7c9280720e40b0478d4b8d1b2cee44883a2b51efabae1070a34d2",
-    "foreground": "326e9a1f4afdc468ed57a3c09fe6029e5dcf83b43c88a2da08cc24d3e5e2bc3c",
-    "material": "adc47f0ff580783901a4270679845be920d8b6ef7aced6a9c26d9cbe53502b3d",
-    "characteristic": "86597920d76a2c6cb4892e9edacd37e3f14c6cbb861d1e07fb77868e30d94712"
+    "source": "74e56819cc5f693c41e7421288b4ab5993ddd6a8f692c5d1d1f5c30cee960a8d",
+    "foreground": "8fe277b542a3fa92361467db37202cdd2185ba1c3128393bc05224f7a2c84ad2",
+    "material": "70ac6604f85414cc79b7474bcd39375332a380746f45a3b07a1bef5b1910b0f9",
+    "characteristic": "4793379efb8656fac7e7f5b165d3a1891d5b05e733667c233bdfaf9dad0ead42"
   },
   "review": {
     "status": "pass",
     "reviewer": "Codex",
-    "notes": "Reviewed relaxed deterministic color key for small dark characteristic details."
+    "notes": "Reviewed neutral editing master, deterministic blue-over-neutral masks, alpha edges, Original mode, and extreme browser recolors on desktop and mobile."
   }
 }

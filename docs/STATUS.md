@@ -7,7 +7,7 @@ Last updated: 2026-08-09
 - `docs/PALARI-V2.md` defines an exploratory ceramic character direction based on the meaning **Personal Artificial Intelligence**.
 - V2 proposes a shared ceramic material color plus one characteristic inner-intelligence color, with expressive eyes, fingerless arms, and no conventional legs.
 - Two controlled grammar audits are complete, and the corrected family contract is frozen as visual grammar 1.0.
-- Forty-one accepted figures have reviewed 1254px transparent masters and deterministic source-color-keyed material/characteristic masks under `public/palari-v2/`, plus 123 checksum-linked delivery WebPs under `public/palari-v2-web/`. The V2 mask pipeline uses no learned model or semantic inference. Its two independent keys leave ambiguous shadow and highlight pixels unchanged instead of assigning them to the wrong layer. IDs 013–017 are standalone regenerations from the five-character lineup. IDs 018–041 separately regenerate every cell in the six supplied four-up sheets, so all 24 sheet designs are represented without deduplication; the complete crop, prompt, chroma, and review record is retained under `docs/palari-v2/expansion-02/`.
+- Forty-one accepted figures have reviewed 1254px transparent masters and deterministic source-color-keyed material/characteristic masks under `public/palari-v2/`, plus 123 checksum-linked delivery WebPs under `public/palari-v2-web/`. The V2 mask pipeline uses no learned model or semantic inference. Its two independent keys leave ambiguous shadow and highlight pixels unchanged instead of assigning them to the wrong layer. IDs 005, 028, and 041 are the reviewed neutral editing-master pilot: diffuse off-white ceramic and muted blue-grey characteristic layers replace baked saturated/dark source colors while preserving identity and surface detail. Their complete prompt, chroma-removal, checksum, mask, and browser-review record is retained under `docs/palari-v2/neutral-pilot/`; the other 38 masters remain unchanged until the pilot is approved for rollout. IDs 013–017 are standalone regenerations from the five-character lineup. IDs 018–041 separately regenerate every cell in the six supplied four-up sheets, so all 24 sheet designs are represented without deduplication; the complete crop, prompt, chroma, and review record is retained under `docs/palari-v2/expansion-02/`.
 - The separate browser-only V2 editor is available at `/v2/` with shape, ceramic material, characteristic color, background, source-only Original view, and 1024px PNG export controls. Original view bypasses both masks and preserves source transparency. V1 remains unchanged at `/`.
 - `npm run verify:palari-v2` validates the frozen grammar, collection, source/mask dimensions, checksums, review state, WebP manifest, and runtime registration.
 
@@ -20,7 +20,7 @@ Last updated: 2026-08-09
 - **Avatar 024 is retired:** `expanded-14` is excluded from the application library. Its source, masks, framing, attributes, and provenance remain archived so later IDs stay stable and the retirement can be reversed safely.
 - **Web delivery is optimized:** all 157 PNG masters have checksum-linked 1024px editor WebPs and 256px gallery thumbnails under `public/avatars-web/`. The generated delivery set is 11.0 MiB instead of 308.4 MiB, a 96.4% reduction; the masters remain unchanged.
 - **Runtime masks are optimized:** all 1,395 registered runtime PNG layers have checksum-linked lossless WebPs under `public/masks-web/`. Exact generation comparisons found zero differing pixels. The delivery tier is 204.4 MiB instead of 322.8 MiB, a 36.7% reduction; reviewed PNGs remain authoritative.
-- **The public editors are deployment-ready:** GitHub Pages serves V1 at `https://coystan.github.io/palari-art/` and V2 at `/v2/`. `npm run build:pages` creates a verified 224.6 MiB artifact containing 314 avatar WebPs, 1,395 V1 mask WebPs, 40 gallery WebPs, and 123 V2 WebPs with no PNG, PDF, or audit files.
+- **The public editors are deployment-ready:** GitHub Pages serves V1 at `https://coystan.github.io/palari-art/` and V2 at `/v2/`. `npm run build:pages` creates a verified 224.5 MiB artifact containing 314 avatar WebPs, 1,395 V1 mask WebPs, 40 gallery WebPs, and 123 V2 WebPs with no PNG, PDF, or audit files.
 - **The teaching-art gallery is deployed:** `/handbook/` is a text-free responsive gallery of 20 reviewed plates and 40 checksum-linked WebPs. It has no visible title, prose, controls, or PDF.
 - **No API batch should run now:** rerun BiRefNet or SAM only after intentionally changing source pixels. A source replacement invalidates every pixel-aligned layer for that ID, including the local hair-matting derivatives.
 - **Drive delivery:** the regenerated 105 set remains in its documented `Clean Render Full - 105` folder. The original 12-portrait coverage copy is separately delivered through `gdrive` at `Palari Standardized Avatars 1x1/Coverage Expansion - 12`; MD5 verification found 12 matches and zero differences. Avatars 156 and 157 are repository-only because no Drive upload was requested.
@@ -69,11 +69,12 @@ Temporary uploads do not receive the reviewed hair-matting pipeline. Their masks
 
 ## Next implementation steps
 
-1. Keep source and stored-mask checksums synchronized when artwork changes.
-2. Regenerate and visually review framing whenever source pixels change.
-3. Visually review every new or regenerated mask before registering it.
-4. Decide separately whether uploads need remote segmentation and persistence.
-5. If uploads become remote, add disclosure, retention, size limits, caching, and rate limiting first.
+1. Review the three-character V2 neutral editing-master pilot and decide whether to apply the same treatment to the remaining 38 V2 figures.
+2. Keep source and stored-mask checksums synchronized when artwork changes.
+3. Regenerate and visually review framing whenever source pixels change.
+4. Visually review every new or regenerated mask before registering it.
+5. Decide separately whether uploads need remote segmentation and persistence.
+6. If uploads become remote, add disclosure, retention, size limits, caching, and rate limiting first.
 
 ## Explicitly not done
 
