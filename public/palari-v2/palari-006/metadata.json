@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "avatarId": "palari-006",
   "sourceInput": "public/palari-v2/palari-006/source.png",
   "dimensions": [
@@ -8,50 +8,41 @@
   ],
   "characteristicHueDegrees": 277.0,
   "expectedCharacteristicColor": "#594077",
+  "expectedMaterialColor": "#D8C9AF",
   "algorithm": {
-    "name": "hsv-characteristic-separation",
+    "name": "deterministic-source-color-key",
+    "detectionHueOverrideDegrees": null,
     "hueRadiusDegrees": 32,
-    "saturationRamp": [
-      0.12,
-      0.5
-    ],
+    "candidateSaturationMinimum": 0.25,
+    "candidateColorEnergyMinimum": 0.04,
     "componentSeed": {
-      "hueAmountMinimum": 0.72,
+      "hueRadiusDegrees": 23.04,
       "saturationMinimum": 0.45,
-      "colorEnergyMinimum": 0.12,
-      "valueMinimum": 0.06,
-      "minimumPixels": 4,
-      "minimumComponentRatio": 0.01,
-      "smallAccentSaturationMinimum": 0.32,
-      "smallAccentColorEnergyMinimum": 0.1,
-      "smallAccentComponentRange": [
-        8,
-        10000
-      ],
-      "componentMeanEnergyFloor": 0.04,
-      "componentRelativeEnergyFloor": 0.2
+      "colorEnergyMinimum": 0.08,
+      "minimumPixels": 2
     },
-    "saturationSensitive": false,
-    "characteristicMaskFloor": null,
-    "deepCharacteristicUsesRetainedHue": true,
-    "deepCharacteristicClosingSize": 11,
-    "deepAccentHueRadiusDegrees": 60,
-    "valueRamp": [
-      0.035,
-      0.155
-    ],
+    "warmCharacteristic": false,
+    "amberCharacteristic": false,
+    "candidateValueMinimum": 0.02,
+    "relaxedColorKey": false,
     "characteristicBlurRadius": 0.55,
-    "materialBlurRadius": 0.45
+    "materialColorKey": {
+      "rule": "light-neutral",
+      "expectedValue": 0.8471
+    },
+    "materialBlurRadius": 0.55,
+    "independentColorKeys": true,
+    "ambiguousPixelsRemainSource": true
   },
   "checksums": {
     "source": "3074d3b4ad7512788fde7b9037d7379e3f06c6b3b5b90fe358d318e78f1b69bf",
     "foreground": "3dcf4cf168213a0d49c0b35c178ff4b1b5d482f56f99d97e74894871c75c31ec",
-    "material": "1f32d1a2df07443ea2f81bf934c20f96fb93f443748c6d89ed6be91b25b2ec0d",
-    "characteristic": "a72952fce149dc130b4e7130e58aff3e18049146530ae5db90a6a24b68b288fa"
+    "material": "eda19843b1fcf7a8588c197e50d83aeaacf7943cd8c53eb28428e4dcd005be59",
+    "characteristic": "2a678b3576e3b33bf52ec75ac534a2e916ac35162d0a5644928c4946c1373198"
   },
   "review": {
     "status": "pass",
     "reviewer": "Codex",
-    "notes": "Isolation and masks reviewed as a contact sheet; hard cross-material recolors checked in the browser."
+    "notes": "Reviewed independent deterministic source-color key contact sheet and browser recolors; material and characteristic regions remain separated while ambiguous shading stays source-authored."
   }
 }

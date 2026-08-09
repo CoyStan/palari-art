@@ -16,9 +16,9 @@ The accepted concept image remains linked in `docs/palari-v2/collection.json`. `
 
 ## Deterministic layer separation
 
-`scripts/generate-palari-v2-masks.py` uses the collection's expected characteristic-color swatch to find the corresponding hue family. Connected-component seed rules reject reflected color from the ceramic shell. Warm characteristic colors use a saturation-sensitive mask because ivory and stone can share nearby warm hues; an opt-in strict mode raises the saturation threshold for bright amber masters. Darker cool colors use retained hue regions plus configurable morphological closing so glaze highlights do not break the inner surface. Opt-in hue overrides and relaxed dark-region expansion accommodate relit generated masters while keeping each decision recorded in metadata. A constrained lower-front component pass recovers the six signature dots without absorbing ceramic shading.
+`scripts/generate-palari-v2-masks.py` performs deterministic source-color keying. It finds the expected characteristic hue, keeps connected source pixels that meet fixed hue, saturation, and color-energy thresholds, and rejects components without a strong color seed. A separate fixed color key selects the known porcelain, ivory, stone, or charcoal source material. Amber uses a tighter threshold because ivory shell lighting can share its hue. The process has no learned model, semantic inference, body-position rules, or shape-specific repair passes.
 
-The material mask is the foreground complement of the characteristic mask. The two masks are source-aligned and receive no independent crop or transform.
+Both keyed regions are solid rather than texture-weighted; source luminance preserves glaze detail during recoloring. Only their spatial boundaries receive a subpixel transition, and any boundary overlap is normalized. Pixels that do not confidently match either source palette remain unchanged, which prevents an uncertain dark characteristic shadow from being misclassified as ceramic. The masks are source-aligned and receive no independent crop or transform.
 
 ## Browser renderer
 
