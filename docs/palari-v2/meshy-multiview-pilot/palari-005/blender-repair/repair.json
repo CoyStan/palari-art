@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-10",
+  "purpose": "Blender reconstruction of the fused rear arm bridge on the Palari 005 Meshy pilot while retaining the Meshy front.",
+  "blender": "4.0.2",
+  "input": {
+    "path": "/home/quetza/palari-art/docs/palari-v2/meshy-multiview-pilot/palari-005/output/model.glb",
+    "sha256": "bfe0ea914f4143c92554162620009ea39daba53ea316f2eb4c5a1123f38b84f1"
+  },
+  "output": {
+    "path": "/home/quetza/palari-art/docs/palari-v2/meshy-multiview-pilot/palari-005/blender-repair/model-repaired.glb",
+    "sha256": "d7169cb7133d696ae3c349f49da9d196314c6eb698abffb727d9e6e10cf85c05",
+    "bytes": 10309348
+  },
+  "orientation": {
+    "front": "negative-y",
+    "back": "positive-y",
+    "up": "positive-z"
+  },
+  "parameters": {
+    "rearCutFraction": 0.012,
+    "shellRows": 64,
+    "shellColumns": 72,
+    "sourceCutHeightFractions": [
+      0.38,
+      0.7
+    ],
+    "shellHeightFractions": [
+      0.34,
+      0.74
+    ],
+    "method": "Rear torso band reconstructed between clean Meshy slice silhouette and depth measurements"
+  },
+  "result": {
+    "vertices": 107796,
+    "triangles": 193229,
+    "originalRearFacesDeleted": 24665,
+    "backShellVertices": 4745,
+    "backShellTriangles": 9216,
+    "uvLayers": [
+      "UVMap"
+    ],
+    "materials": [
+      "Material_0"
+    ]
+  },
+  "review": {
+    "status": "experimental-v1",
+    "notes": "The repair preserves the original front geometry, UVs, material, and textures, and replaces outward rear-facing polygons with a fitted procedural ceramic shell. Rear bridge removal is successful; side arm caps and the shell material seam still require a manual sculpt and texture pass."
+  }
+}

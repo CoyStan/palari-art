@@ -23,6 +23,8 @@ The repository also publishes a text-free responsive gallery of 20 reviewed Pala
 
 Palari V2 is a separate ceramic-character system: 41 reviewed figures with selectable ceramic material, one characteristic inner-intelligence color, background, and local 1024px PNG export. It is available at `/v2/` and does not alter the portrait editor.
 
+Development builds also expose a local-only `/3d/` review page for the experimental Palari 005 3D work. A shared Three.js camera switches between the original Meshy reconstruction, a reproducible Blender repair, and a translucent alignment overlay. The Blender v1 keeps Meshy's front and replaces the fused rear-arm bridge with a fitted ceramic rear shell. Its GLB and four-angle Blender renders remain review artifacts; side arm caps and the rear material seam still need a manual sculpt/texture pass. Both models and the reviewer remain excluded from GitHub Pages until the geometry is approved.
+
 ## At a glance
 
 | Library | Editing | Delivery | Safety |
@@ -112,6 +114,7 @@ The development server binds to all interfaces on port `4173`.
 
 - On the server: `http://localhost:4173`
 - Over the current Tailnet: `http://100.113.33.46:4173`
+- Experimental 3D review: `http://100.113.33.46:4173/3d/`
 
 The Tailnet address is an environment detail, not an application configuration. Confirm it with `tailscale ip -4` if the link stops working.
 

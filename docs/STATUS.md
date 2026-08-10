@@ -1,6 +1,6 @@
 # Current status
 
-Last updated: 2026-08-09
+Last updated: 2026-08-10
 
 ## Palari V2 production
 
@@ -9,6 +9,7 @@ Last updated: 2026-08-09
 - Two controlled grammar audits are complete, and the corrected family contract is frozen as visual grammar 1.0.
 - Forty-one accepted figures have reviewed 1254px transparent masters and deterministic source-color-keyed material/characteristic masks under `public/palari-v2/`, plus 123 checksum-linked delivery WebPs under `public/palari-v2-web/`. The V2 mask pipeline uses no learned model or semantic inference. Its two independent keys leave ambiguous shadow and highlight pixels unchanged instead of assigning them to the wrong layer. IDs 005, 028, and 041 are the reviewed neutral editing-master pilot: diffuse off-white ceramic and muted blue-grey characteristic layers replace baked saturated/dark source colors while preserving identity and surface detail. Their complete prompt, chroma-removal, checksum, mask, and browser-review record is retained under `docs/palari-v2/neutral-pilot/`; the other 38 masters remain unchanged until the pilot is approved for rollout. IDs 013–017 are standalone regenerations from the five-character lineup. IDs 018–041 separately regenerate every cell in the six supplied four-up sheets, so all 24 sheet designs are represented without deduplication; the complete crop, prompt, chroma, and review record is retained under `docs/palari-v2/expansion-02/`.
 - The separate browser-only V2 editor is available at `/v2/` with shape, ceramic material, characteristic color, background, source-only Original view, and 1024px PNG export controls. Original view bypasses both masks and preserves source transparency. V1 remains unchanged at `/`.
+- A local-only `/3d/` reviewer compares the experimental Palari 005 Meshy multiview GLB with a reproducible Blender 4.0 repair through synchronized Meshy, Blender repair, and translucent Overlay modes. The repair preserves Meshy's front, face, pose, interior, texture, and materials; it removes the malformed outward-facing rear arm bridge and inserts a fitted ceramic rear shell derived from clean Meshy slices. The GLB, audit, repair manifest, and four-angle renders live with the Meshy pilot. Blender v1 is not an approved master: the rear bridge is fixed, but the side arm caps and shell material seam still need a manual sculpt/texture pass. The reviewer and both GLBs remain excluded from the GitHub Pages artifact.
 - `npm run verify:palari-v2` validates the frozen grammar, collection, source/mask dimensions, checksums, review state, WebP manifest, and runtime registration.
 
 ## Exact handoff checkpoint
@@ -75,6 +76,7 @@ Temporary uploads do not receive the reviewed hair-matting pipeline. Their masks
 4. Visually review every new or regenerated mask before registering it.
 5. Decide separately whether uploads need remote segmentation and persistence.
 6. If uploads become remote, add disclosure, retention, size limits, caching, and rate limiting first.
+7. Manually sculpt and retopologize the Palari 005 Blender repair's two side arm caps, weld the fitted rear shell into the Meshy topology, and bake/project the original ceramic material across the seam before considering it a production mesh.
 
 ## Explicitly not done
 
