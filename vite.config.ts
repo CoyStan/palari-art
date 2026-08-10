@@ -7,17 +7,19 @@ const repositoryRoot = fileURLToPath(new URL("./", import.meta.url));
 
 export default defineConfig(({ mode }) => {
   const pagesBuild = mode === "pages";
+  const input = {
+    editor: path.join(repositoryRoot, "index.html"),
+    handbook: path.join(repositoryRoot, "handbook/index.html"),
+    v2: path.join(repositoryRoot, "v2/index.html"),
+    ...(!pagesBuild && { threeReview: path.join(repositoryRoot, "3d/index.html") }),
+  };
   return {
     base: pagesBuild ? "/palari-art/" : "/",
     plugins: [react()],
     publicDir: pagesBuild ? false : "public",
     build: {
       rollupOptions: {
-        input: {
-          editor: path.join(repositoryRoot, "index.html"),
-          handbook: path.join(repositoryRoot, "handbook/index.html"),
-          v2: path.join(repositoryRoot, "v2/index.html"),
-        },
+        input,
       },
     },
     server: {

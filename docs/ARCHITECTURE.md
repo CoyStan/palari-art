@@ -2,7 +2,7 @@
 
 ## System shape
 
-Palari Art is a static multi-entry React application built by Vite. The V1 portrait editor lives at `/`, the ceramic V2 editor at `/v2/`, and the teaching-art gallery at `/handbook/`. All interactive image processing happens inside the browser through Canvas APIs. Separate preparation scripts create reusable assets and masks.
+Palari Art is a static multi-entry React application built by Vite. The V1 portrait editor lives at `/`, the ceramic V2 editor at `/v2/`, and the teaching-art gallery at `/handbook/`. Development builds additionally expose a local `/3d/` reviewer for the experimental Palari 005 Meshy GLB. All interactive image processing happens inside the browser through Canvas APIs. Separate preparation scripts create reusable assets and masks.
 
 ```text
 Bundled or uploaded image
@@ -37,6 +37,8 @@ There is no application server, database, authentication layer, or persistent up
 `src/v2/main.tsx` mounts the separate ceramic editor. `src/v2/data.ts` registers 41 reviewed figures and the frozen material, characteristic-color, and background palettes. `src/lib/recolor-v2.ts` loads one transparent source plus lossless material and characteristic masks, caches their pixel data, transfers the selected colors while retaining source luminance, and composites the result over the selected background. The export Canvas is always 1024 × 1024.
 
 The PNG authorities and review metadata live under `public/palari-v2/`. V2 masks are generated offline by two independent deterministic source-color keys: fixed thresholds select the characteristic and known source-material pixels, while ambiguous pixels retain their source color. No learned or semantic segmentation model participates. The browser loads the checksum-linked WebP tier under `public/palari-v2-web/`. V2 has no uploads, runtime model inference, backend, or relationship to V1 portrait masks.
+
+`src/v2-3d/main.tsx` mounts a separate local review utility at `/3d/`. `HybridPalariViewer.tsx` uses one Three.js scene and camera for the provenance-retained Meshy pilot and the Blender-repaired GLB. The reviewer provides mouse/touch orbit, zoom, fixed views, automatic rotation, Meshy/Blender repair/overlay modes, and direct downloads of both GLBs. `scripts/audit-palari-v2-mesh.py` records topology and renders four audit angles. `scripts/repair-palari-v2-mesh.py` reproducibly retains the Meshy front and interior, removes outward-facing rear polygons in the defective torso band, fits a new rear half-shell from clean Meshy slice measurements, exports a GLB, and renders the same four angles. Blender repair v1 is an exploratory asset with unfinished side arm caps and a visible rear material seam, not an approved production master. `vite.config.ts` includes this entry only outside `pages` mode, so neither model nor the review interface enters the verified public artifact.
 
 Object URLs created from uploaded files exist only for the browser session. Uploads are not written to the server or added to the built-in library.
 

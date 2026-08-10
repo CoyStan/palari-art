@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-09",
+  "purpose": "Generate a Palari 005 turnaround with the built-in GPT image-generation tool, then reconstruct a textured 3D asset from the four views with Meshy 6.",
+  "source": {
+    "path": "public/palari-v2/palari-005/source.png",
+    "sha256": "85bf67b34c56a949dd1a28c6fe6b98942451f76b863f4ad53c44ed4dca80ab20",
+    "role": "Identity and geometry reference for the generated turnaround"
+  },
+  "turnaroundGeneration": {
+    "tool": "OpenAI built-in image generation",
+    "mode": "edit with reference",
+    "prompt": "Create one clean 2x2 contact sheet showing the exact same Palari 005 ceramic figure from four orthographic views: front, left profile, back, and right profile. Preserve the tall rounded arch hood, smooth off-white ceramic shell, flat flared legless base, wrapped front opening, muted blue-grey ribbed core, sleepy inset eyes, restrained mouth, joined fingerless arms, and existing seed apertures. Keep identical scale and strict cross-view consistency. Use neutral diffuse light and a perfectly flat solid #FF00FF chroma-key background with no floor, shadows, reflections, text, labels, new limbs, feet, teeth, eyelashes, clothing, props, or decorative additions.",
+    "output": {
+      "path": "reference/turnaround-chroma.png",
+      "sha256": "ad9e4b4b518b84231d3144b8773c88fee3cb0ffa6bf5806f735f3be2ab7da7b7",
+      "width": 1254,
+      "height": 1254
+    }
+  },
+  "viewPreparation": {
+    "crop": "Four deterministic 622 x 622 crops excluding the center gutters, ordered front, left, back, right.",
+    "backgroundRemoval": {
+      "tool": "imagegen remove_chroma_key.py",
+      "autoKey": "border",
+      "softMatte": true,
+      "transparentThreshold": 12,
+      "opaqueThreshold": 220,
+      "despill": true
+    },
+    "views": {
+      "front.png": "9d87ac099bc6c6f2beaa39807cb44330f4c690e1fe9e418ec2b965ffd9f0e910",
+      "left.png": "1066903670d2780789344d55d76bbef6f737ba9fb551bf9dd498df422fdc52f0",
+      "back.png": "db2d7c44e65d2524272a2754460232a1e31b304ec218e0051bd4b3ceaff7a47e",
+      "right.png": "782cb68ca7cd7f00158c6e2a2faa54e4277483db5a0f542845548a0b5b906c71"
+    }
+  },
+  "meshy": {
+    "endpoint": "POST /openapi/v1/multi-image-to-3d",
+    "taskId": "019fe8ab-66dc-73bb-a057-f4f8eb3b20a1",
+    "request": {
+      "aiModel": "meshy-6",
+      "shouldTexture": true,
+      "enablePbr": true,
+      "textureResolution": "2k",
+      "texturePrompt": "Off-white satin ceramic outer shell with a muted blue-grey ribbed inner core and matching blue-grey irises and lower seed apertures. Clean neutral product material, no painted clothing, no metallic finish.",
+      "shouldRemesh": false,
+      "imageEnhancement": false,
+      "removeLighting": true,
+      "moderation": true,
+      "targetFormats": [
+        "glb"
+      ]
+    },
+    "result": {
+      "status": "SUCCEEDED",
+      "consumedCredits": 30,
+      "model": {
+        "path": "output/model.glb",
+        "sha256": "bfe0ea914f4143c92554162620009ea39daba53ea316f2eb4c5a1123f38b84f1",
+        "bytes": 10818536,
+        "meshes": 1,
+        "materials": 1,
+        "textures": 4,
+        "vertices": 119907,
+        "triangles": 217894
+      },
+      "preview": {
+        "path": "output/preview.png",
+        "sha256": "4d31429a6024d1ad3a73787350c1f5f28e107b03396ea8ec077a0b259e7d9a69",
+        "width": 512,
+        "height": 512
+      }
+    }
+  },
+  "review": {
+    "status": "promising-exploratory-pilot",
+    "notes": "The Meshy preview retains the recognizable Palari 005 hood, legless vessel base, clasped fingerless arms, face, front cavity, and seed apertures. It is substantially closer to the source grammar than the rejected text-only pilot. The GLB is retained as an exploratory asset and is not registered in the production editor; its complete back, cavity depth, watertightness, and printability still require inspection in a full 3D application."
+  }
+}

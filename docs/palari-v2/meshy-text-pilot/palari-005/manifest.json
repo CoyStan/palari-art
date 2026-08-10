@@ -1,0 +1,48 @@
+{
+  "date": "2026-08-09",
+  "provider": "Meshy",
+  "endpoint": "POST /openapi/v2/text-to-3d",
+  "taskId": "019fe8a3-ac81-738a-8293-776de72830de",
+  "purpose": "Test whether Meshy can generate a Palari V2 figure directly from the written visual grammar without an image reference.",
+  "request": {
+    "mode": "preview",
+    "prompt": "An original stylized ceramic artificial-intelligence companion figurine, freestanding full body. Tall rounded arch hood silhouette with no conventional legs and a stable bell-shaped base. A smooth satin ceramic outer shell wraps around a deep vertical front cavity containing a distinct ribbed inner core. Two sleepy expressive eyes sit beneath the hood. Two simple rounded fingerless arms clasp gently at the waist. Six small circular seed marks form two columns of three near the lower front. Hollow sculpted openings, clean bilateral balance, coherent watertight collectible-toy geometry, no pedestal, no props, no text.",
+    "modelType": "standard",
+    "aiModel": "meshy-6",
+    "shouldRemesh": false,
+    "poseMode": "",
+    "moderation": true,
+    "targetFormats": [
+      "glb"
+    ],
+    "alphaThumbnail": true
+  },
+  "result": {
+    "status": "SUCCEEDED",
+    "consumedCredits": 20,
+    "files": {
+      "preview.glb": {
+        "sha256": "495b568b90d6e17017c011d01613410a55fe2e60882b98234c62ee70c59e961c",
+        "bytes": 6903068,
+        "meshes": 1,
+        "primitives": 1,
+        "vertices": 191722,
+        "triangles": 383468
+      },
+      "preview.png": {
+        "sha256": "f822d7e783f9ac179f942b8a86c99b6f2cb577fc1269c1a4d55e0852dadb565f",
+        "width": 512,
+        "height": 512
+      },
+      "preview-alpha.png": {
+        "sha256": "f822d7e783f9ac179f942b8a86c99b6f2cb577fc1269c1a4d55e0852dadb565f",
+        "width": 512,
+        "height": 512
+      }
+    }
+  },
+  "review": {
+    "status": "rejected-as-palari",
+    "notes": "The result captures a generic hooded ceramic companion but invents eyelashes, a toothed mouth, detailed hands, feet, and a perforated skirt. It misses the fingerless arms, legless vessel base, two-layer Palari construction, six seed marks, and restrained face grammar. Text-only generation is not sufficiently identity-faithful for production from this prompt."
+  }
+}
