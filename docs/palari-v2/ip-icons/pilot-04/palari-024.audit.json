@@ -1,0 +1,24 @@
+{
+  "id": "palari-024",
+  "source": "public/palari-v2/palari-024/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-04/palari-024.png",
+  "silhouette": "column",
+  "characteristicColor": "#6E202C",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "dc8b7e16364ae3211c9f6d67e1eda3f04c8c81b4bdf0596dc2b7d136e8a51f19",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Broad soft-lobed head on a tall rounded column, with two calm eyes, crossed resting arms, a burgundy diagonal sash and teardrop inset, and a stable legless base.",
+  "promptSummary": "Identity-reference-only generation in the shared ivory, burgundy, and navy palette; lower-right column composition with connected sash-teardrop feature, followed by one targeted arms, placement, and background retry.",
+  "deviations": [
+    "Figure occupies roughly two-thirds rather than about 80% of the canvas, leaving excessive upper-left space",
+    "Navy background retains a visible central glow and edge darkening rather than a uniform flat field",
+    "Thin burgundy contour lines around the crossed arms read as discrete internal detail",
+    "Arm overlap interrupts the sash-to-teardrop connection, weakening the requested single continuous opening"
+  ]
+}

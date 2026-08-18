@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-18",
+  "status": "dashboard-registered-collection",
+  "productionRegistered": true,
+  "generator": "built-in ImageGen",
+  "skill": {
+    "name": "ip-as-logo",
+    "path": ".agents/skills/ip-as-logo/SKILL.md"
+  },
+  "iconCount": 41,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "delivery": {
+    "root": "public/palari-v2-icons-web",
+    "manifest": "public/palari-v2-icons-web/manifest.json",
+    "assetsPerIcon": 2,
+    "formats": ["1024px WebP", "256px WebP"]
+  },
+  "reviewSummary": {
+    "smallSizePass": 41,
+    "exactSixSeedApertures": 36,
+    "strictSkillPass": 0,
+    "postProcessedIcons": 0
+  },
+  "pilots": [
+    {
+      "id": "pilot-01",
+      "ids": ["palari-001", "palari-002", "palari-003", "palari-006", "palari-008", "palari-010"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-01/manifest.json"
+    },
+    {
+      "id": "pilot-02",
+      "ids": ["palari-004", "palari-005", "palari-007", "palari-009", "palari-011", "palari-012"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-02/manifest.json"
+    },
+    {
+      "id": "pilot-03",
+      "ids": ["palari-013", "palari-014", "palari-015", "palari-016", "palari-017", "palari-018"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-03/manifest.json"
+    },
+    {
+      "id": "pilot-04",
+      "ids": ["palari-019", "palari-020", "palari-021", "palari-022", "palari-023", "palari-024"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-04/manifest.json"
+    },
+    {
+      "id": "pilot-05",
+      "ids": ["palari-025", "palari-026", "palari-027", "palari-028", "palari-029", "palari-030"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-05/manifest.json"
+    },
+    {
+      "id": "pilot-06",
+      "ids": ["palari-031", "palari-032", "palari-033", "palari-034", "palari-035", "palari-036"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-06/manifest.json"
+    },
+    {
+      "id": "pilot-07",
+      "ids": ["palari-037", "palari-038", "palari-039", "palari-040", "palari-041"],
+      "manifest": "docs/palari-v2/ip-icons/pilot-07/manifest.json"
+    }
+  ],
+  "reviewComposites": [
+    {
+      "path": "docs/palari-v2/ip-icons/contact-sheet-all.png",
+      "sha256": "aaa906d4c15a531e8919637b682f6981886eb658ffe39acbf6dc814ffba599d8"
+    },
+    {
+      "path": "docs/palari-v2/ip-icons/contact-sheet-all-32px.png",
+      "sha256": "d58f85258d4d157bf9a0609a49257d7e0998149c74077c891160a592518cf68a"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { Download, Eye, Images, RotateCcw } from "lucide-react";
+import { Download, Eye, Images, Palette, RotateCcw, Smile } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import { assetUrl } from "../lib/assets";
 import { backgrounds, characteristicColors, materials, v2Avatars } from "./data";
@@ -11,52 +11,56 @@ const defaults = {
   background: backgrounds[0],
 };
 
+type PreviewMode = "customized" | "emoticon" | "original";
+
 export function V2App() {
   const [avatar, setAvatar] = useState(v2Avatars[4]);
   const [material, setMaterial] = useState(defaults.material);
   const [characteristic, setCharacteristic] = useState(defaults.characteristic);
   const [background, setBackground] = useState(defaults.background);
-  const [showOriginal, setShowOriginal] = useState(false);
+  const [previewMode, setPreviewMode] = useState<PreviewMode>("customized");
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const renderOptions = useMemo(
     () => ({
       material: material.uiSwatch,
       characteristic: characteristic.uiSwatch,
       background: background.uiSwatch,
-      mode: showOriginal ? "original" as const : "customized" as const,
+      mode: previewMode,
     }),
-    [background.uiSwatch, characteristic.uiSwatch, material.uiSwatch, showOriginal],
+    [background.uiSwatch, characteristic.uiSwatch, material.uiSwatch, previewMode],
   );
 
   function reset() {
     setMaterial(defaults.material);
     setCharacteristic(defaults.characteristic);
     setBackground(defaults.background);
-    setShowOriginal(false);
+    setPreviewMode("customized");
   }
 
   function chooseMaterial(option: typeof material) {
     setMaterial(option);
-    setShowOriginal(false);
+    setPreviewMode("customized");
   }
 
   function chooseCharacteristic(option: typeof characteristic) {
     setCharacteristic(option);
-    setShowOriginal(false);
+    setPreviewMode("customized");
   }
 
   function chooseBackground(option: typeof background) {
     setBackground(option);
-    setShowOriginal(false);
+    setPreviewMode("customized");
   }
 
   function download() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const anchor = document.createElement("a");
-    anchor.download = showOriginal
+    anchor.download = previewMode === "original"
       ? `${avatar.id}-original.png`
-      : `${avatar.id}-${material.id}-${characteristic.id}.png`;
+      : previewMode === "emoticon"
+        ? `${avatar.id}-emoticon.png`
+        : `${avatar.id}-${material.id}-${characteristic.id}.png`;
     anchor.href = canvas.toDataURL("image/png");
     anchor.click();
   }
@@ -84,7 +88,14 @@ export function V2App() {
                 onClick={() => setAvatar(item)}
                 aria-pressed={item.id === avatar.id}
               >
-                <img src={assetUrl(item.source)} alt="" />
+                <img
+                  src={assetUrl(previewMode === "emoticon" ? item.emoticonThumbnail : item.source)}
+                  alt=""
+                  width="54"
+                  height="54"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span>{item.silhouette}</span>
                 <small>{item.id.replace("palari-", "No. ")}</small>
               </button>
@@ -95,21 +106,47 @@ export function V2App() {
         <section className="v2-preview" aria-label="Palari preview">
           <div className="v2-preview-meta">
             <span>{avatar.silhouette} form</span>
-            <span>{showOriginal ? "Original source · masks off" : `${material.label} · ${characteristic.label}`}</span>
-            <button
-              type="button"
-              className="v2-original-toggle"
-              data-active={showOriginal}
-              aria-pressed={showOriginal}
-              aria-label={showOriginal ? "Show customized version" : "Show original source without masks"}
-              onClick={() => setShowOriginal((current) => !current)}
-            >
-              <Eye size={13} aria-hidden="true" /> Original
-            </button>
+            <span aria-live="polite">
+              {previewMode === "original"
+                ? "Original source · masks off"
+                : previewMode === "emoticon"
+                  ? "Emoticon · fixed palette"
+                  : `${material.label} · ${characteristic.label}`}
+            </span>
+            <div className="v2-view-toggle" role="group" aria-label="Preview version">
+              <button
+                type="button"
+                data-active={previewMode === "customized"}
+                aria-pressed={previewMode === "customized"}
+                onClick={() => setPreviewMode("customized")}
+              >
+                <Palette size={13} aria-hidden="true" /> Custom
+              </button>
+              <button
+                type="button"
+                data-active={previewMode === "emoticon"}
+                aria-pressed={previewMode === "emoticon"}
+                onClick={() => setPreviewMode("emoticon")}
+              >
+                <Smile size={13} aria-hidden="true" /> Emoticon
+              </button>
+              <button
+                type="button"
+                data-active={previewMode === "original"}
+                aria-pressed={previewMode === "original"}
+                onClick={() => setPreviewMode("original")}
+              >
+                <Eye size={13} aria-hidden="true" /> Original
+              </button>
+            </div>
           </div>
           <V2Canvas avatar={avatar} options={renderOptions} canvasRef={canvasRef} />
           <p className="v2-preview-note">
-            {showOriginal ? "Original source. No masks or recoloring applied." : "One vessel. One characteristic color. Entirely yours."}
+            {previewMode === "original"
+              ? "Original source. No masks or recoloring applied."
+              : previewMode === "emoticon"
+                ? "A compact, character-matched symbol made for small-size use."
+                : "One vessel. One characteristic color. Entirely yours."}
           </p>
         </section>
 
@@ -123,7 +160,11 @@ export function V2App() {
             <button type="button" className="v2-primary" onClick={download}><Download size={17} /> Export PNG</button>
           </div>
           <p className="v2-export-note">
-            {showOriginal ? "1024 × 1024 · original transparency preserved" : "1024 × 1024 · processed in your browser"}
+            {previewMode === "original"
+              ? "1024 × 1024 · original transparency preserved"
+              : previewMode === "emoticon"
+                ? "1024 × 1024 · fixed-palette emoticon"
+                : "1024 × 1024 · processed in your browser"}
           </p>
         </aside>
       </section>

@@ -9,6 +9,7 @@ const expectedWebAvatars = 314;
 const expectedWebMasks = 1_395;
 const expectedHandbookWebps = 40;
 const expectedPalariV2Webps = 123;
+const expectedPalariV2IconWebps = 82;
 
 async function walkFiles(directory, prefix = "") {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -37,6 +38,7 @@ const webAvatarFiles = files.filter((fileName) => /^avatars-web\/.+\.webp$/i.tes
 const webMaskFiles = files.filter((fileName) => /^masks-web\/.+\.webp$/i.test(fileName));
 const handbookWebpFiles = files.filter((fileName) => /^handbook\/assets\/(?:full|compact)\/.+\.webp$/i.test(fileName));
 const palariV2WebpFiles = files.filter((fileName) => /^palari-v2-web\/.+\.webp$/i.test(fileName));
+const palariV2IconWebpFiles = files.filter((fileName) => /^palari-v2-icons-web\/.+\.webp$/i.test(fileName));
 const pngFiles = files.filter((fileName) => fileName.toLowerCase().endsWith(".png"));
 
 if (!files.includes("index.html")) problems.push("index.html is missing.");
@@ -48,6 +50,7 @@ if (!files.includes("avatars-web/manifest.json")) problems.push("avatar WebP man
 if (!files.includes("masks-web/manifest.json")) problems.push("mask WebP manifest is missing.");
 if (!files.includes("handbook/assets/manifest.json")) problems.push("handbook WebP manifest is missing.");
 if (!files.includes("palari-v2-web/manifest.json")) problems.push("Palari V2 WebP manifest is missing.");
+if (!files.includes("palari-v2-icons-web/manifest.json")) problems.push("Palari V2 emoticon WebP manifest is missing.");
 if (webAvatarFiles.length !== expectedWebAvatars) {
   problems.push(`artifact has ${webAvatarFiles.length} avatar WebPs; expected ${expectedWebAvatars}.`);
 }
@@ -59,6 +62,9 @@ if (handbookWebpFiles.length !== expectedHandbookWebps) {
 }
 if (palariV2WebpFiles.length !== expectedPalariV2Webps) {
   problems.push(`artifact has ${palariV2WebpFiles.length} Palari V2 WebPs; expected ${expectedPalariV2Webps}.`);
+}
+if (palariV2IconWebpFiles.length !== expectedPalariV2IconWebps) {
+  problems.push(`artifact has ${palariV2IconWebpFiles.length} Palari V2 emoticon WebPs; expected ${expectedPalariV2IconWebps}.`);
 }
 if (pngFiles.length > 0) problems.push(`artifact unexpectedly contains PNG files: ${pngFiles.join(", ")}.`);
 if (files.some((fileName) => fileName.startsWith("avatars/") || fileName.startsWith("masks/"))) {
@@ -97,6 +103,6 @@ if (problems.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Verified ${(totalBytes / 1_048_576).toFixed(1)} MiB GitHub Pages artifact with ${webAvatarFiles.length} avatar, ${webMaskFiles.length} mask, ${handbookWebpFiles.length} handbook, and ${palariV2WebpFiles.length} Palari V2 WebPs and no PNGs.`,
+    `Verified ${(totalBytes / 1_048_576).toFixed(1)} MiB GitHub Pages artifact with ${webAvatarFiles.length} avatar, ${webMaskFiles.length} mask, ${handbookWebpFiles.length} handbook, ${palariV2WebpFiles.length} Palari V2 ceramic, and ${palariV2IconWebpFiles.length} Palari V2 emoticon WebPs and no PNGs.`,
   );
 }

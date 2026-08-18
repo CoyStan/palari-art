@@ -1,0 +1,24 @@
+{
+  "id": "palari-019",
+  "source": "public/palari-v2/palari-019/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-04/palari-019.png",
+  "silhouette": "pod",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "1bd0b0ddc472e40fb0718b3fd5501a853168ae8b16066f61564b9c9528210cc1",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Hooded rounded pod with one forest face opening, two calm eyes, clasped raised hands, a legless base, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-referenced flat-first lower-left icon using ivory #E9E6DF, forest #123C2D, and background-only navy #172333; requested one opening, both calm eyes, clasped rounded arms, exact six seeds, an opaque uniform background, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains visible vignette-like tonal variation instead of a uniform flat field.",
+    "The character occupies less than the requested approximately 80 percent because the lower-left placement leaves substantial top-right space.",
+    "Thin forest contact seams remain around the overlapping arms.",
+    "Ivory and forest regions retain stronger tonal modeling than the requested near-flat micro-volume."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "palari-034",
+  "source": "public/palari-v2/palari-034/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-06/palari-034.png",
+  "silhouette": "pod",
+  "characteristicColor": "#8A4B00",
+  "composition": "lower-right",
+  "attempts": 1,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "120be041c85ef8bc0e7b1dddf3a4b47f44327342267be4d05205f4ab0db9d5c6",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Friendly Bowl Pod with a broad open-rim cup crown, amber top opening and short neck, paired sleepy eyes, large round amber torso inset, two complete loop arms, and a stable legless base.",
+  "promptSummary": "Identity-reference-only built-in ImageGen mark using exactly warm ivory, amber, and background-only navy; flat-first rounded geometry; lower-right base crop; open bowl crown, round torso inset, two calm eyes, no mouth, and an exact two-row six-aperture seed.",
+  "deviations": [
+    "The deep-navy background retains visible center-to-edge tonal variation instead of a perfectly uniform solid field.",
+    "The bowl, neck, body inset, and arm junctions retain stronger tonal modeling than the strict micro-volume limit allows.",
+    "The generated ivory, amber, and navy families visibly drift from the requested numeric hex values."
+  ]
+}

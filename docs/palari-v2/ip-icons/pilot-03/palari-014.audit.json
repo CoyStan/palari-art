@@ -1,0 +1,24 @@
+{
+  "id": "palari-014",
+  "source": "public/palari-v2/palari-014/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-03/palari-014.png",
+  "silhouette": "column",
+  "characteristicColor": "#6E202C",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "a590693f11a5f7592f84b2c01c6a9d3423c946ea9e7f077ca4edb88f5049b80b",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Elegant tapered Column with a rounded asymmetric head, broad swept-back burgundy fin, two calm half-lidded eyes, long recessed front panel, joined resting hands, and a flared legless base.",
+  "promptSummary": "Identity-reference-only flat-first Palari mark using ivory #E9E6DF, burgundy #6E202C, and background-only navy #172333; lower-right crop; 6–10 rounded shapes; exact six-aperture large-small-large seed; no mouth, scene, texture, realism, or discrete shading.",
+  "deviations": [
+    "The navy background retains a visible center-to-edge tonal variation instead of a perfectly uniform field.",
+    "The burgundy fin and opening drift brighter than the requested #6E202C base.",
+    "The two arms obscure the front panel enough that its continuity is inferred rather than visibly unbroken.",
+    "Tonal modeling remains slightly stronger than the strict micro-volume target."
+  ]
+}

@@ -5,7 +5,7 @@ export type V2RenderOptions = {
   material: string;
   characteristic: string;
   background: string;
-  mode: "customized" | "original";
+  mode: "customized" | "original" | "emoticon";
   size?: number;
 };
 
@@ -18,6 +18,7 @@ type PreparedMasks = {
 
 const sourceCache = new Map<string, Promise<ImageData>>();
 const maskCache = new Map<string, Promise<PreparedMasks>>();
+const emoticonCache = new Map<string, Promise<HTMLImageElement>>();
 
 function loadImage(path: string) {
   return new Promise<HTMLImageElement>((resolve, reject) => {
@@ -105,8 +106,23 @@ export async function renderPalariV2(
   avatar: PalariV2Avatar,
   options: V2RenderOptions,
 ) {
-  const source = await prepareSource(avatar);
   const size = options.size ?? 1024;
+  if (options.mode === "emoticon") {
+    let emoticon = emoticonCache.get(avatar.id);
+    if (!emoticon) {
+      emoticon = loadImage(avatar.emoticon);
+      emoticonCache.set(avatar.id, emoticon);
+    }
+    const image = await emoticon;
+    canvas.width = size;
+    canvas.height = size;
+    const context = canvas.getContext("2d");
+    if (!context) throw new Error("Canvas rendering is unavailable.");
+    context.drawImage(image, 0, 0, size, size);
+    return;
+  }
+
+  const source = await prepareSource(avatar);
   const renderCanvas = document.createElement("canvas");
   renderCanvas.width = source.width;
   renderCanvas.height = source.height;

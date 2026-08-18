@@ -1,0 +1,24 @@
+{
+  "id": "palari-035",
+  "source": "public/palari-v2/palari-035/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-06/palari-035.png",
+  "silhouette": "column",
+  "characteristicColor": "#8A4B00",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "3402d593fa50800bd79a037d4d594cef313f56ffe39278bf0ab9d5d18c35c494",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall legless Column with a complete five-tip crown, narrow amber neck reveal, round amber belly opening, two calm eyes, both loop arms, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-reference-only flat-first lower-left icon using ivory #E9E6DF, amber #8A4B00, and background-only navy #172333; requested the complete five-tip crown, both calm eyes and loop arms, central opening, exact six seeds, base-only crop, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains visible center-to-edge tonal variation instead of a perfectly uniform field.",
+    "Placement reads bottom-center rather than emerging clearly from the lower-left.",
+    "The amber neck reveal is broader and more band-like than the narrow vertical reveal in the identity reference.",
+    "Ivory and amber retain stronger tonal modeling than the requested near-flat micro-volume."
+  ]
+}

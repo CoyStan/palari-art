@@ -1,0 +1,24 @@
+{
+  "id": "palari-025",
+  "source": "public/palari-v2/palari-025/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-05/palari-025.png",
+  "silhouette": "bell",
+  "characteristicColor": "#6E202C",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "8f0359ed27138cf1d008177f22288ce95687fb2b4bf2c26ac34162ca3a1d3789",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall slender funnel-headed bell/column with a wide blunt crown, paired calm eyes, long burgundy throat opening, paired resting arms, and a stable legless base.",
+  "promptSummary": "Identity-reference-only built-in ImageGen candidate using ivory #E9E6DF, burgundy #6E202C, and background-only navy #172333; the targeted retry corrected the seed count, eye strokes, and missing arms.",
+  "deviations": [
+    "Placement remains centered instead of emerging clearly from the lower-left.",
+    "The navy background retains visible low-frequency variation rather than a perfectly flat fill.",
+    "Thin gray contact seams remain along both arms.",
+    "Ivory and burgundy tonal modeling is stronger than the requested micro-volume limit."
+  ]
+}

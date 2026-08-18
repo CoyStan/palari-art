@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-18",
+  "status": "review-candidates",
+  "productionRegistered": false,
+  "generator": "built-in ImageGen",
+  "skill": {
+    "name": "ip-as-logo",
+    "path": ".agents/skills/ip-as-logo/SKILL.md"
+  },
+  "sharedPalette": {
+    "body": "#E9E6DF",
+    "background": "#172333"
+  },
+  "policy": {
+    "sourceRole": "identity-reference-only",
+    "maximumAttemptsPerAsset": 2,
+    "postProcessing": "none",
+    "nativeOutputPreserved": true
+  },
+  "assets": [
+    {
+      "id": "palari-004",
+      "silhouette": "column",
+      "source": "public/palari-v2/palari-004/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-02/palari-004.png",
+      "characteristicColor": "#164A7A",
+      "composition": "lower-left",
+      "attempts": 2,
+      "selectedAttempt": 2,
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "6088498e0fb37153f1f227bc567740816a27a1899994e9f6a803e98a440ef5ad",
+      "seedApertureCount": 6,
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Placement reads bottom-center rather than emerging clearly from the lower-left",
+        "Hood and arm junctions retain stronger contact modeling than allowed"
+      ]
+    },
+    {
+      "id": "palari-005",
+      "silhouette": "arch",
+      "source": "public/palari-v2/palari-005/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-02/palari-005.png",
+      "characteristicColor": "#164A7A",
+      "composition": "lower-right",
+      "attempts": 2,
+      "selectedAttempt": 1,
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "cf915426154288bccbd4ed010544667676f760a5b2e7cbac494ff9cf318e699d",
+      "seedApertureCount": 7,
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Seed mark contains seven apertures instead of six",
+        "Visible navy background variation",
+        "Inner reveal is broader and more pointed than the source identity target",
+        "Hood and arm overlaps retain stronger layered volume than allowed"
+      ]
+    },
+    {
+      "id": "palari-007",
+      "silhouette": "crescent",
+      "source": "public/palari-v2/palari-007/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-02/palari-007.png",
+      "characteristicColor": "#9A3F3A",
+      "composition": "lower-left",
+      "attempts": 2,
+      "selectedAttempt": 2,
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "e23563ccfdd342326ffc4a65a86b1cf290b60b3209151c96b972c542290b0d3c",
+      "seedApertureCount": 5,
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Seed mark contains five apertures instead of six",
+        "Visible navy background variation",
+        "A navy negative gap between the face and diagonal arm weakens the closed-crescent reading",
+        "Faint internal seam modeling remains"
+      ]
+    },
+    {
+      "id": "palari-009",
+      "silhouette": "pod",
+      "source": "public/palari-v2/palari-009/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-02/palari-009.png",
+      "characteristicColor": "#8A4B00",
+      "composition": "lower-right",
+      "attempts": 2,
+      "selectedAttempt": 2,
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "5b8ae2f0292848a0dbd927864ef4b3d77ed165bf01444e4efd6d68d50094e365",
+      "seedApertureCount": 6,
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Arm contact seams remain",
+        "Tonal modeling is stronger than allowed",
+        "Amber and navy bases drift from the requested numeric palette"
+      ]
+    },
+    {
+      "id": "palari-011",
+      "silhouette": "stack",
+      "source": "public/palari-v2/palari-011/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-02/palari-011.png",
+      "characteristicColor": "#123C2D",
+      "composition": "lower-left",
+      "attempts": 2,
+      "selectedAttempt": 2,
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "4d83dd3aa9b0d8b6c2e2eebc89026068fc1cf82e1ad4de9069f33a34efeca70f",
+      "seedApertureCount": 6,
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Navy appears as thin internal contours at the diagonal seam and left arm",
+        "Ivory and forest bases drift from the requested numeric palette",
+        "Tonal modeling is stronger than allowed"
+      ]
+    },
+    {
+      "id": "palari-012",
+      "silhouette": "bell",
+      "source": "public/palari-v2/palari-012/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-02/palari-012.png",
+      "characteristicColor": "#164A7A",
+      "composition": "lower-right",
+      "attempts": 2,
+      "selectedAttempt": 2,
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "a1d4ec0e167ce69a41abbac51b3d5b1ca28978f56848323daf8c8afbe5501d10",
+      "seedApertureCount": 6,
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Inner sweep terminates in a sharp fragile point",
+        "Placement reads centered rather than emerging clearly from the lower-right",
+        "Ivory, ultramarine, and navy bases drift slightly from the requested numeric palette"
+      ]
+    }
+  ],
+  "reviewComposites": [
+    {
+      "path": "docs/palari-v2/ip-icons/pilot-02/contact-sheet.png",
+      "sha256": "5582d8289df78739934cb03e0d8731f8de033dc891764e58bda575c6a98a76d2"
+    },
+    {
+      "path": "docs/palari-v2/ip-icons/pilot-02/contact-sheet-32px.png",
+      "sha256": "b1f13a70ceb496ca413ec74f3974c3ddb2f3a9490cc6835e4aa6f4f9711c2dd0"
+    }
+  ]
+}

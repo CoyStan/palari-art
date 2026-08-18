@@ -1,0 +1,23 @@
+{
+  "id": "palari-031",
+  "source": "public/palari-v2/palari-031/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-06/palari-031.png",
+  "silhouette": "pod",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "eb6ad277d2403875047abbb6959f205a436572957e56b468e4426150bb36f0dc",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Compact hooded Pod with an oversized mushroom dome, one continuous forest face-and-torso opening, paired sleepy eyes, symmetric wrapped front arms, and a stable legless base.",
+  "promptSummary": "Identity-reference-only built-in ImageGen mark using exactly warm ivory, forest, and background-only navy; flat-first rounded geometry; lower-left base crop; two calm eyes; no mouth; exact two-row six-aperture seed.",
+  "deviations": [
+    "The deep-navy background retains visible center-to-edge tonal variation instead of a perfectly uniform solid field.",
+    "Ivory arm overlaps and the hood edge retain more contact modeling than the strict micro-volume limit allows.",
+    "The generated ivory, forest, and navy families visibly drift from the requested numeric hex values."
+  ]
+}

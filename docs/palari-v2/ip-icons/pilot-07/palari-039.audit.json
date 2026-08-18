@@ -1,0 +1,22 @@
+{
+  "id": "palari-039",
+  "source": "public/palari-v2/palari-039/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-07/palari-039.png",
+  "silhouette": "column",
+  "characteristicColor": "#8A4B00",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "cb97e184c7090e183180378adc41972be118649296238c71591882c13a967e70",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall tapered herald column with a blunt open crown, two calm half-lidded eyes, one long amber belly opening, two broad upturned arms, an exact six-seed mark, and a legless base.",
+  "promptSummary": "Identity-reference-only generation in ivory #E9E6DF, amber #8A4B00, and background-only navy #172333; lower-left base crop; flat-first rounded geometry; no mouth, scene, texture, material rendering, discrete shading, extra colors, or transparency, followed by one targeted background and composition retry.",
+  "deviations": [
+    "The navy background retains subtle center-to-edge tonal variation instead of a perfectly uniform flat field.",
+    "The ivory and amber regions retain more visible tonal modeling than the strict near-imperceptible micro-volume target."
+  ]
+}

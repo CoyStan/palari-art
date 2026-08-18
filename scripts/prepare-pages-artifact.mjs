@@ -13,7 +13,8 @@ await Promise.all([
   cp(path.join(publicRoot, "masks-web"), path.join(distRoot, "masks-web"), { recursive: true }),
   cp(path.join(publicRoot, "handbook"), path.join(distRoot, "handbook"), { recursive: true }),
   cp(path.join(publicRoot, "palari-v2-web"), path.join(distRoot, "palari-v2-web"), { recursive: true }),
+  cp(path.join(publicRoot, "palari-v2-icons-web"), path.join(distRoot, "palari-v2-icons-web"), { recursive: true }),
 ]);
 await writeFile(path.join(distRoot, ".nojekyll"), "");
 
-console.log("Prepared the GitHub Pages artifact with both editors and the text-free handbook gallery.");
+console.log("Prepared the GitHub Pages artifact with both editors, the V2 emoticon collection, and the text-free handbook gallery.");

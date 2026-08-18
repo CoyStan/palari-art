@@ -1,0 +1,25 @@
+{
+  "id": "palari-015",
+  "source": "public/palari-v2/palari-015/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-03/palari-015.png",
+  "silhouette": "bell",
+  "characteristicColor": "#4B316F",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "2f9f6ab016c51c704e2edc8a61723de652f2b5ddacb28e59f6113a244b3e1146",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Broad bell guardian with an asymmetric ring-canopy head, paired lateral rings, violet neck, large circular abdomen opening, arms set at the sides, and a two-lobed legless base.",
+  "promptSummary": "Identity-reference-only simplification using an ivory and violet three-color palette on navy; requested a lower-left base crop, both calm eyes, side-set arms, one dominant circular opening, exactly six apertures, and flat-first rounded geometry with restrained continuous micro-volume.",
+  "deviations": [
+    "Placement reads bottom-center rather than emerging clearly from the lower-left",
+    "The base floats above the bottom edge instead of using the requested base-only crop",
+    "The navy base drifts darker than #172333 and retains low-level background tonal variation",
+    "Ivory and violet bases drift from the requested numeric palette",
+    "Contact modeling around the head, neck, and arm junctions is stronger than the permitted near-flat micro-volume"
+  ]
+}

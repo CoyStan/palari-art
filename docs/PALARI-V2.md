@@ -269,7 +269,9 @@ npm run palari-v2:web:generate
 npm run verify:palari-v2
 ```
 
-The separate React editor is mounted at `/v2/`. It offers 41 shapes, four ceramic materials, eight characteristic colors, four backgrounds, and 1024 × 1024 PNG export. Recoloring is deterministic and browser-only; it preserves the source luminance, surface texture, shading, pose, eyes, and silhouette. The original portrait editor remains at `/` and uses its independent background-and-shirt renderer.
+Every production figure also has a matching fixed-palette emoticon generated as a compact `ip-as-logo` symbol. The 41 native 1254 × 1254 opaque PNG authorities and their review records live under `docs/palari-v2/ip-icons/`; 1024px export images and 256px browser thumbnails live under `public/palari-v2-icons-web/`. Regenerate those 82 checksum-linked WebPs with `node scripts/generate-palari-v2-icon-assets.mjs`.
+
+The separate React editor is mounted at `/v2/`. It offers 41 shapes, four ceramic materials, eight characteristic colors, four backgrounds, Custom/Emoticon/Original views, and 1024 × 1024 PNG export. Recoloring is deterministic and browser-only; it preserves the source luminance, surface texture, shading, pose, eyes, and silhouette. Emoticons use their reviewed fixed palettes rather than the ceramic recoloring controls. The original portrait editor remains at `/` and uses its independent background-and-shirt renderer.
 
 The complete source, mask, delivery, and browser-review contract is recorded in `docs/palari-v2/TECHNICAL.md`.
 

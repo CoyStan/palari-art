@@ -13,6 +13,8 @@ export type PalariV2Avatar = {
   source: string;
   materialMask: string;
   characteristicMask: string;
+  emoticon: string;
+  emoticonThumbnail: string;
 };
 
 export const materials: PaletteOption[] = grammar.materials;
@@ -27,6 +29,7 @@ export const backgrounds: PaletteOption[] = [
 
 function avatar(id: string, silhouette: string): PalariV2Avatar {
   const assetRoot = `palari-v2-web/${id}`;
+  const emoticonRoot = `palari-v2-icons-web/${id}`;
   return {
     id,
     name: `Palari ${id.slice(-3)}`,
@@ -34,6 +37,8 @@ function avatar(id: string, silhouette: string): PalariV2Avatar {
     source: `${assetRoot}/source.webp`,
     materialMask: `${assetRoot}/material.webp`,
     characteristicMask: `${assetRoot}/characteristic.webp`,
+    emoticon: `${emoticonRoot}/icon.webp`,
+    emoticonThumbnail: `${emoticonRoot}/thumbnail.webp`,
   };
 }
 

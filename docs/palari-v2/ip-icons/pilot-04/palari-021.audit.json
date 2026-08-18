@@ -1,0 +1,24 @@
+{
+  "id": "palari-021",
+  "source": "public/palari-v2/palari-021/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-04/palari-021.png",
+  "silhouette": "stack",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "45dd8b2431d5673cb8b90bd0aaa6620b95a01ddbf71fb185573724844130002a",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Three-tier rounded stack with a broad open bowl head, forest neck, two large oval torso apertures, one arm resting across the body, one raised presenting arm, a legless base, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-referenced flat-first lower-left icon using ivory #E9E6DF, forest #123C2D, and background-only navy #172333; requested the open crown, both calm eyes, two torso apertures, contrasting rounded arm poses, exact six seeds, an opaque uniform background, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains visible vignette-like tonal variation instead of a uniform flat field.",
+    "Placement reads broadly bottom-centered rather than emerging clearly from the lower-left.",
+    "Ivory and forest regions drift from the requested numeric palette and retain stronger tonal modeling than the requested near-flat micro-volume.",
+    "The resting arm forms a pronounced navy negative-space wedge at the body junction."
+  ]
+}
