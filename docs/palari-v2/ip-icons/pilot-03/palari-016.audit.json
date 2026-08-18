@@ -1,0 +1,24 @@
+{
+  "id": "palari-016",
+  "source": "public/palari-v2/palari-016/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-03/palari-016.png",
+  "silhouette": "crescent",
+  "characteristicColor": "#164A7A",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "64b97aeb7c8911c7f405db2d065d011105641fb4d8ec6dd27e5c74e7a4398c0e",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall contemplative crescent profile with a blunt elongated head, rounded rear crest, long ultramarine side channel, folded arms, tapered legless base, and six-aperture mark.",
+  "promptSummary": "Identity-reference-only simplification using an ivory and ultramarine three-color palette on navy; requested a lower-right base crop, a gentle three-quarter profile showing both calm eyes, paired folded arms, one dominant side-channel opening, exactly six apertures, and flat-first rounded geometry with restrained continuous micro-volume.",
+  "deviations": [
+    "The navy base drifts darker than #172333 and retains low-level background tonal variation",
+    "Ivory and ultramarine bases drift from the requested numeric palette",
+    "The two folded arms consolidate into one dominant overlapping loop, weakening the paired-arm cue",
+    "Tonal modeling on the head, crest, and body is stronger than the permitted near-flat micro-volume"
+  ]
+}

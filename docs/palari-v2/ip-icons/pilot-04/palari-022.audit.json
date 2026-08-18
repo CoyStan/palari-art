@@ -1,0 +1,24 @@
+{
+  "id": "palari-022",
+  "source": "public/palari-v2/palari-022/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-04/palari-022.png",
+  "silhouette": "column",
+  "characteristicColor": "#6E202C",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "1d33639e0d4c1778e7bb316203db6fadcfa07539426e63a01883a317eca27566",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Slender fin-backed column with a large round head, tall burgundy rear fan, narrow neck, long front inset, paired clasped arms, a legless base, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-referenced flat-first lower-right icon using ivory #E9E6DF, burgundy #6E202C, and background-only navy #172333; requested the broad rear fin, both calm eyes, one long front inset, smooth clasped arms, exact six seeds, an opaque uniform background, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains visible vignette-like tonal variation instead of a uniform flat field.",
+    "Placement reads bottom-centered rather than emerging clearly from the lower-right.",
+    "Burgundy regions drift brighter and redder than the requested #6E202C base.",
+    "Ivory and burgundy regions retain stronger tonal modeling than the requested near-flat micro-volume."
+  ]
+}

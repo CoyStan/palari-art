@@ -7,6 +7,7 @@ const repositoryRoot = fileURLToPath(new URL("../", import.meta.url));
 const grammar = JSON.parse(await readFile(path.join(repositoryRoot, "docs/palari-v2/shape-grammar.json"), "utf8"));
 const collection = JSON.parse(await readFile(path.join(repositoryRoot, "docs/palari-v2/collection.json"), "utf8"));
 const webManifest = JSON.parse(await readFile(path.join(repositoryRoot, "public/palari-v2-web/manifest.json"), "utf8"));
+const iconWebManifest = JSON.parse(await readFile(path.join(repositoryRoot, "public/palari-v2-icons-web/manifest.json"), "utf8"));
 const runtimeRegistry = await readFile(path.join(repositoryRoot, "src/v2/data.ts"), "utf8");
 const problems = [];
 
@@ -48,6 +49,8 @@ function webpDimensions(buffer, fileName) {
 if (grammar.version !== "1.0.0" || grammar.status !== "frozen-v1") problems.push("visual grammar must be frozen at 1.0.0.");
 if (collection.visualGrammar !== grammar.version || collection.avatars.length !== 41) problems.push("collection must contain 41 grammar-1.0 avatars.");
 if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 41) problems.push("V2 WebP manifest is incomplete.");
+if (iconWebManifest.schemaVersion !== 1 || iconWebManifest.recipeVersion !== 1 || iconWebManifest.avatars.length !== 41) problems.push("V2 emoticon WebP manifest is incomplete.");
+if (!runtimeRegistry.includes("palari-v2-icons-web/${id}") || !runtimeRegistry.includes("emoticonThumbnail")) problems.push("V2 emoticons are missing from the runtime registry.");
 
 const characteristicById = new Map(grammar.characteristicColors.map((color) => [color.id, color.uiSwatch.toUpperCase()]));
 const materialById = new Map(grammar.materials.map((material) => [material.id, material.uiSwatch.toUpperCase()]));
@@ -101,6 +104,24 @@ for (const [index, avatar] of collection.avatars.entries()) {
       if (layer !== "source" && (record.output.lossless !== true || record.output.differingPixels !== 0)) problems.push(`${avatar.id}/${layer}: mask WebP must be verified lossless.`);
     } catch (error) { problems.push(error.message); }
   }
+
+  const iconEntry = iconWebManifest.avatars.find((entry) => entry.avatarId === avatar.id);
+  if (!iconEntry) { problems.push(`${avatar.id}: missing emoticon WebP manifest entry.`); continue; }
+  try {
+    const sourceBuffer = await readFile(path.join(repositoryRoot, iconEntry.source.path));
+    if (sha256(sourceBuffer) !== iconEntry.source.sha256) problems.push(`${avatar.id}: emoticon source checksum mismatch.`);
+    const sourceDetails = pngDetails(sourceBuffer, iconEntry.source.path);
+    if (sourceDetails.width !== 1254 || sourceDetails.height !== 1254 || sourceDetails.colorType !== 2) problems.push(`${iconEntry.source.path}: emoticon source must be an opaque 1254 x 1254 RGB PNG.`);
+  } catch (error) { problems.push(error.message); }
+  for (const [assetName, expectedSize] of Object.entries({ icon: 1024, thumbnail: 256 })) {
+    const record = iconEntry.assets[assetName];
+    try {
+      const outputBuffer = await readFile(path.join(repositoryRoot, record.path));
+      if (sha256(outputBuffer) !== record.sha256) problems.push(`${avatar.id}/${assetName}: emoticon WebP checksum mismatch.`);
+      const dimensions = webpDimensions(outputBuffer, record.path);
+      if (dimensions.width !== expectedSize || dimensions.height !== expectedSize) problems.push(`${record.path}: incorrect dimensions.`);
+    } catch (error) { problems.push(error.message); }
+  }
 }
 
 if (problems.length) {
@@ -108,5 +129,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log(`Verified frozen grammar 1.0, ${collection.avatars.length} reviewed V2 masters, independent deterministic color-key masks, ${collection.avatars.length * 3} delivery WebPs, runtime registration, dimensions, and checksums.`);
+  console.log(`Verified frozen grammar 1.0, ${collection.avatars.length} reviewed V2 masters, independent deterministic color-key masks, ${collection.avatars.length * 3} ceramic and ${collection.avatars.length * 2} emoticon delivery WebPs, runtime registration, dimensions, and checksums.`);
 }

@@ -1,0 +1,23 @@
+{
+  "id": "palari-032",
+  "source": "public/palari-v2/palari-032/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-06/palari-032.png",
+  "silhouette": "column",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "62495dc8ffdfa207d0045af66c49f0f77c2284d552200718aad9a952903f0985",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall Chalice Column with a broad shallow cup crown, paired sleepy eyes, long forest torso opening, symmetric resting arms, and a stable legless base.",
+  "promptSummary": "Identity-reference-only built-in ImageGen mark using exactly warm ivory, forest, and background-only navy; flat-first rounded geometry; lower-right base crop; two calm eyes; no mouth; exact two-row six-aperture seed.",
+  "deviations": [
+    "The deep-navy background retains visible center-to-edge tonal variation instead of a perfectly uniform solid field.",
+    "The neck and arm contacts retain discrete shading seams and more depth modeling than the strict micro-volume limit allows.",
+    "The generated ivory, forest, and navy families visibly drift from the requested numeric hex values."
+  ]
+}

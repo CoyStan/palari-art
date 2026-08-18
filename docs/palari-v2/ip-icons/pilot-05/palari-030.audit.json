@@ -1,0 +1,25 @@
+{
+  "id": "palari-030",
+  "source": "public/palari-v2/palari-030/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-05/palari-030.png",
+  "silhouette": "arch",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "7fbdeb7fa1a7e6a13c3260c9e09ba465d6397f661c807c2b6aed76eba7c31a0b",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Protective Cloak arch with a very broad low hood, one long forest face opening, two calm half-lidded eyes, two overlapping diagonal cloak arms, a cropped legless base, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-referenced flat-first lower-right icon using ivory #E9E6DF, forest #123C2D, and background-only navy #172333; requested the broad low hood, one descending opening, both calm eyes, crossed rounded cloak arms, exact six-part large-small-large seed, base-only crop, uniform opaque background, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains a visible center-to-edge vignette instead of a perfectly uniform flat field.",
+    "Placement reads broadly bottom-centered rather than emerging clearly from the lower-right.",
+    "The forest opening terminates in a relatively sharp point instead of a visibly blunt rounded end.",
+    "Ivory and forest modeling is stronger than the requested near-flat micro-volume, and a gray-beige seam separates the overlapping cloak arms.",
+    "The numeric ivory, forest, and navy bases visibly drift from the requested hex colors."
+  ]
+}

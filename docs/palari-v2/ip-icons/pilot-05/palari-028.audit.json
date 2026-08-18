@@ -1,0 +1,24 @@
+{
+  "id": "palari-028",
+  "source": "public/palari-v2/palari-028/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-05/palari-028.png",
+  "silhouette": "column",
+  "characteristicColor": "#164A7A",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "43a8d4826accf95bbf9b42cfbd7a05cc7c0deaa5cb28317214eef21d72d535d1",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Front-facing Disc column with an extra-wide low rounded crown and paired side lobes, two calm eyes, a long ultramarine neck, two outward rounded arms, one circular ultramarine abdomen opening, a flat legless base, and six lower seed apertures.",
+  "promptSummary": "Identity-reference-only flat-first Palari mark using ceramic #E9E6DF, ultramarine #164A7A, and background-only navy #172333; lower-right base crop; 6–10 rounded shapes; exact two eyes, two arms, one circular opening, and six-aperture 3-over-3 seed; no mouth, scene, texture, realism, or discrete shading.",
+  "deviations": [
+    "The navy background retains a visible center-to-edge vignette after the targeted retry instead of a perfectly uniform #172333 field.",
+    "The mark has only a mild rightward bias and still reads close to centered rather than clearly emerging from the lower-right.",
+    "The ultramarine neck and abdomen opening drift brighter than the requested #164A7A base in their modeled areas.",
+    "The body and ultramarine regions retain more tonal modeling than the strict micro-volume target."
+  ]
+}

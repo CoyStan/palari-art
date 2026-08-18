@@ -1,0 +1,23 @@
+{
+  "id": "palari-023",
+  "source": "public/palari-v2/palari-023/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-04/palari-023.png",
+  "silhouette": "crescent",
+  "characteristicColor": "#6E202C",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "880ec0dd212a639acbac9290d55f000ddfb01a105a541735f102d5031ad0a9cb",
+  "seedApertureCount": 5,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Elegant asymmetric crescent-horn sweep with two blunt crown terminals, two calm eyes, one long burgundy side opening, paired rounded arms, and a stable legless base.",
+  "promptSummary": "Identity-reference-only generation in the shared ivory, burgundy, and navy palette; lower-left crescent composition with exact-six seed instruction, followed by one targeted seed, placement, and background retry.",
+  "deviations": [
+    "Seed mark contains five apertures instead of the required six after the permitted targeted retry",
+    "Navy background retains a visible central glow and edge darkening rather than a uniform flat field",
+    "Tonal variation in the ivory body and burgundy opening is stronger than the requested near-imperceptible micro-volume"
+  ]
+}

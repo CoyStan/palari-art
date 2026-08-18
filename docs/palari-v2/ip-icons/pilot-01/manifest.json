@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-18",
+  "status": "review-candidates",
+  "productionRegistered": false,
+  "generator": "built-in ImageGen",
+  "skill": {
+    "name": "ip-as-logo",
+    "path": ".agents/skills/ip-as-logo/SKILL.md"
+  },
+  "sharedPalette": {
+    "body": "#E9E6DF",
+    "background": "#172333"
+  },
+  "policy": {
+    "sourceRole": "identity-reference-only",
+    "maximumAttemptsPerAsset": 2,
+    "postProcessing": "none",
+    "nativeOutputPreserved": true
+  },
+  "assets": [
+    {
+      "id": "palari-001",
+      "silhouette": "column",
+      "source": "public/palari-v2/palari-001/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-01/palari-001.png",
+      "characteristicColor": "#0B5A59",
+      "composition": "lower-left",
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "730474d97f1cdb3cda2cc5de2931b8365871101ac9b8a53f74f8c87b3c958902",
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Ivory modeling is stronger than the continuous micro-volume target",
+        "Small lateral points remain on the eyelids"
+      ]
+    },
+    {
+      "id": "palari-002",
+      "silhouette": "arch",
+      "source": "public/palari-v2/palari-002/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-01/palari-002.png",
+      "characteristicColor": "#8A4B00",
+      "composition": "lower-right",
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "3d836074fcea40f31acd589e83c40d02e7dd4ac26965fffd78f4df5bab713eb7",
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Hood and arm overlaps retain stronger paper-like depth than allowed",
+        "Placement reads center-right rather than emerging clearly from the lower-right"
+      ]
+    },
+    {
+      "id": "palari-003",
+      "silhouette": "bell",
+      "source": "public/palari-v2/palari-003/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-01/palari-003.png",
+      "characteristicColor": "#123C2D",
+      "composition": "lower-left",
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "4e8d7a61d8eccaabe06ec5c25299a84b3d400bf9870c9f5ea976e87c37354c1c",
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Seed mark contains five apertures instead of six"
+      ]
+    },
+    {
+      "id": "palari-006",
+      "silhouette": "crescent",
+      "source": "public/palari-v2/palari-006/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-01/palari-006.png",
+      "characteristicColor": "#4B316F",
+      "composition": "lower-right",
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "9257ce41d24faa1684db15f276fbbf2da8d38d41a25cd7a94502f9e2903ab7a4",
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Faint contact seam remains beneath the diagonal arm",
+        "Crown and reveal terminate more sharply than the blunt-geometry target"
+      ]
+    },
+    {
+      "id": "palari-008",
+      "silhouette": "pod",
+      "source": "public/palari-v2/palari-008/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-01/palari-008.png",
+      "characteristicColor": "#0B5A59",
+      "composition": "lower-left",
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "42ac2a547da5d54c3d0eb8ab811724b6519dc903556870d5f8cfef915b23ec87",
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Faint arm contact seams remain",
+        "Placement reads centered rather than emerging clearly from the lower-left"
+      ]
+    },
+    {
+      "id": "palari-010",
+      "silhouette": "stack",
+      "source": "public/palari-v2/palari-010/source.png",
+      "output": "docs/palari-v2/ip-icons/pilot-01/palari-010.png",
+      "characteristicColor": "#6E202C",
+      "composition": "lower-right",
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "sha256": "3b2606e6bc3ee1d02abe037ba8d01d33f74b8a853ac989699a12a32a4651f52a",
+      "smallSizeStatus": "pass",
+      "skillStatus": "reject",
+      "deviations": [
+        "Visible navy background variation",
+        "Seed mark contains seven apertures instead of six"
+      ]
+    }
+  ],
+  "reviewComposites": [
+    {
+      "path": "docs/palari-v2/ip-icons/pilot-01/contact-sheet.png",
+      "sha256": "bc7fe1531ec7e72b8fe4329f9f9c8f0d677266066e20bbcd82468125b3b2632d"
+    },
+    {
+      "path": "docs/palari-v2/ip-icons/pilot-01/contact-sheet-32px.png",
+      "sha256": "7f814d4249b2b933ec805fdd29cbcd2528c0a5e1e1f7b77627a40938e246ebd3"
+    }
+  ]
+}

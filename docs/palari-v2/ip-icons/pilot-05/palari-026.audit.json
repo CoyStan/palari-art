@@ -1,0 +1,24 @@
+{
+  "id": "palari-026",
+  "source": "public/palari-v2/palari-026/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-05/palari-026.png",
+  "silhouette": "pod",
+  "characteristicColor": "#164A7A",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "951df9f883a5254fbbfb5a8079499fd290f8122cbbe48e953d4320f05c685b62",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Asymmetric pod in three-quarter profile with a huge right-leaning cup crown, paired calm eyes, long ultramarine teardrop opening, paired wrapping arms, and a rounded legless base.",
+  "promptSummary": "Identity-reference-only built-in ImageGen candidate using ivory #E9E6DF, ultramarine #164A7A, and background-only navy #172333; the targeted retry improved lower-right placement and removed eye and arm outlines.",
+  "deviations": [
+    "The navy background retains visible low-frequency variation rather than a perfectly flat fill.",
+    "The figure occupies slightly less than the requested roughly 80% width and leaves substantial upper-left negative space.",
+    "Ivory and ultramarine tonal modeling remains more visible than the requested near-flat micro-volume.",
+    "The small seed apertures lose individual separation at 32 x 32 even though the overall identity remains readable."
+  ]
+}

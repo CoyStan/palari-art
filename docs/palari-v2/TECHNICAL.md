@@ -26,11 +26,13 @@ Both keyed regions are solid rather than texture-weighted; source luminance pres
 
 For customized renders, `src/lib/recolor-v2.ts` loads the source and both masks once, caches their pixels, and transfers selected material and characteristic colors while retaining source-relative luminance. It composites the transparent figure over a chosen background at 1024 × 1024. No request leaves the browser when a swatch changes or an image is exported.
 
-The editor's **Original** toggle takes a separate source-only render path. It draws the transparent delivery source without reading either prepared mask, applying a recolor, or adding a background. Selecting any finish swatch returns to the customized render; exporting while Original is active preserves the source transparency.
+The editor's **Original** view takes a separate source-only render path. It draws the transparent delivery source without reading either prepared mask, applying a recolor, or adding a background. The **Emoticon** view draws the selected figure's fixed-palette 1024px logo asset and swaps the shape rail to its 256px emoticon thumbnails. Selecting any finish swatch returns to the customized render. Exports use the active view: Original preserves source transparency, while Emoticon exports an opaque 1024 × 1024 PNG.
 
 ## Delivery and review
 
 `npm run palari-v2:web:generate` creates one lossy transparent source WebP and two pixel-identical lossless mask WebPs per figure. `public/palari-v2-web/manifest.json` checksum-links all 123 outputs to their PNG authorities.
+
+`node scripts/generate-palari-v2-icon-assets.mjs` creates one 1024px export WebP and one 256px thumbnail WebP per figure. `public/palari-v2-icons-web/manifest.json` checksum-links all 82 outputs to the untouched native PNG authorities under `docs/palari-v2/ip-icons/`. `npm run verify:palari-v2` validates both delivery tiers, their dimensions and checksums, and runtime registration.
 
 The transparent masters and characteristic masks were reviewed as contact sheets. Browser review covered these cross-material cases:
 

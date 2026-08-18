@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-18",
+  "status": "review-candidates",
+  "productionRegistered": false,
+  "ids": ["palari-025", "palari-026", "palari-027", "palari-028", "palari-029", "palari-030"],
+  "auditFiles": [
+    "docs/palari-v2/ip-icons/pilot-05/palari-025.audit.json",
+    "docs/palari-v2/ip-icons/pilot-05/palari-026.audit.json",
+    "docs/palari-v2/ip-icons/pilot-05/palari-027.audit.json",
+    "docs/palari-v2/ip-icons/pilot-05/palari-028.audit.json",
+    "docs/palari-v2/ip-icons/pilot-05/palari-029.audit.json",
+    "docs/palari-v2/ip-icons/pilot-05/palari-030.audit.json"
+  ],
+  "reviewSummary": {"smallSizePass": 6, "exactSixSeedApertures": 6, "strictSkillPass": 0},
+  "reviewComposites": [
+    {"path": "docs/palari-v2/ip-icons/pilot-05/contact-sheet.png", "sha256": "acde736292e48c8c459a33abf1e26a1db1671f7fe9c85cdd5c855cfb56fad7a7"},
+    {"path": "docs/palari-v2/ip-icons/pilot-05/contact-sheet-32px.png", "sha256": "476dc67d3ccdc4a259f533a3cdd7deb2614bacdaf0472d8e616c1eb06a9899a4"}
+  ]
+}

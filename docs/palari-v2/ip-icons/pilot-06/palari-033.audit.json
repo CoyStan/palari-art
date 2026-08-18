@@ -1,0 +1,24 @@
+{
+  "id": "palari-033",
+  "source": "public/palari-v2/palari-033/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-06/palari-033.png",
+  "silhouette": "pod",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "f73c10a41c41a01b10b28528c5591328c9a81836b630806b5ac34b72d4333d8d",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Compact sideways-hooded Cocoon Pod with an oversized asymmetric sweeping crown, one continuous forest face opening, paired sleepy eyes, two resting front arms, broad forest side inset, and a stable legless base.",
+  "promptSummary": "Identity-reference-only built-in ImageGen mark using exactly warm ivory, forest, and background-only navy; flat-first rounded geometry; lower-left base crop; asymmetric hood, side inset, two calm eyes, no mouth, and an exact two-row six-aperture seed.",
+  "deviations": [
+    "The deep-navy background retains visible center-to-edge tonal variation instead of a perfectly uniform solid field.",
+    "Placement reads bottom-center rather than emerging clearly from the lower-left.",
+    "The arm overlaps retain discrete contact seams and stronger depth modeling than the strict micro-volume limit allows.",
+    "The generated ivory, forest, and navy families visibly drift from the requested numeric hex values."
+  ]
+}

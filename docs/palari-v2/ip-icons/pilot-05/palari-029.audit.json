@@ -1,0 +1,24 @@
+{
+  "id": "palari-029",
+  "source": "public/palari-v2/palari-029/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-05/palari-029.png",
+  "silhouette": "crescent",
+  "characteristicColor": "#164A7A",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "eec9b8ced16d2c75310fedf1cfafb86f27d5341074389557d6b9e92a9647adb9",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall curved side-channel Sweep with a blunt elliptical open crown, rounded rear lobe, long ultramarine neck, broad ivory crescent shell, paired side arms, two calm eyes, a cropped legless base, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-referenced flat-first lower-left icon using ivory #E9E6DF, ultramarine #164A7A, and background-only navy #172333; requested the source-specific crown and C-shaped side channel, both calm eyes, paired rounded arms, exact six-part large-small-large seed, base-only crop, uniform opaque background, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains a visible center-to-edge vignette instead of a perfectly uniform flat field.",
+    "Ivory and ultramarine regions retain stronger tonal modeling than the requested near-flat continuous micro-volume, including a discrete gray-beige seam on the left arm.",
+    "The numeric ivory, ultramarine, and navy bases visibly drift from the requested hex colors.",
+    "The crown and neck add disconnected ultramarine regions beyond the dominant side opening, although those regions preserve source-specific identity cues."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "palari-013",
+  "source": "public/palari-v2/palari-013/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-03/palari-013.png",
+  "silhouette": "column",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "15bb75c9016b193cadaf111258b57bc5db080ed2f138ee1816c0d7956b6ef0e1",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall slender Column with a two-layer asymmetric mushroom-canopy crown, long forest inner vessel, two calm half-lidded eyes, folded side arms, and a tapered legless base.",
+  "promptSummary": "Identity-reference-only flat-first Palari mark using ivory #E9E6DF, forest #123C2D, and background-only navy #172333; lower-left crop; 6–10 rounded shapes; exact six-aperture large-small-large seed; no mouth, scene, texture, realism, or discrete shading.",
+  "deviations": [
+    "The navy background retains a visible center-to-edge tonal variation instead of a perfectly uniform field.",
+    "Thin forest internal contours remain along both arm edges.",
+    "Forest appears in two disconnected lower side reveals in addition to the dominant central opening.",
+    "The ivory and forest regions retain more tonal modeling than the strict micro-volume target."
+  ]
+}

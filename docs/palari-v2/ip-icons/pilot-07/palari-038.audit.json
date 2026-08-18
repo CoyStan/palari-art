@@ -1,0 +1,24 @@
+{
+  "id": "palari-038",
+  "source": "public/palari-v2/palari-038/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-07/palari-038.png",
+  "silhouette": "bell",
+  "characteristicColor": "#8A4B00",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "e0db7c55b8cf7e7a25103b8e90faa6c23afa103f5a9eb9e40b538d4bc6c5fdf1",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Wide shallow bowl-headed Bell with a broad crown opening, paired calm eyes, one thoughtful hand-to-cheek arm, one tucked side arm, a long oval torso opening, a legless base, and an exact two-by-three six-aperture seed mark.",
+  "promptSummary": "Built-in ImageGen identity-reference generation using the Palari 038 master, constrained to ivory #E9E6DF, amber #8A4B00, and background-only navy #172333; requested an upright lower-right thinking-bowl icon, paired calm eyes, both asymmetric arms, exact six seeds, a base-only crop, and no mouth or material effects; the second and final attempt targeted background uniformity, lower-right placement, and the base crop.",
+  "deviations": [
+    "The navy background retains visible center-to-edge tonal variation instead of a perfectly uniform flat field.",
+    "A thin amber-brown contact contour remains along the raised thinking arm and reads as a fragile internal line.",
+    "Ivory and amber retain stronger tonal modeling than the requested near-flat micro-volume.",
+    "The six-aperture seed mark is exact and visible at native size but becomes indistinct at 32 px."
+  ]
+}

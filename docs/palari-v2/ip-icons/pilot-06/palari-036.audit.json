@@ -1,0 +1,24 @@
+{
+  "id": "palari-036",
+  "source": "public/palari-v2/palari-036/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-06/palari-036.png",
+  "silhouette": "pod",
+  "characteristicColor": "#8A4B00",
+  "composition": "lower-right",
+  "attempts": 1,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "0fdcbcb64593e1e8be5e57b4a1de4c790c0f3a41be235bc1b9feed84edabf92b",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Compact legless Pod with a viewer-right tilted bowl head, broad amber top opening, large amber side inset, two calm eyes, both short rounded arms, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-reference-only flat-first lower-right icon using ivory #E9E6DF, amber #8A4B00, and background-only navy #172333; requested the tilted bowl head, top opening, side inset, both calm eyes and arms, exact six seeds, base-only crop, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains visible center-to-edge tonal variation instead of a perfectly uniform field.",
+    "Placement reads bottom-center/right rather than emerging clearly from the lower-right.",
+    "The bowl rim and arm junctions retain stronger layered volume than the strict continuous micro-volume target.",
+    "Ivory and amber retain stronger tonal modeling than requested."
+  ]
+}

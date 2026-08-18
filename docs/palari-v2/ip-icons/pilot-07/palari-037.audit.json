@@ -1,0 +1,24 @@
+{
+  "id": "palari-037",
+  "source": "public/palari-v2/palari-037/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-07/palari-037.png",
+  "silhouette": "column",
+  "characteristicColor": "#8A4B00",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "52d3ccee72d725c13c21b4f4d44fe716d05bcaa99dacd5635288ceca3575ab68",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall slender Column with a bulbous oval crown, small top opening, paired calm eyes, long oval torso opening, both short side arms, a legless flared base, and an exact two-by-three six-aperture seed mark.",
+  "promptSummary": "Built-in ImageGen identity-reference generation using the Palari 037 master, constrained to ivory #E9E6DF, amber #8A4B00, and background-only navy #172333; requested an upright lower-left long-aperture Column, paired calm eyes, both arms, exact six seeds, a base-only crop, and no mouth or material effects; the second and final attempt targeted background uniformity, lower-left placement, and the base crop.",
+  "deviations": [
+    "The navy background retains visible center-to-edge tonal variation instead of a perfectly uniform flat field.",
+    "Ivory and amber retain stronger tonal modeling than the requested near-flat micro-volume.",
+    "The amber eye outlines and side recesses add more internal contour detail than the requested 6–10 broad-shape budget.",
+    "The six-aperture seed mark is exact and visible at native size but becomes indistinct at 32 px."
+  ]
+}

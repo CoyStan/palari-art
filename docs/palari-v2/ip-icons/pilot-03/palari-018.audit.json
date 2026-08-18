@@ -1,0 +1,24 @@
+{
+  "id": "palari-018",
+  "source": "public/palari-v2/palari-018/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-03/palari-018.png",
+  "silhouette": "column",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 1,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "3f495a9a4b6fd99ca075b71d51f58902b5319eee629c0b8e2e358e5cae81ef56",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Broad asymmetric canopy over a long forest core with paired sleepy eyes, crossed fingerless arms, overlapping tapered ivory shell panels, a legless flared base, and six-part seed mark.",
+  "promptSummary": "Reference-only logo generation using ivory #E9E6DF and forest #123C2D on a background-only navy #172333 field; flat-first rounded geometry, lower-right emergence, base-only crop, blunt canopy tip, subtle coherent micro-volume, no mouth, no scene, and exact six-part seed required.",
+  "deviations": [
+    "The navy background has a visible radial vignette instead of a uniform solid field.",
+    "The figure remains essentially centered with a navy gap beneath the base rather than emerging from the lower-right with a base-only crop.",
+    "The canopy narrows to a visually sharp tip instead of retaining a clearly blunt rounded end.",
+    "Surface grain, edge highlights, and layered contact modeling are stronger than the allowed micro-volume, and the numeric palette bases visibly drift."
+  ]
+}

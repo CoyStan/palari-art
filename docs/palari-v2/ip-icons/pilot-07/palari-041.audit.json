@@ -1,0 +1,25 @@
+{
+  "id": "palari-041",
+  "source": "public/palari-v2/palari-041/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-07/palari-041.png",
+  "silhouette": "column",
+  "characteristicColor": "#164A7A",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "f534f8ab2f3c59f477651a37e8fb3352ff00206d47732cb513c254fa245410dc",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall teardrop-column figure with a blunt open crown, two calm eyes, one long central opening, a thoughtful hand-to-cheek arm, a hand-on-hip arm, a stable legless base, and an exact two-by-three six-aperture seed mark.",
+  "promptSummary": "Built-in ImageGen identity-reference generation using the Palari 041 master, constrained to a warm-off-white body, ultramarine characteristic regions, a navy-only background, lower-left upright framing, broad flat-first geometry, no mouth, and exactly six seed apertures; the second and final attempt targeted background uniformity and removal of navy arm seams.",
+  "deviations": [
+    "Visible deep-navy background variation remains instead of a perfectly uniform flat field",
+    "A pale internal seam remains along the thoughtful arm",
+    "The negative-space gap inside the hip arm terminates in a sharp triangular point",
+    "Off-white and ultramarine regions drift slightly from the requested numeric palette through stronger-than-requested tonal modeling",
+    "The six-aperture seed mark is present at native size but becomes indistinct at 32 px"
+  ]
+}

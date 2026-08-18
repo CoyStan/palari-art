@@ -1,0 +1,24 @@
+{
+  "id": "palari-020",
+  "source": "public/palari-v2/palari-020/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-04/palari-020.png",
+  "silhouette": "arch",
+  "characteristicColor": "#123C2D",
+  "composition": "lower-right",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "1bd1abf1f9fca6b1ab37e0efd06a481fb14246d2336999d9fbd1d2dc495c320f",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Tall rounded doorway arch with one forest opening, two calm eyes, a welcoming left arm, a resting right arm, a legless base, and the six-aperture Palari seed mark.",
+  "promptSummary": "Identity-referenced flat-first lower-right icon using ivory #E9E6DF, forest #123C2D, and background-only navy #172333; requested one opening, both calm eyes, contrasting rounded arm poses, exact six seeds, an opaque uniform background, and no mouth or material effects.",
+  "deviations": [
+    "The navy background retains visible vignette-like tonal variation instead of a uniform flat field.",
+    "A discrete gray-beige contact-shadow seam remains inside the resting right arm and reads as an additional tonal region.",
+    "Ivory and forest regions retain stronger tonal modeling than the requested near-flat micro-volume.",
+    "The welcoming arm uses a two-lobed mitten end rather than the source's open-hand gesture."
+  ]
+}

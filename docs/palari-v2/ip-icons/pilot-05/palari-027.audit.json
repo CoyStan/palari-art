@@ -1,0 +1,24 @@
+{
+  "id": "palari-027",
+  "source": "public/palari-v2/palari-027/source.png",
+  "output": "docs/palari-v2/ip-icons/pilot-05/palari-027.png",
+  "silhouette": "column",
+  "characteristicColor": "#164A7A",
+  "composition": "lower-left",
+  "attempts": 2,
+  "selectedAttempt": 2,
+  "dimensions": [1254, 1254],
+  "opaque": true,
+  "sha256": "d2948dc137e02cf364c05bbe7cab87f5fae0a8c7a2d73780ea6712569ba98c95",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "skillStatus": "reject",
+  "identitySummary": "Slender left-facing Profile column with a blunt snout, rear ultramarine dome crest, two calm eyes, folded rounded arms, one long rear-side ultramarine opening, a flat legless base, and six lower-front seed apertures.",
+  "promptSummary": "Identity-reference-only flat-first Palari mark using ceramic #E9E6DF, ultramarine #164A7A, and background-only navy #172333; lower-left base crop; 6–10 rounded shapes; exact two eyes, two arms, one opening, and six-aperture 3-over-3 seed; no mouth, scene, texture, realism, or discrete shading.",
+  "deviations": [
+    "The navy background retains a visible center-to-edge vignette after the targeted retry instead of a perfectly uniform #172333 field.",
+    "The mark remains horizontally centered with space below its base instead of emerging from the lower-left with a base-only crop.",
+    "The ultramarine crest and opening drift brighter than the requested #164A7A base in their modeled areas.",
+    "The body and ultramarine regions retain more tonal modeling than the strict micro-volume target."
+  ]
+}
