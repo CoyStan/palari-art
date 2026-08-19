@@ -1,9 +1,21 @@
-import { Download, Eye, Images, Palette, RotateCcw, Smile } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
+import { ClipboardCheck, Images, Palette } from "lucide-react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { assetUrl } from "../lib/assets";
-import { backgrounds, characteristicColors, materials, v2Avatars } from "./data";
-import { SwatchGroup } from "./SwatchGroup";
-import { V2Canvas } from "./V2Canvas";
+import { FinishInspector } from "./FinishInspector";
+import { ShapeLibrary } from "./ShapeLibrary";
+import { StandardPreview, type PreviewMode } from "./StandardPreview";
+import { backgrounds, characteristicColors, materials, v2Avatars, type PaletteOption, type PalariV2Avatar } from "./data";
+import { PreferencePanel } from "./preferences/PreferencePanel";
+import { PreferencePreview } from "./preferences/PreferencePreview";
+import {
+  getAvatarPreference,
+  matchesPreferenceFilter,
+  type PreferenceFilter,
+  type PreferenceTarget,
+  type PreferenceVerdict,
+} from "./preferences/model";
+import { usePalariPreferences } from "./preferences/usePalariPreferences";
+import { useReviewKeyboard } from "./preferences/useReviewKeyboard";
 
 const defaults = {
   material: materials[1],
@@ -11,15 +23,22 @@ const defaults = {
   background: backgrounds[0],
 };
 
-type PreviewMode = "customized" | "emoticon" | "original";
+function matchingAvatars(filter: PreferenceFilter, records: ReturnType<typeof usePalariPreferences>["records"]) {
+  return v2Avatars.filter((item) => matchesPreferenceFilter(getAvatarPreference(records, item.id), filter));
+}
 
 export function V2App() {
-  const [avatar, setAvatar] = useState(v2Avatars[4]);
+  const [avatar, setAvatar] = useState<PalariV2Avatar>(v2Avatars[4]);
   const [material, setMaterial] = useState(defaults.material);
   const [characteristic, setCharacteristic] = useState(defaults.characteristic);
   const [background, setBackground] = useState(defaults.background);
   const [previewMode, setPreviewMode] = useState<PreviewMode>("customized");
+  const [reviewMode, setReviewMode] = useState(false);
+  const [reviewTarget, setReviewTarget] = useState<PreferenceTarget>("ceramic");
+  const [reviewFilter, setReviewFilter] = useState<PreferenceFilter>("all");
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const preferences = usePalariPreferences(v2Avatars);
+
   const renderOptions = useMemo(
     () => ({
       material: material.uiSwatch,
@@ -30,6 +49,36 @@ export function V2App() {
     [background.uiSwatch, characteristic.uiSwatch, material.uiSwatch, previewMode],
   );
 
+  const filteredAvatars = useMemo(
+    () => matchingAvatars(reviewFilter, preferences.records),
+    [preferences.records, reviewFilter],
+  );
+  const reviewAvatars = useMemo(() => {
+    if (!reviewMode || filteredAvatars.some((item) => item.id === avatar.id)) return filteredAvatars;
+    return [avatar, ...filteredAvatars];
+  }, [avatar, filteredAvatars, reviewMode]);
+
+  const moveReview = useCallback((direction: -1 | 1) => {
+    if (reviewAvatars.length === 0) return;
+    setAvatar((current) => {
+      const currentIndex = Math.max(0, reviewAvatars.findIndex((item) => item.id === current.id));
+      const nextIndex = (currentIndex + direction + reviewAvatars.length) % reviewAvatars.length;
+      return reviewAvatars[nextIndex];
+    });
+  }, [reviewAvatars]);
+  const previousReview = useCallback(() => moveReview(-1), [moveReview]);
+  const nextReview = useCallback(() => moveReview(1), [moveReview]);
+  const rateActive = useCallback((verdict: PreferenceVerdict) => {
+    preferences.setVerdict(avatar.id, reviewTarget, verdict);
+  }, [avatar.id, preferences.setVerdict, reviewTarget]);
+
+  useReviewKeyboard({
+    enabled: reviewMode,
+    onVerdict: rateActive,
+    onPrevious: previousReview,
+    onNext: nextReview,
+  });
+
   function reset() {
     setMaterial(defaults.material);
     setCharacteristic(defaults.characteristic);
@@ -37,19 +86,15 @@ export function V2App() {
     setPreviewMode("customized");
   }
 
-  function chooseMaterial(option: typeof material) {
-    setMaterial(option);
+  function chooseFinish(setter: (option: PaletteOption) => void, option: PaletteOption) {
+    setter(option);
     setPreviewMode("customized");
   }
 
-  function chooseCharacteristic(option: typeof characteristic) {
-    setCharacteristic(option);
-    setPreviewMode("customized");
-  }
-
-  function chooseBackground(option: typeof background) {
-    setBackground(option);
-    setPreviewMode("customized");
+  function chooseReviewFilter(filter: PreferenceFilter) {
+    setReviewFilter(filter);
+    const nextAvatars = matchingAvatars(filter, preferences.records);
+    if (nextAvatars.length > 0 && !nextAvatars.some((item) => item.id === avatar.id)) setAvatar(nextAvatars[0]);
   }
 
   function download() {
@@ -65,107 +110,88 @@ export function V2App() {
     anchor.click();
   }
 
+  const activePreference = getAvatarPreference(preferences.records, avatar.id);
+  const reviewPosition = Math.max(1, reviewAvatars.findIndex((item) => item.id === avatar.id) + 1);
+
   return (
-    <main className="v2-shell">
+    <main className="v2-shell" data-review-mode={reviewMode}>
       <header className="v2-header">
         <a className="v2-brand" href={assetUrl("v2/")} aria-label="Palari V2 home">
           <span className="v2-seed" aria-hidden="true"><i /><i /><i /><i /><i /><i /></span>
           <span>Palari <sup>V2</sup></span>
         </a>
         <p>Personal Artificial Intelligence</p>
-        <a className="v2-portrait-link" href={assetUrl("")}><Images size={16} /> Portraits</a>
+        <div className="v2-header-actions">
+          <button type="button" data-active={reviewMode} aria-pressed={reviewMode} onClick={() => setReviewMode((active) => !active)}>
+            {reviewMode ? <Palette size={15} /> : <ClipboardCheck size={15} />}
+            {reviewMode ? "Back to editor" : "Review taste"}
+          </button>
+          <a className="v2-portrait-link" href={assetUrl("")}><Images size={16} /> Portraits</a>
+        </div>
       </header>
 
       <section className="v2-workspace">
-        <aside className="v2-library" aria-label="Palari shapes">
-          <div className="v2-section-heading"><span>01</span><h2>Shape</h2></div>
-          <div className="v2-shape-list">
-            {v2Avatars.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                data-active={item.id === avatar.id}
-                onClick={() => setAvatar(item)}
-                aria-pressed={item.id === avatar.id}
-              >
-                <img
-                  src={assetUrl(previewMode === "emoticon" ? item.emoticonThumbnail : item.source)}
-                  alt=""
-                  width="54"
-                  height="54"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>{item.silhouette}</span>
-                <small>{item.id.replace("palari-", "No. ")}</small>
-              </button>
-            ))}
-          </div>
-        </aside>
+        <ShapeLibrary
+          avatars={reviewMode ? reviewAvatars : v2Avatars}
+          activeAvatar={avatar}
+          emoticonThumbnails={!reviewMode && previewMode === "emoticon"}
+          reviewMode={reviewMode}
+          records={preferences.records}
+          filter={reviewFilter}
+          completedCount={preferences.completedCount}
+          collectionTotal={v2Avatars.length}
+          onAvatarChange={setAvatar}
+          onFilterChange={chooseReviewFilter}
+        />
 
-        <section className="v2-preview" aria-label="Palari preview">
-          <div className="v2-preview-meta">
-            <span>{avatar.silhouette} form</span>
-            <span aria-live="polite">
-              {previewMode === "original"
-                ? "Original source · masks off"
-                : previewMode === "emoticon"
-                  ? "Emoticon · fixed palette"
-                  : `${material.label} · ${characteristic.label}`}
-            </span>
-            <div className="v2-view-toggle" role="group" aria-label="Preview version">
-              <button
-                type="button"
-                data-active={previewMode === "customized"}
-                aria-pressed={previewMode === "customized"}
-                onClick={() => setPreviewMode("customized")}
-              >
-                <Palette size={13} aria-hidden="true" /> Custom
-              </button>
-              <button
-                type="button"
-                data-active={previewMode === "emoticon"}
-                aria-pressed={previewMode === "emoticon"}
-                onClick={() => setPreviewMode("emoticon")}
-              >
-                <Smile size={13} aria-hidden="true" /> Emoticon
-              </button>
-              <button
-                type="button"
-                data-active={previewMode === "original"}
-                aria-pressed={previewMode === "original"}
-                onClick={() => setPreviewMode("original")}
-              >
-                <Eye size={13} aria-hidden="true" /> Original
-              </button>
-            </div>
-          </div>
-          <V2Canvas avatar={avatar} options={renderOptions} canvasRef={canvasRef} />
-          <p className="v2-preview-note">
-            {previewMode === "original"
-              ? "Original source. No masks or recoloring applied."
-              : previewMode === "emoticon"
-                ? "A compact, character-matched symbol made for small-size use."
-                : "One vessel. One characteristic color. Entirely yours."}
-          </p>
-        </section>
+        {reviewMode ? (
+          <PreferencePreview avatar={avatar} target={reviewTarget} onTargetChange={setReviewTarget} />
+        ) : (
+          <StandardPreview
+            avatar={avatar}
+            mode={previewMode}
+            options={renderOptions}
+            materialLabel={material.label}
+            characteristicLabel={characteristic.label}
+            canvasRef={canvasRef}
+            onModeChange={setPreviewMode}
+          />
+        )}
 
-        <aside className="v2-inspector" aria-label="Palari appearance">
-          <div className="v2-section-heading"><span>02</span><h2>Finish</h2></div>
-          <SwatchGroup legend="Ceramic material" options={materials} value={material.id} onChange={chooseMaterial} />
-          <SwatchGroup legend="Characteristic color" options={characteristicColors} value={characteristic.id} onChange={chooseCharacteristic} />
-          <SwatchGroup legend="Background" options={backgrounds} value={background.id} onChange={chooseBackground} />
-          <div className="v2-actions">
-            <button type="button" className="v2-secondary" onClick={reset}><RotateCcw size={16} /> Reset</button>
-            <button type="button" className="v2-primary" onClick={download}><Download size={17} /> Export PNG</button>
-          </div>
-          <p className="v2-export-note">
-            {previewMode === "original"
-              ? "1024 × 1024 · original transparency preserved"
-              : previewMode === "emoticon"
-                ? "1024 × 1024 · fixed-palette emoticon"
-                : "1024 × 1024 · processed in your browser"}
-          </p>
+        <aside className="v2-inspector" aria-label={reviewMode ? "Palari preference review" : "Palari appearance"}>
+          {reviewMode ? (
+            <PreferencePanel
+              avatar={avatar}
+              preference={activePreference}
+              target={reviewTarget}
+              position={reviewPosition}
+              total={reviewAvatars.length}
+              collectionTotal={v2Avatars.length}
+              completedCount={preferences.completedCount}
+              notice={preferences.notice}
+              storageAvailable={preferences.storageAvailable}
+              onTargetChange={setReviewTarget}
+              onVerdict={rateActive}
+              onToggleFeature={(disposition, featureId) => preferences.toggleFeature(avatar.id, reviewTarget, disposition, featureId)}
+              onNoteChange={(note) => preferences.setNote(avatar.id, reviewTarget, note)}
+              onPrevious={previousReview}
+              onNext={nextReview}
+              onExport={preferences.exportPreferences}
+              onImport={preferences.importPreferences}
+            />
+          ) : (
+            <FinishInspector
+              material={material}
+              characteristic={characteristic}
+              background={background}
+              previewMode={previewMode}
+              onMaterialChange={(option) => chooseFinish(setMaterial, option)}
+              onCharacteristicChange={(option) => chooseFinish(setCharacteristic, option)}
+              onBackgroundChange={(option) => chooseFinish(setBackground, option)}
+              onReset={reset}
+              onDownload={download}
+            />
+          )}
         </aside>
       </section>
     </main>
