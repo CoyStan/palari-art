@@ -1,0 +1,157 @@
+{
+  "id": "palari-067",
+  "createdAt": "2026-08-19T02:07:24Z",
+  "design": {
+    "silhouette": "arch",
+    "material": "ivory",
+    "characteristic": "forest",
+    "characteristicHex": "#174D38",
+    "crown": "integrated_dome",
+    "opening": "narrow_channel",
+    "pose": "soft_embrace",
+    "expression": "serene",
+    "composition": "lower-right",
+    "identity": "ringed ivory arch softly enclosing a central forest slit"
+  },
+  "source": {
+    "output": "docs/palari-v2/expansion-03/generated/palari-067.png",
+    "executionMode": "built-in ImageGen",
+    "model": "built-in image_gen (model identifier not exposed)",
+    "attempts": 1,
+    "selectedAttempt": 1,
+    "promptAttempts": [
+      {
+        "attempt": 1,
+        "mode": "generate",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 ceramic character study",
+          "",
+          "Primary request: Create exactly one original Palari named palari-067. Palari means Personal Artificial Intelligence: a small crafted ceramic being whose single colored interior reveals its unique intelligence. It belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- identity: a ringed ivory arch softly enclosing one central forest-green slit",
+          "- silhouette: protective enclosing arch formed from one continuous ceramic shell; the outer ringed vault must read clearly in silhouette and remain a stable continuous legless base",
+          "- crown: continuous integrated ceramic dome, closed at the top with no cup rim",
+          "- opening: exactly one long narrow recessed vertical channel at the center",
+          "- pose: exactly two rounded arms softly embracing the central opening",
+          "- expression: serene, conveyed only by calm half-lidded eyes",
+          "- exterior material: warm creamy ivory ceramic",
+          "- characteristic color: deep forest green, #174D38",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base, full body visible",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue: deep forest green only, limited to the recessed inner intelligence, iris accents, and Palari seed mark; no other chromatic accents",
+          "- exactly one dominant architecturally intentional narrow vertical channel; no unrelated holes except the seed mark",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, forest-green iris accents, and tiny catchlights; no mouth",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hands or fingers; arms curve inward in a soft embrace without touching as human hands",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- one compact six-aperture Palari seed mark on the lower torso, with exactly six circular recesses: four visibly larger circles at the four corners of a compact rectangle plus two visibly smaller circles centered vertically between the corner pairs; the two middle-row circles must be clearly smaller than all four corner circles, reading as a deliberate seed symbol, not a grille",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- overall body height at least 2.4 times visible face height",
+          "",
+          "Scene/backdrop: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Style/medium: refined tactile 3D ceramic product render, adult collectible design, restrained and architectural rather than cute or chibi.",
+          "Composition/framing: direct 1:1 square; eye-level three-quarter product portrait with minimal lens distortion; centered; complete full figure visible; occupies about 76 percent of image height with comfortable padding.",
+          "Lighting/mood: soft diffused daylight from upper left with a gentle contact shadow; preserve readable ceramic form and inner depth without neon glow.",
+          "",
+          "Avoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smile, mouth, chibi proportions, horror, vacant doll eyes, circular aperture surrounding the face, text, labels, numbers, logos, watermark, extra characters, duplicate figure."
+        ]
+      }
+    ],
+    "metadata": {
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "colorMode": "RGB",
+      "bytes": 1995614,
+      "sha256": "6ee5280108226961b8d3725a33d84fb329bef90dac73f0daf832aba659747c8f"
+    },
+    "grammarReview": {
+      "status": "reject",
+      "characterCount": 1,
+      "characteristicHueCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "leglessStableBase": true,
+      "seedApertureCount": 6,
+      "seedGeometryStatus": "pass",
+      "deviations": [
+        "The outer body reads more like a domed column or capsule than a visibly enclosing ringed arch, so it does not clearly honor the selected arch silhouette.",
+        "The central slit is much taller than a subordinate interior reveal and dominates the face/body relationship."
+      ]
+    }
+  },
+  "icon": {
+    "sourceReference": "docs/palari-v2/expansion-03/generated/palari-067.png",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-067.png",
+    "executionMode": "built-in ImageGen",
+    "model": "built-in image_gen (model identifier not exposed)",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "promptAttempts": [
+      {
+        "attempt": 1,
+        "mode": "reference-guided generation",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari IP mascot logo candidate",
+          "Input image: Image 1 is an identity reference only. Generate a new logo; do not edit or reproduce its plaster scene, material realism, camera lighting, or cast shadow.",
+          "",
+          "Primary request: Derive palari-067 as one highly simplified logo first and a character second. Preserve its defining identity: a protective ringed arch/vault with a continuous domed top, exactly one long narrow central slit, two calm half-lidded eyes placed to either side, two rounded arm tubes softly embracing the slit and fused visually into the main silhouette, stable continuous legless base, and compact Palari seed. The enclosing arch and forest slit are primary; the seed is secondary. No mouth.",
+          "",
+          "Background: fully opaque edge-to-edge perfectly uniform solid deep navy #172333; use this color only as the background or genuine negative-space eye cutouts. Square outer corners.",
+          "",
+          "Color count: exactly three semantic colors in the complete image:",
+          "1. #172333 navy background only;",
+          "2. #E9E6DF warm ivory for the single dominant shell silhouette;",
+          "3. #174D38 deep forest green for one continuous long slit plus minimal iris/seed accents.",
+          "No black, white, grey, yellow, teal, or unrelated hues. Continuous same-family tonal drift only inside the two IP colors.",
+          "",
+          "Geometry: reduce to 6–10 broad rounded shapes total. Use one dominant continuous rounded arch shell. Keep the central forest slit broad enough to survive at 32 x 32. Keep exactly two calm half-lidded eyes; no eyebrows, mouth, nose, catchlight dots, or facial highlights. Integrate the embracing arms into broad shell curves and remove nonessential seams. Retain exactly six small seed circles in a compact 2-column by 3-row signature: four larger corner circles and two smaller middle-row circles, all forest green, visually subordinate to the slit. No decorative marks.",
+          "",
+          "Composition: upright, emerging from the lower-right corner, filling 75–85% of the square. Do not center it like a sticker. Do not crop the integrated dome, eyes, slit, or seed.",
+          "",
+          "Style: Flat-first vector-friendly geometry with subtle continuous-gradient micro-volume. One uninterrupted low-frequency diffuse gradient per large IP color region, shared upper-left-to-lower-right light direction, each transition spanning at least 50% of the dominant form. Total lightness variation <= 0.08; hue drift <= 3 degrees; chroma drift <= 0.015. Modeling visible at full size but nearly disappearing at 32 x 32.",
+          "",
+          "Forbid: character illustration, plaster alcove, floor, scene, realism, ceramic texture, grain, gloss, toy or clay rendering, bevel, extrusion, rim light, cast shadow, halo, vignette, background gradient, external shadow, discrete highlight patches, closed highlight blobs, overlay bands, nested shadow shapes, cut-paper layers, cel shading, stepped swatches, hard internal shadow boundaries, hotspots, thin lines, sharp points, extra colors, separate clothing or machinery, mouth, hands, fingers, legs, feet, text, numbers, watermark, border, frame, transparency, app mask, rounded canvas corners."
+        ]
+      },
+      {
+        "attempt": 2,
+        "mode": "precise-object-edit",
+        "input": "/home/quetza/.codex/generated_images/01a017b8-a732-7cc0-8f51-feb8631c0e5f/exec-d65be8f1-f1f0-4bf9-8801-3254c8a0ccc6.png",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari IP mascot logo",
+          "Input image: edit target, the first palari-067 logo attempt.",
+          "",
+          "Change only the background. Preserve every part of the ivory arch character exactly: silhouette and crop, domed top, long forest slit, two half-lidded eyes, embracing arm curves, six-circle seed geometry, proportions, and three-color mapping.",
+          "",
+          "Replace the entire background outside the character with one perfectly uniform, flat, edge-to-edge #172333 field. Every unobstructed background pixel should appear the same deep navy: no vignette, halo, spotlight, radial gradient, directional gradient, texture, lighter center, darker corners, border, frame, or rounded canvas corners.",
+          "",
+          "Keep exactly three semantic colors: #172333, #E9E6DF, #174D38. Keep the IP flat-first with only subtle low-frequency tonal variation inside the ivory and green forms. No new marks, scene, shadow, mouth, hands, fingers, legs, feet, text, watermark, or transparency."
+        ]
+      }
+    ],
+    "metadata": {
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "colorMode": "RGB",
+      "bytes": 962655,
+      "sha256": "87c3b70c1abdc9600ba5047c14fb500c9946f31591475f38af833e74e192c7ab"
+    },
+    "seedApertureCount": 6,
+    "seedGeometryStatus": "pass at native size",
+    "smallSizeStatus": "pass",
+    "seedAt32px": "indistinct secondary cluster; individual apertures are not countable",
+    "skillStatus": "reject",
+    "deviations": [
+      "The navy field retains visible low-frequency variation instead of a perfectly uniform #172333 background after the targeted retry.",
+      "The embracing arms retain more local volume and contact shading than the skill's nearly disappearing micro-volume target.",
+      "Counting all six seed circles, eyes, arms, aperture, and shell literally pushes the primitive count above the nominal 6–10 budget.",
+      "The silhouette and central slit pass at 32 px, but the six individual seed apertures do not."
+    ]
+  }
+}

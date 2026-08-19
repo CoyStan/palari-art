@@ -28,23 +28,6 @@
             "differingPixels": 0
           }
         },
-        "material": {
-          "source": {
-            "path": "public/palari-v2/palari-001/material.png",
-            "bytes": 57205,
-            "sha256": "d5446a31d366838b5e0ab2c77b4f5a13b518073cea4d3bdf4578503fe707dacf"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-001/material.webp",
-            "bytes": 45766,
-            "sha256": "c3254db9e641ba1beaff94bf01c2f352f732e529980818bcb9f1aef318799161",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "source": {
           "source": {
             "path": "public/palari-v2/palari-001/source.png",
@@ -61,29 +44,29 @@
             "quality": 90,
             "differingPixels": null
           }
-        }
-      }
-    },
-    {
-      "avatarId": "palari-002",
-      "assets": {
-        "characteristic": {
+        },
+        "material": {
           "source": {
-            "path": "public/palari-v2/palari-002/characteristic.png",
-            "bytes": 12303,
-            "sha256": "ebef43012d3a5d018378d7634e79f4dbfca321bca286925a0fbe3250a3a1c24a"
+            "path": "public/palari-v2/palari-001/material.png",
+            "bytes": 57205,
+            "sha256": "d5446a31d366838b5e0ab2c77b4f5a13b518073cea4d3bdf4578503fe707dacf"
           },
           "output": {
-            "path": "public/palari-v2-web/palari-002/characteristic.webp",
-            "bytes": 7674,
-            "sha256": "526b945aa466832c67100e0bc0dd09cc4a9cd006feaf6a95b40a14ebbb23a359",
+            "path": "public/palari-v2-web/palari-001/material.webp",
+            "bytes": 45766,
+            "sha256": "c3254db9e641ba1beaff94bf01c2f352f732e529980818bcb9f1aef318799161",
             "width": 1254,
             "height": 1254,
             "lossless": true,
             "quality": 100,
             "differingPixels": 0
           }
-        },
+        }
+      }
+    },
+    {
+      "avatarId": "palari-002",
+      "assets": {
         "source": {
           "source": {
             "path": "public/palari-v2/palari-002/source.png",
@@ -99,6 +82,23 @@
             "lossless": false,
             "quality": 90,
             "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-002/characteristic.png",
+            "bytes": 12303,
+            "sha256": "ebef43012d3a5d018378d7634e79f4dbfca321bca286925a0fbe3250a3a1c24a"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-002/characteristic.webp",
+            "bytes": 7674,
+            "sha256": "526b945aa466832c67100e0bc0dd09cc4a9cd006feaf6a95b40a14ebbb23a359",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
           }
         },
         "material": {
@@ -140,23 +140,6 @@
             "differingPixels": 0
           }
         },
-        "source": {
-          "source": {
-            "path": "public/palari-v2/palari-003/source.png",
-            "bytes": 1749325,
-            "sha256": "d8d858a47fefdb2641c877c8cb2ad3eaf38bf48fd011f97e7876672840232acf"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-003/source.webp",
-            "bytes": 69700,
-            "sha256": "b22e6d160b374d7bd9782630338582ce7885cb2ca1a53dfb2c862dfd2fd77f0f",
-            "width": 1254,
-            "height": 1254,
-            "lossless": false,
-            "quality": 90,
-            "differingPixels": null
-          }
-        },
         "material": {
           "source": {
             "path": "public/palari-v2/palari-003/material.png",
@@ -172,6 +155,23 @@
             "lossless": true,
             "quality": 100,
             "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-003/source.png",
+            "bytes": 1749325,
+            "sha256": "d8d858a47fefdb2641c877c8cb2ad3eaf38bf48fd011f97e7876672840232acf"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-003/source.webp",
+            "bytes": 69700,
+            "sha256": "b22e6d160b374d7bd9782630338582ce7885cb2ca1a53dfb2c862dfd2fd77f0f",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
           }
         }
       }
@@ -196,23 +196,6 @@
             "differingPixels": 0
           }
         },
-        "material": {
-          "source": {
-            "path": "public/palari-v2/palari-004/material.png",
-            "bytes": 30033,
-            "sha256": "c53495f42bde24998b7f2355b49c59e693b8fac28741aa0f9fe1f3ef3ca544fe"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-004/material.webp",
-            "bytes": 21494,
-            "sha256": "e18de2e3644fad76fcd67c013ed86685032bb76d59690e4b1fbf51972843479d",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "source": {
           "source": {
             "path": "public/palari-v2/palari-004/source.png",
@@ -228,6 +211,23 @@
             "lossless": false,
             "quality": 90,
             "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-004/material.png",
+            "bytes": 30033,
+            "sha256": "c53495f42bde24998b7f2355b49c59e693b8fac28741aa0f9fe1f3ef3ca544fe"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-004/material.webp",
+            "bytes": 21494,
+            "sha256": "e18de2e3644fad76fcd67c013ed86685032bb76d59690e4b1fbf51972843479d",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
           }
         }
       }
@@ -700,23 +700,6 @@
             "differingPixels": null
           }
         },
-        "characteristic": {
-          "source": {
-            "path": "public/palari-v2/palari-013/characteristic.png",
-            "bytes": 22004,
-            "sha256": "e08b85532eefb0632fb64f1e5164e904a92d704d8770854eeb2c7bad3587eaff"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-013/characteristic.webp",
-            "bytes": 15516,
-            "sha256": "1f531276f6ec32ae449935463b9121d7263ee45390efcd5503ad20e6f69bb8bd",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "material": {
           "source": {
             "path": "public/palari-v2/palari-013/material.png",
@@ -733,29 +716,29 @@
             "quality": 100,
             "differingPixels": 0
           }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-013/characteristic.png",
+            "bytes": 22004,
+            "sha256": "e08b85532eefb0632fb64f1e5164e904a92d704d8770854eeb2c7bad3587eaff"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-013/characteristic.webp",
+            "bytes": 15516,
+            "sha256": "1f531276f6ec32ae449935463b9121d7263ee45390efcd5503ad20e6f69bb8bd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
         }
       }
     },
     {
       "avatarId": "palari-014",
       "assets": {
-        "source": {
-          "source": {
-            "path": "public/palari-v2/palari-014/source.png",
-            "bytes": 298993,
-            "sha256": "6b4fa1204969fa2cc1c148acade1a007ecae7280f71fd4732674759bbe382ef0"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-014/source.webp",
-            "bytes": 32998,
-            "sha256": "843d6678136c64e728d040e88430b389b831beb051668cc0efe096bfe5dc8eb9",
-            "width": 1254,
-            "height": 1254,
-            "lossless": false,
-            "quality": 90,
-            "differingPixels": null
-          }
-        },
         "characteristic": {
           "source": {
             "path": "public/palari-v2/palari-014/characteristic.png",
@@ -788,6 +771,23 @@
             "lossless": true,
             "quality": 100,
             "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-014/source.png",
+            "bytes": 298993,
+            "sha256": "6b4fa1204969fa2cc1c148acade1a007ecae7280f71fd4732674759bbe382ef0"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-014/source.webp",
+            "bytes": 32998,
+            "sha256": "843d6678136c64e728d040e88430b389b831beb051668cc0efe096bfe5dc8eb9",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
           }
         }
       }
@@ -980,23 +980,6 @@
             "differingPixels": null
           }
         },
-        "characteristic": {
-          "source": {
-            "path": "public/palari-v2/palari-018/characteristic.png",
-            "bytes": 33922,
-            "sha256": "5dd639c6cdcf7a2b5080dc54191d8a169c99b6747ce0e3c9a2236725a662dad0"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-018/characteristic.webp",
-            "bytes": 24606,
-            "sha256": "b93508ebc3c574943c7d6497fdca36d8f854962d8c2cbe96156db5509b52f629",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "material": {
           "source": {
             "path": "public/palari-v2/palari-018/material.png",
@@ -1007,6 +990,23 @@
             "path": "public/palari-v2-web/palari-018/material.webp",
             "bytes": 22470,
             "sha256": "e4a925f6319e832b684cdb00ed5b201d9b27061593c3ac4a8887ee9e8aebb1c3",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-018/characteristic.png",
+            "bytes": 33922,
+            "sha256": "5dd639c6cdcf7a2b5080dc54191d8a169c99b6747ce0e3c9a2236725a662dad0"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-018/characteristic.webp",
+            "bytes": 24606,
+            "sha256": "b93508ebc3c574943c7d6497fdca36d8f854962d8c2cbe96156db5509b52f629",
             "width": 1254,
             "height": 1254,
             "lossless": true,
@@ -1092,23 +1092,6 @@
             "differingPixels": null
           }
         },
-        "material": {
-          "source": {
-            "path": "public/palari-v2/palari-020/material.png",
-            "bytes": 22994,
-            "sha256": "2df2d696e0d2b3f64f8e81a399ec50d5a3d847a55c61529994f1cc551f901fbf"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-020/material.webp",
-            "bytes": 15602,
-            "sha256": "63df971f321813539042f4bf08681ec690a71aa313ee8a317ac4447e881d87fe",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "characteristic": {
           "source": {
             "path": "public/palari-v2/palari-020/characteristic.png",
@@ -1119,6 +1102,23 @@
             "path": "public/palari-v2-web/palari-020/characteristic.webp",
             "bytes": 26076,
             "sha256": "8741d03e0f594b70bcb55e66cb74c8f9c2bae131899394ceb4a09e95bc0850de",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-020/material.png",
+            "bytes": 22994,
+            "sha256": "2df2d696e0d2b3f64f8e81a399ec50d5a3d847a55c61529994f1cc551f901fbf"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-020/material.webp",
+            "bytes": 15602,
+            "sha256": "63df971f321813539042f4bf08681ec690a71aa313ee8a317ac4447e881d87fe",
             "width": 1254,
             "height": 1254,
             "lossless": true,
@@ -1204,23 +1204,6 @@
             "differingPixels": 0
           }
         },
-        "source": {
-          "source": {
-            "path": "public/palari-v2/palari-022/source.png",
-            "bytes": 340990,
-            "sha256": "2768195b60779156bac42d19c8c7e60a9a90f8faa832e0506b752be48021ea2a"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-022/source.webp",
-            "bytes": 36886,
-            "sha256": "fa5b89ecf9bdb30b1b4b88db771db8d78481970e6d4df7252194428ca9fd0000",
-            "width": 1254,
-            "height": 1254,
-            "lossless": false,
-            "quality": 90,
-            "differingPixels": null
-          }
-        },
         "material": {
           "source": {
             "path": "public/palari-v2/palari-022/material.png",
@@ -1236,6 +1219,23 @@
             "lossless": true,
             "quality": 100,
             "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-022/source.png",
+            "bytes": 340990,
+            "sha256": "2768195b60779156bac42d19c8c7e60a9a90f8faa832e0506b752be48021ea2a"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-022/source.webp",
+            "bytes": 36886,
+            "sha256": "fa5b89ecf9bdb30b1b4b88db771db8d78481970e6d4df7252194428ca9fd0000",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
           }
         }
       }
@@ -1316,23 +1316,6 @@
             "differingPixels": 0
           }
         },
-        "material": {
-          "source": {
-            "path": "public/palari-v2/palari-024/material.png",
-            "bytes": 24897,
-            "sha256": "9c8fc809531775b25c18d7e18e66046a457b0c3357ec98ede44119da4464bcbe"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-024/material.webp",
-            "bytes": 16456,
-            "sha256": "b93c500ec96444e24d5308c156afdc0a9f4a9b0c8e44e452c33b6452792f4502",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "source": {
           "source": {
             "path": "public/palari-v2/palari-024/source.png",
@@ -1348,6 +1331,23 @@
             "lossless": false,
             "quality": 90,
             "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-024/material.png",
+            "bytes": 24897,
+            "sha256": "9c8fc809531775b25c18d7e18e66046a457b0c3357ec98ede44119da4464bcbe"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-024/material.webp",
+            "bytes": 16456,
+            "sha256": "b93c500ec96444e24d5308c156afdc0a9f4a9b0c8e44e452c33b6452792f4502",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
           }
         }
       }
@@ -1372,23 +1372,6 @@
             "differingPixels": 0
           }
         },
-        "material": {
-          "source": {
-            "path": "public/palari-v2/palari-025/material.png",
-            "bytes": 18761,
-            "sha256": "219ce9e9f756545aab63bba69c71e124c55a2eebeee7d61088e391e102d6f57f"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-025/material.webp",
-            "bytes": 12722,
-            "sha256": "ee90cd5f6581d4ff9f3ef75b5afe598a48a630bf5199e388c51a782b51bc08a3",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "source": {
           "source": {
             "path": "public/palari-v2/palari-025/source.png",
@@ -1404,6 +1387,23 @@
             "lossless": false,
             "quality": 90,
             "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-025/material.png",
+            "bytes": 18761,
+            "sha256": "219ce9e9f756545aab63bba69c71e124c55a2eebeee7d61088e391e102d6f57f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-025/material.webp",
+            "bytes": 12722,
+            "sha256": "ee90cd5f6581d4ff9f3ef75b5afe598a48a630bf5199e388c51a782b51bc08a3",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
           }
         }
       }
@@ -1523,23 +1523,6 @@
     {
       "avatarId": "palari-028",
       "assets": {
-        "characteristic": {
-          "source": {
-            "path": "public/palari-v2/palari-028/characteristic.png",
-            "bytes": 9256,
-            "sha256": "413e558e16df4f036f9407d7a553b4a8fd44eae26ed31d47f7b7408d7cd3cb36"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-028/characteristic.webp",
-            "bytes": 5316,
-            "sha256": "0270d84e4e10fb35355dbf169ba9338572fd020a68a710fbe5075667e0e7d519",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "source": {
           "source": {
             "path": "public/palari-v2/palari-028/source.png",
@@ -1555,6 +1538,23 @@
             "lossless": false,
             "quality": 90,
             "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-028/characteristic.png",
+            "bytes": 9256,
+            "sha256": "413e558e16df4f036f9407d7a553b4a8fd44eae26ed31d47f7b7408d7cd3cb36"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-028/characteristic.webp",
+            "bytes": 5316,
+            "sha256": "0270d84e4e10fb35355dbf169ba9338572fd020a68a710fbe5075667e0e7d519",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
           }
         },
         "material": {
@@ -1708,23 +1708,6 @@
             "differingPixels": null
           }
         },
-        "characteristic": {
-          "source": {
-            "path": "public/palari-v2/palari-031/characteristic.png",
-            "bytes": 30767,
-            "sha256": "51d9f5aa870beacd24080dcfbcd4987a112a71f75aa820d411992ca75b7fb796"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-031/characteristic.webp",
-            "bytes": 22712,
-            "sha256": "929ec7d792fb8d7b05d5db38dc4f715404c8c73298d2235b2c766c6943fd2bdf",
-            "width": 1254,
-            "height": 1254,
-            "lossless": true,
-            "quality": 100,
-            "differingPixels": 0
-          }
-        },
         "material": {
           "source": {
             "path": "public/palari-v2/palari-031/material.png",
@@ -1735,6 +1718,23 @@
             "path": "public/palari-v2-web/palari-031/material.webp",
             "bytes": 20738,
             "sha256": "7a9cfb52d84f4faa52f17224d3918f4dc7dc51187b85c57c53f606517f631aad",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-031/characteristic.png",
+            "bytes": 30767,
+            "sha256": "51d9f5aa870beacd24080dcfbcd4987a112a71f75aa820d411992ca75b7fb796"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-031/characteristic.webp",
+            "bytes": 22712,
+            "sha256": "929ec7d792fb8d7b05d5db38dc4f715404c8c73298d2235b2c766c6943fd2bdf",
             "width": 1254,
             "height": 1254,
             "lossless": true,
@@ -1859,23 +1859,6 @@
     {
       "avatarId": "palari-034",
       "assets": {
-        "source": {
-          "source": {
-            "path": "public/palari-v2/palari-034/source.png",
-            "bytes": 601855,
-            "sha256": "96c5c8460d3b192945bdedf479c8632aaebdf8942c1c298a658aedb5121056ea"
-          },
-          "output": {
-            "path": "public/palari-v2-web/palari-034/source.webp",
-            "bytes": 51284,
-            "sha256": "c26c234085720587ed04709826b6245ab6656b5b2b28c0c8e4dc4a4131d45548",
-            "width": 1254,
-            "height": 1254,
-            "lossless": false,
-            "quality": 90,
-            "differingPixels": null
-          }
-        },
         "characteristic": {
           "source": {
             "path": "public/palari-v2/palari-034/characteristic.png",
@@ -1891,6 +1874,23 @@
             "lossless": true,
             "quality": 100,
             "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-034/source.png",
+            "bytes": 601855,
+            "sha256": "96c5c8460d3b192945bdedf479c8632aaebdf8942c1c298a658aedb5121056ea"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-034/source.webp",
+            "bytes": 51284,
+            "sha256": "c26c234085720587ed04709826b6245ab6656b5b2b28c0c8e4dc4a4131d45548",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
           }
         },
         "material": {
@@ -2295,6 +2295,2302 @@
             "path": "public/palari-v2-web/palari-041/material.webp",
             "bytes": 15426,
             "sha256": "210e0054912568ffdb90816f457fce05b653b316f88f12a5473030ab3c6165f8",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-042",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-042/source.png",
+            "bytes": 392262,
+            "sha256": "2db431a6d6139be1472ee1c6652f23fed4ed0ab5e264b83d6e32ba0a07489400"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-042/source.webp",
+            "bytes": 33570,
+            "sha256": "b30b1e8d666cc45f1c195d87fc1572f90904c21cc60e512457e81bb50747b9da",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-042/characteristic.png",
+            "bytes": 7880,
+            "sha256": "a3f5b247bd63b33175b83b9fa396fbd9f359bdd27b8b6c2f982a293a4a63e64d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-042/characteristic.webp",
+            "bytes": 4588,
+            "sha256": "938419c901863c03b96666015adadb6b6390ebed70a25650007db7f3b7cc11e9",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-042/material.png",
+            "bytes": 13487,
+            "sha256": "665131b603b1c7dc607106946b07b49c669e8258334578c8adaf72f0d232beea"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-042/material.webp",
+            "bytes": 8510,
+            "sha256": "66c05983ab904be6751e8e1213ed3608423e92eecf7687407dcb5ebe0f2de772",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-043",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-043/source.png",
+            "bytes": 648917,
+            "sha256": "e1b1e45ed5f31f847eb87578979a22d52331ee202819e40257b2f9b4e0923c17"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-043/source.webp",
+            "bytes": 57968,
+            "sha256": "2cf92d8c4c7fd8945233e1fc5259b21c6d28a024fd63b484ac5aa47f891c65b6",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-043/material.png",
+            "bytes": 18712,
+            "sha256": "c1ac60ec61eafcd500be566fce79e2e32477f2db57c2f2f5c5bf74d80f9ed12a"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-043/material.webp",
+            "bytes": 11316,
+            "sha256": "d5431fcc677d78b7f9344031cd6fb40b76a8ac03388ec5daa5c178630df472bc",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-043/characteristic.png",
+            "bytes": 10490,
+            "sha256": "f56774ec6da0803c152109387456f733b4ee5dcabe4682b88435948e3558c06f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-043/characteristic.webp",
+            "bytes": 6106,
+            "sha256": "7e44938a1a287a081214938ea1a0e90a87dbba17b30a6419cad00a23417b1a4e",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-044",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-044/source.png",
+            "bytes": 798146,
+            "sha256": "a34254d53c2086d4b4d4f72ce3acb72e6c0d51457db1d8a8c93986ac88f2b7c1"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-044/source.webp",
+            "bytes": 91962,
+            "sha256": "ef248b6cbe17070c3d6493a307ab8a0eb80bec1faaf38afb0fcd5bfff7bdbee9",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-044/characteristic.png",
+            "bytes": 10010,
+            "sha256": "d9fe9ca45bb9d6304f9a6d4b195c923b76e21390ad7150d8832944b1a998c2ef"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-044/characteristic.webp",
+            "bytes": 5614,
+            "sha256": "a3f586e4003e24203f75d362d4b1131e445cbe3d41548272385b6b0325b28e8d",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-044/material.png",
+            "bytes": 38996,
+            "sha256": "8a71120e0cec32d95be106efd78cbcec9ffb8a303ada3a2732366ff5a3f60910"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-044/material.webp",
+            "bytes": 27282,
+            "sha256": "48eb6acea344991627e53433dafcb08df831a05fac527a7cb79c1003af17832c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-045",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-045/source.png",
+            "bytes": 812987,
+            "sha256": "a240ac8629281462218c93017182573c25c776a19b5937e2316adf3e8d171c61"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-045/source.webp",
+            "bytes": 69566,
+            "sha256": "37165e976233a057318007a5fbbd3dd5a9a17cbe26a559648720ecea8a39c343",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-045/characteristic.png",
+            "bytes": 7795,
+            "sha256": "283fa6e4bb7dfa25cce3d05bf57ea2ae571d99139563cc9f66f6eb3c423d6a0d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-045/characteristic.webp",
+            "bytes": 4648,
+            "sha256": "dc72372697ae0cefa8722783d7997448fc455579344040d9f55093074534588c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-045/material.png",
+            "bytes": 86365,
+            "sha256": "b750373ae86c6dff6f19daf6b11ff886efc2eced3c6816b3972840fe07767ac4"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-045/material.webp",
+            "bytes": 67794,
+            "sha256": "212e8b9dc75f47327e7bcb7c7b42839843df44464d1f2583a1704df5d7f2e9d3",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-046",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-046/source.png",
+            "bytes": 749956,
+            "sha256": "243f712f721edb1f3b2d239c166c24dfe312880f50fefb2e26c970697a12391f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-046/source.webp",
+            "bytes": 55860,
+            "sha256": "f616e6c867e629ac0b2114788b888e9eacd59cc1da4f06a64e562e2704737776",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-046/material.png",
+            "bytes": 18844,
+            "sha256": "de77212f89beabb703a0d0f8ba3e93416c7735b6b63bfa09c0e3af86b3957d1b"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-046/material.webp",
+            "bytes": 11002,
+            "sha256": "a63ab14f484783175d607b2ea208488701c88a098c9da7afba2e1b640fce0b50",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-046/characteristic.png",
+            "bytes": 17348,
+            "sha256": "2463fd95a038017d3c7b02db6ff306af37021cb1bfe3e207f3246f74e1a99403"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-046/characteristic.webp",
+            "bytes": 11472,
+            "sha256": "65565a0b9353dc921dcee8ecf8b9ec62fad60555735653b61a6808a57fd356d3",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-047",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-047/source.png",
+            "bytes": 915313,
+            "sha256": "9586f4090ff03af640aa8682f6a6e84008146a3569860cd805852aeafe905788"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-047/source.webp",
+            "bytes": 59128,
+            "sha256": "b0ec5c4e1ed06b869a8ce22bb7d3f59a180a2e287bb0069f295553dede65a6a5",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-047/characteristic.png",
+            "bytes": 13016,
+            "sha256": "c64e4b87203986e2e2fe3e214d720f77f22283b04c6c9a0d120a1244a9aac0ef"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-047/characteristic.webp",
+            "bytes": 8420,
+            "sha256": "c232c23ce81e4d6654a889176c2b6e22d5211d5d528218c3854ea5ac2190c60c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-047/material.png",
+            "bytes": 20654,
+            "sha256": "231da9fc9f2c0ab8854ba5a1202de17c12fb843ddd9e9c82b2c4ab26d291ca16"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-047/material.webp",
+            "bytes": 12450,
+            "sha256": "b5441260eea2511d02a5c297966db35f23bfd39fcbbf02667446e0312977d664",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-048",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-048/source.png",
+            "bytes": 587115,
+            "sha256": "d78e2cf140d8b23eded15eafcefe152cd238a508b89ec8910ff017fe87d9c4a4"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-048/source.webp",
+            "bytes": 53922,
+            "sha256": "45e62f4ebb36a513352c1c79e2b98ff7be0760dce9497960d095fad967b455d4",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-048/characteristic.png",
+            "bytes": 5673,
+            "sha256": "d8ddb89a29f039bc42fb53a9f6d4f08c1945cfe5e3bd149692d02f9464e8136a"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-048/characteristic.webp",
+            "bytes": 2854,
+            "sha256": "6774f19e7d830724014d4ab67c3bdbd5a8005d5b4d3ed45b055b5b418862f582",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-048/material.png",
+            "bytes": 20089,
+            "sha256": "985a25e1a384fbd4cf72c305a621f9afd69c9ff7c9919d422c41af992365fa8f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-048/material.webp",
+            "bytes": 12792,
+            "sha256": "3bd157f24db2a37ca1645d904485c5313146ac2a4cab2014e34c49041bf6468a",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-049",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-049/source.png",
+            "bytes": 714846,
+            "sha256": "89c0f89d6489a3770d24e0b0aa2b5459f1feb17f7c77bc1d2cbfabf27d806c20"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-049/source.webp",
+            "bytes": 60758,
+            "sha256": "d8f4f8ae4948ddebdad24c679f0640fc81f9f4284b47b7d3af2e14415acd7016",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-049/characteristic.png",
+            "bytes": 15775,
+            "sha256": "da3cff8b710f7a30d6cf6bbe184a17393a905f0fe9f2c4cf6a79f222b8b15b47"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-049/characteristic.webp",
+            "bytes": 10120,
+            "sha256": "5d6ec1c35c001b1fd62703cc13a661805f48cc047d8ca707d47ef2fbe2d3810a",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-049/material.png",
+            "bytes": 83199,
+            "sha256": "a708822354250d3069481912514d4c6e44d90f1ea4c1ab22bd0a33e6a498a83e"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-049/material.webp",
+            "bytes": 65524,
+            "sha256": "4e920e0194383db15eecbd4c4caad725d4a79353ebcc7bf9fdaaaa3d632e3047",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-050",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-050/source.png",
+            "bytes": 470037,
+            "sha256": "03a6b48809547bf7eb8081c1d48f8b81ca5a0cd681b89ff3a890081ed88f8f37"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-050/source.webp",
+            "bytes": 35264,
+            "sha256": "ffd6bc3d4c44e7a1450ed68067888c2353361b796e1e731cb4d4242dc9e5323f",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-050/characteristic.png",
+            "bytes": 12375,
+            "sha256": "a9dda2727875de92e0fcc62a1757878ed37db59dd3f7c574b86677cc0a2ae290"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-050/characteristic.webp",
+            "bytes": 6874,
+            "sha256": "2c941f6ffbc1349bdd2e97e95bc6c0d926eac2a824216007bb283786bdc5a25e",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-050/material.png",
+            "bytes": 20093,
+            "sha256": "5bc9318c5e9fb2c3fd6a3f22214825e7d0e414e0281d86100a6404c03f26a328"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-050/material.webp",
+            "bytes": 12124,
+            "sha256": "5cdc1f85476bc48f5fb874f24ac49432daac01869538d6e309b6e19eb125e9cc",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-051",
+      "assets": {
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-051/material.png",
+            "bytes": 18087,
+            "sha256": "e73e88c7f78d632acbd4cb1f252c9ae155062e106fca66954ebdf352481d9ec3"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-051/material.webp",
+            "bytes": 10532,
+            "sha256": "7102f80e938c86ebd3c77180ae1da24657051bb0e495a778aa301334213dd749",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-051/source.png",
+            "bytes": 824706,
+            "sha256": "788e96db2094651340c45b6a935b92820e372e15bdc27c890a3db10cd2d810c5"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-051/source.webp",
+            "bytes": 73236,
+            "sha256": "45e931966edc158b396424ce17310356e0c8cfe9e57908d2749a93530a67ff0b",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-051/characteristic.png",
+            "bytes": 9382,
+            "sha256": "ba379e5c5213d74fd2a32e9d2496372df721c932ce1c2631e9603f46d31824c3"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-051/characteristic.webp",
+            "bytes": 5360,
+            "sha256": "2fcd6ad474363eaf86de466cbb472d4e0cc6994c27f3c1e286d5cf5656b51747",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-052",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-052/source.png",
+            "bytes": 803545,
+            "sha256": "3f6a0d9a6189978dd48b1d73ca4d0664c4616e29e6e5fe2c8ea014c9bb8dedc0"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-052/source.webp",
+            "bytes": 78602,
+            "sha256": "0903d5fec118f31035fccd648b63db22186ae8472b66837ca507a540d4395952",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-052/characteristic.png",
+            "bytes": 7062,
+            "sha256": "763335dc36569558c7070bf7b9b3df0c12675a40f3c8d0e12493ef7f9098c700"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-052/characteristic.webp",
+            "bytes": 4030,
+            "sha256": "10d59b505e69a8431a6681d4266b900ca554f40c3f95be0ac75941081d92c7ba",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-052/material.png",
+            "bytes": 38755,
+            "sha256": "3abe10156bb22acbd8774e122692f329a3970a20160903746a22cc4d7a85428c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-052/material.webp",
+            "bytes": 26538,
+            "sha256": "f86dcf895f9c0afe9638dd67588e52e0c556a670fb18d51f7ba651dd57db7875",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-053",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-053/source.png",
+            "bytes": 985303,
+            "sha256": "a53c2066e0b823e4300617f50f503ac38636fbf14410f18e215bba3af995b614"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-053/source.webp",
+            "bytes": 95324,
+            "sha256": "ee5382bb11ef0126fbb781f45d85986318dc504893df414c86d407558daaee14",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-053/characteristic.png",
+            "bytes": 15141,
+            "sha256": "0f3854f098ab312b9fcc1bcb3f0cbba31b57637fd45a6fadd6be2416fa64469f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-053/characteristic.webp",
+            "bytes": 9864,
+            "sha256": "a8ab9d8e18103e84aa964a4bfedfc6f1871839fb1735b621b87f1fd0799eee4c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-053/material.png",
+            "bytes": 98294,
+            "sha256": "ae227d584d3d71c9605d750407b7f401fc2822c751d410d4582f7d5a320ce5ea"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-053/material.webp",
+            "bytes": 79060,
+            "sha256": "e4e2be6ea2d7d6f598c48bf8e51b332b8421c0e2251a1bd0f7065bd054266c0e",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-054",
+      "assets": {
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-054/material.png",
+            "bytes": 17156,
+            "sha256": "29eb9b2af1c2048af5aa82ad349ad50358f76c0e06056da48172276a7cf27a07"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-054/material.webp",
+            "bytes": 10528,
+            "sha256": "2cd999a0d14f1ef7c122f5ad040c7e7d1c034f26a594f668801cf8aaeb9e13fe",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-054/source.png",
+            "bytes": 451161,
+            "sha256": "4509f84758118488081e5ab2f2f80db7b4ac14eeed6229025a7fb2d298b29c2c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-054/source.webp",
+            "bytes": 34842,
+            "sha256": "cdc02ae71cdad016142c404d02cd7b50030bdd8770880302493c8da5469cb7ab",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-054/characteristic.png",
+            "bytes": 14210,
+            "sha256": "9b86da47ff2a0d3cbf770a5c00de0977b1f3ab7d44a3e6be482527302e17adc8"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-054/characteristic.webp",
+            "bytes": 9012,
+            "sha256": "0639f567de8846508e5493baace1eba2a199ccd92374718c974962b8167dc48b",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-055",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-055/source.png",
+            "bytes": 897670,
+            "sha256": "ad2c410fdb8aeafd80bef67131e7b3d830ee0d18bcb7f5bf72080782cdfd90a1"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-055/source.webp",
+            "bytes": 66862,
+            "sha256": "845bd1ec632d64f933aaa5df3a27b84fe3000aaf30ce91ac537896757962d256",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-055/material.png",
+            "bytes": 19949,
+            "sha256": "f514766cea1469ca9d0318bb3aaa51418b2a4ca6a66fe72a7659b3300cefbf13"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-055/material.webp",
+            "bytes": 12022,
+            "sha256": "fdf9dc2e09406280761ecb70fbe5627af9232a099bfadcb88a896060c69cb74e",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-055/characteristic.png",
+            "bytes": 22682,
+            "sha256": "ce03b10503708e8edf7f9c1b841bb1d6efdfe6025ad7b82dc7b491621ced0409"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-055/characteristic.webp",
+            "bytes": 15614,
+            "sha256": "185e0ab94f75a5c31aee0c8f11dce8867fe3b0a9faf26d3c58983aba88284952",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-056",
+      "assets": {
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-056/characteristic.png",
+            "bytes": 17683,
+            "sha256": "31ad348922e93a2023f4804ee26e5859d12d34df94cb2a5a3f7f4e067eda4981"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-056/characteristic.webp",
+            "bytes": 10626,
+            "sha256": "77b592220f05fb4e9060d40f5a6d20752095b327f5533122d1dee1590ea0141d",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-056/source.png",
+            "bytes": 660355,
+            "sha256": "96cb1841edc16399da6b0640deec458fad22dacbf0533b7a3c09a35a38761271"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-056/source.webp",
+            "bytes": 52364,
+            "sha256": "5b2f3fee17e27b23db6a416b268427c6b44921f4d476753c2c39d4ac87ce37ed",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-056/material.png",
+            "bytes": 37672,
+            "sha256": "e83ea2da99bcfa9a00134a41613f00a852ae5caf80ef0cc1447d8cf847fe51ed"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-056/material.webp",
+            "bytes": 25366,
+            "sha256": "16b0451a90c8b220c5f15c0e5942473f31b10eadbafdbc8f832d12b774ce01e6",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-057",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-057/source.png",
+            "bytes": 845168,
+            "sha256": "fccef27403d0a84671d11694cb6617d6d08fc8eb4ccd6744311039f15ac2aa25"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-057/source.webp",
+            "bytes": 72324,
+            "sha256": "de136146a179e96115db314b6046ca08478874f10a9c8a480819d92ace482236",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-057/characteristic.png",
+            "bytes": 8846,
+            "sha256": "90d767482b77747b1c70682e2561ff96b1ea97bbc3cabefc08037e89f75ba3ea"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-057/characteristic.webp",
+            "bytes": 5080,
+            "sha256": "1e0c20ab14eda4167e9e61b5326d7160d08ac0bb5e1edc7e539d6b2e1c1b3afc",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-057/material.png",
+            "bytes": 90874,
+            "sha256": "df9d5fc7f9f176012ff70cd87e0be9767cfa07e524ccc42fc32e7b6cd399ae1e"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-057/material.webp",
+            "bytes": 72990,
+            "sha256": "b1ee51480fa6656098877c035ea8c15e37697a3748149a47cf788092fed5c6be",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-058",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-058/source.png",
+            "bytes": 905666,
+            "sha256": "840a8f53b7cf18fd1b63383087591d5d13b14b1bd20e6a8812b5b872a82ab85e"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-058/source.webp",
+            "bytes": 81172,
+            "sha256": "bd0308c586d8b1b42a4db278f667414ddd5e196f0727eede8bdf6d13a71fb847",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-058/characteristic.png",
+            "bytes": 9983,
+            "sha256": "a865f264020dbef2b12f33939876bef24efee5e338c7391b4b39802683c02ed9"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-058/characteristic.webp",
+            "bytes": 5930,
+            "sha256": "a28308659f24b23fd560969d813f395e7d935b28ee84945cca9ab8f49eeecc87",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-058/material.png",
+            "bytes": 19843,
+            "sha256": "1283b9c3631c94dcb6f5c17c889f94180842e23e7d381826a4eecce11ac64bf1"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-058/material.webp",
+            "bytes": 12294,
+            "sha256": "505a84a37b8982cdd003bfe5af3cf069d1cc2558986dc66c81c74b381c451edd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-059",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-059/source.png",
+            "bytes": 647907,
+            "sha256": "dc1d576a7bfd6d21bbb7f2f564f867562a5ab7c36317eab7793a820abc7804ef"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-059/source.webp",
+            "bytes": 50018,
+            "sha256": "62a48b5f3e2729c0e8bad8c0dc05993aebea7eb2eb4f4b8d01de5aeb47dfc3d7",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-059/characteristic.png",
+            "bytes": 7028,
+            "sha256": "1d8ff2c6d64790378fc577ad35bd16927d54652f36505da07071dbe26596c830"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-059/characteristic.webp",
+            "bytes": 4192,
+            "sha256": "1b7bc7250cb1a925f0c52729a9c25629850be7684b41390eb951e26a98cdd33a",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-059/material.png",
+            "bytes": 17171,
+            "sha256": "427490dd754f83295ce9235651422884e43b41d2f8f82d2c401c0d23341eeba1"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-059/material.webp",
+            "bytes": 10430,
+            "sha256": "9dec9aa012450efb7478e8631ec9519041fecab34e49df99852f28efa927f1cd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-060",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-060/source.png",
+            "bytes": 599468,
+            "sha256": "fdb2c6a330d81e80087955a0d899257bfdd08433b95a8e977bbf4f4093fa77c6"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-060/source.webp",
+            "bytes": 61870,
+            "sha256": "5370fedbe3dbc69467cf08c7d91693ed88766d368c882b0bf195700134c6c87b",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-060/characteristic.png",
+            "bytes": 7033,
+            "sha256": "71ca455d5b5fa9ed389bbd7efced685da050edecbf2b5d438de5f071d995e715"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-060/characteristic.webp",
+            "bytes": 4050,
+            "sha256": "a407ad945b81ec72d1939b220130b557e27577fea6f88d2c3cd4adfbd950b8b7",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-060/material.png",
+            "bytes": 55716,
+            "sha256": "2238dc2f34353ca7aefe2c77ce617d3306d17f94d6e740b561a4ddc61ac18980"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-060/material.webp",
+            "bytes": 40686,
+            "sha256": "540b8a9ee3addbc1a687a744e65e2629a246353f9f555e2a6a03e5d05b7361bd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-061",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-061/source.png",
+            "bytes": 665775,
+            "sha256": "18a1d81773f420b04a50ff0801c262240296390838aa24ebc40c4b169b2170a2"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-061/source.webp",
+            "bytes": 54336,
+            "sha256": "0c96011468bc09506b00da2d6c92223b2e30970030e2d0f868061e8f17e81644",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-061/characteristic.png",
+            "bytes": 10497,
+            "sha256": "02b03e62d8fb1e64e5d01f857d97aa0df645710144e8374d053f2bed6a09fbc9"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-061/characteristic.webp",
+            "bytes": 6198,
+            "sha256": "0d4d7512458d6604ba0dff33436ca31a821f166aff983cdc6cbf33b1cd3aa915",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-061/material.png",
+            "bytes": 68484,
+            "sha256": "b2722b786c874d0f3cbd75d010c61c1fb54e9dda2968fefc922f0463c18c854b"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-061/material.webp",
+            "bytes": 53774,
+            "sha256": "2d4eb0348f2f8f6b89e31870bcc0cd7441ea963ad2a030108d28ab3691c938ea",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-062",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-062/source.png",
+            "bytes": 450746,
+            "sha256": "cc97f2938244df38369297a40a9fe0a3cee312909262a72ea918d25d9d1f56f3"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-062/source.webp",
+            "bytes": 40450,
+            "sha256": "81e71c6d44e6256db0c9f7a1bcf767c7f82806e986399974b728041ae0b1bbb0",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-062/characteristic.png",
+            "bytes": 10674,
+            "sha256": "7348d8a24796d4b725e31a25d9c0c6da06b37a2f747e0e08055301f0f6b6b8e9"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-062/characteristic.webp",
+            "bytes": 6214,
+            "sha256": "e2fc351f0cd1b588dfc5b62c3f438f2981225c920c221cd00568633ef578ff5c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-062/material.png",
+            "bytes": 16714,
+            "sha256": "e746badb13a8b9759e9219fae89f0b3b4ab06e40d579d1226e71acc39dc288e5"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-062/material.webp",
+            "bytes": 9742,
+            "sha256": "028f4031e3aec007a54890d5842c818b1ec721c9eedc2da357468ca6adab0993",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-063",
+      "assets": {
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-063/characteristic.png",
+            "bytes": 10755,
+            "sha256": "db1708fa7c7a6dd70b8f149676c9e74468ef53398819556c40f129ac993a6c23"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-063/characteristic.webp",
+            "bytes": 6356,
+            "sha256": "944b2f673222901aeeac83879d569556efee33544ce519cf6a1e49002bd034ac",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-063/source.png",
+            "bytes": 535600,
+            "sha256": "dc7c2790acaf561645372ee13ad83cb894ff46ce29d7a898107a42a7e0ce16d4"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-063/source.webp",
+            "bytes": 37634,
+            "sha256": "f786eeccb0de16a8160f511d497f053cccee82bae4019955053a00f38c36b4b5",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-063/material.png",
+            "bytes": 13161,
+            "sha256": "77ae7afac53b5fb6d61b0f13310cc920910c101b1a2819cd9ce63f83ea01efce"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-063/material.webp",
+            "bytes": 7922,
+            "sha256": "31b55835d1d068854e68c1ab78754a55a922422cc4ce28a3ba4438b627fb17f0",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-064",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-064/source.png",
+            "bytes": 1181218,
+            "sha256": "40aa6e804f03cbd3f2a45f88e7706ba17ef7585c35facc3c7bae1a3e0e10eb5e"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-064/source.webp",
+            "bytes": 134724,
+            "sha256": "c4bfed2f7fb3177b9da1c42ee98de6642c737b4ef2388502eaa75bd8fc3e2cd4",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-064/characteristic.png",
+            "bytes": 12134,
+            "sha256": "88a99c2b8963793ad1e9b350b40b7c8d7cd15fe3c64844e3a2dd8c453e0094c0"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-064/characteristic.webp",
+            "bytes": 7268,
+            "sha256": "d4de0dbe9d81bba924ecdafe7001897ec07b773039ac031a7ce74f16510e6e47",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-064/material.png",
+            "bytes": 77918,
+            "sha256": "2f1967f7214f0402962e771e2a66716d910e7558d2208c7647307c1b4ea384ec"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-064/material.webp",
+            "bytes": 58360,
+            "sha256": "6d4eb3fcb665e6e5674449253954fbbee97df5ee5676c35538431de2e31f6abd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-065",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-065/source.png",
+            "bytes": 1335571,
+            "sha256": "0b44fe1d01a0ef605084a4ae999b6c8d112bf55dcd5afc62bcf30b54206cf01a"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-065/source.webp",
+            "bytes": 151698,
+            "sha256": "2786b06cd9976a99ea821e8fd073edbc2fdc69875cc3e6b6de1c6d654bb3c4dd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-065/characteristic.png",
+            "bytes": 6754,
+            "sha256": "b4203fbc945cd7f1fd182368b42072f951f9fc9b7ac2c32b0951f7ccab7afa45"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-065/characteristic.webp",
+            "bytes": 3896,
+            "sha256": "36a7ef8486d5f8dc811a507df3e03a856ffb7d3adccceca9eef048c9ba60c31e",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-065/material.png",
+            "bytes": 218859,
+            "sha256": "660989213f71d669f7ce31800d2c8ac040b00a7ba4432e13ba1d06a4797702ea"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-065/material.webp",
+            "bytes": 189022,
+            "sha256": "d60c3c69dffb8abe28f977e59ed8bd0e919ed3c66044f19ba6ff1efc8af95f0e",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-066",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-066/source.png",
+            "bytes": 486318,
+            "sha256": "e28f69ff8c5affa8fbb95761c7960f2266255cb66823c6fb851820e47bdb0c18"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-066/source.webp",
+            "bytes": 44004,
+            "sha256": "a4d6473c39c4a4d0b1c8152d78973cce1224893a5edb3a0938f3c99c77dc7c72",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-066/characteristic.png",
+            "bytes": 6854,
+            "sha256": "f96c9e2c62cbdb2ff7c7d2edae3dc6b42bce2f091ab4e933f3cdc48068ea8b4d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-066/characteristic.webp",
+            "bytes": 4016,
+            "sha256": "5538cc1b477c3af0d3315432895532b7c2331e5e8ec1e5bdc98d49ed0a3f6a02",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-066/material.png",
+            "bytes": 16897,
+            "sha256": "2c6119b621c1284f57ced06770f72adf8724d05de6eac2ced8d7514e3901a21a"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-066/material.webp",
+            "bytes": 10030,
+            "sha256": "4f02bcd2f4d4de78d5bf6ac1e02b8a77df57232e6d7941125929db7ccd41e7dc",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-067",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-067/source.png",
+            "bytes": 732234,
+            "sha256": "81672d9d28cf6511d249b8306753073b4c5d8add39c4cd48cee0e970aeacaf08"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-067/source.webp",
+            "bytes": 47770,
+            "sha256": "f37c29ee0125b0781b3d2bc6d5f4659c2ffdd7b4e6314a5e0708f7851a0a7a90",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-067/material.png",
+            "bytes": 13408,
+            "sha256": "af453b7c5970095f25d85521830cd6fab020ad9f44a1dee389fe9e1425ce04a3"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-067/material.webp",
+            "bytes": 8314,
+            "sha256": "699ad84081d0a3b97b833ba666ac1ab9ee583c769b37a918707610a768ddaa3f",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-067/characteristic.png",
+            "bytes": 8976,
+            "sha256": "f316440c410abfb0131ca6e5f6574aa7ca5c79134f74a8e8a3e6a3aef21a82a6"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-067/characteristic.webp",
+            "bytes": 4878,
+            "sha256": "4d7e6f094d394b2e33f22004fe7edb814715571d4e3b72bddc386f23dad9e984",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-068",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-068/source.png",
+            "bytes": 825103,
+            "sha256": "0ee7a4d580a3b23e03e1cc1c23bf932af4ee449949ea7ebe03ea48003072329f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-068/source.webp",
+            "bytes": 80424,
+            "sha256": "58110a48d88d42ba66b94abd6ec221c5284b9739edf1ba8d8f3363b86cfac5f8",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-068/characteristic.png",
+            "bytes": 12684,
+            "sha256": "f323e2a7d58cb33d73de4ea363a07219d8be79e56c4e2e16557e7ad11dfb5cd5"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-068/characteristic.webp",
+            "bytes": 7854,
+            "sha256": "855fa55f55377eb3e6a6f9fd7835a364e34557b50873fa86fc1e359c8f60aa80",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-068/material.png",
+            "bytes": 46081,
+            "sha256": "f5ee643e51a952b1cfc93789d437e8f09cc24e72e5cbedda3a4d8a541ff4ade0"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-068/material.webp",
+            "bytes": 33012,
+            "sha256": "e100a46b78558e0238b2378810b1bb27a2aa8ed328b09bb8ef7603cc59dbaa53",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-069",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-069/source.png",
+            "bytes": 938296,
+            "sha256": "53c60cc8edb579c0fd614e10dc20e50d399c96dcc780a9ea5a229b2f986fad61"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-069/source.webp",
+            "bytes": 78478,
+            "sha256": "77f5f0cc393d24336a6fba30de325ee34da40bd2b9747c77f20d758d92254761",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-069/characteristic.png",
+            "bytes": 14121,
+            "sha256": "0b81d8a8b1becfe7bef9bcbc918ef7e538f252c19626a0f23cebf29d94651ef5"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-069/characteristic.webp",
+            "bytes": 8924,
+            "sha256": "a0708d2a005e9d160882d3ae725666b3a337454953c13a8ae1cd744d02b3bcbd",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-069/material.png",
+            "bytes": 105469,
+            "sha256": "2cbf9bab76cad6ab9d1e314a65790469ec509308382ea591da457b1cea2453a1"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-069/material.webp",
+            "bytes": 86202,
+            "sha256": "484d573b7ce342861d47a807d85aeeb9de84ef7611920b9fbd15923ac15b0d2b",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-070",
+      "assets": {
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-070/characteristic.png",
+            "bytes": 7930,
+            "sha256": "2249a228cdc58ce2330adf3990b9d034c09f549794fee32114227f47e9890ac6"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-070/characteristic.webp",
+            "bytes": 4638,
+            "sha256": "206d569f84dca7d680530bbf2e535c89bda1e93ae52aa593d5cb8158a2328ad9",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-070/source.png",
+            "bytes": 581731,
+            "sha256": "db001f8e1662fef22fed7d5645e449fe74ff19cc6c48753ba7d66d4dce0de57c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-070/source.webp",
+            "bytes": 47108,
+            "sha256": "159d3ed8bb0eac60a845b869eb0f24e7b515f80ae45a26ec053edde6499a85be",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-070/material.png",
+            "bytes": 15611,
+            "sha256": "7364b7975fd7d4bde3fb8b52fc8c9eba9e13f2d06c9abc60e9c4098cd33ead5c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-070/material.webp",
+            "bytes": 9772,
+            "sha256": "ac780214385bf88a2cd9418cd5383c22be8b5bf10b9af67b8ec27361b1de4133",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-071",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-071/source.png",
+            "bytes": 870638,
+            "sha256": "2b82eecb0524eb7d991fa6c3567a616a88ff0343bd5c46e27b607a9c2910779d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-071/source.webp",
+            "bytes": 56752,
+            "sha256": "2db0e149c72ad34903334ea1cbf1106953860fd16e4fee18bf35ec1bf7f77ae2",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-071/characteristic.png",
+            "bytes": 11616,
+            "sha256": "42b09817eaec4050761370653f338c83d12afce588c2f98df7ef5cd685bab9ac"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-071/characteristic.webp",
+            "bytes": 7048,
+            "sha256": "a0f02f65ed565669d898438bca6aa33db156625c7f67467435c58c89c6cfb665",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-071/material.png",
+            "bytes": 32612,
+            "sha256": "f110065ee6f7277593d0bcdc885e76b922a1e6400b50f9352483813a25239ed1"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-071/material.webp",
+            "bytes": 21076,
+            "sha256": "03a81743e37fe42bc9eddee81ba1dc29043712f180d077780a97004567d671d8",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-072",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-072/source.png",
+            "bytes": 603108,
+            "sha256": "63956608cc7ad569dcc056a1063c4fb54ce4e733ac4acafaf54587f91c03beaa"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-072/source.webp",
+            "bytes": 62996,
+            "sha256": "7c20cd78d2c995745084f36a3f7bd9774615ddddb62a23db294d2645561b9fe2",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-072/characteristic.png",
+            "bytes": 6981,
+            "sha256": "b716a296233f50b4090ed2eab1819e38fa462f5565547ee6a64c3ccf88549c01"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-072/characteristic.webp",
+            "bytes": 3938,
+            "sha256": "dd0d1e1dc917fc099c25be24953a0800c278132660e62e5e26e78c0ede634c4f",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-072/material.png",
+            "bytes": 37605,
+            "sha256": "5bc14125c0896a85422777920436e221fd842a48806e52fba472bfcd5f4f3aa4"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-072/material.webp",
+            "bytes": 25676,
+            "sha256": "512653e2277629c766acf0d68bef999eb017d6c812dbffdc5d4521280802cc0b",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-073",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-073/source.png",
+            "bytes": 1026323,
+            "sha256": "76abe7d82c6aaf0cf1651f5b27eb64cd21ddec4aad27bb08cfde534c789dcd3c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-073/source.webp",
+            "bytes": 109722,
+            "sha256": "ec36abb87b517bb1f11403dc05c4c7ffd24047807a89e2835de36fc9692a65bc",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-073/characteristic.png",
+            "bytes": 10479,
+            "sha256": "84cbfbb3bec0e334469d06cccf0af0abc8496c440c077b832b9240d534ecd293"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-073/characteristic.webp",
+            "bytes": 6052,
+            "sha256": "dbbc7e68e254204afd1ecef02cee6ea1016b8503fb48581f13a8206a6a33d1c2",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-073/material.png",
+            "bytes": 106322,
+            "sha256": "3816fb6903f0285982d99bd7a55319f43370ae97d7b76194fb39b51a99189084"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-073/material.webp",
+            "bytes": 86424,
+            "sha256": "be25ef789a9fb61f06d4fd24d46711d216c1f7e24c4d6fd8a346498b186a6b1b",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-074",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-074/source.png",
+            "bytes": 494616,
+            "sha256": "40c3ccf866089188fcc05a5fba8e2986947fba0739e6b95986eba795d5689cab"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-074/source.webp",
+            "bytes": 38076,
+            "sha256": "fcabfa3b53aa739ad2f975518d448de256c5ff00581547a17140a0fca5485363",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-074/characteristic.png",
+            "bytes": 11299,
+            "sha256": "2aae7a4dda6bec87bddd5317c42a62727fae6da07e45a5abf6fca21697f43d73"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-074/characteristic.webp",
+            "bytes": 6514,
+            "sha256": "7622750dbe8bf149a0f3458933e11720f8fe202956a36102c8ed1f8e2f0422ea",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-074/material.png",
+            "bytes": 17272,
+            "sha256": "e9043b618a11db24be2f4a58d2b9ee6ac645c6c46b5e1b63281ad8acbf981bfe"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-074/material.webp",
+            "bytes": 10166,
+            "sha256": "41bd56927b11d676e3f590b23f8cc4bc9ccc756a816f4ec19eff5e42dc7783d2",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-075",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-075/source.png",
+            "bytes": 758765,
+            "sha256": "2dc27a3925a2490799fe928e19fbb843ea99c55b05216cca915a0fd4e6ae858d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-075/source.webp",
+            "bytes": 54250,
+            "sha256": "69cd3ded689c58e14dc4e6fd6b9aecce762876fac4d3af840acc4590f9cc5734",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-075/characteristic.png",
+            "bytes": 5765,
+            "sha256": "782cdaa62aab442265fe021b4ad071f0b2e5a8f40909c852d72e8822faa4e1ef"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-075/characteristic.webp",
+            "bytes": 3856,
+            "sha256": "5a75231f25111f11cd95aa17ac680338cd65a348c423cee3eb4efa9c0460061f",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-075/material.png",
+            "bytes": 16412,
+            "sha256": "42aae5133c6475a7d0f95e7b41777f62f7a4b67602a7ce894ba92867c1c6ae3b"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-075/material.webp",
+            "bytes": 9386,
+            "sha256": "92053f8594d6c0142b4cfaa4426d33b83eebdd2e999732a0e8ba1020025b05c2",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-076",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-076/source.png",
+            "bytes": 879374,
+            "sha256": "5fd3719fc903e5df750ae41445ca519579440b474b45853724608565afd8ad1c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-076/source.webp",
+            "bytes": 77024,
+            "sha256": "7c580c7aa4d670ee2f9239b6d2bd6b68a99cb9b79466947e344cc2f9af385a26",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-076/characteristic.png",
+            "bytes": 22111,
+            "sha256": "cec50ae96d5a985dadee5a5c71517157d42ea4efa5217cda510c0c844ee47e22"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-076/characteristic.webp",
+            "bytes": 16244,
+            "sha256": "04beaaa5a1e897fca0648b476d49a79feced24789368e3725991160a86f05ddf",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-076/material.png",
+            "bytes": 89808,
+            "sha256": "abb5bf12c01c4b7e10a5c6d8e33cea8a24fc7b0ba4bebae27e7a7944d9fadf91"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-076/material.webp",
+            "bytes": 70632,
+            "sha256": "a4b9c807121dfb89562c25ec57cce13ce3519ad2042d4668b4b71149ca507e91",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-077",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-077/source.png",
+            "bytes": 878536,
+            "sha256": "d30c95343a0bb1173ed2979b570361b33a091aadf88837db6129747a2a8c188b"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-077/source.webp",
+            "bytes": 86880,
+            "sha256": "1811b552193d6f9ca2850b03e36ae6c1847bc3f1f29174f5d9f326fbf6cbafe1",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-077/characteristic.png",
+            "bytes": 13301,
+            "sha256": "b497f9f28d8c10735d49266ef17eb0629c5b5fbf945a204dd7dfca8f7013a1ba"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-077/characteristic.webp",
+            "bytes": 8234,
+            "sha256": "e0268d3b3d55f634098bdb1d8f98a55d78c1ea436d7836ecd4ebf703caff3df4",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-077/material.png",
+            "bytes": 97042,
+            "sha256": "3fe8e8bb6910161f22f86c849f74a8c9b402a2556ea28e645b85c3854241e92f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-077/material.webp",
+            "bytes": 79486,
+            "sha256": "0774670f1a9c378ccf4c5403348d0cf3c25fb9ff83f19c852b8b66ffc32210aa",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-078",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-078/source.png",
+            "bytes": 345283,
+            "sha256": "fbe8fecaa48af2dd25ce5a112c8846e1cc6695ea51eab943e1c6454f5b15d3e0"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-078/source.webp",
+            "bytes": 29960,
+            "sha256": "5ce0d398e648838115a56f00d4a0b9874b2f6a28919b3e15d2dd3adb2d49aaa3",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-078/characteristic.png",
+            "bytes": 9987,
+            "sha256": "fda01d4027528304e7781e06537b216ec7a27a4cfa3f0c10b058670965164c9d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-078/characteristic.webp",
+            "bytes": 5860,
+            "sha256": "a7e3580d6efbca532ae32599181f0098ce0182b8746ad93308f0389c9f37fc47",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-078/material.png",
+            "bytes": 19180,
+            "sha256": "f99d9aadd3a63d43bef7b3589ccf6a1c5c2674e9f8454dcdf5768139d6f20816"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-078/material.webp",
+            "bytes": 12002,
+            "sha256": "5ba1771663e92d3d1994de5aefb32c82e649811f1cb3f3eb921cad773fbb5e60",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-079",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-079/source.png",
+            "bytes": 908391,
+            "sha256": "c83053808aa659b1fe5bdc43271729bb28c72d551635c01f25bdd7ea3aff4922"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-079/source.webp",
+            "bytes": 64628,
+            "sha256": "456f1eff95537a022d406c4143614e7602bc3a3129f355eaa91b8de5534734e9",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-079/material.png",
+            "bytes": 18973,
+            "sha256": "17732814b2be6ee17a97fd39c40ae7792dd5947d350d2769d02a338619266c17"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-079/material.webp",
+            "bytes": 11230,
+            "sha256": "9adba22aa42cd3af041133f2b793286f43dd44465a89958c0729f903a5ef7d6c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-079/characteristic.png",
+            "bytes": 13080,
+            "sha256": "7c3227d598065f0a2de8c4212d746acb0556cd265b1fc29ebb076f5c1b9aab4f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-079/characteristic.webp",
+            "bytes": 7768,
+            "sha256": "47d4b5a293507d0be3aad353e9dffb09f14d184957368ef894a77891e8e5ab22",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-080",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-080/source.png",
+            "bytes": 797118,
+            "sha256": "ac8a8ea27bd71c338fac077a357095511106b153257430be808ce3b75531a24d"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-080/source.webp",
+            "bytes": 93998,
+            "sha256": "8d174c66e41f359e745eeb2700bd8b4aadaab174296d1bccab832ff51dd7546a",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-080/characteristic.png",
+            "bytes": 7623,
+            "sha256": "a1901591570a76360c94fa1c4af7500072818e0e9653162b9973121d529ef2b5"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-080/characteristic.webp",
+            "bytes": 4528,
+            "sha256": "2b5e8b8ba03e75ec4ac604b29165b3cff9e962ea6817e5aa4f1f8eb734d46a05",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-080/material.png",
+            "bytes": 92815,
+            "sha256": "e0e8a84f9ba46869a3a0ebb7fa84ea49e4c16d49d2f453a1ea004f8de693f73f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-080/material.webp",
+            "bytes": 73618,
+            "sha256": "16ea121e9f8c06baeef4dbf088f2a2dfed2e15399fa77cc95b47f3e618bbf88c",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-081",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-081/source.png",
+            "bytes": 953335,
+            "sha256": "3574076d7e5273afb441120dbee538ed54381a0fc42dec207f8c9ae0ae93e64e"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-081/source.webp",
+            "bytes": 96432,
+            "sha256": "f0c1abc72da5d3cd8dbb705c948f5660d2163a2b3e0d13dece7cd58da48c5106",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-081/characteristic.png",
+            "bytes": 16284,
+            "sha256": "6b6018a8c90532593e36a4acb87c8599a213ca28d9be9b85ec859d244395d53c"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-081/characteristic.webp",
+            "bytes": 10596,
+            "sha256": "c6072dc8b5ea50cbfaf81d3defbcd95640c86b9a51400302dccab98faccec6a7",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-081/material.png",
+            "bytes": 101973,
+            "sha256": "f0b9f8ff7afe4a4ef433662a38e32804a6b0f6e5dd012fd11a9617fb4c282601"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-081/material.webp",
+            "bytes": 83418,
+            "sha256": "d7d66df0a5b3d7e92069c1c8b0075e5c07fd8e5430454d233e8c130d798c0331",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "avatarId": "palari-082",
+      "assets": {
+        "source": {
+          "source": {
+            "path": "public/palari-v2/palari-082/source.png",
+            "bytes": 776537,
+            "sha256": "a58cdd27f8ca37e150b21a8d3523a555ad684b4a441d19725aaf0c7272197b4e"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-082/source.webp",
+            "bytes": 61568,
+            "sha256": "acc0216537993c9fba03c77e68b640523c54f1d66044a49fb5522724fc6c06c0",
+            "width": 1254,
+            "height": 1254,
+            "lossless": false,
+            "quality": 90,
+            "differingPixels": null
+          }
+        },
+        "characteristic": {
+          "source": {
+            "path": "public/palari-v2/palari-082/characteristic.png",
+            "bytes": 10641,
+            "sha256": "c5a2bdc7df5e9a4273d4a6603a2e173f4980174ac7a850caa07ebf3fe23b510f"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-082/characteristic.webp",
+            "bytes": 6534,
+            "sha256": "7142aae030a5e90a9d356edd0bc8cf1b9d3fd1a19bae03947bd58dc74ef79abf",
+            "width": 1254,
+            "height": 1254,
+            "lossless": true,
+            "quality": 100,
+            "differingPixels": 0
+          }
+        },
+        "material": {
+          "source": {
+            "path": "public/palari-v2/palari-082/material.png",
+            "bytes": 19264,
+            "sha256": "3dbcbbb335456d2b903a35add44f7c69f673ed7877332d6eb8aead588a1eb3d8"
+          },
+          "output": {
+            "path": "public/palari-v2-web/palari-082/material.webp",
+            "bytes": 11948,
+            "sha256": "938fba1bee82e4ae8b57879612ec694c4c3438f094dbec44269afc7e8b28f054",
             "width": 1254,
             "height": 1254,
             "lossless": true,

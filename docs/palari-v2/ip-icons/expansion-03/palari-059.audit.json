@@ -1,0 +1,65 @@
+{
+  "id": "palari-059",
+  "createdAt": "2026-08-19",
+  "generator": "built-in image_gen (service-native model name not exposed)",
+  "design": {
+    "silhouette": "stack",
+    "material": "ivory",
+    "characteristic": "amber",
+    "characteristicHex": "#C17A0B",
+    "crown": "split_petal",
+    "opening": "vertical_oval",
+    "pose": "soft_embrace",
+    "expression": "gently_amused",
+    "composition": "lower-right",
+    "identity": "two-block petal stack embracing one upright amber oval"
+  },
+  "sourceGeneration": {
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari named palari-059. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: two-block petal stack embracing one upright amber oval\n- silhouette: exactly two visibly offset interlocking ivory ceramic masses with distinct centers, one clear overlap seam, and a single continuous stable base; this must unmistakably read as a stacked construction rather than a normal hooded figure\n- crown: restrained split-petal crown with smooth finished edges, grown from the upper mass and not an open bowl\n- opening: one deliberate upright vertical oval aperture\n- pose: both rounded arms softly embracing the vertical oval opening\n- expression: gently amused through the eye pose only, with no mouth\n- exterior material: warm creamy ivory ceramic\n- characteristic color: warm amber, visually anchored to #C17A0B\n\nFamily invariants:\n- exactly one complete isolated full-body figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, amber only, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- exactly one dominant architecturally intentional opening and no other cavity; the structural overlap is a closed seam, not an opening\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, amber iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- one compact Palari seed mark on the lower front: exactly six circular amber apertures, four larger circles at the corners of a compact rectangle plus two smaller circles centered vertically between them; not a grille and no extra dots\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, complete full figure visible and centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ivory form, the two offset interlocking masses, the overlap seam, and amber inner depth without neon glow.\n\nAvoid: a stack silhouette without two visibly offset interlocking exterior masses, simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, upward-facing cavities, circular aperture surrounding the face, text, labels, numbers, logos, or watermarks.",
+    "retryPrompt": "Use case: precise-object-edit\nAsset type: corrected Palari V2 character study\nInput images: Image 1 is the edit target.\nPrimary request: Change only the face-to-opening relationship. Move the same two calm half-lidded eyes out of the amber interior and set them into the ivory ceramic upper shell, above a smaller upright amber oval opening. The amber oval must remain one deliberate vertically oriented recessed aperture below the eyes, embraced by the same two rounded arms. The interior must not surround the eyes or read as a colored face, screen, clothing, or skin.\nPreserve unchanged: the exact one character, warm ivory ceramic, split-petal crown, two visibly offset interlocking exterior masses with distinct centers and one clear closed overlap seam, continuous stable legless base, exactly two seamless rounded arms and soft-embrace pose, gently amused eye expression with no mouth, amber-only characteristic hue, correct six-aperture seed mark with four large corners and two smaller vertically centered apertures, camera, framing, plaster alcove, limestone floor, upper-left daylight, and contact shadow.\nConstraints: exactly one figure, one dominant vertical oval opening below the eyes, two eyes, two arms, and six seed apertures only; no other cavity, hands, legs, feet, cup rim, text, logo, watermark, damage, color changes, or new objects.",
+    "output": "docs/palari-v2/expansion-03/generated/palari-059.png",
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "edda4c55de11debe70a3b0a195c15fbca87b868a3a2ebf4eb21615f45c829d9d",
+    "grammarReview": {
+      "status": "pass",
+      "characterCount": 1,
+      "characteristicHueCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "leglessContinuousBase": true,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertically centered apertures",
+      "notes": [
+        "The targeted retry moved the eyes from the amber interior into the ivory shell above the aperture, preventing the opening from reading as a colored face or screen.",
+        "Two distinct offset masses and their closed overlap seam remain explicit, while the split-petal crown, embraced oval, and correct 4+2 seed are retained."
+      ]
+    }
+  },
+  "iconGeneration": {
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate\n\nInput images: Image 1 is identity reference only. Do not edit it, copy its studio scene, or reproduce ceramic realism.\n\nPrimary request: Derive palari-059 as a highly simplified logo first and a character second. Preserve the source-specific two visibly offset interlocking shell masses with one clear diagonal overlap seam, restrained split-petal crown, one upright amber oval aperture below the eyes, both rounded arms softly embracing that oval, calm gently-amused half-lidded eyes, continuous legless base, and compact six-aperture Palari seed. Make the stepped two-mass shell, split-petal crown, and amber oval relationship the primary recognizable mark; the seed is secondary.\n\nGeometry: one dominant rounded stacked silhouette built from roughly 6–10 broad basic shapes, plus the exact compact seed-detail exception. Two distinct offset mass centers must remain visible while sharing one continuous stable base. Thick weighty contours, blunt rounded arm tips, smooth petal ends, no thin gaps or sharp points. Exactly two eyes, no mouth. Exactly two seamless rounded arms. Exactly one upright oval aperture below the eyes. Exact seed detail: six amber circles arranged in two columns and three rows, with four visibly larger corner circles and two smaller vertically centered circles. Readable as a black silhouette and recognizable at 32 × 32.\n\nComposition: upright, emerging from the lower-right corner, base-only crop, filling 75–85% of the square. Preserve both petals, both eyes, both arms, the overlap seam, aperture, and complete seed. No tilt.\n\nColor count: exactly three semantic colors total:\n- warm ivory #E9E6DF for the entire shell and arms\n- warm amber #C17A0B for the one oval aperture, two small eye marks, and six seed apertures\n- deep navy #172333 exclusively for a fully opaque edge-to-edge uniform background\nDo not introduce black, white, gray, beige, yellow, orange, or any other semantic color. Closely related same-family tonal variation is allowed only as subtle continuous micro-volume.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient neo-skeuomorphic micro-volume. Use one uninterrupted extremely low-frequency diffuse gradient inside each large ivory or amber region, one coherent upper-left-to-lower-right light direction, each transition spanning at least half the form. Keep total tonal variation subtle enough to almost disappear at 32 × 32. Small eyes and seed circles remain nearly flat.\n\nForbid: character illustration, scene, alcove, floor, texture, ceramic material realism, gloss, bevel, strong 3D, toy/clay/plastic rendering, specular highlight, rim light, cast shadow, discrete highlight patches, nested shadows, outlines, extra color, vignette, halo, border, frame, white margin, transparency, rounded canvas corners, text, watermark, mouth, eyebrows, hands, fingers, legs, feet, extra holes, decorative marks, a single normal hood body without two visibly offset masses, or centered sticker composition.\n\nOutput: one native direct 1:1 square logo asset with square outer corners, approximately 1536 × 1536 or the service-native 1254 × 1254 limit.",
+    "retryPrompt": "Use case: precise-object-edit\nAsset type: corrected Palari mascot logo\nInput images: Image 1 is the edit target.\nPrimary request: Change only composition, background uniformity, and excessive volume.\n- Move the same upright two-mass stacked mark toward the lower-right so it genuinely emerges from the lower-right corner, filling 75–85% of the square. Crop only the continuous lower base; keep both crown petals, both eyes, both arms, overlap seam, amber oval, and the entire six-circle seed visible.\n- Make the entire edge-to-edge background a visually uniform solid deep navy #172333: no vignette, glow, halo, spotlight, texture, or directional gradient.\n- Reduce shell and amber modeling to extremely subtle continuous micro-volume that nearly disappears at 32 × 32. Remove cast shadows, bevel-like seams, glossy effects, discrete highlights, and white eye catchlights. Keep clean flat-first broad shapes.\n\nPreserve unchanged: the split-petal crown, exactly two visibly offset interlocking shell masses with one readable diagonal overlap seam, two half-lidded amber eye marks, one upright amber oval below the eyes, exactly two rounded embracing arms, continuous legless base, and exact six-dot seed with four larger corner circles plus two smaller middle circles. No mouth.\nExact colors only: warm ivory #E9E6DF shell, warm amber #C17A0B aperture/eyes/seed, uniform background-only deep navy #172333. No black, white, gray, yellow, orange, or extra colors.\nForbid: scene, texture, ceramic realism, cast shadow, border, transparency, rounded canvas corners, text, watermark, hands, fingers, legs, feet, extra holes, new objects, or identity changes.",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-059.png",
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "ccd1b81d8f6b3210f9a939bf002b1111d324db6aeeb32b7efe0518fe5dbc5c48",
+    "seedApertureCount": 6,
+    "seedGeometry": "four larger corner circles plus two smaller middle circles",
+    "smallSizeStatus": "pass",
+    "skillStatus": "reject",
+    "identitySummary": "Ivory two-mass stack emerging from the lower-right with a rounded split-petal crown, central amber oval, paired embracing arms, sleepy amber eyes, one diagonal overlap seam, and a complete 4+2 seed.",
+    "deviations": [
+      "The navy field retains a mild center-to-edge vignette rather than a uniform #172333 background.",
+      "The ivory shell retains faint contour seams around the arms and mass overlap, and the amber regions drift brighter than the requested #C17A0B in modeled areas.",
+      "The mark fills slightly more than the preferred 75–85% height, though only the continuous base is cropped and every identifying feature remains visible.",
+      "At 32 × 32 the split crown, central amber oval, stacked offset, paired arms, and half-lidded eyes remain distinct; the seed compresses but stays secondary."
+    ]
+  }
+}

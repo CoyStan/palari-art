@@ -1,0 +1,65 @@
+{
+  "id": "palari-057",
+  "createdAt": "2026-08-19",
+  "generator": "built-in image_gen (service-native model name not exposed)",
+  "design": {
+    "silhouette": "pod",
+    "material": "charcoal",
+    "characteristic": "coral",
+    "characteristicHex": "#B94F48",
+    "crown": "continuous_dome",
+    "opening": "low_circular_aperture",
+    "pose": "thoughtful_tip",
+    "expression": "attentive",
+    "composition": "lower-right",
+    "identity": "tall egg pod with a low coral moon aperture and thoughtful arm"
+  },
+  "sourceGeneration": {
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari named palari-057. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: tall egg pod with a low coral moon aperture and thoughtful arm\n- silhouette: grounded pod with one continuous rounded ceramic body, an adult collectible proportion, and body height at least 2.4 times visible face height\n- crown: simple closed dome with no open top\n- opening: one deeply recessed circular aperture entirely below the face, separated from it by a continuous ceramic bridge\n- pose: one rounded arm tip near the face in thought; the other rounded arm rests close to the body\n- expression: attentive\n- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture\n- characteristic color: deep muted coral, visually anchored to #B94F48\n\nFamily invariants:\n- exactly one complete isolated full-body figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, coral only, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- exactly one dominant architecturally intentional opening and no other structural cavity\n- exactly two calm half-lidded inset eyes above the aperture with ceramic eyelids, dark pupils, coral iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- one compact Palari seed mark on the lower front: exactly six circular coral apertures, four larger circles at the corners of a compact rectangle plus two smaller circles centered vertically between them; not a grille and no extra dots\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, complete full figure visible and centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable charcoal ceramic form and coral inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, upward-facing cavity, circular aperture surrounding the face, text, labels, numbers, logos, or watermarks.",
+    "retryPrompt": "Use case: precise-object-edit\nAsset type: corrected Palari V2 character study\nInput images: Image 1 is the edit target.\nPrimary request: Change only the compact six-aperture coral seed mark on the lower front. Keep exactly six circular apertures in two columns and three rows, but make the four corner apertures (top-left, top-right, bottom-left, bottom-right) visibly larger and the two apertures centered vertically between them (middle-left, middle-right) visibly smaller.\nPreserve unchanged: the same single charcoal tall egg-pod character, exact silhouette and proportions, one closed dome, one low circular coral aperture below the eyes, the continuous bridge above it, exactly two calm half-lidded eyes, the exact thoughtful arm pose with two seamless rounded tubular arms, continuous legless base, coral-only characteristic hue, ceramic material, camera, framing, plaster alcove, limestone floor, upper-left daylight, and gentle contact shadow.\nConstraints: exactly one figure, one dominant opening, two eyes, two arms, six seed apertures only; no extra holes; no hands, legs, feet, cup rim, text, logo, watermark, damage, color changes, or new objects.",
+    "output": "docs/palari-v2/expansion-03/generated/palari-057.png",
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "e65a6047e99ba4b25200fa2e4619cbaf5e85d8fdf0d7f8abc9bb2ff650d9156a",
+    "grammarReview": {
+      "status": "pass",
+      "characterCount": 1,
+      "characteristicHueCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "leglessContinuousBase": true,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertically centered apertures",
+      "notes": [
+        "The targeted retry corrected the initial equal-size 3-by-2 seed into the frozen 4+2 geometry.",
+        "Warm studio lighting shifts portions of the coral toward orange, but no second characteristic hue appears."
+      ]
+    }
+  },
+  "iconGeneration": {
+    "attempts": 2,
+    "selectedAttempt": 1,
+    "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate\n\nInput images: Image 1 is identity reference only. Do not edit it, copy its studio scene, or reproduce ceramic realism.\n\nPrimary request: Derive palari-057 as a highly simplified logo first and a character second. Preserve the source-specific tall egg-pod outer silhouette, closed dome, one low circular ‘moon’ aperture below the eyes, thoughtful left arm tip beside the aperture, second arm resting close to the body, calm attentive half-lidded eyes, continuous legless base, and compact six-aperture Palari seed. Make the shell-and-low-aperture relationship the primary recognizable mark; the seed is secondary.\n\nGeometry: one dominant continuous rounded shell built from roughly 6–10 broad basic shapes, plus the exact compact seed-detail exception. Thick weighty contours, blunt rounded arm tips, no thin gaps or sharp points. Exactly two eyes, no mouth. Exactly two seamless rounded arms. Exactly one circular aperture. Exact seed detail: six coral circles arranged in two columns and three rows, with four larger corner circles and two smaller vertically centered circles. Readable as a black silhouette and recognizable at 32 × 32.\n\nComposition: upright, emerging from the lower-right corner, base-only crop, filling 75–85% of the square. Preserve both arms and both eyes. No tilt.\n\nColor count: exactly three semantic colors total:\n- warm ivory #E9E6DF for the entire shell and arms\n- coral #B94F48 for the one aperture, two small eye marks, and six seed apertures\n- deep navy #172333 exclusively for a fully opaque edge-to-edge uniform background\nDo not introduce black, white, gray, beige, orange, red, or any other semantic color. Closely related same-family tonal variation is allowed only as subtle continuous micro-volume.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient neo-skeuomorphic micro-volume. Use one uninterrupted extremely low-frequency diffuse gradient inside each large ivory or coral region, one coherent upper-left-to-lower-right light direction, each transition spanning at least half the form. Keep total tonal variation subtle enough to almost disappear at 32 × 32. Small eyes and seed circles remain nearly flat.\n\nForbid: character illustration, scene, alcove, floor, texture, ceramic material realism, gloss, bevel, strong 3D, toy/clay/plastic rendering, specular highlight, rim light, cast shadow, discrete highlight patches, nested shadows, outlines, extra color, vignette, halo, border, frame, white margin, transparency, rounded canvas corners, text, watermark, mouth, eyebrows, hands, fingers, legs, feet, extra holes, decorative marks, or centered sticker composition.\n\nOutput: one native direct 1:1 square logo asset with square outer corners, approximately 1536 × 1536 or the service-native 1254 × 1254 limit.",
+    "retryPrompt": "Use case: precise-object-edit\nAsset type: corrected Palari mascot logo\nInput images: Image 1 is the edit target.\nPrimary request: Change only composition, background uniformity, and excessive volume.\n- Move the same upright egg-pod mark toward the lower-right so it genuinely emerges from the lower-right corner, filling 75–85% of the square, with only its continuous base cropped by the bottom edge. Preserve both eyes, both arms, the circular aperture, and all six seed circles.\n- Make the entire edge-to-edge background a visually uniform solid deep navy #172333: no vignette, glow, halo, spotlight, texture, or directional gradient.\n- Reduce the shell and coral modeling to extremely subtle continuous micro-volume that nearly disappears at 32 × 32. Remove internal cast shadows, bevel-like seams, glossy effects, and discrete shading. Keep clean flat-first broad shapes.\n\nPreserve unchanged: the exact palari-057 egg-pod identity, thoughtful arm pose, exactly two half-lidded coral eye marks, one low coral circular aperture, second resting arm, continuous legless shell, exact six-dot seed with four large corner circles plus two smaller middle circles, square opaque canvas, no mouth.\nExact colors only: warm ivory #E9E6DF shell, coral #B94F48 aperture/eyes/seed, uniform background-only deep navy #172333. No black, white, gray, or extra colors.\nForbid: scene, texture, ceramic realism, cast shadow, border, transparency, rounded canvas corners, text, watermark, hands, fingers, legs, feet, extra holes, new objects, or identity changes.",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-057.png",
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "93f00f3e96351420af594cb4a4f2d734bc333205ac1906feed373f5029f78186",
+    "seedApertureCount": 6,
+    "seedGeometry": "four larger corner circles plus two smaller middle circles",
+    "smallSizeStatus": "pass",
+    "skillStatus": "reject",
+    "identitySummary": "Tall ivory egg-pod with a low coral moon aperture, one thoughtful arm, one resting arm, two sleepy coral eye marks, and a complete 4+2 seed.",
+    "deviations": [
+      "The selected first attempt stays horizontally centered rather than emerging from the requested lower-right corner; the retry improved placement but cropped the identifying seed and was rejected.",
+      "The navy field retains a visible center-to-edge vignette instead of a uniform #172333 background.",
+      "Ivory and coral forms retain more dimensional modeling and arm contact shadow than the strict micro-volume limit.",
+      "At 32 × 32 the egg-pod, moon aperture, thoughtful arm, and paired eyes remain clear; the seed is secondary and its individual 4+2 sizing becomes subtle."
+    ]
+  }
+}

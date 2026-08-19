@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "id": "palari-046",
+  "createdAt": "2026-08-19T02:03:55Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "bell",
+    "material": "porcelain",
+    "characteristic": "forest",
+    "characteristicHex": "#174D38",
+    "crown": "soft_hood",
+    "opening": "layered_reveal",
+    "pose": "arms_resting",
+    "expression": "quietly_confident",
+    "composition": "lower-left",
+    "identity": "double-shell bell with a broad skirt and forest overlap reveal"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 1,
+    "selectedAttempt": 1,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-8cecffab-a011-4604-8335-ceffdbeafb94.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: balanced bell silhouette with a softly flared base and integrated head\n- crown: protective soft hood grown from the ceramic body\n- opening: one opening created by two overlapping shell masses\n- pose: both rounded arms resting close to the body\n- expression: quietly confident\n- exterior material: soft cool-neutral off-white porcelain, never pure digital white\n- characteristic color: deep forest green\n- structural fingerprint: double-shell bell with a broad skirt and one forest overlap reveal; the overlapping shells still form one intact stable body\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- four larger circular seed-mark apertures at the corners of a compact rectangle with two smaller apertures centered vertically\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "review": "Selected. One full bell figure, one forest layered reveal, two half-lidded eyes, two seamless resting arms, one continuous legless base, and the exact six-aperture seed are visible."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-046.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "f0ecaadcbe4df4820871a5ec7965731c0bd7ce34453ce35477f3b35cf1bb30e3"
+    },
+    "grammarReview": {
+      "status": "pass",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The source visibly honors the bell silhouette, soft hood, layered forest reveal, resting-arm pose, porcelain material, and quietly confident half-lidded expression.",
+        "The green reveal sits between overlapping upper and lower shell masses while the figure retains one stable continuous base.",
+        "This is an unregistered review candidate and was preserved without postprocessing."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-046.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-e6d9cab6-5eec-4121-b4dd-48fe66bc1fc9.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot logo\n\nInput image 1: identity reference only for palari-046. Create a new logo from its double-shell bell silhouette, overlap aperture, eyes, and resting arms. Do not edit or reproduce the reference scene, ceramic material, lighting, texture, or shadows.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-046 to a compact Aperture Mark: a broad softly flared bell shell with a protective hood grown from the body, one forest-green recessed reveal formed by two overlapping shell masses, and two short thick rounded arms resting close to the body. The shell-and-aperture silhouette must be the primary identity; the seed is only a small family detail.\n\nBackground and palette: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only as the background and as true negative-space cutouts. Use normalized warm ivory #E9E6DF for the complete Palari shell and deep forest green #174D38 only for the one continuous layered-reveal region. Exactly these three semantic colors in the complete image; no black, white, grey, beige, extra hue, highlight color, or shadow color.\n\nGeometry: one heavy upright continuous rounded bell silhouette, 6–10 broad basic rounded shapes excluding the tiny seed perforations, at most two internal color regions, readable at 32 × 32. Two calm half-lidded eyes are simple navy negative-space cutouts within the ivory face edge of the reveal; no iris highlight and no mouth. Retain exactly six tiny navy negative-space seed apertures in the Palari pattern: four larger circular holes at the corners of a compact rectangle and two smaller circular holes centered vertically. No other dots or holes.\n\nComposition: upright, emerging from and intentionally cropped by the lower-left corner, filling 80–85% of the square; preserve the hood tip, both eyes, forest overlap reveal, broad skirt, and both paired resting arms. No sticker-like centering, tilt, or excessive empty space.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient micro-volume only. Use one uninterrupted low-frequency diffuse gradient inside each large ivory or forest region, with one shared upper-left-to-lower-right light direction; each transition spans at least half of the dominant form. Total tonal variation stays within each named color family, nearly disappearing at 32 × 32. Keep the navy background absolutely flat.\n\nForbid: scene, alcove, floor, ceramic realism, clay, plastic, toy rendering, texture, grain, gloss, bevel, rim light, external cast shadow, ambient shadow blob, discrete highlights, closed highlight patches, overlay bands, nested shadows, cel shading, stepped swatches, hard internal shadow edges, extra colors, thin lines, sharp points, mouth, eyebrows, catchlights, fingers, hands, legs, feet, text, logo lettering, watermark, border, frame, transparency, App-icon mask, rounded canvas corners, or seed used as the main logo. Square outer corners.",
+        "review": "Rejected only on the strict logo background rule: the navy field visibly vignetted. The bell/hood identity, paired arms, and exact six-hole seed were otherwise retained."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-abdb043a-6553-4b15-97f7-0bcd7db1f2b2.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot logo\n\nInput image 1: identity reference only for palari-046. Create a new logo from its double-shell bell silhouette, overlap aperture, eyes, and resting arms. Do not edit or reproduce the reference scene, ceramic material, lighting, texture, or shadows.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-046 to a compact Aperture Mark: a broad softly flared bell shell with a protective hood grown from the body, one forest-green recessed reveal formed by two overlapping shell masses, and two short thick rounded arms resting close to the body. The shell-and-aperture silhouette must be the primary identity; the seed is only a small family detail.\n\nBackground and palette: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only as the background and as true negative-space cutouts. Use normalized warm ivory #E9E6DF for the complete Palari shell and deep forest green #174D38 only for the one continuous layered-reveal region. Exactly these three semantic colors in the complete image; no black, white, grey, beige, extra hue, highlight color, or shadow color.\n\nGeometry: one heavy upright continuous rounded bell silhouette, 6–10 broad basic rounded shapes excluding the tiny seed perforations, at most two internal color regions, readable at 32 × 32. Two calm half-lidded eyes are simple navy negative-space cutouts within the ivory face edge of the reveal; no iris highlight and no mouth. Retain exactly six tiny navy negative-space seed apertures in the Palari pattern: four larger circular holes at the corners of a compact rectangle and two smaller circular holes centered vertically. No other dots or holes.\n\nComposition: upright, emerging from and intentionally cropped by the lower-left corner, filling 80–85% of the square; preserve the hood tip, both eyes, forest overlap reveal, broad skirt, and both paired resting arms. No sticker-like centering, tilt, or excessive empty space.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient micro-volume only. Use one uninterrupted low-frequency diffuse gradient inside each large ivory or forest region, with one shared upper-left-to-lower-right light direction; each transition spans at least half of the dominant form. Total tonal variation stays within each named color family, nearly disappearing at 32 × 32. Keep the navy background absolutely flat.\n\nTargeted correction after rejecting the first logo attempt: make every unobstructed background pixel a single visually uniform #172333 field from edge to edge. There must be no vignette, spotlight, halo, gradient, lighter center, darker corners, lighting, texture, or value variation in the background. All micro-volume must remain inside the ivory and forest shapes only. Preserve the exact six-hole seed and all other successful geometry.\n\nForbid: scene, alcove, floor, ceramic realism, clay, plastic, toy rendering, texture, grain, gloss, bevel, rim light, external cast shadow, ambient shadow blob, discrete highlights, closed highlight patches, overlay bands, nested shadows, cel shading, stepped swatches, hard internal shadow edges, extra colors, thin lines, sharp points, mouth, eyebrows, catchlights, fingers, hands, legs, feet, text, logo lettering, watermark, border, frame, transparency, App-icon mask, rounded canvas corners, or seed used as the main logo. Square outer corners.",
+        "review": "Selected as the best available icon. It retains the exact seed and successful identity geometry, but a visible navy vignette remains after the targeted retry."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-046.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "dc3276ff661bd11e88f71ca9f219b29a446f1e4fc3b8a5b7b2b60d7f714781ac"
+    },
+    "review": {
+      "seedCount": 6,
+      "seedGeometry": "four larger corner holes plus two smaller vertical-center holes",
+      "readableAt32px": true,
+      "thumbnailNotes": "The broad bell, protective hood, forest overlap band, paired eyes, resting arms, and compact seed remain legible at 32 px.",
+      "approximateBroadShapeCount": 7,
+      "assignedCorner": "lower-left",
+      "strictIpAsLogoStatus": "best-available-with-deviations",
+      "deviations": [
+        "The selected output retains a visible low-frequency vignette in the navy background after the single permitted targeted retry, so it fails the skill's strict flat-background rule.",
+        "The ivory and forest forms retain somewhat more tonal volume than the intended almost-flat micro-volume target, although their silhouette remains clear at 32 px."
+      ],
+      "postprocessed": false
+    }
+  }
+}

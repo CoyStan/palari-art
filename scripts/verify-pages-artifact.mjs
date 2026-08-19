@@ -8,8 +8,8 @@ const maximumArtifactBytes = 450 * 1_048_576;
 const expectedWebAvatars = 314;
 const expectedWebMasks = 1_395;
 const expectedHandbookWebps = 40;
-const expectedPalariV2Webps = 123;
-const expectedPalariV2IconWebps = 82;
+const expectedPalariV2Webps = 246;
+const expectedPalariV2IconWebps = 164;
 
 async function walkFiles(directory, prefix = "") {
   const entries = await readdir(directory, { withFileTypes: true });

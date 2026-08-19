@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "createdAt": "2026-08-18",
+  "createdAt": "2026-08-19",
   "status": "dashboard-registered-collection",
   "productionRegistered": true,
   "generator": "built-in ImageGen",
@@ -8,7 +8,7 @@
     "name": "ip-as-logo",
     "path": ".agents/skills/ip-as-logo/SKILL.md"
   },
-  "iconCount": 41,
+  "iconCount": 82,
   "dimensions": [1254, 1254],
   "opaque": true,
   "delivery": {
@@ -18,9 +18,9 @@
     "formats": ["1024px WebP", "256px WebP"]
   },
   "reviewSummary": {
-    "smallSizePass": 41,
-    "exactSixSeedApertures": 36,
-    "strictSkillPass": 0,
+    "smallSizePass": 82,
+    "exactSixSeedApertures": 73,
+    "strictSkillPass": 1,
     "postProcessedIcons": 0
   },
   "pilots": [
@@ -58,16 +58,29 @@
       "id": "pilot-07",
       "ids": ["palari-037", "palari-038", "palari-039", "palari-040", "palari-041"],
       "manifest": "docs/palari-v2/ip-icons/pilot-07/manifest.json"
+    },
+    {
+      "id": "expansion-03",
+      "ids": [
+        "palari-042", "palari-043", "palari-044", "palari-045", "palari-046", "palari-047",
+        "palari-048", "palari-049", "palari-050", "palari-051", "palari-052", "palari-053",
+        "palari-054", "palari-055", "palari-056", "palari-057", "palari-058", "palari-059",
+        "palari-060", "palari-061", "palari-062", "palari-063", "palari-064", "palari-065",
+        "palari-066", "palari-067", "palari-068", "palari-069", "palari-070", "palari-071",
+        "palari-072", "palari-073", "palari-074", "palari-075", "palari-076", "palari-077",
+        "palari-078", "palari-079", "palari-080", "palari-081", "palari-082"
+      ],
+      "manifest": "docs/palari-v2/expansion-03/manifest.json"
     }
   ],
   "reviewComposites": [
     {
       "path": "docs/palari-v2/ip-icons/contact-sheet-all.png",
-      "sha256": "aaa906d4c15a531e8919637b682f6981886eb658ffe39acbf6dc814ffba599d8"
+      "sha256": "4125e44b5cdc40e40fbbfbb4ebd79efbb705eeeb8b18de79a050e6ddf85a5ad4"
     },
     {
       "path": "docs/palari-v2/ip-icons/contact-sheet-all-32px.png",
-      "sha256": "d58f85258d4d157bf9a0609a49257d7e0998149c74077c891160a592518cf68a"
+      "sha256": "f81063da2cc33ee49cd9d8abf0d33ee38cef36b15e3cbaf7bd2fd45738d9b464"
     }
   ]
 }

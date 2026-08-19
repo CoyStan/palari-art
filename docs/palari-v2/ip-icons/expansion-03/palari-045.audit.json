@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "id": "palari-045",
+  "createdAt": "2026-08-19T02:03:55Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "pod",
+    "material": "charcoal",
+    "characteristic": "amber",
+    "characteristicHex": "#C17A0B",
+    "crown": "continuous_dome",
+    "opening": "vertical_oval",
+    "pose": "thoughtful_tip",
+    "expression": "curious",
+    "composition": "lower-right",
+    "identity": "tall pebble pod with an amber oval and one arm tip near its cheek"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-feed02ae-46a3-4309-9772-e4e2961fafcd.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: grounded pod with one continuous rounded ceramic body, an adult collectible proportion, and body height at least 2.4 times visible face height\n- crown: simple closed dome with no open top\n- opening: one deliberate vertical oval aperture\n- pose: one rounded arm tip near the face in thought\n- expression: curious\n- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture\n- characteristic color: warm amber\n- structural fingerprint: tall pebble pod with an amber oval and one arm tip near its cheek; preserve a tall adult collectible proportion, never chibi\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- four larger circular seed-mark apertures at the corners of a compact rectangle with two smaller apertures centered vertically\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "review": "Rejected: the amber opening surrounded and contained the eyes instead of sitting below an intact charcoal face."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-1062af14-779a-4661-9bd3-387a1e7c788a.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: grounded pod with one continuous rounded ceramic body, an adult collectible proportion, and body height at least 2.4 times visible face height\n- crown: simple closed dome with no open top\n- opening: one deliberate vertical oval aperture\n- pose: one rounded arm tip near the face in thought\n- expression: curious\n- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture\n- characteristic color: warm amber\n- structural fingerprint: tall pebble pod with an amber oval and one arm tip near its cheek; preserve a tall adult collectible proportion, never chibi\n\nTargeted correction after rejecting the first candidate: keep both inset half-lidded eyes together in an intact charcoal ceramic face above the opening. Put the single amber vertical oval entirely on the torso below the eyes, separated from them by a broad continuous charcoal ceramic bridge. The opening must be visibly tall and oval, never circular, and must not surround, contain, or sit behind the eyes. Preserve every other selected value and invariant.\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- four larger circular seed-mark apertures at the corners of a compact rectangle with two smaller apertures centered vertically\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "review": "Selected as the best available source attempt. The face/opening structure is corrected, but the seed drifted to a nine-aperture 3-by-3 arrangement and therefore remains a strict grammar reject."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-045.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "3bb68028ac6ca2638b5bf1b8b5b4756baa68fd3ed4f0d2f2c988d08dbbfc5005"
+    },
+    "grammarReview": {
+      "status": "strict-reject-after-targeted-retry",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 9,
+      "seedGeometry": "three-by-three grid rather than four larger corners plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The selected candidate honors the tall pod, continuous dome, charcoal material, vertical amber aperture, curious eyes, and thoughtful arm-tip pose.",
+        "It is rejected by the frozen source grammar because the Palari seed contains nine apertures rather than exactly six.",
+        "This is an unregistered review candidate; no pixels were repaired or postprocessed."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-045.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-9da49774-f09c-4108-b2e3-8802d00a88b1.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot logo\n\nInput image 1: identity reference only for palari-045. Create a new logo from its shell, aperture, eyes, and thoughtful-arm identity. Do not edit or reproduce the reference scene, ceramic material, lighting, texture, or shadows.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-045 to a compact Aperture Mark: a tall rounded pebble-pod shell with a simple closed dome, one long vertical amber oval in the torso below the face, and one thick rounded arm tip held near its cheek. The shell-and-aperture silhouette must be the primary identity; the seed is only a small family detail.\n\nBackground and palette: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only as the background and as true negative-space cutouts. Use normalized warm ivory #E9E6DF for the complete Palari shell and warm amber #C17A0B only for the one continuous oval aperture region. Exactly these three semantic colors in the complete image; no black, white, grey, beige, extra hue, highlight color, or shadow color.\n\nGeometry: one heavy upright continuous rounded silhouette, 6–10 broad basic rounded shapes excluding the tiny seed perforations, at most two internal color regions, readable at 32 × 32. Two calm half-lidded eyes are simple navy negative-space cutouts; no iris highlight and no mouth. Retain exactly six tiny navy negative-space seed apertures in the Palari pattern: four larger circular holes at the corners of a compact rectangle and two smaller circular holes centered vertically. No other dots or holes.\n\nComposition: upright, emerging from and intentionally cropped by the lower-right corner, filling 80–85% of the square; preserve the full dome, both eyes, vertical aperture, and thoughtful arm. No sticker-like centering, tilt, or excessive empty space.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient micro-volume only. Use one uninterrupted low-frequency diffuse gradient inside each large ivory or amber region, with one shared upper-left-to-lower-right light direction; each transition spans at least half of the dominant form. Total tonal variation stays within each named color family, nearly disappearing at 32 × 32. Keep the navy background absolutely flat.\n\nForbid: scene, alcove, floor, ceramic realism, clay, plastic, toy rendering, texture, grain, gloss, bevel, rim light, external cast shadow, ambient shadow blob, discrete highlights, closed highlight patches, overlay bands, nested shadows, cel shading, stepped swatches, hard internal shadow edges, extra colors, thin lines, sharp points, mouth, eyebrows, catchlights, fingers, hands, legs, feet, text, logo lettering, watermark, border, frame, transparency, App-icon mask, rounded canvas corners, or seed used as the main logo. Square outer corners.",
+        "review": "Rejected: the navy field became a visible vignette, the seed became a nine-hole 3-by-3 grid, and the cheek arm became a thin outlined hollow loop."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-8bc6f5d2-2e53-4972-a295-cf4404dbbb19.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot logo\n\nInput image 1: identity reference only for palari-045. Create a new logo from its shell, aperture, eyes, and thoughtful-arm identity. Do not edit or reproduce the reference scene, ceramic material, lighting, texture, or shadows.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-045 to a compact Aperture Mark: a tall rounded pebble-pod shell with a simple closed dome, one long vertical amber oval in the torso below the face, and one thick rounded arm tip held near its cheek. The shell-and-aperture silhouette must be the primary identity; the seed is only a small family detail.\n\nBackground and palette: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only as the background and as true negative-space cutouts. Use normalized warm ivory #E9E6DF for the complete Palari shell and warm amber #C17A0B only for the one continuous oval aperture region. Exactly these three semantic colors in the complete image; no black, white, grey, beige, extra hue, highlight color, or shadow color.\n\nGeometry: one heavy upright continuous rounded silhouette, 6–10 broad basic rounded shapes excluding the tiny seed perforations, at most two internal color regions, readable at 32 × 32. Two calm half-lidded eyes are simple navy negative-space cutouts; no iris highlight and no mouth. Retain exactly six tiny navy negative-space seed apertures in the Palari pattern: four larger circular holes at the corners of a compact rectangle and two smaller circular holes centered vertically. No other dots or holes.\n\nComposition: upright, emerging from and intentionally cropped by the lower-right corner, filling 80–85% of the square; preserve the full dome, both eyes, vertical aperture, and thoughtful arm. No sticker-like centering, tilt, or excessive empty space.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient micro-volume only. Use one uninterrupted low-frequency diffuse gradient inside each large ivory or amber region, with one shared upper-left-to-lower-right light direction; each transition spans at least half of the dominant form. Total tonal variation stays within each named color family, nearly disappearing at 32 × 32. Keep the navy background absolutely flat.\n\nTargeted correction after rejecting the first logo attempt: the background must be a single mechanically uniform #172333 field with no vignette, glow, or lighter center. The seed must contain exactly six holes total—four large corner holes plus only two smaller holes on the vertical centerline; never a 3×3 grid. Render the cheek arm as one thick solid ivory rounded appendage joined to the shell, with no navy outline, no hollow loop, and no thin-line contour.\n\nForbid: scene, alcove, floor, ceramic realism, clay, plastic, toy rendering, texture, grain, gloss, bevel, rim light, external cast shadow, ambient shadow blob, discrete highlights, closed highlight patches, overlay bands, nested shadows, cel shading, stepped swatches, hard internal shadow edges, extra colors, thin lines, sharp points, mouth, eyebrows, catchlights, fingers, hands, legs, feet, text, logo lettering, watermark, border, frame, transparency, App-icon mask, rounded canvas corners, or seed used as the main logo. Square outer corners.",
+        "review": "Selected as the best available icon. The exact six-hole seed and solid cheek arm were corrected; the navy background still visibly vignettes."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-045.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "fba69c255bcc92f170377e3cdd3661bf84f7b000ef80994cca5c8dd1198bc44d"
+    },
+    "review": {
+      "seedCount": 6,
+      "seedGeometry": "four larger corner holes plus two smaller vertical-center holes",
+      "readableAt32px": true,
+      "thumbnailNotes": "The tall pebble-pod silhouette, amber vertical aperture, half-lidded eyes, and thoughtful cheek arm remain immediately readable at 32 px; the seed remains a small visible cluster.",
+      "approximateBroadShapeCount": 7,
+      "assignedCorner": "lower-right",
+      "strictIpAsLogoStatus": "best-available-with-deviations",
+      "deviations": [
+        "The selected output retains a visible center-to-edge vignette in the navy background after the single permitted targeted retry, so it fails the skill's strict flat-background rule.",
+        "The mark is more horizontally centered than the requested lower-right emergence, although its base and right side crop intentionally.",
+        "The paired source's nine-hole seed was intentionally normalized to the plan-required six-hole Palari signature during logo derivation; the source image itself was not edited."
+      ],
+      "postprocessed": false
+    }
+  }
+}

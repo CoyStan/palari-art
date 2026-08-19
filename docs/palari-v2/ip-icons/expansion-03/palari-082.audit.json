@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "id": "palari-082",
+  "createdAt": "2026-08-19T02:01:51Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "bell",
+    "material": "porcelain",
+    "characteristic": "burgundy",
+    "characteristicHex": "#6E202C",
+    "crown": "integrated_dome",
+    "opening": "vertical_oval",
+    "pose": "arms_resting",
+    "expression": "serene",
+    "composition": "lower-left",
+    "identity": "wide-skirt porcelain bell with one inset burgundy oval"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 1,
+    "selectedAttempt": 1,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-a210-7303-b2a3-2f39b4220048/exec-656150a7-a6e0-4de8-8df1-417c70f2161a.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- design seed: palari-expansion-03-082\n- identity: wide-skirt porcelain bell with one inset burgundy oval\n- silhouette: balanced bell silhouette with a softly flared wide stable base and integrated head\n- crown: continuous integrated ceramic dome\n- opening: one deliberate inset vertical oval aperture\n- pose: both rounded arms resting close to the body\n- expression: serene\n- exterior material: soft cool-neutral off-white porcelain, never pure digital white\n- characteristic color: deep burgundy (#6E202C)\n\nFamily invariants:\n- exactly one complete isolated full-body figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the single recessed inner intelligence, iris accents, and Palari seed mark\n- exactly one dominant architecturally intentional opening and no unrelated holes\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, burgundy iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- one clearly readable Palari seed mark on the lower torso: exactly six circular apertures arranged as four larger circles at the corners of a compact rectangle plus exactly two visibly smaller circles centered vertically between them; these six apertures are burgundy and are not a grille\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: direct 1:1 square; eye-level three-quarter product portrait with minimal lens distortion; full figure visible, centered, occupying about 76 percent of image height with generous margin; no crop.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smiles, chibi proportions, horror, vacant doll eyes, a circular aperture surrounding the face, text, labels, numbers, logos, watermarks, extra characters, props, panels, borders.",
+        "review": "Selected on first attempt. The wide bell, integrated dome, oval aperture, serene inset eyes, resting arms, continuous base, and exact seed size hierarchy are all clear."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-082.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "1d3e990885b3dcfee36398af12f2fc9c81b4250ce50a4e7c4e2af95616ffa0c7"
+    },
+    "grammarReview": {
+      "status": "pass",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The selected candidate visibly honors the bell, integrated dome, vertical oval, resting pose, porcelain material, burgundy hue, and serene expression.",
+        "The complete body is isolated with a wide continuous flared base and no conventional legs or feet.",
+        "This is a review candidate and is not production registered."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-082.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-a210-7303-b2a3-2f39b4220048/exec-ac38c866-8fa2-4817-8638-2b4b76b726ed.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot icon\nInput image: the supplied palari-082 image is an identity reference only. Do not edit it and do not reproduce its scene, lighting, ceramic material, texture, shadows, or realistic rendering.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-082 to a compact symbol: a broad integrated dome flowing into a wide softly flared bell skirt around one tall inset vertical oval aperture. The dome-bell shell and vertical aperture are the primary identity. Retain the Palari seed as a very small secondary family signature.\n\nColor count: EXACTLY THREE semantic colors in the complete image, with no other hues:\n1. warm ivory #E9E6DF for the entire continuous outer shell,\n2. burgundy #6E202C for the single continuous vertical oval aperture AND all six seed circles,\n3. deep navy #172333 for the perfectly uniform edge-to-edge background AND for the two tiny eye cutouts.\nDo not introduce white, black, gray, beige, highlights, shadow colors, outlines, or anti-aliased color fringes that read as another semantic color.\n\nGeometry and complexity: one dominant continuous dome-and-wide-bell silhouette, one tall broad inset vertical oval aperture, exactly two simple serene half-lidded navy eye shapes, and one compact six-circle seed signature: four slightly larger burgundy circles at the corners of a tiny rectangle plus two distinctly smaller burgundy circles centered vertically between them. The seed is secondary and must not dominate. Omit the mouth, arms, hands, fingers, legs, feet, clothing, props, and all other anatomy or detail. Make the dome, bell skirt, and oval contours thick, blunt, and rounded; no thin lines or fragile gaps. The solid wide-bell silhouette and oval aperture must remain immediately legible at 32 × 32.\n\nComposition: direct upright 1:1 square with square canvas corners. The mark emerges from and intentionally crops into the lower-left corner, filling about 80% of the canvas; preserve the complete integrated dome, broad flared outer side, and vertical oval identity. No separate sticker, card, frame, badge, container, App-icon mask, rounded canvas corners, or border.\n\nStyle: Flat-first vector-friendly geometry with only extremely subtle continuous-gradient micro-volume inside each large IP color region, one shared broad upper-left-to-lower-right light direction. Any tonal transition must span at least half the form, remain within the exact base color family, and nearly disappear at 32 × 32. The background must be a completely flat, edge-to-edge, single-swatch #172333 field with no lighting variation.\n\nForbid: discrete highlights, glossy hotspots, closed shadow blobs, overlay bands, nested shadow shapes, cut-paper layers, cel shading, stepped swatches, hard internal shadow boundaries, texture, grain, ceramic material, clay, plastic, toy rendering, bevel, extrusion, realistic 3D, external shadow, scene, floor, alcove, glow, vignette, halo, transparency, text, letters, watermark, extra colors, extra apertures, extra eyes, mouth, arms, hands, fingers, legs, feet, border, rounded outer corners.",
+        "review": "Rejected: shell, aperture, seed count, and small-size identity passed, but the navy background contained a clearly visible radial vignette."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-a210-7303-b2a3-2f39b4220048/exec-82f8c13b-1e68-4cc2-921a-9bfd181af459.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot icon\nInput image: the supplied palari-082 image is an identity reference only. Do not edit it and do not reproduce its scene, lighting, ceramic material, texture, shadows, or realistic rendering.\n\nTARGETED RETRY: the previous candidate failed because the navy background had a clearly visible radial vignette. Create a fresh candidate whose entire unobstructed background is one perfectly uniform flat #172333 swatch from edge to edge. No radial gradient, no spotlight, no halo, no edge darkening, no lighting variation.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-082 to a compact symbol: a broad integrated dome flowing into a wide softly flared bell skirt around one tall inset vertical oval aperture. The dome-bell shell and vertical aperture are the primary identity. Retain the Palari seed as a very small secondary family signature.\n\nColor count: EXACTLY THREE semantic colors in the complete image:\n1. warm ivory #E9E6DF for the entire continuous outer shell,\n2. burgundy #6E202C for the single continuous vertical oval aperture AND all six seed circles,\n3. deep navy #172333 for the perfectly uniform edge-to-edge background AND the two tiny eye cutouts.\nNo white, black, gray, beige, or any other hue. Micro-volume inside the shell and aperture may only be an almost imperceptible same-family broad drift and must not form new visible color regions.\n\nGeometry and complexity: one dominant continuous dome-and-wide-bell silhouette, one tall broad inset vertical oval aperture, exactly two simple serene half-lidded navy eye shapes, and one compact six-circle seed signature: four slightly larger burgundy circles at the corners of a tiny rectangle plus two distinctly smaller burgundy circles centered vertically between them. The seed is secondary. Omit the mouth, arms, hands, fingers, legs, feet, clothing, props, and all other anatomy or detail. Use thick blunt rounded geometry; no thin lines or fragile gaps. The wide-bell silhouette and oval aperture must remain immediately legible at 32 × 32.\n\nComposition: direct upright 1:1 square with square canvas corners. The mark emerges from and intentionally crops into the lower-left corner, filling 75–85%; preserve the integrated dome, broad flared outer side, and vertical oval. No separate sticker, card, frame, badge, container, App-icon mask, rounded canvas corners, or border.\n\nStyle: Flat-first vector-friendly geometry with only extremely subtle continuous-gradient micro-volume inside the two large IP color regions, one shared broad upper-left-to-lower-right light direction. Any tonal transition must span at least half the form and nearly disappear at 32 × 32. The background is fully flat #172333.\n\nForbid: background gradient, vignette, halo, glow, spotlight, discrete highlights, glossy hotspots, closed shadow blobs, overlay bands, nested shadow shapes, cut-paper layers, cel shading, stepped swatches, hard internal shadow boundaries, texture, grain, ceramic material, clay, plastic, toy rendering, bevel, extrusion, realistic 3D, external shadow, scene, floor, alcove, transparency, text, letters, watermark, extra colors, extra apertures, extra eyes, mouth, arms, hands, fingers, legs, feet, border, rounded outer corners.",
+        "review": "Selected as the best available attempt. The lower-left crop, seed geometry, and palette are strong; a faint low-frequency navy vignette remains."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-082.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "89c1f35e3c8f77a2744eeb7a53520bb2bf38a344ac0a7c96e66b1f85ee0f81ac"
+    },
+    "review": {
+      "seedCount": 6,
+      "seedGeometry": "four larger corner circles plus two smaller vertical-center circles",
+      "readableAt32px": true,
+      "thumbnailNotes": "The broad bell, integrated dome, burgundy oval, and calm eyes remain clear at 32 px; the seed remains a compact secondary cluster.",
+      "approximateBroadShapeCount": 10,
+      "assignedCorner": "lower-left",
+      "strictIpAsLogoStatus": "best-available-with-deviations",
+      "deviations": [
+        "The selected output retains a faint visible low-frequency vignette in the navy background after the single permitted targeted retry, so it does not satisfy the skill's strict flat-background rejection rule.",
+        "The three semantic color families are correct, but native rendered pixels approximate rather than exactly equal the requested hex values; sampled unobstructed navy pixels range around RGB 17–20 / 30–35 / 50–55 instead of uniform #172333.",
+        "The project-required six-circle seed repeats burgundy in six small regions, an explicit Palari exception to the skill's default preference that the second IP color stay in one continuous region."
+      ],
+      "postprocessed": false
+    }
+  }
+}

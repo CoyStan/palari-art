@@ -1,0 +1,65 @@
+{
+  "id": "palari-058",
+  "createdAt": "2026-08-19",
+  "generator": "built-in image_gen (service-native model name not exposed)",
+  "design": {
+    "silhouette": "bell",
+    "material": "porcelain",
+    "characteristic": "mineral_red",
+    "characteristicHex": "#7D2821",
+    "crown": "soft_hood",
+    "opening": "leaf",
+    "pose": "one_arm_resting",
+    "expression": "curious",
+    "composition": "lower-left",
+    "identity": "asymmetric hooded bell with a mineral-red side leaf and resting arm"
+  },
+  "sourceGeneration": {
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari named palari-058. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: asymmetric hooded bell with a mineral-red side leaf opening and one resting arm\n- silhouette: balanced bell silhouette with a softly flared base and integrated head\n- crown: protective soft hood grown seamlessly from the ceramic body\n- opening: one asymmetric leaf-shaped side opening\n- pose: one rounded arm resting along the leaf opening and the other close to the body\n- expression: curious\n- exterior material: soft cool-neutral off-white porcelain, never pure digital white\n- characteristic color: deep mineral red, visually anchored to #7D2821\n\nFamily invariants:\n- exactly one complete isolated full-body figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, mineral red only, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- exactly one dominant architecturally intentional leaf opening and no other structural cavity\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, mineral-red iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- one compact Palari seed mark on the lower front: exactly six circular mineral-red apertures, four larger circles at the corners of a compact rectangle plus two smaller circles centered vertically between them; not a grille and no extra dots\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, complete full figure visible and centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable porcelain form and mineral-red inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity, a circular aperture surrounding the face, text, labels, numbers, logos, or watermarks.",
+    "retryPrompt": "Use case: precise-object-edit\nAsset type: corrected Palari V2 character study\nInput images: Image 1 is the edit target.\nPrimary request: Make only two precise identity corrections.\n1. Change the lower-front seed mark while keeping exactly six circular mineral-red apertures in two columns and three rows: the four corner apertures (top-left, top-right, bottom-left, bottom-right) must be visibly larger, while the two vertically centered apertures (middle-left, middle-right) must be visibly smaller.\n2. Refine the same two inset eyes to calm curious half-lidded eyes with porcelain ceramic upper eyelids, dark pupils, mineral-red iris accents, and tiny catchlights. Do not add eyebrows or a mouth.\nPreserve unchanged: the exact asymmetric soft-hooded porcelain bell, the one side leaf-shaped mineral-red aperture, the exact two seamless rounded arms and resting pose, full-body legless continuous flared base, single mineral-red characteristic hue, ceramic texture, camera, framing, plaster alcove, limestone floor, upper-left daylight, and contact shadow.\nConstraints: exactly one figure, one dominant opening, two eyes, two arms, six seed apertures only; no extra holes; no hands, legs, feet, cup rim, text, logo, watermark, damage, color changes, or new objects.",
+    "output": "docs/palari-v2/expansion-03/generated/palari-058.png",
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "9a3fb11a723c8e74cfa999cb0f785eb02ef96648d9f6793c7467709b4ae001b7",
+    "grammarReview": {
+      "status": "reject",
+      "characterCount": 1,
+      "characteristicHueCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "leglessContinuousBase": true,
+      "seedApertureCount": 6,
+      "seedGeometry": "two columns by three rows, but all six apertures remain approximately equal in size",
+      "notes": [
+        "The asymmetric hood, bell base, side leaf reveal, two eyes, two fingerless arms, one hue, and legless base pass the frozen grammar.",
+        "The allowed retry did not create the required four-large-corners plus two-smaller-middle seed geometry, so this source remains a review candidate rather than a production-ready master."
+      ]
+    }
+  },
+  "iconGeneration": {
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate\n\nInput images: Image 1 is identity reference only. Do not edit it, copy its studio scene, or reproduce ceramic realism.\n\nPrimary request: Derive palari-058 as a highly simplified logo first and a character second. Preserve the source-specific asymmetric hooded bell silhouette with broad flared continuous base, the one tall mineral-red side leaf aperture, one rounded arm resting along that leaf opening, the second arm close to the opposite side, calm curious half-lidded eyes, and compact six-aperture Palari seed. Make the asymmetric hood-and-leaf negative space the primary recognizable mark; the seed is secondary.\n\nGeometry: one dominant continuous rounded hooded-bell shell built from roughly 6–10 broad basic shapes, plus the exact compact seed-detail exception. Thick weighty contours, blunt rounded arm tips, no thin gaps or sharp points. Exactly two eyes, no mouth. Exactly two seamless rounded arms. Exactly one leaf aperture. Exact seed detail: six mineral-red circles arranged in two columns and three rows, with four visibly larger corner circles and two smaller vertically centered circles. Readable as a black silhouette and recognizable at 32 × 32.\n\nComposition: upright, emerging from the lower-left corner, base-only crop, filling 75–85% of the square. Preserve both arms and both eyes. No tilt.\n\nColor count: exactly three semantic colors total:\n- warm ivory #E9E6DF for the entire shell and arms\n- mineral red #7D2821 for the one side leaf aperture, two small eye marks, and six seed apertures\n- deep navy #172333 exclusively for a fully opaque edge-to-edge uniform background\nDo not introduce black, white, gray, beige, coral, orange, or any other semantic color. Closely related same-family tonal variation is allowed only as subtle continuous micro-volume.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient neo-skeuomorphic micro-volume. Use one uninterrupted extremely low-frequency diffuse gradient inside each large ivory or mineral-red region, one coherent upper-left-to-lower-right light direction, each transition spanning at least half the form. Keep total tonal variation subtle enough to almost disappear at 32 × 32. Small eyes and seed circles remain nearly flat.\n\nForbid: character illustration, scene, alcove, floor, texture, ceramic material realism, gloss, bevel, strong 3D, toy/clay/plastic rendering, specular highlight, rim light, cast shadow, discrete highlight patches, nested shadows, outlines, extra color, vignette, halo, border, frame, white margin, transparency, rounded canvas corners, text, watermark, mouth, eyebrows, hands, fingers, legs, feet, extra holes, decorative marks, or centered sticker composition.\n\nOutput: one native direct 1:1 square logo asset with square outer corners, approximately 1536 × 1536 or the service-native 1254 × 1254 limit.",
+    "retryPrompt": "Use case: precise-object-edit\nAsset type: corrected Palari mascot logo\nInput images: Image 1 is the edit target.\nPrimary request: Make exactly three corrections while preserving this exact palari-058 identity.\n1. Change the seed mark to exactly six mineral-red circles in two columns and three rows, with four visibly larger corner circles (top-left, top-right, bottom-left, bottom-right) and two visibly smaller middle circles. Keep the whole seed visible.\n2. Move the same upright hooded-bell mark toward the lower-left so the broad continuous base touches/crops only at the bottom and lower-left edges, filling 75–85% of the square. Do not crop the eyes, arms, side leaf opening, or seed.\n3. Make the entire edge-to-edge background a visually uniform solid deep navy #172333, with no vignette, glow, halo, spotlight, texture, or directional gradient. Reduce shell and mineral-red modeling to extremely subtle continuous micro-volume that nearly disappears at 32 × 32.\n\nPreserve unchanged: the asymmetric hooded-bell silhouette, one tall side leaf aperture, exactly two half-lidded mineral-red eye marks, one arm resting along the aperture, the second arm close to the opposite side, continuous flared legless base, no mouth.\nExact colors only: warm ivory #E9E6DF shell, mineral red #7D2821 aperture/eyes/seed, uniform background-only deep navy #172333. No black, white, gray, coral, orange, or extra colors.\nForbid: scene, texture, ceramic realism, cast shadow, bevel, border, transparency, rounded canvas corners, text, watermark, hands, fingers, legs, feet, extra holes, new objects, or identity changes.",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-058.png",
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "opaque": true,
+    "sha256": "53eeb3735d00b0ce8915cc94241303065d4a3d06e6c30bf925e244013a96ef17",
+    "seedApertureCount": 6,
+    "seedGeometry": "four larger corner circles plus two smaller middle circles",
+    "smallSizeStatus": "pass",
+    "skillStatus": "reject",
+    "identitySummary": "Large asymmetric ivory hooded bell with one tall mineral-red side leaf, one arm following its edge, the opposite resting arm, two sleepy eye marks, and a complete 4+2 seed.",
+    "deviations": [
+      "The navy field retains a center-to-edge vignette instead of a uniform #172333 background.",
+      "The shell retains more dimensional modeling and shallow arm/aperture seam shading than the strict micro-volume limit.",
+      "The lower-left crop and scale exceed the preferred 75–85% fill slightly, although only the broad base is cropped and all identifying features remain visible.",
+      "At 32 × 32 the hooded-bell silhouette, side leaf, arms, and eyes remain recognizable; the six-dot seed compresses but stays a secondary family cue."
+    ]
+  }
+}

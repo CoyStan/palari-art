@@ -1,0 +1,155 @@
+{
+  "id": "palari-048",
+  "createdAt": "2026-08-19T02:04:33Z",
+  "generator": "built-in ImageGen",
+  "modelNote": "The built-in service did not expose a model identifier; native 1254 px PNG outputs were preserved without post-processing.",
+  "promptEncoding": "Each promptLines array is the exact submitted prompt split on LF; join with a newline to reconstruct it byte-for-byte as text.",
+  "record": {
+    "silhouette": "column",
+    "material": "stone",
+    "characteristic": "violet",
+    "characteristicHex": "#594077",
+    "crown": "integrated_dome",
+    "opening": "vertical_oval",
+    "pose": "arms_resting",
+    "expression": "attentive",
+    "composition": "lower-left",
+    "identity": "slim obelisk column with a suspended violet upper oval"
+  },
+  "source": {
+    "path": "docs/palari-v2/expansion-03/generated/palari-048.png",
+    "attempts": 2,
+    "selectedAttempt": 1,
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "colorSpace": "sRGB",
+    "opaque": true,
+    "sha256": "3f63557e428662fb505ad842f673a94954afda7eee0a3c88baadd2cf40a1789f",
+    "prompts": [
+      {
+        "attempt": 1,
+        "intent": "generate",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 character study",
+          "",
+          "Primary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- identity: slim obelisk column with a suspended violet upper oval",
+          "- silhouette: tall slender column with a subtly flared stable base",
+          "- crown: continuous integrated ceramic dome",
+          "- opening: one deliberate vertical oval aperture, suspended high on the torso but below the face",
+          "- pose: both rounded arms resting close to the body",
+          "- expression: attentive",
+          "- exterior material: balanced warm medium-grey stoneware, clearly grey rather than brown",
+          "- characteristic color: deep mineral violet (#594077)",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue: deep mineral violet only, limited to the recessed inner intelligence, iris accents, and Palari seed mark; no other colored hue",
+          "- exactly one dominant architecturally intentional vertical oval opening and no unrelated holes",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, violet iris accents, and tiny catchlights",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy; both rest close against the body",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- one compact six-aperture Palari seed mark on the lower front: four larger circular apertures at the corners of a compact rectangle plus exactly two smaller apertures centered vertically",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- overall body height at least 2.4 times visible face height",
+          "",
+          "Scene: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Composition: eye-level three-quarter product portrait with minimal lens distortion; direct 1:1 square, full figure visible and centered, occupying about 76 percent of image height.",
+          "Lighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.",
+          "",
+          "Avoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smiles, chibi proportions, horror, vacant doll eyes, circular aperture surrounding the face, text, labels, numbers, logos, watermarks, duplicated characters."
+        ],
+        "resultReview": "Strong selected silhouette, material, opening, eyes, arms, legless base, palette, framing, and scene; seed has five apertures."
+      },
+      {
+        "attempt": 2,
+        "intent": "precise-object-edit",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari V2 character study",
+          "Input image: Image 1 is the edit target and must retain its character identity and complete native square composition.",
+          "Primary request: Correct only the compact Palari seed mark on the lower front of the stone-grey character. It currently contains five violet apertures. Replace only that mark with exactly six violet circular apertures: four larger apertures at the four corners of a compact upright rectangle plus exactly two smaller apertures centered vertically between the left and right columns.",
+          "Constraints: change only the seed mark. Preserve the exact same slim stone-grey column silhouette, integrated dome, high face opening, two half-lidded eyes, long violet vertical oval opening, two resting fingerless arms, continuous legless base, plaster alcove, camera, framing, material texture, soft upper-left daylight, contact shadow, and all colors. Keep exactly one characteristic hue, deep mineral violet #594077. No extra holes anywhere. No text, watermark, mouth, fingers, hands, legs, feet, cracks, or added objects."
+        ],
+        "resultReview": "The targeted edit retained the identity but still returned five seed apertures, so attempt 1 remained selected."
+      }
+    ],
+    "grammarReview": {
+      "status": "reject",
+      "singleFigure": true,
+      "singleCharacteristicHue": true,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "fingerlessArmCount": 2,
+      "continuousLeglessBase": true,
+      "seedApertureCount": 5,
+      "seedGeometryStatus": "reject",
+      "deviations": [
+        "The selected source has five seed apertures instead of the required six; the single permitted correction attempt repeated the same count."
+      ]
+    }
+  },
+  "icon": {
+    "path": "docs/palari-v2/ip-icons/expansion-03/palari-048.png",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "colorSpace": "sRGB",
+    "opaque": true,
+    "sha256": "7785b9ca9bc359632e16e25bbad5a4ee845e95a02b7489513175fda401b9f812",
+    "seedApertureCount": 5,
+    "smallSizeStatus": "pass",
+    "smallSizeReview": "At 32 x 32 the tall rounded column, violet face field, long violet oval, and paired resting arms remain readable; the seed collapses into a secondary speck as intended.",
+    "strictSkillStatus": "reject",
+    "prompts": [
+      {
+        "attempt": 1,
+        "intent": "generate-with-identity-reference",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari mascot logo icon",
+          "Input image: Image 1 is an identity reference only, not an edit target. Derive a new symbol from its shell, aperture, eyes, resting arms, and seed family detail. Do not copy its alcove, lighting, material realism, camera scene, or shadow.",
+          "",
+          "Primary request: Create one highly simplified IP mascot logo candidate, not a character illustration, for this exact Palari: a slim obelisk-like column with an integrated rounded dome, one suspended vertical violet oval aperture, two calm half-lidded eyes, two arms resting close, and a compact seed detail. The continuous shell-and-aperture silhouette is the primary identity; the seed is secondary.",
+          "",
+          "Background: fully opaque edge-to-edge uniform solid deep navy #172333, used only for the background.",
+          "Subject colors: exactly warm ivory #E9E6DF for the shell, arms, and eyelids; exactly mineral violet #594077 for the single continuous aperture region, two minimal eye marks, and the six-aperture seed family detail. No other semantic colors.",
+          "Composition: upright mark emerging from the lower-left corner, filling 75–85% of the square. Preserve both rounded arms and the tall tapered column identity. Square outer corners.",
+          "Complexity: approximately 6–10 broad rounded semantic shapes; one dominant continuous outer silhouette; one large continuous violet inner region; only two simple half-lidded eyes and no mouth. Keep the exact six seed apertures tiny and subordinate, grouped as four larger corner circles plus two smaller circles centered vertically.",
+          "Style: flat-first vector-friendly geometry with thick rounded weighty contours. Use only one uninterrupted, extremely subtle low-frequency same-family diffuse gradient inside each large IP color region, sharing an upper-left-to-lower-right direction; transition spans at least half the form; total lightness variation at most 0.08; micro-volume visible only at full size and disappearing at 32 × 32.",
+          "Small-size requirement: at 32 × 32, the tall dome, violet oval, and resting-arm silhouette must remain immediately readable; the seed may compress but must not become the main logo.",
+          "",
+          "Forbid: source scene, plaster alcove, floor, realistic ceramic, texture, gloss, bevel, extrusion, strong 3D, clay toy rendering, cast shadow, contact shadow, highlight patches, closed shadow shapes, halo, vignette, background gradient, border, frame, App-icon mask, rounded canvas corners, transparency, text, watermark, mouth, eyebrows, nose, fingers, hands, legs, feet, clothing, machinery, extra openings, extra colors, decorative marks, thin lines, sharp points, centered sticker composition."
+        ],
+        "resultReview": "The identity is readable, but the mark is centered, the seed count is five, and the navy background has a visible vignette."
+      },
+      {
+        "attempt": 2,
+        "intent": "precise-object-edit",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected square Palari mascot logo icon",
+          "Input images: Image 1 is the original identity reference; Image 2 is the logo candidate edit target.",
+          "Primary request: Correct only three rule failures in Image 2 while preserving its exact simplified tall dome, violet eye mask, long violet oval, both resting arms, ivory/violet palette, flat-first geometry, and no-mouth expression.",
+          "1. Replace the visible navy vignette/gradient with a perfectly uniform, fully opaque, edge-to-edge solid #172333 field. No lighting variation, halo, or texture in the background.",
+          "2. Recompose the intact upright mark so it clearly emerges from the lower-left corner and fills 75–85% of the square, without cropping either arm or the dome.",
+          "3. Replace the five-dot seed with exactly six mineral-violet #594077 circles: four larger corner circles of a compact upright rectangle plus exactly two smaller circles on one centered vertical line between those columns.",
+          "Constraints: retain exactly three semantic colors total: #172333 only for background, #E9E6DF for the ivory shell/arms/eyelids, and #594077 for the aperture/eye region/seed. Keep the source identity led by shell plus aperture. No new details. No scene, realistic material, texture, gloss, bevel, strong 3D, cast shadow, mouth, human anatomy, thin lines, border, transparency, rounded canvas corners, text, or watermark."
+        ],
+        "resultReview": "The lower-left composition improved, but the seed remained five and the background remained visibly vignetted."
+      }
+    ],
+    "deviations": [
+      "The icon contains five seed apertures rather than six.",
+      "The navy background retains a visible center-to-edge vignette instead of a uniform #172333 field.",
+      "The figure is cropped across the full bottom edge and occupies more area than the requested 75–85% corner-emergent mark.",
+      "Ivory and violet regions drift numerically from the requested hex bases and retain slightly stronger tonal modeling than strict micro-volume.",
+      "The literal geometry exceeds the nominal 6–10 shape budget once eyes, arms, aperture, and seed dots are counted separately."
+    ]
+  }
+}

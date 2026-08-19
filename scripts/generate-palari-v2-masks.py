@@ -82,6 +82,7 @@ def generate_masks(
     expected_color: str | None,
     expected_material: str | None,
     detection_hue_degrees: float | None,
+    candidate_saturation_override: float | None,
     relaxed_color_key: bool,
     muted_characteristic: bool,
     review_status: str,
@@ -137,6 +138,9 @@ def generate_masks(
         seed_saturation_minimum = 0.45
         candidate_color_energy_minimum = 0.04
         seed_color_energy_minimum = 0.08
+    if candidate_saturation_override is not None:
+        candidate_saturation_minimum = candidate_saturation_override
+        seed_saturation_minimum = max(seed_saturation_minimum, candidate_saturation_override)
     if muted_characteristic:
         blue_over_red = rgb[..., 2] - rgb[..., 0]
         blue_over_green = rgb[..., 2] - rgb[..., 1]
@@ -327,6 +331,7 @@ def main() -> None:
     parser.add_argument("--expected-color")
     parser.add_argument("--expected-material")
     parser.add_argument("--detection-hue-degrees", type=float)
+    parser.add_argument("--candidate-saturation-minimum", type=float)
     parser.add_argument("--relaxed-color-key", action="store_true")
     parser.add_argument("--muted-characteristic", action="store_true")
     parser.add_argument("--review-status", choices=("unreviewed", "pass", "fail"), default="unreviewed")
@@ -340,6 +345,7 @@ def main() -> None:
         arguments.expected_color,
         arguments.expected_material,
         arguments.detection_hue_degrees,
+        arguments.candidate_saturation_minimum,
         arguments.relaxed_color_key,
         arguments.muted_characteristic,
         arguments.review_status,
