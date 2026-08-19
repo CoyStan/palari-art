@@ -1,0 +1,84 @@
+{
+  "id": "palari-073",
+  "plan": {
+    "silhouette": "arch",
+    "material": "charcoal",
+    "characteristic": "amber",
+    "characteristicHex": "#C17A0B",
+    "crown": "broad_overhang",
+    "opening": "leaf",
+    "pose": "arms_folded",
+    "expression": "curious",
+    "composition": "lower-right",
+    "identity": "cantilever charcoal arch with a nested amber leaf and folded arms"
+  },
+  "sourceGeneration": {
+    "useCase": "stylized-concept",
+    "modelPath": "built-in ImageGen",
+    "referenceImages": [],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": true,
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: protective enclosing arch formed from one continuous ceramic shell\n- crown: broad asymmetrical protective overhang framing the face\n- opening: one asymmetric leaf-shaped opening\n- pose: both rounded arms crossed calmly around the opening\n- expression: curious\n- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture\n- characteristic color: warm amber (#C17A0B)\n- distinct identity: cantilever charcoal arch with a nested amber leaf and folded arms; make the off-center cantilever and leaf-shaped inner intelligence unmistakable\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exactly six circular seed-mark apertures: four larger apertures at the corners of a compact rectangle plus two smaller apertures centered vertically between them; no extra holes\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, one full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "builtInOutput": "/home/quetza/.codex/generated_images/01a017b9-032b-7793-8f50-9dfbc6949d36/exec-a0bef729-d109-4330-bae9-68729170f7a1.png",
+        "reviewNotes": [
+          "The off-center charcoal cantilever, nested amber leaf, curious half-lidded eyes, crossed fingerless arms, stable base, and one-hue separation are clear.",
+          "The seed signature contains exactly six apertures with four large corners and two smaller apertures on the vertical centerline."
+        ]
+      }
+    ],
+    "attemptCount": 1,
+    "selectedAttempt": 1,
+    "output": "docs/palari-v2/expansion-03/generated/palari-073.png",
+    "dimensions": [1254, 1254],
+    "format": "PNG",
+    "mode": "sRGB",
+    "opaque": true,
+    "sha256": "437c310030e6b97efef18b001c09cc9b528c90d972b7f379451888f2d8c52488",
+    "grammarReview": {
+      "status": "pass",
+      "seedApertureCount": 6,
+      "notes": [
+        "The figure satisfies the selected arch, broad overhang, leaf opening, folded-arm pose, material, expression, and single characteristic color.",
+        "No hands, legs, extra structural apertures, damage, text, or household-vessel cues were observed."
+      ]
+    }
+  },
+  "iconGeneration": {
+    "useCase": "logo-brand",
+    "skill": "ip-as-logo",
+    "modelPath": "built-in ImageGen",
+    "referenceImages": ["docs/palari-v2/expansion-03/generated/palari-073.png"],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": true,
+        "prompt": "Use case: logo-brand\nAsset type: square Palari mascot logo icon\nInput image: Image 1 is identity reference only. Generate a new logo; do not edit, trace, or reproduce the studio scene.\n\nPrimary request: Derive one highly simplified Palari logo from Image 1. It must read as a compact symbol first, not a character illustration. Preserve the distinctive off-center cantilever arch with its very broad protective overhang, one nested asymmetric leaf-shaped amber aperture, curious half-lidded eyes, and two rounded arms crossed calmly around the opening. The warm-ivory arch shell enclosing the amber leaf is the primary mark. Retain the Palari six-seed family signature only as a very small secondary detail.\n\nComposition: upright; emerge from the lower-right corner; fill 75–85% of the square; square outer corners; keep both crossed arms legible as one broad paired gesture. 6–10 broad rounded geometric shapes total, one strong readable outer silhouette and balanced negative space. Readable as a true 32 × 32 icon.\nColors: exactly three semantic colors in the complete image: warm ivory #E9E6DF for the continuous shell and arms/eyes/marks, warm amber #C17A0B for the one continuous leaf aperture plus irises and six seed apertures, and deep navy #172333 used only as a fully opaque edge-to-edge uniform background. Do not use the charcoal source material in the icon.\nSeed signature: exactly six tiny circular marks, four slightly larger at the corners of a compact rectangle and two smaller centered vertically between them; keep them subordinate to the arch/leaf silhouette.\nStyle: flat-first vector-friendly geometry with only one extremely subtle uninterrupted low-frequency same-family gradient inside each of the two large IP color regions, shared upper-left-to-lower-right light direction. Modeling nearly disappears at 32px. Keep small eyes and seed marks flat.\nFace and anatomy: exactly two simple half-lidded eyes; no mouth; two rounded fingerless arms; no hands, legs, feet, clothing, joints, or machinery.\nForbid: scene, alcove, floor, material realism, ceramic texture, strong 3D, toy/plastic/clay rendering, gloss, bevel, rim light, discrete highlight patches, nested shadow shapes, external shadow, thin lines, sharp points, extra colors, extra holes, decorative marks, vignette, halo, border, text, watermark, transparency, rounded app-icon mask, or rounded canvas corners.",
+        "builtInOutput": "/home/quetza/.codex/generated_images/01a017b9-032b-7793-8f50-9dfbc6949d36/exec-a0762d56-0081-43a6-9738-0b026c1e3763.png",
+        "reviewNotes": ["The first icon keeps the characteristic cantilever arch, asymmetric amber leaf, crossed rounded arms, two eyes, exact six seed marks, and shell-first identity."]
+      }
+    ],
+    "attemptCount": 1,
+    "selectedAttempt": 1,
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-073.png",
+    "dimensions": [1254, 1254],
+    "format": "PNG",
+    "mode": "sRGB",
+    "opaque": true,
+    "sha256": "34c37f7f28d97437e840e541ae0a754490fb91f76971bcfcdc7ceb2c93dbc435",
+    "seedApertureCount": 6,
+    "smallSizeReview": {
+      "status": "pass",
+      "method": "Nearest-neighbor inspection of a temporary 32 × 32 reduction; final asset remains native and untouched.",
+      "notes": "The overhanging arch and amber leaf remain recognizable; the crossed-arm gesture softens but remains a broad central band."
+    },
+    "skillStatus": "reject",
+    "deviations": [
+      "The navy background has a visible vignette instead of a perfectly uniform #172333 field.",
+      "The character is centered and bottom-anchored rather than clearly emerging from the lower-right.",
+      "The ivory inner arch includes a distinct lighter nested tonal band, stronger and more shape-like than the requested uninterrupted micro-gradient.",
+      "The six seed marks are exact at native size but become indistinct at 32 px."
+    ]
+  }
+}

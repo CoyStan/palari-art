@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "id": "palari-047",
+  "createdAt": "2026-08-19T02:03:55Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "stack",
+    "material": "ivory",
+    "characteristic": "mineral_red",
+    "characteristicHex": "#7D2821",
+    "crown": "split_petal",
+    "opening": "low_circular_aperture",
+    "pose": "soft_embrace",
+    "expression": "gently_amused",
+    "composition": "lower-right",
+    "identity": "offset cairn stack clasping one low mineral-red aperture"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-a5362148-5ecf-4c14-b4d5-e4829288e168.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: two visibly offset interlocking ceramic masses with one clear overlap seam, distinct centers, and a single continuous stable base\n- crown: restrained split-petal crown with smooth finished edges\n- opening: one deeply recessed circular aperture entirely below the face, separated from it by a continuous ceramic bridge\n- pose: both rounded arms softly embracing the opening\n- expression: gently amused\n- exterior material: warm creamy ivory ceramic\n- characteristic color: deep mineral red\n- structural fingerprint: offset cairn stack clasping one low mineral-red aperture; visibly show two offset interlocking exterior masses and one overlap seam, never a normal hooded figure\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- four larger circular seed-mark apertures at the corners of a compact rectangle with two smaller apertures centered vertically\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "review": "Rejected: the model added a visible smiling mouth, creating an extra facial feature and a second unrelated opening."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-a1acad25-e7fb-42a8-9561-1928391bab26.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: two visibly offset interlocking ceramic masses with one clear overlap seam, distinct centers, and a single continuous stable base\n- crown: restrained split-petal crown with smooth finished edges\n- opening: one deeply recessed circular aperture entirely below the face, separated from it by a continuous ceramic bridge\n- pose: both rounded arms softly embracing the opening\n- expression: gently amused\n- exterior material: warm creamy ivory ceramic\n- characteristic color: deep mineral red\n- structural fingerprint: offset cairn stack clasping one low mineral-red aperture; visibly show two offset interlocking exterior masses and one overlap seam, never a normal hooded figure\n\nTargeted correction after rejecting the first candidate: omit the mouth completely—only two calm half-lidded inset eyes may appear on the face. Make the two offset interlocking exterior masses and their single overlap seam unmistakable while retaining one stable continuous legless base. Keep the one low mineral-red circular aperture entirely below the face and separated from it by a broad continuous ivory ceramic bridge. Preserve every other selected value and invariant.\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- four larger circular seed-mark apertures at the corners of a compact rectangle with two smaller apertures centered vertically\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "review": "Selected as the best available source attempt. The mouth was removed and the stack is clearer, but the specified circular aperture remains a broad horizontal oval."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-047.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "abf27eb7878dc3b9f37b35e1d41a07b453b2a66b5de124c88b21b070f1ed401c"
+    },
+    "grammarReview": {
+      "status": "strict-reject-after-targeted-retry",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The selected candidate honors the ivory two-mass stack, overlap seam, split-petal crown, soft-embrace pose, two eyes, no mouth, one characteristic hue, and exact six-aperture seed.",
+        "It remains a strict record mismatch because the selected low circular aperture is rendered as a wide horizontal oval rather than a circle.",
+        "This is an unregistered review candidate; no pixels were repaired or postprocessed."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-047.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-38d4ae10-52e0-4737-a66b-0afc84646eac.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot logo\n\nInput image 1: identity reference only for palari-047. Create a new logo from its offset cairn-stack silhouette, split-petal crown, low aperture, eyes, and embracing arms. Do not edit or reproduce the reference scene, ceramic material, lighting, texture, or shadows.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-047 to a compact Aperture Mark: two visibly offset interlocking rounded shell masses with one broad overlap seam and one stable continuous base, a restrained blunt split-petal crown, one low circular mineral-red aperture entirely below the face, and two thick rounded arms softly embracing it. The shell-and-aperture silhouette must be the primary identity; the seed is only a small family detail.\n\nBackground and palette: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only as the background and as true negative-space cutouts. Use normalized warm ivory #E9E6DF for the complete Palari shell and deep mineral red #7D2821 only for the one continuous low circular aperture region. Exactly these three semantic colors in the complete image; no black, white, grey, beige, extra hue, highlight color, or shadow color.\n\nGeometry: one heavy upright continuous rounded stack silhouette, 6–10 broad basic rounded shapes excluding the tiny seed perforations, at most two internal color regions, readable at 32 × 32. Two calm half-lidded eyes are simple navy negative-space cutouts on the upper mass; no iris highlight and absolutely no mouth. Retain exactly six tiny navy negative-space seed apertures in the Palari pattern: four larger circular holes at the corners of a compact rectangle and two smaller circular holes centered vertically. No other dots or holes.\n\nComposition: upright, emerging from and intentionally cropped by the lower-right corner, filling 80–85% of the square; preserve both offset shell masses, the crown, both eyes, low red aperture, overlap seam, and both paired embracing arms. No sticker-like centering, tilt, or excessive empty space.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient micro-volume only. Use one uninterrupted low-frequency diffuse gradient inside each large ivory or mineral-red region, with one shared upper-left-to-lower-right light direction; each transition spans at least half of the dominant form. Total tonal variation stays within each named color family, nearly disappearing at 32 × 32. Keep the navy background absolutely flat.\n\nForbid: scene, alcove, floor, ceramic realism, clay, plastic, toy rendering, texture, grain, gloss, bevel, rim light, external cast shadow, ambient shadow blob, discrete highlights, closed highlight patches, overlay bands, nested shadows, cel shading, stepped swatches, hard internal shadow edges, extra colors, thin lines, sharp points, mouth, smile, eyebrows, catchlights, fingers, hands, legs, feet, text, logo lettering, watermark, border, frame, transparency, App-icon mask, rounded canvas corners, or seed used as the main logo. Square outer corners.",
+        "review": "Rejected: the low aperture remained a wide horizontal oval, the inter-mass seam became a thin navy contour, and the background visibly vignetted."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b7-76ca-7cf0-8a6e-dabf3e01c29c/exec-462eb8e8-954f-45c5-9f39-bbd311f50f9e.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 square mascot logo\n\nInput image 1: identity reference only for palari-047. Create a new logo from its offset cairn-stack silhouette, split-petal crown, low aperture, eyes, and embracing arms. Do not edit or reproduce the reference scene, ceramic material, lighting, texture, or shadows.\n\nPrimary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce palari-047 to a compact Aperture Mark: two visibly offset interlocking rounded shell masses with one broad overlap seam and one stable continuous base, a restrained blunt split-petal crown, one low circular mineral-red aperture entirely below the face, and two thick rounded arms softly embracing it. The shell-and-aperture silhouette must be the primary identity; the seed is only a small family detail.\n\nBackground and palette: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only as the background and as true negative-space cutouts. Use normalized warm ivory #E9E6DF for the complete Palari shell and deep mineral red #7D2821 only for the one continuous low circular aperture region. Exactly these three semantic colors in the complete image; no black, white, grey, beige, extra hue, highlight color, or shadow color.\n\nGeometry: one heavy upright continuous rounded stack silhouette, 6–10 broad basic rounded shapes excluding the tiny seed perforations, at most two internal color regions, readable at 32 × 32. Two calm half-lidded eyes are simple navy negative-space cutouts on the upper mass; no iris highlight and absolutely no mouth. Retain exactly six tiny navy negative-space seed apertures in the Palari pattern: four larger circular holes at the corners of a compact rectangle and two smaller circular holes centered vertically. No other dots or holes.\n\nComposition: upright, emerging from and intentionally cropped by the lower-right corner, filling 80–85% of the square; preserve both offset shell masses, the crown, both eyes, low red aperture, overlap seam, and both paired embracing arms. No sticker-like centering, tilt, or excessive empty space.\n\nStyle: flat-first vector-friendly geometry with continuous-gradient micro-volume only. Use one uninterrupted low-frequency diffuse gradient inside each large ivory or mineral-red region, with one shared upper-left-to-lower-right light direction; each transition spans at least half of the dominant form. Total tonal variation stays within each named color family, nearly disappearing at 32 × 32. Keep the navy background absolutely flat.\n\nTargeted correction after rejecting the first logo attempt: make the background a single mechanically uniform #172333 field with no vignette, spotlight, halo, gradient, lighter center, darker corners, or texture. Make the mineral-red aperture unmistakably circular rather than a wide horizontal oval, entirely below the face. Express the two offset interlocking shell masses through their broad overlapping silhouettes and offset centers, not through a thin navy contour line; no thin seam line. Preserve the exact six-hole seed and all other successful geometry.\n\nForbid: scene, alcove, floor, ceramic realism, clay, plastic, toy rendering, texture, grain, gloss, bevel, rim light, external cast shadow, ambient shadow blob, discrete highlights, closed highlight patches, overlay bands, nested shadows, cel shading, stepped swatches, hard internal shadow edges, extra colors, thin lines, sharp points, mouth, smile, eyebrows, catchlights, fingers, hands, legs, feet, text, logo lettering, watermark, border, frame, transparency, App-icon mask, rounded canvas corners, or seed used as the main logo. Square outer corners.",
+        "review": "Selected as the best available icon. The aperture is now circular and the seam is expressed through broad overlapping masses; a visible navy vignette remains."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-047.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "975ac579f8e3ff092216c24cf1defbd2a7e8eeaf41afaddad50e7e830c3f6f81"
+    },
+    "review": {
+      "seedCount": 6,
+      "seedGeometry": "four larger corner holes plus two smaller vertical-center holes",
+      "readableAt32px": true,
+      "thumbnailNotes": "The split crown, stacked shell, circular mineral-red aperture, paired eyes, and embracing arms remain recognizable at 32 px; the seed remains a small visible cluster.",
+      "approximateBroadShapeCount": 9,
+      "assignedCorner": "lower-right",
+      "strictIpAsLogoStatus": "best-available-with-deviations",
+      "deviations": [
+        "The selected output retains a visible center-to-edge vignette in the navy background after the single permitted targeted retry, so it fails the skill's strict flat-background rule.",
+        "The two stack centers are only subtly offset at 32 px, although the broad overlapping masses and split crown keep the identity distinct.",
+        "The paired source's horizontal aperture was normalized to the plan-required circle during logo derivation; the source image itself was not edited."
+      ],
+      "postprocessed": false
+    }
+  }
+}

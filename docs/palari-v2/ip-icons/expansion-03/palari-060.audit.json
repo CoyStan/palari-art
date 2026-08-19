@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "id": "palari-060",
+  "createdAt": "2026-08-19T02:03:59Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "column",
+    "material": "stone",
+    "characteristic": "forest",
+    "characteristicHex": "#174D38",
+    "crown": "split_petal",
+    "opening": "vertical_oval",
+    "pose": "gentle_greeting",
+    "expression": "quietly_confident",
+    "composition": "lower-left",
+    "identity": "fluted stone column with paired crown lobes, green oval, and greeting arm"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier and random seed not exposed by tool)",
+    "seed": null,
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b8-4e34-7751-9163-0c698a6d4329/exec-189bf698-d371-49ba-b63f-34d220e01b42.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: fluted stone column with paired crown lobes, green oval, and greeting arm\n- silhouette: tall slender column with a subtly flared stable base; make the column visibly fluted through broad continuous exterior curvature, not decorative grooves or extra pieces\n- crown: restrained split-petal crown with two broad rounded lobes and smooth finished edges; one crown, not an open bowl\n- opening: exactly one deliberate vertical oval aperture revealing a deep forest-green interior (#174D38)\n- pose: one curved arm raised in greeting, ending in one seamless oval tip; the other rounded arm rests close to the body\n- expression: quietly confident\n- exterior material: balanced warm medium-grey stoneware, clearly grey rather than brown\n- characteristic color: deep forest green, visually one hue only\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- the Palari seed mark must be clearly visible and contain exactly six circular apertures: four larger circular apertures at the corners of one compact rectangle plus exactly two smaller apertures centered vertically between them; no extra seed dots\n- clean intact ceramic with smooth deliberately finished edges\n- overall body height at least 2.4 times visible face height; never chibi or baby-like\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; direct 1:1 square; one character only; full body and stable base completely visible; centered; occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "review": "Rejected: the seed contained only five visible apertures (four large corner apertures plus one small center aperture)."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b8-4e34-7751-9163-0c698a6d4329/exec-f03f38ee-fc94-495b-9584-13bbb6aba786.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study, targeted retry for seed geometry\nPrimary request: Create one original Palari: a tall slender fluted warm medium-grey stoneware column with a subtly flared stable base, paired broad rounded split-petal crown lobes, exactly one deliberate vertical oval aperture of deep forest green (#174D38), a quietly confident expression, one rounded arm raised in greeting with seamless oval tip, and the other rounded arm resting close. Preserve the good column silhouette and greeting pose. Correct the seed only by making its six-aperture count unmistakable: 2 large top + 1 small upper-middle + 1 small lower-middle + 2 large bottom.\n\nThis is a fresh no-reference generation, not an edit.\nKeep every Palari family rule: exactly one isolated complete adult-proportioned character; full body and stable continuous legless base visible; two calm half-lidded inset eyes; exactly two curved tubular arms with seamless blunt rounded tips and no hand anatomy; exactly one characteristic hue confined to one recessed intelligence opening, iris accents, and seed; matte-to-satin fine stoneware; intact smooth ceramic; no cup/bowl, clothing, human anatomy, machinery, extra openings, text, logo, or watermark.\nThe Palari seed mark is mandatory and must show EXACTLY SIX separate circular apertures, counted as: two large apertures on the top row + one small aperture on an upper-middle row + one small aperture on a lower-middle row + two large apertures on the bottom row. The two small center apertures must both be separately visible, vertically aligned, and not merged. No seventh dot.\nWarm minimalist plaster alcove, matte limestone floor, soft diffused upper-left daylight and gentle contact shadow. Eye-level three-quarter product portrait; direct square; full figure centered at about 76% image height.",
+        "review": "Selected. The retry preserves the fluted column, split-petal crown, forest oval, greeting pose, two eyes, two rounded arms, continuous base, and makes the exact six-aperture seed hierarchy clearly visible."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-060.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "a91bf38b1943fcb9e29be2f2ccee1d8c951adb9d981345fa81f47a325ee202e2"
+    },
+    "grammarReview": {
+      "status": "pass-after-targeted-retry",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The native 1254px RGB source is preserved untouched.",
+        "The selected candidate clearly honors the assigned column silhouette and structural identity.",
+        "This is a review candidate and is not production registered."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier and random seed not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-060.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b8-4e34-7751-9163-0c698a6d4329/exec-7e4a4d2e-5c6e-4c40-a813-f94468058541.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 avatar icon\nPrimary request: Derive a logo-first icon for the fluted column Palari in Image 1. Preserve the paired broad rounded split-petal crown lobes, tall slightly flared column, one long vertical oval aperture, one greeting arm and one resting arm. Normalize the shell to #E9E6DF and use forest #174D38 as the sole characteristic color. Emerge from the lower-left.\n\nInput image: Image 1 is identity reference only. Do not edit it. Preserve its unique outer shell/aperture silhouette, crown treatment, arm pose, two calm eyes, and small Palari seed as identity cues. Do not inherit the plaster alcove, floor, camera realism, ceramic texture, material color, lighting, or shadows.\n\nCreate one highly simplified IP mascot LOGO candidate, not a character illustration.\nCanvas/background: direct 1:1 square with square outer corners; fully opaque edge-to-edge perfectly uniform solid deep navy #172333; no vignette, halo, gradient, texture, floor, scene, frame, border, white margin, App mask, or transparency.\nColor count: exactly three semantic colors in the complete logo, and no others: warm ivory #E9E6DF for the entire shell and both arms; the assigned characteristic color for the single continuous recessed aperture, both minimal eye marks, and the small Palari seed; #172333 only for the background. Same-family continuous micro-volume is allowed within the two IP colors but must not create additional swatches or hues.\nGeometry: one dominant continuous rounded shell silhouette built from 6–10 broad basic shapes. The exact six-aperture Palari seed is the sole permitted repeated micro-detail: four larger corner dots and two smaller dots centered vertically, all characteristic-color, compact and subordinate. Two eyes only, no mouth. Exactly two rounded fingerless tubular arms with broad blunt ends; no hands, fingers, legs, feet, human anatomy, costume, machinery, decorative marks, or thin lines.\nComposition: upright, emerging from the assigned lower corner, filling 75–85% of the canvas. Keep the crown and both arms visible. Make it readable as a black silhouette and unmistakable at true 32 × 32.\nStyle: flat-first vector-friendly geometry with one uninterrupted low-frequency diffuse gradient per large IP region, sharing one upper-left-to-lower-right light direction. Each transition spans at least half the dominant form. Total OKLCH lightness variation no more than 0.08; hue drift no more than 3 degrees; chroma drift no more than 0.015. Micro-volume visible at full size but nearly gone at 32px.\nForbid: discrete highlight patches, highlight blobs, overlay bands, nested shadows, cut-paper layers, cel shading, stepped tonal swatches, hard internal shadow contours, small glossy hotspots, independent lighting on eyes or seed, realistic 3D, clay, porcelain, plastic, toy rendering, texture, gloss, bevel, extrusion, cast shadow, text, watermark, sharp points, extra colors, extra dots, mouth, or extra anatomy.",
+        "review": "Rejected: the navy field visibly vignetted and the mark stayed centered instead of emerging from the lower-left."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b8-4e34-7751-9163-0c698a6d4329/exec-fc490ba6-b6af-4c35-9358-760453226354.png",
+        "prompt": "Use case: logo-brand\nAsset type: Palari V2 avatar icon, targeted retry\nPrimary request: Create a minimal logo for the fluted column Palari in Image 1. Preserve two broad rounded split-petal crown lobes, a tall flared column, one long forest-green #174D38 vertical oval, one raised greeting arm, one resting arm, and the exact small six-dot seed. Anchor/emerge from lower-left.\n\nImage 1 is identity reference only. Generate a new logo; do not edit the reference and do not inherit its scene, lighting, texture, material realism, or shadow.\n\nThis targeted retry MUST correct these logo failures:\n- The background must be a mathematically uniform-looking, pixel-flat edge-to-edge solid #172333 with ZERO visible variation. No radial gradient, directional gradient, vignette, glow, halo, spotlight, texture, shadow, floor, border, frame, white margin, rounded-corner mask, or transparency.\n- Flat-first vector geometry, not an illustration. No cast shadows, contact shadows, occlusion seams, bevels, extrusion, layered paper, ceramic/plastic/clay/toy rendering, gloss, texture, or realistic depth.\n- Use only a barely perceptible single broad same-family tonal transition inside each large IP color region, under 0.04 total lightness variation, spanning the whole form. No highlight patches or independent part lighting. It should look essentially flat at 32px.\n- Anchor the body to its assigned lower corner: intentionally crop only the base at the bottom and that side edge, leave more open navy on the opposite side, fill 75–85%, keep crown and both arms visible. Not a centered sticker.\n\nUse exactly three semantic colors and no others: warm ivory #E9E6DF shell and arms; assigned characteristic color for exactly one large continuous aperture plus both tiny eye marks and exactly six seed dots; #172333 background only. The seed has four large corner dots plus two smaller center dots aligned vertically; no extra dots. Exactly two eyes, no mouth. Exactly two broad rounded fingerless tubular arms; no human anatomy or legs. One dominant continuous rounded silhouette made from 6–10 broad shapes; seed is the only micro-detail. Square native output with square corners. Text and watermark forbidden.",
+        "review": "Selected as the best available result. The retry anchors the compact column to the lower-left and preserves its crown, greeting pose, oval, two eyes, and exact six seed dots; a faint navy vignette remains."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-060.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "b59bcdd1a3e629fb00dc22d63fffa8c8cd608faddbf0f97c610e6ae296e3127c"
+    },
+    "review": {
+      "seedCount": 6,
+      "seedGeometry": "four larger corner circles plus two smaller vertical-center circles",
+      "readableAt32px": true,
+      "thumbnailNotes": "The paired crown, greeting arm, tall ivory column, and green oval remain immediately recognizable in the true 32px diagnostic; the seed compresses to a subordinate cluster.",
+      "approximateBroadShapeCount": 7,
+      "assignedCorner": "lower-left",
+      "strictIpAsLogoStatus": "best-available-with-deviations",
+      "deviations": [
+        "A faint low-frequency vignette remains in the navy background after the single permitted targeted retry, so the strict flat-background rejection rule is not fully satisfied.",
+        "The project-required six-circle seed repeats the characteristic color in six small regions, an explicit Palari exception to the skill's default preference for one continuous secondary-color region."
+      ],
+      "postprocessed": false
+    }
+  }
+}

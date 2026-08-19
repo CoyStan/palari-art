@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "id": "palari-053",
+  "assetType": "Palari V2 character study",
+  "status": "review-candidate",
+  "productionRegistered": false,
+  "plan": {
+    "silhouette": "stack",
+    "material": "charcoal",
+    "characteristic": "mineral_red",
+    "characteristicHex": "#7D2821",
+    "crown": "soft_hood",
+    "opening": "layered_reveal",
+    "pose": "gentle_greeting",
+    "expression": "curious",
+    "composition": "lower-right",
+    "identity": "offset two-lobe stack with a high seam, mineral-red reveal, and greeting arm"
+  },
+  "grammar": {
+    "promptGrammar": "docs/palari-v2/PROMPT-GRAMMAR.md",
+    "shapeGrammar": "docs/palari-v2/shape-grammar.json",
+    "visualGrammarStatus": "pass",
+    "reproductionStatus": "limited-no-exposed-seed"
+  },
+  "generation": {
+    "path": "Codex built-in ImageGen",
+    "model": "gpt-image-2",
+    "seed": null,
+    "createdAt": "2026-08-19T01:57:49Z",
+    "referenceImages": [],
+    "postprocessing": "none; selected native output copied byte-for-byte"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "retained": false,
+      "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: two visibly offset interlocking ceramic masses with one clear overlap seam, distinct centers, and a single continuous stable base\n- crown: protective soft hood grown from the ceramic body\n- opening: one opening created by two overlapping shell masses\n- pose: one curved arm raised in greeting, ending in one seamless oval tip\n- expression: curious\n- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture\n- characteristic color: deep mineral red (#7D2821)\n- structural identity: offset two-lobe stack with a high seam, mineral-red reveal, and greeting arm\n\nFamily invariants:\n- one and only one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and no unrelated openings\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exact Palari seed mark: six circular apertures only, arranged as four larger circles at the corners of a compact rectangle plus two smaller circles centered vertically between the left and right pairs; do not turn them into a grille\n- clean intact ceramic with smooth deliberately finished edges\n- overall body height at least 2.4 times visible face height; adult collectible proportion, never chibi\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible from crown to continuous base, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+      "review": {
+        "status": "reject",
+        "seedApertureCount": 9,
+        "failures": [
+          "Nine-position grille-like seed instead of the exact six-aperture geometry",
+          "Silhouette reads primarily as a wrapped hooded pod rather than two visibly offset interlocking masses with distinct centers"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "retained": true,
+      "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\nPrimary request: Targeted retry of one original Palari. Make a true stack silhouette: TWO VISIBLY OFFSET INTERLOCKING CHARCOAL CERAMIC EXTERIOR MASSES with distinct centers, a high clear overlap seam, and one single continuous stable base. Do not return a normal hooded pod. Grow one protective soft hood from the upper mass. Create exactly one mineral-red recessed reveal from the overlap between the two masses, plus two calm eyes. One curved arm rises in greeting with a seamless oval tip; the second rests close to the body. Expression curious. Exterior near-black charcoal ceramic with broad readable highlights and subtle microtexture. Use deep mineral red #7D2821 only for the single recessed intelligence reveal, iris accents, and exact six-aperture seed mark. Correct the prior overbuilt grille: show exactly six apertures in the required 2-by-3 arrangement.\nFamily invariants:\n- one and only one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited strictly to recessed inner intelligence, iris accents, and the six Palari seed apertures; both arm tips and all exterior shell surfaces stay the exterior material color\n- one dominant architecturally intentional opening and no unrelated openings\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exact Palari seed mark: EXACTLY SIX circular apertures total, arranged in a compact 2-column by 3-row rectangle; top row has two larger circles, middle row has two smaller circles, bottom row has two larger circles. Count them: 2 + 2 + 2 = 6. No seventh hole, no missing hole, no grille, no central third column\n- clean intact ceramic with smooth deliberately finished edges\n- overall body height at least 2.4 times visible face height; adult collectible proportion, never chibi\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible from crown to continuous base, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, circular aperture surrounding the face, text, labels, numbers, logos, or watermarks.",
+      "review": {
+        "status": "pass",
+        "seedApertureCount": 6,
+        "characterCount": 1,
+        "characteristicHueCount": 1,
+        "dominantOpeningCount": 1,
+        "eyeCount": 2,
+        "armCount": 2,
+        "conventionalLegsOrFeet": false,
+        "stableContinuousBase": true
+      }
+    }
+  ],
+  "selectedAttempt": 2,
+  "output": "docs/palari-v2/expansion-03/generated/palari-053.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "opaque": true,
+  "colorSpace": "sRGB",
+  "bitDepth": 8,
+  "sha256": "27e749af1bedc238b570832c0bd7e0496bb7b2fa7a0b32effb037365e0a59335",
+  "seedApertureCount": 6,
+  "review": {
+    "reviewer": "Codex",
+    "status": "pass",
+    "automaticRejectionRulesPassed": true,
+    "deviations": [
+      "The built-in ImageGen path does not expose a reproducible numeric seed."
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "palari-074",
+  "plan": {
+    "silhouette": "crescent",
+    "material": "porcelain",
+    "characteristic": "forest",
+    "characteristicHex": "#174D38",
+    "crown": "soft_overhang",
+    "opening": "narrow_channel",
+    "pose": "arms_resting",
+    "expression": "thoughtful",
+    "composition": "lower-left",
+    "identity": "closed wing crescent with a long forest inner stripe"
+  },
+  "sourceGeneration": {
+    "useCase": "stylized-concept",
+    "modelPath": "built-in ImageGen",
+    "referenceImages": [],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": true,
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- silhouette: slender asymmetric crescent with a finished architectural sweep\n- crown: small directional overhang integrated into the anatomy\n- opening: one long narrow recessed channel\n- pose: both rounded arms resting close to the body\n- expression: thoughtful\n- exterior material: soft cool-neutral off-white porcelain, never pure digital white\n- characteristic color: deep forest green (#174D38)\n- distinct identity: closed wing crescent with a long forest inner stripe; the exterior sweep must be closed and capped, with no upward-facing cavity or open rim\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exactly six circular seed-mark apertures: four larger apertures at the corners of a compact rectangle plus two smaller apertures centered vertically between them; no extra holes\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, one full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "builtInOutput": "/home/quetza/.codex/generated_images/01a017b9-032b-7793-8f50-9dfbc6949d36/exec-42de005f-72b7-477e-82f2-1c3c6d11d503.png",
+        "reviewNotes": [
+          "The closed capped crescent, long forest channel, thoughtful eyes, two resting rounded arms, stable legless base, intact porcelain, studio, and single hue are clear.",
+          "The seed contains six apertures, but all six read at almost the same size instead of the prescribed four-large plus two-small hierarchy."
+        ]
+      },
+      {
+        "attempt": 2,
+        "selected": false,
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study — targeted retry\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This is a new no-reference render. Correct the count-and-size-sensitive family signature: render exactly six seed apertures with four visibly larger corner apertures and only two visibly smaller apertures centered between them.\n\nSelected design:\n- silhouette: slender asymmetric crescent with a finished architectural sweep\n- crown: small directional overhang integrated into the anatomy\n- opening: one long narrow recessed channel\n- pose: both rounded arms resting close to the body\n- expression: thoughtful\n- exterior material: soft cool-neutral off-white porcelain, never pure digital white\n- characteristic color: deep forest green (#174D38)\n- distinct identity: closed wing crescent with a long forest inner stripe; the exterior sweep must be closed and capped, with no upward-facing cavity or open rim\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and at most one small supporting reveal\n- calm half-lidded inset eyes with ceramic eyelids, dark pupils, characteristic-color iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exactly six circular seed-mark apertures arranged as a compact 2-column by 3-row field: the four OUTER CORNER apertures are visibly larger, while the two apertures at the CENTER-LEFT and CENTER-RIGHT positions are visibly smaller; count exactly 6, never 5 and never six equal dots; no extra holes\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, one full figure visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, random holes or more than one dominant opening, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot smiles, chibi proportions, horror, or vacant doll eyes, an upward-facing cavity on a crescent or a circular aperture surrounding the face, a stack silhouette without two visibly offset interlocking exterior masses, text, labels, numbers, logos, or watermarks.",
+        "builtInOutput": "/home/quetza/.codex/generated_images/01a017b9-032b-7793-8f50-9dfbc6949d36/exec-3494f53a-63e5-453a-8421-1f7f1fcdd11b.png",
+        "reviewNotes": [
+          "The retry preserves the crescent identity and produces a clear four-large plus one-small hierarchy.",
+          "It contains only five seed apertures, so it is a harder count failure than attempt 1."
+        ]
+      }
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 1,
+    "output": "docs/palari-v2/expansion-03/generated/palari-074.png",
+    "dimensions": [1254, 1254],
+    "format": "PNG",
+    "mode": "sRGB",
+    "opaque": true,
+    "sha256": "34a96ac910c7ed0cc7a71bd8d02de17de4448e47a4b42c5531466b3082b169ae",
+    "grammarReview": {
+      "status": "reject",
+      "seedApertureCount": 6,
+      "notes": [
+        "Saved attempt 1 retains the complete six-seed count and the stronger closed-crescent identity.",
+        "The six seed apertures lack a convincingly visible 4+2 size hierarchy, triggering the family-signature rejection rule despite otherwise strong grammar compliance."
+      ]
+    }
+  },
+  "iconGeneration": {
+    "useCase": "logo-brand",
+    "skill": "ip-as-logo",
+    "modelPath": "built-in ImageGen",
+    "referenceImages": ["docs/palari-v2/expansion-03/generated/palari-074.png"],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": false,
+        "prompt": "Use case: logo-brand\nAsset type: square Palari mascot logo icon\nInput image: Image 1 is identity reference only. Generate a new logo; do not edit, trace, or reproduce the studio scene.\n\nPrimary request: Derive one highly simplified Palari logo from Image 1. It must read as a compact symbol first, not a character illustration. Preserve the distinctive closed wing-like crescent silhouette, blunt integrated directional overhang, very long narrow forest-green inner channel, thoughtful half-lidded eyes, and both rounded arms resting close to the body. The warm-ivory closed crescent enclosing the forest channel is the primary mark; it must not read as an open bowl or moon cutout. Retain the Palari six-seed family signature only as a very small secondary detail.\n\nComposition: upright; emerge from the lower-left corner; fill 75–85% of the square; square outer corners; keep the closed capped sweep fully legible. 6–10 broad rounded geometric shapes total, one strong readable outer silhouette and balanced negative space. Readable as a true 32 × 32 icon.\nColors: exactly three semantic colors in the complete image: warm ivory #E9E6DF for the continuous shell and arms/eyes/marks, deep forest #174D38 for the one continuous inner channel plus irises and six seed apertures, and deep navy #172333 used only as a fully opaque edge-to-edge uniform background.\nSeed signature: exactly six tiny circular marks, four slightly larger at the corners of a compact rectangle and two smaller centered vertically between them; keep them subordinate to the crescent/channel silhouette.\nStyle: flat-first vector-friendly geometry with only one extremely subtle uninterrupted low-frequency same-family gradient inside each of the two large IP color regions, shared upper-left-to-lower-right light direction. Modeling nearly disappears at 32px. Keep small eyes and seed marks flat.\nFace and anatomy: exactly two simple half-lidded eyes; no mouth; two rounded fingerless arms; no hands, legs, feet, clothing, joints, or machinery.\nForbid: open cup rim, upward-facing cavity, scene, alcove, floor, material realism, ceramic texture, strong 3D, toy/plastic/clay rendering, gloss, bevel, rim light, discrete highlight patches, nested shadow shapes, external shadow, thin lines, sharp points, extra colors, extra holes, decorative marks, vignette, halo, border, text, watermark, transparency, rounded app-icon mask, or rounded canvas corners.",
+        "builtInOutput": "/home/quetza/.codex/generated_images/01a017b9-032b-7793-8f50-9dfbc6949d36/exec-c89c3168-7234-4e49-8029-b5d99773ec84.png",
+        "reviewNotes": ["The icon preserves the closed crescent and forest channel with six seed marks, but all six marks are nearly equal in size."]
+      },
+      {
+        "attempt": 2,
+        "selected": true,
+        "prompt": "Use case: logo-brand\nAsset type: square Palari mascot logo icon — targeted retry\nInput image: Image 1 is identity reference only. Generate a new logo from the source, not an edit or studio reproduction.\n\nPrimary request: Derive one highly simplified Palari symbol from Image 1, preserving its closed wing-like crescent, blunt capped directional overhang, long forest-green inner channel, thoughtful half-lidded eyes, and two close resting rounded arms. Correct the seed-size failure: the family seed must show four larger corner marks and two visibly smaller centered marks.\nComposition: upright, emerging from the lower-left corner and filling 75–85%; square outer canvas. 6–10 broad rounded shapes; closed crescent/channel silhouette leads; true 32 × 32 readability.\nColors: exactly three semantic colors: warm ivory #E9E6DF continuous shell/arms/eye marks; forest #174D38 one continuous channel/irises/seed marks; deep navy #172333 only as fully opaque uniform edge-to-edge background.\nSeed signature: exactly six dots in TWO ROWS OF THREE. Each row is LARGE — SMALL — LARGE, so there are precisely four larger corner dots and precisely two visibly smaller dots on the vertical centerline. Do not render six equal dots; do not add other holes.\nStyle: flat-first vector-friendly geometry; at most one extremely subtle continuous same-family gradient per large IP color region, shared upper-left light; no mouth; two fingerless rounded arms; no legs.\nForbid: open cup rim, upward-facing cavity, scene, texture, ceramic realism, strong 3D, gloss, bevel, discrete shading patches, shadows, thin lines, sharp points, extra colors, decorative marks, vignette, halo, border, transparency, text, watermark, app mask, rounded canvas corners.",
+        "builtInOutput": "/home/quetza/.codex/generated_images/01a017b9-032b-7793-8f50-9dfbc6949d36/exec-f6c569c1-ef39-411d-8d93-d2cf7ee863dc.png",
+        "reviewNotes": ["The retry preserves the source identity and corrects the seed to four large corner dots plus two small centered dots."]
+      }
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-074.png",
+    "dimensions": [1254, 1254],
+    "format": "PNG",
+    "mode": "sRGB",
+    "opaque": true,
+    "sha256": "e19488e983c377201080eb04fc15f3393e29636a958c1d52c6ea6ca6fa90567c",
+    "seedApertureCount": 6,
+    "smallSizeReview": {
+      "status": "pass",
+      "method": "Nearest-neighbor inspection of a temporary 32 × 32 reduction; final asset remains native and untouched.",
+      "notes": "The closed ivory crescent and long forest channel remain distinct; the seed resolves as two compact rows rather than six individual dots."
+    },
+    "skillStatus": "reject",
+    "deviations": [
+      "The navy background retains a visible vignette instead of a perfectly uniform #172333 field.",
+      "The character is centered and bottom-cropped rather than clearly emerging from the lower-left.",
+      "The crescent silhouette uses a relatively narrow upper tip, though it remains rounded rather than acute.",
+      "The exact six-dot seed and its 4+2 hierarchy are clear at native size but not individually legible at 32 px."
+    ]
+  }
+}

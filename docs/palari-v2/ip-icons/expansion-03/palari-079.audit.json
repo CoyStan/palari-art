@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "id": "palari-079",
+  "createdAt": "2026-08-19T02:04:40Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "arch",
+    "material": "ivory",
+    "characteristic": "ultramarine",
+    "characteristicHex": "#164A7A",
+    "crown": "soft_hood",
+    "opening": "layered_reveal",
+    "pose": "arms_resting",
+    "expression": "thoughtful",
+    "composition": "lower-right",
+    "identity": "asymmetric ivory vault arch with a layered blue core"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-a815d638-39ea-4b85-b878-70440b9981b7.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: asymmetric ivory vault arch with a layered ultramarine blue core\n- silhouette: protective enclosing arch formed from one continuous ceramic shell\n- crown: protective soft hood grown from the ceramic body\n- opening: one opening created by two overlapping shell masses\n- pose: both rounded arms resting close to the body\n- expression: thoughtful, conveyed only through calm eye posture, with no mouth\n- exterior material: warm creamy ivory ceramic\n- characteristic color: deep ultramarine blue, visually anchored to #164A7A\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional layered opening and no additional unrelated openings\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, ultramarine iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exact Palari seed mark on the lower body: four larger circular ultramarine apertures at the corners of a compact vertical rectangle with two smaller ultramarine apertures centered vertically between them; exactly six apertures total, not a grille\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure and full base visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smiles, chibi proportions, horror, vacant doll eyes, a circular aperture surrounding the face, text, labels, numbers, logos, watermarks.",
+        "review": "Rejected: the exterior reads as an egg-like pod more than a protective arch, the blue core uses decorative concentric rings, and the seed is six equal circles rather than the required large-small hierarchy."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-4006979c-cc28-4312-98b3-ab2db4837433.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study — targeted structural retry\n\nPrimary request: Create one original Palari with an unmistakable protective ARCH silhouette, not a pod or egg. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence.\n\nTargeted corrections from attempt 1:\n- build the whole exterior as a clearly legible enclosing arch or vault, with two ivory shell sides rising from one continuous stable base and meeting under an asymmetric soft hood\n- the opening must be one layered ultramarine reveal formed by two overlapping ivory shell masses; avoid a simple large oval face cavity and avoid concentric decorative rings\n- place exactly six small ultramarine seed apertures low on the body: four larger circles at the four corners of a compact vertical rectangle and two visibly smaller circles centered vertically between them; no 2-by-3 grid of equal circles\n\nSelected design:\n- identity: asymmetric ivory vault arch with a layered ultramarine blue core\n- silhouette: protective enclosing arch formed from one continuous ceramic shell\n- crown: protective soft hood grown from the ceramic body\n- opening: one opening created by two overlapping shell masses\n- pose: both rounded arms resting close to the body\n- expression: thoughtful through eye posture only, with no mouth\n- exterior: warm creamy ivory ceramic\n- characteristic hue: deep ultramarine #164A7A only\n\nInvariant checklist:\n- one complete isolated figure, body height at least 2.4 times visible face height, full continuous legless base visible\n- exactly one dominant opening\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, ultramarine iris accents, tiny catchlights\n- exactly two curved tubular ceramic arms, each ending in a perfectly smooth seamless rounded tip, no hand anatomy\n- exact six-aperture 4-large-plus-2-small Palari seed\n- matte-to-satin fine stoneware, subtle handmade microtexture, intact finished ceramic\n- ultramarine appears only in inner intelligence, iris accents, and seed mark\n\nScene: warm minimalist plaster alcove studio with matte limestone floor.\nComposition: eye-level three-quarter square product portrait; complete centered figure occupying about 76% of image height.\nLighting: soft diffused upper-left daylight with a gentle contact shadow; no neon glow.\n\nAvoid: pod, egg, capsule, simple oval cavity, cup or bowl rim, concentric ring decoration, fingers or hands, legs or feet, clothing, multiple colors, machinery, extra holes, cracks, chibi body, smile, text, logo, watermark.",
+        "review": "Selected as the best available source. It fixes the seed hierarchy and concentric rings, while preserving a single layered blue core and two arms, but the enclosing shell still reads closer to a rounded pod than the selected arch family."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-079.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "7f3b389cae038ae502265dfe86dccc77271aa33c8788b9fbfcbaf34706631bd3"
+    },
+    "grammarReview": {
+      "status": "reject-best-available-after-targeted-retry",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The selected candidate preserves the soft hood, layered ultramarine reveal, resting arms, ivory material, thoughtful eyes, and exact seed geometry.",
+        "It fails the selected-silhouette rejection rule because the compact rounded exterior still reads more as a pod or capsule than a protective arch.",
+        "This is a review candidate and is not production registered."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-079.png"
+    ],
+    "attemptCount": 1,
+    "selectedAttempt": 1,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-a317f1bf-a1ff-486c-9cf4-92b54c7b430d.png",
+        "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate derived from Image 1\nInput image: Image 1 is identity reference only. Preserve its compact asymmetric ivory vault/hood shell, overlapping layered ultramarine core, two calm eyes, two close resting arms, stable legless base, and exact small six-aperture seed. Do not preserve its studio scene, realistic ceramic material, lighting, shadows, or camera depth.\n\nCreate one highly simplified logo first and character second.\nSubject: the source Palari reduced to one weighty rounded continuous ivory enclosing-vault silhouette, with the right shell overlapping the left beneath a soft asymmetric hood and creating one large continuous layered ultramarine core. Include exactly two compact calm eye marks and exactly two thick resting arm forms. The shell/aperture silhouette must be the primary identity; keep the six-aperture Palari seed as a tiny secondary family detail low on the body: four larger ultramarine dots at rectangle corners plus two visibly smaller ultramarine dots centered vertically, exactly six.\n\nComposition: upright, emerging from and intentionally cropped only at the lower-right canvas corner; fill 75–85% of the square; never crop hood, eyes, opening, arms, or seed.\nComplexity: 6–10 broad rounded structural forms; the six tiny seed cutouts are an explicit identity exception. Readable as a distinct black silhouette and recognizable at 32 × 32.\n\nColor count: exactly three semantic colors total: warm ivory #E9E6DF for every shell and arm region, deep ultramarine #164A7A for the single layered core plus eye marks and tiny seed, and deep navy #172333 only for the fully opaque edge-to-edge background. No other hue, gray, white, or black. Keep ultramarine in one dominant continuous inner region; the tiny eye/seed reuses are required identity marks.\nStyle: flat-first vector-friendly geometry with extremely subtle continuous-gradient micro-volume only. One uninterrupted low-frequency same-family diffuse gradient within each large ivory/ultramarine region, sharing an upper-left-to-lower-right light direction, spanning at least half each form; total lightness variation <= 0.08. Nearly flat at 32 px.\n\nForbid: illustration, scene, alcove, floor, texture, ceramic realism, clay, plastic, toy render, gloss, bevel, extrusion, cast shadow, contact shadow, rim light, discrete highlight patches, inner shadow blobs, hard shading bands, outlines, thin lines, sharp points, concentric rings, extra apertures, extra arms, hands, fingers, legs, feet, mouth, eyebrows, nostrils, text, watermark, border, frame, vignette, gradient background, transparency, rounded canvas corners, App icon mask.",
+        "review": "Selected as the only icon attempt. It preserves the compact hood, blue core, calm eyes, paired resting arms, and exact seed, but retains a vignetted background and visibly modeled cut-paper depth."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-079.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "f6ee4b654b4828ae6b203f706c6acf2c74e355da8e2b6e238122ba19d8efbc3e"
+    },
+    "review": {
+      "seedCount": 6,
+      "seedGeometry": "four larger corner circles plus two smaller vertical-center circles",
+      "readableAt32px": true,
+      "smallSizeStatus": "pass",
+      "thumbnailNotes": "The pale hood, dominant blue drop-shaped core, calm eye pair, and compact body remain legible at 32 px; the tiny seed compresses to a secondary cluster.",
+      "approximateBroadShapeCount": 9,
+      "assignedCorner": "lower-right",
+      "strictIpAsLogoStatus": "reject",
+      "deviations": [
+        "The navy background contains a clear center-to-edge vignette instead of a uniform #172333 field.",
+        "The ivory shell and arms use pronounced edge shading, overlaps, and soft contact seams that read more like cut paper or shallow 3D than near-flat micro-volume.",
+        "The source-derived silhouette remains pod-like and therefore cannot fully express the planned arch direction.",
+        "The project-required seed repeats ultramarine in six small regions, an explicit Palari exception to the skill's default continuous-secondary-region preference."
+      ],
+      "postprocessed": false
+    }
+  }
+}

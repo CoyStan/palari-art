@@ -1,0 +1,202 @@
+{
+  "id": "palari-064",
+  "createdAt": "2026-08-19T02:05:12Z",
+  "generator": "built-in ImageGen",
+  "model": "model identifier not exposed by the built-in tool",
+  "productionRegistration": false,
+  "design": {
+    "silhouette": "bell",
+    "material": "stone",
+    "characteristic": "mineral_red",
+    "characteristicHex": "#7D2821",
+    "crown": "integrated_dome",
+    "opening": "layered_reveal",
+    "pose": "soft_embrace",
+    "expression": "gently_amused",
+    "composition": "lower-left",
+    "identity": "nested stone bell shell embracing one mineral-red center reveal"
+  },
+  "source": {
+    "output": "docs/palari-v2/expansion-03/generated/palari-064.png",
+    "dimensions": [1254, 1254],
+    "opaque": true,
+    "sha256": "fa197f4a1abcedb948a8e5d7599f5d81ef229a3cdbaac754b391cfcc7dd24f54",
+    "attemptCount": 2,
+    "selectedAttempt": 1,
+    "grammarStatus": "reject",
+    "review": "retained best rejected review candidate; not production-approved",
+    "deviations": [
+      "The selected source has six seed apertures, but all six are equal-sized instead of four larger corners plus two smaller centered apertures.",
+      "The red inner reveal contains concentric surface rings that add decorative internal structure."
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": true,
+        "sha256": "fa197f4a1abcedb948a8e5d7599f5d81ef229a3cdbaac754b391cfcc7dd24f54",
+        "status": "reject",
+        "rejectionReasons": [
+          "The seed uses six equal apertures instead of the required four-large-plus-two-small construction.",
+          "The reveal includes concentric decorative rings."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 character study",
+          "",
+          "Primary request: Create one original Palari, identity \"nested stone bell shell embracing one mineral-red center reveal.\" Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- silhouette: balanced bell silhouette with a softly flared stable base and integrated head",
+          "- crown: continuous integrated ceramic dome",
+          "- opening: exactly one mineral-red layered reveal created by two overlapping nested shell masses at the center; not two openings",
+          "- pose: both rounded arms softly embracing the center reveal",
+          "- expression: gently amused, communicated only by the calm eyes, with no mouth",
+          "- exterior material: balanced warm medium-grey stoneware, clearly grey rather than brown",
+          "- characteristic color: deep mineral red #7D2821",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue, deep mineral red, limited to the recessed inner intelligence, iris accents, and Palari seed mark",
+          "- exactly one dominant architecturally intentional opening created by the nested shell overlap and no other supporting reveal",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, mineral-red iris accents, and tiny catchlights",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy, softly embracing the opening",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- exactly one compact seed mark on the lower body containing exactly six circular apertures: four larger circular apertures at the four corners of a compact rectangle plus two smaller apertures centered vertically between them; nowhere else has dots or holes",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- visibly honor the broad bell base, integrated dome, nested shell overlap, center reveal, and embracing arms",
+          "",
+          "Scene: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Composition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible and centered, occupying about 76 percent of image height.",
+          "Lighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.",
+          "",
+          "Avoid: any second seed mark, forehead dots or crown dots, any random holes, simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, mouth or smile, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, more than one dominant opening, disconnected decorative shell fragments, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot face, chibi proportions, horror, or vacant doll eyes, a circular aperture surrounding the face, text, labels, numbers, logos, or watermarks."
+        ]
+      },
+      {
+        "attempt": 2,
+        "selected": false,
+        "sha256": "3c348d31cb1f6cdbeae0be1a2a8177dd63d30fe6358c9af9a1b7f63cba3e8aca",
+        "status": "reject",
+        "rejectionReasons": [
+          "The targeted retry produced only five seed apertures, so it was worse than the selected first attempt."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 character study",
+          "",
+          "Primary request: Create one original Palari, identity \"nested stone bell shell embracing one mineral-red center reveal.\" Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Targeted correction from the rejected first attempt: the one lower seed mark must NOT be a six-equal-dot grille. It must visibly have four LARGE circular apertures at the rectangle's top-left, top-right, bottom-left, and bottom-right corners, plus exactly two noticeably SMALLER circular apertures on the center vertical axis. Keep the layered reveal architecturally clean, without concentric decorative rings.",
+          "",
+          "Selected design:",
+          "- silhouette: balanced bell silhouette with a softly flared stable base and integrated head",
+          "- crown: continuous integrated ceramic dome",
+          "- opening: exactly one mineral-red layered reveal created by two overlapping nested shell masses at the center; not two openings",
+          "- pose: both rounded arms softly embracing the center reveal",
+          "- expression: gently amused, communicated only by the calm eyes, with no mouth",
+          "- exterior material: balanced warm medium-grey stoneware, clearly grey rather than brown",
+          "- characteristic color: deep mineral red #7D2821",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue, deep mineral red, limited to the recessed inner intelligence, iris accents, and Palari seed mark",
+          "- exactly one dominant architecturally intentional opening created by the nested shell overlap and no other supporting reveal",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, mineral-red iris accents, and tiny catchlights",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy, softly embracing the opening",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- exactly one compact seed mark on the lower body containing exactly six circular apertures arranged as: two large apertures in the left column, two large apertures in the right column, and two much smaller apertures in a short center vertical column; four large corner apertures plus two small centered apertures; nowhere else has dots or holes",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- visibly honor the broad bell base, integrated dome, clean nested shell overlap, center reveal, and embracing arms",
+          "",
+          "Scene: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Composition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible and centered, occupying about 76 percent of image height.",
+          "Lighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.",
+          "",
+          "Avoid: six equal dots, a 2-by-3 grille, concentric rings inside the opening, any second seed mark, forehead dots or crown dots, random holes, simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, mouth or smile, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, more than one dominant opening, disconnected decorative shell fragments, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot face, chibi proportions, horror, or vacant doll eyes, a circular aperture surrounding the face, text, labels, numbers, logos, or watermarks."
+        ]
+      }
+    ]
+  },
+  "icon": {
+    "inputReference": "docs/palari-v2/expansion-03/generated/palari-064.png",
+    "inputRole": "identity reference only",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-064.png",
+    "dimensions": [1254, 1254],
+    "opaque": true,
+    "sha256": "e2aece9460fd90c6d575d69a102bf4daabd0f0b87572a4561a8688fd6e93642d",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "seedApertureCount": 6,
+    "smallSizeStatus": "pass: bell/aperture/embrace remain legible at 32 px; seed is secondary",
+    "strictStatus": "reject",
+    "backgroundSamples": ["#192233", "#172233", "#192334"],
+    "deviations": [
+      "The layered two-shell reveal is simplified into one large continuous red aperture, weakening the selected nested-shell identity.",
+      "A sampled red interior is approximately #90211C rather than the requested base #7D2821, exceeding a literal exact-palette reading.",
+      "The exact seed geometry is clear at native size but its size hierarchy is not reliably legible at 32 px."
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": false,
+        "sha256": "c54fb951690e1d87e65625940dd3839c158a0f3b71d2f7ff182c023b75f11113",
+        "status": "reject",
+        "rejectionReasons": [
+          "The mark was centered instead of lower-left.",
+          "Navy outline strokes leaked the background-only color into the character.",
+          "The aperture contained an ivory stripe and the seed used six equal dots."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari app-icon artwork",
+          "",
+          "Input images: Image 1 is an identity reference only for Palari 064. Do not edit or reproduce the source image's plaster alcove, stone texture, realistic material, lighting, floor, shadow, or concentric surface texture.",
+          "",
+          "Primary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce Palari 064 to its defining shell-and-aperture mark: a broad softly flared bell shell with integrated dome, one clean mineral-red leaf-like center reveal formed by two nested overlapping shell edges, two calm half-lidded eyes, two thick rounded arms softly embracing the reveal, a continuous legless base, and one tiny six-aperture family seed. The nested bell shell and center aperture are the identity and must dominate; the aperture is not a mouth; the seed is minor.",
+          "",
+          "Background: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, used only for the background. No gradient, vignette, halo, scene, floor, lighting variation, or texture.",
+          "Color count: exactly three semantic colors: warm ivory #E9E6DF for the complete shell, nested shell edges, eyelids, and arms; deep mineral red #7D2821 for the one center reveal, two minimal eye marks, and six tiny seed apertures; deep navy #172333 for the background only. No fourth color.",
+          "Complexity: approximately 6–10 broad rounded primary shapes. Preserve only the broad bell silhouette, nested overlap, one center reveal, two minimal eyes, paired embracing arms, and minor seed. No mouth.",
+          "Composition: upright, emerging from and intentionally cropped only at the lower-left canvas edge, filling about 80% of the square. Keep dome, both eyes, the full center reveal, and both arms visible. Square outer corners; no App mask.",
+          "Style: flat-first vector-friendly geometry with thick rounded contours and balanced negative space. Use at most one uninterrupted low-frequency diffuse micro-gradient per large ivory or red region, shared upper-left-to-lower-right direction, total lightness variation <=0.08; almost flat at 32 × 32. Do not render concentric rings.",
+          "Seed: exactly six tiny mineral-red circles arranged as four larger corner circles plus two noticeably smaller circles centered vertically; keep subordinate. No other marks.",
+          "",
+          "Forbid: scene, plaster, floor, material texture, ceramic realism, photorealism, strong 3D, clay, plastic, toy rendering, gloss, bevel, concentric rings, specular highlight, rim light, cast or contact shadow, external shadow, border, frame, transparency, rounded canvas corners, text, watermark, mouth, smile, eyebrows, hands, fingers, palms, legs, feet, extra openings, extra eyes, repeated anatomy, sharp points, thin lines, highlight patches, bands, nested shadow shapes, cel shading, strong gradients, background gradient, colors beyond #E9E6DF #7D2821 #172333. Must remain instantly legible at 32 × 32."
+        ]
+      },
+      {
+        "attempt": 2,
+        "selected": true,
+        "sha256": "e2aece9460fd90c6d575d69a102bf4daabd0f0b87572a4561a8688fd6e93642d",
+        "status": "reject",
+        "rejectionReasons": [
+          "The layered reveal simplifies into one broad red shape and the characteristic red drifts from the exact requested base value."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari app-icon artwork",
+          "",
+          "Input images: Image 1 is an identity reference only for Palari 064. Do not reproduce its scene, realism, texture, lighting, floor, shadow, or concentric texture.",
+          "",
+          "Targeted correction from the rejected first icon attempt: move the mark decisively to the lower-left and crop its base at the bottom and left edges; do not center it. Make the background absolutely uniform flat #172333 with no vignette. Remove every navy outline from the character, remove the ivory stripe inside the red aperture, and use no thin contour lines. Make the one seed mark four large corner circles plus two smaller centered circles—not six equal dots.",
+          "",
+          "Primary request: one highly simplified IP mascot logo, not an illustration. Palari 064 is a broad softly flared ivory bell shell with integrated dome, one clean continuous mineral-red leaf-like reveal defined by two broad overlapping ivory shell masses, two calm half-lidded eyes, two thick rounded arms embracing the reveal, a continuous legless base, and one tiny seed. Nested bell shell plus center reveal is the dominant identity; aperture is not a mouth.",
+          "Background: fully opaque edge-to-edge perfectly uniform solid #172333, background only.",
+          "Colors: exactly three semantic colors: #E9E6DF entire shell/arms/eyelids; #7D2821 one uninterrupted aperture/eyes/six seeds; #172333 background only. No outlines, separators, strokes, or subject regions in navy. No fourth color.",
+          "Complexity: 6–10 broad rounded shapes; no thin strokes; no mouth.",
+          "Composition: upright, emerging from lower-left, fill about 80%; intentional crop only at bottom and left; dome, both eyes, full aperture and both arms visible; square corners.",
+          "Style: flat-first vector-friendly geometry. Extremely subtle shared same-family continuous micro-gradient only, almost invisible at 32 px. No texture or shadow.",
+          "Seed: exactly six small red circles: four visibly larger at rectangle corners plus two noticeably smaller on center vertical axis; subordinate.",
+          "",
+          "Forbid: centered sticker, uniform margin, background gradient, vignette, halo, navy lines on subject, any internal stripe or split inside the red aperture, thin outlines, six equal dots, scene, plaster, floor, texture, realism, strong 3D, clay, plastic, gloss, bevel, shadows, border, frame, transparency, rounded canvas corners, text, watermark, mouth, eyebrows, hands, fingers, legs, feet, extra openings or eyes, sharp points, highlight patches, bands, cel shading, colors beyond #E9E6DF #7D2821 #172333. Instantly legible at 32 × 32."
+        ]
+      }
+    ]
+  }
+}

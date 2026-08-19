@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "id": "palari-080",
+  "createdAt": "2026-08-19T02:04:40Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "crescent",
+    "material": "stone",
+    "characteristic": "amber",
+    "characteristicHex": "#C17A0B",
+    "crown": "closed_asymmetric_sweep",
+    "opening": "side_reveal",
+    "pose": "arms_folded",
+    "expression": "quietly_confident",
+    "composition": "lower-left",
+    "identity": "high-crested stone crescent with a low amber side reveal"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-c6b43c3d-f36f-4e1b-a3c9-eee7a7566a5c.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: high-crested stone crescent with a low amber side reveal\n- silhouette: slender asymmetric crescent with a finished architectural sweep, using a closed exterior sweep and never an upward-facing cavity\n- crown: closed asymmetric upward sweep with a continuous exterior cap; no upward-facing cavity or open rim\n- opening: one controlled side reveal following the silhouette\n- pose: both rounded arms crossed calmly around the opening\n- expression: quietly confident, conveyed only through calm eye posture, with no mouth\n- exterior material: balanced warm medium-grey stoneware, clearly grey rather than brown\n- characteristic color: warm amber, visually anchored to #C17A0B\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional side opening and no additional unrelated openings\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, amber iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exact Palari seed mark on the lower body: four larger circular amber apertures at the corners of a compact vertical rectangle with two smaller amber apertures centered vertically between them; exactly six apertures total, not a grille\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure and full base visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smiles, chibi proportions, horror, vacant doll eyes, an upward-facing cavity on a crescent, a circular aperture surrounding the face, text, labels, numbers, logos, watermarks.",
+        "review": "Rejected: the body reads as a rounded teardrop or pod rather than a crescent, the amber opening surrounds and contains the face instead of remaining a low side reveal, and the seed lacks the required size hierarchy."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-19457abf-439b-4fc4-b85e-85f089efb9b1.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study — targeted structural retry\n\nPrimary request: Create one original Palari with an unmistakable slender asymmetric CRESCENT silhouette, not a pod, egg, flame, or teardrop. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence.\n\nTargeted corrections from attempt 1:\n- make the stone exterior a narrow asymmetric crescent or closed wing sweep with a strong open-side contour and a high blunt crest; use a continuous closed exterior cap, never an upward-facing cavity\n- move the single amber intelligence opening below and to one side of the face, following the inner crescent; it must not surround, contain, or become the face backdrop\n- place exactly six small amber seed apertures low on the body: four larger circles at the four corners of a compact vertical rectangle and two visibly smaller circles centered vertically between them; no 2-by-3 grid of equal circles\n- show exactly two crossed tubular arms, not three\n\nSelected design:\n- identity: high-crested stone crescent with a low amber side reveal\n- silhouette: slender asymmetric crescent with a finished architectural sweep\n- crown: closed asymmetric upward sweep with a continuous exterior cap, no open rim\n- opening: one controlled low side reveal following the silhouette\n- pose: exactly two rounded arms crossed calmly around the opening\n- expression: quietly confident through eye posture only, with no mouth\n- exterior: balanced warm medium-grey stoneware, clearly grey rather than brown\n- characteristic hue: warm amber #C17A0B only\n\nInvariant checklist:\n- one complete isolated figure, full continuous legless base visible\n- exactly one dominant side opening, separated from the face\n- exactly two calm half-lidded inset eyes on the ceramic face, with ceramic eyelids, dark pupils, amber iris accents, tiny catchlights\n- exactly two curved tubular ceramic arms ending in seamless rounded tips, no hand anatomy\n- exact six-aperture 4-large-plus-2-small Palari seed\n- matte-to-satin fine stoneware, subtle handmade microtexture, intact finished ceramic\n- amber appears only in inner intelligence, iris accents, and seed mark\n\nScene: warm minimalist plaster alcove studio with matte limestone floor.\nComposition: eye-level three-quarter square product portrait; complete centered figure occupying about 76% of image height.\nLighting: soft diffused upper-left daylight with a gentle contact shadow; no neon glow.\n\nAvoid: pod, egg, flame, teardrop, face inside the colored opening, upward-facing cavity, cup or bowl rim, fingers or hands, more than two arms, legs or feet, clothing, multiple colors, machinery, extra holes, cracks, chibi body, smile, text, logo, watermark.",
+        "review": "Selected. The targeted retry visibly creates a closed asymmetric crescent, separates one amber side reveal from the face, uses exactly two crossed arms, and restores the exact four-large-plus-two-small seed."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-080.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "19a35025b4f8b82ea59d358d9b5d81703e7136518de5d359281ba846abe68d3a"
+    },
+    "grammarReview": {
+      "status": "pass-after-targeted-retry",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 6,
+      "seedGeometry": "four larger corner apertures plus two smaller vertical-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The selected candidate visibly honors the crescent, closed asymmetric sweep, low amber side reveal, folded-arm pose, stone material, quietly confident eyes, and exact seed geometry.",
+        "The high crest is blunt enough to avoid a fragile point and the colored reveal remains separate from the face.",
+        "This is a review candidate and is not production registered."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-080.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-e07976c9-9784-49e9-91ee-265872e55afa.png",
+        "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate derived from Image 1\nInput image: Image 1 is identity reference only. Preserve its narrow high-crested stone crescent silhouette, one low amber side reveal separate from the face, two calm eyes, exactly two thick crossed arms, stable legless base, and exact small six-aperture seed. Do not preserve its studio scene, realistic stone material, lighting, shadows, or camera depth.\n\nCreate one highly simplified logo first and character second.\nSubject: the source Palari normalized to one rounded continuous warm-ivory shell silhouette with a high blunt asymmetric crescent crest and curved open-side contour, one continuous low amber side aperture below and separate from the face, exactly two compact calm eye marks, and exactly two thick rounded crossed arm forms. The shell/aperture silhouette must be the primary identity; keep the six-aperture Palari seed as a tiny secondary family detail low on the body: four larger amber dots at rectangle corners plus two visibly smaller amber dots centered vertically, exactly six.\n\nComposition: upright, emerging from and intentionally cropped only at the lower-left canvas corner; fill 75–85% of the square; never crop crest, eyes, opening, arms, or seed.\nComplexity: 6–10 broad rounded structural forms; the six tiny seed cutouts are an explicit identity exception. Readable as a distinct black silhouette and recognizable at 32 × 32.\n\nColor count: exactly three semantic colors total: warm ivory #E9E6DF for every shell and arm region, warm amber #C17A0B for the single side aperture plus eye marks and tiny seed, and deep navy #172333 only for the fully opaque edge-to-edge background. No other hue, gray, white, or black. Keep amber in one dominant continuous inner region; the tiny eye/seed reuses are required identity marks.\nStyle: flat-first vector-friendly geometry with extremely subtle continuous-gradient micro-volume only. One uninterrupted low-frequency same-family diffuse gradient within each large ivory/amber region, sharing an upper-left-to-lower-right light direction, spanning at least half each form; total lightness variation <= 0.08. Nearly flat at 32 px.\n\nForbid: illustration, scene, alcove, floor, texture, ceramic realism, clay, plastic, toy render, gloss, bevel, extrusion, cast shadow, contact shadow, rim light, discrete highlight patches, inner shadow blobs, hard shading bands, outlines, thin lines, sharp crest point, face inside the aperture, extra apertures, extra arms, hands, fingers, legs, feet, mouth, eyebrows, nostrils, text, watermark, border, frame, vignette, gradient background, transparency, rounded canvas corners, App icon mask.",
+        "review": "Rejected: the seed contains seven circles and the navy background visibly vignettes, although the source-specific crescent, side reveal, crossed arms, and calm eyes remain clear."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-837f4714-2225-413a-b223-c0c21b381211.png",
+        "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate derived from Image 1 — targeted retry\nInput image: Image 1 is identity reference only; preserve its narrow high-crested ivory crescent, low amber side reveal separate from the face, two calm eyes, exactly two crossed rounded arms, and stable legless base.\n\nCorrect only the failed logo constraints from attempt 1:\n1. The Palari seed must have EXACTLY SIX amber circles total: four larger circles at the four corners of a compact vertical rectangle plus exactly two smaller circles centered vertically between them. The two smaller circles form ONE vertical center column. Never add a third center dot; never make seven.\n2. Make the #172333 navy background a perfectly uniform, visually flat, opaque edge-to-edge field: no vignette, halo, spotlight, texture, center glow, or directional gradient.\n3. Anchor the crescent mark into the LOWER-LEFT corner, cropping only its bottom-left base edge. Preserve clearance around crest, eyes, side reveal, crossed arms, and seed.\n4. Reduce ivory/amber modeling to almost-flat continuous micro-volume with no readable shadow shapes.\n\nExactly three semantic colors: warm ivory #E9E6DF shell/arms, warm amber #C17A0B continuous side aperture plus eye marks and six seed dots, solid background-only navy #172333. No black, white, gray, or extra hue.\nKeep 6–10 broad rounded structural forms, 32px-readable, upright, roughly 80% canvas. Blunt crescent crest, opening below and separate from face, exactly two eyes, exactly two thick crossed arms, no mouth.\n\nForbid: seventh seed dot, equal 2-by-3 grid, scene, ceramic realism, texture, gloss, bevel, strong 3D, cast/contact shadow, hard shading, outlines, thin lines, sharp crest, face inside opening, hands, legs, extra openings, text, border, transparency, App mask.",
+        "review": "Selected as the best available icon. It improves lower-left anchoring and flatter source-specific abstraction, but the seed still contains seven circles and the background still has low-frequency variation."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-080.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "4213dfd19e429f615845c9b3aca9df8978447618a186098791af35a26ae76b78"
+    },
+    "review": {
+      "seedCount": 7,
+      "seedGeometry": "four larger corner circles plus three smaller vertical-center circles",
+      "readableAt32px": true,
+      "smallSizeStatus": "pass-with-deviations",
+      "thumbnailNotes": "The ivory crescent sweep, amber side slash, and crossed-arm diagonal remain identifiable at 32 px; the eyes and seed compress into secondary detail.",
+      "approximateBroadShapeCount": 8,
+      "assignedCorner": "lower-left",
+      "strictIpAsLogoStatus": "reject",
+      "deviations": [
+        "The exact six-aperture signature failed again after the single targeted retry: seven circles remain.",
+        "The navy background retains visible low-frequency center-to-edge variation instead of a uniform #172333 field.",
+        "The mark is smaller than the requested 75–85 percent fill and leaves excessive upper-right negative space.",
+        "Dark pupils, thin eye contours, and arm contact seams introduce visual values and discrete shading beyond the requested three-color near-flat treatment.",
+        "The project-required seed repeats amber in small regions, an explicit Palari exception to the skill's default continuous-secondary-region preference."
+      ],
+      "postprocessed": false
+    }
+  }
+}

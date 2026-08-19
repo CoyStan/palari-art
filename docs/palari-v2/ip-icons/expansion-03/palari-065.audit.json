@@ -1,0 +1,201 @@
+{
+  "id": "palari-065",
+  "createdAt": "2026-08-19T02:05:12Z",
+  "generator": "built-in ImageGen",
+  "model": "model identifier not exposed by the built-in tool",
+  "productionRegistration": false,
+  "design": {
+    "silhouette": "stack",
+    "material": "charcoal",
+    "characteristic": "ultramarine",
+    "characteristicHex": "#164A7A",
+    "crown": "soft_hood",
+    "opening": "low_circular_aperture",
+    "pose": "gentle_greeting",
+    "expression": "quietly_confident",
+    "composition": "lower-right",
+    "identity": "top-heavy offset charcoal stack with a low blue well and greeting arm"
+  },
+  "source": {
+    "output": "docs/palari-v2/expansion-03/generated/palari-065.png",
+    "dimensions": [1254, 1254],
+    "opaque": true,
+    "sha256": "177163685df920daed58bb6883153016f0ae841e82e6abcc18b20a1507360900",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "grammarStatus": "reject",
+    "review": "retained best rejected review candidate; not production-approved",
+    "deviations": [
+      "The selected source reads as three exterior tiers with two overlap boundaries rather than exactly two offset masses and one seam.",
+      "The requested low circular aperture is a shallow horizontal oval."
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": false,
+        "sha256": "5961c2f2827155925d7230fd71723dafbe132455cc914811c5a3ebc5573bf353",
+        "status": "reject",
+        "rejectionReasons": [
+          "Only five seed apertures were present.",
+          "Both eyes sat together inside a face cavity, creating an unintended supporting opening."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 character study",
+          "",
+          "Primary request: Create one original Palari, identity \"top-heavy offset charcoal stack with a low blue well and greeting arm.\" Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- silhouette: two visibly offset interlocking ceramic masses with one clear diagonal overlap seam, distinct centers, a top-heavy upper mass, and a single continuous stable base; it must unmistakably read as a stack rather than a normal hooded figure",
+          "- crown: protective soft hood grown from the upper ceramic mass, closed on top",
+          "- opening: exactly one deeply recessed circular ultramarine aperture entirely below the face, separated from it by a continuous ceramic bridge",
+          "- pose: one curved arm raised in greeting, ending in one seamless oval tip, while the second arm rests close to the body",
+          "- expression: quietly confident, communicated only by the calm eyes, with no mouth",
+          "- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture",
+          "- characteristic color: deep ultramarine blue #164A7A",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue, ultramarine blue, limited to the recessed inner intelligence, iris accents, and Palari seed mark",
+          "- exactly one dominant architecturally intentional low circular opening and no supporting reveal",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, ultramarine iris accents, and tiny catchlights",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- exactly one compact seed mark on the lower body containing exactly six circular apertures arranged as four larger corner apertures plus two noticeably smaller apertures centered vertically; nowhere else has dots or holes",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- visibly honor the two offset interlocking masses, one overlap seam, soft hood, low blue well, greeting arm, resting arm, and continuous legless base",
+          "",
+          "Scene: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Composition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible and centered, occupying about 76 percent of image height.",
+          "Lighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve broad readable charcoal form and inner depth without neon glow.",
+          "",
+          "Avoid: a normal single-mass hooded figure, a stack without two visibly offset interlocking exterior masses, disconnected floating pieces, multiple seams, any second seed, forehead dots or crown dots, random holes, simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, mouth or smile, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, more than one dominant opening, an opening surrounding the face, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot face, chibi proportions, horror, vacant doll eyes, text, labels, numbers, logos, or watermarks."
+        ]
+      },
+      {
+        "attempt": 2,
+        "selected": true,
+        "sha256": "177163685df920daed58bb6883153016f0ae841e82e6abcc18b20a1507360900",
+        "status": "reject",
+        "rejectionReasons": [
+          "The correction fixed the eyes and exact six-seed construction, but returned three apparent tiers/two overlap boundaries and an oval rather than circular well."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 character study",
+          "",
+          "Primary request: Create one original Palari, identity \"top-heavy offset charcoal stack with a low blue well and greeting arm.\" Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Targeted correction from the rejected first attempt: the one lower seed mark must contain SIX apertures, not five—four LARGE corner circles plus TWO distinct noticeably SMALLER circles on the center vertical axis. Set the two inset eyes directly into the solid upper ceramic surface, not together inside a face cavity. Keep the one blue well compact, low, and circular.",
+          "",
+          "Selected design:",
+          "- silhouette: two visibly offset interlocking ceramic masses with one clear diagonal overlap seam, distinct centers, a top-heavy upper mass, and a single continuous stable base; unmistakably a stack rather than a normal hooded figure",
+          "- crown: protective soft hood grown from the upper ceramic mass, closed on top",
+          "- opening: exactly one deeply recessed compact circular ultramarine aperture entirely below the face, separated from it by a continuous ceramic bridge",
+          "- pose: one curved arm raised in greeting, ending in one seamless oval tip, while the second arm rests close to the body",
+          "- expression: quietly confident, communicated only by the calm eyes, with no mouth",
+          "- exterior material: near-black charcoal ceramic with broad readable highlights and visible microtexture",
+          "- characteristic color: deep ultramarine blue #164A7A",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue, ultramarine blue, limited to the recessed inner intelligence, iris accents, and Palari seed mark",
+          "- exactly one dominant architecturally intentional low circular opening and no supporting reveal",
+          "- exactly two calm half-lidded inset eyes placed independently into solid ceramic, with ceramic eyelids, dark pupils, ultramarine iris accents, and tiny catchlights",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- exactly one compact seed mark on the lower body containing exactly six circular apertures arranged as two large apertures in the left column, two large apertures in the right column, and two much smaller apertures in a short center vertical column; four large corners plus two smaller centered vertically; nowhere else has dots or holes",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- visibly honor the two offset interlocking masses, one overlap seam, soft hood, low blue well, greeting arm, resting arm, and continuous legless base",
+          "",
+          "Scene: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Composition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure visible and centered, occupying about 76 percent of image height.",
+          "Lighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve broad readable charcoal form and inner depth without neon glow.",
+          "",
+          "Avoid: a five-hole seed, a face cavity around both eyes, a face visor, a large mouth-like opening, a normal single-mass hooded figure, a stack without two visibly offset interlocking exterior masses, disconnected floating pieces, multiple seams, any second seed, forehead dots or crown dots, random holes, simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, or realistic hands, conventional legs, knees, feet, toes, or shoes, human skin, hair, clothing, jewelry, or demographic costume shorthand, mouth or smile, multiple characteristic colors, rainbow effects, or neon glow, robot joints, screens, wires, exposed machinery, or appliance details, more than one dominant opening, an opening surrounding the face, cracks, chips, broken rims, dirt, or antique distressing, cups, mugs, vases, planters, lamps, speakers, or household appliances, generic mascot face, chibi proportions, horror, vacant doll eyes, text, labels, numbers, logos, or watermarks."
+        ]
+      }
+    ]
+  },
+  "icon": {
+    "inputReference": "docs/palari-v2/expansion-03/generated/palari-065.png",
+    "inputRole": "identity reference only",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-065.png",
+    "dimensions": [1254, 1254],
+    "opaque": true,
+    "sha256": "fbb79867a3ea61d2c6efe6844c2939d98c6373b89d57c42ee608199fc0356c5e",
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "seedApertureCount": 6,
+    "smallSizeStatus": "pass: offset hood, raised arm, and low blue well remain clear at 32 px; seed is secondary",
+    "strictStatus": "reject",
+    "backgroundSamples": ["#121D30", "#111C30", "#121D31"],
+    "deviations": [
+      "The background is consistently darker than the requested #172333 base, though it stays a uniform same-family deep navy in sampled areas.",
+      "The overlap is expressed as a broad ivory tonal band, and the requested circular low well remains horizontally oval.",
+      "The exact seed geometry is clear at native size but its size hierarchy is not reliably legible at 32 px."
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "selected": false,
+        "sha256": "eb5356bf7d9b17e3e2da53febfbd3b44da9e03624cf567025ff9aa4bf7d7b6dc",
+        "status": "reject",
+        "rejectionReasons": [
+          "Thin grey contour lines outlined the overlap seam and resting arm.",
+          "The mark sat too centrally and the background had more visible tonal variation than intended."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari app-icon artwork",
+          "",
+          "Input images: Image 1 is an identity reference only for Palari 065. Do not edit or reproduce the source image's plaster alcove, charcoal texture, realistic material, lighting, floor, shadow, or photographic rendering.",
+          "",
+          "Primary request: Create one highly simplified IP mascot logo candidate, not a character illustration. Reduce Palari 065 to its defining shell-and-aperture mark: two clearly offset interlocking rounded ivory masses with one broad overlap boundary and top-heavy hood sweep, one compact low ultramarine well below the face, two calm half-lidded eyes, one thick rounded raised greeting arm, one thick rounded resting arm, a continuous legless base, and one tiny six-aperture seed. The offset stacked shell, asymmetrical hood sweep, and low well are the identity and dominate; seed is minor.",
+          "",
+          "Background: fully opaque edge-to-edge perfectly uniform solid deep navy #172333, background only. No gradient, vignette, halo, scene, floor, lighting variation, or texture.",
+          "Color count: exactly three semantic colors: warm ivory #E9E6DF for both interlocking shell masses, hood, eyelids, and both arms; deep ultramarine #164A7A for the one low well, two minimal eye marks, and six tiny seed apertures; deep navy #172333 for background only. No fourth color.",
+          "Complexity: approximately 6–10 broad rounded primary shapes. One broad structural overlap boundary may be described by the meeting of the two ivory masses without a dark outline. No mouth.",
+          "Composition: upright, emerging from and intentionally cropped only at the lower-right canvas edge, filling about 80% of the square. Keep the offset crown, both eyes, low well, the complete raised greeting arm tip, and resting arm visible. Square outer corners; no App mask.",
+          "Style: flat-first vector-friendly geometry with thick rounded contours. Use at most one uninterrupted low-frequency diffuse micro-gradient per large ivory or blue region, shared upper-left-to-lower-right direction, total lightness variation <=0.08; nearly flat at 32 × 32.",
+          "Seed: exactly six tiny ultramarine circles: four larger at rectangle corners plus two noticeably smaller centered vertically; subordinate. No other marks.",
+          "",
+          "Forbid: normal single-mass hooded body, three or more stacked masses, multiple seams, scene, plaster, floor, texture, ceramic realism, photorealism, strong 3D, clay, plastic, toy rendering, gloss, bevel, thin outline, specular highlight, rim light, cast/contact/external shadow, border, frame, transparency, rounded canvas corners, text, watermark, mouth, smile, eyebrows, hands, fingers, palms, legs, feet, extra apertures, extra eyes, repeated anatomy, sharp points, thin lines, highlight patches, bands, nested shadows, cel shading, strong gradients, background gradient, colors beyond #E9E6DF #164A7A #172333. Must remain instantly legible at 32 × 32."
+        ]
+      },
+      {
+        "attempt": 2,
+        "selected": true,
+        "sha256": "fbb79867a3ea61d2c6efe6844c2939d98c6373b89d57c42ee608199fc0356c5e",
+        "status": "reject",
+        "rejectionReasons": [
+          "The selected background is consistently darker than the exact requested #172333 base, and the low well remains an oval instead of circular."
+        ],
+        "promptJoin": "newline",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari app-icon artwork",
+          "",
+          "Input images: Image 1 is an identity reference only for Palari 065. Do not reproduce its scene, realism, texture, lighting, floor, shadow, or charcoal material.",
+          "",
+          "Targeted correction from the rejected first icon attempt: make the background absolutely uniform flat #172333 with no vignette or center lightening. Remove every grey, beige, or dark outline from the overlap seam and resting arm; use no thin strokes. Shift the entire mark decisively into the lower-right so the base exits both bottom and right canvas edges, while the raised greeting arm tip stays fully visible. The two offset masses must be distinguished only by their broad interlocking silhouettes and one wide shallow overlap notch, not a drawn seam line.",
+          "",
+          "Primary request: one highly simplified IP mascot logo. Palari 065 is two clearly offset interlocking rounded ivory masses with an asymmetrical top-heavy hood sweep, one compact low ultramarine well, two calm half-lidded eyes, one thick rounded raised greeting arm, one thick rounded resting arm, a continuous legless base, and one tiny seed. Offset stacked shell + low well dominates.",
+          "Background: fully opaque edge-to-edge perfectly uniform #172333, background only.",
+          "Colors: exactly #E9E6DF for both shell masses, eyelids, and arms; #164A7A for low well, eye marks, and six seed apertures; #172333 background only. No fourth semantic color and no contour strokes.",
+          "Complexity: 6–10 broad rounded shapes. No mouth. One broad ivory-on-ivory overlap notch is allowed; no thin line.",
+          "Composition: upright, emerging from lower-right, fill 80–85%; cropped only at bottom and right; crown, both eyes, well, raised arm tip, and resting arm visible; square corners.",
+          "Style: flat-first vector-friendly geometry, extremely subtle same-family continuous micro-gradient only, almost flat at 32 px. No texture or shadows.",
+          "Seed: exactly six blue circles—four large rectangle corners plus two smaller on center vertical axis; minor.",
+          "",
+          "Forbid: centered sticker, even margin, gradient/vignette/halo background, thin seam, thin arm outline, gray line, normal single-mass body, three masses, extra seams, scene, texture, realism, strong 3D, clay, plastic, gloss, bevel, shadows, border, frame, transparency, rounded canvas corners, text, mouth, eyebrows, hands, fingers, legs, feet, extra apertures or eyes, sharp points, highlight patches, bands, cel shading, colors beyond #E9E6DF #164A7A #172333. Instantly legible at 32 × 32."
+        ]
+      }
+    ]
+  }
+}

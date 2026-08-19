@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "id": "palari-078",
+  "createdAt": "2026-08-19T02:04:40Z",
+  "status": "review-candidate",
+  "plan": {
+    "silhouette": "column",
+    "material": "porcelain",
+    "characteristic": "coral",
+    "characteristicHex": "#B94F48",
+    "crown": "split_petal",
+    "opening": "narrow_channel",
+    "pose": "one_arm_resting",
+    "expression": "gently_amused",
+    "composition": "lower-left",
+    "identity": "fork-crown porcelain column with a long coral channel and tracing arm"
+  },
+  "source": {
+    "useCase": "stylized-concept",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "attemptCount": 1,
+    "selectedAttempt": 1,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-d144907c-3777-4af2-bf33-64097e4a65fc.png",
+        "prompt": "Use case: stylized-concept\nAsset type: individual Palari V2 character study\n\nPrimary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.\n\nSelected design:\n- identity: fork-crown porcelain column with a long coral channel and one tracing arm\n- silhouette: tall slender column with a subtly flared stable base\n- crown: restrained split-petal crown with smooth finished edges\n- opening: one long narrow recessed channel\n- pose: one arm resting along the opening and the other close to the body\n- expression: gently amused, conveyed only through calm eye posture, with no mouth\n- exterior material: soft cool-neutral off-white porcelain, never pure digital white\n- characteristic color: muted deep coral, visually anchored to #B94F48\n\nFamily invariants:\n- one complete isolated figure with a stable continuous ceramic base\n- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture\n- exactly one characteristic hue, limited to the recessed inner intelligence, iris accents, and Palari seed mark\n- one dominant architecturally intentional opening and no additional unrelated openings\n- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, coral iris accents, and tiny catchlights\n- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy\n- no conventional legs, knees, feet, toes, shoes, or visible human anatomy\n- exact Palari seed mark on the lower body: four larger circular coral apertures at the corners of a compact vertical rectangle with two smaller coral apertures centered vertically between them; exactly six apertures total, not a grille\n- clean intact ceramic with smooth deliberately finished edges\n\nScene: warm minimalist plaster alcove studio with a matte limestone floor.\nComposition: eye-level three-quarter product portrait with minimal lens distortion; square composition, full figure and full base visible, centered, occupying about 76 percent of image height.\nLighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable ceramic form and inner depth without neon glow.\n\nAvoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smiles, chibi proportions, horror, vacant doll eyes, a circular aperture surrounding the face, text, labels, numbers, logos, watermarks.",
+        "review": "Selected as the only source attempt. The column, fork crown, channel, two eyes, two fingerless arms, legless base, material, and single hue are clear, but the seed contains seven apertures rather than six."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/expansion-03/generated/palari-078.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "be46ea2cb317643779abf280b3608e0d45c68d47d06f1e448a69c37fd8dc0c4a"
+    },
+    "grammarReview": {
+      "status": "reject-best-available",
+      "characterCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "hasLegsOrFeet": false,
+      "seedApertureCount": 7,
+      "seedGeometry": "four larger corner apertures plus three smaller horizontal-center apertures",
+      "characteristicHueCount": 1,
+      "notes": [
+        "The selected candidate visibly honors the column, split-petal crown, narrow coral channel, tracing-arm pose, porcelain material, and coral characteristic hue.",
+        "It fails the automatic seed rejection rule because a third small center aperture makes seven total.",
+        "This is a review candidate and is not production registered."
+      ]
+    }
+  },
+  "icon": {
+    "useCase": "logo-brand",
+    "model": "built-in image_gen (model identifier not exposed by tool)",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-078.png"
+    ],
+    "attemptCount": 2,
+    "selectedAttempt": 2,
+    "attempts": [
+      {
+        "number": 1,
+        "selected": false,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-bd2901ac-56d8-41da-b490-0ac620746d31.png",
+        "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate derived from Image 1\nInput image: Image 1 is identity reference only. Preserve its fork-crown column silhouette, long coral channel, two calm eyes, one long resting arm and one arm tracing the channel, stable legless base, and small six-aperture seed. Do not preserve its studio scene, realistic ceramic material, lighting, shadows, or camera depth.\n\nCreate one highly simplified logo first and character second.\nSubject: the source Palari reduced to one tall rounded continuous ivory shell silhouette with a blunt two-lobed fork crown, one continuous long coral recessed channel, exactly two compact calm eye marks, and exactly two thick rounded arm forms. The shell/aperture silhouette must be the primary identity; keep the six-aperture Palari seed as a tiny secondary family detail near the lower body: four larger coral dots at rectangle corners plus two visibly smaller coral dots centered vertically, exactly six.\n\nComposition: upright, emerging from and intentionally cropped only at the lower-left canvas corner; fill 75–85% of the square; never crop crown, eyes, opening, arms, or seed.\nComplexity: 6–10 broad rounded structural forms; the six tiny seed cutouts are an explicit identity exception. Readable as a distinct black silhouette and recognizable at 32 × 32.\n\nColor count: exactly three semantic colors total: warm ivory #E9E6DF for every shell and arm region, muted deep coral #B94F48 for the single inner channel plus eye marks and tiny seed, and deep navy #172333 only for the fully opaque edge-to-edge background. No other hue, gray, white, or black. Keep coral in one dominant continuous inner region; the tiny eye/seed reuses are required identity marks.\nStyle: flat-first vector-friendly geometry with extremely subtle continuous-gradient micro-volume only. One uninterrupted low-frequency same-family diffuse gradient within each large ivory/coral region, sharing an upper-left-to-lower-right light direction, spanning at least half each form; total lightness variation <= 0.08. Nearly flat at 32 px.\n\nForbid: illustration, scene, alcove, floor, texture, ceramic realism, clay, plastic, toy render, gloss, bevel, extrusion, cast shadow, contact shadow, rim light, discrete highlight patches, inner shadow blobs, hard shading bands, outlines, thin lines, sharp crown points, extra apertures, extra arms, hands, fingers, legs, feet, mouth, eyebrows, nostrils, text, watermark, border, frame, vignette, gradient background, transparency, rounded canvas corners, App icon mask.",
+        "review": "Rejected: the seed contains seven circles, the background visibly vignettes, and the mark is centered instead of emerging from the lower-left."
+      },
+      {
+        "number": 2,
+        "selected": true,
+        "generatedPath": "/home/quetza/.codex/generated_images/01a017b9-6971-74d1-894c-c58676aa49b7/exec-da6f0f3f-db52-45b5-86d0-16a602f3140d.png",
+        "prompt": "Use case: logo-brand\nAsset type: one square Palari IP mascot logo candidate derived from Image 1 — targeted retry\nInput image: Image 1 is identity reference only; preserve its tall fork-crown ivory column, long coral channel, two calm eyes, two rounded arms with one tracing the channel, and stable legless base.\n\nCorrect only the failed logo constraints from attempt 1:\n1. The Palari seed must have EXACTLY SIX coral circles total: four larger circles at the four corners of a compact vertical rectangle plus exactly two smaller circles centered vertically between them. The two smaller circles form ONE vertical center column. Never add a third center dot; never make seven.\n2. Make the #172333 navy background a perfectly uniform, visually flat, opaque edge-to-edge field: no vignette, halo, spotlight, texture, center glow, or directional gradient.\n3. Anchor the mark into the LOWER-LEFT corner, cropping only the bottom-left base edge. Preserve generous clearance around crown, eyes, channel, arms, and seed.\n4. Reduce ivory/coral modeling to almost-flat continuous micro-volume with no readable shadow shapes.\n\nExactly three semantic colors: warm ivory #E9E6DF shell/arms, muted deep coral #B94F48 continuous channel plus eye marks and six seed dots, solid background-only navy #172333. No black, white, gray, or extra hue.\nKeep 6–10 broad rounded structural forms, 32px-readable, upright, roughly 80% canvas. Smooth blunt two-lobed crown, exactly two eyes, exactly two thick arms, no mouth.\n\nForbid: seventh seed dot, equal 2-by-3 grid, scene, ceramic realism, texture, gloss, bevel, strong 3D, cast/contact shadow, hard shading, outlines, thin lines, sharp points, hands, legs, extra openings, text, border, transparency, App mask.",
+        "review": "Selected as the best available icon. The lower-left placement and flatter treatment improve, but the seed still has seven circles and the mark becomes very narrow at 32 px."
+      }
+    ],
+    "asset": {
+      "path": "docs/palari-v2/ip-icons/expansion-03/palari-078.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGB TrueColor",
+      "opaque": true,
+      "sha256": "e73163cb4aef81a0e38309c4c03e3f02613996155ca704b50a5e3197de2ef61a"
+    },
+    "review": {
+      "seedCount": 7,
+      "seedGeometry": "four larger corner circles plus three smaller horizontal-center circles",
+      "readableAt32px": true,
+      "smallSizeStatus": "pass-with-deviations",
+      "thumbnailNotes": "The forked ivory column and long coral channel remain distinct at 32 px, but the arms, eyes, and seed merge into minimal detail because the source identity is unusually narrow.",
+      "approximateBroadShapeCount": 8,
+      "assignedCorner": "lower-left",
+      "strictIpAsLogoStatus": "reject",
+      "deviations": [
+        "The exact six-aperture signature failed again after the single targeted retry: seven circles remain.",
+        "The navy background retains visible low-frequency center-to-edge variation instead of a uniform #172333 field.",
+        "The very narrow mark occupies substantially less than 75 percent of the canvas width and leaves excessive right-side empty space.",
+        "Dark gray pupil marks and thin internal contour/shadow lines introduce visual values beyond the requested three-color, near-flat treatment.",
+        "The project-required seed repeats the coral color in small regions, an explicit Palari exception to the skill's default continuous-secondary-region preference."
+      ],
+      "postprocessed": false
+    }
+  }
+}

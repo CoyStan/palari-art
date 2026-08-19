@@ -49,7 +49,7 @@ function pngDimensions(buffer, fileName) {
 async function discoverSources() {
   const sources = new Map();
   const directories = (await readdir(sourceRoot, { withFileTypes: true }))
-    .filter((entry) => entry.isDirectory() && /^pilot-\d+$/.test(entry.name));
+    .filter((entry) => entry.isDirectory() && /^(?:pilot|expansion)-\d+$/.test(entry.name));
 
   for (const directory of directories) {
     const directoryPath = path.join(sourceRoot, directory.name);

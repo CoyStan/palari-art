@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "avatarId": "palari-062",
+  "sourceInput": "public/palari-v2/palari-062/source.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "characteristicHueDegrees": 267.0,
+  "expectedCharacteristicColor": "#594077",
+  "expectedMaterialColor": "#E9E6DF",
+  "algorithm": {
+    "name": "deterministic-source-color-key",
+    "detectionHueOverrideDegrees": null,
+    "hueRadiusDegrees": 32,
+    "candidateSaturationMinimum": 0.25,
+    "candidateColorEnergyMinimum": 0.04,
+    "componentSeed": {
+      "hueRadiusDegrees": 23.04,
+      "saturationMinimum": 0.45,
+      "colorEnergyMinimum": 0.08,
+      "minimumPixels": 2,
+      "relaxedComponentMinimumPixels": null
+    },
+    "warmCharacteristic": false,
+    "amberCharacteristic": false,
+    "candidateValueMinimum": 0.02,
+    "relaxedColorKey": false,
+    "mutedCharacteristic": false,
+    "mutedColorKey": null,
+    "characteristicBlurRadius": 0.55,
+    "materialColorKey": {
+      "rule": "light-neutral",
+      "expectedValue": 0.9137
+    },
+    "materialBlurRadius": 0.55,
+    "independentColorKeys": true,
+    "ambiguousPixelsRemainSource": true
+  },
+  "checksums": {
+    "source": "cc97f2938244df38369297a40a9fe0a3cee312909262a72ea918d25d9d1f56f3",
+    "foreground": "25b2235d3953da9c116d327c85957059dd357abd618362f01321ddba2877e4c3",
+    "material": "e746badb13a8b9759e9219fae89f0b3b4ab06e40d579d1226e71acc39dc288e5",
+    "characteristic": "7348d8a24796d4b725e31a25d9c0c6da06b37a2f747e0e08055301f0f6b6b8e9"
+  },
+  "review": {
+    "status": "pass",
+    "reviewer": "Codex",
+    "notes": "User-directed dashboard promotion; transparent source and deterministic masks visually reviewed in expansion-03."
+  }
+}

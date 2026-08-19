@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "id": "palari-051",
+  "assetType": "Palari IP-as-logo icon",
+  "status": "review-candidate",
+  "productionRegistered": false,
+  "source": "docs/palari-v2/expansion-03/generated/palari-051.png",
+  "plan": {
+    "silhouette": "pod",
+    "material": "ivory",
+    "characteristic": "ultramarine",
+    "characteristicHex": "#164A7A",
+    "crown": "integrated_dome",
+    "opening": "leaf",
+    "pose": "gentle_greeting",
+    "expression": "quietly_confident",
+    "composition": "lower-right",
+    "identity": "upright seed pod with one side leaf opening and greeting arm"
+  },
+  "direction": {
+    "name": "aperture-first source-derived mark",
+    "primaryIdentity": "outer shell plus single intelligence aperture",
+    "secondaryIdentity": "exact six-hole Palari seed"
+  },
+  "palette": {
+    "shell": "#E9E6DF",
+    "characteristic": "#164A7A",
+    "background": "#172333",
+    "requestedSemanticColorCount": 3
+  },
+  "generation": {
+    "path": "Codex built-in ImageGen",
+    "model": "gpt-image-2",
+    "createdAt": "2026-08-19T02:02:57Z",
+    "referenceImages": [
+      "docs/palari-v2/expansion-03/generated/palari-051.png"
+    ],
+    "postprocessing": "none; selected native output copied byte-for-byte"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "retained": false,
+      "prompt": "Use case: logo-brand\nAsset type: minimal square Palari avatar icon\n\nInput image: Image 1 is identity reference only. Derive the exact shell/aperture silhouette, crown, pose, and eye attitude from it. Do not edit or copy its plaster scene, floor, contact shadow, ceramic material realism, lighting, or texture.\n\nPrimary request: Create one highly simplified IP mascot logo, not a character illustration. Make the shell-and-aperture relationship the primary recognizable mark and keep the Palari six-aperture seed only as a tiny secondary species signature.\n\nIdentity to preserve: upright seed-pod silhouette with integrated dome, one asymmetric side leaf-shaped aperture, one raised greeting arm, one resting arm, and two calm half-lidded eyes.\n\nBackground: fully opaque edge-to-edge perfectly solid #172333 deep navy, square outer corners. The background is not a scene and has no variation.\nPalette: exactly three semantic colors in the complete icon: warm ivory #E9E6DF for the fused outer shell and arms, #164A7A for the one large continuous recessed intelligence aperture and restrained iris accents, and #172333 only for the background and genuine negative-space cutouts. No fourth color.\nGeometry: 6–10 broad rounded geometric forms. Treat the outer shell and both arms as one fused continuous ivory silhouette, use one defining colored aperture region, exactly two calm half-lidded eyes, and the exact six-hole seed as small background-revealing negative space. The seed is a compact 2-column × 3-row arrangement: two larger holes on top, two smaller holes in the middle, two larger holes on bottom. No extra decorations.\nComposition: upright, emerging from the lower-right corner, filling 78–84% of the square. Keep all defining crown/arm features visible; intentional bottom/side crop is allowed but do not crop the crown, raised arm, paired arms, eyes, opening, or six-hole seed. No tilt.\nReadability: design the black silhouette and shell/aperture cutout to remain recognizable at true 32 × 32 even if the tiny seed becomes secondary. Use thick, rounded, weighty contours; visibly blunt every tip and avoid narrow fragile gaps.\nStyle: flat-first geometry with continuous-gradient neo-skeuomorphic micro-volume only. Use one uninterrupted low-frequency diffuse gradient per large IP color region with a shared upper-left-to-lower-right light direction; every transition spans at least half the form. Keep peak-to-peak lightness variation <= 0.08, hue drift <= 3 degrees, chroma drift <= 0.015. Modeling is visible at full size but nearly disappears at 32 × 32. Keep the background perfectly flat.\nFace: exactly two eyes and no mouth. No eyebrows, nose, catchlight dots, or separate facial highlights.\nCanvas: direct 1:1 native square, fully opaque, edge-to-edge background, square outer corners; preserve the native output without resampling.\n\nForbid: character illustration, studio scene, alcove, floor, material realism, ceramic/clay/plastic/toy rendering, texture, gloss, bevel, rim light, extrusion, strong 3D, cast shadow, external shadow, halo, vignette, spotlight, background gradient, border, frame, card, App icon mask, rounded canvas corners, transparency, text, watermark, mouth, realistic hands, fingers, legs, feet, clothes, machinery, thin lines, sharp points, repeated anatomy, decorative marks, extra apertures, extra colors, discrete highlight patches, closed highlight blobs, overlay bands, nested shadow shapes, cut-paper layers, cel-shading, stepped tonal swatches, hard internal shadow boundaries, small glossy hotspots, or independently lit facial details.",
+      "review": {
+        "status": "reject",
+        "seedApertureCount": 6,
+        "smallSizeIdentityReadable": true,
+        "failures": [
+          "Background is a visible navy gradient rather than a perfectly solid field",
+          "Modeling is too volumetric for flat-first logo geometry"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "retained": true,
+      "prompt": "Use case: logo-brand\nAsset type: minimal square Palari avatar icon\nInput image: Image 1 is identity reference only; do not copy its scene, material, lighting, texture, or shadow.\n\nPrimary request: Targeted final retry of one highly simplified IP mascot LOGO, not an illustration. Correct only the previous failure modes: the background must be a visually uniform flat solid field, the character must read as flat-first geometry rather than a 3D object, and every crown/opening/seam tip must be visibly blunt and rounded.\n\nPreserve identity: upright seed-pod with integrated dome, large asymmetric leaf aperture, one raised greeting arm, one resting arm, two calm eyes.\nComposition: upright, emerging from lower-right, filling 78–84%, with all defining crown, eyes, arms, opening, and seed visible; no tilt.\nPalette: exactly three semantic colors: fused shell and arms #E9E6DF, one continuous intelligence aperture and restrained irises #164A7A, and background #172333. Use #172333 inside the character only as genuine negative-space cutouts.\nBackground: EXACT UNIFORM #172333 from edge to edge and corner to corner. No vignette, radial falloff, gradient, spotlight, halo, glow, texture, lighting, shadow, border, frame, card, or rounded canvas corners. All unobstructed background areas should match visually.\nGeometry: 6–10 broad rounded forms; one fused continuous shell/arm silhouette, one defining aperture, exactly two half-lidded eyes, no mouth. Exact Palari seed is six small negative-space holes in two columns and three rows: top two larger, middle two smaller, bottom two larger. No seventh mark and no decorations. Thick contours, wide gaps, no acute or sharp endpoints.\nFlat-first micro-volume: first design flat semantic color masses. Then allow only an extremely subtle uninterrupted low-frequency same-family gradient inside the two large IP color regions, shared upper-left to lower-right and spanning more than half each form. Total lightness variation <=0.05. It must nearly disappear at 32px. No visible bevel, thickness, extrusion, rim, fold, material, cast shadow, inset shadow, glossy hotspot, ambient-occlusion seam, or separate highlight/shadow shape.\nCanvas: direct native 1:1 square, fully opaque, square corners, no resampling.\nForbid: illustration, ceramic, clay, plastic, toy, product render, studio scene, alcove, floor, texture, gloss, strong 3D, external shadow, internal shadow blob, cut-paper layer, overlay band, cel shading, hard tonal boundary, pure flatness, background variation, extra colors, text, watermark, mouth, eyebrows, nose, catchlight dots, hands, fingers, legs, feet, clothes, machinery, thin lines, sharp points, extra holes, border, transparency, or App mask.",
+      "review": {
+        "status": "selected-with-known-deviations",
+        "seedApertureCount": 6,
+        "smallSizeIdentityReadable": true,
+        "retryLimitReached": true
+      }
+    }
+  ],
+  "selectedAttempt": 2,
+  "output": "docs/palari-v2/ip-icons/expansion-03/palari-051.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "opaque": true,
+  "colorSpace": "sRGB",
+  "bitDepth": 8,
+  "sha256": "f37ff46c4dde73f1c473a7444a8e9b88e7c457ea589dcd075a1ccf780a676060",
+  "seedApertureCount": 6,
+  "smallSizeStatus": "pass",
+  "smallSizeReview": "The defining shell and aperture remain identifiable in an actual 32 × 32 downsample; the six-hole seed becomes secondary and indistinct.",
+  "backgroundCornerSamplesSRGB8": {
+    "topLeft": [
+      23,
+      43,
+      64
+    ],
+    "topRight": [
+      23,
+      44,
+      65
+    ],
+    "bottomLeft": [
+      22,
+      39,
+      61
+    ],
+    "bottomRight": [
+      23,
+      42,
+      65
+    ]
+  },
+  "skillReview": {
+    "skill": "ip-as-logo",
+    "status": "reject",
+    "logoReadability": "pass",
+    "nativeSeedGeometry": "pass",
+    "exactPalette": "reject-model-tonal-drift",
+    "solidBackground": "reject-visible-gradient",
+    "flatFirstMicroVolume": "pass-with-drift",
+    "bluntContourRule": "reject",
+    "retryLimitReached": true
+  },
+  "deviations": [
+    "The navy background retains a visible low-frequency gradient instead of a perfectly uniform #172333 field.",
+    "The leaf aperture still ends in a narrow point, violating the blunt-contour preference.",
+    "The resting arm is separated by a narrow navy internal gap that becomes fragile at small size.",
+    "The composition is more centered than the assigned lower-right emergence.",
+    "The model's continuous tonal variation drifts from exact numeric palette values.",
+    "The six-hole seed is exact at native size but becomes indistinct at 32 px."
+  ]
+}

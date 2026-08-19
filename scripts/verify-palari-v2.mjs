@@ -10,6 +10,7 @@ const webManifest = JSON.parse(await readFile(path.join(repositoryRoot, "public/
 const iconWebManifest = JSON.parse(await readFile(path.join(repositoryRoot, "public/palari-v2-icons-web/manifest.json"), "utf8"));
 const runtimeRegistry = await readFile(path.join(repositoryRoot, "src/v2/data.ts"), "utf8");
 const problems = [];
+const expectedAvatarCount = 82;
 
 function sha256(buffer) {
   return createHash("sha256").update(buffer).digest("hex");
@@ -47,9 +48,9 @@ function webpDimensions(buffer, fileName) {
 }
 
 if (grammar.version !== "1.0.0" || grammar.status !== "frozen-v1") problems.push("visual grammar must be frozen at 1.0.0.");
-if (collection.visualGrammar !== grammar.version || collection.avatars.length !== 41) problems.push("collection must contain 41 grammar-1.0 avatars.");
-if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== 41) problems.push("V2 WebP manifest is incomplete.");
-if (iconWebManifest.schemaVersion !== 1 || iconWebManifest.recipeVersion !== 1 || iconWebManifest.avatars.length !== 41) problems.push("V2 emoticon WebP manifest is incomplete.");
+if (collection.visualGrammar !== grammar.version || collection.avatars.length !== expectedAvatarCount) problems.push(`collection must contain ${expectedAvatarCount} grammar-1.0 avatars.`);
+if (webManifest.schemaVersion !== 1 || webManifest.recipeVersion !== 1 || webManifest.avatars.length !== expectedAvatarCount) problems.push("V2 WebP manifest is incomplete.");
+if (iconWebManifest.schemaVersion !== 1 || iconWebManifest.recipeVersion !== 1 || iconWebManifest.avatars.length !== expectedAvatarCount) problems.push("V2 emoticon WebP manifest is incomplete.");
 if (!runtimeRegistry.includes("palari-v2-icons-web/${id}") || !runtimeRegistry.includes("emoticonThumbnail")) problems.push("V2 emoticons are missing from the runtime registry.");
 
 const characteristicById = new Map(grammar.characteristicColors.map((color) => [color.id, color.uiSwatch.toUpperCase()]));

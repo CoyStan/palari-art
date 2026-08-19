@@ -1,0 +1,2338 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-19",
+  "status": "production-published",
+  "productionRegistered": true,
+  "plan": "docs/palari-v2/expansion-03/plan.json",
+  "idRange": [
+    "palari-042",
+    "palari-082"
+  ],
+  "promotion": {
+    "approvedBy": "user",
+    "approvedAt": "2026-08-19",
+    "chromaRoot": "docs/palari-v2/expansion-03/chroma",
+    "productionRoot": "public/palari-v2",
+    "generator": "built-in ImageGen",
+    "sharedChromaPrompt": "Use case: background-extraction. Asset type: Palari V2 transparent production-master precursor. Input images: Image 1 is the sole identity reference. Generate a new faithful production render of exactly that one character; do not edit the reference. Primary request: Reproduce the exact same single Palari from Image 1 with identity unchanged: same ceramic silhouette/proportions, crown/opening geometry, exactly two calm eyes, same two rounded fingerless arms and pose, continuous legless base, ceramic material, characteristic color, and lower seed mark. Change only the environment. Backdrop: perfectly uniform flat solid #FF00FF chroma key edge-to-edge. No alcove, wall, floor, horizon, pedestal, prop, texture, gradient, vignette, halo, reflection, shadow, or variation. Composition: square full body centered at about 76% height, generous padding, no crop. Lighting/material: preserve matte-to-satin fine stoneware and microtexture; soft neutral upper-left light on character only. Constraints: exactly one figure, no magenta in subject, crisp separation. Avoid: redesign, changed anatomy/pose, extra openings, legs/feet, hands/fingers, mouth, text, watermark, cast/contact/floor shadow, reflection, scene, duplicate.",
+    "isolation": {
+      "helper": "imagegen/remove_chroma_key.py",
+      "key": "border",
+      "tolerance": 40,
+      "edgeContract": 1,
+      "edgeFeather": 0.25,
+      "softMatte": false,
+      "despill": false
+    },
+    "reviewComposites": [
+      "docs/palari-v2/expansion-03/review/transparent-sources.png",
+      "docs/palari-v2/expansion-03/review/material-masks.png",
+      "docs/palari-v2/expansion-03/review/characteristic-masks.png"
+    ]
+  },
+  "counts": {
+    "candidates": 41,
+    "sourceImages": 41,
+    "icons": 41,
+    "auditFiles": 41,
+    "sourceGrammarPass": 19,
+    "iconSmallSizePass": 41,
+    "iconStrictSkillPass": 1,
+    "exactSixIconSeedApertures": 37
+  },
+  "candidates": [
+    {
+      "id": "palari-042",
+      "design": {
+        "id": "palari-042",
+        "silhouette": "column",
+        "material": "porcelain",
+        "characteristic": "teal",
+        "characteristicHex": "#146B68",
+        "crown": "split_petal",
+        "opening": "narrow_channel",
+        "pose": "gentle_greeting",
+        "expression": "serene",
+        "composition": "lower-left",
+        "identity": "twin-petal lantern column with a long teal channel and a left greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-042.png",
+        "bytes": 1801383,
+        "sha256": "0688a6d5300d3bb6f9ae56cfb24f7b3d9b8761705d16405673a9485aca0f18c6",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Selected attempt 1 preserves the planned column, split-petal crown, long teal channel, serene eyes, two seamless arms, greeting pose, continuous base, one characteristic hue, and exactly six seed apertures.",
+          "The six selected seed apertures are effectively equal in size and form a two-column three-row grille rather than four larger corners plus two smaller centered apertures.",
+          "The targeted retry improved aperture size contrast but returned only five apertures, so attempt 1 remains the stronger complete study."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-042.png",
+        "bytes": 976014,
+        "sha256": "e0c17f9840061abfaf0f294730b9fc9b5996b051920b2c6a678ca23a5d6fe1de",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The selected six seed dots are equal-size rather than four larger corner dots plus two smaller center dots.",
+          "The navy background has visible center-to-edge lightness variation instead of a uniform #172333 field.",
+          "The figure is centered and emerges from the bottom edge rather than the planned lower-left corner.",
+          "Ivory and teal regions retain more volumetric shading than the strict continuous-gradient micro-volume target.",
+          "The targeted retry improved lower-left placement but introduced seven seed dots and a circular outline on the resting arm, so attempt 1 remains the cleaner logo."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-042.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-043",
+      "design": {
+        "id": "palari-043",
+        "silhouette": "arch",
+        "material": "ivory",
+        "characteristic": "coral",
+        "characteristicHex": "#B94F48",
+        "crown": "broad_overhang",
+        "opening": "leaf",
+        "pose": "soft_embrace",
+        "expression": "attentive",
+        "composition": "lower-right",
+        "identity": "leaning shelter arch cradling one diagonal coral leaf opening"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-043.png",
+        "bytes": 1925014,
+        "sha256": "b6eb052dcbe7fb52fb3e7a93db1056c777c9e3beac3c9407787845f88c26e921",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Selected attempt 2 improves the tall adult proportion while preserving a protective overhang, one diagonal coral leaf opening, attentive eyes, two embracing fingerless arms, one characteristic hue, and a continuous legless base.",
+          "The seed mark contains only five apertures—four larger corners and one smaller center—so it fails the canonical six-aperture geometry.",
+          "The shell reads between an arch and an elongated leaf/crescent, although the broad sheltering overhang remains recognizable."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-043.png",
+        "bytes": 1037812,
+        "sha256": "8d2d41d35025d6beeb083f23caced05627abf34f44229c91ffc366dc9037c2ce",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 5,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The selected seed has five dots rather than the exact six-aperture family geometry.",
+          "The navy background retains a visible center-to-edge vignette rather than a uniform #172333 field.",
+          "The lower point of the coral leaf is sharper than the skill's blunt-rounded contour requirement.",
+          "Ivory arm and shell modeling is stronger and more three-dimensional than the strict micro-volume target.",
+          "The targeted retry rounded the upper leaf end but still returned five seed dots and a visible background vignette, so attempt 1 remains the stronger identity match."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-043.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-044",
+      "design": {
+        "id": "palari-044",
+        "silhouette": "crescent",
+        "material": "stone",
+        "characteristic": "ultramarine",
+        "characteristicHex": "#164A7A",
+        "crown": "closed_asymmetric_sweep",
+        "opening": "side_reveal",
+        "pose": "arms_folded",
+        "expression": "thoughtful",
+        "composition": "lower-left",
+        "identity": "forward-curl crescent with a tucked arm fold and long blue side reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-044.png",
+        "bytes": 2175177,
+        "sha256": "eff5148afbd2825b3b9cf8144dfad4a6ab580917d257234b50fb60f4e03d5df5",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": [
+          "Selected attempt 2 preserves the planned forward-curl crescent, closed exterior cap, one long ultramarine side reveal, thoughtful half-lidded eyes, two crossed seamless arms, continuous legless base, and one characteristic hue.",
+          "The lower seed mark contains exactly four larger corner apertures plus two visibly smaller apertures stacked on the centerline.",
+          "The opening remains side-facing beneath the closed sweep and does not read as an upward-facing cup cavity."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-044.png",
+        "bytes": 1320412,
+        "sha256": "03a1614fba2ef7980da75469ec2a7ff5a8c9f02a424cf6b1d26124f45cf16a89",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background retains visible center-to-edge lightness variation rather than a uniform #172333 field.",
+          "A narrow disconnected ultramarine sliver appears along the lower-right side in addition to the dominant reveal.",
+          "The mark rises mostly from the bottom center instead of decisively emerging from the lower-left corner.",
+          "Ivory and ultramarine regions retain more volumetric modeling than the strict near-flat micro-volume target.",
+          "The selected retry corrects the first attempt's seven-dot seed to the canonical four-large-plus-two-small geometry."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-044.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-045",
+      "design": {
+        "id": "palari-045",
+        "silhouette": "pod",
+        "material": "charcoal",
+        "characteristic": "amber",
+        "characteristicHex": "#C17A0B",
+        "crown": "continuous_dome",
+        "opening": "vertical_oval",
+        "pose": "thoughtful_tip",
+        "expression": "curious",
+        "composition": "lower-right",
+        "identity": "tall pebble pod with an amber oval and one arm tip near its cheek"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-045.png",
+        "bytes": 2055202,
+        "sha256": "3bb68028ac6ca2638b5bf1b8b5b4756baa68fd3ed4f0d2f2c988d08dbbfc5005",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "strict-reject-after-targeted-retry",
+        "notes": [
+          "The selected candidate honors the tall pod, continuous dome, charcoal material, vertical amber aperture, curious eyes, and thoughtful arm-tip pose.",
+          "It is rejected by the frozen source grammar because the Palari seed contains nine apertures rather than exactly six.",
+          "This is an unregistered review candidate; no pixels were repaired or postprocessed."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-045.png",
+        "bytes": 1006004,
+        "sha256": "fba69c255bcc92f170377e3cdd3661bf84f7b000ef80994cca5c8dd1198bc44d",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The selected output retains a visible center-to-edge vignette in the navy background after the single permitted targeted retry, so it fails the skill's strict flat-background rule.",
+          "The mark is more horizontally centered than the requested lower-right emergence, although its base and right side crop intentionally.",
+          "The paired source's nine-hole seed was intentionally normalized to the plan-required six-hole Palari signature during logo derivation; the source image itself was not edited."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-045.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-046",
+      "design": {
+        "id": "palari-046",
+        "silhouette": "bell",
+        "material": "porcelain",
+        "characteristic": "forest",
+        "characteristicHex": "#174D38",
+        "crown": "soft_hood",
+        "opening": "layered_reveal",
+        "pose": "arms_resting",
+        "expression": "quietly_confident",
+        "composition": "lower-left",
+        "identity": "double-shell bell with a broad skirt and forest overlap reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-046.png",
+        "bytes": 2003138,
+        "sha256": "f0ecaadcbe4df4820871a5ec7965731c0bd7ce34453ce35477f3b35cf1bb30e3",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": [
+          "The source visibly honors the bell silhouette, soft hood, layered forest reveal, resting-arm pose, porcelain material, and quietly confident half-lidded expression.",
+          "The green reveal sits between overlapping upper and lower shell masses while the figure retains one stable continuous base.",
+          "This is an unregistered review candidate and was preserved without postprocessing."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-046.png",
+        "bytes": 1096431,
+        "sha256": "dc3276ff661bd11e88f71ca9f219b29a446f1e4fc3b8a5b7b2b60d7f714781ac",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The selected output retains a visible low-frequency vignette in the navy background after the single permitted targeted retry, so it fails the skill's strict flat-background rule.",
+          "The ivory and forest forms retain somewhat more tonal volume than the intended almost-flat micro-volume target, although their silhouette remains clear at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-046.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-047",
+      "design": {
+        "id": "palari-047",
+        "silhouette": "stack",
+        "material": "ivory",
+        "characteristic": "mineral_red",
+        "characteristicHex": "#7D2821",
+        "crown": "split_petal",
+        "opening": "low_circular_aperture",
+        "pose": "soft_embrace",
+        "expression": "gently_amused",
+        "composition": "lower-right",
+        "identity": "offset cairn stack clasping one low mineral-red aperture"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-047.png",
+        "bytes": 1916972,
+        "sha256": "abf27eb7878dc3b9f37b35e1d41a07b453b2a66b5de124c88b21b070f1ed401c",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "strict-reject-after-targeted-retry",
+        "notes": [
+          "The selected candidate honors the ivory two-mass stack, overlap seam, split-petal crown, soft-embrace pose, two eyes, no mouth, one characteristic hue, and exact six-aperture seed.",
+          "It remains a strict record mismatch because the selected low circular aperture is rendered as a wide horizontal oval rather than a circle.",
+          "This is an unregistered review candidate; no pixels were repaired or postprocessed."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-047.png",
+        "bytes": 1025055,
+        "sha256": "975ac579f8e3ff092216c24cf1defbd2a7e8eeaf41afaddad50e7e830c3f6f81",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The selected output retains a visible center-to-edge vignette in the navy background after the single permitted targeted retry, so it fails the skill's strict flat-background rule.",
+          "The two stack centers are only subtly offset at 32 px, although the broad overlapping masses and split crown keep the identity distinct.",
+          "The paired source's horizontal aperture was normalized to the plan-required circle during logo derivation; the source image itself was not edited."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-047.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-048",
+      "design": {
+        "id": "palari-048",
+        "silhouette": "column",
+        "material": "stone",
+        "characteristic": "violet",
+        "characteristicHex": "#594077",
+        "crown": "integrated_dome",
+        "opening": "vertical_oval",
+        "pose": "arms_resting",
+        "expression": "attentive",
+        "composition": "lower-left",
+        "identity": "slim obelisk column with a suspended violet upper oval"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-048.png",
+        "bytes": 2045622,
+        "sha256": "3f63557e428662fb505ad842f673a94954afda7eee0a3c88baadd2cf40a1789f",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-048.png",
+        "bytes": 968748,
+        "sha256": "7785b9ca9bc359632e16e25bbad5a4ee845e95a02b7489513175fda401b9f812",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 5,
+        "smallSizeStatus": "pass",
+        "skillStatus": "unreviewed",
+        "recordedSkillStatus": "unreviewed",
+        "deviations": [
+          "The icon contains five seed apertures rather than six.",
+          "The navy background retains a visible center-to-edge vignette instead of a uniform #172333 field.",
+          "The figure is cropped across the full bottom edge and occupies more area than the requested 75–85% corner-emergent mark.",
+          "Ivory and violet regions drift numerically from the requested hex bases and retain slightly stronger tonal modeling than strict micro-volume.",
+          "The literal geometry exceeds the nominal 6–10 shape budget once eyes, arms, aperture, and seed dots are counted separately."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-048.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-049",
+      "design": {
+        "id": "palari-049",
+        "silhouette": "arch",
+        "material": "charcoal",
+        "characteristic": "teal",
+        "characteristicHex": "#146B68",
+        "crown": "soft_hood",
+        "opening": "narrow_channel",
+        "pose": "arms_folded",
+        "expression": "serene",
+        "composition": "lower-right",
+        "identity": "deep charcoal hood arch with crossed arms around a teal slit"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-049.png",
+        "bytes": 1851816,
+        "sha256": "8a37c625e506e65acb72eb142bbfec9c8e25d3aa83d265e096b6899718745096",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-049.png",
+        "bytes": 982786,
+        "sha256": "de2e137bdfc16ce12903c825cf61c586e316db44aec5e4aa2dc23152fbf579e5",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "unreviewed",
+        "recordedSkillStatus": "unreviewed",
+        "deviations": [
+          "The navy background retains a visible center-to-edge vignette instead of a uniform #172333 field.",
+          "The mark remains horizontally centered and cropped along the full bottom edge rather than emerging specifically from the lower-right.",
+          "The six seed circles form two vertical columns with the two smaller circles side-by-side in the middle row, rather than two small circles on one centered vertical line.",
+          "Ivory and teal regions drift numerically from the requested hex bases and retain slightly stronger tonal modeling than strict micro-volume.",
+          "The literal geometry exceeds the nominal 6–10 shape budget once eyes, crossed arms, aperture, and six seed circles are counted separately."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-049.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-050",
+      "design": {
+        "id": "palari-050",
+        "silhouette": "crescent",
+        "material": "porcelain",
+        "characteristic": "coral",
+        "characteristicHex": "#B94F48",
+        "crown": "soft_overhang",
+        "opening": "narrow_channel",
+        "pose": "one_arm_resting",
+        "expression": "gently_amused",
+        "composition": "lower-left",
+        "identity": "swept ribbon crescent with a coral spine channel and resting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-050.png",
+        "bytes": 1802007,
+        "sha256": "35ff242c05a8d029be55340f2f60670b3bf4d6caa25a10238ffec12f5b6f1832",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-050.png",
+        "bytes": 983592,
+        "sha256": "5e958d9532538441e462e9f76837670a31e6e45b545fb97f5175a8b909015d2c",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "unreviewed",
+        "recordedSkillStatus": "unreviewed",
+        "deviations": [
+          "The navy background retains a visible center-to-edge vignette instead of a uniform #172333 field.",
+          "The mark floats with a narrow navy gap below its base and occupies more than the requested 75–85% height rather than clearly emerging from the lower-left.",
+          "The six seed circles include four large corners and two small circles side-by-side, not on one centered vertical line.",
+          "Ivory and coral regions drift numerically from the requested hex bases and show discrete contact darkening around the arms beyond strict micro-volume.",
+          "The literal geometry exceeds the nominal 6–10 shape budget once eyes, arms, aperture, and seed circles are counted separately."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-050.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-051",
+      "design": {
+        "id": "palari-051",
+        "silhouette": "pod",
+        "material": "ivory",
+        "characteristic": "ultramarine",
+        "characteristicHex": "#164A7A",
+        "crown": "integrated_dome",
+        "opening": "leaf",
+        "pose": "gentle_greeting",
+        "expression": "quietly_confident",
+        "composition": "lower-right",
+        "identity": "upright seed pod with one side leaf opening and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-051.png",
+        "bytes": 2172804,
+        "sha256": "f74c8489464ddf385378394ebc7b3b3c8e08c50327d156353b0a858957498ff0",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-051.png",
+        "bytes": 999334,
+        "sha256": "f37ff46c4dde73f1c473a7444a8e9b88e7c457ea589dcd075a1ccf780a676060",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background retains a visible low-frequency gradient instead of a perfectly uniform #172333 field.",
+          "The leaf aperture still ends in a narrow point, violating the blunt-contour preference.",
+          "The resting arm is separated by a narrow navy internal gap that becomes fragile at small size.",
+          "The composition is more centered than the assigned lower-right emergence.",
+          "The model's continuous tonal variation drifts from exact numeric palette values.",
+          "The six-hole seed is exact at native size but becomes indistinct at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-051.audit.json",
+        "source": "docs/palari-v2/expansion-03/generated/palari-051.audit.json"
+      }
+    },
+    {
+      "id": "palari-052",
+      "design": {
+        "id": "palari-052",
+        "silhouette": "bell",
+        "material": "stone",
+        "characteristic": "amber",
+        "characteristicHex": "#C17A0B",
+        "crown": "split_petal",
+        "opening": "vertical_oval",
+        "pose": "soft_embrace",
+        "expression": "thoughtful",
+        "composition": "lower-left",
+        "identity": "petal-crowned bell embracing a tall amber center oval"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-052.png",
+        "bytes": 1974184,
+        "sha256": "947897a81ee3304317b318b5c5e6ce58a61ca9e0f95a8790638dd6853abace45",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-052.png",
+        "bytes": 1075754,
+        "sha256": "555fc54dd275d2fa18bf2d2d9e5b8632037eadd5fbfc6c0694fbd4aa9617d622",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background retains a visible low-frequency gradient instead of a perfectly uniform #172333 field.",
+          "Both split-petal crown lobes end in acute tapered tips rather than visibly blunt rounded ends.",
+          "The dark eye rings read partly as painted navy regions rather than unequivocal negative-space cutouts.",
+          "The composition is centered rather than clearly emerging from the assigned lower-left corner.",
+          "The model's continuous tonal variation drifts from exact numeric palette values.",
+          "The six-hole seed is exact at native size but becomes indistinct at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-052.audit.json",
+        "source": "docs/palari-v2/expansion-03/generated/palari-052.audit.json"
+      }
+    },
+    {
+      "id": "palari-053",
+      "design": {
+        "id": "palari-053",
+        "silhouette": "stack",
+        "material": "charcoal",
+        "characteristic": "mineral_red",
+        "characteristicHex": "#7D2821",
+        "crown": "soft_hood",
+        "opening": "layered_reveal",
+        "pose": "gentle_greeting",
+        "expression": "curious",
+        "composition": "lower-right",
+        "identity": "offset two-lobe stack with a high seam, mineral-red reveal, and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-053.png",
+        "bytes": 2174310,
+        "sha256": "27e749af1bedc238b570832c0bd7e0496bb7b2fa7a0b32effb037365e0a59335",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-053.png",
+        "bytes": 967888,
+        "sha256": "a3f8969172e1557595cb7299fc8a11a368f56ad422fa38d4a103427736e61e6d",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background retains a visible low-frequency gradient and is substantially darker than requested #172333.",
+          "The layered reveal still terminates in an acute triangular point on the left.",
+          "The composition is more centered than the assigned lower-right emergence.",
+          "The model's continuous tonal variation drifts from exact numeric palette values.",
+          "The six-hole seed is exact at native size but becomes indistinct at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-053.audit.json",
+        "source": "docs/palari-v2/expansion-03/generated/palari-053.audit.json"
+      }
+    },
+    {
+      "id": "palari-054",
+      "design": {
+        "id": "palari-054",
+        "silhouette": "column",
+        "material": "porcelain",
+        "characteristic": "burgundy",
+        "characteristicHex": "#6E202C",
+        "crown": "soft_hood",
+        "opening": "narrow_channel",
+        "pose": "one_arm_resting",
+        "expression": "thoughtful",
+        "composition": "lower-left",
+        "identity": "hook-hood column with a burgundy channel and one arm tracing it"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-054.png",
+        "bytes": 1782581,
+        "sha256": "bf8c4e029e87cb544f6e5b5de14f5a52b36618141f1449aeef22d8a7268987e1",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-054.png",
+        "bytes": 1039845,
+        "sha256": "107ce609cee02d8ac7cee0bbbd05f98dac58ba8251bf6f7943679b4e632e5eb2",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "unreviewed",
+        "recordedSkillStatus": "unreviewed",
+        "deviations": [
+          "The navy background retains a visible center-to-edge tonal variation instead of the required uniform #172333 field.",
+          "The burgundy eyelid caps read as discrete tonal patches rather than one uninterrupted diffuse gradient.",
+          "The ivory shell has slightly stronger tonal modeling than the strict micro-volume target."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-054.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-055",
+      "design": {
+        "id": "palari-055",
+        "silhouette": "arch",
+        "material": "ivory",
+        "characteristic": "violet",
+        "characteristicHex": "#594077",
+        "crown": "integrated_dome",
+        "opening": "layered_reveal",
+        "pose": "arms_resting",
+        "expression": "quietly_confident",
+        "composition": "lower-right",
+        "identity": "twin-wall arch with a stepped violet overlap reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-055.png",
+        "bytes": 1996062,
+        "sha256": "28e32e49ae66a23cb805b664e1f8632ce8f1ad9a41d6a335fb267477cfd1fa9d",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-055.png",
+        "bytes": 1230493,
+        "sha256": "898513b2323cb0440692f621055d67b26d1175a9a02160b2a17e33b2d82ed69b",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "unreviewed",
+        "recordedSkillStatus": "unreviewed",
+        "deviations": [
+          "The navy background has a strong center-to-edge vignette instead of a uniform #172333 field.",
+          "The stepped violet rim and ivory arm junctions use stronger bevel and contact modeling than the skill permits.",
+          "The icon is centered rather than clearly emerging from the lower-right.",
+          "The ivory shell and violet reveal drift from the exact numeric bases through stronger-than-allowed tonal range."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-055.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-056",
+      "design": {
+        "id": "palari-056",
+        "silhouette": "crescent",
+        "material": "stone",
+        "characteristic": "teal",
+        "characteristicHex": "#146B68",
+        "crown": "closed_asymmetric_sweep",
+        "opening": "side_reveal",
+        "pose": "arms_resting",
+        "expression": "serene",
+        "composition": "lower-left",
+        "identity": "backward-leaning crescent with a long controlled teal side reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-056.png",
+        "bytes": 1821414,
+        "sha256": "db63d46922690ffbda6f8030fa1099f4297dfc238c0399d7a1b6519e3746e835",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-056.png",
+        "bytes": 975070,
+        "sha256": "54e48a28924933ffffcd01e8709d111af2aea3dab0da9e5d3bd6faddb517d02a",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "unreviewed",
+        "recordedSkillStatus": "unreviewed",
+        "deviations": [
+          "The navy background retains a visible center-to-edge vignette instead of a uniform #172333 field.",
+          "The teal region drifts lighter than the requested #146B68 base across much of its area.",
+          "The arm regions retain faint contact shading, and the left arm nearly disappears into the shell at 32 pixels.",
+          "The placement reads bottom-center more than clearly emerging from the lower-left."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-056.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-057",
+      "design": {
+        "id": "palari-057",
+        "silhouette": "pod",
+        "material": "charcoal",
+        "characteristic": "coral",
+        "characteristicHex": "#B94F48",
+        "crown": "continuous_dome",
+        "opening": "low_circular_aperture",
+        "pose": "thoughtful_tip",
+        "expression": "attentive",
+        "composition": "lower-right",
+        "identity": "tall egg pod with a low coral moon aperture and thoughtful arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-057.png",
+        "bytes": 2024752,
+        "sha256": "e65a6047e99ba4b25200fa2e4619cbaf5e85d8fdf0d7f8abc9bb2ff650d9156a",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": [
+          "The targeted retry corrected the initial equal-size 3-by-2 seed into the frozen 4+2 geometry.",
+          "Warm studio lighting shifts portions of the coral toward orange, but no second characteristic hue appears."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-057.png",
+        "bytes": 1193345,
+        "sha256": "93f00f3e96351420af594cb4a4f2d734bc333205ac1906feed373f5029f78186",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The selected first attempt stays horizontally centered rather than emerging from the requested lower-right corner; the retry improved placement but cropped the identifying seed and was rejected.",
+          "The navy field retains a visible center-to-edge vignette instead of a uniform #172333 background.",
+          "Ivory and coral forms retain more dimensional modeling and arm contact shadow than the strict micro-volume limit.",
+          "At 32 × 32 the egg-pod, moon aperture, thoughtful arm, and paired eyes remain clear; the seed is secondary and its individual 4+2 sizing becomes subtle."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-057.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-058",
+      "design": {
+        "id": "palari-058",
+        "silhouette": "bell",
+        "material": "porcelain",
+        "characteristic": "mineral_red",
+        "characteristicHex": "#7D2821",
+        "crown": "soft_hood",
+        "opening": "leaf",
+        "pose": "one_arm_resting",
+        "expression": "curious",
+        "composition": "lower-left",
+        "identity": "asymmetric hooded bell with a mineral-red side leaf and resting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-058.png",
+        "bytes": 1947373,
+        "sha256": "9a3fb11a723c8e74cfa999cb0f785eb02ef96648d9f6793c7467709b4ae001b7",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "The asymmetric hood, bell base, side leaf reveal, two eyes, two fingerless arms, one hue, and legless base pass the frozen grammar.",
+          "The allowed retry did not create the required four-large-corners plus two-smaller-middle seed geometry, so this source remains a review candidate rather than a production-ready master."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-058.png",
+        "bytes": 1103199,
+        "sha256": "53eeb3735d00b0ce8915cc94241303065d4a3d06e6c30bf925e244013a96ef17",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy field retains a center-to-edge vignette instead of a uniform #172333 background.",
+          "The shell retains more dimensional modeling and shallow arm/aperture seam shading than the strict micro-volume limit.",
+          "The lower-left crop and scale exceed the preferred 75–85% fill slightly, although only the broad base is cropped and all identifying features remain visible.",
+          "At 32 × 32 the hooded-bell silhouette, side leaf, arms, and eyes remain recognizable; the six-dot seed compresses but stays a secondary family cue."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-058.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-059",
+      "design": {
+        "id": "palari-059",
+        "silhouette": "stack",
+        "material": "ivory",
+        "characteristic": "amber",
+        "characteristicHex": "#C17A0B",
+        "crown": "split_petal",
+        "opening": "vertical_oval",
+        "pose": "soft_embrace",
+        "expression": "gently_amused",
+        "composition": "lower-right",
+        "identity": "two-block petal stack embracing one upright amber oval"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-059.png",
+        "bytes": 1766169,
+        "sha256": "edda4c55de11debe70a3b0a195c15fbca87b868a3a2ebf4eb21615f45c829d9d",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": [
+          "The targeted retry moved the eyes from the amber interior into the ivory shell above the aperture, preventing the opening from reading as a colored face or screen.",
+          "Two distinct offset masses and their closed overlap seam remain explicit, while the split-petal crown, embraced oval, and correct 4+2 seed are retained."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-059.png",
+        "bytes": 962910,
+        "sha256": "ccd1b81d8f6b3210f9a939bf002b1111d324db6aeeb32b7efe0518fe5dbc5c48",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy field retains a mild center-to-edge vignette rather than a uniform #172333 background.",
+          "The ivory shell retains faint contour seams around the arms and mass overlap, and the amber regions drift brighter than the requested #C17A0B in modeled areas.",
+          "The mark fills slightly more than the preferred 75–85% height, though only the continuous base is cropped and every identifying feature remains visible.",
+          "At 32 × 32 the split crown, central amber oval, stacked offset, paired arms, and half-lidded eyes remain distinct; the seed compresses but stays secondary."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-059.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-060",
+      "design": {
+        "id": "palari-060",
+        "silhouette": "column",
+        "material": "stone",
+        "characteristic": "forest",
+        "characteristicHex": "#174D38",
+        "crown": "split_petal",
+        "opening": "vertical_oval",
+        "pose": "gentle_greeting",
+        "expression": "quietly_confident",
+        "composition": "lower-left",
+        "identity": "fluted stone column with paired crown lobes, green oval, and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-060.png",
+        "bytes": 2023471,
+        "sha256": "a91bf38b1943fcb9e29be2f2ccee1d8c951adb9d981345fa81f47a325ee202e2",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass-after-targeted-retry",
+        "notes": [
+          "The native 1254px RGB source is preserved untouched.",
+          "The selected candidate clearly honors the assigned column silhouette and structural identity.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-060.png",
+        "bytes": 951937,
+        "sha256": "b59bcdd1a3e629fb00dc22d63fffa8c8cd608faddbf0f97c610e6ae296e3127c",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "A faint low-frequency vignette remains in the navy background after the single permitted targeted retry, so the strict flat-background rejection rule is not fully satisfied.",
+          "The project-required six-circle seed repeats the characteristic color in six small regions, an explicit Palari exception to the skill's default preference for one continuous secondary-color region."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-060.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-061",
+      "design": {
+        "id": "palari-061",
+        "silhouette": "arch",
+        "material": "charcoal",
+        "characteristic": "burgundy",
+        "characteristicHex": "#6E202C",
+        "crown": "broad_overhang",
+        "opening": "leaf",
+        "pose": "arms_folded",
+        "expression": "thoughtful",
+        "composition": "lower-right",
+        "identity": "low-shouldered cantilever arch with an angled burgundy leaf"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-061.png",
+        "bytes": 2030895,
+        "sha256": "08a051ba2cd01e12cf080ee56284216d0511229d8ef7856433317a2e4d88effd",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "best-available-with-structural-deviation",
+        "notes": [
+          "The native 1254px RGB source is preserved untouched.",
+          "The broad asymmetric overhang and diagonal leaf opening support the intended cantilever identity, but the continuous lower shell reads closer to a hooded column than a fully enclosing architectural arch.",
+          "This source should receive explicit visual approval before any production registration."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-061.png",
+        "bytes": 1042750,
+        "sha256": "8201d1d16db92b04c3eea718f23ec7328718b7398445319853beda5b39f795c0",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The selected first attempt remains centered rather than clearly emerging from the lower-right; the targeted retry was worse because it cropped the seed and introduced thin outlines.",
+          "The navy background has a visible low-frequency vignette and the shell/arms show noticeably volumetric overlap shading, both strict skill rejection conditions.",
+          "The two eye marks reuse ivory rather than the requested characteristic burgundy, although the complete artwork still contains only the three requested semantic color families.",
+          "The project-required six-circle seed repeats burgundy in six small regions, an explicit Palari exception to the skill's default preference for one continuous secondary-color region."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-061.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-062",
+      "design": {
+        "id": "palari-062",
+        "silhouette": "crescent",
+        "material": "porcelain",
+        "characteristic": "violet",
+        "characteristicHex": "#594077",
+        "crown": "soft_overhang",
+        "opening": "narrow_channel",
+        "pose": "one_arm_resting",
+        "expression": "attentive",
+        "composition": "lower-left",
+        "identity": "sickle crescent with an inset violet spine and one tracing arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-062.png",
+        "bytes": 1825330,
+        "sha256": "21b72a1c4bd93640a19b12f3ad3a0d32000854edabc0cd5ea79f67c90dcf4bb8",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass-after-targeted-retry-with-minor-deviation",
+        "notes": [
+          "The native 1254px RGB source is preserved untouched.",
+          "The selected candidate honors the tall closed crescent, violet spine, attentive eyes, and one-arm-tracing pose.",
+          "The six seed apertures sit inside a shallow circular incised panel; the panel is not a hole, but it is an unrequested decorative boundary and should be reviewed.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-062.png",
+        "bytes": 969524,
+        "sha256": "994e370c349ea06c14fb1147f5c57e62a49bbd6b0f5a5044fdd451dcb4549ec0",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "A faint low-frequency vignette remains in the navy background after the single permitted targeted retry, so the strict flat-background rejection rule is not fully satisfied.",
+          "The project-required six-circle seed repeats violet in six small regions, an explicit Palari exception to the skill's default preference for one continuous secondary-color region."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-062.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-063",
+      "design": {
+        "id": "palari-063",
+        "silhouette": "pod",
+        "material": "ivory",
+        "characteristic": "teal",
+        "characteristicHex": "#146B68",
+        "crown": "integrated_dome",
+        "opening": "vertical_oval",
+        "pose": "arms_resting",
+        "expression": "serene",
+        "composition": "lower-right",
+        "identity": "slender capsule pod with a suspended teal oval and close-set arms"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-063.png",
+        "bytes": 1849853,
+        "sha256": "c95b7e1aa3d52e6bdf691c531e36817e8aaae6a5dd6ab89470d0c0736a109ac0",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-063.png",
+        "bytes": 960006,
+        "sha256": "4edae5c0640ae3de95088ba5c8ccf469d2c35629a4efd2e8d8f845b9aa2f5192",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "pass",
+        "recordedSkillStatus": "pass",
+        "deviations": [
+          "The requested #172333 background drifts by at most about two RGB code values in sampled unobstructed areas.",
+          "The exact four-large-plus-two-small seed construction is clear at native size but not reliably distinguishable at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-063.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-064",
+      "design": {
+        "id": "palari-064",
+        "silhouette": "bell",
+        "material": "stone",
+        "characteristic": "mineral_red",
+        "characteristicHex": "#7D2821",
+        "crown": "integrated_dome",
+        "opening": "layered_reveal",
+        "pose": "soft_embrace",
+        "expression": "gently_amused",
+        "composition": "lower-left",
+        "identity": "nested stone bell shell embracing one mineral-red center reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-064.png",
+        "bytes": 2256573,
+        "sha256": "fa197f4a1abcedb948a8e5d7599f5d81ef229a3cdbaac754b391cfcc7dd24f54",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-064.png",
+        "bytes": 1122328,
+        "sha256": "e2aece9460fd90c6d575d69a102bf4daabd0f0b87572a4561a8688fd6e93642d",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The layered two-shell reveal is simplified into one large continuous red aperture, weakening the selected nested-shell identity.",
+          "A sampled red interior is approximately #90211C rather than the requested base #7D2821, exceeding a literal exact-palette reading.",
+          "The exact seed geometry is clear at native size but its size hierarchy is not reliably legible at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-064.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-065",
+      "design": {
+        "id": "palari-065",
+        "silhouette": "stack",
+        "material": "charcoal",
+        "characteristic": "ultramarine",
+        "characteristicHex": "#164A7A",
+        "crown": "soft_hood",
+        "opening": "low_circular_aperture",
+        "pose": "gentle_greeting",
+        "expression": "quietly_confident",
+        "composition": "lower-right",
+        "identity": "top-heavy offset charcoal stack with a low blue well and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-065.png",
+        "bytes": 2494994,
+        "sha256": "177163685df920daed58bb6883153016f0ae841e82e6abcc18b20a1507360900",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-065.png",
+        "bytes": 1052462,
+        "sha256": "fbb79867a3ea61d2c6efe6844c2939d98c6373b89d57c42ee608199fc0356c5e",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The background is consistently darker than the requested #172333 base, though it stays a uniform same-family deep navy in sampled areas.",
+          "The overlap is expressed as a broad ivory tonal band, and the requested circular low well remains horizontally oval.",
+          "The exact seed geometry is clear at native size but its size hierarchy is not reliably legible at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-065.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-066",
+      "design": {
+        "id": "palari-066",
+        "silhouette": "column",
+        "material": "porcelain",
+        "characteristic": "mineral_red",
+        "characteristicHex": "#7D2821",
+        "crown": "soft_hood",
+        "opening": "vertical_oval",
+        "pose": "arms_resting",
+        "expression": "curious",
+        "composition": "lower-left",
+        "identity": "gently leaning column with an upper mineral-red oval beneath a soft hood"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-066.png",
+        "bytes": 1788735,
+        "sha256": "5345c41d5e236bc08aa9ee7cc32e404df94528828ba77b8c07b3d22c73a0dd60",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-066.png",
+        "bytes": 955826,
+        "sha256": "fc0610cf56f1de7b32a5b8a8a80d11b1bdd9a28680b94235094b70b96245cff7",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy field retains visible low-frequency variation instead of a perfectly uniform #172333 background.",
+          "The arms and shell carry stronger volumetric shading than the skill's nearly disappearing micro-volume target.",
+          "Counting all six seed circles, eyes, arms, aperture, and shell literally pushes the primitive count above the nominal 6–10 budget.",
+          "The seed hierarchy passes at native size but collapses into a small reddish cluster at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-066.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-067",
+      "design": {
+        "id": "palari-067",
+        "silhouette": "arch",
+        "material": "ivory",
+        "characteristic": "forest",
+        "characteristicHex": "#174D38",
+        "crown": "integrated_dome",
+        "opening": "narrow_channel",
+        "pose": "soft_embrace",
+        "expression": "serene",
+        "composition": "lower-right",
+        "identity": "ringed ivory arch softly enclosing a central forest slit"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-067.png",
+        "bytes": 1995614,
+        "sha256": "6ee5280108226961b8d3725a33d84fb329bef90dac73f0daf832aba659747c8f",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-067.png",
+        "bytes": 962655,
+        "sha256": "87c3b70c1abdc9600ba5047c14fb500c9946f31591475f38af833e74e192c7ab",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy field retains visible low-frequency variation instead of a perfectly uniform #172333 background after the targeted retry.",
+          "The embracing arms retain more local volume and contact shading than the skill's nearly disappearing micro-volume target.",
+          "Counting all six seed circles, eyes, arms, aperture, and shell literally pushes the primitive count above the nominal 6–10 budget.",
+          "The silhouette and central slit pass at 32 px, but the six individual seed apertures do not."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-067.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-068",
+      "design": {
+        "id": "palari-068",
+        "silhouette": "crescent",
+        "material": "stone",
+        "characteristic": "burgundy",
+        "characteristicHex": "#6E202C",
+        "crown": "closed_asymmetric_sweep",
+        "opening": "side_reveal",
+        "pose": "arms_folded",
+        "expression": "quietly_confident",
+        "composition": "lower-left",
+        "identity": "wingback stone crescent with a broad tail and burgundy reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-068.png",
+        "bytes": 1950650,
+        "sha256": "8e4960dec2013f707e74eb84041560eba4662a22a439e0e24a473d7c21b8f298",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": []
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-068.png",
+        "bytes": 1116661,
+        "sha256": "e01b0bd6147406aa76127e9edb22cc338ba9e752b78cffd78631a72de82d5117",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy field retains visible low-frequency variation instead of a perfectly uniform #172333 background after the targeted retry.",
+          "The crossing arms retain local contact shading and stronger volume than the nearly disappearing micro-volume target.",
+          "The high sweep and broad tail taper more sharply than the skill's preferred blunt contour language.",
+          "Counting all six seed circles, eyes, arms, reveal, and shell literally pushes the primitive count above the nominal 6–10 budget.",
+          "The crescent/reveal identity passes at 32 px, but the six individual seed apertures do not."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-068.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-069",
+      "design": {
+        "id": "palari-069",
+        "silhouette": "pod",
+        "material": "charcoal",
+        "characteristic": "violet",
+        "characteristicHex": "#594077",
+        "crown": "continuous_dome",
+        "opening": "leaf",
+        "pose": "gentle_greeting",
+        "expression": "thoughtful",
+        "composition": "lower-right",
+        "identity": "faceted charcoal pod with a diagonal violet leaf and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-069.png",
+        "bytes": 2145581,
+        "sha256": "c6f2bed3556d5f85365cba12d2646082d15eef480bfd1d96c0dedc09ba19a551",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass-after-targeted-retry",
+        "notes": [
+          "The selected retry corrects the first pass's equal-size seed apertures.",
+          "The leaf opening, greeting pose, closed pod base, charcoal exterior, and single violet characteristic hue are clear.",
+          "This remains an unregistered review candidate."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-069.png",
+        "bytes": 972901,
+        "sha256": "429bcbfd8d629158a6944cb703d864891d8bf7c4a7b67eef756ea59cbc8be9f9",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The navy field retains a visible low-frequency vignette after the single permitted retry, failing the strict solid-background rule.",
+          "The ivory shell retains more internal arm/contact modeling than the strict micro-volume limit and includes a faint contour near the resting arm.",
+          "The project-required six-circle seed repeats the violet family in six small regions as an explicit Palari exception to the skill's default continuous-secondary-region preference."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-069.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-070",
+      "design": {
+        "id": "palari-070",
+        "silhouette": "bell",
+        "material": "porcelain",
+        "characteristic": "mineral_red",
+        "characteristicHex": "#7D2821",
+        "crown": "split_petal",
+        "opening": "vertical_oval",
+        "pose": "one_arm_resting",
+        "expression": "attentive",
+        "composition": "lower-left",
+        "identity": "twin-petal porcelain bell with a narrow waist and mineral-red oval"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-070.png",
+        "bytes": 1714911,
+        "sha256": "5e773aed888fd721b70a3988369adf9a9f7d488ab7974e0018e8105bd4e869a1",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "best-available-rejected-by-strict-grammar",
+        "notes": [
+          "The first attempt was retained because its bell flare, split crown, narrow oval, and crossing/resting arm better match the assigned identity than the retry.",
+          "Both attempts kept exactly six seed apertures but failed to make the middle pair visibly smaller; this triggers the frozen seed-geometry rejection rule.",
+          "The remaining color, eye, arm, opening, base, material, scene, and full-body constraints are visually satisfied."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-070.png",
+        "bytes": 955311,
+        "sha256": "71d0565f89c643dd95526006a9a5b09fd4333938217f638ad23109c4f068efb1",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The navy field retains a visible low-frequency vignette after the single permitted retry, failing the strict solid-background rule.",
+          "The six seed circles remain equal or near-equal rather than using the requested four-large plus two-small hierarchy.",
+          "The shell and resting arm retain more dimensional modeling and contact shading than the strict micro-volume limit.",
+          "The project-required six-circle seed repeats the mineral-red family in six small regions as an explicit Palari exception to the skill's default continuous-secondary-region preference."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-070.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-071",
+      "design": {
+        "id": "palari-071",
+        "silhouette": "stack",
+        "material": "ivory",
+        "characteristic": "coral",
+        "characteristicHex": "#B94F48",
+        "crown": "soft_hood",
+        "opening": "layered_reveal",
+        "pose": "arms_resting",
+        "expression": "gently_amused",
+        "composition": "lower-right",
+        "identity": "three-quarter offset stack with a diagonal coral overlap seam"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-071.png",
+        "bytes": 1891680,
+        "sha256": "cce7128726bf95f92311082e260b13681ebede52f8e286248cf0c06414727e87",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "best-available-rejected-by-strict-grammar",
+        "notes": [
+          "The first attempt was retained because its lower front shell creates the assigned diagonal coral overlap reveal; the retry regressed to a nearly horizontal hood opening.",
+          "The retained candidate shows two overlapping shell masses, but their lateral center offset is not unequivocal and the result remains close to an ordinary hooded figure.",
+          "Both attempts kept exactly six seed apertures but the selected candidate failed to make the middle pair visibly smaller, triggering the frozen seed-geometry rejection rule.",
+          "The remaining hue, eye, arm, opening, continuous-base, material, scene, and full-body constraints are visually satisfied."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-071.png",
+        "bytes": 972304,
+        "sha256": "e139a78d28095578bc048362a12e689483539199ddea02929b784189633a2f38",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The navy field retains a visible low-frequency vignette after the single permitted retry, failing the strict solid-background rule.",
+          "The two shell masses remain only subtly offset and can still read as one hooded capsule rather than an unequivocal stack.",
+          "The six seed circles remain equal or near-equal rather than using the requested four-large plus two-small hierarchy.",
+          "The shell overlap and arms retain more dimensional/contact modeling than the strict micro-volume limit.",
+          "The project-required six-circle seed repeats the coral family in six small regions as an explicit Palari exception to the skill's default continuous-secondary-region preference."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-071.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-072",
+      "design": {
+        "id": "palari-072",
+        "silhouette": "column",
+        "material": "stone",
+        "characteristic": "ultramarine",
+        "characteristicHex": "#164A7A",
+        "crown": "integrated_dome",
+        "opening": "narrow_channel",
+        "pose": "gentle_greeting",
+        "expression": "serene",
+        "composition": "lower-left",
+        "identity": "torsioned stone column with a continuous blue front channel and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-072.png",
+        "bytes": 1988576,
+        "sha256": "42660b2352665084355cc35a68b089acf73c853724f6f99dda90735931c2723a",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Saved attempt 1 is the stronger identity and arm construction despite the hard six-seed count failure.",
+          "The gentle torsion is understated; the long channel, integrated dome, greeting pose, material, and single-hue separation remain clear."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-072.png",
+        "bytes": 998548,
+        "sha256": "be139ac68970607bfb28d19952980479209c061ae51a0337e2a721c1b61f4db7",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The background has visible center-to-edge tonal variation rather than a perfectly uniform #172333 field.",
+          "The character is centered and bottom-cropped rather than clearly emerging from the lower-left.",
+          "Ivory and ultramarine retain more tonal modeling than the near-flat micro-volume target.",
+          "The exact six-dot seed remains visible at native size but is not individually legible at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-072.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-073",
+      "design": {
+        "id": "palari-073",
+        "silhouette": "arch",
+        "material": "charcoal",
+        "characteristic": "amber",
+        "characteristicHex": "#C17A0B",
+        "crown": "broad_overhang",
+        "opening": "leaf",
+        "pose": "arms_folded",
+        "expression": "curious",
+        "composition": "lower-right",
+        "identity": "cantilever charcoal arch with a nested amber leaf and folded arms"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-073.png",
+        "bytes": 2175883,
+        "sha256": "437c310030e6b97efef18b001c09cc9b528c90d972b7f379451888f2d8c52488",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": [
+          "The figure satisfies the selected arch, broad overhang, leaf opening, folded-arm pose, material, expression, and single characteristic color.",
+          "No hands, legs, extra structural apertures, damage, text, or household-vessel cues were observed."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-073.png",
+        "bytes": 1162317,
+        "sha256": "34c37f7f28d97437e840e541ae0a754490fb91f76971bcfcdc7ceb2c93dbc435",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background has a visible vignette instead of a perfectly uniform #172333 field.",
+          "The character is centered and bottom-anchored rather than clearly emerging from the lower-right.",
+          "The ivory inner arch includes a distinct lighter nested tonal band, stronger and more shape-like than the requested uninterrupted micro-gradient.",
+          "The six seed marks are exact at native size but become indistinct at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-073.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-074",
+      "design": {
+        "id": "palari-074",
+        "silhouette": "crescent",
+        "material": "porcelain",
+        "characteristic": "forest",
+        "characteristicHex": "#174D38",
+        "crown": "soft_overhang",
+        "opening": "narrow_channel",
+        "pose": "arms_resting",
+        "expression": "thoughtful",
+        "composition": "lower-left",
+        "identity": "closed wing crescent with a long forest inner stripe"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-074.png",
+        "bytes": 1778961,
+        "sha256": "34a96ac910c7ed0cc7a71bd8d02de17de4448e47a4b42c5531466b3082b169ae",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Saved attempt 1 retains the complete six-seed count and the stronger closed-crescent identity.",
+          "The six seed apertures lack a convincingly visible 4+2 size hierarchy, triggering the family-signature rejection rule despite otherwise strong grammar compliance."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-074.png",
+        "bytes": 1077615,
+        "sha256": "e19488e983c377201080eb04fc15f3393e29636a958c1d52c6ea6ca6fa90567c",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background retains a visible vignette instead of a perfectly uniform #172333 field.",
+          "The character is centered and bottom-cropped rather than clearly emerging from the lower-left.",
+          "The crescent silhouette uses a relatively narrow upper tip, though it remains rounded rather than acute.",
+          "The exact six-dot seed and its 4+2 hierarchy are clear at native size but not individually legible at 32 px."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-074.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-075",
+      "design": {
+        "id": "palari-075",
+        "silhouette": "pod",
+        "material": "ivory",
+        "characteristic": "burgundy",
+        "characteristicHex": "#6E202C",
+        "crown": "integrated_dome",
+        "opening": "low_circular_aperture",
+        "pose": "thoughtful_tip",
+        "expression": "quietly_confident",
+        "composition": "lower-right",
+        "identity": "pear-shaped ivory pod with a low burgundy aperture and thinking arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-075.png",
+        "bytes": 2036324,
+        "sha256": "a9d50ca635c0e763e7fa2aa581183f841a597f01ffd20f4cea795d1e0089b92f",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Selected attempt 2 preserves the planned pear-shaped adult pod, integrated dome, low circular burgundy aperture separated from the face, thoughtful arm pose, two calm inset eyes, two seamless arms, continuous legless base, intact ivory ceramic, one characteristic hue, and one dominant opening.",
+          "The selected seed has eight apertures: four larger corner circles plus four smaller central circles, rather than the required four larger corners plus two smaller centered apertures.",
+          "Attempt 1 had a compliant six-aperture seed but its dominant opening became a wide horizontal mouth-like bowl, a harder identity and household-vessel rejection, so attempt 2 remains the stronger study."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-075.png",
+        "bytes": 1059895,
+        "sha256": "dbc1ffa7e54ce52c6f58428f3c4f994025d1eff6f3ec726f67752b975be52e60",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background retains visible center-to-edge tonal variation and sampled corners do not equal uniform #172333.",
+          "The ivory shell and arms retain stronger modeled shading and soft contact darkening than the requested near-flat continuous micro-volume.",
+          "The exact six-circle seed is present at native size but its individual apertures are indistinct at 32 px.",
+          "The targeted retry reduced some modeling but returned only five seed circles and added thin eye outlines, so attempt 1 remains the stronger logo."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-075.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-076",
+      "design": {
+        "id": "palari-076",
+        "silhouette": "bell",
+        "material": "stone",
+        "characteristic": "violet",
+        "characteristicHex": "#594077",
+        "crown": "soft_hood",
+        "opening": "layered_reveal",
+        "pose": "soft_embrace",
+        "expression": "serene",
+        "composition": "lower-left",
+        "identity": "cloak-like stone bell with an offset violet double-shell reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-076.png",
+        "bytes": 2090450,
+        "sha256": "081f7d96863093111be2ee490ecada8a8efd4da61120a784a91b91af0d1d4ae7",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Selected attempt 2 preserves the planned stone bell, softly flared continuous base, protective hood, one offset layered violet reveal, serene half-lidded eyes, two seamless embracing arms, intact ceramic, one characteristic hue, and no legs or human anatomy.",
+          "The selected seed has seven apertures: four larger corner circles plus three smaller circles on the vertical centerline, rather than the required two smaller centered apertures.",
+          "Attempt 1 had exactly six apertures but rendered all six equal as a two-column three-row grille; attempt 2 better expresses the required size hierarchy and remains the stronger study despite its one extra center aperture."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-076.png",
+        "bytes": 1013440,
+        "sha256": "976a202632acb85706812e4f52bace193cc035bd2a8c86c0a6fed497f636b10d",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The selected icon restores the exact four-large-plus-two-small six-circle seed at native size.",
+          "The navy background retains center-to-edge tonal variation and sampled corners are not a uniform exact #172333 field.",
+          "A thin dark boundary remains around part of the layered reveal and embracing arm, violating the broad-shape/no-thin-contour target and using navy-like color inside the mark.",
+          "The targeted retry is flatter than attempt 1 and preserves lower-left anchoring, so it is selected despite the remaining background and contour deviations."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-076.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-077",
+      "design": {
+        "id": "palari-077",
+        "silhouette": "stack",
+        "material": "charcoal",
+        "characteristic": "teal",
+        "characteristicHex": "#146B68",
+        "crown": "split_petal",
+        "opening": "vertical_oval",
+        "pose": "gentle_greeting",
+        "expression": "attentive",
+        "composition": "lower-right",
+        "identity": "leaning twin-stack with an upper teal oval and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-077.png",
+        "bytes": 2073497,
+        "sha256": "a50bd83e43bd5353f5bf7ba3389a254c99a8a01cd43e8cf13ca8add2eb628615",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject",
+        "notes": [
+          "Selected attempt 2 preserves the planned two visibly offset interlocking charcoal masses, broad diagonal overlap seam, split-petal crown, one vertical teal oval, attentive half-lidded eyes, one greeting arm plus one resting arm, continuous stable base, one characteristic hue, and intact ceramic.",
+          "The selected seed has seven apertures: four larger corner circles plus three smaller circles on the vertical centerline, rather than exactly two smaller centered apertures.",
+          "Attempt 1 also returned seven seed apertures and a less legible interlocking-mass relationship; attempt 2 retains the stronger stack identity despite the remaining exact-count rejection."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-077.png",
+        "bytes": 1149977,
+        "sha256": "84d486b4e9f35f0b55835fb696e5c063233e2eb8b1e291db24f7d02ee12478f5",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The selected icon has exactly six seed circles with four larger corners and two smaller vertical-center circles at native size.",
+          "The navy background retains visible center-to-edge tonal variation and sampled corners are not a uniform exact #172333 field.",
+          "Ivory and teal have stronger three-dimensional modeling, local contact darkening, and nested tonal regions than the strict continuous-gradient micro-volume budget.",
+          "The crown tips remain narrower and sharper than the requested blunt rounded treatment, and the mark is bottom-anchored with a right-side gap rather than emerging directly from the lower-right corner.",
+          "The targeted retry flattened the shell and rounded the crown but returned seven seed circles, so attempt 1 remains the stronger complete logo."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-077.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-078",
+      "design": {
+        "id": "palari-078",
+        "silhouette": "column",
+        "material": "porcelain",
+        "characteristic": "coral",
+        "characteristicHex": "#B94F48",
+        "crown": "split_petal",
+        "opening": "narrow_channel",
+        "pose": "one_arm_resting",
+        "expression": "gently_amused",
+        "composition": "lower-left",
+        "identity": "fork-crown porcelain column with a long coral channel and tracing arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-078.png",
+        "bytes": 1787169,
+        "sha256": "be46ea2cb317643779abf280b3608e0d45c68d47d06f1e448a69c37fd8dc0c4a",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject-best-available",
+        "notes": [
+          "The selected candidate visibly honors the column, split-petal crown, narrow coral channel, tracing-arm pose, porcelain material, and coral characteristic hue.",
+          "It fails the automatic seed rejection rule because a third small center aperture makes seven total.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-078.png",
+        "bytes": 939247,
+        "sha256": "e73163cb4aef81a0e38309c4c03e3f02613996155ca704b50a5e3197de2ef61a",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 7,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The exact six-aperture signature failed again after the single targeted retry: seven circles remain.",
+          "The navy background retains visible low-frequency center-to-edge variation instead of a uniform #172333 field.",
+          "The very narrow mark occupies substantially less than 75 percent of the canvas width and leaves excessive right-side empty space.",
+          "Dark gray pupil marks and thin internal contour/shadow lines introduce visual values beyond the requested three-color, near-flat treatment.",
+          "The project-required seed repeats the coral color in small regions, an explicit Palari exception to the skill's default continuous-secondary-region preference."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-078.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-079",
+      "design": {
+        "id": "palari-079",
+        "silhouette": "arch",
+        "material": "ivory",
+        "characteristic": "ultramarine",
+        "characteristicHex": "#164A7A",
+        "crown": "soft_hood",
+        "opening": "layered_reveal",
+        "pose": "arms_resting",
+        "expression": "thoughtful",
+        "composition": "lower-right",
+        "identity": "asymmetric ivory vault arch with a layered blue core"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-079.png",
+        "bytes": 1949417,
+        "sha256": "7f3b389cae038ae502265dfe86dccc77271aa33c8788b9fbfcbaf34706631bd3",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "reject",
+        "recordedGrammarStatus": "reject-best-available-after-targeted-retry",
+        "notes": [
+          "The selected candidate preserves the soft hood, layered ultramarine reveal, resting arms, ivory material, thoughtful eyes, and exact seed geometry.",
+          "It fails the selected-silhouette rejection rule because the compact rounded exterior still reads more as a pod or capsule than a protective arch.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-079.png",
+        "bytes": 1302936,
+        "sha256": "f6ee4b654b4828ae6b203f706c6acf2c74e355da8e2b6e238122ba19d8efbc3e",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The navy background contains a clear center-to-edge vignette instead of a uniform #172333 field.",
+          "The ivory shell and arms use pronounced edge shading, overlaps, and soft contact seams that read more like cut paper or shallow 3D than near-flat micro-volume.",
+          "The source-derived silhouette remains pod-like and therefore cannot fully express the planned arch direction.",
+          "The project-required seed repeats ultramarine in six small regions, an explicit Palari exception to the skill's default continuous-secondary-region preference."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-079.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-080",
+      "design": {
+        "id": "palari-080",
+        "silhouette": "crescent",
+        "material": "stone",
+        "characteristic": "amber",
+        "characteristicHex": "#C17A0B",
+        "crown": "closed_asymmetric_sweep",
+        "opening": "side_reveal",
+        "pose": "arms_folded",
+        "expression": "quietly_confident",
+        "composition": "lower-left",
+        "identity": "high-crested stone crescent with a low amber side reveal"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-080.png",
+        "bytes": 2157574,
+        "sha256": "19a35025b4f8b82ea59d358d9b5d81703e7136518de5d359281ba846abe68d3a",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass-after-targeted-retry",
+        "notes": [
+          "The selected candidate visibly honors the crescent, closed asymmetric sweep, low amber side reveal, folded-arm pose, stone material, quietly confident eyes, and exact seed geometry.",
+          "The high crest is blunt enough to avoid a fragile point and the colored reveal remains separate from the face.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-080.png",
+        "bytes": 979149,
+        "sha256": "4213dfd19e429f615845c9b3aca9df8978447618a186098791af35a26ae76b78",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 7,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "reject",
+        "deviations": [
+          "The exact six-aperture signature failed again after the single targeted retry: seven circles remain.",
+          "The navy background retains visible low-frequency center-to-edge variation instead of a uniform #172333 field.",
+          "The mark is smaller than the requested 75–85 percent fill and leaves excessive upper-right negative space.",
+          "Dark pupils, thin eye contours, and arm contact seams introduce visual values and discrete shading beyond the requested three-color near-flat treatment.",
+          "The project-required seed repeats amber in small regions, an explicit Palari exception to the skill's default continuous-secondary-region preference."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-080.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-081",
+      "design": {
+        "id": "palari-081",
+        "silhouette": "pod",
+        "material": "charcoal",
+        "characteristic": "forest",
+        "characteristicHex": "#174D38",
+        "crown": "continuous_dome",
+        "opening": "leaf",
+        "pose": "gentle_greeting",
+        "expression": "curious",
+        "composition": "lower-right",
+        "identity": "bean-curved charcoal pod with a diagonal green leaf and greeting arm"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-081.png",
+        "bytes": 2143018,
+        "sha256": "ff30351f85e6d7f1542ec378008c692b0eaee8f57f866052ba8652802c6a0574",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass-after-targeted-retry",
+        "notes": [
+          "The selected candidate visibly honors the pod, continuous dome, diagonal leaf opening, greeting pose, charcoal material, and forest characteristic hue.",
+          "The curved shell reads as a bean-like pod, though it remains close to an upright capsule at thumbnail size.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-081.png",
+        "bytes": 1196067,
+        "sha256": "3c81e101089d012048f1fa3c0b4aa908c875abf290ac9b63f256a4be75db13ad",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The selected output retains a faint visible low-frequency vignette in the navy background after the single permitted targeted retry, so it does not satisfy the skill's strict flat-background rejection rule.",
+          "The three semantic color families are correct, but native rendered pixels approximate rather than exactly equal the requested hex values; sampled unobstructed navy pixels range around RGB 16–18 / 28–32 / 48–52 instead of uniform #172333.",
+          "The project-required six-circle seed repeats the forest color in six small regions, an explicit Palari exception to the skill's default preference that the second IP color stay in one continuous region."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-081.audit.json",
+        "source": null
+      }
+    },
+    {
+      "id": "palari-082",
+      "design": {
+        "id": "palari-082",
+        "silhouette": "bell",
+        "material": "porcelain",
+        "characteristic": "burgundy",
+        "characteristicHex": "#6E202C",
+        "crown": "integrated_dome",
+        "opening": "vertical_oval",
+        "pose": "arms_resting",
+        "expression": "serene",
+        "composition": "lower-left",
+        "identity": "wide-skirt porcelain bell with one inset burgundy oval"
+      },
+      "source": {
+        "path": "docs/palari-v2/expansion-03/generated/palari-082.png",
+        "bytes": 1905910,
+        "sha256": "1d3e990885b3dcfee36398af12f2fc9c81b4250ce50a4e7c4e2af95616ffa0c7",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "grammarStatus": "pass",
+        "recordedGrammarStatus": "pass",
+        "notes": [
+          "The selected candidate visibly honors the bell, integrated dome, vertical oval, resting pose, porcelain material, burgundy hue, and serene expression.",
+          "The complete body is isolated with a wide continuous flared base and no conventional legs or feet.",
+          "This is a review candidate and is not production registered."
+        ]
+      },
+      "icon": {
+        "path": "docs/palari-v2/ip-icons/expansion-03/palari-082.png",
+        "bytes": 1060207,
+        "sha256": "89c1f35e3c8f77a2744eeb7a53520bb2bf38a344ac0a7c96e66b1f85ee0f81ac",
+        "width": 1254,
+        "height": 1254,
+        "colorSpace": "sRGB",
+        "channels": "srgb",
+        "opaque": true,
+        "seedApertureCount": 6,
+        "smallSizeStatus": "pass",
+        "skillStatus": "reject",
+        "recordedSkillStatus": "best-available-with-deviations",
+        "deviations": [
+          "The selected output retains a faint visible low-frequency vignette in the navy background after the single permitted targeted retry, so it does not satisfy the skill's strict flat-background rejection rule.",
+          "The three semantic color families are correct, but native rendered pixels approximate rather than exactly equal the requested hex values; sampled unobstructed navy pixels range around RGB 17–20 / 30–35 / 50–55 instead of uniform #172333.",
+          "The project-required six-circle seed repeats burgundy in six small regions, an explicit Palari exception to the skill's default preference that the second IP color stay in one continuous region."
+        ]
+      },
+      "audits": {
+        "icon": "docs/palari-v2/ip-icons/expansion-03/palari-082.audit.json",
+        "source": null
+      }
+    }
+  ],
+  "reviewComposites": [
+    {
+      "path": "docs/palari-v2/expansion-03/generated/contact-sheet.png",
+      "sha256": "47ab52ee99e2b4991d159a6e5c11701d9627423a07398d5a92f006ca51d926fd",
+      "width": 1708,
+      "height": 1788
+    },
+    {
+      "path": "docs/palari-v2/ip-icons/expansion-03/contact-sheet.png",
+      "sha256": "edb66d4c200b971d2266673e7370b7217c887b20051f633c331c7a0b548c3bfc",
+      "width": 1288,
+      "height": 1398
+    },
+    {
+      "path": "docs/palari-v2/ip-icons/expansion-03/contact-sheet-32px.png",
+      "sha256": "57f6d7f7db1536125d921bc29f8d5e1a21ebb28f21da4ad2382822dc88995d18",
+      "width": 476,
+      "height": 564
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "id": "palari-068",
+  "createdAt": "2026-08-19T02:07:24Z",
+  "design": {
+    "silhouette": "crescent",
+    "material": "stone",
+    "characteristic": "burgundy",
+    "characteristicHex": "#6E202C",
+    "crown": "closed_asymmetric_sweep",
+    "opening": "side_reveal",
+    "pose": "arms_folded",
+    "expression": "quietly_confident",
+    "composition": "lower-left",
+    "identity": "wingback stone crescent with a broad tail and burgundy reveal"
+  },
+  "source": {
+    "output": "docs/palari-v2/expansion-03/generated/palari-068.png",
+    "executionMode": "built-in ImageGen",
+    "model": "built-in image_gen (model identifier not exposed)",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "promptAttempts": [
+      {
+        "attempt": 1,
+        "mode": "generate",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 ceramic character study",
+          "",
+          "Primary request: Create exactly one original Palari named palari-068. Palari means Personal Artificial Intelligence: a small crafted ceramic being whose single colored interior reveals its unique intelligence. It belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- identity: a wingback stone crescent with a broad trailing sweep and one burgundy side reveal",
+          "- silhouette: slender asymmetric crescent with a finished architectural sweep; a closed exterior wingback arc and broad counterbalancing tail, never an upward-facing cavity",
+          "- crown: closed asymmetric upward sweep with a continuous exterior cap; no upward-facing cavity, open rim, bowl, or sharp tip",
+          "- opening: exactly one controlled deep-burgundy side reveal following the inner crescent silhouette",
+          "- pose: exactly two rounded arms crossed calmly around the side reveal",
+          "- expression: quietly confident, conveyed only by calm half-lidded eyes",
+          "- exterior material: balanced warm medium-grey stoneware, clearly grey rather than brown",
+          "- characteristic color: deep burgundy, #6E202C",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base, full body visible",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue: deep burgundy only, limited to the recessed inner intelligence, iris accents, and Palari seed mark; no other chromatic accents",
+          "- exactly one dominant architecturally intentional side reveal; no unrelated holes except the seed mark",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, burgundy iris accents, and tiny catchlights; no mouth",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hands or fingers, crossed as simple overlapping tubes",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- one compact six-aperture Palari seed mark on the lower torso, with exactly six circular recesses: four visibly larger circles at the four corners of a compact rectangle plus two visibly smaller circles centered vertically between the corner pairs; the two middle-row circles must be clearly smaller than all four corner circles, reading as a deliberate seed symbol, not a grille",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- overall body height at least 2.4 times visible face height",
+          "- the crescent exterior remains closed, stable, and legless; the upper sweep is bluntly rounded",
+          "",
+          "Scene/backdrop: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Style/medium: refined tactile 3D ceramic product render, adult collectible design, restrained and architectural rather than cute or chibi.",
+          "Composition/framing: direct 1:1 square; eye-level three-quarter product portrait with minimal lens distortion; centered; complete full figure visible; occupies about 76 percent of image height with comfortable padding.",
+          "Lighting/mood: soft diffused daylight from upper left with a gentle contact shadow; preserve readable ceramic form and inner depth without neon glow.",
+          "",
+          "Avoid: simple horizontal bowl or cup rim, upward-facing cavity, open crescent rim, thin or sharp crescent tips, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smile, mouth, chibi proportions, horror, vacant doll eyes, circular aperture surrounding the face, text, labels, numbers, logos, watermark, extra characters, duplicate figure."
+        ]
+      },
+      {
+        "attempt": 2,
+        "mode": "precise-object-edit",
+        "input": "/home/quetza/.codex/generated_images/01a017b8-a732-7cc0-8f51-feb8631c0e5f/exec-40a316a5-682f-4617-802c-c889d0c221ba.png",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari V2 ceramic character study",
+          "Input image: edit target, the first palari-068 attempt.",
+          "",
+          "Primary request: Preserve the entire character and image exactly: grey wingback crescent silhouette, closed rounded sweeps, burgundy side reveal, two calm eyes, crossed seamless arm tubes, stable legless base, plaster alcove, full-body composition, material, camera, and lighting. Change only the small six-circle seed mark on the lower torso.",
+          "",
+          "Keep its top-left, top-right, bottom-left, and bottom-right apertures at their current size. Replace only the two middle-row apertures with circles exactly half the diameter of the four corner circles. Maintain exactly six total recessed burgundy apertures arranged in two columns and three rows: 4 large corner circles + 2 clearly tiny centered middle-row circles. It must read as a deliberate seed symbol, not six equal grille holes.",
+          "",
+          "Constraints: no new openings or marks; no mouth; no fingers; no legs or feet; no text or watermark; no other changes. Keep one complete isolated figure and one characteristic hue only."
+        ]
+      }
+    ],
+    "metadata": {
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "colorMode": "RGB",
+      "bytes": 1950650,
+      "sha256": "8e4960dec2013f707e74eb84041560eba4662a22a439e0e24a473d7c21b8f298"
+    },
+    "grammarReview": {
+      "status": "pass",
+      "characterCount": 1,
+      "characteristicHueCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "leglessStableBase": true,
+      "seedApertureCount": 6,
+      "seedGeometryStatus": "pass",
+      "deviations": [
+        "The high sweep and broad tail remain more pointed than ideal, although both tips are visibly rounded rather than needle-sharp."
+      ]
+    }
+  },
+  "icon": {
+    "sourceReference": "docs/palari-v2/expansion-03/generated/palari-068.png",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-068.png",
+    "executionMode": "built-in ImageGen",
+    "model": "built-in image_gen (model identifier not exposed)",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "promptAttempts": [
+      {
+        "attempt": 1,
+        "mode": "reference-guided generation",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari IP mascot logo candidate",
+          "Input image: Image 1 is an identity reference only. Generate a new logo; do not edit or reproduce its plaster scene, material realism, camera lighting, or cast shadow.",
+          "",
+          "Primary request: Derive palari-068 as one highly simplified logo first and a character second. Preserve its defining identity: a closed wingback crescent shell with a high rounded forward sweep and broad low trailing tail, exactly one deep-burgundy side reveal, two calm half-lidded eyes, two thick rounded arm tubes crossed as one simple embrace band, stable continuous legless base, and compact Palari seed. The crescent silhouette and side reveal are primary; the seed is secondary. No mouth.",
+          "",
+          "Background: fully opaque edge-to-edge perfectly uniform solid deep navy #172333; use this color only as the background or genuine negative-space eye cutouts. Square outer corners.",
+          "",
+          "Color count: exactly three semantic colors in the complete image:",
+          "1. #172333 navy background only;",
+          "2. #E9E6DF warm ivory for the single dominant crescent shell silhouette;",
+          "3. #6E202C deep burgundy for one continuous side reveal plus minimal iris/seed accents.",
+          "No black, white, grey, red-orange, pink, or unrelated hues. Continuous same-family tonal drift only inside the two IP colors.",
+          "",
+          "Geometry: reduce to 6–10 broad rounded shapes total. Use one dominant continuous closed crescent silhouette; keep both the high forward sweep and broad low tail thick and bluntly rounded, never thin or sharp. Keep the burgundy reveal broad enough to survive at 32 x 32. Keep exactly two calm half-lidded eyes; no eyebrows, mouth, nose, catchlight dots, or facial highlights. Simplify the crossed arm tubes into one or two broad rounded masses fused with the shell; remove nonessential seams. Retain exactly six small seed circles in a compact signature: four larger corner circles and two smaller circles centered vertically, all burgundy, visually subordinate to the reveal. No decorative marks.",
+          "",
+          "Composition: upright, emerging from the lower-left corner, filling 75–85% of the square. Do not center it like a sticker. Do not crop the high sweep, eyes, reveal, broad tail, or seed.",
+          "",
+          "Style: Flat-first vector-friendly geometry with subtle continuous-gradient micro-volume. One uninterrupted low-frequency diffuse gradient per large IP color region, shared upper-left-to-lower-right light direction, each transition spanning at least 50% of the dominant form. Total lightness variation <= 0.08; hue drift <= 3 degrees; chroma drift <= 0.015. Modeling visible at full size but nearly disappearing at 32 x 32.",
+          "",
+          "Forbid: character illustration, moon pictogram without the face/reveal, plaster alcove, floor, scene, realism, ceramic texture, grain, gloss, toy or clay rendering, bevel, extrusion, rim light, cast shadow, halo, vignette, background gradient, external shadow, discrete highlight patches, closed highlight blobs, overlay bands, nested shadow shapes, cut-paper layers, cel shading, stepped swatches, hard internal shadow boundaries, hotspots, thin lines, sharp points, extra colors, separate clothing or machinery, mouth, hands, fingers, legs, feet, text, numbers, watermark, border, frame, transparency, app mask, rounded canvas corners."
+        ]
+      },
+      {
+        "attempt": 2,
+        "mode": "precise-object-edit",
+        "input": "/home/quetza/.codex/generated_images/01a017b8-a732-7cc0-8f51-feb8631c0e5f/exec-7e4d4899-c306-4d2d-b286-2830580e0cd9.png",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari IP mascot logo",
+          "Input image: edit target, the first palari-068 logo attempt.",
+          "",
+          "Preserve the closed ivory wingback crescent silhouette, high rounded sweep, broad tail, burgundy side reveal, two half-lidded eyes, lower-left composition, exact six-dot 4-large/2-small seed mark, all proportions, and three-color mapping. Make only these two compliance corrections:",
+          "",
+          "1. Replace the entire background with one perfectly uniform flat edge-to-edge #172333 field: no vignette, halo, gradient, spotlight, texture, lighter center, darker corners, border, or frame.",
+          "2. Make the crossed embrace read as exactly two arm tubes total. Keep the broad front horizontal arm and the curved diagonal arm; remove/fuse the extra small ivory protruding oval below the far-left end so it becomes part of the continuous body silhouette and cannot read as a third limb.",
+          "",
+          "Keep exactly three semantic colors: #172333, #E9E6DF, #6E202C. Maintain broad rounded flat-first geometry and subtle low-frequency tonal variation only inside the ivory and burgundy forms. No new marks, scene, ceramic realism, external shadow, mouth, hands, fingers, legs, feet, text, watermark, transparency, or rounded canvas corners."
+        ]
+      }
+    ],
+    "metadata": {
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "colorMode": "RGB",
+      "bytes": 1116661,
+      "sha256": "e01b0bd6147406aa76127e9edb22cc338ba9e752b78cffd78631a72de82d5117"
+    },
+    "seedApertureCount": 6,
+    "seedGeometryStatus": "pass at native size",
+    "smallSizeStatus": "pass",
+    "seedAt32px": "indistinct secondary cluster; individual apertures are not countable",
+    "skillStatus": "reject",
+    "deviations": [
+      "The navy field retains visible low-frequency variation instead of a perfectly uniform #172333 background after the targeted retry.",
+      "The crossing arms retain local contact shading and stronger volume than the nearly disappearing micro-volume target.",
+      "The high sweep and broad tail taper more sharply than the skill's preferred blunt contour language.",
+      "Counting all six seed circles, eyes, arms, reveal, and shell literally pushes the primitive count above the nominal 6–10 budget.",
+      "The crescent/reveal identity passes at 32 px, but the six individual seed apertures do not."
+    ]
+  }
+}

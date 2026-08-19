@@ -17,8 +17,8 @@ The character's face, hair, accessories, pose, texture, lighting, and identity m
 - All bundled sources are square 1254 × 1254 PNG files.
 - Every PNG master has a checksum-linked derived 1024px editor WebP and 256px gallery WebP under `public/avatars-web/`. The browser uses those delivery files; the PNG masters remain the source of truth. Run `npm run avatars:web:generate` after source changes and `npm run verify:web-assets` to validate all 314 outputs and their manifest.
 - Every reviewed runtime mask layer has a checksum-linked lossless WebP derivative under `public/masks-web/`. The browser uses those 1,395 pixel-identical delivery files; reviewed PNG masks under `public/masks/` remain the source of truth. Run `npm run masks:web:generate` after a reviewed mask changes and `npm run verify:web-masks` to validate coverage, lossless bitstreams, dimensions, checksums, and zero-difference generation records.
-- `npm run build:pages` creates a verified 225.5 MiB artifact at the `/palari-art/` base path containing 314 avatar WebPs, 1,395 runtime-mask WebPs, 40 gallery WebPs, 123 Palari V2 ceramic WebPs, and 82 Palari V2 emoticon WebPs with no PNG, PDF, or audit files.
-- A separate ceramic-character editor is published at `/v2/`. It uses 41 reviewed transparent masters and deterministic material/characteristic masks under `public/palari-v2/`, with 123 checksum-linked browser WebPs under `public/palari-v2-web/`. Its Emoticon view uses 41 native generated PNG authorities under `docs/palari-v2/ip-icons/` and 82 checksum-linked full/thumbnail delivery WebPs under `public/palari-v2-icons-web/`. It does not replace or share masking logic with the V1 portrait editor.
+- `npm run build:pages` creates a verified GitHub Pages artifact at the `/palari-art/` base path containing 314 avatar WebPs, 1,395 runtime-mask WebPs, 40 gallery WebPs, 246 Palari V2 ceramic WebPs, and 164 Palari V2 emoticon WebPs with no PNG, PDF, or audit files.
+- A separate ceramic-character editor is published at `/v2/`. It uses 82 reviewed transparent masters and deterministic material/characteristic masks under `public/palari-v2/`, with 246 checksum-linked browser WebPs under `public/palari-v2-web/`. Its Emoticon view uses 82 native generated PNG authorities under `docs/palari-v2/ip-icons/` and 164 checksum-linked full/thumbnail delivery WebPs under `public/palari-v2-icons-web/`. It does not replace or share masking logic with the V1 portrait editor.
 - The editor renders and exports at 1024 × 1024.
 - All 157 bundled portraits have source-linked face-aware framing records in `src/data/avatar-framing.json`. The renderer applies one nondestructive scale/center transform to the portrait and every mask layer; do not pre-crop sources or transform layers independently.
 - The project is a browser-only static Vite site with an editor entry and a handbook entry. It has no backend.
@@ -76,8 +76,8 @@ npm run hair:mattes:review -- --id=all --reviewer=<name> --notes=<summary>
 npm run framing:generate # Regenerate all framing records locally after installing its Python requirements
 npm run avatars:web:generate # Regenerate/resume 1024px and thumbnail WebP delivery assets
 npm run masks:web:generate # Regenerate/resume pixel-identical lossless mask WebPs
-npm run palari-v2:web:generate # Regenerate 41 V2 sources and 82 lossless mask WebPs
-node scripts/generate-palari-v2-icon-assets.mjs # Regenerate 41 V2 emoticon WebPs and thumbnails
+npm run palari-v2:web:generate # Regenerate 82 V2 sources and 164 lossless mask WebPs
+node scripts/generate-palari-v2-icon-assets.mjs # Regenerate 82 V2 emoticon WebPs and thumbnails
 npm run verify:palari-v2 # Check grammar, collection, masks, reviews, delivery files, and registry
 npm run build:pages    # Build and verify the slim /palari-art/ GitHub Pages artifact
 npm run typecheck      # TypeScript only

@@ -1,0 +1,174 @@
+{
+  "id": "palari-066",
+  "createdAt": "2026-08-19T02:07:24Z",
+  "design": {
+    "silhouette": "column",
+    "material": "porcelain",
+    "characteristic": "mineral_red",
+    "characteristicHex": "#7D2821",
+    "crown": "soft_hood",
+    "opening": "vertical_oval",
+    "pose": "arms_resting",
+    "expression": "curious",
+    "composition": "lower-left",
+    "identity": "gently leaning column with an upper mineral-red oval beneath a soft hood"
+  },
+  "source": {
+    "output": "docs/palari-v2/expansion-03/generated/palari-066.png",
+    "executionMode": "built-in ImageGen",
+    "model": "built-in image_gen (model identifier not exposed)",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "promptAttempts": [
+      {
+        "attempt": 1,
+        "mode": "generate",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 ceramic character study",
+          "",
+          "Primary request: Create exactly one original Palari named palari-066. Palari means Personal Artificial Intelligence: a small crafted ceramic being whose single colored interior reveals its unique intelligence. It belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- identity: a gently leaning column with an upper mineral-red oval beneath a soft hood",
+          "- silhouette: tall slender column with a subtly flared stable base; make the whole column lean gently while remaining structurally stable",
+          "- crown: protective soft hood grown continuously from the ceramic body",
+          "- opening: exactly one deliberate vertical oval aperture in the upper torso, below the eyes and beneath the hood",
+          "- pose: both curved rounded arms resting close to the body",
+          "- expression: curious, conveyed only by calm half-lidded eyes",
+          "- exterior material: soft cool-neutral off-white porcelain, never pure digital white",
+          "- characteristic color: deep mineral red, #7D2821",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base, full body visible",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue: deep mineral red only, limited to the recessed inner intelligence, iris accents, and Palari seed mark; no other chromatic accents",
+          "- exactly one dominant architecturally intentional vertical oval opening; no unrelated holes except the seed mark",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, mineral-red iris accents, and tiny catchlights; no mouth",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hands or fingers",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- one compact six-aperture Palari seed mark on the lower torso: four larger circular apertures at the corners of a compact rectangle plus two smaller circular apertures centered vertically between them; exactly six apertures total in this mark, reading as a 2-column by 3-row family signature, not a grille",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- overall body height at least 2.4 times visible face height",
+          "",
+          "Scene/backdrop: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Style/medium: refined tactile 3D ceramic product render, adult collectible design, restrained and architectural rather than cute or chibi.",
+          "Composition/framing: direct 1:1 square; eye-level three-quarter product portrait with minimal lens distortion; centered; complete full figure visible; occupies about 76 percent of image height with comfortable padding.",
+          "Lighting/mood: soft diffused daylight from upper left with a gentle contact shadow; preserve readable ceramic form and inner depth without neon glow.",
+          "",
+          "Avoid: simple horizontal bowl or cup rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smile, mouth, chibi proportions, horror, vacant doll eyes, circular aperture surrounding the face, text, labels, numbers, logos, watermark, extra characters, duplicate figure."
+        ]
+      },
+      {
+        "attempt": 2,
+        "mode": "precise-object-edit",
+        "input": "/home/quetza/.codex/generated_images/01a017b8-a732-7cc0-8f51-feb8631c0e5f/exec-37af5c11-db16-484e-9f96-1333b2ac5448.png",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari V2 ceramic character study",
+          "Input image: edit target, the first palari-066 attempt.",
+          "",
+          "Primary request: Preserve the character, porcelain material, gentle leaning column silhouette, soft hood, eyes, mineral-red upper vertical oval, two resting seamless arm tubes, full-body framing, plaster alcove, camera, and lighting exactly. Change only the small seed mark on the lower torso.",
+          "",
+          "The corrected seed mark must contain exactly six circular recessed apertures arranged as a compact 2-column by 3-row family signature: four visibly larger circles at the four rectangle corners, plus exactly two visibly smaller circles centered vertically between the corner pairs (the two middle-row apertures). The middle-row circles must be clearly smaller at normal viewing size. Preserve deep mineral red inside all six. Make it read as a deliberate seed symbol, not a grille.",
+          "",
+          "Constraints: no new openings or marks; no mouth; no fingers; no legs or feet; no text or watermark; no other changes. Keep one complete isolated figure and one characteristic hue only."
+        ]
+      }
+    ],
+    "metadata": {
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "colorMode": "RGB",
+      "bytes": 1788735,
+      "sha256": "5345c41d5e236bc08aa9ee7cc32e404df94528828ba77b8c07b3d22c73a0dd60"
+    },
+    "grammarReview": {
+      "status": "reject",
+      "characterCount": 1,
+      "characteristicHueCount": 1,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "armCount": 2,
+      "leglessStableBase": true,
+      "seedApertureCount": 6,
+      "seedGeometryStatus": "reject",
+      "deviations": [
+        "The selected retry still renders the six seed apertures at nearly equal size, so the four-large/two-small hierarchy is not reliably visible and can read as a grille.",
+        "The upper vertical oval can read mouth-like at first glance because it sits directly below the eyes, although no separate mouth is present."
+      ]
+    }
+  },
+  "icon": {
+    "sourceReference": "docs/palari-v2/expansion-03/generated/palari-066.png",
+    "output": "docs/palari-v2/ip-icons/expansion-03/palari-066.png",
+    "executionMode": "built-in ImageGen",
+    "model": "built-in image_gen (model identifier not exposed)",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "promptAttempts": [
+      {
+        "attempt": 1,
+        "mode": "reference-guided generation",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari IP mascot logo candidate",
+          "Input image: Image 1 is an identity reference only. Generate a new logo; do not edit or reproduce its plaster scene, material realism, camera lighting, or cast shadow.",
+          "",
+          "Primary request: Derive palari-066 as one highly simplified logo first and a character second. Preserve its defining identity: a gently leaning tall column, soft hood, one upper vertical oval aperture, two calm half-lidded eyes, close resting arm tubes fused into the main silhouette, stable continuous legless base, and compact Palari seed. The leaning shell silhouette and upper oval are primary; the seed is secondary. No mouth.",
+          "",
+          "Background: fully opaque edge-to-edge perfectly uniform solid deep navy #172333; use this color only as the background or as genuine negative-space eye cutouts. Square outer corners.",
+          "",
+          "Color count: exactly three semantic colors in the complete image:",
+          "1. #172333 navy background only;",
+          "2. #E9E6DF warm ivory for the single dominant shell silhouette;",
+          "3. #7D2821 deep mineral red for one continuous upper oval aperture plus minimal iris/seed accents.",
+          "No black, white, grey, pink, orange, or unrelated hues. Continuous same-family tonal drift only inside the two IP colors.",
+          "",
+          "Geometry: reduce to 6–10 broad rounded shapes total. Use one dominant continuous rounded shell silhouette. Keep the upper oval large and architecturally simple. Keep exactly two calm half-lidded eyes; no eyebrows, mouth, nose, catchlight dots, or facial highlights. Integrate or omit nonessential seams so the logo remains readable at 32 x 32. Retain exactly six small seed circles in a compact 2-column by 3-row signature: four larger corner circles and two smaller middle-row circles, all mineral red, visually subordinate to the aperture. Do not add decorative marks.",
+          "",
+          "Composition: upright, emerging from the lower-left corner, filling 75–85% of the square. Preserve the gentle lean; do not center it like a sticker. Do not crop the hood, upper oval, eyes, or seed.",
+          "",
+          "Style: Flat-first vector-friendly geometry with subtle continuous-gradient micro-volume. One uninterrupted low-frequency diffuse gradient per large IP color region, shared upper-left-to-lower-right light direction, each transition spanning at least 50% of the dominant form. Total lightness variation <= 0.08; hue drift <= 3 degrees; chroma drift <= 0.015. Modeling visible at full size but nearly disappearing at 32 x 32.",
+          "",
+          "Forbid: character illustration, plaster alcove, floor, scene, realism, ceramic texture, grain, gloss, toy or clay rendering, bevel, extrusion, rim light, cast shadow, halo, vignette, background gradient, external shadow, discrete highlight patches, closed highlight blobs, overlay bands, nested shadow shapes, cut-paper layers, cel shading, stepped swatches, hard internal shadow boundaries, hotspots, thin lines, sharp points, extra colors, separate clothing or machinery, mouth, hands, fingers, legs, feet, text, numbers, watermark, border, frame, transparency, app mask, rounded canvas corners."
+        ]
+      },
+      {
+        "attempt": 2,
+        "mode": "precise-object-edit",
+        "input": "/home/quetza/.codex/generated_images/01a017b8-a732-7cc0-8f51-feb8631c0e5f/exec-02c48738-7250-4439-9902-ae6b2f865613.png",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari IP mascot logo",
+          "Input image: edit target, the first palari-066 logo attempt.",
+          "",
+          "Preserve the recognizable leaning ivory column silhouette, upper mineral-red oval, two half-lidded navy eye cutouts, two rounded resting arm forms, lower-left crop, and all proportions. Make only these two compliance corrections:",
+          "",
+          "1. Replace the entire background with one perfectly uniform, flat, edge-to-edge #172333 field. No vignette, halo, directional gradient, spotlight, texture, lighter center, border, frame, or rounded canvas corners.",
+          "2. Correct the mineral-red seed mark to exactly six circles in two columns and three rows: keep the four outer corner circles large, and make only the two middle-row circles visibly half their diameter. No equal six-dot grille.",
+          "",
+          "Keep exactly three semantic colors: #172333, #E9E6DF, #7D2821. Keep the IP flat-first: only a very low-frequency diffuse tonal shift within the ivory and red forms, nearly invisible at 32 px. No scene, ceramic realism, texture, gloss, bevel, cast shadow, mouth, hands, fingers, legs, feet, text, watermark, transparency, or new details."
+        ]
+      }
+    ],
+    "metadata": {
+      "dimensions": [1254, 1254],
+      "opaque": true,
+      "colorMode": "RGB",
+      "bytes": 955826,
+      "sha256": "fc0610cf56f1de7b32a5b8a8a80d11b1bdd9a28680b94235094b70b96245cff7"
+    },
+    "seedApertureCount": 6,
+    "seedGeometryStatus": "pass at native size",
+    "smallSizeStatus": "pass",
+    "seedAt32px": "indistinct secondary cluster; individual apertures are not countable",
+    "skillStatus": "reject",
+    "deviations": [
+      "The navy field retains visible low-frequency variation instead of a perfectly uniform #172333 background.",
+      "The arms and shell carry stronger volumetric shading than the skill's nearly disappearing micro-volume target.",
+      "Counting all six seed circles, eyes, arms, aperture, and shell literally pushes the primitive count above the nominal 6–10 budget.",
+      "The seed hierarchy passes at native size but collapses into a small reddish cluster at 32 px."
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "id": "palari-050",
+  "createdAt": "2026-08-19T02:04:33Z",
+  "generator": "built-in ImageGen",
+  "modelNote": "The built-in service did not expose a model identifier; native 1254 px PNG outputs were preserved without post-processing.",
+  "promptEncoding": "Each promptLines array is the exact submitted prompt split on LF; join with a newline to reconstruct it byte-for-byte as text.",
+  "record": {
+    "silhouette": "crescent",
+    "material": "porcelain",
+    "characteristic": "coral",
+    "characteristicHex": "#B94F48",
+    "crown": "soft_overhang",
+    "opening": "narrow_channel",
+    "pose": "one_arm_resting",
+    "expression": "gently_amused",
+    "composition": "lower-left",
+    "identity": "swept ribbon crescent with a coral spine channel and resting arm"
+  },
+  "source": {
+    "path": "docs/palari-v2/expansion-03/generated/palari-050.png",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "colorSpace": "sRGB",
+    "opaque": true,
+    "sha256": "35ff242c05a8d029be55340f2f60670b3bf4d6caa25a10238ffec12f5b6f1832",
+    "prompts": [
+      {
+        "attempt": 1,
+        "intent": "generate",
+        "promptLines": [
+          "Use case: stylized-concept",
+          "Asset type: individual Palari V2 character study",
+          "",
+          "Primary request: Create one original Palari. Palari means Personal Artificial Intelligence. A Palari is a small crafted ceramic vessel whose single colored interior reveals its unique intelligence. This character belongs to a coherent species, not a human, conventional robot, toy wearing clothes, or household vessel.",
+          "",
+          "Selected design:",
+          "- identity: swept ribbon crescent with a coral spine channel and resting arm",
+          "- silhouette: slender asymmetric crescent with a finished architectural sweep and a closed exterior cap",
+          "- crown: small directional soft overhang integrated into the anatomy",
+          "- opening: one long narrow recessed channel following the inner spine",
+          "- pose: one rounded arm resting along the opening and the other close to the body",
+          "- expression: gently amused through the eyes only, with no mouth",
+          "- exterior material: soft cool-neutral off-white porcelain, never pure digital white",
+          "- characteristic color: muted deep coral (#B94F48)",
+          "",
+          "Family invariants:",
+          "- exactly one complete isolated figure with a stable continuous ceramic base",
+          "- tactile fine stoneware exterior with matte-to-satin glaze and subtle handmade microtexture",
+          "- exactly one characteristic hue: muted deep coral only, limited to the recessed inner intelligence, iris accents, and Palari seed mark; no other colored hue",
+          "- exactly one dominant architecturally intentional narrow channel and no unrelated holes",
+          "- exactly two calm half-lidded inset eyes with ceramic eyelids, dark pupils, coral iris accents, and tiny catchlights",
+          "- exactly two curved tubular ceramic arms ending in perfectly smooth seamless rounded tips with no hand anatomy; one rests along the opening and the other remains close to the body",
+          "- no conventional legs, knees, feet, toes, shoes, or visible human anatomy",
+          "- one compact six-aperture Palari seed mark on the lower front: four larger circular apertures at the corners of a compact rectangle plus exactly two smaller apertures centered vertically",
+          "- clean intact ceramic with smooth deliberately finished edges",
+          "- overall body height at least 2.4 times visible face height",
+          "- crescent exterior sweep is fully closed and finished, never an upward-facing cavity",
+          "",
+          "Scene: warm minimalist plaster alcove studio with a matte limestone floor.",
+          "Composition: eye-level three-quarter product portrait with minimal lens distortion; direct 1:1 square, full figure visible and centered, occupying about 76 percent of image height.",
+          "Lighting: soft diffused daylight from upper left with a gentle contact shadow. Preserve readable porcelain form and inner depth without neon glow.",
+          "",
+          "Avoid: simple horizontal bowl or cup rim, upward-facing cavity, open rim, fingers, thumbs, palms, fingernails, realistic hands, conventional legs, knees, feet, toes, shoes, human skin, hair, clothing, jewelry, demographic costume shorthand, multiple characteristic colors, rainbow effects, neon glow, robot joints, screens, wires, exposed machinery, appliance details, random holes, more than one dominant opening, cracks, chips, broken rims, dirt, antique distressing, cups, mugs, vases, planters, lamps, speakers, household appliances, generic mascot smiles, any visible mouth, chibi proportions, horror, vacant doll eyes, circular aperture surrounding the face, text, labels, numbers, logos, watermarks, duplicated characters."
+        ],
+        "resultReview": "Strong closed porcelain crescent, single coral spine opening, no-mouth eyes, two fingerless arms, legless base, palette, and studio framing; all six seed apertures are the same size."
+      },
+      {
+        "attempt": 2,
+        "intent": "precise-object-edit",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected Palari V2 character study",
+          "Input image: Image 1 is the edit target and must retain its character identity and complete native square composition.",
+          "Primary request: Correct only the compact Palari seed mark on the lower front of the porcelain crescent. Preserve exactly six coral apertures, but establish the required size hierarchy: four clearly larger circular apertures at the four corners of a compact upright rectangle plus exactly two visibly smaller circular apertures centered vertically between the left and right columns.",
+          "Constraints: change only the seed mark's aperture sizes and layout. Preserve the exact same swept off-white porcelain crescent silhouette with closed exterior cap, soft overhang, gently amused two-eye face with no mouth, one long coral spine channel, two fingerless tubular arms with one across the channel, continuous legless base, plaster alcove, camera, framing, material texture, upper-left daylight, contact shadow, and all colors. Keep exactly one characteristic hue, muted deep coral #B94F48. No extra holes anywhere. No upward-facing cavity, text, watermark, mouth, fingers, hands, legs, feet, cracks, or added objects."
+        ],
+        "resultReview": "The selected retry established four large and two small seed apertures, but placed the small pair horizontally rather than on the required centered vertical line."
+      }
+    ],
+    "grammarReview": {
+      "status": "reject",
+      "singleFigure": true,
+      "singleCharacteristicHue": true,
+      "dominantOpeningCount": 1,
+      "eyeCount": 2,
+      "fingerlessArmCount": 2,
+      "continuousLeglessBase": true,
+      "crescentClosedExterior": true,
+      "seedApertureCount": 6,
+      "seedGeometryStatus": "reject",
+      "deviations": [
+        "The selected source has four large and two small seed apertures, but the two small apertures are side-by-side instead of vertically centered on one line."
+      ]
+    }
+  },
+  "icon": {
+    "path": "docs/palari-v2/ip-icons/expansion-03/palari-050.png",
+    "attempts": 2,
+    "selectedAttempt": 2,
+    "dimensions": [1254, 1254],
+    "mode": "RGB",
+    "colorSpace": "sRGB",
+    "opaque": true,
+    "sha256": "5e958d9532538441e462e9f76837670a31e6e45b545fb97f5175a8b909015d2c",
+    "seedApertureCount": 6,
+    "smallSizeStatus": "pass",
+    "smallSizeReview": "At 32 x 32 the closed ivory crescent, coral spine channel, paired eye mark, and crossing arm remain immediately recognizable; the seed becomes subordinate.",
+    "strictSkillStatus": "reject",
+    "prompts": [
+      {
+        "attempt": 1,
+        "intent": "generate-with-identity-reference",
+        "promptLines": [
+          "Use case: logo-brand",
+          "Asset type: square Palari mascot logo icon",
+          "Input image: Image 1 is an identity reference only, not an edit target. Derive a new symbol from its swept crescent shell, spine aperture, eyes, asymmetric arm pose, and seed family detail. Do not copy its alcove, lighting, porcelain material realism, camera scene, or shadow.",
+          "",
+          "Primary request: Create one highly simplified IP mascot logo candidate, not a character illustration, for this exact Palari: a closed swept ribbon crescent with a small soft overhang, one long coral spine channel, two gently amused half-lidded eyes, one rounded arm resting across the opening and the other close to the shell, plus a compact seed detail. The closed crescent shell-and-aperture silhouette is the primary identity; the seed is secondary.",
+          "",
+          "Background: fully opaque edge-to-edge uniform solid deep navy #172333, used only for the background.",
+          "Subject colors: exactly warm ivory #E9E6DF for the shell, arms, and eyelids; exactly muted deep coral #B94F48 for the single continuous aperture region, two minimal eye marks, and the six-aperture seed family detail. No other semantic colors.",
+          "Composition: upright mark emerging from the lower-left corner, filling 75–85% of the square. Preserve both rounded arms and the closed swept crescent identity without an open top. Square outer corners.",
+          "Complexity: approximately 6–10 broad rounded semantic shapes; one dominant continuous outer silhouette; one large continuous coral inner region; only two simple half-lidded eyes and no mouth. Keep the exact six seed apertures tiny and subordinate, grouped as four larger corner circles plus two smaller circles centered vertically.",
+          "Style: flat-first vector-friendly geometry with thick rounded weighty contours. Use only one uninterrupted, extremely subtle low-frequency same-family diffuse gradient inside each large IP color region, sharing an upper-left-to-lower-right direction; transition spans at least half the form; total lightness variation at most 0.08; micro-volume visible only at full size and disappearing at 32 × 32.",
+          "Small-size requirement: at 32 × 32, the swept crescent, coral spine, and crossing arm must remain immediately readable; the seed may compress but must not become the main logo.",
+          "",
+          "Forbid: source scene, plaster alcove, floor, upward-facing cavity, open rim, realistic ceramic, texture, gloss, bevel, extrusion, strong 3D, clay toy rendering, cast shadow, contact shadow, highlight patches, closed shadow shapes, halo, vignette, background gradient, border, frame, App-icon mask, rounded canvas corners, transparency, text, watermark, mouth, eyebrows, nose, fingers, hands, legs, feet, clothing, machinery, extra openings, extra colors, decorative marks, thin lines, sharp points, centered sticker composition."
+        ],
+        "resultReview": "The crescent identity and no-mouth expression are strong, but the background is vignetted, the mark floats rather than emerging from the corner, and the two small seed circles are horizontal."
+      },
+      {
+        "attempt": 2,
+        "intent": "precise-object-edit",
+        "promptLines": [
+          "Use case: precise-object-edit",
+          "Asset type: corrected square Palari mascot logo icon",
+          "Input images: Image 1 is the original identity reference; Image 2 is the logo candidate edit target.",
+          "Primary request: Correct only three rule failures in Image 2 while preserving its exact simplified closed crescent sweep, long coral spine, two half-lidded eyes, one crossing arm and one resting arm, ivory/coral palette, flat-first geometry, and no-mouth expression.",
+          "1. Replace the visible navy vignette/gradient with a perfectly uniform, fully opaque, edge-to-edge solid #172333 field. No lighting variation, halo, or texture in the background.",
+          "2. Recompose the intact upright mark so it clearly emerges from the lower-left corner and fills 75–85% of the square, without cropping either arm or the closed rounded crown.",
+          "3. Correct the six-dot seed geometry: keep exactly six muted-coral #B94F48 circles, arranged as four larger corner circles of a compact upright rectangle plus exactly two smaller circles on one centered vertical line between those columns, not side-by-side.",
+          "Constraints: retain exactly three semantic colors total: #172333 only for background, #E9E6DF for the ivory shell/arms/eyelids, and #B94F48 for the aperture/eye region/seed. Keep the source identity led by shell plus aperture and the asymmetric arms. No new details. No upward-facing cavity, scene, realistic material, texture, gloss, bevel, strong 3D, cast shadow, mouth, human anatomy, thin lines, border, transparency, rounded canvas corners, text, or watermark."
+        ],
+        "resultReview": "The lower-left bias improved slightly, but the vignette and horizontal small seed pair remained."
+      }
+    ],
+    "deviations": [
+      "The navy background retains a visible center-to-edge vignette instead of a uniform #172333 field.",
+      "The mark floats with a narrow navy gap below its base and occupies more than the requested 75–85% height rather than clearly emerging from the lower-left.",
+      "The six seed circles include four large corners and two small circles side-by-side, not on one centered vertical line.",
+      "Ivory and coral regions drift numerically from the requested hex bases and show discrete contact darkening around the arms beyond strict micro-volume.",
+      "The literal geometry exceeds the nominal 6–10 shape budget once eyes, arms, aperture, and seed circles are counted separately."
+    ]
+  }
+}
