@@ -28,6 +28,12 @@ For customized renders, `src/lib/recolor-v2.ts` loads the source and both masks 
 
 The editor's **Original** view takes a separate source-only render path. It draws the transparent delivery source without reading either prepared mask, applying a recolor, or adding a background. The **Emoticon** view draws the selected figure's fixed-palette 1024px logo asset and swaps the shape rail to its 256px emoticon thumbnails. Selecting any finish swatch returns to the customized render. Exports use the active view: Original preserves source transparency, while Emoticon exports an opaque 1024 × 1024 PNG.
 
+## Preference review
+
+The V2 dashboard's **Review taste** mode presents the original ceramic character and fixed-palette icon side by side. Each representation receives an independent Favorite, Keep, Mixed, or Avoid verdict, structured feature likes and dislikes, and an optional note. Ceramic-specific tags cover texture, volume, and framing; icon-specific tags cover flatness, color balance, background, and small-size legibility. Shared tags cover the silhouette, crown, opening, proportions, eyes, arm pose, asymmetry, color placement, and seed mark. A feature cannot be liked and disliked for the same representation at the same time.
+
+Review data remains in the browser under the versioned `palari.v2.preferences.v1` local-storage key. It is not uploaded and the static site has no preference backend. The dashboard can export a versioned `palari-v2-preferences.json` file containing stable IDs, human-readable tag labels, source silhouette names, timestamps, and both representation reviews. Import validates the schema, known Palari IDs, verdicts, and tag IDs before merging records. This export is the handoff for aggregating favored and rejected traits into future generation briefs without treating an overall dislike as a rejection of every visible feature.
+
 ## Delivery and review
 
 `npm run palari-v2:web:generate` creates one lossy transparent source WebP and two pixel-identical lossless mask WebPs per figure. `public/palari-v2-web/manifest.json` checksum-links all 246 outputs to their PNG authorities.
@@ -46,3 +52,5 @@ Expansion review exercised IDs 013–082 together with deliberately different ma
 The neutral editing-master pilot was additionally reviewed with deliberately distant finish transfers: Palari 005 at charcoal/amber/dusk, Palari 028 at porcelain/coral/plaster, and Palari 041 at charcoal/violet/mist. Original mode was checked at 390 × 844 and the browser reported no console errors or warnings.
 
 Expansion 03 received final dashboard QA at 1280 × 720 and 390 × 844. Palari 082 was exercised in both customized ceramic and fixed-palette Emoticon views, the selector exposed all contiguous IDs through No. 082, and the browser reported no console errors or warnings.
+
+Preference review QA covered 1280 × 800, 768 × 1024, 390 × 844, and 320 × 568 viewports. The tested flow rated both representations, moved a feature between dislike and like, added a note, navigated by keyboard, filtered the library, survived a reload, exported JSON, and imported that export into a fresh browser session. The 320px layout had no horizontal document overflow and the browser reported no console errors or warnings.
