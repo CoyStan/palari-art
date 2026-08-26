@@ -7,6 +7,7 @@ import { makeGeneratedPalari, v3Avatars, type PalariV3Avatar, type PalariV3Selec
 import { downloadAvatar, type AvatarFrame } from "./download";
 import { FrameSelector } from "./FrameSelector";
 import { MotionSelector } from "./MotionSelector";
+import { ViewSelector, type PalariViewMode } from "./ViewSelector";
 
 function initialAvatar(): PalariV3Selection {
   const search = new URLSearchParams(window.location.search);
@@ -20,10 +21,12 @@ export function V3App() {
   const [avatar, setAvatar] = useState<PalariV3Selection>(initialAvatar);
   const [frame, setFrame] = useState<AvatarFrame>("soft");
   const [motionEnabled, setMotionEnabled] = useState(true);
+  const [view, setView] = useState<PalariViewMode>("cover");
   const [downloading, setDownloading] = useState(false);
 
   function chooseAvatar(nextAvatar: PalariV3Avatar) {
     setAvatar(nextAvatar);
+    if (!nextAvatar.rig) setView("cover");
     const url = new URL(window.location.href);
     url.searchParams.set("palari", nextAvatar.id);
     url.searchParams.delete("seed");
@@ -71,17 +74,18 @@ export function V3App() {
       </header>
 
       <section className="v3-workspace">
-        <AvatarPreview avatar={avatar} frame={frame} motionEnabled={motionEnabled} />
+        <AvatarPreview avatar={avatar} frame={frame} motionEnabled={motionEnabled} view={view} />
 
         <section className="v3-chooser" aria-labelledby="v3-title">
           <div className="v3-intro">
             <h1 id="v3-title">Choose your Palari.</h1>
-            <p>Pick one, or make a new companion from shapes, color, and a seed.</p>
+            <p>Pick one, or grow a new companion from bones, soft cover, color, and a seed.</p>
           </div>
 
           <AvatarPicker avatars={v3Avatars} activeAvatar={avatar} onSelect={chooseAvatar} />
           <div className="v3-controls">
             <FrameSelector frame={frame} onChange={setFrame} />
+            <ViewSelector view={view} enabled={Boolean(avatar.rig)} onChange={setView} />
             <MotionSelector enabled={motionEnabled} onChange={setMotionEnabled} />
           </div>
 

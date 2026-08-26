@@ -1,4 +1,5 @@
 import type { PalariV3Avatar, PalariV3Selection } from "./data";
+import { ProceduralPalari } from "./ProceduralPalari";
 
 type AvatarPickerProps = {
   avatars: PalariV3Avatar[];
@@ -20,7 +21,11 @@ export function AvatarPicker({ avatars, activeAvatar, onSelect }: AvatarPickerPr
           title={avatar.name}
           onClick={() => onSelect(avatar)}
         >
-          <img src={avatar.thumbnail} alt="" width="256" height="256" loading="eager" decoding="async" />
+          {avatar.rig ? (
+            <ProceduralPalari rig={avatar.rig} motionEnabled={false} bounceSignal={0} view="cover" />
+          ) : (
+            <img src={avatar.thumbnail} alt="" width="256" height="256" loading="eager" decoding="async" />
+          )}
         </button>
       ))}
     </div>

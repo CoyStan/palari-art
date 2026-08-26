@@ -52,13 +52,15 @@ All six pass the strict logo grammar and the 32px eye and silhouette check. `col
 
 ## Procedural rig and motion
 
-The V3 browser app reconstructs the six catchlight characters as live SVG rigs. `src/v3/procedural.ts` keeps the rest-pose paths, palette, arms, eyes, and motion parameters as data. The skeleton has one bottom root, one face group, two arm pivots, and two eye groups. It adds no mouth, emblem, cast shadow, or new semantic color.
+The V3 browser app builds the six catchlight characters and every seeded character skeleton-first. `src/v3/skeleton.ts` creates an explicit 11-joint graph: one root-to-chest support, a head, two shoulder-elbow-hand arms, and two eye anchors. Presets store only bounded proportions, family, palette, and motion traits. They contain no shell or face paths.
 
-The **Make one** action uses a numeric seed to choose one of three silhouette families, bounded geometry, a reviewed color pair, eye placement, arm placement, and motion timing. The seed stays in the URL, so reloading the same URL recreates the same character without an image-generation request. Generated and bundled rigged characters export locally as a neutral 1024px PNG.
+`src/v3/cover.ts` then derives the continuous shelter, continuous face region, rounded arm covers, and catchlit eyes from that graph and its proportions. The six matching picker tiles use those covers too, rather than their earlier finished-image thumbnails. The **Cover/Bones** control exposes both stages in the live preview, so the generated surface can be checked against its originating joints. The cover adds no mouth, emblem, cast shadow, or new semantic color.
+
+The **Make one** action uses a numeric seed to choose one of three skeleton families, bounded proportions, a reviewed color pair, gaze, and motion timing. The seed stays in the URL, so reloading the same URL recreates the same skeleton and cover without an image-generation request. Generated and bundled rigged characters export the neutral cover locally as a 1024px PNG, even when the inspection view is showing bones.
 
 Idle motion uses transform-only CSS animation for the root, head, arms, blinks, and gaze. The browser samples it at the display refresh rate, normally 60 frames per second on a 60Hz screen. Tapping the preview runs a 680ms squash, lift, and settle response through the Web Animations API. The **Still** control removes idle motion, and `prefers-reduced-motion` also prevents the tap animation.
 
-The rig uses native SVG, CSS, and browser animation APIs. V3 does not ship Rive, Spine, PixiJS, Lottie, a physics engine, or runtime image generation.
+The skeleton and its cover share the same head and shoulder pivots, so motion is applied to the structure rather than inferred from finished art. The rig uses native SVG, CSS, and browser animation APIs. V3 does not ship Rive, Spine, PixiJS, Lottie, a physics engine, or runtime image generation.
 
 ## Interface reference
 

@@ -1,5 +1,8 @@
 import { useEffect, useRef, type CSSProperties } from "react";
-import type { PalariRig, RigEye } from "./procedural";
+import type { CoverEye } from "./cover";
+import type { PalariRig } from "./procedural";
+import type { PalariJointName, Point } from "./skeleton";
+import type { PalariViewMode } from "./ViewSelector";
 
 type MotionStyle = CSSProperties & {
   "--v3-cycle": string;
@@ -32,20 +35,21 @@ type ProceduralPalariProps = {
   rig: PalariRig;
   motionEnabled: boolean;
   bounceSignal: number;
+  view: PalariViewMode;
 };
 
-function RigEyeShape({ eye, index, rig }: { eye: RigEye; index: number; rig: PalariRig }) {
-  const pupilX = eye.x + eye.pupilOffsetX;
-  const pupilY = eye.y + eye.pupilOffsetY;
+function RigEyeShape({ eye, index, rig }: { eye: CoverEye; index: number; rig: PalariRig }) {
+  const pupilX = eye.anchor.x + eye.pupilOffsetX;
+  const pupilY = eye.anchor.y + eye.pupilOffsetY;
   const catchlightRadius = Math.max(18, Math.round(eye.pupilRadius * 0.35));
 
   return (
     <g
       className="v3-rig-eye"
       data-eye={index === 0 ? "left" : "right"}
-      style={{ transformOrigin: `${eye.x}px ${eye.y}px` }}
+      style={{ transformOrigin: `${eye.anchor.x}px ${eye.anchor.y}px` }}
     >
-      <circle cx={eye.x} cy={eye.y} r={eye.whiteRadius} fill={rig.eyeWhite} />
+      <circle cx={eye.anchor.x} cy={eye.anchor.y} r={eye.whiteRadius} fill={rig.eyeWhite} />
       <g className="v3-rig-gaze">
         <circle cx={pupilX} cy={pupilY} r={eye.pupilRadius} fill={rig.background} />
         <circle
@@ -59,7 +63,95 @@ function RigEyeShape({ eye, index, rig }: { eye: RigEye; index: number; rig: Pal
   );
 }
 
-export function ProceduralPalari({ rig, motionEnabled, bounceSignal }: ProceduralPalariProps) {
+function Bone({ from, to, className }: { from: Point; to: Point; className?: string }) {
+  return <line className={className} x1={from.x} y1={from.y} x2={to.x} y2={to.y} />;
+}
+
+function Joint({ name, point, radius = 22 }: { name: PalariJointName; point: Point; radius?: number }) {
+  return <circle className="v3-skeleton-joint" data-joint={name} cx={point.x} cy={point.y} r={radius} />;
+}
+
+function SkeletonView({ rig }: { rig: PalariRig }) {
+  const { joints } = rig.skeleton;
+  const headOrigin = `${joints.head.x}px ${joints.head.y}px`;
+
+  return (
+    <g
+      className="v3-skeleton"
+      data-joint-count={Object.keys(joints).length}
+      stroke={rig.eyeWhite}
+      fill={rig.face[0]}
+    >
+      <Bone from={joints.root} to={joints.chest} />
+      <Bone from={joints.chest} to={joints.head} />
+      <Bone from={joints.chest} to={joints.leftShoulder} />
+      <Bone from={joints.chest} to={joints.rightShoulder} />
+      <Joint name="root" point={joints.root} radius={28} />
+      <Joint name="chest" point={joints.chest} radius={30} />
+
+      <g className="v3-rig-head" style={{ transformOrigin: headOrigin }}>
+        <Bone from={joints.head} to={joints.leftEye} className="v3-skeleton-eye-bone" />
+        <Bone from={joints.head} to={joints.rightEye} className="v3-skeleton-eye-bone" />
+        <Joint name="head" point={joints.head} radius={31} />
+        <Joint name="leftEye" point={joints.leftEye} radius={36} />
+        <Joint name="rightEye" point={joints.rightEye} radius={36} />
+      </g>
+
+      <g className="v3-rig-arm" data-arm="left" style={{ transformOrigin: `${joints.leftShoulder.x}px ${joints.leftShoulder.y}px` }}>
+        <Bone from={joints.leftShoulder} to={joints.leftElbow} />
+        <Bone from={joints.leftElbow} to={joints.leftHand} />
+        <Joint name="leftShoulder" point={joints.leftShoulder} />
+        <Joint name="leftElbow" point={joints.leftElbow} />
+        <Joint name="leftHand" point={joints.leftHand} radius={28} />
+      </g>
+
+      <g className="v3-rig-arm" data-arm="right" style={{ transformOrigin: `${joints.rightShoulder.x}px ${joints.rightShoulder.y}px` }}>
+        <Bone from={joints.rightShoulder} to={joints.rightElbow} />
+        <Bone from={joints.rightElbow} to={joints.rightHand} />
+        <Joint name="rightShoulder" point={joints.rightShoulder} />
+        <Joint name="rightElbow" point={joints.rightElbow} />
+        <Joint name="rightHand" point={joints.rightHand} radius={28} />
+      </g>
+    </g>
+  );
+}
+
+function CoverView({ rig, gradientId }: { rig: PalariRig; gradientId: string }) {
+  const { cover, skeleton } = rig;
+  return (
+    <>
+      <path className="v3-cover-shell" d={cover.shellPath} fill={`url(#${gradientId}-ivory)`} />
+      <g
+        className="v3-rig-head"
+        style={{ transformOrigin: `${skeleton.joints.head.x}px ${skeleton.joints.head.y}px` }}
+      >
+        <path className="v3-cover-face" d={cover.facePath} fill={`url(#${gradientId}-face)`} />
+        {cover.eyes.map((eye, index) => <RigEyeShape key={index} eye={eye} index={index} rig={rig} />)}
+      </g>
+
+      {cover.arms.map((arm, index) => (
+        <g
+          key={index}
+          className="v3-rig-arm"
+          data-arm={index === 0 ? "left" : "right"}
+          style={{ transformOrigin: `${arm.pivot.x}px ${arm.pivot.y}px` }}
+        >
+          <path
+            className="v3-cover-arm"
+            d={arm.path}
+            fill="none"
+            stroke={`url(#${gradientId}-ivory)`}
+            strokeWidth={arm.width}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
+      ))}
+    </>
+  );
+}
+
+export function ProceduralPalari({ rig, motionEnabled, bounceSignal, view }: ProceduralPalariProps) {
   const hopRef = useRef<HTMLDivElement>(null);
   const activeHop = useRef<Animation | null>(null);
   const gradientId = `v3-rig-${rig.seed}`;
@@ -112,7 +204,7 @@ export function ProceduralPalari({ rig, motionEnabled, bounceSignal }: Procedura
   return (
     <div className="v3-rig-hop" ref={hopRef}>
       <div className="v3-rig-idle" data-motion={motionEnabled} style={motionStyle}>
-        <svg viewBox="0 0 1254 1254" width="1254" height="1254" aria-hidden="true" focusable="false">
+        <svg viewBox="0 0 1254 1254" width="1254" height="1254" data-view={view} aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id={`${gradientId}-ivory`} gradientUnits="userSpaceOnUse" x1="100" y1="120" x2="1120" y2="1160">
               <stop offset="0" stopColor={rig.ivory[0]} />
@@ -125,30 +217,7 @@ export function ProceduralPalari({ rig, motionEnabled, bounceSignal }: Procedura
           </defs>
 
           <rect width="1254" height="1254" fill={rig.background} />
-          <path d={rig.shellPath} fill={`url(#${gradientId}-ivory)`} />
-
-          <g className="v3-rig-head" style={{ transformOrigin: `${rig.facePivot[0]}px ${rig.facePivot[1]}px` }}>
-            <path d={rig.facePath} fill={`url(#${gradientId}-face)`} />
-            {rig.eyes.map((eye, index) => <RigEyeShape key={index} eye={eye} index={index} rig={rig} />)}
-          </g>
-
-          {rig.arms.map((arm, index) => (
-            <g
-              key={index}
-              className="v3-rig-arm"
-              data-arm={index === 0 ? "left" : "right"}
-              style={{ transformOrigin: `${arm.pivotX}px ${arm.pivotY}px` }}
-            >
-              <ellipse
-                cx={arm.x}
-                cy={arm.y}
-                rx={arm.radiusX}
-                ry={arm.radiusY}
-                transform={`rotate(${arm.rotation} ${arm.x} ${arm.y})`}
-                fill={`url(#${gradientId}-ivory)`}
-              />
-            </g>
-          ))}
+          {view === "bones" ? <SkeletonView rig={rig} /> : <CoverView rig={rig} gradientId={gradientId} />}
         </svg>
       </div>
     </div>
