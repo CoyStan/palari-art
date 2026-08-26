@@ -118,4 +118,4 @@ await writeFile(path.join(outputRoot, "manifest.json"), `${JSON.stringify({
 }, null, 2)}\n`);
 
 const newCount = results.filter((entry) => entry.sourceKind === "v3-generated").length;
-console.log(`Prepared ${newCount * 2} new V3 WebPs and registered ${results.length} founding avatars.`);
+console.log(`Prepared ${newCount * 2} native V3 WebPs and registered ${results.length} avatars.`);

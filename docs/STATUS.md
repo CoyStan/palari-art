@@ -2,13 +2,13 @@
 
 Last updated: 2026-08-26
 
-## Palari V3 founding release
+## Palari V3 mouthless expansion
 
 - V3 is now the icon-first product direction at `/v3/`; ceramic recoloring remains at `/v2/`, while 3D stays deferred and outside the Pages build.
-- The founding family contains 12 named companions. Cove, Fern, Hush, Nook, Ember, and Luma retain six recognizable V2 silhouettes. Poppy, Plum, Moss, Pip, Sunny, and Ruby are six new 1254px native icons generated around broader hoods, pods, bells, short rounded arms, open eyes, and friendlier expressions.
-- `docs/palari-v3/collection.json` is the source registry and deviation record. The accepted app concept, full contact sheet, 32px readability strip, prompts, generation contract, and six new PNG authorities live beside it under `docs/palari-v3/`.
-- The responsive browser app provides a 4 × 3 picker, large companion preview, soft/circle/square frames, non-repeating surprise selection, URL-linked IDs, and local 1024 × 1024 PNG download. Playwright verified the 1536 × 1024 and 390 × 844 layouts, zero horizontal mobile overflow, frame and surprise state, and an exact 1024px RGBA download.
-- `npm run verify:palari-v3` validates all 12 source records and WebP checksums. `npm run build:pages` now creates a verified 231.3 MiB artifact containing 314 V1 avatar WebPs, 1,395 mask WebPs, 40 handbook WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 12 V3 avatar WebPs, with no PNGs.
+- The family now contains 18 named companions: six retained V2 silhouettes and 12 native 1254px icons. Moss, Poppy, and Sunny were revised to remove their dot emblems while preserving their mouthless faces. Pebble, Briar, Dune, Bluebell, Mallow, and Fig extend that mouthless, emblem-free direction across pod, bell, and hood silhouettes.
+- `docs/palari-v3/collection.json` is the source registry and deviation record. The accepted founding concept, updated 18-character contact sheet, 32px readability strip, prompts, generation contract, and 12 native PNG authorities live beside it under `docs/palari-v3/`.
+- The responsive browser app provides a 6 × 3 desktop picker that reflows to five or four columns, a large companion preview, soft/circle/square frames, non-repeating surprise selection, URL-linked IDs, and local 1024 × 1024 PNG download. Playwright verified the 1536 × 1024 and 390 × 844 layouts, all 18 accessible choices, zero horizontal mobile overflow, frame and surprise state, and an exact 1024px RGBA download.
+- `npm run verify:palari-v3` validates all 18 source records and WebP checksums. `npm run build:pages` now creates a verified 231.5 MiB artifact containing 314 V1 avatar WebPs, 1,395 mask WebPs, 40 handbook WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 24 native V3 avatar WebPs, with no PNGs.
 
 ## Palari V2 production
 
@@ -29,7 +29,7 @@ Last updated: 2026-08-26
 - **Avatar 024 is retired:** `expanded-14` is excluded from the application library. Its source, masks, framing, attributes, and provenance remain archived so later IDs stay stable and the retirement can be reversed safely.
 - **Web delivery is optimized:** all 157 PNG masters have checksum-linked 1024px editor WebPs and 256px gallery thumbnails under `public/avatars-web/`. The generated delivery set is 11.0 MiB instead of 308.4 MiB, a 96.4% reduction; the masters remain unchanged.
 - **Runtime masks are optimized:** all 1,395 registered runtime PNG layers have checksum-linked lossless WebPs under `public/masks-web/`. Exact generation comparisons found zero differing pixels. The delivery tier is 204.4 MiB instead of 322.8 MiB, a 36.7% reduction; reviewed PNGs remain authoritative.
-- **The public editors are deployment-ready:** GitHub Pages serves V1 at `https://coystan.github.io/palari-art/`, V2 at `/v2/`, and V3 at `/v3/`. `npm run build:pages` creates a verified 231.3 MiB artifact containing 314 avatar WebPs, 1,395 V1 mask WebPs, 40 gallery WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 12 V3 avatar WebPs with no PNG, PDF, or audit files.
+- **The public editors are deployment-ready:** GitHub Pages serves V1 at `https://coystan.github.io/palari-art/`, V2 at `/v2/`, and V3 at `/v3/`. `npm run build:pages` creates a verified 231.5 MiB artifact containing 314 avatar WebPs, 1,395 V1 mask WebPs, 40 gallery WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 24 native V3 avatar WebPs with no PNG, PDF, or audit files.
 - **The teaching-art gallery is deployed:** `/handbook/` is a text-free responsive gallery of 20 reviewed plates and 40 checksum-linked WebPs. It has no visible title, prose, controls, or PDF.
 - **No API batch should run now:** rerun BiRefNet or SAM only after intentionally changing source pixels. A source replacement invalidates every pixel-aligned layer for that ID, including the local hair-matting derivatives.
 - **Drive delivery:** the regenerated 105 set remains in its documented `Clean Render Full - 105` folder. The original 12-portrait coverage copy is separately delivered through `gdrive` at `Palari Standardized Avatars 1x1/Coverage Expansion - 12`; MD5 verification found 12 matches and zero differences. Avatars 156 and 157 are repository-only because no Drive upload was requested.
@@ -37,7 +37,7 @@ Last updated: 2026-08-26
 
 ## Working now
 
-- Icon-first Palari V3 picker with 12 named companions, responsive preview and selection, three frame treatments, non-repeating surprise selection, and local 1024px PNG export.
+- Icon-first Palari V3 picker with 18 named companions, responsive preview and selection, three frame treatments, non-repeating surprise selection, and local 1024px PNG export.
 - React/Vite avatar color studio.
 - 156 active Palari portraits presented in one deterministic mixed grid from 157 bundled sources. Avatar 024 (`expanded-14`) is intentionally excluded without renumbering the remaining portraits.
 - Additive, multi-select feature discovery across apparent-age band, skin-tone band, hair, facial hair, eyewear, headwear, jewelry, and garment style. Selections within one group broaden results; different groups narrow them together. The picker intentionally exposes no feminine/masculine presentation filter.

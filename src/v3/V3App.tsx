@@ -9,7 +9,7 @@ import { FrameSelector } from "./FrameSelector";
 
 function initialAvatar() {
   const requestedId = new URLSearchParams(window.location.search).get("palari");
-  return v3Avatars.find((avatar) => avatar.id === requestedId) ?? v3Avatars[7];
+  return v3Avatars.find((avatar) => avatar.id === requestedId) ?? v3Avatars[8];
 }
 
 export function V3App() {

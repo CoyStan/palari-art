@@ -170,8 +170,8 @@ a:focus-visible {
 
 .v3-avatar-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(10px, 1.2vw, 16px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(8px, .8vw, 12px);
 }
 
 .v3-avatar-tile {
@@ -354,6 +354,10 @@ a:focus-visible {
   .v3-actions button {
     min-height: 58px;
   }
+
+  .v3-avatar-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 780px) {
@@ -417,6 +421,7 @@ a:focus-visible {
   }
 
   .v3-avatar-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
   }
 

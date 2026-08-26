@@ -25,9 +25,9 @@ There is no application server, database, authentication layer, or persistent up
 
 ## Palari V3 runtime
 
-`src/v3/main.tsx` mounts the icon-first picker. `src/v3/data.ts` registers a founding set of 12 avatars: six checksum-linked V2 emoticons and six new native V3 masters documented under `docs/palari-v3/`. The interface keeps one selected companion in React state, mirrors its stable ID into the URL, and provides soft, circle, and square frame treatments plus deterministic local Canvas export at 1024 × 1024. Surprise selection never repeats the current avatar.
+`src/v3/main.tsx` mounts the icon-first picker. `src/v3/data.ts` registers 18 avatars: six checksum-linked V2 emoticons and 12 native V3 masters documented under `docs/palari-v3/`. The interface keeps one selected companion in React state, mirrors its stable ID into the URL, and provides soft, circle, and square frame treatments plus deterministic local Canvas export at 1024 × 1024. Surprise selection never repeats the current avatar.
 
-V3 loads the 12 registered WebPs from the existing V2 emoticon tier and `public/palari-v3-icons-web/`. `scripts/generate-palari-v3-assets.mjs` derives the six V3 WebPs and records source and delivery checksums; `scripts/verify-palari-v3.mjs` validates the full mixed registry, dimensions, checksums, contiguous IDs, and runtime registration. The self-hosted Quicksand files and license live with `src/v3/` and are bundled by Vite. V3 has no uploads, mask processing, recoloring API, backend, or 3D runtime.
+V3 loads the registered WebPs from the existing V2 emoticon tier and `public/palari-v3-icons-web/`. `scripts/generate-palari-v3-assets.mjs` derives full and thumbnail delivery files for all 12 native V3 masters and records source and delivery checksums; `scripts/verify-palari-v3.mjs` validates the full mixed registry, dimensions, checksums, contiguous IDs, and runtime registration. The self-hosted Quicksand files and license live with `src/v3/` and are bundled by Vite. V3 has no uploads, mask processing, recoloring API, backend, or 3D runtime.
 
 ## Runtime flow
 

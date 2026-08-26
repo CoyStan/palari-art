@@ -1,32 +1,37 @@
-# Palari V3 founding avatars
+# Palari V3 avatar collection
 
 Palari V3 makes the flat avatar collection the product. The ceramic V2 sources remain available as provenance and a future 3D direction, but V3 does not expose ceramic recoloring or 3D controls.
 
-The founding set contains 12 avatars:
+The expanded set contains 18 avatars:
 
 - Six curated V2 icons: `palari-005`, `011`, `019`, `033`, `047`, and `079`.
-- Six new native 1254 × 1254 RGB PNGs under `icons/`.
+- Twelve native 1254 × 1254 RGB PNGs under `icons/`.
 
-The V3 character sentence is: **A little protective shelter hugging its own colorful intelligence.** New characters favor broad hoods, pods, bells, and arches; one coherent colored face; large open eyes; short rounded arms; and a stable legless base. Every generated candidate received one targeted correction pass for the background and seed signature. Remaining deviations are recorded in `collection.json` rather than hidden with pixel edits.
+The V3 character sentence is: **A little protective shelter hugging its own colorful intelligence.** Characters favor broad hoods, pods, bells, and arches; one coherent colored face; large open eyes; short rounded arms; and a stable legless base.
 
-## Generation contract
+## Mouthless expansion
 
-The six new characters were produced with six separate built-in ImageGen calls across three directions: protective hood, rounded pod, and soft bell or arch. Each prompt used this shared contract plus one character-specific silhouette, color, expression, and pose:
+The second native batch follows a stricter cute-avatar direction based on Moss, Poppy, and Sunny:
+
+- Moss (`palari-v3-009`), Poppy (`palari-v3-007`), and Sunny (`palari-v3-011`) were revised to remove their dot emblems. Their silhouettes, eyes, arms, colors, and mouthless expressions were preserved.
+- Pebble and Briar explore squat rounded pods.
+- Dune and Bluebell explore twin-crown bells.
+- Mallow and Fig explore protective round hoods.
+
+All six new characters are deliberately mouthless and have no dot emblem, belly mark, nose, text, or logo. They were generated independently with six built-in ImageGen calls so each candidate could develop its own silhouette. Briar received one targeted correction to make its cap blunt and rounded instead of pointed. The slight tonal variation in the navy fields and the stronger-than-minimal arm volume remain recorded in `collection.json` rather than hidden with pixel edits.
+
+The shared prompt contract for this batch was:
 
 ```text
-Create one original, friendly Palari V3 mascot logo. A Palari is a little protective shelter hugging its own colorful intelligence. Make a logo first and a character second.
+Create one original, friendly Palari V3 mascot avatar. Make a logo first and a character second. Show one continuous warm-ivory protective shelter around one large continuous colored face, exactly two large open eyes, and exactly two short rounded fingerless arms. Use only deep navy #172333, warm ivory #E9E6DF, and one assigned face color. Center the character at 80–88% of the square and keep it recognizable at 32 × 32.
 
-Use one dominant rounded silhouette built from 6–10 broad shapes. Use warm ivory #E9E6DF for the outer shell and arms, one assigned characteristic color for one large continuous inner face plus the compact seed, and edge-to-edge deep navy #172333 for the background. Keep exactly two large open eyes together inside the inner face, exactly two short fingerless arms, a stable continuous legless base, and the six-part 4+2 Palari seed. Fill 80–88% of the square and remain readable at 32 × 32.
-
-Forbid detached heads, thin necks, eye stalks, horns, sharp crowns, long slit faces, cup rims, speaker-like belly holes, machinery, clothing, hands, fingers, legs, extra openings, extra eyes, extra colors, background gradients, vignette, glow, external shadow, strong 3D, texture, scene, text, watermark, border, transparency, and App-icon masks.
+The character must be completely mouthless. Do not add a mouth, smile, nose, eyebrows, freckles, dots, seed, emblem, logo, belly mark, text, or watermark. Also forbid thin necks, eye stalks, horns, sharp points, hands, fingers, legs, extra openings, extra eyes, extra colors, texture, scene, border, transparency, and app-icon masks.
 ```
 
-The correction pass changed only the field to opaque navy and the seed to the intended 4+2 geometry. `palari-v3-007` and `palari-v3-012` still contain five seed apertures and remain documented exceptions.
+## Interface reference
 
-## Interface concept
+`v3-app-concept.png` is the original 1536 × 1024 implementation reference for the founding set. The expanded interface retains its quiet icon-first picker, large companion preview, three frame treatments, surprise selection, and local PNG download. The desktop picker now uses a 6 × 3 grid; smaller screens reflow to five or four columns.
 
-`v3-app-concept.png` is the accepted 1536 × 1024 implementation reference. It defines a quiet icon-first picker with one large companion preview, a 4 × 3 founding-set grid, three frame treatments, surprise selection, and local PNG download.
+`contact-sheet.png` shows the full 18-character family at gallery size. `contact-sheet-32px.png` is the small-size legibility check. The interface uses the self-hosted Quicksand family stored under `src/v3/fonts/` with its included OFL license.
 
-`contact-sheet.png` shows the full founding family at gallery size. `contact-sheet-32px.png` is the small-size legibility check; all 12 silhouettes and face regions remain distinct. The interface uses the self-hosted Quicksand family stored with `src/v3/fonts/` under its included OFL license.
-
-Run `npm run palari-v3:web:generate` after a native V3 PNG changes. `npm run verify:palari-v3` validates all 12 registered sources and delivery assets.
+Run `npm run palari-v3:web:generate` after a native V3 PNG changes. `npm run verify:palari-v3` validates all 18 registered sources and delivery assets.

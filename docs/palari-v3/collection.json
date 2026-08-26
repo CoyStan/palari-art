@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "createdAt": "2026-08-26",
-  "status": "founding-avatar-collection",
+  "status": "expanded-avatar-collection",
   "concept": "A little protective shelter hugging its own colorful intelligence.",
   "avatars": [
     {
@@ -73,9 +73,10 @@
       "icon": "palari-v3-icons-web/palari-v3-007/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-007/thumbnail.webp",
       "generationDirection": "protective hood with a coral face and two cradling arms",
+      "revisionDirection": "Remove the dot emblem and preserve the mouthless face, silhouette, pose, palette, and eye expression.",
       "smallSizeStatus": "pass",
       "strictSkillStatus": "reject",
-      "deviations": ["The seed mark contains five apertures after the allowed correction pass.", "The navy field retains subtle tonal variation."]
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
     },
     {
       "id": "palari-v3-008",
@@ -99,9 +100,10 @@
       "icon": "palari-v3-icons-web/palari-v3-009/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-009/thumbnail.webp",
       "generationDirection": "squat teal pebble pod hugging one broad inner face",
+      "revisionDirection": "Remove the dot emblem and preserve the mouthless face, silhouette, pose, palette, and uneven eye placement.",
       "smallSizeStatus": "pass",
       "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains subtle tonal variation.", "The seed is reversed to ivory inside the characteristic region."]
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
     },
     {
       "id": "palari-v3-010",
@@ -125,6 +127,7 @@
       "icon": "palari-v3-icons-web/palari-v3-011/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-011/thumbnail.webp",
       "generationDirection": "ochre soft bell with a blunt twin-petal crown and resting arms",
+      "revisionDirection": "Remove the dot emblem and preserve the mouthless face, twin crown, pose, palette, and eye expression.",
       "smallSizeStatus": "pass",
       "strictSkillStatus": "reject",
       "deviations": ["The navy field retains subtle tonal variation.", "The eyes use stronger tonal contrast than the strict three-color target."]
@@ -141,6 +144,84 @@
       "smallSizeStatus": "pass",
       "strictSkillStatus": "reject",
       "deviations": ["The seed mark contains five apertures after the allowed correction pass.", "The navy field retains subtle tonal variation."]
+    },
+    {
+      "id": "palari-v3-013",
+      "name": "Pebble",
+      "family": "pod",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-013.png",
+      "icon": "palari-v3-icons-web/palari-v3-013/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-013/thumbnail.webp",
+      "generationDirection": "glaucous-blue squat pebble pod with uneven curious eyes and inward resting arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
+    },
+    {
+      "id": "palari-v3-014",
+      "name": "Briar",
+      "family": "pod",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-014.png",
+      "icon": "palari-v3-icons-web/palari-v3-014/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-014/thumbnail.webp",
+      "generationDirection": "sage pebble pod with a corrected blunt cap, upward-looking eyes, and tucked arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
+    },
+    {
+      "id": "palari-v3-015",
+      "name": "Dune",
+      "family": "bell",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-015.png",
+      "icon": "palari-v3-icons-web/palari-v3-015/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-015/thumbnail.webp",
+      "generationDirection": "terracotta soft bell with a shallow twin crown, wide eyes, and low folded arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
+    },
+    {
+      "id": "palari-v3-016",
+      "name": "Bluebell",
+      "family": "bell",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-016.png",
+      "icon": "palari-v3-icons-web/palari-v3-016/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-016/thumbnail.webp",
+      "generationDirection": "denim tall bell with two blunt crown lobes, attentive side-looking eyes, and cushion arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The tall crown is more character-like than the strict logo crop target."]
+    },
+    {
+      "id": "palari-v3-017",
+      "name": "Mallow",
+      "family": "hood",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-017.png",
+      "icon": "palari-v3-icons-web/palari-v3-017/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-017/thumbnail.webp",
+      "generationDirection": "dusty-rose rounded hood with a bean face, upward-looking eyes, and cheek-held arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
+    },
+    {
+      "id": "palari-v3-018",
+      "name": "Fig",
+      "family": "hood",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-018.png",
+      "icon": "palari-v3-icons-web/palari-v3-018/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-018/thumbnail.webp",
+      "generationDirection": "aubergine asymmetric arch hood with uneven curious eyes and low cradling arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
     }
   ]
 }

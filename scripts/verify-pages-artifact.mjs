@@ -10,7 +10,7 @@ const expectedWebMasks = 1_395;
 const expectedHandbookWebps = 40;
 const expectedPalariV2Webps = 246;
 const expectedPalariV2IconWebps = 164;
-const expectedPalariV3IconWebps = 12;
+const expectedPalariV3IconWebps = 24;
 
 async function walkFiles(directory, prefix = "") {
   const entries = await readdir(directory, { withFileTypes: true });
