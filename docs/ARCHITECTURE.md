@@ -25,9 +25,9 @@ There is no application server, database, authentication layer, or persistent up
 
 ## Palari V3 runtime
 
-`src/v3/main.tsx` mounts the icon-first picker. `src/v3/data.ts` registers 18 avatars: six checksum-linked V2 emoticons and 12 native V3 masters documented under `docs/palari-v3/`. The interface keeps one selected companion in React state, mirrors its stable ID into the URL, and provides soft, circle, and square frame treatments plus deterministic local Canvas export at 1024 × 1024. Surprise selection never repeats the current avatar.
+`src/v3/main.tsx` mounts the icon-first picker. `src/v3/data.ts` registers 24 avatars: six checksum-linked V2 emoticons and 18 native V3 masters documented under `docs/palari-v3/`. The interface keeps one selected companion in React state, mirrors its stable ID into the URL, and provides soft, circle, and square frame treatments plus deterministic local Canvas export at 1024 × 1024. Surprise selection never repeats the current avatar.
 
-V3 loads the registered WebPs from the existing V2 emoticon tier and `public/palari-v3-icons-web/`. `scripts/generate-palari-v3-assets.mjs` derives full and thumbnail delivery files for all 12 native V3 masters and records source and delivery checksums; `scripts/verify-palari-v3.mjs` validates the full mixed registry, dimensions, checksums, contiguous IDs, and runtime registration. The self-hosted Quicksand files and license live with `src/v3/` and are bundled by Vite. V3 has no uploads, mask processing, recoloring API, backend, or 3D runtime.
+V3 loads the registered WebPs from the existing V2 emoticon tier and `public/palari-v3-icons-web/`. `scripts/generate-palari-v3-assets.mjs` derives full and thumbnail delivery files for all 18 native V3 masters and records source and delivery checksums; `scripts/verify-palari-v3.mjs` validates the full mixed registry, dimensions, checksums, contiguous IDs, and runtime registration. The self-hosted Quicksand files and license live with `src/v3/` and are bundled by Vite. V3 has no uploads, mask processing, recoloring API, backend, or 3D runtime.
 
 ## Runtime flow
 
@@ -58,7 +58,7 @@ The full WebP tier is 1024 × 1024 because that is the renderer and export resol
 
 The GitHub Pages build uses Vite's `/palari-art/` base path with `publicDir` disabled. `scripts/prepare-pages-artifact.mjs` then copies the V1 WebP tiers, handbook WebPs, and `public/palari-v2-web/` into `dist/`. Verification rejects master/audit PNGs, missing manifests, incomplete WebP coverage, or an unexpectedly large artifact.
 
-The current Pages artifact is 224.5 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, and 123 V2 WebPs. It contains no PNG or PDF files.
+The current Pages artifact is 231.7 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 36 native V3 WebPs. It contains no PNG or PDF files.
 
 ## Face-aware framing
 

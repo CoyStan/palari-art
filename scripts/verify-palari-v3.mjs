@@ -44,13 +44,13 @@ function webpDimensions(buffer, fileName) {
   throw new Error(`${fileName} has no supported image chunk.`);
 }
 
-if (collection.version !== 2 || collection.avatars.length !== 18) problems.push("V3 collection must contain exactly 18 avatars.");
-if (manifest.schemaVersion !== 1 || manifest.recipeVersion !== 1 || manifest.avatars.length !== 18) problems.push("V3 WebP manifest is incomplete.");
+if (collection.version !== 3 || collection.avatars.length !== 24) problems.push("V3 collection must contain exactly 24 avatars.");
+if (manifest.schemaVersion !== 1 || manifest.recipeVersion !== 1 || manifest.avatars.length !== 24) problems.push("V3 WebP manifest is incomplete.");
 if (!runtimeRegistry.includes("collection.avatars") || !runtimeRegistry.includes("assetUrl")) problems.push("V3 runtime registry is incomplete.");
 
 const expectedIds = collection.avatars.map((_, index) => `palari-v3-${String(index + 1).padStart(3, "0")}`);
 if (JSON.stringify(collection.avatars.map((avatar) => avatar.id)) !== JSON.stringify(expectedIds)) problems.push("V3 IDs are not contiguous.");
-if (new Set(collection.avatars.map((avatar) => avatar.name)).size !== 18) problems.push("V3 avatar names must be unique.");
+if (new Set(collection.avatars.map((avatar) => avatar.name)).size !== 24) problems.push("V3 avatar names must be unique.");
 
 for (const avatar of collection.avatars) {
   const entry = manifest.avatars.find((candidate) => candidate.avatarId === avatar.id);
@@ -77,8 +77,8 @@ for (const avatar of collection.avatars) {
 
 const newDirectories = (await readdir(path.join(repositoryRoot, "public/palari-v3-icons-web"), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
-if (newDirectories.length !== 12 || newDirectories[0] !== "palari-v3-007" || newDirectories[11] !== "palari-v3-018") {
-  problems.push("V3 delivery directory must contain the 12 native avatars.");
+if (newDirectories.length !== 18 || newDirectories[0] !== "palari-v3-007" || newDirectories[17] !== "palari-v3-024") {
+  problems.push("V3 delivery directory must contain the 18 native avatars.");
 }
 
 if (problems.length) {
@@ -86,5 +86,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log("Verified 18 V3 avatars, six curated V2 sources, 12 native masters, and all WebP delivery checksums and dimensions.");
+  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, and all WebP delivery checksums and dimensions.");
 }

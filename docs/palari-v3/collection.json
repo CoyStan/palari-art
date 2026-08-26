@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "createdAt": "2026-08-26",
-  "status": "expanded-avatar-collection",
+  "status": "catchlight-avatar-expansion",
   "concept": "A little protective shelter hugging its own colorful intelligence.",
   "avatars": [
     {
@@ -222,6 +222,96 @@
       "smallSizeStatus": "pass",
       "strictSkillStatus": "reject",
       "deviations": ["The navy field retains subtle tonal variation.", "The arm modeling is stronger than the strict micro-volume target."]
+    },
+    {
+      "id": "palari-v3-019",
+      "name": "Tuck",
+      "family": "pebble-nest",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-019.png",
+      "icon": "palari-v3-icons-web/palari-v3-019/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-019/thumbnail.webp",
+      "generationDirection": "sea-glass low pebble nest with an ivory cap, side shoulders, uneven upward eyes, and one ivory catchlight per pupil",
+      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+    },
+    {
+      "id": "palari-v3-020",
+      "name": "Mochi",
+      "family": "pebble-nest",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-020.png",
+      "icon": "palari-v3-icons-web/palari-v3-020/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-020/thumbnail.webp",
+      "generationDirection": "dusty-mulberry round pebble with a shallow cap dimple, cuddling arms, sideways eyes, and one ivory catchlight per pupil",
+      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+    },
+    {
+      "id": "palari-v3-021",
+      "name": "Biscuit",
+      "family": "pillow-bell",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-021.png",
+      "icon": "palari-v3-icons-web/palari-v3-021/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-021/thumbnail.webp",
+      "generationDirection": "warm-ochre pillow bell with a symmetric twin-lobed crown, cushion arms, wide eyes, and one ivory catchlight per pupil",
+      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+    },
+    {
+      "id": "palari-v3-022",
+      "name": "Tavi",
+      "family": "pillow-bell",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-022.png",
+      "icon": "palari-v3-icons-web/palari-v3-022/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-022/thumbnail.webp",
+      "generationDirection": "muted-coral tall pillow bell with unequal blunt crown lobes, folded arms, uneven eyes, and one ivory catchlight per pupil",
+      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+    },
+    {
+      "id": "palari-v3-023",
+      "name": "Drift",
+      "family": "folded-hood",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-023.png",
+      "icon": "palari-v3-icons-web/palari-v3-023/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-023/thumbnail.webp",
+      "generationDirection": "denim folded hood sweeping from upper-left, cheek-held arms, side-looking eyes, and one ivory catchlight per pupil",
+      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The folded hood has a deep interior shadow and stronger 3D volume than the logo grammar allows."]
+    },
+    {
+      "id": "palari-v3-024",
+      "name": "Olive",
+      "family": "folded-hood",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-024.png",
+      "icon": "palari-v3-icons-web/palari-v3-024/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-024/thumbnail.webp",
+      "generationDirection": "moss-green low cowl with a soft upper-right fold, cradling arms, upward eyes, and one ivory catchlight per pupil",
+      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
     }
   ]
 }

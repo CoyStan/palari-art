@@ -23,7 +23,7 @@ The repository also publishes a text-free responsive gallery of 20 reviewed Pala
 
 Palari V2 is a separate ceramic-character system: 41 reviewed figures with selectable ceramic material, one characteristic inner-intelligence color, background, and local 1024px PNG export. It is available at `/v2/` and does not alter the portrait editor.
 
-Palari V3 is the icon-first direction at `/v3/`: an expanded family of 18 friendly avatars, including six retained V2 silhouettes and 12 native characters. Moss, Poppy, and Sunny are the reference trio for the newest mouthless, emblem-free direction, joined by six new pod, bell, and hood companions. Visitors can choose a companion, switch among soft, circle, and square frames, ask for a surprise, and download a local 1024px PNG. The ceramic and 3D work remains separate.
+Palari V3 is the icon-first direction at `/v3/`: an expanded family of 24 friendly avatars, including six retained V2 silhouettes and 18 native characters. Moss, Poppy, and Sunny anchor the mouthless, emblem-free direction. The newest six add one small ivory catchlight to each pupil so their eyes stay expressive without mouths or eyebrows. Visitors can choose a companion, switch among soft, circle, and square frames, ask for a surprise, and download a local 1024px PNG. The ceramic and 3D work remains separate.
 
 Development builds also expose a local-only `/3d/` review page for the experimental Palari 005 3D work. A shared Three.js camera switches between the original Meshy reconstruction, a reproducible Blender repair, and a translucent alignment overlay. The Blender v1 keeps Meshy's front and replaces the fused rear-arm bridge with a fitted ceramic rear shell. Its GLB and four-angle Blender renders remain review artifacts; side arm caps and the rear material seam still need a manual sculpt/texture pass. Both models and the reviewer remain excluded from GitHub Pages until the geometry is approved.
 
@@ -82,7 +82,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | --- | --- |
 | Bundled portraits | 157 standardized square PNGs |
 | Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
-| Pages artifact | 231.5 MiB, 2,183 WebPs, no PNG masters, PDF, or audit layers |
+| Pages artifact | 231.7 MiB, 2,195 WebPs, no PNG masters, PDF, or audit layers |
 | Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
@@ -95,7 +95,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | Known limitation | Temporary uploads still use color-estimated masks |
 | Art gallery | 20 reviewed teaching plates in a text-free responsive gallery; no PDF |
 | Ceramic V2 | 41 reviewed figures, 123 WebP delivery assets, material/characteristic/background controls, PNG export |
-| Avatar V3 | 18 icon-first companions, three frame treatments, surprise selection, and local 1024px PNG download |
+| Avatar V3 | 24 icon-first companions, three frame treatments, surprise selection, and local 1024px PNG download |
 
 ## Start the application
 
