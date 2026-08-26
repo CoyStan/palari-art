@@ -1,8 +1,8 @@
-import type { PalariV3Avatar } from "./data";
+import type { PalariV3Avatar, PalariV3Selection } from "./data";
 
 type AvatarPickerProps = {
   avatars: PalariV3Avatar[];
-  activeAvatar: PalariV3Avatar;
+  activeAvatar: PalariV3Selection;
   onSelect: (avatar: PalariV3Avatar) => void;
 };
 

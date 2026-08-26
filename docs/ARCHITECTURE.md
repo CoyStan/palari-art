@@ -29,6 +29,8 @@ There is no application server, database, authentication layer, or persistent up
 
 V3 loads the registered WebPs from the existing V2 emoticon tier and `public/palari-v3-icons-web/`. `scripts/generate-palari-v3-assets.mjs` derives full and thumbnail delivery files for all 18 native V3 masters and records source and delivery checksums; `scripts/verify-palari-v3.mjs` validates the full mixed registry, dimensions, checksums, contiguous IDs, and runtime registration. The self-hosted Quicksand files and license live with `src/v3/` and are bundled by Vite. V3 has no uploads, mask processing, recoloring API, backend, or 3D runtime.
 
+`src/v3/procedural.ts` defines a deterministic SVG rig for the six catchlight avatars and a seed-based generator for new characters. Each rig has a rooted shell, face group, two arms, two eyes, and bounded motion parameters. `ProceduralPalari.tsx` renders the shapes and uses transform-only CSS motion for idle bounce, head lag, arm follow-through, blinking, and gaze. A 680ms Web Animations API response handles taps. The URL preserves generated seeds, `prefers-reduced-motion` suppresses movement, and `download.ts` serializes a neutral rest pose for local 1024px PNG export. No animation library or image model runs in the browser.
+
 ## Runtime flow
 
 1. `src/main.tsx` mounts the application.

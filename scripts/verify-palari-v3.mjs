@@ -7,6 +7,10 @@ const repositoryRoot = fileURLToPath(new URL("../", import.meta.url));
 const collection = JSON.parse(await readFile(path.join(repositoryRoot, "docs/palari-v3/collection.json"), "utf8"));
 const manifest = JSON.parse(await readFile(path.join(repositoryRoot, "public/palari-v3-icons-web/manifest.json"), "utf8"));
 const runtimeRegistry = await readFile(path.join(repositoryRoot, "src/v3/data.ts"), "utf8");
+const proceduralSource = await readFile(path.join(repositoryRoot, "src/v3/procedural.ts"), "utf8");
+const proceduralComponent = await readFile(path.join(repositoryRoot, "src/v3/ProceduralPalari.tsx"), "utf8");
+const v3Application = await readFile(path.join(repositoryRoot, "src/v3/V3App.tsx"), "utf8");
+const v3Download = await readFile(path.join(repositoryRoot, "src/v3/download.ts"), "utf8");
 const problems = [];
 
 function sha256(buffer) {
@@ -84,6 +88,20 @@ function webpDimensions(buffer, fileName) {
 if (collection.version !== 3 || collection.avatars.length !== 24) problems.push("V3 collection must contain exactly 24 avatars.");
 if (manifest.schemaVersion !== 1 || manifest.recipeVersion !== 1 || manifest.avatars.length !== 24) problems.push("V3 WebP manifest is incomplete.");
 if (!runtimeRegistry.includes("collection.avatars") || !runtimeRegistry.includes("assetUrl")) problems.push("V3 runtime registry is incomplete.");
+if (!runtimeRegistry.includes("makeGeneratedPalari") || !runtimeRegistry.includes("palariRigForAvatar")) problems.push("V3 procedural runtime registration is incomplete.");
+for (const requiredToken of ["mulberry32", "generatePalari", "renderPalariSvg", '"pebble-nest"', '"pillow-bell"', '"folded-hood"']) {
+  if (!proceduralSource.includes(requiredToken)) problems.push(`V3 procedural source is missing ${requiredToken}.`);
+}
+for (const id of collection.avatars.slice(18).map((avatar) => avatar.id)) {
+  if (!proceduralSource.includes(`"${id}"`)) problems.push(`${id}: missing runtime rig preset.`);
+}
+if (!proceduralComponent.includes("prefers-reduced-motion") || !proceduralComponent.includes(".animate(") || !proceduralComponent.includes("v3-rig-eye")) {
+  problems.push("V3 procedural motion must include reduced-motion handling, a tap response, and rigged eyes.");
+}
+if (!v3Application.includes('searchParams.set("seed"') || !v3Application.includes("MotionSelector") || !v3Application.includes("Make one")) {
+  problems.push("V3 app must expose URL-linked generation and a motion control.");
+}
+if (!v3Download.includes("renderPalariSvg")) problems.push("V3 local export does not support procedural SVG rigs.");
 
 const expectedIds = collection.avatars.map((_, index) => `palari-v3-${String(index + 1).padStart(3, "0")}`);
 if (JSON.stringify(collection.avatars.map((avatar) => avatar.id)) !== JSON.stringify(expectedIds)) problems.push("V3 IDs are not contiguous.");
@@ -174,5 +192,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, six strict flat-first SVG contracts, and all WebP delivery checksums and dimensions.");
+  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, six strict flat-first SVG contracts, six runtime rigs, deterministic generation and export, and all WebP delivery checksums and dimensions.");
 }

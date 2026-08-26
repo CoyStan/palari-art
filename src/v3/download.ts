@@ -1,4 +1,5 @@
-import type { PalariV3Avatar } from "./data";
+import type { PalariV3Selection } from "./data";
+import { renderPalariSvg } from "./procedural";
 
 export type AvatarFrame = "soft" | "circle" | "square";
 
@@ -18,7 +19,16 @@ async function loadImage(source: string) {
   return image;
 }
 
-export async function downloadAvatar(avatar: PalariV3Avatar, frame: AvatarFrame) {
+async function avatarSource(avatar: PalariV3Selection) {
+  if (avatar.rig) {
+    const objectUrl = URL.createObjectURL(new Blob([renderPalariSvg(avatar.rig)], { type: "image/svg+xml" }));
+    return { source: objectUrl, release: () => URL.revokeObjectURL(objectUrl) };
+  }
+  if (avatar.kind !== "bundled") throw new Error("The generated avatar has no SVG rig.");
+  return { source: avatar.icon, release: () => undefined };
+}
+
+export async function downloadAvatar(avatar: PalariV3Selection, frame: AvatarFrame) {
   const canvas = document.createElement("canvas");
   canvas.width = outputSize;
   canvas.height = outputSize;
@@ -33,8 +43,13 @@ export async function downloadAvatar(avatar: PalariV3Avatar, frame: AvatarFrame)
     roundedRectangle(context, 168);
   }
 
-  const image = await loadImage(avatar.icon);
-  context.drawImage(image, 0, 0, outputSize, outputSize);
+  const { source, release } = await avatarSource(avatar);
+  try {
+    const image = await loadImage(source);
+    context.drawImage(image, 0, 0, outputSize, outputSize);
+  } finally {
+    release();
+  }
 
   const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png"));
   if (!blob) throw new Error("The avatar could not be exported.");

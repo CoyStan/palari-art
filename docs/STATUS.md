@@ -2,13 +2,15 @@
 
 Last updated: 2026-08-26
 
-## Palari V3 catchlight expansion
+## Palari V3 catchlight expansion and live rigs
 
 - V3 is now the icon-first product direction at `/v3/`; ceramic recoloring remains at `/v2/`, while 3D stays deferred and outside the Pages build.
 - The family now contains 24 named companions: six retained V2 silhouettes and 18 native 1254px icons. Tuck, Mochi, Biscuit, Tavi, Drift, and Olive are the new catchlight batch. Each is mouthless and emblem-free, with exactly one small ivory catchlight in each navy pupil and no other dot marks.
 - The six catchlight masters were rebuilt as deterministic SVG logos after the prompt-only ImageGen attempts and their allowed corrections failed the strict flat-background rule. The production files now use a single solid navy field, two continuous IP color regions, measured same-family micro-gradients, and no cast, contact, cavity, or background shadows. All six now pass the strict `ip-as-logo` grammar and the 32px check.
+- Tuck, Mochi, Biscuit, Tavi, Drift, and Olive now render as native SVG rigs in the V3 preview. Each rig has one bottom root, a face group, two arm pivots, and two independently blinking and gazing eye groups. Idle bounce, head lag, arm follow-through, and tap-to-hop motion use browser transforms with no animation dependency.
+- **Make one** creates a new mouthless catchlight Palari from a numeric seed, three bounded silhouette families, reviewed palettes, and deterministic geometry. The seed is shareable in the URL and survives reloads. **Alive/Still** controls idle motion, `prefers-reduced-motion` prevents the tap response, and local PNG export serializes the neutral SVG pose at 1024 × 1024.
 - `docs/palari-v3/collection.json` is the source registry and deviation record. The accepted founding concept, updated 24-character contact sheet, 32px readability strip, prompts, generation contract, and 18 native PNG authorities live beside it under `docs/palari-v3/`.
-- The responsive browser app provides a 6 × 4 desktop picker that reflows to five or four columns, a large companion preview, soft/circle/square frames, non-repeating surprise selection, URL-linked IDs, and local 1024 × 1024 PNG download. Playwright verified the 1536 × 1024 and 390 × 844 layouts, all 24 accessible choices, loaded delivery images, URL-linked Olive selection, and zero horizontal overflow.
+- The responsive browser app provides a 6 × 4 desktop picker that reflows to five or four columns, a large companion preview, soft/circle/square frames, non-repeating surprise selection, URL-linked IDs and generated seeds, and local 1024 × 1024 PNG download. Playwright verified the 1536 × 1024, 390 × 844, and 320 × 568 layouts, all 24 accessible choices, motion on/off, the 680ms tap response, stable seed reload, reduced-motion behavior, generated PNG download, and zero horizontal overflow.
 - `npm run verify:palari-v3` validates all 24 source records and WebP checksums. `npm run build:pages` now creates a verified 231.6 MiB artifact containing 314 V1 avatar WebPs, 1,395 mask WebPs, 40 handbook WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 36 native V3 avatar WebPs, with no PNGs.
 
 ## Palari V2 production
@@ -38,7 +40,7 @@ Last updated: 2026-08-26
 
 ## Working now
 
-- Icon-first Palari V3 picker with 24 named companions, responsive preview and selection, three frame treatments, non-repeating surprise selection, and local 1024px PNG export.
+- Icon-first Palari V3 picker with 24 named companions, six live SVG rigs, deterministic seed-based generation, responsive preview and selection, three frame treatments, motion controls, tap-to-hop, non-repeating surprise selection, and local 1024px PNG export.
 - React/Vite avatar color studio.
 - 156 active Palari portraits presented in one deterministic mixed grid from 157 bundled sources. Avatar 024 (`expanded-14`) is intentionally excluded without renumbering the remaining portraits.
 - Additive, multi-select feature discovery across apparent-age band, skin-tone band, hair, facial hair, eyewear, headwear, jewelry, and garment style. Selections within one group broaden results; different groups narrow them together. The picker intentionally exposes no feminine/masculine presentation filter.

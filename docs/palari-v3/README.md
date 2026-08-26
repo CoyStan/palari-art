@@ -50,6 +50,16 @@ Place exactly one small, crisp, round ivory catchlight toward the upper-left ins
 
 All six pass the strict logo grammar and the 32px eye and silhouette check. `collection.json` links each PNG master to its SVG authority and records the rejected ImageGen attempt instead of hiding the failure.
 
+## Procedural rig and motion
+
+The V3 browser app reconstructs the six catchlight characters as live SVG rigs. `src/v3/procedural.ts` keeps the rest-pose paths, palette, arms, eyes, and motion parameters as data. The skeleton has one bottom root, one face group, two arm pivots, and two eye groups. It adds no mouth, emblem, cast shadow, or new semantic color.
+
+The **Make one** action uses a numeric seed to choose one of three silhouette families, bounded geometry, a reviewed color pair, eye placement, arm placement, and motion timing. The seed stays in the URL, so reloading the same URL recreates the same character without an image-generation request. Generated and bundled rigged characters export locally as a neutral 1024px PNG.
+
+Idle motion uses transform-only CSS animation for the root, head, arms, blinks, and gaze. The browser samples it at the display refresh rate, normally 60 frames per second on a 60Hz screen. Tapping the preview runs a 680ms squash, lift, and settle response through the Web Animations API. The **Still** control removes idle motion, and `prefers-reduced-motion` also prevents the tap animation.
+
+The rig uses native SVG, CSS, and browser animation APIs. V3 does not ship Rive, Spine, PixiJS, Lottie, a physics engine, or runtime image generation.
+
 ## Interface reference
 
 `v3-app-concept.png` is the original 1536 × 1024 implementation reference for the founding set. The expanded interface retains its quiet icon-first picker, large companion preview, three frame treatments, surprise selection, and local PNG download. The desktop picker now uses a 6 × 4 grid; smaller screens reflow to five or four columns.
