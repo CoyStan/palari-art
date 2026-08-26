@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Tavi</title>
+  <desc>A flat-first coral pillow-bell Palari with unequal blunt crown lobes.</desc>
+  <defs>
+    <linearGradient id="ivory" gradientUnits="userSpaceOnUse" x1="100" y1="100" x2="1120" y2="1170">
+      <stop offset="0" stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEE6D9"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="240" y1="410" x2="1070" y2="1110">
+      <stop offset="0" stop-color="#BE6758"/>
+      <stop offset="1" stop-color="#B55B4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1254" height="1254" fill="#172333"/>
+  <path fill="url(#ivory)" d="M131 1254C88 1075 95 806 180 583C240 426 333 336 427 324C476 317 506 336 534 310C564 281 561 240 588 200C631 137 710 137 755 190C786 227 786 272 812 299C839 327 877 304 926 309C1057 323 1181 459 1254 661V1254Z"/>
+  <path fill="url(#face)" d="M267 765C299 548 471 437 699 428C929 420 1101 526 1142 723C1166 839 1115 928 1034 982C968 1027 921 1081 899 1140C836 1170 755 1185 662 1181C547 1176 455 1147 396 1092C371 1003 333 902 267 765Z"/>
+  <circle cx="563" cy="746" r="108" fill="#F2EBDD"/>
+  <circle cx="875" cy="665" r="101" fill="#F2EBDD"/>
+  <circle cx="579" cy="758" r="60" fill="#172333"/>
+  <circle cx="891" cy="676" r="56" fill="#172333"/>
+  <circle cx="557" cy="735" r="21" fill="#F2EBDD"/>
+  <circle cx="870" cy="654" r="20" fill="#F2EBDD"/>
+</svg>

@@ -13,6 +13,43 @@ function sha256(buffer) {
   return createHash("sha256").update(buffer).digest("hex");
 }
 
+function hexToLinearRgb(hex) {
+  return hex.match(/[a-f\d]{2}/gi).map((part) => {
+    const channel = Number.parseInt(part, 16) / 255;
+    return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+  });
+}
+
+function relativeLuminance(hex) {
+  const [red, green, blue] = hexToLinearRgb(hex);
+  return (0.2126 * red) + (0.7152 * green) + (0.0722 * blue);
+}
+
+function contrastRatio(first, second) {
+  const [lighter, darker] = [relativeLuminance(first), relativeLuminance(second)].sort((a, b) => b - a);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function oklch(hex) {
+  const [red, green, blue] = hexToLinearRgb(hex);
+  const l = (0.4122214708 * red) + (0.5363325363 * green) + (0.0514459929 * blue);
+  const m = (0.2119034982 * red) + (0.6806995451 * green) + (0.1073969566 * blue);
+  const s = (0.0883024619 * red) + (0.2817188376 * green) + (0.6299787005 * blue);
+  const lRoot = Math.cbrt(l);
+  const mRoot = Math.cbrt(m);
+  const sRoot = Math.cbrt(s);
+  const lightness = (0.2104542553 * lRoot) + (0.793617785 * mRoot) - (0.0040720468 * sRoot);
+  const a = (1.9779984951 * lRoot) - (2.428592205 * mRoot) + (0.4505937099 * sRoot);
+  const b = (0.0259040371 * lRoot) + (0.7827717662 * mRoot) - (0.808675766 * sRoot);
+  const hue = (Math.atan2(b, a) * 180 / Math.PI + 360) % 360;
+  return { lightness, chroma: Math.hypot(a, b), hue };
+}
+
+function hueDistance(first, second) {
+  const difference = Math.abs(first - second);
+  return Math.min(difference, 360 - difference);
+}
+
 function pngDimensions(buffer, fileName) {
   if (buffer.length < 29 || buffer.toString("ascii", 1, 4) !== "PNG" || buffer.toString("ascii", 12, 16) !== "IHDR") {
     throw new Error(`${fileName} is not a PNG.`);
@@ -52,6 +89,57 @@ const expectedIds = collection.avatars.map((_, index) => `palari-v3-${String(ind
 if (JSON.stringify(collection.avatars.map((avatar) => avatar.id)) !== JSON.stringify(expectedIds)) problems.push("V3 IDs are not contiguous.");
 if (new Set(collection.avatars.map((avatar) => avatar.name)).size !== 24) problems.push("V3 avatar names must be unique.");
 
+const strictFlatAvatars = collection.avatars.slice(18);
+for (const avatar of strictFlatAvatars) {
+  if (!avatar.vectorSource) {
+    problems.push(`${avatar.id}: missing flat-first SVG authority.`);
+    continue;
+  }
+  if (avatar.strictSkillStatus !== "pass" || avatar.deviations?.length !== 0) problems.push(`${avatar.id}: strict skill review is not clean.`);
+  try {
+    const svg = await readFile(path.join(repositoryRoot, avatar.vectorSource), "utf8");
+    if (!svg.includes('width="1254" height="1254" viewBox="0 0 1254 1254"')) problems.push(`${avatar.id}: SVG canvas is not native 1254px square.`);
+    if (!svg.includes('<rect width="1254" height="1254" fill="#172333"/>')) problems.push(`${avatar.id}: background is not one solid navy rectangle.`);
+    if ((svg.match(/<linearGradient\b/g) ?? []).length !== 2 || /<radialGradient\b|<filter\b|opacity=/.test(svg)) {
+      problems.push(`${avatar.id}: tonal model must contain exactly two plain linear gradients and no effects.`);
+    }
+    if ((svg.match(/<rect\b/g) ?? []).length !== 1 || (svg.match(/<path\b/g) ?? []).length !== 2 || /<(?:ellipse|polygon|polyline|line|image|text)\b/.test(svg)) {
+      problems.push(`${avatar.id}: must use one background, two continuous color paths, and six circles only.`);
+    }
+    if ((svg.match(/<path fill="url\(#/g) ?? []).length !== 2) problems.push(`${avatar.id}: must have one continuous shelter and one continuous face region.`);
+
+    const circles = [...svg.matchAll(/<circle\s+cx="[^"]+"\s+cy="[^"]+"\s+r="([^"]+)"\s+fill="(#[A-Fa-f0-9]{6})"\/>/g)]
+      .map((match) => ({ radius: Number(match[1]), fill: match[2].toUpperCase() }));
+    const ivoryCircles = circles.filter((circle) => circle.fill === "#F2EBDD");
+    const navyCircles = circles.filter((circle) => circle.fill === "#172333");
+    if (circles.length !== 6 || ivoryCircles.filter((circle) => circle.radius >= 80).length !== 2 || ivoryCircles.filter((circle) => circle.radius <= 24).length !== 2) {
+      problems.push(`${avatar.id}: must contain exactly two eye whites and two small ivory catchlights.`);
+    }
+    if (navyCircles.length !== 2 || navyCircles.some((circle) => circle.radius < 50 || circle.radius > 65)) problems.push(`${avatar.id}: must contain exactly two navy pupil openings.`);
+    if (contrastRatio("#172333", "#F2EBDD") < 4.5) problems.push(`${avatar.id}: pupil and catchlight contrast is below 4.5:1.`);
+
+    const gradientBlocks = [...svg.matchAll(/<linearGradient\b([^>]*)>([\s\S]*?)<\/linearGradient>/g)];
+    for (const [, attributes, block] of gradientBlocks) {
+      const coordinates = Object.fromEntries([...attributes.matchAll(/\b(x1|y1|x2|y2)="([\d.]+)"/g)].map((match) => [match[1], Number(match[2])]));
+      if (coordinates.x2 - coordinates.x1 < 627 || coordinates.y2 <= coordinates.y1) problems.push(`${avatar.id}: gradient must span at least half the mark on the shared upper-left-to-lower-right axis.`);
+      const colors = [...block.matchAll(/stop-color="(#[A-Fa-f0-9]{6})"/g)].map((match) => match[1]);
+      if (colors.length !== 2) {
+        problems.push(`${avatar.id}: every tonal region must have exactly two gradient endpoints.`);
+        continue;
+      }
+      const [first, second] = colors.map(oklch);
+      if (Math.abs(first.lightness - second.lightness) > 0.08 || Math.abs(first.chroma - second.chroma) > 0.015 || hueDistance(first.hue, second.hue) > 3) {
+        problems.push(`${avatar.id}: gradient exceeds the flat-first OKLCH micro-volume limits.`);
+      }
+    }
+    const faceBlock = [...svg.matchAll(/<linearGradient\s+id="face"[^>]*>([\s\S]*?)<\/linearGradient>/g)][0]?.[1] ?? "";
+    const faceColors = [...faceBlock.matchAll(/stop-color="(#[A-Fa-f0-9]{6})"/g)].map((match) => match[1]);
+    if (faceColors.length !== 2 || faceColors.some((color) => contrastRatio(color, "#172333") < 3)) problems.push(`${avatar.id}: face/background contrast is below 3:1.`);
+  } catch (error) {
+    problems.push(`${avatar.id}: ${error.message}`);
+  }
+}
+
 for (const avatar of collection.avatars) {
   const entry = manifest.avatars.find((candidate) => candidate.avatarId === avatar.id);
   if (!entry) { problems.push(`${avatar.id}: missing manifest entry.`); continue; }
@@ -86,5 +174,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, and all WebP delivery checksums and dimensions.");
+  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, six strict flat-first SVG contracts, and all WebP delivery checksums and dimensions.");
 }

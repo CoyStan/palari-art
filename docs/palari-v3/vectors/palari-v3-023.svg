@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Drift</title>
+  <desc>A flat-first denim folded-hood Palari whose fold exists only in the silhouette.</desc>
+  <defs>
+    <linearGradient id="ivory" gradientUnits="userSpaceOnUse" x1="90" y1="110" x2="1110" y2="1160">
+      <stop offset="0" stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEE6D9"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="200" y1="430" x2="1040" y2="1080">
+      <stop offset="0" stop-color="#5A81A1"/>
+      <stop offset="1" stop-color="#507694"/>
+    </linearGradient>
+  </defs>
+  <rect width="1254" height="1254" fill="#172333"/>
+  <path fill="url(#ivory)" d="M0 1254V930C59 766 157 621 310 501C265 463 247 410 266 354C291 278 371 234 451 253C517 269 562 322 625 337C701 356 764 312 846 323C1005 345 1142 492 1207 674C1238 762 1254 861 1254 961V1254Z"/>
+  <path fill="url(#face)" d="M198 789C240 594 412 477 652 457C880 438 1056 528 1105 705C1141 834 1089 939 995 1008C922 1062 829 1092 720 1098C598 1105 494 1075 414 1015C352 969 304 902 198 789Z"/>
+  <circle cx="499" cy="711" r="111" fill="#F2EBDD"/>
+  <circle cx="852" cy="741" r="101" fill="#F2EBDD"/>
+  <circle cx="520" cy="720" r="61" fill="#172333"/>
+  <circle cx="874" cy="750" r="56" fill="#172333"/>
+  <circle cx="498" cy="697" r="21" fill="#F2EBDD"/>
+  <circle cx="853" cy="728" r="20" fill="#F2EBDD"/>
+</svg>

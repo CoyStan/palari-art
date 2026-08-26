@@ -58,7 +58,7 @@ The full WebP tier is 1024 × 1024 because that is the renderer and export resol
 
 The GitHub Pages build uses Vite's `/palari-art/` base path with `publicDir` disabled. `scripts/prepare-pages-artifact.mjs` then copies the V1 WebP tiers, handbook WebPs, and `public/palari-v2-web/` into `dist/`. Verification rejects master/audit PNGs, missing manifests, incomplete WebP coverage, or an unexpectedly large artifact.
 
-The current Pages artifact is 231.7 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 36 native V3 WebPs. It contains no PNG or PDF files.
+The current Pages artifact is 231.6 MiB and contains 314 avatar WebPs, 1,395 V1 runtime-mask WebPs, 40 gallery WebPs, 246 V2 ceramic WebPs, 164 V2 emoticon WebPs, and 36 native V3 WebPs. It contains no PNG or PDF files.
 
 ## Face-aware framing
 

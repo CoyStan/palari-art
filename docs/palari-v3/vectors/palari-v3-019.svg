@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Tuck</title>
+  <desc>A flat-first sea-glass pebble-nest Palari with two catchlit eyes.</desc>
+  <defs>
+    <linearGradient id="ivory" gradientUnits="userSpaceOnUse" x1="100" y1="140" x2="1110" y2="1160">
+      <stop offset="0" stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEE6D9"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="180" y1="420" x2="1040" y2="1110">
+      <stop offset="0" stop-color="#548B87"/>
+      <stop offset="1" stop-color="#4C807D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1254" height="1254" fill="#172333"/>
+  <path fill="url(#ivory)" d="M0 1254V1055C26 790 119 530 305 382C473 249 779 230 972 367C1155 496 1227 759 1254 1027V1254Z"/>
+  <path fill="url(#face)" d="M150 838C177 617 340 494 600 492C867 490 1052 630 1102 862C1001 835 901 903 868 1015C816 1078 728 1111 623 1111C509 1111 418 1074 370 1007C338 904 249 839 150 838Z"/>
+  <circle cx="405" cy="744" r="112" fill="#F2EBDD"/>
+  <circle cx="808" cy="781" r="105" fill="#F2EBDD"/>
+  <circle cx="421" cy="755" r="61" fill="#172333"/>
+  <circle cx="825" cy="790" r="58" fill="#172333"/>
+  <circle cx="399" cy="733" r="22" fill="#F2EBDD"/>
+  <circle cx="804" cy="769" r="21" fill="#F2EBDD"/>
+</svg>

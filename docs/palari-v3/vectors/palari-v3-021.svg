@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Biscuit</title>
+  <desc>A flat-first ochre pillow-bell Palari with a symmetric twin-lobed crown.</desc>
+  <defs>
+    <linearGradient id="ivory" gradientUnits="userSpaceOnUse" x1="120" y1="120" x2="1110" y2="1160">
+      <stop offset="0" stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEE6D9"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="180" y1="440" x2="1050" y2="1110">
+      <stop offset="0" stop-color="#BC8339"/>
+      <stop offset="1" stop-color="#B2762D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1254" height="1254" fill="#172333"/>
+  <path fill="url(#ivory)" d="M0 1254V913C42 731 105 518 216 340C304 199 432 185 535 292C582 341 600 365 627 365C655 365 673 341 720 292C824 184 951 199 1039 340C1150 518 1213 731 1254 913V1254Z"/>
+  <path fill="url(#face)" d="M134 783C174 564 357 468 518 493C578 503 596 529 627 529C659 529 678 503 738 493C901 467 1080 566 1120 785C1146 930 1080 1036 964 1097C865 1149 741 1168 627 1168C510 1168 388 1149 291 1097C176 1036 108 931 134 783Z"/>
+  <circle cx="401" cy="765" r="112" fill="#F2EBDD"/>
+  <circle cx="853" cy="765" r="112" fill="#F2EBDD"/>
+  <circle cx="401" cy="776" r="61" fill="#172333"/>
+  <circle cx="853" cy="776" r="61" fill="#172333"/>
+  <circle cx="378" cy="753" r="22" fill="#F2EBDD"/>
+  <circle cx="830" cy="753" r="22" fill="#F2EBDD"/>
+</svg>

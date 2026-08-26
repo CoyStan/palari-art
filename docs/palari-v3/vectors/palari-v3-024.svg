@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Olive</title>
+  <desc>A flat-first moss folded-cowl Palari with an upper-right silhouette bend.</desc>
+  <defs>
+    <linearGradient id="ivory" gradientUnits="userSpaceOnUse" x1="100" y1="120" x2="1120" y2="1160">
+      <stop offset="0" stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEE6D9"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="210" y1="430" x2="1030" y2="1080">
+      <stop offset="0" stop-color="#6C825F"/>
+      <stop offset="1" stop-color="#627756"/>
+    </linearGradient>
+  </defs>
+  <rect width="1254" height="1254" fill="#172333"/>
+  <path fill="url(#ivory)" d="M0 1254V1000C44 760 185 549 402 410C559 309 746 307 886 386C945 420 985 398 1001 335C1019 267 1085 226 1152 247C1226 270 1260 354 1229 427C1214 464 1223 500 1254 534V1254Z"/>
+  <path fill="url(#face)" d="M177 824C206 609 378 478 616 455C854 431 1044 525 1103 710C1144 837 1095 944 1001 1016C916 1082 805 1112 681 1112C552 1112 443 1080 364 1015C306 967 271 884 177 824Z"/>
+  <circle cx="476" cy="722" r="111" fill="#F2EBDD"/>
+  <circle cx="839" cy="670" r="105" fill="#F2EBDD"/>
+  <circle cx="492" cy="710" r="61" fill="#172333"/>
+  <circle cx="855" cy="658" r="58" fill="#172333"/>
+  <circle cx="470" cy="687" r="21" fill="#F2EBDD"/>
+  <circle cx="834" cy="636" r="21" fill="#F2EBDD"/>
+</svg>

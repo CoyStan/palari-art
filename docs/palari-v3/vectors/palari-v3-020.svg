@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Mochi</title>
+  <desc>A flat-first mulberry pebble-nest Palari with a shallow crown dimple.</desc>
+  <defs>
+    <linearGradient id="ivory" gradientUnits="userSpaceOnUse" x1="130" y1="150" x2="1130" y2="1160">
+      <stop offset="0" stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEE6D9"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="250" y1="410" x2="1070" y2="1080">
+      <stop offset="0" stop-color="#8E6A8A"/>
+      <stop offset="1" stop-color="#85617F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1254" height="1254" fill="#172333"/>
+  <path fill="url(#ivory)" d="M126 1254C92 1078 106 824 181 606C254 392 398 257 562 244C635 238 675 279 730 279C789 279 832 235 908 238C1080 245 1200 388 1254 586V1254Z"/>
+  <path fill="url(#face)" d="M275 781C306 556 482 430 719 414C956 398 1115 503 1160 690C1176 756 1154 814 1090 852C991 911 901 981 865 1080C815 1118 748 1138 665 1134C544 1128 449 1084 399 1008C375 905 333 831 275 781Z"/>
+  <circle cx="578" cy="721" r="109" fill="#F2EBDD"/>
+  <circle cx="900" cy="668" r="101" fill="#F2EBDD"/>
+  <circle cx="600" cy="731" r="60" fill="#172333"/>
+  <circle cx="923" cy="676" r="56" fill="#172333"/>
+  <circle cx="579" cy="708" r="21" fill="#F2EBDD"/>
+  <circle cx="902" cy="655" r="20" fill="#F2EBDD"/>
+</svg>

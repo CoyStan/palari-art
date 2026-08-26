@@ -589,16 +589,16 @@
       "sourceId": null,
       "source": {
         "path": "docs/palari-v3/icons/palari-v3-019.png",
-        "bytes": 1187485,
-        "sha256": "83ba79349601865fcd97ef5df8ce664d839d551d23323c58744706e9d54695d0",
+        "bytes": 64531,
+        "sha256": "df084c19b59b915bd7d97c8b69b32ec9beeeafba6d9ff579f5474b124456ca7c",
         "width": 1254,
         "height": 1254
       },
       "assets": {
         "icon": {
           "path": "public/palari-v3-icons-web/palari-v3-019/icon.webp",
-          "bytes": 28326,
-          "sha256": "ff97f44badfd38d77c7a53d721ed17fff8aa8c2f706fbe87d99a5b30febf56d2",
+          "bytes": 19184,
+          "sha256": "db9785f308a399a06f7780adcb4c0d377619e9e8d8de55ec2d9d21dddd19f1ec",
           "width": 1024,
           "height": 1024,
           "quality": 88,
@@ -606,8 +606,8 @@
         },
         "thumbnail": {
           "path": "public/palari-v3-icons-web/palari-v3-019/thumbnail.webp",
-          "bytes": 4640,
-          "sha256": "3cbe2a812807f0de3303c6839adfad674e849f019a8dd7614639e65214f57161",
+          "bytes": 3600,
+          "sha256": "bdaa033346c574ca624dbda4374ee264c3ce542db4ba56a8f49c38a7dd8d7f13",
           "width": 256,
           "height": 256,
           "quality": 82,
@@ -621,16 +621,16 @@
       "sourceId": null,
       "source": {
         "path": "docs/palari-v3/icons/palari-v3-020.png",
-        "bytes": 1263941,
-        "sha256": "72e286f5ba29794a7eca86d03979b721e4d261a78226c78f98791e7d02e15ca8",
+        "bytes": 63994,
+        "sha256": "ab85eb0964708ab218b6d90a98b643769fb162a97baf86310995005fe097dd61",
         "width": 1254,
         "height": 1254
       },
       "assets": {
         "icon": {
           "path": "public/palari-v3-icons-web/palari-v3-020/icon.webp",
-          "bytes": 29112,
-          "sha256": "6abca2ac63a137f853acd0348adb2f2734023965bd874252ae523dd251ba989c",
+          "bytes": 17800,
+          "sha256": "adfe0ab7f02268133f18391e30f00854176ac4bdcfc9358e32d68a2f98d5499f",
           "width": 1024,
           "height": 1024,
           "quality": 88,
@@ -638,8 +638,8 @@
         },
         "thumbnail": {
           "path": "public/palari-v3-icons-web/palari-v3-020/thumbnail.webp",
-          "bytes": 4580,
-          "sha256": "60f108290af92dab5a087fb8bba8b37134b1f02d70accb8d3e6bb3102434f3ab",
+          "bytes": 3332,
+          "sha256": "8138651680d05d84e413adbc50a7b2eb5af35fba9dbd3edbd38581f065345cb0",
           "width": 256,
           "height": 256,
           "quality": 82,
@@ -653,16 +653,16 @@
       "sourceId": null,
       "source": {
         "path": "docs/palari-v3/icons/palari-v3-021.png",
-        "bytes": 1302144,
-        "sha256": "4ebf38c9824b1796c1563aabb640ec37036bd29d2a447d20b92e999ca78ee7f7",
+        "bytes": 68738,
+        "sha256": "7539f66805b41a82e2d57d61055d8b76c346c087a11d6f3a9bd6e448270cc1f0",
         "width": 1254,
         "height": 1254
       },
       "assets": {
         "icon": {
           "path": "public/palari-v3-icons-web/palari-v3-021/icon.webp",
-          "bytes": 32988,
-          "sha256": "02828baf9da35c935607d9ea3fd20fcdb66f5116ab98e519ab266fba8e9dfbc0",
+          "bytes": 20262,
+          "sha256": "9a033a2f6298b63ca0f24395ecd7ef65f142ec42bea6c99219e7cedb6aaae65f",
           "width": 1024,
           "height": 1024,
           "quality": 88,
@@ -670,8 +670,8 @@
         },
         "thumbnail": {
           "path": "public/palari-v3-icons-web/palari-v3-021/thumbnail.webp",
-          "bytes": 5600,
-          "sha256": "750c1beda86381985067dc9c795f024069151cb5135d2b2fdef5043f395a200a",
+          "bytes": 3942,
+          "sha256": "918338ec47825ab6ba23e4a5602d5fe177141f9d8029a2c1e22eacd19b17c0d0",
           "width": 256,
           "height": 256,
           "quality": 82,
@@ -685,16 +685,16 @@
       "sourceId": null,
       "source": {
         "path": "docs/palari-v3/icons/palari-v3-022.png",
-        "bytes": 1215339,
-        "sha256": "da55bbfe1dc3ae407b36246c7c5a4850de4f88e90feef3f2d6de97cb86be6904",
+        "bytes": 67196,
+        "sha256": "9526588320537f3c8057652720cd4e90e0aec60981fb4b80613e352b82dd1277",
         "width": 1254,
         "height": 1254
       },
       "assets": {
         "icon": {
           "path": "public/palari-v3-icons-web/palari-v3-022/icon.webp",
-          "bytes": 28608,
-          "sha256": "dc7c7e2a0c788e8fc40edb2529dfdd34b2c0bc4e8cd12677ccf254d75f03de32",
+          "bytes": 19132,
+          "sha256": "4423959df4d838278f70505d9c0e9094d9b9bc6cad807067e7a25a0951f918bf",
           "width": 1024,
           "height": 1024,
           "quality": 88,
@@ -702,8 +702,8 @@
         },
         "thumbnail": {
           "path": "public/palari-v3-icons-web/palari-v3-022/thumbnail.webp",
-          "bytes": 4950,
-          "sha256": "ad618c0f3e964fd877e68e59bff8c124f17955ceb160b6375c583ad94ecf592b",
+          "bytes": 3652,
+          "sha256": "0782163db112904587d283fa1080e382a445147e509bc9e2b03f93555e76a7db",
           "width": 256,
           "height": 256,
           "quality": 82,
@@ -717,16 +717,16 @@
       "sourceId": null,
       "source": {
         "path": "docs/palari-v3/icons/palari-v3-023.png",
-        "bytes": 1273744,
-        "sha256": "ab1df1cfd17f1a95e3be30dd1bacf1cdc6d88b96cf657a8a8381c22dd0c251fb",
+        "bytes": 65272,
+        "sha256": "ca2ef03e331be65b5ab038c72ffe08785c421223beb3bf0d3d9c206580759623",
         "width": 1254,
         "height": 1254
       },
       "assets": {
         "icon": {
           "path": "public/palari-v3-icons-web/palari-v3-023/icon.webp",
-          "bytes": 29610,
-          "sha256": "c1c66ccbbd39da4560c93173063ae4a39df78ab4c8b13559e6993c6c5b2ffcdd",
+          "bytes": 18992,
+          "sha256": "e63dc18cd96da39d899c0ad2177c632d0991ca956c56b59406c6073738227cb0",
           "width": 1024,
           "height": 1024,
           "quality": 88,
@@ -734,8 +734,8 @@
         },
         "thumbnail": {
           "path": "public/palari-v3-icons-web/palari-v3-023/thumbnail.webp",
-          "bytes": 4794,
-          "sha256": "7671c6bc07eb9bfc72fdc1e1cb3d2f44114fcfc5c08bb5f151e970295b542348",
+          "bytes": 3666,
+          "sha256": "c5baa720ebd938b03debd31701779b0b5d7e8e2201ac651e5e57c07d7123c3b5",
           "width": 256,
           "height": 256,
           "quality": 82,
@@ -749,16 +749,16 @@
       "sourceId": null,
       "source": {
         "path": "docs/palari-v3/icons/palari-v3-024.png",
-        "bytes": 1269663,
-        "sha256": "f80e81125a7906599e7ca88c69f60c9eb357a814f7dd38703377aa6f0471f3c8",
+        "bytes": 63074,
+        "sha256": "435b083ae85ecb935e6c1db1b7bdc884c646cb27044753732a7afc619a0748f4",
         "width": 1254,
         "height": 1254
       },
       "assets": {
         "icon": {
           "path": "public/palari-v3-icons-web/palari-v3-024/icon.webp",
-          "bytes": 29794,
-          "sha256": "debd7e0df1e4799aa7c5728a0770bcb67ebffa2fd7a38deab51bc57d19f27939",
+          "bytes": 17150,
+          "sha256": "2559f327afd5d64f46ca086d47898280133964bd5c09da4adb701026ef2df2c2",
           "width": 1024,
           "height": 1024,
           "quality": 88,
@@ -766,8 +766,8 @@
         },
         "thumbnail": {
           "path": "public/palari-v3-icons-web/palari-v3-024/thumbnail.webp",
-          "bytes": 4642,
-          "sha256": "1a1e79408e7202ef77f8a7ac47f0444d1e0ecab62a25b3c15f963ae2d05a3b3f",
+          "bytes": 3284,
+          "sha256": "a7ede50a4ef0939e24a7e45bbe70973c3b71d8446f82eb5a0225c31cc7223327",
           "width": 256,
           "height": 256,
           "quality": 82,

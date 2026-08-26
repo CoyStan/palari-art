@@ -5,7 +5,7 @@ Palari V3 makes the flat avatar collection the product. The ceramic V2 sources r
 The expanded set contains 24 avatars:
 
 - Six curated V2 icons: `palari-005`, `011`, `019`, `033`, `047`, and `079`.
-- Eighteen native 1254 × 1254 RGB PNGs under `icons/`.
+- Eighteen native 1254 × 1254 RGB PNGs under `icons/`. The six catchlight masters also have deterministic SVG authorities under `vectors/`.
 
 The V3 character sentence is: **A little protective shelter hugging its own colorful intelligence.** Characters favor broad hoods, pods, bells, and arches; one coherent colored face; large open eyes; short rounded arms; and a stable legless base.
 
@@ -36,7 +36,9 @@ The third native batch treats the small ivory catchlight inside each navy pupil 
 - Biscuit and Tavi are pillow bells.
 - Drift and Olive are folded hoods.
 
-Each character is mouthless and has exactly two catchlights, one per pupil, with no other dot marks, seed, emblem, or belly logo. Six separate built-in ImageGen calls produced the native 1254px candidates. The first outputs had transparent canvases, so each received one targeted ImageGen correction that replaced only the transparency and outside halo with an opaque navy field while preserving the character and its catchlights.
+Each character is mouthless and has exactly two catchlights, one per pupil, with no other dot marks, seed, emblem, or belly logo. Six separate built-in ImageGen calls tested the prompt-only directions. The generated bitmaps and their one allowed correction were rejected because the navy field still showed a vignette; the hood attempts also introduced transparency and closed fold shadows. Those failures remain recorded in `collection.json`.
+
+The production masters are deterministic SVG logos rendered at 1254px. Each uses one solid `#172333` background rectangle, one continuous ivory shelter, one continuous face region, two eye whites, two navy pupil cutouts, and two ivory catchlights. The SVG gradients share one upper-left-to-lower-right axis. Their measured endpoint changes stay below `0.08` OKLCH lightness, `3°` hue, and `0.015` chroma. No cast shadow, cavity, contact seam, bevel, or background modeling is present.
 
 The shared prompt contract for the catchlight batch was:
 
@@ -46,7 +48,7 @@ Create one original, highly simplified Palari V3 mascot avatar: one continuous w
 Place exactly one small, crisp, round ivory catchlight toward the upper-left inside each navy pupil. Exactly two catchlights total. The catchlights are the only small circular decorative marks. Keep the character completely mouthless, with no nose, eyebrows, freckles, seed, emblem, logo, belly mark, text, watermark, hands, fingers, legs, extra openings, extra eyes, extra colors, border, transparency, or app-icon mask.
 ```
 
-All six pass the 32px eye and silhouette check. They remain strict logo-grammar rejects because the navy fields retain a visible vignette and the character modeling is more dimensional than the micro-volume limit. Those deviations are recorded per avatar in `collection.json`.
+All six pass the strict logo grammar and the 32px eye and silhouette check. `collection.json` links each PNG master to its SVG authority and records the rejected ImageGen attempt instead of hiding the failure.
 
 ## Interface reference
 
@@ -54,4 +56,4 @@ All six pass the 32px eye and silhouette check. They remain strict logo-grammar 
 
 `contact-sheet.png` shows the full 24-character family at gallery size. `contact-sheet-32px.png` is the small-size legibility check. The interface uses the self-hosted Quicksand family stored under `src/v3/fonts/` with its included OFL license.
 
-Run `npm run palari-v3:web:generate` after a native V3 PNG changes. `npm run verify:palari-v3` validates all 24 registered sources and delivery assets.
+Run `node scripts/render-palari-v3-flat-masters.mjs` after a catchlight SVG changes, then run `npm run palari-v3:web:generate`. `npm run verify:palari-v3` validates all 24 registered sources, the six strict flat-first SVG contracts, and every delivery asset.

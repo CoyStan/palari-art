@@ -1,7 +1,7 @@
 {
   "version": 3,
   "createdAt": "2026-08-26",
-  "status": "catchlight-avatar-expansion",
+  "status": "flat-first-catchlight-expansion",
   "concept": "A little protective shelter hugging its own colorful intelligence.",
   "avatars": [
     {
@@ -229,14 +229,18 @@
       "family": "pebble-nest",
       "sourceKind": "v3-generated",
       "source": "docs/palari-v3/icons/palari-v3-019.png",
+      "vectorSource": "docs/palari-v3/vectors/palari-v3-019.svg",
       "icon": "palari-v3-icons-web/palari-v3-019/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-019/thumbnail.webp",
       "generationDirection": "sea-glass low pebble nest with an ivory cap, side shoulders, uneven upward eyes, and one ivory catchlight per pupil",
-      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "imageGenReview": "rejected: the prompt-only output and its one targeted correction retained a visible navy vignette",
+      "productionMethod": "deterministic SVG authority rendered at 1254px after the generated bitmap failed the flat-background rule",
       "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "colorGrammar": "pass: one solid navy field plus warm ivory and one continuous sea-glass region",
+      "microVolumeStatus": "pass: measured same-family gradients stay inside the 0.08 lightness, 3-degree hue, and 0.015 chroma limits",
       "smallSizeStatus": "pass",
-      "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+      "strictSkillStatus": "pass",
+      "deviations": []
     },
     {
       "id": "palari-v3-020",
@@ -244,14 +248,18 @@
       "family": "pebble-nest",
       "sourceKind": "v3-generated",
       "source": "docs/palari-v3/icons/palari-v3-020.png",
+      "vectorSource": "docs/palari-v3/vectors/palari-v3-020.svg",
       "icon": "palari-v3-icons-web/palari-v3-020/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-020/thumbnail.webp",
       "generationDirection": "dusty-mulberry round pebble with a shallow cap dimple, cuddling arms, sideways eyes, and one ivory catchlight per pupil",
-      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "imageGenReview": "rejected: the prompt-only output and its one targeted correction retained a visible navy vignette",
+      "productionMethod": "deterministic SVG authority rendered at 1254px after the generated bitmap failed the flat-background rule",
       "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "colorGrammar": "pass: one solid navy field plus warm ivory and one continuous dusty-mulberry region",
+      "microVolumeStatus": "pass: measured same-family gradients stay inside the 0.08 lightness, 3-degree hue, and 0.015 chroma limits",
       "smallSizeStatus": "pass",
-      "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+      "strictSkillStatus": "pass",
+      "deviations": []
     },
     {
       "id": "palari-v3-021",
@@ -259,14 +267,18 @@
       "family": "pillow-bell",
       "sourceKind": "v3-generated",
       "source": "docs/palari-v3/icons/palari-v3-021.png",
+      "vectorSource": "docs/palari-v3/vectors/palari-v3-021.svg",
       "icon": "palari-v3-icons-web/palari-v3-021/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-021/thumbnail.webp",
       "generationDirection": "warm-ochre pillow bell with a symmetric twin-lobed crown, cushion arms, wide eyes, and one ivory catchlight per pupil",
-      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "imageGenReview": "rejected: the prompt-only output and its one targeted correction retained a visible navy vignette",
+      "productionMethod": "deterministic SVG authority rendered at 1254px after the generated bitmap failed the flat-background rule",
       "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "colorGrammar": "pass: one solid navy field plus warm ivory and one continuous ochre region",
+      "microVolumeStatus": "pass: measured same-family gradients stay inside the 0.08 lightness, 3-degree hue, and 0.015 chroma limits",
       "smallSizeStatus": "pass",
-      "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+      "strictSkillStatus": "pass",
+      "deviations": []
     },
     {
       "id": "palari-v3-022",
@@ -274,14 +286,18 @@
       "family": "pillow-bell",
       "sourceKind": "v3-generated",
       "source": "docs/palari-v3/icons/palari-v3-022.png",
+      "vectorSource": "docs/palari-v3/vectors/palari-v3-022.svg",
       "icon": "palari-v3-icons-web/palari-v3-022/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-022/thumbnail.webp",
       "generationDirection": "muted-coral tall pillow bell with unequal blunt crown lobes, folded arms, uneven eyes, and one ivory catchlight per pupil",
-      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "imageGenReview": "rejected: the prompt-only output and its one targeted correction retained a visible navy vignette",
+      "productionMethod": "deterministic SVG authority rendered at 1254px after the generated bitmap failed the flat-background rule",
       "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "colorGrammar": "pass: one solid navy field plus warm ivory and one continuous muted-coral region",
+      "microVolumeStatus": "pass: measured same-family gradients stay inside the 0.08 lightness, 3-degree hue, and 0.015 chroma limits",
       "smallSizeStatus": "pass",
-      "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+      "strictSkillStatus": "pass",
+      "deviations": []
     },
     {
       "id": "palari-v3-023",
@@ -289,14 +305,18 @@
       "family": "folded-hood",
       "sourceKind": "v3-generated",
       "source": "docs/palari-v3/icons/palari-v3-023.png",
+      "vectorSource": "docs/palari-v3/vectors/palari-v3-023.svg",
       "icon": "palari-v3-icons-web/palari-v3-023/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-023/thumbnail.webp",
       "generationDirection": "denim folded hood sweeping from upper-left, cheek-held arms, side-looking eyes, and one ivory catchlight per pupil",
-      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "imageGenReview": "rejected: the prompt-only output used transparency and a discrete hood shadow; its one targeted correction removed both but retained a visible navy vignette",
+      "productionMethod": "deterministic SVG authority rendered at 1254px after the generated bitmap failed the flat-background rule",
       "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "colorGrammar": "pass: one solid navy field plus warm ivory and one continuous denim region",
+      "microVolumeStatus": "pass: measured same-family gradients stay inside the 0.08 lightness, 3-degree hue, and 0.015 chroma limits",
       "smallSizeStatus": "pass",
-      "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The folded hood has a deep interior shadow and stronger 3D volume than the logo grammar allows."]
+      "strictSkillStatus": "pass",
+      "deviations": []
     },
     {
       "id": "palari-v3-024",
@@ -304,14 +324,18 @@
       "family": "folded-hood",
       "sourceKind": "v3-generated",
       "source": "docs/palari-v3/icons/palari-v3-024.png",
+      "vectorSource": "docs/palari-v3/vectors/palari-v3-024.svg",
       "icon": "palari-v3-icons-web/palari-v3-024/icon.webp",
       "thumbnail": "palari-v3-icons-web/palari-v3-024/thumbnail.webp",
       "generationDirection": "moss-green low cowl with a soft upper-right fold, cradling arms, upward eyes, and one ivory catchlight per pupil",
-      "correctionDirection": "Replace the transparent canvas and outside halo with an opaque navy field while preserving the character and both catchlights.",
+      "imageGenReview": "rejected: the prompt-only output used transparency and a discrete fold shadow; its one targeted correction removed both but retained a visible navy vignette",
+      "productionMethod": "deterministic SVG authority rendered at 1254px after the generated bitmap failed the flat-background rule",
       "eyeSignature": "pass: exactly one small ivory catchlight in each navy pupil and no other dot marks",
+      "colorGrammar": "pass: one solid navy field plus warm ivory and one continuous moss-green region",
+      "microVolumeStatus": "pass: measured same-family gradients stay inside the 0.08 lightness, 3-degree hue, and 0.015 chroma limits",
       "smallSizeStatus": "pass",
-      "strictSkillStatus": "reject",
-      "deviations": ["The navy field retains a visible vignette rather than the strict flat fill.", "The character modeling is noticeably volumetric rather than micro-volume."]
+      "strictSkillStatus": "pass",
+      "deviations": []
     }
   ]
 }
