@@ -2,7 +2,7 @@
 
 ## System shape
 
-Palari Art is a static multi-entry React application built by Vite. The V1 portrait editor lives at `/`, the ceramic V2 editor at `/v2/`, and the teaching-art gallery at `/handbook/`. Development builds additionally expose a local `/3d/` reviewer for the experimental Palari 005 Meshy GLB. All interactive image processing happens inside the browser through Canvas APIs. Separate preparation scripts create reusable assets and masks.
+Palari Art is a static multi-entry React application built by Vite. The V1 portrait editor lives at `/`, the ceramic V2 editor at `/v2/`, the icon-first V3 avatar picker at `/v3/`, and the teaching-art gallery at `/handbook/`. Development builds additionally expose a local `/3d/` reviewer for the experimental Palari 005 Meshy GLB. All interactive image processing happens inside the browser through Canvas APIs. Separate preparation scripts create reusable assets and masks.
 
 ```text
 Bundled or uploaded image
@@ -22,6 +22,12 @@ Bundled or uploaded image
 ```
 
 There is no application server, database, authentication layer, or persistent upload service. The browser makes no remote image-processing calls. `scripts/generate-avatar-masks.mjs`, `scripts/generate-foreground-mattes.mjs`, and `scripts/generate-hair-masks.mjs` are offline fal.ai preparation tools. `scripts/generate-hair-matting-layers.py` performs the remaining semantic parsing, matting, and foreground recovery locally.
+
+## Palari V3 runtime
+
+`src/v3/main.tsx` mounts the icon-first picker. `src/v3/data.ts` registers a founding set of 12 avatars: six checksum-linked V2 emoticons and six new native V3 masters documented under `docs/palari-v3/`. The interface keeps one selected companion in React state, mirrors its stable ID into the URL, and provides soft, circle, and square frame treatments plus deterministic local Canvas export at 1024 × 1024. Surprise selection never repeats the current avatar.
+
+V3 loads the 12 registered WebPs from the existing V2 emoticon tier and `public/palari-v3-icons-web/`. `scripts/generate-palari-v3-assets.mjs` derives the six V3 WebPs and records source and delivery checksums; `scripts/verify-palari-v3.mjs` validates the full mixed registry, dimensions, checksums, contiguous IDs, and runtime registration. The self-hosted Quicksand files and license live with `src/v3/` and are bundled by Vite. V3 has no uploads, mask processing, recoloring API, backend, or 3D runtime.
 
 ## Runtime flow
 

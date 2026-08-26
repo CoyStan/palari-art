@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
     editor: path.join(repositoryRoot, "index.html"),
     handbook: path.join(repositoryRoot, "handbook/index.html"),
     v2: path.join(repositoryRoot, "v2/index.html"),
+    v3: path.join(repositoryRoot, "v3/index.html"),
     ...(!pagesBuild && { threeReview: path.join(repositoryRoot, "3d/index.html") }),
   };
   return {

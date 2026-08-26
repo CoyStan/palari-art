@@ -4,6 +4,8 @@ Palari Art is deployed as a static Vite application at:
 
 <https://coystan.github.io/palari-art/>
 
+The icon-first V3 picker is deployed at <https://coystan.github.io/palari-art/v3/>.
+
 The application has no backend. Portrait selection, recoloring, temporary uploads, preview, and export continue to run in the visitor's browser.
 
 ## Artifact contract
@@ -17,10 +19,10 @@ npm run build:pages
 That command:
 
 1. Builds Vite with the `/palari-art/` base path and without automatically copying `public/`.
-2. Copies `public/avatars-web/`, `public/masks-web/`, and `public/palari-v2-web/` into `dist/`.
-3. Copies `public/handbook/`, containing optimized gallery WebPs and their manifest.
+2. Copies `public/avatars-web/`, `public/masks-web/`, `public/palari-v2-web/`, `public/palari-v2-icons-web/`, and `public/palari-v3-icons-web/` into `dist/`.
+3. Copies `public/handbook/`, containing optimized gallery WebPs and its manifest.
 4. Adds `.nojekyll`.
-5. Verifies complete portrait, V1 mask, V2, and gallery WebP coverage, all manifests, all three HTML entries, the absence of PDF or PNG files, the base path, and a 450 MiB artifact ceiling.
+5. Verifies complete portrait, V1 mask, handbook, V2 ceramic, V2 emoticon, and V3 avatar WebP coverage, all manifests, all four HTML entries, the absence of PDF or PNG files, the base path, and a 450 MiB artifact ceiling.
 
 The checksum-locked portrait PNG masters, reviewed mask PNG masters, metadata, and audit-only layers remain in the repository but are never included in the Pages artifact.
 
@@ -66,6 +68,13 @@ After a reviewed Palari V2 source or mask changes:
 ```bash
 npm run palari-v2:web:generate
 npm run verify:palari-v2
+```
+
+After a native Palari V3 icon changes:
+
+```bash
+npm run palari-v3:web:generate
+npm run verify:palari-v3
 ```
 
 The mask generator requires FFmpeg with `libwebp` plus ImageMagick's `compare` command. Generation uses lossless WebP and rejects any output with a nonzero absolute pixel difference.

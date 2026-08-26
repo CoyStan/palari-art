@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-26",
+  "status": "founding-avatar-collection",
+  "concept": "A little protective shelter hugging its own colorful intelligence.",
+  "avatars": [
+    {
+      "id": "palari-v3-001",
+      "name": "Cove",
+      "family": "hood",
+      "sourceKind": "v2-curated",
+      "sourceId": "palari-005",
+      "source": "docs/palari-v2/ip-icons/pilot-02/palari-005.png",
+      "icon": "palari-v2-icons-web/palari-005/icon.webp",
+      "thumbnail": "palari-v2-icons-web/palari-005/thumbnail.webp"
+    },
+    {
+      "id": "palari-v3-002",
+      "name": "Fern",
+      "family": "hood",
+      "sourceKind": "v2-curated",
+      "sourceId": "palari-011",
+      "source": "docs/palari-v2/ip-icons/pilot-02/palari-011.png",
+      "icon": "palari-v2-icons-web/palari-011/icon.webp",
+      "thumbnail": "palari-v2-icons-web/palari-011/thumbnail.webp"
+    },
+    {
+      "id": "palari-v3-003",
+      "name": "Hush",
+      "family": "pod",
+      "sourceKind": "v2-curated",
+      "sourceId": "palari-019",
+      "source": "docs/palari-v2/ip-icons/pilot-04/palari-019.png",
+      "icon": "palari-v2-icons-web/palari-019/icon.webp",
+      "thumbnail": "palari-v2-icons-web/palari-019/thumbnail.webp"
+    },
+    {
+      "id": "palari-v3-004",
+      "name": "Nook",
+      "family": "hood",
+      "sourceKind": "v2-curated",
+      "sourceId": "palari-033",
+      "source": "docs/palari-v2/ip-icons/pilot-06/palari-033.png",
+      "icon": "palari-v2-icons-web/palari-033/icon.webp",
+      "thumbnail": "palari-v2-icons-web/palari-033/thumbnail.webp"
+    },
+    {
+      "id": "palari-v3-005",
+      "name": "Ember",
+      "family": "pod",
+      "sourceKind": "v2-curated",
+      "sourceId": "palari-047",
+      "source": "docs/palari-v2/ip-icons/expansion-03/palari-047.png",
+      "icon": "palari-v2-icons-web/palari-047/icon.webp",
+      "thumbnail": "palari-v2-icons-web/palari-047/thumbnail.webp"
+    },
+    {
+      "id": "palari-v3-006",
+      "name": "Luma",
+      "family": "arch",
+      "sourceKind": "v2-curated",
+      "sourceId": "palari-079",
+      "source": "docs/palari-v2/ip-icons/expansion-03/palari-079.png",
+      "icon": "palari-v2-icons-web/palari-079/icon.webp",
+      "thumbnail": "palari-v2-icons-web/palari-079/thumbnail.webp"
+    },
+    {
+      "id": "palari-v3-007",
+      "name": "Poppy",
+      "family": "hood",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-007.png",
+      "icon": "palari-v3-icons-web/palari-v3-007/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-007/thumbnail.webp",
+      "generationDirection": "protective hood with a coral face and two cradling arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The seed mark contains five apertures after the allowed correction pass.", "The navy field retains subtle tonal variation."]
+    },
+    {
+      "id": "palari-v3-008",
+      "name": "Plum",
+      "family": "hood",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-008.png",
+      "icon": "palari-v3-icons-web/palari-v3-008/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-008/thumbnail.webp",
+      "generationDirection": "asymmetric plum shelter with one wave and a tiny smile",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The character modeling is stronger than the strict micro-volume target."]
+    },
+    {
+      "id": "palari-v3-009",
+      "name": "Moss",
+      "family": "pod",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-009.png",
+      "icon": "palari-v3-icons-web/palari-v3-009/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-009/thumbnail.webp",
+      "generationDirection": "squat teal pebble pod hugging one broad inner face",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The seed is reversed to ivory inside the characteristic region."]
+    },
+    {
+      "id": "palari-v3-010",
+      "name": "Pip",
+      "family": "pod",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-010.png",
+      "icon": "palari-v3-icons-web/palari-v3-010/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-010/thumbnail.webp",
+      "generationDirection": "blue pear pod with one rounded wave and a small smile",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["A small rounded sprout-like crown was added.", "The navy field retains subtle tonal variation."]
+    },
+    {
+      "id": "palari-v3-011",
+      "name": "Sunny",
+      "family": "bell",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-011.png",
+      "icon": "palari-v3-icons-web/palari-v3-011/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-011/thumbnail.webp",
+      "generationDirection": "ochre soft bell with a blunt twin-petal crown and resting arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The navy field retains subtle tonal variation.", "The eyes use stronger tonal contrast than the strict three-color target."]
+    },
+    {
+      "id": "palari-v3-012",
+      "name": "Ruby",
+      "family": "arch",
+      "sourceKind": "v3-generated",
+      "source": "docs/palari-v3/icons/palari-v3-012.png",
+      "icon": "palari-v3-icons-web/palari-v3-012/icon.webp",
+      "thumbnail": "palari-v3-icons-web/palari-v3-012/thumbnail.webp",
+      "generationDirection": "dusty-red nest arch with a smile and two protective arms",
+      "smallSizeStatus": "pass",
+      "strictSkillStatus": "reject",
+      "deviations": ["The seed mark contains five apertures after the allowed correction pass.", "The navy field retains subtle tonal variation."]
+    }
+  ]
+}

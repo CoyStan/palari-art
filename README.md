@@ -8,7 +8,7 @@ Change a character's background and shirt while preserving the face, hair, acces
 
 `157 source portraits` · `156 active characters` · `1024 × 1024 export` · `browser-only runtime`
 
-[Open the portrait editor](https://coystan.github.io/palari-art/) · [Create a ceramic Palari](https://coystan.github.io/palari-art/v2/) · [View the art gallery](https://coystan.github.io/palari-art/handbook/)
+[Choose a Palari V3](https://coystan.github.io/palari-art/v3/) · [Open the portrait editor](https://coystan.github.io/palari-art/) · [Create a ceramic Palari](https://coystan.github.io/palari-art/v2/) · [View the art gallery](https://coystan.github.io/palari-art/handbook/)
 
 </div>
 
@@ -22,6 +22,8 @@ Palari Art is the source of truth for Palari's standardized character portraits,
 The repository also publishes a text-free responsive gallery of 20 reviewed Palari teaching plates. The source art and its provenance remain in the repository; only optimized WebPs are deployed.
 
 Palari V2 is a separate ceramic-character system: 41 reviewed figures with selectable ceramic material, one characteristic inner-intelligence color, background, and local 1024px PNG export. It is available at `/v2/` and does not alter the portrait editor.
+
+Palari V3 is the icon-first direction at `/v3/`: a deliberately small founding family of 12 friendly avatars, including six retained V2 silhouettes and six new native characters. Visitors can choose a companion, switch among soft, circle, and square frames, ask for a surprise, and download a local 1024px PNG. The ceramic and 3D work remains separate.
 
 Development builds also expose a local-only `/3d/` review page for the experimental Palari 005 3D work. A shared Three.js camera switches between the original Meshy reconstruction, a reproducible Blender repair, and a translucent alignment overlay. The Blender v1 keeps Meshy's front and replaces the fused rear-arm bridge with a fitted ceramic rear shell. Its GLB and four-angle Blender renders remain review artifacts; side arm caps and the rear material seam still need a manual sculpt/texture pass. Both models and the reviewer remain excluded from GitHub Pages until the geometry is approved.
 
@@ -80,7 +82,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | --- | --- |
 | Bundled portraits | 157 standardized square PNGs |
 | Web delivery | 157 full 1024px WebP files plus 157 256px WebP thumbnails; 96.4% fewer bytes than the PNG masters |
-| Pages artifact | 224.5 MiB, 1,872 WebPs, no PNG masters, PDF, or audit layers |
+| Pages artifact | 231.3 MiB, 2,171 WebPs, no PNG masters, PDF, or audit layers |
 | Library | One mixed grid containing 156 active portraits; Avatar 024 (`expanded-14`) is retired without renumbering later portraits |
 | Editable layers | Background and shirt |
 | Protected details | Face, hair, accessories, texture, lighting, and identity |
@@ -93,6 +95,7 @@ Temporary user uploads still use the prototype color detector because there is n
 | Known limitation | Temporary uploads still use color-estimated masks |
 | Art gallery | 20 reviewed teaching plates in a text-free responsive gallery; no PDF |
 | Ceramic V2 | 41 reviewed figures, 123 WebP delivery assets, material/characteristic/background controls, PNG export |
+| Avatar V3 | 12 icon-first companions, three frame treatments, surprise selection, and local 1024px PNG download |
 
 ## Start the application
 
@@ -154,6 +157,13 @@ npm run palari-v2:web:generate
 npm run verify:palari-v2
 ```
 
+Regenerate and verify the V3 avatar delivery tier after changing a native V3 icon:
+
+```bash
+npm run palari-v3:web:generate
+npm run verify:palari-v3
+```
+
 Build the PNG-free GitHub Pages artifact with:
 
 ```bash
@@ -196,6 +206,7 @@ palari-art/
 ├── public/handbook/          Gallery WebPs and checksum manifest
 ├── public/palari-v2/         Reviewed ceramic masters, masks, and metadata
 ├── public/palari-v2-web/     Checksum-linked V2 runtime WebPs
+├── public/palari-v3-icons-web/ V3 avatar WebPs and checksum manifest
 ├── scripts/generate-avatar-masks.mjs  Resumable fal.ai preparation batch
 ├── scripts/clean-shirt-mask-components.mjs Remove tiny disconnected SAM garment islands
 ├── scripts/generate-foreground-mattes.mjs  Resumable BiRefNet matting batch
@@ -210,6 +221,7 @@ palari-art/
 ├── src/components/           React interface components
 ├── src/handbook/             Text-free responsive teaching-art gallery
 ├── src/v2/                   Separate ceramic character editor
+├── src/v3/                   Icon-first V3 avatar picker and local export
 ├── src/data/avatar-masks.json Semantic mask registry
 ├── src/data/avatar-framing.json Source-linked scale and center metadata
 ├── src/data/avatar-attributes.json Visual variation planning metadata
