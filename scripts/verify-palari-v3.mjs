@@ -11,6 +11,7 @@ const proceduralSource = await readFile(path.join(repositoryRoot, "src/v3/proced
 const skeletonSource = await readFile(path.join(repositoryRoot, "src/v3/skeleton.ts"), "utf8");
 const coverSource = await readFile(path.join(repositoryRoot, "src/v3/cover.ts"), "utf8");
 const proceduralComponent = await readFile(path.join(repositoryRoot, "src/v3/ProceduralPalari.tsx"), "utf8");
+const softBodySource = await readFile(path.join(repositoryRoot, "src/v3/useSoftBodyMotion.ts"), "utf8");
 const avatarPicker = await readFile(path.join(repositoryRoot, "src/v3/AvatarPicker.tsx"), "utf8");
 const v3Application = await readFile(path.join(repositoryRoot, "src/v3/V3App.tsx"), "utf8");
 const v3Download = await readFile(path.join(repositoryRoot, "src/v3/download.ts"), "utf8");
@@ -98,7 +99,7 @@ for (const requiredToken of ["mulberry32", "generatePalari", "renderPalariSvg", 
 for (const requiredToken of ["PALARI_BONES", "PalariVolume", "crownVolumes", "buildSkeleton", '"root"', '"chest"', '"head"', '"leftHand"', '"rightHand"', '"leftEye"', '"rightEye"', '"round"', '"double"', '"side-cap"', '"bobble"']) {
   if (!skeletonSource.includes(requiredToken)) problems.push(`V3 skeleton source is missing ${requiredToken}.`);
 }
-for (const requiredToken of ["coverSkeleton", "rayEllipseDistance", "envelopePath", "faceFromSkeleton", "armFromBalls", "eyeFromSkeleton"]) {
+for (const requiredToken of ["coverSkeleton", "rayEllipseDistance", "envelopePath", "faceFromSkeleton", "armFromBalls", "armSleeveFromBalls", "quadraticPoint", "eyeFromSkeleton"]) {
   if (!coverSource.includes(requiredToken)) problems.push(`V3 cover source is missing ${requiredToken}.`);
 }
 if (!proceduralSource.includes("buildSkeleton") || !proceduralSource.includes("coverSkeleton")) {
@@ -110,8 +111,8 @@ if (/\b(?:shellPath|facePath):\s*["'`]/.test(proceduralSource) || proceduralSour
 for (const id of collection.avatars.slice(18).map((avatar) => avatar.id)) {
   if (!proceduralSource.includes(`"${id}"`)) problems.push(`${id}: missing runtime rig preset.`);
 }
-if (!proceduralComponent.includes("prefers-reduced-motion") || !proceduralComponent.includes(".animate(") || !proceduralComponent.includes("v3-rig-eye")) {
-  problems.push("V3 procedural motion must include reduced-motion handling, a tap response, and rigged eyes.");
+if (!proceduralComponent.includes("v3-rig-eye") || !proceduralComponent.includes('data-physics="coupled-water-balloons"') || !softBodySource.includes("prefers-reduced-motion") || !softBodySource.includes("requestAnimationFrame") || !softBodySource.includes("chestVelocity") || !softBodySource.includes("headVelocity") || !softBodySource.includes("clearTransforms")) {
+  problems.push("V3 procedural motion must include coupled head/chest physics, reduced-motion handling, and rigged eyes.");
 }
 if (!proceduralComponent.includes('view === "balls"') || !proceduralComponent.includes("data-volume-count") || !proceduralComponent.includes("v3-volume-ball") || !proceduralComponent.includes("v3-cover-shell")) {
   problems.push("V3 runtime must expose both the originating volume balls and their generated cover.");
@@ -213,5 +214,5 @@ if (problems.length) {
   for (const problem of problems) console.error(`- ${problem}`);
   process.exitCode = 1;
 } else {
-  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, six strict flat-first SVG contracts, six volume-ball runtime rigs, deterministic cover generation and export, and all WebP delivery checksums and dimensions.");
+  console.log("Verified 24 V3 avatars, six curated V2 sources, 18 native masters, six strict flat-first SVG contracts, six volume-ball runtime rigs, continuous arm covers, coupled soft-body motion, deterministic cover export, and all WebP delivery checksums and dimensions.");
 }

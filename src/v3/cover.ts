@@ -98,6 +98,95 @@ function envelopePath(sourceVolumes: readonly PalariVolume[], padding = 0, sampl
   return smoothClosedPath(contour);
 }
 
+function interpolate(start: number, end: number, amount: number) {
+  return start + (end - start) * amount;
+}
+
+function quadraticPoint(start: Point, control: Point, end: Point, amount: number) {
+  const inverse = 1 - amount;
+  return point(
+    inverse * inverse * start.x + 2 * inverse * amount * control.x + amount * amount * end.x,
+    inverse * inverse * start.y + 2 * inverse * amount * control.y + amount * amount * end.y,
+  );
+}
+
+function quadraticTangent(start: Point, control: Point, end: Point, amount: number) {
+  return point(
+    2 * (1 - amount) * (control.x - start.x) + 2 * amount * (end.x - control.x),
+    2 * (1 - amount) * (control.y - start.y) + 2 * amount * (end.y - control.y),
+  );
+}
+
+function armRadiiAt(
+  balls: readonly [PalariVolume, PalariVolume, PalariVolume],
+  amount: number,
+  sleeveScale: number,
+) {
+  const [shoulder, elbow, hand] = balls;
+  const firstHalf = amount <= 0.5;
+  const localAmount = firstHalf ? amount * 2 : (amount - 0.5) * 2;
+  const from = firstHalf ? shoulder : elbow;
+  const to = firstHalf ? elbow : hand;
+  const handEase = 1 + Math.max(0, amount - 0.72) * 0.16;
+  return {
+    radiusX: interpolate(from.radiusX, to.radiusX, localAmount) * sleeveScale * handEase,
+    radiusY: interpolate(from.radiusY, to.radiusY, localAmount) * sleeveScale * handEase,
+  };
+}
+
+function ellipseOffset(angle: number, radiusX: number, radiusY: number) {
+  return point(Math.cos(angle) * radiusX, Math.sin(angle) * radiusY);
+}
+
+function armSleeveFromBalls(
+  balls: readonly [PalariVolume, PalariVolume, PalariVolume],
+  connectorScale: number,
+) {
+  const [shoulder, elbow, hand] = balls;
+  const control = point(
+    elbow.center.x * 2 - (shoulder.center.x + hand.center.x) / 2,
+    elbow.center.y * 2 - (shoulder.center.y + hand.center.y) / 2,
+  );
+  const sleeveScale = Math.min(0.98, connectorScale + 0.08);
+  const left: Point[] = [];
+  const right: Point[] = [];
+  const samples = 22;
+
+  for (let index = 0; index <= samples; index += 1) {
+    const amount = index / samples;
+    const center = quadraticPoint(shoulder.center, control, hand.center, amount);
+    const tangent = quadraticTangent(shoulder.center, control, hand.center, amount);
+    const normalAngle = Math.atan2(tangent.y, tangent.x) + Math.PI / 2;
+    const radii = armRadiiAt(balls, amount, sleeveScale);
+    const offset = ellipseOffset(normalAngle, radii.radiusX, radii.radiusY);
+    left.push(point(center.x + offset.x, center.y + offset.y));
+    right.push(point(center.x - offset.x, center.y - offset.y));
+  }
+
+  const startTangent = quadraticTangent(shoulder.center, control, hand.center, 0);
+  const endTangent = quadraticTangent(shoulder.center, control, hand.center, 1);
+  const startNormal = Math.atan2(startTangent.y, startTangent.x) + Math.PI / 2;
+  const endNormal = Math.atan2(endTangent.y, endTangent.x) + Math.PI / 2;
+  const startRadii = armRadiiAt(balls, 0, sleeveScale);
+  const endRadii = armRadiiAt(balls, 1, sleeveScale);
+  const endCap: Point[] = [];
+  const startCap: Point[] = [];
+  const capSamples = 10;
+
+  for (let index = 1; index < capSamples; index += 1) {
+    const progress = index / capSamples;
+    const endAngle = endNormal - Math.PI * progress;
+    const endOffset = ellipseOffset(endAngle, endRadii.radiusX, endRadii.radiusY);
+    endCap.push(point(hand.center.x + endOffset.x, hand.center.y + endOffset.y));
+
+    const startAngle = startNormal + Math.PI - Math.PI * progress;
+    const startOffset = ellipseOffset(startAngle, startRadii.radiusX, startRadii.radiusY);
+    startCap.push(point(shoulder.center.x + startOffset.x, shoulder.center.y + startOffset.y));
+  }
+
+  return smoothClosedPath([...left, ...endCap, ...right.reverse(), ...startCap]);
+}
+
 function faceFromSkeleton(skeleton: PalariSkeleton) {
   const { proportions: p } = skeleton;
   const head = skeleton.volumes.shell.find((volume) => volume.role === "head");
@@ -126,9 +215,8 @@ function faceFromSkeleton(skeleton: PalariSkeleton) {
 
 function armFromBalls(balls: readonly [PalariVolume, PalariVolume, PalariVolume], connectorScale: number): CoverArm {
   const [shoulder] = balls;
-  const padding = Math.round(12 + connectorScale * 8);
   return {
-    path: envelopePath(balls, padding, 52),
+    path: armSleeveFromBalls(balls, connectorScale),
     pivot: shoulder.center,
   };
 }

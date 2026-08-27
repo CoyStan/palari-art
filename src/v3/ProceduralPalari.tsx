@@ -1,30 +1,15 @@
-import { useEffect, useRef, type CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import type { CoverEye } from "./cover";
 import type { PalariRig } from "./procedural";
 import type { PalariJointName, PalariVolume, Point } from "./skeleton";
+import { useSoftBodyMotion } from "./useSoftBodyMotion";
 import type { PalariViewMode } from "./ViewSelector";
 
 type MotionStyle = CSSProperties & {
-  "--v3-cycle": string;
   "--v3-gaze-cycle": string;
   "--v3-blink": string;
   "--v3-phase": string;
   "--v3-phase-right": string;
-  "--v3-bounce": string;
-  "--v3-bounce-soft": string;
-  "--v3-bounce-settle": string;
-  "--v3-head-lag": string;
-  "--v3-head-settle": string;
-  "--v3-sway": string;
-  "--v3-sway-neg": string;
-  "--v3-sway-soft": string;
-  "--v3-sway-neg-soft": string;
-  "--v3-head-sway": string;
-  "--v3-head-sway-neg": string;
-  "--v3-arm": string;
-  "--v3-arm-neg": string;
-  "--v3-arm-soft": string;
-  "--v3-arm-neg-soft": string;
   "--v3-gaze": string;
   "--v3-gaze-left": string;
   "--v3-gaze-up": string;
@@ -100,13 +85,15 @@ function BallModelView({ rig }: { rig: PalariRig }) {
       stroke={rig.eyeWhite}
       fill={rig.face[0]}
     >
-      {chestBall ? <VolumeBall volume={chestBall} /> : null}
-      <Bone from={joints.root} to={joints.chest} />
-      <Bone from={joints.chest} to={joints.head} />
-      <Bone from={joints.chest} to={joints.leftShoulder} />
-      <Bone from={joints.chest} to={joints.rightShoulder} />
-      <Joint name="root" point={joints.root} fill={rig.background} radius={24} />
-      <Joint name="chest" point={joints.chest} fill={rig.background} radius={24} />
+      <g className="v3-rig-chest" style={{ transformOrigin: `${joints.chest.x}px ${joints.chest.y}px` }}>
+        {chestBall ? <VolumeBall volume={chestBall} /> : null}
+        <Bone from={joints.root} to={joints.chest} />
+        <Bone from={joints.chest} to={joints.head} />
+        <Bone from={joints.chest} to={joints.leftShoulder} />
+        <Bone from={joints.chest} to={joints.rightShoulder} />
+        <Joint name="root" point={joints.root} fill={rig.background} radius={24} />
+        <Joint name="chest" point={joints.chest} fill={rig.background} radius={24} />
+      </g>
 
       <g className="v3-rig-head" style={{ transformOrigin: headOrigin }}>
         {headBalls.map((ball) => <VolumeBall key={ball.id} volume={ball} />)}
@@ -142,7 +129,12 @@ function CoverView({ rig, gradientId }: { rig: PalariRig; gradientId: string }) 
   const { cover, skeleton } = rig;
   return (
     <>
-      <path className="v3-cover-shell" d={cover.shellPath} fill={`url(#${gradientId}-ivory)`} />
+      <g
+        className="v3-rig-chest"
+        style={{ transformOrigin: `${skeleton.joints.chest.x}px ${skeleton.joints.chest.y}px` }}
+      >
+        <path className="v3-cover-shell" d={cover.shellPath} fill={`url(#${gradientId}-ivory)`} />
+      </g>
       <g
         className="v3-rig-head"
         style={{ transformOrigin: `${skeleton.joints.head.x}px ${skeleton.joints.head.y}px` }}
@@ -170,58 +162,35 @@ function CoverView({ rig, gradientId }: { rig: PalariRig; gradientId: string }) 
 }
 
 export function ProceduralPalari({ rig, motionEnabled, bounceSignal, view }: ProceduralPalariProps) {
-  const hopRef = useRef<HTMLDivElement>(null);
-  const activeHop = useRef<Animation | null>(null);
   const gradientId = `v3-rig-${rig.seed}`;
   const { motion } = rig;
+  const softBodyRef = useSoftBodyMotion({
+    enabled: motionEnabled,
+    bounceSignal,
+    seed: rig.seed,
+    motion,
+    view,
+  });
   const motionStyle: MotionStyle = {
-    "--v3-cycle": `${motion.cycleSeconds}s`,
     "--v3-gaze-cycle": `${motion.cycleSeconds * 1.8}s`,
     "--v3-blink": `${motion.blinkSeconds}s`,
     "--v3-phase": `${motion.phaseSeconds}s`,
     "--v3-phase-right": `${motion.phaseSeconds + 0.036}s`,
-    "--v3-bounce": `${-motion.bounce}px`,
-    "--v3-bounce-soft": `${-motion.bounce * 0.35}px`,
-    "--v3-bounce-settle": `${-motion.bounce * 0.24}px`,
-    "--v3-head-lag": `${-motion.bounce * 0.22}px`,
-    "--v3-head-settle": `${motion.bounce * 0.08}px`,
-    "--v3-sway": `${motion.swayDegrees}deg`,
-    "--v3-sway-neg": `${-motion.swayDegrees * 0.28}deg`,
-    "--v3-sway-soft": `${motion.swayDegrees * 0.32}deg`,
-    "--v3-sway-neg-soft": `${-motion.swayDegrees * 0.4}deg`,
-    "--v3-head-sway": `${motion.swayDegrees * 0.4}deg`,
-    "--v3-head-sway-neg": `${-motion.swayDegrees * 0.5}deg`,
-    "--v3-arm": `${motion.armDegrees}deg`,
-    "--v3-arm-neg": `${-motion.armDegrees}deg`,
-    "--v3-arm-soft": `${motion.armDegrees * 0.55}deg`,
-    "--v3-arm-neg-soft": `${-motion.armDegrees * 0.55}deg`,
     "--v3-gaze": `${motion.gaze}px`,
     "--v3-gaze-left": `${-motion.gaze * 0.7}px`,
     "--v3-gaze-up": `${-motion.gaze * 0.35}px`,
     "--v3-gaze-low": `${motion.gaze * 0.28}px`,
   };
 
-  useEffect(() => {
-    if (bounceSignal === 0 || !motionEnabled || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    activeHop.current?.cancel();
-    activeHop.current = hopRef.current?.animate(
-      [
-        { transform: "translate3d(0, 0, 0) scale(1, 1)", offset: 0 },
-        { transform: "translate3d(0, 2%, 0) scale(1.035, .965)", offset: 0.16 },
-        { transform: "translate3d(0, -8%, 0) scale(.975, 1.035)", offset: 0.43 },
-        { transform: "translate3d(0, 0, 0) scale(1.018, .982)", offset: 0.72 },
-        { transform: "translate3d(0, -1%, 0) scale(.995, 1.005)", offset: 0.87 },
-        { transform: "translate3d(0, 0, 0) scale(1, 1)", offset: 1 },
-      ],
-      { duration: 680, easing: "cubic-bezier(.22, .9, .28, 1)" },
-    ) ?? null;
-
-    return () => activeHop.current?.cancel();
-  }, [bounceSignal, motionEnabled]);
-
   return (
-    <div className="v3-rig-hop" ref={hopRef}>
-      <div className="v3-rig-idle" data-motion={motionEnabled} style={motionStyle}>
+    <div className="v3-rig-hop">
+      <div
+        className="v3-rig-idle"
+        data-motion={motionEnabled}
+        data-physics="coupled-water-balloons"
+        ref={softBodyRef}
+        style={motionStyle}
+      >
         <svg viewBox="0 0 1254 1254" width="1254" height="1254" data-view={view} aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id={`${gradientId}-ivory`} gradientUnits="userSpaceOnUse" x1="100" y1="120" x2="1120" y2="1160">

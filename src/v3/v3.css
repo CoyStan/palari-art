@@ -177,6 +177,7 @@ a:focus-visible {
 }
 
 .v3-rig-head,
+.v3-rig-chest,
 .v3-rig-arm,
 .v3-rig-eye,
 .v3-rig-gaze {
@@ -205,20 +206,13 @@ a:focus-visible {
 }
 
 .v3-rig-idle[data-motion="true"] {
-  animation: v3-rig-idle var(--v3-cycle) cubic-bezier(.45, 0, .55, 1) var(--v3-phase) infinite;
   will-change: transform;
 }
 
-.v3-rig-idle[data-motion="true"] .v3-rig-head {
-  animation: v3-rig-head var(--v3-cycle) cubic-bezier(.45, 0, .55, 1) var(--v3-phase) infinite;
-}
-
-.v3-rig-idle[data-motion="true"] .v3-rig-arm[data-arm="left"] {
-  animation: v3-rig-arm-left var(--v3-cycle) cubic-bezier(.45, 0, .55, 1) var(--v3-phase) infinite;
-}
-
-.v3-rig-idle[data-motion="true"] .v3-rig-arm[data-arm="right"] {
-  animation: v3-rig-arm-right var(--v3-cycle) cubic-bezier(.45, 0, .55, 1) var(--v3-phase) infinite;
+.v3-rig-idle[data-motion="true"] .v3-rig-chest,
+.v3-rig-idle[data-motion="true"] .v3-rig-head,
+.v3-rig-idle[data-motion="true"] .v3-rig-arm {
+  will-change: transform;
 }
 
 .v3-rig-idle[data-motion="true"] .v3-rig-eye {
@@ -473,31 +467,6 @@ a:focus-visible {
 @keyframes v3-breathe {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.012); }
-}
-
-@keyframes v3-rig-idle {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--v3-sway-neg)) scale(1, 1); }
-  22% { transform: translate3d(0, var(--v3-bounce-soft), 0) rotate(var(--v3-sway-soft)) scale(.995, 1.005); }
-  52% { transform: translate3d(0, var(--v3-bounce), 0) rotate(var(--v3-sway)) scale(.985, 1.015); }
-  78% { transform: translate3d(0, var(--v3-bounce-settle), 0) rotate(var(--v3-sway-neg-soft)) scale(1.006, .994); }
-}
-
-@keyframes v3-rig-head {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  45% { transform: translate3d(0, var(--v3-head-lag), 0) rotate(var(--v3-head-sway-neg)); }
-  72% { transform: translate3d(0, var(--v3-head-settle), 0) rotate(var(--v3-head-sway)); }
-}
-
-@keyframes v3-rig-arm-left {
-  0%, 100% { transform: rotate(0deg); }
-  48% { transform: rotate(var(--v3-arm)); }
-  75% { transform: rotate(var(--v3-arm-neg-soft)); }
-}
-
-@keyframes v3-rig-arm-right {
-  0%, 100% { transform: rotate(0deg); }
-  48% { transform: rotate(var(--v3-arm-neg)); }
-  75% { transform: rotate(var(--v3-arm-soft)); }
 }
 
 @keyframes v3-rig-blink {
