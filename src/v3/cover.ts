@@ -1,4 +1,4 @@
-import type { PalariSkeleton, Point } from "./skeleton";
+import type { PalariSkeleton, PalariVolume, Point } from "./skeleton";
 
 export type ProceduralPalariFamily = "pebble-nest" | "pillow-bell" | "folded-hood";
 
@@ -14,7 +14,6 @@ export type CoverEye = {
 
 export type CoverArm = {
   path: string;
-  width: number;
   pivot: Point;
 };
 
@@ -29,85 +28,108 @@ function n(value: number) {
   return Math.round(value);
 }
 
-function shellFromSkeleton(skeleton: PalariSkeleton, family: ProceduralPalariFamily) {
-  const { joints, proportions: p } = skeleton;
-  const center = joints.head.x;
-  const left = joints.chest.x - p.bodyWidth / 2;
-  const right = joints.chest.x + p.bodyWidth / 2;
-  const top = joints.head.y - p.headRadiusY;
-  const lowerShoulder = joints.chest.y - p.headRadiusY * 0.45;
+function paddedVolume(volume: PalariVolume, padding: number): PalariVolume {
+  return {
+    ...volume,
+    radiusX: volume.radiusX + padding,
+    radiusY: volume.radiusY + padding,
+  };
+}
 
-  if (family === "pillow-bell") {
-    const crown = p.headRadiusX * 0.56;
-    return [
-      `M${n(left)} 1254`,
-      `C${n(left - 38)} ${n(joints.root.y - 70)} ${n(left - 16)} ${n(lowerShoulder)} ${n(left + 82)} ${n(joints.head.y + 54)}`,
-      `C${n(left + 145)} ${n(joints.head.y - 75)} ${n(center - crown - 70)} ${n(top + 20)} ${n(center - crown)} ${n(top)}`,
-      `C${n(center - crown * 0.52)} ${n(top - 24)} ${n(center - crown * 0.28)} ${n(top + p.crownSplit)} ${n(center)} ${n(top + p.crownSplit)}`,
-      `C${n(center + crown * 0.28)} ${n(top + p.crownSplit)} ${n(center + crown * 0.52)} ${n(top - 24)} ${n(center + crown)} ${n(top)}`,
-      `C${n(center + crown + 70)} ${n(top + 20)} ${n(right - 145)} ${n(joints.head.y - 75)} ${n(right - 82)} ${n(joints.head.y + 54)}`,
-      `C${n(right + 16)} ${n(lowerShoulder)} ${n(right + 38)} ${n(joints.root.y - 70)} ${n(right)} 1254Z`,
-    ].join("");
+function smoothClosedPath(points: readonly Point[]) {
+  if (points.length < 4) throw new Error("A Palari cover needs at least four envelope points.");
+  const commands = [`M${n(points[0].x)} ${n(points[0].y)}`];
+
+  for (let index = 0; index < points.length; index += 1) {
+    const previous = points[(index - 1 + points.length) % points.length];
+    const current = points[index];
+    const next = points[(index + 1) % points.length];
+    const after = points[(index + 2) % points.length];
+    const controlOne = point(
+      current.x + (next.x - previous.x) / 8,
+      current.y + (next.y - previous.y) / 8,
+    );
+    const controlTwo = point(
+      next.x - (after.x - current.x) / 8,
+      next.y - (after.y - current.y) / 8,
+    );
+    commands.push(`C${n(controlOne.x)} ${n(controlOne.y)} ${n(controlTwo.x)} ${n(controlTwo.y)} ${n(next.x)} ${n(next.y)}`);
   }
 
-  if (family === "folded-hood") {
-    const fold = p.foldDirection;
-    const plainX = center - fold * p.headRadiusX * 0.72;
-    const foldX = center + fold * p.headRadiusX * 0.72;
-    if (fold > 0) {
-      return [
-        `M${n(left)} 1254`,
-        `C${n(left - 38)} ${n(joints.root.y - 70)} ${n(left - 8)} ${n(lowerShoulder)} ${n(left + 94)} ${n(joints.head.y + 58)}`,
-        `C${n(left + 170)} ${n(joints.head.y - 86)} ${n(plainX - 70)} ${n(top + 8)} ${n(center)} ${n(top + 54)}`,
-        `C${n(center + 115)} ${n(top + 98)} ${n(foldX - 8)} ${n(top + 76)} ${n(foldX + 54)} ${n(top + 12)}`,
-        `C${n(foldX + 104)} ${n(top - 40)} ${n(right + 8)} ${n(top - 5)} ${n(right - 4)} ${n(top + 84)}`,
-        `C${n(right - 10)} ${n(top + 134)} ${n(right + 18)} ${n(top + 185)} ${n(right + 52)} ${n(top + 226)}`,
-        `C${n(right + 76)} ${n(lowerShoulder)} ${n(right + 40)} ${n(joints.root.y - 70)} ${n(right)} 1254Z`,
-      ].join("");
+  return `${commands.join("")}Z`;
+}
+
+function point(x: number, y: number): Point {
+  return { x, y };
+}
+
+function rayEllipseDistance(origin: Point, direction: Point, volume: PalariVolume) {
+  const offsetX = origin.x - volume.center.x;
+  const offsetY = origin.y - volume.center.y;
+  const radiusXSquared = volume.radiusX * volume.radiusX;
+  const radiusYSquared = volume.radiusY * volume.radiusY;
+  const a = (direction.x * direction.x) / radiusXSquared + (direction.y * direction.y) / radiusYSquared;
+  const b = (2 * offsetX * direction.x) / radiusXSquared + (2 * offsetY * direction.y) / radiusYSquared;
+  const c = (offsetX * offsetX) / radiusXSquared + (offsetY * offsetY) / radiusYSquared - 1;
+  const discriminant = b * b - 4 * a * c;
+  if (discriminant < 0) return undefined;
+  const farther = (-b + Math.sqrt(discriminant)) / (2 * a);
+  return farther > 0 ? farther : undefined;
+}
+
+function envelopePath(sourceVolumes: readonly PalariVolume[], padding = 0, samples = 80) {
+  const volumes = sourceVolumes.map((volume) => paddedVolume(volume, padding));
+  const anchorVolume = volumes.reduce((current, candidate) => (
+    candidate.radiusX * candidate.radiusY > current.radiusX * current.radiusY ? candidate : current
+  ));
+  const origin = anchorVolume.center;
+  const contour: Point[] = [];
+
+  for (let index = 0; index < samples; index += 1) {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index) / samples;
+    const direction = point(Math.cos(angle), Math.sin(angle));
+    let distance = 0;
+    for (const volume of volumes) {
+      distance = Math.max(distance, rayEllipseDistance(origin, direction, volume) ?? 0);
     }
-    return [
-      `M${n(left)} 1254`,
-      `C${n(left - 40)} ${n(joints.root.y - 70)} ${n(left - 76)} ${n(lowerShoulder)} ${n(left - 52)} ${n(top + 226)}`,
-      `C${n(left - 18)} ${n(top + 185)} ${n(left + 10)} ${n(top + 134)} ${n(left + 4)} ${n(top + 84)}`,
-      `C${n(left - 8)} ${n(top - 5)} ${n(foldX - 104)} ${n(top - 40)} ${n(foldX - 54)} ${n(top + 12)}`,
-      `C${n(foldX + 8)} ${n(top + 76)} ${n(center - 115)} ${n(top + 98)} ${n(center)} ${n(top + 54)}`,
-      `C${n(plainX + 70)} ${n(top + 8)} ${n(right - 170)} ${n(joints.head.y - 86)} ${n(right - 94)} ${n(joints.head.y + 58)}`,
-      `C${n(right + 8)} ${n(lowerShoulder)} ${n(right + 38)} ${n(joints.root.y - 70)} ${n(right)} 1254Z`,
-    ].join("");
+    contour.push(point(origin.x + direction.x * distance, origin.y + direction.y * distance));
   }
 
-  return [
-    `M${n(left)} 1254`,
-    `C${n(left - 42)} ${n(joints.root.y - 72)} ${n(left - 18)} ${n(lowerShoulder)} ${n(left + 78)} ${n(joints.head.y + 66)}`,
-    `C${n(left + 150)} ${n(joints.head.y - 92)} ${n(center - p.headRadiusX * 0.58)} ${n(top)} ${n(center)} ${n(top)}`,
-    `C${n(center + p.headRadiusX * 0.58)} ${n(top)} ${n(right - 150)} ${n(joints.head.y - 92)} ${n(right - 78)} ${n(joints.head.y + 66)}`,
-    `C${n(right + 18)} ${n(lowerShoulder)} ${n(right + 42)} ${n(joints.root.y - 72)} ${n(right)} 1254Z`,
-  ].join("");
+  return smoothClosedPath(contour);
 }
 
 function faceFromSkeleton(skeleton: PalariSkeleton) {
-  const { joints, proportions: p } = skeleton;
-  const center = joints.head.x;
-  const left = center - p.faceWidth / 2;
-  const right = center + p.faceWidth / 2;
-  const top = joints.head.y + p.faceTopOffset;
-  const middle = joints.chest.y - 5;
-  const bottom = joints.root.y - p.faceBottomLift;
+  const { proportions: p } = skeleton;
+  const head = skeleton.volumes.shell.find((volume) => volume.role === "head");
+  const chest = skeleton.volumes.shell.find((volume) => volume.role === "chest");
+  if (!head || !chest) throw new Error("A Palari needs head and chest balls before it can receive a face cover.");
 
-  return [
-    `M${n(left)} ${n(middle)}`,
-    `C${n(left + 22)} ${n(top + 105)} ${n(left + p.faceWidth * 0.2)} ${n(top)} ${n(center)} ${n(top)}`,
-    `C${n(right - p.faceWidth * 0.2)} ${n(top)} ${n(right - 22)} ${n(top + 105)} ${n(right)} ${n(middle)}`,
-    `C${n(right + 20)} ${n(bottom - 96)} ${n(right - p.faceWidth * 0.18)} ${n(bottom)} ${n(center)} ${n(bottom)}`,
-    `C${n(left + p.faceWidth * 0.18)} ${n(bottom)} ${n(left - 20)} ${n(bottom - 96)} ${n(left)} ${n(middle)}Z`,
-  ].join("");
+  const faceVolumes: PalariVolume[] = [
+    {
+      ...head,
+      id: "face-head",
+      center: point(head.center.x, head.center.y + head.radiusY * 0.56),
+      radiusX: head.radiusX * Math.min(0.92, p.faceScale + 0.05),
+      radiusY: head.radiusY * 0.68,
+    },
+    {
+      ...chest,
+      id: "face-chest",
+      center: point(chest.center.x, chest.center.y + chest.radiusY * 0.05),
+      radiusX: chest.radiusX * p.faceScale,
+      radiusY: chest.radiusY * 0.74,
+    },
+  ];
+
+  return envelopePath(faceVolumes, 0, 20);
 }
 
-function armFromSkeleton(shoulder: Point, elbow: Point, hand: Point, width: number): CoverArm {
+function armFromBalls(balls: readonly [PalariVolume, PalariVolume, PalariVolume], connectorScale: number): CoverArm {
+  const [shoulder] = balls;
+  const padding = Math.round(12 + connectorScale * 8);
   return {
-    path: `M${shoulder.x} ${shoulder.y}Q${elbow.x} ${elbow.y} ${hand.x} ${hand.y}`,
-    width,
-    pivot: shoulder,
+    path: envelopePath(balls, padding, 52),
+    pivot: shoulder.center,
   };
 }
 
@@ -124,18 +146,15 @@ function eyeFromSkeleton(anchor: Point, skeleton: PalariSkeleton): CoverEye {
   };
 }
 
-export function coverSkeleton(skeleton: PalariSkeleton, family: ProceduralPalariFamily): PalariCover {
-  const { joints, proportions } = skeleton;
+export function coverSkeleton(skeleton: PalariSkeleton): PalariCover {
+  const { joints, proportions, volumes } = skeleton;
   return {
-    shellPath: shellFromSkeleton(skeleton, family),
+    shellPath: envelopePath(volumes.shell, proportions.clothPadding),
     facePath: faceFromSkeleton(skeleton),
     arms: [
-      armFromSkeleton(joints.leftShoulder, joints.leftElbow, joints.leftHand, proportions.armThickness),
-      armFromSkeleton(joints.rightShoulder, joints.rightElbow, joints.rightHand, proportions.armThickness),
+      armFromBalls(volumes.leftArm, proportions.armConnectorScale),
+      armFromBalls(volumes.rightArm, proportions.armConnectorScale),
     ],
-    eyes: [
-      eyeFromSkeleton(joints.leftEye, skeleton),
-      eyeFromSkeleton(joints.rightEye, skeleton),
-    ],
+    eyes: [eyeFromSkeleton(joints.leftEye, skeleton), eyeFromSkeleton(joints.rightEye, skeleton)],
   };
 }

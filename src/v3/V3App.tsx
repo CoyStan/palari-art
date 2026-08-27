@@ -79,7 +79,7 @@ export function V3App() {
         <section className="v3-chooser" aria-labelledby="v3-title">
           <div className="v3-intro">
             <h1 id="v3-title">Choose your Palari.</h1>
-            <p>Pick one, or grow a new companion from bones, soft cover, color, and a seed.</p>
+            <p>Pick one, or grow a new companion from volume balls, soft cover, color, and a seed.</p>
           </div>
 
           <AvatarPicker avatars={v3Avatars} activeAvatar={avatar} onSelect={chooseAvatar} />

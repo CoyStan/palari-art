@@ -13,10 +13,13 @@ type AvatarPreviewProps = {
 
 export function AvatarPreview({ avatar, frame, motionEnabled, view }: AvatarPreviewProps) {
   const [bounceSignal, setBounceSignal] = useState(0);
+  const volumeCount = avatar.rig
+    ? avatar.rig.skeleton.volumes.shell.length + avatar.rig.skeleton.volumes.leftArm.length + avatar.rig.skeleton.volumes.rightArm.length
+    : 0;
   const description = avatar.rig
-    ? view === "bones"
-      ? `Skeleton first · 11 joints · ${motionEnabled ? "tap to hop" : "motion paused"}`
-      : `${avatar.kind === "generated" ? `Made from seed ${avatar.rig.seed}` : "Generated from 11 joints"} · ${motionEnabled ? "tap to hop" : "motion paused"}`
+    ? view === "balls"
+      ? `${volumeCount} volume balls · 11 joints · ${motionEnabled ? "tap to hop" : "motion paused"}`
+      : `${avatar.kind === "generated" ? `Made from seed ${avatar.rig.seed}` : `Covered from ${volumeCount} balls`} · ${motionEnabled ? "tap to hop" : "motion paused"}`
     : "Static artwork";
 
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useRef, type CSSProperties } from "react";
 import type { CoverEye } from "./cover";
 import type { PalariRig } from "./procedural";
-import type { PalariJointName, Point } from "./skeleton";
+import type { PalariJointName, PalariVolume, Point } from "./skeleton";
 import type { PalariViewMode } from "./ViewSelector";
 
 type MotionStyle = CSSProperties & {
@@ -67,50 +67,72 @@ function Bone({ from, to, className }: { from: Point; to: Point; className?: str
   return <line className={className} x1={from.x} y1={from.y} x2={to.x} y2={to.y} />;
 }
 
-function Joint({ name, point, radius = 22 }: { name: PalariJointName; point: Point; radius?: number }) {
-  return <circle className="v3-skeleton-joint" data-joint={name} cx={point.x} cy={point.y} r={radius} />;
+function Joint({ name, point, fill, radius = 18 }: { name: PalariJointName; point: Point; fill: string; radius?: number }) {
+  return <circle className="v3-volume-joint" data-joint={name} cx={point.x} cy={point.y} r={radius} fill={fill} />;
 }
 
-function SkeletonView({ rig }: { rig: PalariRig }) {
-  const { joints } = rig.skeleton;
+function VolumeBall({ volume }: { volume: PalariVolume }) {
+  return (
+    <ellipse
+      className="v3-volume-ball"
+      data-volume={volume.id}
+      data-volume-role={volume.role}
+      cx={volume.center.x}
+      cy={volume.center.y}
+      rx={volume.radiusX}
+      ry={volume.radiusY}
+    />
+  );
+}
+
+function BallModelView({ rig }: { rig: PalariRig }) {
+  const { joints, volumes } = rig.skeleton;
   const headOrigin = `${joints.head.x}px ${joints.head.y}px`;
+  const chestBall = volumes.shell.find((volume) => volume.role === "chest");
+  const headBalls = volumes.shell.filter((volume) => volume.role !== "chest");
+  const volumeCount = volumes.shell.length + volumes.leftArm.length + volumes.rightArm.length;
 
   return (
     <g
-      className="v3-skeleton"
+      className="v3-volume-model"
       data-joint-count={Object.keys(joints).length}
+      data-volume-count={volumeCount}
       stroke={rig.eyeWhite}
       fill={rig.face[0]}
     >
+      {chestBall ? <VolumeBall volume={chestBall} /> : null}
       <Bone from={joints.root} to={joints.chest} />
       <Bone from={joints.chest} to={joints.head} />
       <Bone from={joints.chest} to={joints.leftShoulder} />
       <Bone from={joints.chest} to={joints.rightShoulder} />
-      <Joint name="root" point={joints.root} radius={28} />
-      <Joint name="chest" point={joints.chest} radius={30} />
+      <Joint name="root" point={joints.root} fill={rig.background} radius={24} />
+      <Joint name="chest" point={joints.chest} fill={rig.background} radius={24} />
 
       <g className="v3-rig-head" style={{ transformOrigin: headOrigin }}>
+        {headBalls.map((ball) => <VolumeBall key={ball.id} volume={ball} />)}
         <Bone from={joints.head} to={joints.leftEye} className="v3-skeleton-eye-bone" />
         <Bone from={joints.head} to={joints.rightEye} className="v3-skeleton-eye-bone" />
-        <Joint name="head" point={joints.head} radius={31} />
-        <Joint name="leftEye" point={joints.leftEye} radius={36} />
-        <Joint name="rightEye" point={joints.rightEye} radius={36} />
+        <Joint name="head" point={joints.head} fill={rig.background} radius={24} />
+        <Joint name="leftEye" point={joints.leftEye} fill={rig.background} radius={30} />
+        <Joint name="rightEye" point={joints.rightEye} fill={rig.background} radius={30} />
       </g>
 
       <g className="v3-rig-arm" data-arm="left" style={{ transformOrigin: `${joints.leftShoulder.x}px ${joints.leftShoulder.y}px` }}>
+        {volumes.leftArm.map((ball) => <VolumeBall key={ball.id} volume={ball} />)}
         <Bone from={joints.leftShoulder} to={joints.leftElbow} />
         <Bone from={joints.leftElbow} to={joints.leftHand} />
-        <Joint name="leftShoulder" point={joints.leftShoulder} />
-        <Joint name="leftElbow" point={joints.leftElbow} />
-        <Joint name="leftHand" point={joints.leftHand} radius={28} />
+        <Joint name="leftShoulder" point={joints.leftShoulder} fill={rig.background} />
+        <Joint name="leftElbow" point={joints.leftElbow} fill={rig.background} />
+        <Joint name="leftHand" point={joints.leftHand} fill={rig.background} radius={22} />
       </g>
 
       <g className="v3-rig-arm" data-arm="right" style={{ transformOrigin: `${joints.rightShoulder.x}px ${joints.rightShoulder.y}px` }}>
+        {volumes.rightArm.map((ball) => <VolumeBall key={ball.id} volume={ball} />)}
         <Bone from={joints.rightShoulder} to={joints.rightElbow} />
         <Bone from={joints.rightElbow} to={joints.rightHand} />
-        <Joint name="rightShoulder" point={joints.rightShoulder} />
-        <Joint name="rightElbow" point={joints.rightElbow} />
-        <Joint name="rightHand" point={joints.rightHand} radius={28} />
+        <Joint name="rightShoulder" point={joints.rightShoulder} fill={rig.background} />
+        <Joint name="rightElbow" point={joints.rightElbow} fill={rig.background} />
+        <Joint name="rightHand" point={joints.rightHand} fill={rig.background} radius={22} />
       </g>
     </g>
   );
@@ -139,11 +161,7 @@ function CoverView({ rig, gradientId }: { rig: PalariRig; gradientId: string }) 
           <path
             className="v3-cover-arm"
             d={arm.path}
-            fill="none"
-            stroke={`url(#${gradientId}-ivory)`}
-            strokeWidth={arm.width}
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            fill={`url(#${gradientId}-ivory)`}
           />
         </g>
       ))}
@@ -217,7 +235,7 @@ export function ProceduralPalari({ rig, motionEnabled, bounceSignal, view }: Pro
           </defs>
 
           <rect width="1254" height="1254" fill={rig.background} />
-          {view === "bones" ? <SkeletonView rig={rig} /> : <CoverView rig={rig} gradientId={gradientId} />}
+          {view === "balls" ? <BallModelView rig={rig} /> : <CoverView rig={rig} gradientId={gradientId} />}
         </svg>
       </div>
     </div>

@@ -183,19 +183,24 @@ a:focus-visible {
   transform-box: view-box;
 }
 
-.v3-skeleton line {
+.v3-volume-model line {
   stroke-width: 22;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
 
-.v3-skeleton .v3-skeleton-eye-bone {
+.v3-volume-model .v3-skeleton-eye-bone {
   stroke-width: 13;
   stroke-dasharray: 18 24;
 }
 
-.v3-skeleton-joint {
-  stroke-width: 12;
+.v3-volume-ball {
+  stroke-width: 14;
+  vector-effect: non-scaling-stroke;
+}
+
+.v3-volume-joint {
+  stroke-width: 9;
   vector-effect: non-scaling-stroke;
 }
 
@@ -639,6 +644,12 @@ a:focus-visible {
   .v3-shell > footer {
     min-height: 48px;
     padding-inline: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .v3-preview-art > .v3-rig-trigger {
+    padding: 8px;
   }
 }
 

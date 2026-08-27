@@ -1,4 +1,4 @@
-export type PalariViewMode = "cover" | "bones";
+export type PalariViewMode = "cover" | "balls";
 
 type ViewSelectorProps = {
   view: PalariViewMode;
@@ -14,8 +14,8 @@ export function ViewSelector({ view, enabled, onChange }: ViewSelectorProps) {
         <button type="button" data-active={view === "cover"} aria-pressed={view === "cover"} onClick={() => onChange("cover")}>
           Cover
         </button>
-        <button type="button" data-active={view === "bones"} aria-pressed={view === "bones"} onClick={() => onChange("bones")}>
-          Bones
+        <button type="button" data-active={view === "balls"} aria-pressed={view === "balls"} onClick={() => onChange("balls")}>
+          Balls
         </button>
       </div>
     </fieldset>
